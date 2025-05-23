@@ -20,7 +20,7 @@
     
     
       
-        <title>Guidance for esgf - CMIP7 Guidance Documentation</title>
+        <title>CMIP7 Participation Guidance for Data Managers - CMIP7 Guidance and Documentation</title>
       
     
     
@@ -73,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#cmip7-participation-for-data-managers" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -85,7 +90,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="CMIP7 Guidance Documentation" class="md-header__button md-logo" aria-label="CMIP7 Guidance Documentation" data-md-component="logo">
+    <a href="../.." title="CMIP7 Guidance and Documentation" class="md-header__button md-logo" aria-label="CMIP7 Guidance and Documentation" data-md-component="logo">
       
   <img src="../../assets/CMIP_Icon_CMYK_negative.svg" alt="logo">
 
@@ -98,13 +103,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            CMIP7 Guidance Documentation
+            CMIP7 Guidance and Documentation
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Guidance for esgf
+              CMIP7 Participation Guidance for Data Managers
             
           </span>
         </div>
@@ -210,12 +215,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="CMIP7 Guidance Documentation" class="md-nav__button md-logo" aria-label="CMIP7 Guidance Documentation" data-md-component="logo">
+    <a href="../.." title="CMIP7 Guidance and Documentation" class="md-nav__button md-logo" aria-label="CMIP7 Guidance and Documentation" data-md-component="logo">
       
   <img src="../../assets/CMIP_Icon_CMYK_negative.svg" alt="logo">
 
     </a>
-    CMIP7 Guidance Documentation
+    CMIP7 Guidance and Documentation
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -295,18 +300,193 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    CMIP7 Participation Guidance for Data Managers
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    Guidance for esgf
+    CMIP7 Participation Guidance for Data Managers
     
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-esgf-stack-installation-upgrade" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. ESGF stack installation &amp; upgrade
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-configuring-datametadata-publication-on-the-data-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Configuring data/metadata publication on the data node
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-configuring-data-publication-on-the-index-node-tiers-1-site-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Configuring data publication on the index node (Tiers 1 site only)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-configuring-esgf-data-usage-metrics-through-the-esgf-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Configuring ESGF data usage metrics through the esgf-dashboard
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-configuring-cog-tiers-1-site-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Configuring CoG (Tiers 1 site only)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-validation-with-esgf-test-suite" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Validation with ESGF test suite
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-configuring-data-access-on-the-data-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Configuring data access on the data node
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-optional-checking-and-fixing-cmip-time-coordinate" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. (Optional) Checking and fixing CMIP time coordinate
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-optional-running-prepare-standalone" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. (Optional) Running PrePARE standalone
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-preparing-directory-structure-and-files-organization-to-fulfill-cmip6" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Preparing directory structure and files organization to fulfill CMIP6
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-publishing-a-cmip6-dataset-for-the-first-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Publishing a CMIP6 dataset for the first time
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-describe-datasets-issues-and-errata-using-the-errata-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Describe datasets issues and errata using the errata service
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-unpublish-data-before-new-version-is-ready" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. Unpublish data (before new version is ready)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-publishing-a-new-version-of-a-cmip6-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      14. Publishing a new version of a CMIP6 dataset
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="14. Publishing a new version of a CMIP6 dataset">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#document-version-29-january-2020" class="md-nav__link">
+    <span class="md-ellipsis">
+      Document version: 29 January 2020
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -325,7 +505,7 @@
   
   
   <span class="md-ellipsis">
-    Guidance for modellers
+    CMIP7 Participation Guidance for Modelers
     
   </span>
   
@@ -348,7 +528,30 @@
   
   
   <span class="md-ellipsis">
-    Guidance for users
+    CMIP7 Guidance for Data Users
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terms_of_use/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CMIP7 Terms of Use
     
   </span>
   
@@ -383,6 +586,157 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-esgf-stack-installation-upgrade" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. ESGF stack installation &amp; upgrade
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-configuring-datametadata-publication-on-the-data-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Configuring data/metadata publication on the data node
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-configuring-data-publication-on-the-index-node-tiers-1-site-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Configuring data publication on the index node (Tiers 1 site only)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-configuring-esgf-data-usage-metrics-through-the-esgf-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Configuring ESGF data usage metrics through the esgf-dashboard
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-configuring-cog-tiers-1-site-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Configuring CoG (Tiers 1 site only)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-validation-with-esgf-test-suite" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Validation with ESGF test suite
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-configuring-data-access-on-the-data-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Configuring data access on the data node
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-optional-checking-and-fixing-cmip-time-coordinate" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. (Optional) Checking and fixing CMIP time coordinate
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-optional-running-prepare-standalone" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. (Optional) Running PrePARE standalone
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-preparing-directory-structure-and-files-organization-to-fulfill-cmip6" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Preparing directory structure and files organization to fulfill CMIP6
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-publishing-a-cmip6-dataset-for-the-first-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Publishing a CMIP6 dataset for the first time
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-describe-datasets-issues-and-errata-using-the-errata-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Describe datasets issues and errata using the errata service
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-unpublish-data-before-new-version-is-ready" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. Unpublish data (before new version is ready)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-publishing-a-new-version-of-a-cmip6-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      14. Publishing a new version of a CMIP6 dataset
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="14. Publishing a new version of a CMIP6 dataset">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#document-version-29-january-2020" class="md-nav__link">
+    <span class="md-ellipsis">
+      Document version: 29 January 2020
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -398,7 +752,135 @@
 
 
 
-  <h1>Guidance for esgf</h1>
+<style type="text/css">
+    ol { list-style-type: lower-alpha; }
+</style>
+
+<h1 id="cmip7-participation-for-data-managers">CMIP7 Participation for Data Managers</h1>
+<p><strong>This is the CMIP6 guidance and will need updating / rewriting</strong></p>
+<h2 id="1-esgf-stack-installation-upgrade">1. ESGF stack installation &amp; upgrade</h2>
+<p>This section describes the procedure a data node administrator have to follow to install or to update an ESGF data node.</p>
+<ol>
+<li><a href="https://github.com/ESGF/esgf-installer/wiki">Documentation</a></li>
+</ol>
+<h2 id="2-configuring-datametadata-publication-on-the-data-node">2. Configuring data/metadata publication on the data node</h2>
+<p>This section describes the prerequisite steps that need to be carefully follow to configure CMIP6 data publication on the data node side.</p>
+<ol>
+<li><a href="https://esgf.github.io/esg-publisher/configuration.html#the-default-config-file-esg-ini">Prepare esg.ini file</a></li>
+<li><a href="https://github.com/ESGF/esg-publisher/blob/master/notebooks/cmip6-config.ipynb">How to</a></li>
+<li><a href="http://esgf.github.io/esgf-prepare/fetchini.html">Fetch project .ini files</a> (optional)</li>
+<li><a href="https://docs.google.com/document/d/1NkBl9Uk6qImb86d4SmDEEHt6me8huxU7UcTZMldxoVI/edit#">Get ES-DOC credentials for CDF2CIM</a></li>
+<li><a href="https://github.com/agstephens/esdoc-cdf2cim/blob/master/notebooks/cdf2cim-for-cmip6-data-managers.ipynb">How to</a></li>
+<li><a href="http://cmip6cite.wdc-climate.de/#Information-for-ESGF-Data-Node-Managers">Check for the completion of data citation information</a></li>
+</ol>
+<h2 id="3-configuring-data-publication-on-the-index-node-tiers-1-site-only">3. Configuring data publication on the index node (Tiers 1 site only)</h2>
+<p>This section describes the prerequisite steps that need to be carefully follow to configure CMIP6 data publication on the index node side.</p>
+<ol>
+<li><a href="https://esgf.github.io/esg-publisher/configuration.html#prepare-user-and-permissions-for-publication">Prepare user and permissions for publication</a></li>
+<li><a href="https://esgf.github.io/COG/manual/Data_Access_Control_setup.html">Setup data access control</a></li>
+<li><a href="https://github.com/ESGF/esg-publisher/blob/master/notebooks/cmip6-config.ipynb">How to</a></li>
+</ol>
+<h2 id="4-configuring-esgf-data-usage-metrics-through-the-esgf-dashboard">4. Configuring ESGF data usage metrics through the esgf-dashboard</h2>
+<p>This section describes how to configure the metrics collection on the data node.</p>
+<ol>
+<li><a href="https://docs.google.com/document/d/1_ra2swkpdxaQuatcYTc6P8bx5HLnsH7lidgEwAVbEXE/edit#bookmark=kix.bfy9sk70gr7a">Documentation</a></li>
+<li><a href="https://docs.google.com/document/d/1_ra2swkpdxaQuatcYTc6P8bx5HLnsH7lidgEwAVbEXE/edit#bookmark=kix.st7dz7nolrrw">Configuration</a></li>
+</ol>
+<h2 id="5-configuring-cog-tiers-1-site-only">5. Configuring CoG (Tiers 1 site only)</h2>
+<p>This section describes how to configure the CoG front end so that the CMIP6 CoG pages and the associated search works as expected.</p>
+<ol>
+<li><a href="https://esgf.github.io/COG/manual/Node_Administrator_Login.html">How to log onto CoG as Node administrator</a></li>
+<li><a href="https://esgf.github.io/COG/manual/Node_Home_Project_Setup.html">How to set up the Node “home” project</a></li>
+<li><a href="https://esgf.github.io/COG/manual/Home_Page_Example.html">Example of Node home page</a></li>
+<li><a href="https://esgf.github.io/COG/manual/Data_Search_Configuration.html">How to configure the search for a CoG project</a></li>
+<li><a href="https://esgf.github.io/COG/manual/Node_Federation.html">How to configure your CoG to federate with other CoGs</a></li>
+<li><a href="https://esgf.github.io/COG/manual/Header_and_Footer.html">How to customize the CoG header and footer</a></li>
+<li><a href="https://esgf.github.io/COG/manual/Notification_Header.html">How to post a header on top of CoG pages for a special announcement</a></li>
+</ol>
+<h2 id="6-validation-with-esgf-test-suite">6. Validation with ESGF test suite</h2>
+<p>This section describes the usage of the ESGF test suite that will validate that a data or index node is working as expected. This test-suite should be run after the installation and configuration phase has been completed.</p>
+<ol>
+<li><a href="https://github.com/ESGF/esgf-test-suite">Documentation</a></li>
+</ol>
+<h2 id="7-configuring-data-access-on-the-data-node">7. Configuring data access on the data node</h2>
+<p>This section describes prerequisite steps needed to apply the appropriate policies to the data access.</p>
+<ol>
+<li><a href="https://esgf.github.io/COG/manual/Data_Access_Control_setup.html">Documentation</a></li>
+<li><a href="https://github.com/ESGF/esg-publisher/blob/master/notebooks/cmip6-config.ipynb">How to</a></li>
+</ol>
+<h2 id="8-optional-checking-and-fixing-cmip-time-coordinate">8. (Optional) Checking and fixing CMIP time coordinate</h2>
+<p>This section describes a tools that permits the data provider to check the consistency of time axis coordinates across several files. Having this quality control well ahead of your data publication step can save you a lot of time.</p>
+<ol>
+<li><a href="http://prodiguer.github.io/nctime/installation.html">Install nctime</a></li>
+<li>(Optional) <a href="http://esgf.github.io/esgf-prepare/fetchini.html">Fetch project .ini files</a></li>
+<li><a href="http://prodiguer.github.io/nctime/axis.html">Check time axis squareness</a></li>
+<li><a href="http://prodiguer.github.io/nctime/overlap.html">Check time coverage continuity</a></li>
+<li><a href="https://github.com/Prodiguer/nctime/blob/master/docs/howto.ipynb">CMIP6 Example</a></li>
+</ol>
+<h2 id="9-optional-running-prepare-standalone">9. (Optional) Running PrePARE standalone</h2>
+<p>This section describes how to configure the PrePARE quality control tool independently from the ESGF publisher. Having this quality control well ahead of your data publication step can save you a lot of time.</p>
+<ol>
+<li><a href="https://cmor.llnl.gov/mydoc_cmor3_conda/">Install PrePARE</a></li>
+<li><a href="http://esgf.github.io/esgf-prepare/fetchtables.html">Fetch CMIP6 CMOR tables</a></li>
+<li><a href="https://github.com/glevava/cmor/blob/PrePARE_glevava/LibCV/PrePARE/notebooks/PrePARE-howto-ipsl.ipynb">Check CMIP6 files against CMOR tables and WCRP CV</a></li>
+</ol>
+<h2 id="10-preparing-directory-structure-and-files-organization-to-fulfill-cmip6">10. Preparing directory structure and files organization to fulfill CMIP6</h2>
+<p>This section describes the usage of the esgprep tool. This tool will take of your CMIP data directory structure and will greatly ease dataset version management.</p>
+<ol>
+<li><a href="http://esgf.github.io/esgf-prepare/installation.html">Install esgprep</a></li>
+<li>(Optional) <a href="http://esgf.github.io/esgf-prepare/fetchini.html">Fetch project .ini files</a></li>
+<li><a href="http://esgf.github.io/esgf-prepare/drs.html#list-the-datasets-related-to-the-incoming-files">List the datasets related to incoming files</a></li>
+<li>(Optional) <a href="http://esgf.github.io/esgf-prepare/drs.html#visualize-the-excepted-drs-tree">Display the expected directory tree</a></li>
+<li>(Optional) <a href="http://esgf.github.io/esgf-prepare/drs.html#list-unix-command-to-apply">List Unix commands to apply</a></li>
+<li><a href="http://esgf.github.io/esgf-prepare/drs.html#run-the-drs-upgrade">Upgrade your DRS tree</a></li>
+</ol>
+<h2 id="11-publishing-a-cmip6-dataset-for-the-first-time">11. Publishing a CMIP6 dataset for the first time</h2>
+<p>This section describe steps required to publish the first version of a new CMIP6 dataset. After those steps your CMIP6 dataset will be findable and accessible from the ESGF portal.</p>
+<p>Note on publishing: please do not manually edit esg.cmip6.ini to add missing information if your data files won't publish.  In such a case, it is likely that either the model is unregistered or there is an error in the metadata that needs to be corrected.  Please contact (1) the modeling group to ensure all fields are properly registered ; (2) support from CDNOT to get the publisher config (esg.cmip6.ini file) updated.  See (https://github.com/WCRP-CMIP/CMIP6_CVs/) for the most up-to-date catalog of registered entities (source_id, institution_id, etc.)</p>
+<ol>
+<li><a href="http://cmip6cite.wdc-climate.de/#Information-for-ESGF-Data-Node-Managers">Check for the completion of data citation information</a></li>
+<li>(Optional) <a href="http://esgf.github.io/esgf-prepare/fetchini.html">Fetch project .ini files</a></li>
+<li><a href="http://esgf.github.io/esgf-prepare/mapfiles.html">Generate mapfiles</a></li>
+<li><a href="http://esgf.github.io/esg-publisher/configuration.html#myproxy-logon">Generate certificate for publication</a></li>
+</ol>
+<p>The following steps are for users of the esgpublisher version(s) 4.x and older.  If you have upgraded esg-publisher (esgcet) to v5.x or interested in doing so, then skip to the last step (j.).  </p>
+<ol>
+<li><a href="http://esgf.github.io/esg-publisher/configuration.html#the-default-config-file-esg-ini">Check the [config:cmip6] section of your esg.ini file</a></li>
+<li><a href="http://esgf.github.io/esg-publisher/usage.html#publish-to-local-postgres-database">Publish to local PostgreSQL database</a></li>
+<li><a href="http://esgf.github.io/esg-publisher/usage.html#publish-to-local-thredds-server">Publish to local THREDDS server</a></li>
+<li><a href="http://esgf.github.io/esg-publisher/usage.html#publish-to-index-node">Publish to the index node</a></li>
+<li><a href="https://github.com/ESGF/esg-publisher/blob/master/notebooks/cmip6-publishing.ipynb">How to</a></li>
+</ol>
+<p>For users who have upgraded to version 5.x or plan to, installation, configuration and usage are covered here:</p>
+<ol>
+<li><a href="https://esg-publisher.readthedocs.io/en/latest/">Publishing using the v5.x version of esg-publisher / esgpublish</a></li>
+</ol>
+<h2 id="12-describe-datasets-issues-and-errata-using-the-errata-service">12. Describe datasets issues and errata using the errata service</h2>
+<p>This section describes how data providers can describe issues affecting datasets they have published to ESGF for CMIP6.</p>
+<ol>
+<li><a href="https://es-doc.github.io/esdoc-errata-client/login.html">Log in to the Errata Service</a></li>
+<li><a href="https://es-doc.github.io/esdoc-errata-client/create.html">Create an issue</a></li>
+<li><a href="https://es-doc.github.io/esdoc-errata-client/update.html">Update an issue</a></li>
+<li><a href="https://es-doc.github.io/esdoc-errata-client/close.html">Close an issue</a></li>
+<li><a href="https://es-doc.github.io/esdoc-errata-client/client.html">The errata client CLI</a></li>
+</ol>
+<h2 id="13-unpublish-data-before-new-version-is-ready">13. Unpublish data (before new version is ready)</h2>
+<p>This section describes the step you need to follow to withdraw a CMIP6 dataset from ESGF.</p>
+<ol>
+<li>(Mandatory) <a href="#12-describe-datasets-issues-and-errata-using-the-errata-service">Follow errata workflow</a></li>
+<li><a href="http://esgf.github.io/esg-publisher/usage.html#unpublication">Unpublish a dataset</a></li>
+<li><a href="https://github.com/ESGF/esg-publisher/blob/master/notebooks/data-retract.ipynb">How to</a></li>
+</ol>
+<h2 id="14-publishing-a-new-version-of-a-cmip6-dataset">14. Publishing a new version of a CMIP6 dataset</h2>
+<p>This section describes the step you need to take to publish a new version of a CMIP6 dataset on ESGF. Old version will still be accessible but the latest version will appear  first by default.</p>
+<ol>
+<li>(Mandatory) <a href="#12-describe-datasets-issues-and-errata-using-the-errata-service">Create an errata explaining the reason of this new version</a></li>
+<li><a href="http://esgf.github.io/esgf-prepare/drs.html#list-the-datasets-related-to-the-incoming-files">List the new dataset version related to corrected files</a></li>
+<li><a href="http://esgf.github.io/esgf-prepare/drs.html#run-the-drs-upgrade-from-the-latest-version">Upgrade your DRS tree from latest version</a></li>
+<li><a href="http://esgf.github.io/esgf-prepare/mapfiles.html">Generate new mapfiles</a></li>
+<li><a href="#10-preparing-directory-structure-and-files-organization-to-fulfill-cmip6">Follow publication workflow a usual</a></li>
+</ol>
+<h6 id="document-version-29-january-2020">Document version: 29 January 2020</h6>
 
 
 
@@ -406,7 +888,8 @@
 
 
 
-
+  
+  
 
 
 
@@ -466,14 +949,14 @@
             <a
               href="../guidance_for_modellers/"
               class="md-footer__link md-footer__link--next"
-              aria-label="Next: Guidance for modellers"
+              aria-label="Next: CMIP7 Participation Guidance for Modelers"
             >
               <div class="md-footer__title">
                 <span class="md-footer__direction">
                   Next
                 </span>
                 <div class="md-ellipsis">
-                  Guidance for modellers
+                  CMIP7 Participation Guidance for Modelers
                 </div>
               </div>
               <div class="md-footer__button md-icon">
