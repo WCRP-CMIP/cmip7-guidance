@@ -8,6 +8,7 @@ title: CMIP7 Participation Guidance for Modelers
 **This is a copy of the CMIP6 guidance pages and needs updating**
 
 Document overview:
+
 1. [Requirements and expectations](#1-requirements-and-expectations)
 1. [Experiment design](#2-experiment-design)
 1. [Forcing data sets](#3-forcing-data-sets)
