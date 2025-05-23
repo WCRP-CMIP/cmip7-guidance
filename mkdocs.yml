@@ -1,4 +1,4 @@
-site_name: MIP-CVs Documentation
+site_name: CMIP7 Guidance Documentation
 theme:
   name: material
   logo: assets/CMIP_Icon_CMYK_negative.svg
@@ -14,7 +14,7 @@ theme:
     #   scripts:
     #     - scripts/
 
-  copyright: CCBY04 2023+ Daniel Ellis for the CMIP-IPO
+  copyright: CCBY04 2025+ CMIP-IPO
   palette: 
     # Palette toggle for light mode
     - scheme: default
