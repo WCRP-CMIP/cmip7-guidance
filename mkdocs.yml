@@ -1,0 +1,42 @@
+site_name: MIP-CVs Documentation
+theme:
+  name: material
+  logo: assets/CMIP_Icon_CMYK_negative.svg
+  custom_dir: overrides
+  features:
+    - navigation.footer
+    - search.suggest
+    - header.autohide
+  plugins:
+    - search
+    - optimize
+    # - gen-files:
+    #   scripts:
+    #     - scripts/
+
+  copyright: CCBY04 2023+ Daniel Ellis for the CMIP-IPO
+  palette: 
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to light mode
+extra_css: 
+  - stylesheets/extra.css
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - attr_list
+  - md_in_html
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+extra_javascript:
+  - scripts/embed.js

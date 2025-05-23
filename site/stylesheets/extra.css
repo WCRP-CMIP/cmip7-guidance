@@ -1,0 +1,40 @@
+.md-footer {
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  color: #ff1744 !important;
+}
+.md-footer__link .md-footer__title{
+  margin:0;
+}
+.md-footer__inner{
+  margin:0;
+  bottom:-10px
+}
+
+.md-footer a {
+  -webkit-transform: scale(0.7111);
+  -moz-transform: scale(0.7111);
+  -ms-transform: scale(0.7111);
+  transform: scale(0.7111);
+  /* width:100vw */
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+}
+
+.md-header {
+  background-color: #f2b30d
+}
+
+.md-search__form {
+  height: 1.4rem;
+  border-radius: 10px;
+}
+
+body{
+  left:0;
+  top:0;
+  width:100vw;
+  position:absolute;
+}
