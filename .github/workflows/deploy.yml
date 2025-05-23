@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main  # Set the branch you want to trigger the workflow on
-
+  workflow-dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
