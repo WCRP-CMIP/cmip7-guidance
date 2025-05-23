@@ -1,7 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Akshar:wght@300..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
+
+/* https://coolors.co/88ccf1-c1dff0-3587a4-2d848a-2d898b */
 .md-footer {
   background-color: transparent;
   backdrop-filter: blur(10px);
-  color: #ff1744 !important;
+  color: #2d898b !important;
 }
 .md-footer__link .md-footer__title{
   margin:0;
@@ -24,7 +28,16 @@
 }
 
 .md-header {
-  background-color: #f2b30d
+  background-color: #3587a4
+}
+
+.md-header__title{
+  color: white !important;
+  font-family: "Akshar", sans-serif;
+}
+
+h1,h2,h3,h4,h5,h7,h7,h8,h9{
+  font-family: "Akshar", sans-serif;
 }
 
 .md-search__form {
@@ -37,4 +50,20 @@ body{
   top:0;
   width:100vw;
   position:absolute;
+}
+
+*{
+  font-family: "Plus Jakarta Sans", serif;
+}
+
+a{
+  color: #88ccf1;
+}
+
+/* Style for iframes */
+iframe {
+  border: none; /* Removes the border */
+  overflow: hidden; /* Hides scrollbars */
+  width: 100%; /* Optional: Set iframe width to fill its container */
+  height: 500px; /* Set a default height; adjust as needed */
 }
