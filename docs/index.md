@@ -9,7 +9,6 @@ title: CMIP7 Guidance and Documentation
 
     The contents of the pages are currently in development and will change. 
 
-The github source for these pages can be found [here](https://github.com/matthew-mizielinski/cmip7-guidance)
 
 ## Guidance documents
 ### CMIP7
