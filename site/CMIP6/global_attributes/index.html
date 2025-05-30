@@ -573,7 +573,7 @@
 <tr>
 <td style="text-align: center;">experiment_id</td>
 <td style="text-align: center;">root experiment identifier(part of DRS)</td>
-<td style="text-align: center;">“historical”, “abrupt4xCO2”(see <a href="#id.n7tsog12ccvr">Appendix 1</a> and <a href="https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_experiment_id.json">reference CV</a>)</td>
+<td style="text-align: center;">“historical”, “abrupt4xCO2”(see Appendix 1 and <a href="https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_experiment_id.json">reference CV</a>)</td>
 <td style="text-align: center;">experiment_id</td>
 <td style="text-align: center;">CV</td>
 <td style="text-align: center;">always</td>
@@ -690,11 +690,11 @@
 <tr>
 <td style="text-align: center;">nominal_resolution</td>
 <td style="text-align: center;">approximate horizontal resolution</td>
-<td style="text-align: center;">“50 km”, “100 km”, “250 km”,  “1x1 degree”.              (See <a href="#id.ibeh7ad2gpdi">Appendix 2</a>)</td>
+<td style="text-align: center;">“50 km”, “100 km”, “250 km”,  “1x1 degree”. (See Appendix 2)</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">CV</td>
 <td style="text-align: center;">always</td>
-<td style="text-align: center;">Added in CMIP6 to provide an indication of approximate output  grid resolution.  See <a href="#id.ibeh7ad2gpdi">Appendix 2</a>.  Used in faceted searches.</td>
+<td style="text-align: center;">Added in CMIP6 to provide an indication of approximate output  grid resolution.  See Appendix 2.  Used in faceted searches.</td>
 </tr>
 <tr>
 <td style="text-align: center;">parent_activity_id</td>
@@ -742,7 +742,7 @@
 <td style="text-align: center;">without this, a user would have to read the parent file to interpret branch_time_in_parent; the “calendar” modifier is required only if the calendars used by the parent and child differ. When no parent, omit or set to “no parent”.</td>
 </tr>
 <tr>
-<td style="text-align: center;">parent_variant_label(modified form)</td>
+<td style="text-align: center;">parent_variant_label (modified form)</td>
 <td style="text-align: center;">parent variant label</td>
 <td style="text-align: center;">“r1i1p1f1”, “r1i2p223f3”,                     “no parent”</td>
 <td style="text-align: center;">parent_experiment_ rip</td>
@@ -796,7 +796,7 @@
 <td style="text-align: center;">no change; CF-convention standard</td>
 </tr>
 <tr>
-<td style="text-align: center;">source(modified form)</td>
+<td style="text-align: center;">source (modified form)</td>
 <td style="text-align: center;">full model name/version </td>
 <td style="text-align: center;">see note 13 and <a href="https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_source_id.json">reference CV</a></td>
 <td style="text-align: center;">source  </td>
@@ -825,7 +825,7 @@
 <tr>
 <td style="text-align: center;">sub_experiment</td>
 <td style="text-align: center;">description of sub-experiment</td>
-<td style="text-align: center;">see <a href="#id.n7tsog12ccvr">Appendix 1</a> and <a href="https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_sub_experiment_id.json">reference CV</a></td>
+<td style="text-align: center;">see Appendix 1 and <a href="https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_sub_experiment_id.json">reference CV</a></td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">CV</td>
 <td style="text-align: center;">always</td>
@@ -1008,7 +1008,7 @@ grid_label = “gm” (global mean output is reported, so data are not gridded)
 <p>Output on the same grid but from different models will usually not be labeled with the same grid_label, since data providers independently assign the labels.</p>
 </li>
 <li>
-<p>A “nominal_resolution” attribute must be defined as specified in <a href="#id.ibeh7ad2gpdi">Appendix 2</a>, and a brief description of the grid should be recorded in the “grid” global attribute (see note 10).</p>
+<p>A “nominal_resolution” attribute must be defined as specified in Appendix 2, and a brief description of the grid should be recorded in the “grid” global attribute (see note 10).</p>
 </li>
 <li>
 <p>For zonal mean output, a “z” should be appended to the grid label that would apply before performing the zonal mean (e.g., "gnz", "grz", "gr2z").  The "gnz" label would likely only be appropriate when zonally-averaging data on a native cartesian latxlon grid.</p>
@@ -1158,7 +1158,7 @@ RAD
 <p>product         (CMIP5: "product") set to “model-output” in CMIP6</p>
 </li>
 <li>
-<p>nominal_resolution see <a href="https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_nominal_resolution.json">CMIP6_nominal_resolution.json </a>and <a href="#id.ibeh7ad2gpdi">Appendix 2</a></p>
+<p>nominal_resolution see <a href="https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_nominal_resolution.json">CMIP6_nominal_resolution.json </a> and Appendix 2</p>
 </li>
 <li>
 <p>source_type* see <a href="https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_source_type.json">CMIP6_source_type.json</a></p>
@@ -1956,7 +1956,7 @@ else nominal_resolution = “10000 km”
 <p>Added specific details on defining the time labels that appear in file names, which required addition of a new table and required Table 2 to be renumbered Table 3.</p>
 </li>
 <li>
-<p>Adjusted (by less than 3%) the values used to determine nominal resolution in <a href="#id.ibeh7ad2gpdi">Appendix 2,</a> so that models with latxlon resolution of 0.25, 0.5, 2.5 and 5.0 are now classified with nominal resolution of “25 km”, “50 km”, “250 km” and “500” km, respectively (instead of 50, 100, 500, and 1000 km). </p>
+<p>Adjusted (by less than 3%) the values used to determine nominal resolution in Appendix 2, so that models with latxlon resolution of 0.25, 0.5, 2.5 and 5.0 are now classified with nominal resolution of “25 km”, “50 km”, “250 km” and “500” km, respectively (instead of 50, 100, 500, and 1000 km). </p>
 </li>
 </ul>
 <p>6.2.3 (4 April 2017):</p>
