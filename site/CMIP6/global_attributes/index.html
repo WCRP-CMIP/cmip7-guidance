@@ -1,0 +1,2543 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+        <link rel="next" href="../guidance_for_esgf/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>CMIP6 Global Attributes - CMIP7 Guidance and Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cmip6-global-attributes-drs-filenames-directory-structure-and-cvs" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="CMIP7 Guidance and Documentation" class="md-header__button md-logo" aria-label="CMIP7 Guidance and Documentation" data-md-component="logo">
+      
+  <img src="../../assets/CMIP_Icon_CMYK_negative.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CMIP7 Guidance and Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              CMIP6 Global Attributes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="CMIP7 Guidance and Documentation" class="md-nav__button md-logo" aria-label="CMIP7 Guidance and Documentation" data-md-component="logo">
+      
+  <img src="../../assets/CMIP_Icon_CMYK_negative.svg" alt="logo">
+
+    </a>
+    CMIP7 Guidance and Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CMIP7 Documentation Wiki
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    CMIP6
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            CMIP6
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    CMIP6 Global Attributes
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    CMIP6 Global Attributes
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Executive Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-reference-syntax-drs-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Reference Syntax (DRS) components
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-name-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      File name template
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#directory-structure-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      Directory structure template
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-1-global-attributes-for-labeling-experiments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Appendix 1: Global Attributes for Labeling Experiments
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-2-algorithms-for-defining-the-nominal_resolution-attribute" class="md-nav__link">
+    <span class="md-ellipsis">
+      Appendix 2: Algorithms for Defining the “nominal_resolution” Attribute
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Appendix 2: Algorithms for Defining the “nominal_resolution” Attribute">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#algorithm-for-defining-the-nominal_resolution-global-attribute" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algorithm for defining the nominal_resolution global attribute:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-3-document-version-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Appendix 3: Document version information
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guidance_for_esgf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CMIP7 Participation Guidance for Data Managers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guidance_for_modellers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CMIP6 Participation Guidance for Modelers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guidance_for_users/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CMIP6 Guidance for Data Users
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terms_of_use/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CMIP6 Terms of Use
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    CMIP7
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            CMIP7
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CMIP7/global_attributes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CMIP7 Global Attributes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CMIP7/guidance_for_esgf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CMIP7 Participation Guidance for Data Managers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CMIP7/guidance_for_modellers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CMIP7 Participation Guidance for Modellers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CMIP7/guidance_for_users/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Guidance for users
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CMIP7/terms_of_use/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CMIP7 Terms of Use
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Executive Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-reference-syntax-drs-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Reference Syntax (DRS) components
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-name-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      File name template
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#directory-structure-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      Directory structure template
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-1-global-attributes-for-labeling-experiments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Appendix 1: Global Attributes for Labeling Experiments
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-2-algorithms-for-defining-the-nominal_resolution-attribute" class="md-nav__link">
+    <span class="md-ellipsis">
+      Appendix 2: Algorithms for Defining the “nominal_resolution” Attribute
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Appendix 2: Algorithms for Defining the “nominal_resolution” Attribute">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#algorithm-for-defining-the-nominal_resolution-global-attribute" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algorithm for defining the nominal_resolution global attribute:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-3-document-version-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Appendix 3: Document version information
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<style>
+  .md-grid {
+    min-width: 1800px; // Not sure how best to handle this
+  }
+</style>
+
+<h1 id="cmip6-global-attributes-drs-filenames-directory-structure-and-cvs">CMIP6 Global Attributes, DRS, Filenames, Directory Structure, and CV’s</h1>
+<p>10 September 2018 (v6.2.7) ported to mkdocs 30th May 2025</p>
+<p>Google doc Document short URL: <a href="http://goo.gl/v1drZl">https://goo.gl/v1drZl</a> </p>
+<p>Karl E. Taylor, Martin Juckes, V. Balaji, Luca Cinquini, Sébastien Denvil, Paul J. Durack, Mark Elkington, Eric Guilyardi, Slava Kharin, Michael Lautenschlager, Bryan Lawrence, Denis Nadeau, and Martina Stockhause</p>
+<h2 id="executive-summary">Executive Summary</h2>
+<p>In files containing CMIP model-simulation output, global attributes are used to describe the source of the data, the imposed experiment conditions, the contents of the file, licensing restrictions, and other information useful to those analyzing the data.  Here we define the global attributes that should appear in CMIP6 files (some are required, others optional), along with the so-called CMIP6 “data reference syntax” (DRS).   The subset of global attributes that defines the DRS is used in constructing the directory structure and file names found in the CMIP6 archive, and also to construct URL’s leading to further information about the simulations and in populating search facets.</p>
+<h2 id="introduction">Introduction</h2>
+<p>As in earlier phases of CMIP, a well-defined set of global attributes will be recorded in each CMIP6 model output file, providing information necessary for interpreting the data.  Table 1 contains the list of CMIP6 global attributes and indicates which ones are required and which are optional.  The values for many of the global attributes must be drawn from special CMIP6 “controlled vocabularies” (CVs).  A CV, in simplest form, is a list of the permitted values that can be assigned to a given global attribute.  Some of these lists of permitted values appear in this document, but they should not be relied on to be 100% correct.  Rather, consult the reference CVs for CMIP6, which are available at <a href="https://github.com/WCRP-CMIP/CMIP6_CVs/">https://github.com/WCRP-CMIP/CMIP6_CVs/</a> </p>
+<p>A subset of the global attributes, which comprise the data reference syntax (DRS) for CMIP6, are described following the Table 1 notes, and templates for the CMIP6 filenames and directory structures are also defined.  Table 3 provides a summary of the quality assurance checks that should be performed on CMIP6 files.</p>
+<p>Appendix 1 describes the rationale underlying the global attributes used to label CMIP6 experiments, and provides additional details.  Appendix 2 defines the algorithm used to define the “nominal_resolution” attribute.  Appendix 3 contains a revision history of this document.</p>
+<p>Documents of related interest may be found at: <a href="https://www.earthsystemcog.org/projects/wip/">https://www.earthsystemcog.org/projects/wip/</a></p>
+<p><strong>Table 1:</strong> CMIP6 global attribute description and comparison with CMIP5 (see <a href="http://cmip-pcmdi.llnl.gov/cmip5/docs/CMIP5_output_metadata_requirements.pdf">CMIP5_output_metadata_requirements.pdf</a> and <a href="http://cmip-pcmdi.llnl.gov/cmip5/docs/cmip5_data_reference_syntax.pdf">cmip5_data_reference_syntax.pdf</a>).</p>
+<!-- Table key:  name or form has been changed (relative to CMIP5)  new attribute for CMIP6 -->
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>CMIP6 global attribute</strong> see note 1</td>
+<td style="text-align: center;"><strong>description</strong></td>
+<td style="text-align: center;"><strong>examples</strong></td>
+<td style="text-align: center;"><strong>corresponding attribute in CMIP5</strong></td>
+<td style="text-align: center;"><strong>form</strong> see note 2</td>
+<td style="text-align: center;"><strong>when required?</strong></td>
+<td style="text-align: center;"><strong>further information and rationale</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">activity_id</td>
+<td style="text-align: center;">activity  identifier(s)(part of DRS)</td>
+<td style="text-align: center;">“CMIP”, “PMIP”, “LS3MIP LUMIP” (see note 3 and <a href="https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_activity_id.json">reference CV</a>)</td>
+<td style="text-align: center;">project_id</td>
+<td style="text-align: center;">CV</td>
+<td style="text-align: center;">always</td>
+<td style="text-align: center;">renamed more generically, since not all activities are projects; also multiple activities may now be listed separated by single spaces. Used in faceted searches.</td>
+</tr>
+<tr>
+<td style="text-align: center;">branch_method</td>
+<td style="text-align: center;">branching procedure</td>
+<td style="text-align: center;">“standard”, “no parent” (see note 4)</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">free form</td>
+<td style="text-align: center;">whenever parent exists</td>
+<td style="text-align: center;">in CMIP6 some branching methods will involve short spin-up periods or other non-standard procedures which need to be described.  See note 4.  If no parent, omit or set to “no parent”</td>
+</tr>
+<tr>
+<td style="text-align: center;">branch_time_in_child</td>
+<td style="text-align: center;">branch time with respect to child’s time axis</td>
+<td style="text-align: center;">365.0D0, 0.0D0 (see note 5)</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">double precision float</td>
+<td style="text-align: center;">whenever parent exists</td>
+<td style="text-align: center;">aids in interpreting branch times; units are the same as the units used for the child’s time axis.  If no parent, omit (preferred) or set to start time of the run.  </td>
+</tr>
+<tr>
+<td style="text-align: center;">branch_time_in_ parent</td>
+<td style="text-align: center;">branch time with respect to parent time axis</td>
+<td style="text-align: center;">3650.0D0 (see note 5)</td>
+<td style="text-align: center;">branch_time</td>
+<td style="text-align: center;">double precision float</td>
+<td style="text-align: center;">whenever parent exists</td>
+<td style="text-align: center;">changed name to explicitly distinguish it from branch_time_in_child; units are specified in the attribute: parent_time_units.  If no parent, omit (preferred) or set to 0.0D0.</td>
+</tr>
+<tr>
+<td style="text-align: center;">comment</td>
+<td style="text-align: center;">see note 6</td>
+<td style="text-align: center;">see note 6</td>
+<td style="text-align: center;">comment</td>
+<td style="text-align: center;">free form</td>
+<td style="text-align: center;">never</td>
+<td style="text-align: center;">no change from CMIP5; CF-convention standard</td>
+</tr>
+<tr>
+<td style="text-align: center;">contact</td>
+<td style="text-align: center;">see note 6</td>
+<td style="text-align: center;">see note 6</td>
+<td style="text-align: center;">contact</td>
+<td style="text-align: center;">free form</td>
+<td style="text-align: center;">never</td>
+<td style="text-align: center;">required in CMIP5, but not now because information should be available via further_info_url </td>
+</tr>
+<tr>
+<td style="text-align: center;">Conventions</td>
+<td style="text-align: center;">convention version</td>
+<td style="text-align: center;">"CF-1.7 CMIP-6.2” or “CF-1.7 CMIP-6.2 UGRID-1.0”</td>
+<td style="text-align: center;">Conventions</td>
+<td style="text-align: center;">CV</td>
+<td style="text-align: center;">always</td>
+<td style="text-align: center;">updated version from CMIP5 with a list of conventions separated by single spaces now allowed.   The “examples” show the only options.  Note that CMIP-6.2 reflects the version of the present document (without indicating the minor changes), and would have to be updated if the present document were incremented from 6.2.x to 6.3.0. </td>
+</tr>
+<tr>
+<td style="text-align: center;">creation_date</td>
+<td style="text-align: center;">date file was created</td>
+<td style="text-align: center;">see note 7</td>
+<td style="text-align: center;">creation_date</td>
+<td style="text-align: center;">structured form</td>
+<td style="text-align: center;">always</td>
+<td style="text-align: center;">no change from CMIP5</td>
+</tr>
+<tr>
+<td style="text-align: center;">data_specs_version</td>
+<td style="text-align: center;">version  identifier</td>
+<td style="text-align: center;">01.00.00, 01.00.01, … 01.00.xx (see <a href="https://www.earthsystemcog.org/projects/wip/CMIP6DataRequest">data request</a> for latest release)</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">CV</td>
+<td style="text-align: center;">always</td>
+<td style="text-align: center;">records the version (or “release”) number of the <a href="https://www.earthsystemcog.org/projects/wip/CMIP6DataRequest">data request</a>, which is relied on for certain global and variable attributes.   </td>
+</tr>
+<tr>
+<td style="text-align: center;">experiment</td>
+<td style="text-align: center;">short experiment description</td>
+<td style="text-align: center;">“pre-industrial control”,  “abrupt quadrupling of CO2” (see <a href="https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_experiment_id.json">reference CV</a>)</td>
+<td style="text-align: center;">experiment</td>
+<td style="text-align: center;">CV</td>
+<td style="text-align: center;">always</td>
+<td style="text-align: center;">no change from CMIP5</td>
+</tr>
+<tr>
+<td style="text-align: center;">experiment_id</td>
+<td style="text-align: center;">root experiment identifier(part of DRS)</td>
+<td style="text-align: center;">“historical”, “abrupt4xCO2”(see <a href="#id.n7tsog12ccvr">Appendix 1</a> and <a href="https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_experiment_id.json">reference CV</a>)</td>
+<td style="text-align: center;">experiment_id</td>
+<td style="text-align: center;">CV</td>
+<td style="text-align: center;">always</td>
+<td style="text-align: center;">similar to CMIP5. Used in faceted searches.</td>
+</tr>
+<tr>
+<td style="text-align: center;">external_variables</td>
+<td style="text-align: center;">external cell measures</td>
+<td style="text-align: center;">“areacella”, “areacello”</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">CV</td>
+<td style="text-align: center;">whenever appropriate</td>
+<td style="text-align: center;">list of cell measure variables (separated by single spaces)  that are referenced but not included in the file.  These variables will be stored independently in the CMIP data archive.</td>
+</tr>
+<tr>
+<td style="text-align: center;">forcing_index</td>
+<td style="text-align: center;">index for variant of forcing</td>
+<td style="text-align: center;">1, 2, 82, 323</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">integer &gt;0(see note 8)</td>
+<td style="text-align: center;">always</td>
+<td style="text-align: center;">distinguishes variants that differ in forcing  </td>
+</tr>
+<tr>
+<td style="text-align: center;">frequency</td>
+<td style="text-align: center;">sampling frequency(part of DRS)</td>
+<td style="text-align: center;">“mon”, “day”, “6hr” (see <a href="https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_frequency.json">reference CV</a>)</td>
+<td style="text-align: center;">frequency</td>
+<td style="text-align: center;">CV</td>
+<td style="text-align: center;">always</td>
+<td style="text-align: center;">no change from CMIP5; value must be consistent with the data request.  Used in faceted searches.</td>
+</tr>
+<tr>
+<td style="text-align: center;">further_info_url</td>
+<td style="text-align: center;">location of documentation</td>
+<td style="text-align: center;">see note 9</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">CV</td>
+<td style="text-align: center;">always</td>
+<td style="text-align: center;">points to definitive documentation that can be updated (even after data files have been written)</td>
+</tr>
+<tr>
+<td style="text-align: center;">grid</td>
+<td style="text-align: center;">grid</td>
+<td style="text-align: center;">see note 10</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">free form</td>
+<td style="text-align: center;">always</td>
+<td style="text-align: center;">briefly describes output grid characteristics</td>
+</tr>
+<tr>
+<td style="text-align: center;">grid_label</td>
+<td style="text-align: center;">grid identifier(part of DRS)</td>
+<td style="text-align: center;">“gn”, “gr”, “gr1”, “gr2”, “grz”, “gm” (see <a href="https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_grid_label.json">reference CV</a>)</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">CV (see note 11)</td>
+<td style="text-align: center;">always</td>
+<td style="text-align: center;">used in file name to distinguish among files when the variable is reported on more than one grid.  Used in faceted searches.</td>
+</tr>
+<tr>
+<td style="text-align: center;">history</td>
+<td style="text-align: center;">see note 6</td>
+<td style="text-align: center;">see note 6</td>
+<td style="text-align: center;">history</td>
+<td style="text-align: center;">free form</td>
+<td style="text-align: center;">never</td>
+<td style="text-align: center;">no change; CF-convention standard</td>
+</tr>
+<tr>
+<td style="text-align: center;">initialization_index</td>
+<td style="text-align: center;">Index for variant of initialization method </td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">initialization_ method</td>
+<td style="text-align: center;">integer &gt;0(see note 8)</td>
+<td style="text-align: center;">always</td>
+<td style="text-align: center;">name changed to increase consistency; 0 is forbidden in CMIP6 </td>
+</tr>
+<tr>
+<td style="text-align: center;">institution</td>
+<td style="text-align: center;">institution name</td>
+<td style="text-align: center;">“Meteorological Research Institute” (see <a href="https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_institution_id.json">reference CV</a>)</td>
+<td style="text-align: center;">institution</td>
+<td style="text-align: center;">registered content</td>
+<td style="text-align: center;">always</td>
+<td style="text-align: center;">no change from CMIP5</td>
+</tr>
+<tr>
+<td style="text-align: center;">institution_id</td>
+<td style="text-align: center;">institution identifier(part of DRS)</td>
+<td style="text-align: center;">“IPSL” (see <a href="https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_institution_id.json">reference CV</a>)</td>
+<td style="text-align: center;">institute_id</td>
+<td style="text-align: center;">registered content</td>
+<td style="text-align: center;">always</td>
+<td style="text-align: center;">Was “institute_id”; name changed to parallel other global attributes; this string is constructed only using the character set: a-z, A-Z, 0-9, and ‘-’ (i.e., hyphen).  Used in faceted searches.</td>
+</tr>
+<tr>
+<td style="text-align: center;">license</td>
+<td style="text-align: center;">license restrictions</td>
+<td style="text-align: center;">see note 12</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">some required text</td>
+<td style="text-align: center;">always</td>
+<td style="text-align: center;">ensures that anyone using the files has access to the terms of use</td>
+</tr>
+<tr>
+<td style="text-align: center;">mip_era</td>
+<td style="text-align: center;">activity’s associated CMIP cycle(part of DRS)</td>
+<td style="text-align: center;">“CMIP5”, “CMIP6”(see note 3 and <a href="https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/mip_era.json">reference CV</a>)</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">CV</td>
+<td style="text-align: center;">always</td>
+<td style="text-align: center;">added to fully define activity and to enable one to determine what cycle of CMIP dictates experiment and data specifications.  This means that mip_era = “CMIP6” for all CMIP6 output no matter how old the model is that produced it.  Used in faceted searches.</td>
+</tr>
+<tr>
+<td style="text-align: center;">nominal_resolution</td>
+<td style="text-align: center;">approximate horizontal resolution</td>
+<td style="text-align: center;">“50 km”, “100 km”, “250 km”,  “1x1 degree”.              (See <a href="#id.ibeh7ad2gpdi">Appendix 2</a>)</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">CV</td>
+<td style="text-align: center;">always</td>
+<td style="text-align: center;">Added in CMIP6 to provide an indication of approximate output  grid resolution.  See <a href="#id.ibeh7ad2gpdi">Appendix 2</a>.  Used in faceted searches.</td>
+</tr>
+<tr>
+<td style="text-align: center;">parent_activity_id</td>
+<td style="text-align: center;">parent activity identifier</td>
+<td style="text-align: center;">“CMIP”, ScenarioMIP (see <a href="https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_activity_id.json">reference CV</a>) </td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">CV</td>
+<td style="text-align: center;">whenever parent exists</td>
+<td style="text-align: center;">to help identify parent run (when parent comes from a different MIP); when no parent, omit or set to “no parent”</td>
+</tr>
+<tr>
+<td style="text-align: center;">parent_experiment_id</td>
+<td style="text-align: center;">parent experiment identifier</td>
+<td style="text-align: center;">“piControl” (see <a href="https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_experiment_id.json">reference CV</a>)</td>
+<td style="text-align: center;">parent_experiment_id</td>
+<td style="text-align: center;">CV</td>
+<td style="text-align: center;">whenever parent exists</td>
+<td style="text-align: center;">If the parent run is immaterial or if an experiment is initialized in some other way (e.g., from observations), then omit or set to “no parent” </td>
+</tr>
+<tr>
+<td style="text-align: center;">parent_mip_era</td>
+<td style="text-align: center;">parent’s associated MIP cycle</td>
+<td style="text-align: center;">“CMIP5”, “CMIP6” (see <a href="https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/mip_era.json">reference CV</a>)</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">CV</td>
+<td style="text-align: center;">whenever parent exists</td>
+<td style="text-align: center;">with parent_activity_id, this fully defines parent activity; when no parent, omit or set to “no parent”</td>
+</tr>
+<tr>
+<td style="text-align: center;">parent_source_id</td>
+<td style="text-align: center;">parent  model identifier</td>
+<td style="text-align: center;">“CanCM4” (see <a href="https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_source_id.json">reference CV</a>)</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">registered content</td>
+<td style="text-align: center;">whenever parent exists</td>
+<td style="text-align: center;">helps identify parent run; when no parent, omit or set to “no parent”; usually will be the same as source_id</td>
+</tr>
+<tr>
+<td style="text-align: center;">parent_time_units</td>
+<td style="text-align: center;">time units used in parent</td>
+<td style="text-align: center;">“days since 1850-1-1”, “days since 1000-1-1 (noleap)”(see note 5)</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">structured form</td>
+<td style="text-align: center;">whenever parent exists</td>
+<td style="text-align: center;">without this, a user would have to read the parent file to interpret branch_time_in_parent; the “calendar” modifier is required only if the calendars used by the parent and child differ. When no parent, omit or set to “no parent”.</td>
+</tr>
+<tr>
+<td style="text-align: center;">parent_variant_label(modified form)</td>
+<td style="text-align: center;">parent variant label</td>
+<td style="text-align: center;">“r1i1p1f1”, “r1i2p223f3”,                     “no parent”</td>
+<td style="text-align: center;">parent_experiment_ rip</td>
+<td style="text-align: center;">see Appendix 1</td>
+<td style="text-align: center;">whenever parent exists</td>
+<td style="text-align: center;">used to distinguish among variants of the parent; when no parent, omit or set to “no parent”</td>
+</tr>
+<tr>
+<td style="text-align: center;">physics_index</td>
+<td style="text-align: center;">index for model physics variant </td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">physics_version</td>
+<td style="text-align: center;">integer &gt;0(see note 8)</td>
+<td style="text-align: center;">always</td>
+<td style="text-align: center;">name changed to increase consistency; 0 is forbidden</td>
+</tr>
+<tr>
+<td style="text-align: center;">product</td>
+<td style="text-align: center;">product type (part of DRS)</td>
+<td style="text-align: center;">“model-output”</td>
+<td style="text-align: center;">product</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">always</td>
+<td style="text-align: center;">As in CMIP5, but “model-output” is now the only option.  Used in faceted searches.</td>
+</tr>
+<tr>
+<td style="text-align: center;">realization_index</td>
+<td style="text-align: center;">realization number</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">realization</td>
+<td style="text-align: center;">integer &gt;0(see note 8)</td>
+<td style="text-align: center;">always</td>
+<td style="text-align: center;">name changed to increase consistency; 0 is forbidden</td>
+</tr>
+<tr>
+<td style="text-align: center;">realm </td>
+<td style="text-align: center;">realm(s) where variable is defined (part of DRS)</td>
+<td style="text-align: center;">“atmos”, “ocean”, “atmosChem atmos” (see <a href="https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_realm.json">reference CV</a>)</td>
+<td style="text-align: center;">modeling_realm</td>
+<td style="text-align: center;">CV</td>
+<td style="text-align: center;">always</td>
+<td style="text-align: center;">name changed to make appropriate for observational data; multiple realms may be listed (separated by single spaces) when appropriate.  Value(s) must be consistent with the data request.  Used in faceted searches.</td>
+</tr>
+<tr>
+<td style="text-align: center;">references</td>
+<td style="text-align: center;">see note 6</td>
+<td style="text-align: center;">see note 6</td>
+<td style="text-align: center;">references</td>
+<td style="text-align: center;">free form</td>
+<td style="text-align: center;">never</td>
+<td style="text-align: center;">no change; CF-convention standard</td>
+</tr>
+<tr>
+<td style="text-align: center;">source(modified form)</td>
+<td style="text-align: center;">full model name/version </td>
+<td style="text-align: center;">see note 13 and <a href="https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_source_id.json">reference CV</a></td>
+<td style="text-align: center;">source  </td>
+<td style="text-align: center;">registered content</td>
+<td style="text-align: center;">always</td>
+<td style="text-align: center;">somewhat different form from CMIP5.  The first part (before the colon) should be an abbreviated identifier that is the basis of source_id</td>
+</tr>
+<tr>
+<td style="text-align: center;">source_id (modified form)</td>
+<td style="text-align: center;">model identifier(part of DRS)</td>
+<td style="text-align: center;">“GFDL-CM2-1”       (see note 13 and <a href="https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_source_id.json">reference CV</a>)</td>
+<td style="text-align: center;">model_id</td>
+<td style="text-align: center;">registered content (limited in length to no more than 16 characters)</td>
+<td style="text-align: center;">always</td>
+<td style="text-align: center;">edited version of the first part of “source” (with forbidden characters like spaces and periods replaced with hyphens); used in constructing the file name.  Used in faceted searches. </td>
+</tr>
+<tr>
+<td style="text-align: center;">source_type</td>
+<td style="text-align: center;">model configuration</td>
+<td style="text-align: center;">“AGCM”, “OGCM”,  “AOGCM”, “ISM”, “AOGCM ISM” (see <a href="https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_source_type.json">reference CV</a>)</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">CV see note 14 </td>
+<td style="text-align: center;">always</td>
+<td style="text-align: center;">added partly because obs4MIPs defines this (e.g., “in-situ”); This should describe the model most directly responsible for the output (e.g., for dynamical downscaling output, it would describe the regional model, not the global model responsible for driving the regional model).  Sometimes it is appropriate to list two (or more) model types here.  Used in faceted searches.</td>
+</tr>
+<tr>
+<td style="text-align: center;">sub_experiment</td>
+<td style="text-align: center;">description of sub-experiment</td>
+<td style="text-align: center;">see <a href="#id.n7tsog12ccvr">Appendix 1</a> and <a href="https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_sub_experiment_id.json">reference CV</a></td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">CV</td>
+<td style="text-align: center;">always</td>
+<td style="text-align: center;">needed for CMIP6 hindcast and forecast experiments.  For other experiments, this should be set to “none”.</td>
+</tr>
+<tr>
+<td style="text-align: center;">sub_experiment_id</td>
+<td style="text-align: center;">sub-experiment identifier(part of DRS “member_id”)</td>
+<td style="text-align: center;">“s1960”, “s1965”,  “none” (see <a href="https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_sub_experiment_id.json">reference CV</a>)</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">CV</td>
+<td style="text-align: center;">always</td>
+<td style="text-align: center;">needed for CMIP6 hindcast and forecast experiments to indicate “start year”.  For other experiments, this should be set to “none”.  Used in faceted searches.</td>
+</tr>
+<tr>
+<td style="text-align: center;">table_id</td>
+<td style="text-align: center;">table identifier(part of DRS)</td>
+<td style="text-align: center;">“Amon”, “Oday” (see <a href="https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_table_id.json">reference CV</a>)</td>
+<td style="text-align: center;">table_id</td>
+<td style="text-align: center;">CV</td>
+<td style="text-align: center;">always</td>
+<td style="text-align: center;">the word “Table” is no longer included in this attribute (e.g., “Amon”, not “Table Amon”) and there should be no additional information (such as table date and check sum) included.  Used in faceted searches.</td>
+</tr>
+<tr>
+<td style="text-align: center;">title</td>
+<td style="text-align: center;">see note 6</td>
+<td style="text-align: center;">see note 6</td>
+<td style="text-align: center;">title</td>
+<td style="text-align: center;">free form</td>
+<td style="text-align: center;">never</td>
+<td style="text-align: center;">no change; CF-convention standard</td>
+</tr>
+<tr>
+<td style="text-align: center;">tracking_id          (modified form)</td>
+<td style="text-align: center;">unique file identifier</td>
+<td style="text-align: center;">see note 15</td>
+<td style="text-align: center;">tracking_id</td>
+<td style="text-align: center;">structured form with some CV</td>
+<td style="text-align: center;">always</td>
+<td style="text-align: center;">form modified to facilitate its use by ESGF.</td>
+</tr>
+<tr>
+<td style="text-align: center;">variable_id</td>
+<td style="text-align: center;">variable identifier(part of DRS)</td>
+<td style="text-align: center;">“tas”, “pr”, “ua” (see <a href="https://www.earthsystemcog.org/projects/wip/CMIP6DataRequest">data request</a>)</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">CV</td>
+<td style="text-align: center;">always</td>
+<td style="text-align: center;">added to direct users and software to the primary variable of interest in the file.  Used in faceted searches.</td>
+</tr>
+<tr>
+<td style="text-align: center;">variant_info </td>
+<td style="text-align: center;">description of run variant</td>
+<td style="text-align: center;">“forcing: black carbon aerosol only”</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">free form</td>
+<td style="text-align: center;">never, but recom- mendedsee note 16</td>
+<td style="text-align: center;">provides brief descriptions of variant differences</td>
+</tr>
+<tr>
+<td style="text-align: center;">variant_label</td>
+<td style="text-align: center;">“variant” label(part of DRS “member_id”)</td>
+<td style="text-align: center;">“r1i1p1f1”, “f1i2p223f3”</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">see Appendix 1</td>
+<td style="text-align: center;">always</td>
+<td style="text-align: center;">used in faceted searches</td>
+</tr>
+<tr>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">see note 17</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">forcing</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">not used in CMIP6</td>
+<td style="text-align: center;">no longer needed because this information is now recorded in variant_info</td>
+</tr>
+</tbody>
+</table>
+<p>Table Notes:</p>
+<ol>
+<li>
+<p>If CMOR is used to write output files, an additional global attribute will be included: cmor_version.</p>
+</li>
+<li>
+<p>“CV” means content must be taken from a “controlled vocabulary” defined by the WIP.  “registered content” is a special controlled vocabulary defined by each modeling group and approved by the WIP.  The reference CV’s are hosted <a href="https://github.com/WCRP-CMIP/CMIP6_CVs">here</a>.</p>
+</li>
+<li>
+<p>The project_id used in CMIP5 is being replaced in CMIP6 with two global attributes: 1) a <a href="https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/mip_era.json">mip_era</a> (a label indicating the CMIP cycle responsible for the experiment and data request), which for CMIP6 must invariably be set to “CMIP6”, and 2) an <a href="https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_activity_id.json">activity_id</a> identifying the responsible “MIP”.  In a few cases multiple activities in the activity_id must be included (separated by single spaces).  An example of this is “LUMIP AerChemMIP” for one of the CMIP6 land-use change experiments.  For a given experiment, the activity_id must include all the associated activities in the order they are listed in the <a href="https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_experiment_id.json">experiment_id CV.</a></p>
+</li>
+<li>
+<p>branch_method examples: “perturbations to atmospheric fields were applied at the branch time, followed by a 50 year spin-up period under control conditions”; “fixed historical forcing from year 1850 was applied for a 20 year spin-up period, after which the historically-evolving forcing was imposed.”  For a run that had not been spawned from a parent, this attribute should be omitted or set to “no parent”.    If external documentation describing the branch method can be retrieved using the url recorded in the further_info_url global attribute, then branch_method may be set to “see further_info_url”, but it is better to provide a brief description as in the examples above.  For runs simply restarted from some point in the parent (without special procedures applied), branch_method should be set to “standard”. </p>
+</li>
+<li>
+<p>The three attributes related to branching time (branch_time_in_child, branch_time_in_parent, parent_time_units) must be included if branch time is needed  to correctly interpret the data (e.g., in simulations spawned from a pre-industrial control run that has not reached equilibrium).  Suppose a model with a “noleap” calendar carries out a control run with the time coordinate reported in units of “days since 1000-1-1”.  Now suppose a historical simulation branches from that control run at day 3650 (i.e., on the date: 1010-1-1), and suppose the units of the time coordinate for the historical run are “days since 1850-01-01”.  Then in the historical run, the following global attributes should appear:</p>
+<pre><code>branch\_time\_in\_child = 0.0D0; # double precision float
+
+branch\_time\_in\_parent = 3650.0D0; # double precision float
+
+parent\_time\_units = “days since 1000-1-1”; # character string
+</code></pre>
+<p>If the calendar used in the parent is different from the child, then the parent’s calendar should be recorded in “parent_time_units”.  The CV for the calendar is the same as that for the CF calendar attribute. For example in the above case, if the child’s calendar is “gregorian”, but the parent’s is “noleap”, then parent_time_units=”days since 1000-1-1 (noleap)”. </p>
+<p>As another example, suppose a ScenarioMIP simulation “branches” from a historical run at the date 2015-1-1.  Suppose a noleap calendar is used in each and both have units of “days since 1850-1-1”.  (Note that ScenarioMIP simulations should always adopt the same units as the historical parent.)  In this case the following global attributes should appear in the ScenarioMIP output file:</p>
+<pre><code>branch\_time\_in\_child = 60225.0D0
+
+branch\_time\_in\_parent = 60225.0D0
+
+parent\_time\_units = “days since 1850-1-1”.
+</code></pre>
+<p>As a third example, consider a decadal prediction experiment initialized from observations (e.g., from an “analysis”).  In this case there is no parent so none of these attributes should be included.  (Note that the initialization time of the decadal prediction experiments will be recorded as a scalar coordinate dimension, pointed to by the “coordinates” attribute, which is attached to each variable.)</p>
+</li>
+<li>
+<p>A description and examples of this global attribute may be found in the document: CMIP5_output_metadata_requirements (<a href="http://cmip-pcmdi.llnl.gov/cmip5/docs/CMIP5_output_metadata_requirements.pdf">http://cmip-pcmdi.llnl.gov/cmip5/docs/CMIP5_output_metadata_requirements.pdf</a>).   </p>
+</li>
+<li>
+<p>creation_date form: <em>YYYY-MM-DD_T_HH</em>:<em>MM</em>:_SS_Z  (e.g., “2010-03-23T05:56:23Z”)</p>
+</li>
+<li>
+<p>For a given experiment, the realization_index, initialization_index, physics_index, and forcing_index are used to uniquely identify each simulation of an ensemble of runs contributed by a single model.  These indices are defined as follows:\
+    </p>
+<ul>
+<li>
+<p>realization_index = an integer (≥1) distinguishing among members of an ensemble of simulations that differ only in their initial conditions (e.g., initialized from different points in a control run).  Note that if two different simulations were started from the same initial conditions, the same realization number should be used for both simulations.  For example if a historical run with “natural forcing” only and another historical run that includes anthropogenic forcing were both spawned at the same point in a control run, both should be assigned the same realization.  Also, each so-called RCP (future scenario) simulation should normally be assigned the same realization integer as the historical run from which it was initiated.  This will allow users to easily splice together the appropriate historical and future runs. </p>
+</li>
+<li>
+<p>initialization_index = an integer (≥1), which should be assigned a value of 1 except to distinguish simulations performed under the same conditions but with different initialization <em>procedures</em>.  In CMIP6 this index should invariably be assigned the value “1” except for some hindcast and forecast experiments called for by the DCPP activity.  The initialization_index can be used either to distinguish between different algorithms used to impose initial conditions on a forecast or to distinguish between different observational datasets used to initialize a forecast.</p>
+</li>
+<li>
+<p>physics_index = an integer (≥1) identifying the physics version used by the model.  In the usual case of a single physics version of a model, this argument should normally be assigned the value 1, but it is essential that a consistent assignment of physics_index be used across all simulations performed by a particular model.  Use of  “physics_index” is reserved for closely-related model versions (e.g., as in a “perturbed physics” ensemble) or for the same model run with slightly different parameterizations (e.g., of cloud physics).  Model versions that are substantially different from one another should be given a different source_id” (rather than simply assigning a different value of the physics_index). </p>
+</li>
+<li>
+<p>forcing_index = an integer (≥1) used to distinguish runs conforming to the protocol of a single CMIP6 experiment, but with different variants of forcing applied.  One can, for example, distinguish between two historical simulations, one forced with the CMIP6-recommended forcing data sets and another forced by a different dataset, which might yield information about how forcing uncertainty affects the simulation.  </p>
+</li>
+</ul>
+<p>Each data provider can assign whatever positive integers they like  for the realization_index, intialization_index, physics_index, and forcing index.  For each source/experiment pair, however, consistency (in these indices) should be maintained across each parent/child pair whenever sensible (so that, for example, both the ScenarioMIP child and its “historical” parent simulation would be assigned the same set of index values for realization, initialization, and physics); the integer 1 should normally be chosen for each of these in the case of a single variant or for the primary variant (if there is one).  This is only a suggestion, however; there should be no expectation on the part of users that every model will have a value of 1 assigned to any of the r, i, p, f indices, and even if a 1 is assigned it does not imply that it is the primary variant.  Note also that a child spawned by a <em>control</em> run will not  necessarily have the same “ripf” value as the control,  since, for example, multiple realizations of an experiment will  branch from the same control.  </p>
+<p>Note that none of the “ripf” indices can be omitted.    </p>
+<p>Example of a variant_label:  if realization_index=2, initialization_index=1, physics_index=3, and forcing_index=233, then variant_label = “r2i1p3f233”.</p>
+</li>
+<li>
+<p>further_info_url has the form <code>https://furtherinfo.es-doc.org/&lt;mip_era&gt;.&lt;institution_id&gt;.&lt;source_id&gt;.&lt;experiment_id&gt;.&lt;sub_experiment_id&gt;.&lt;variant_label&gt;</code> (e.g., <code>https://furtherinfo.es-doc.org/CMIP6.CAS.FGOALS-g3.historical.none.r3i1p1f1</code>). The further_info_url page will be maintained by the es-docs project and will  simply be a rendering by the Viewer tool of information provided by modeling groups and recorded in so-called CIM documents.</p>
+</li>
+<li>
+<p>The “grid” global attribute can be used to describe the horizontal grid and regridding procedure.   There is no standard form used to record this information, but it is suggested that when appropriate the following be indicated:  brief description of native grid and resolution, and if data have been regridded, regridding procedure and description of target grid.  Here are some examples:</p>
+<pre><code>grid = “native atmosphere T63 gaussian grid (128x64 lonxlat)”
+
+grid = “data regridded to a CMIP6 standard 1x1 degree lonxlat grid from the native T63 grid using an area-average preserving method.”
+
+grid = “data regridded via  bilinear interpolation to a 3x3 deg lonxlat grid from the native atmosphere T63 gaussian grid (128x64 lonxlat)”
+
+grid = “native ocean tri-polar grid with 43200 ocean cells”
+</code></pre>
+</li>
+<li>
+<p>Modeling groups may choose to report their output on the model’s native grid and/or regrid it to one or more target grids.  To distinguish between output reported on different grids,  a “<a href="https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_grid_label.json">grid_label</a>” attribute is defined.        </p>
+<p>The rules for assigning grid labels  should make it easy for users to select (using the ESGF search tools) CMIP output that is on a grid considered by each modeling group to best represent its model -- the so-called “primary” grid.  If output is reported on the native grid, this is always deemed the “primary” grid.  If output is <em>not</em> reported on the native grid, then modeling groups should regrid the data to some primary grid of its choosing   For the “primary” grid the following labels apply:</p>
+<pre><code>grid_label = "gn"  (output is reported on the native grid, usually but not invariably at grid cell centers)
+grid_label = "gr"   (output is _not_ reported on the native grid, but instead is regridded by the modeling group to a “primary grid” of its choosing) 
+grid_label = “gm” (global mean output is reported, so data are not gridded)
+</code></pre>
+<p>As noted below sometimes a “z” or “a” or “g” is appended to the labels to indicate “zonal means” or grids limited to Antarctica or Greenland. </p>
+<p>If besides the “primary” grid, output is regridded to an additional grid, then for this output <code>grid_label = "gr[i]"</code>  (a “secondary” grid), where <code>[i]</code> should be replaced by a positive  integer less than 10, which distinguishes this output from other  regridded output.  </p>
+<p>Note that:</p>
+<ul>
+<li>
+<p>If model output is reported on a native grid, then if regridded output is also reported, it must not be labeled “gr”, but instead should be of the form gr[i] (e.g,, gr1, gr2, ….).  </p>
+</li>
+<li>
+<p>The grid label provides no information about the grid other than to indicate whether or not the data have been regridded (from the native grid) and whether or not the grid is considered to be a “primary” grid by the data provider. </p>
+</li>
+<li>
+<p>Output for different variables may be reported on different grids, so “gn” and “gr” may not uniquely define a grid even within a single model.</p>
+</li>
+<li>
+<p>If a variable is reported on more than one grid,  one of these grids must be labeled “gn” or “gr” (as appropriate), and others must be labeled as secondary grids (“gr1”, “gr2”, etc.).  </p>
+</li>
+<li>
+<p>The grid labels (“gr1”, “gr2”, etc.)  must be defined consistently for all variables reported from a single model on the same secondary grid.  Thus,  if “gr3” indicates output on a 2x2 degree grid for one variable, then the same label should be used for other variables output on this grid (unless for another variable output is considered to be primary, in which case the output would be labeled “gn” or “gr”, as appropriate).</p>
+</li>
+<li>
+<p>Output on the same grid but from different models will usually not be labeled with the same grid_label, since data providers independently assign the labels.</p>
+</li>
+<li>
+<p>A “nominal_resolution” attribute must be defined as specified in <a href="#id.ibeh7ad2gpdi">Appendix 2</a>, and a brief description of the grid should be recorded in the “grid” global attribute (see note 10).</p>
+</li>
+<li>
+<p>For zonal mean output, a “z” should be appended to the grid label that would apply before performing the zonal mean (e.g., "gnz", "grz", "gr2z").  The "gnz" label would likely only be appropriate when zonally-averaging data on a native cartesian latxlon grid.</p>
+</li>
+<li>
+<p>For “site” data the label "gn" should be used presuming data are obtained from the single native grid cell located nearest each site.   </p>
+</li>
+<li>
+<p>For “transport through a straight” (and the like), the grid label should reflect the grid relied on in calculating the transport (presumably the native grid would be best for this purpose, so “gn”).</p>
+</li>
+<li>
+<p>For output reported only over the region centered on Greenland, “g” should be appended to the grid_label (e.g., “gng”, “grg”,  “gr1g”).  Similarly for output reported only over the region centered on Antarctica, “a” should be appended to the grid_label.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>The “license” attribute should record the following statement (with segments in square brackets optional, and with required, appropriate text entered in place of &lt;*&gt; ):  “CMIP6 model data produced by \<Your Centre Name> is licensed under a Creative Commons Attribution-[*]ShareAlike 4.0 International License (<a href="https://creativecommons.org/licenses/">https://creativecommons.org/licenses/</a>). Consult <a href="https://pcmdi.llnl.gov/CMIP6/TermsOfUse">https://pcmdi.llnl.gov/CMIP6/TermsOfUse</a> for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment.    Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file)[ and at \<some URL maintained by modeling group>].  The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law.”</p>
+<ul>
+<li>The [*] indicates that institutions may choose to use the Non-commercial version of this license by inserting the words “NonCommercial-” at this point, but this will significantly limit the use of the data in downstream climate mitigation and adaptation applications.  Please do not simply copy the statement above when writing data; Some text must be entered, some text is optional and the symbols “[*]” should not appear in the licensing text.</li>
+</ul>
+</li>
+<li>
+<p>The “source” is used to fully identify the model and version.  The first portion of the “source” attribute is used in constructing “<a href="https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_source_id.json">source_id</a>”.  [The “source_id”, which must not exceed 16 characters in length,  is the same as the “modified source_id” (which appears as  the first part of “source”-- see below)  but with forbidden characters removed or replaced by a hyphen (“-”).  All characters are forbidden in source_id except a-z, A-Z, 0-9 and the hyphen (“-”).]  Additionally, the “source” attribute must include the year (i.e., model vintage) when this model version was first used in a scientific application.  It should also include information concerning the component models.  The following template should be followed in constructing “source”: </p>
+<pre><code>&lt;modified source_id&gt; (&lt;year&gt;): 
+atmos: &lt;model_name&gt; (&lt;technical_name&gt;, &lt;resolution_and_levels&gt;); 
+ocean: &lt;model_name&gt; (&lt;technical_name&gt;, &lt;native_resolution_and_levels&gt;); 
+seaIce: &lt;model_name&gt; (&lt;technical_name&gt;); 
+land: &lt;model_name&gt; (&lt;technical_name&gt;); 
+aerosol: &lt;model_name&gt; (&lt;technical_name&gt;); 
+atmosChem: &lt;model_name&gt; (&lt;technical_name&gt;); 
+ocnBgchem: &lt;model_name&gt; (&lt;technical_name&gt;); 
+landIce: &lt;model_name&gt; (&lt;technical_name&gt;)
+</code></pre>
+<p>For some models, it may not make sense to include all these components, and none of the text following <code>&lt;year&gt;</code> is absolutely mandatory. As an example, "source" might contain the string: </p>
+<pre><code>CCSM2 (2002): atmos: CAM2 (cam2_0_brnchT_itea_2, T42L26); ocean: POP (pop2_0_ver_1.4.3, 3x2L15); seaIce: CSIM4; land: CLM2.0
+</code></pre>
+<p>The source and source_id should not change even when some of the component models are inactive in some of the CMIP experiments.  For example, if an AOGCM is named <code>“SomeAOGCM 1.0 (2016): atmosphere: SomeAGCM; ocean: SomeOGCM; sea ice: SomeSeaIce”</code>, then source_id would be <code>SomeAOGCM-1-0</code> and this same name would be used whether or not the model were run in coupled mode or AMIP mode (with prescribed SST and sea ice). </p>
+</li>
+<li>
+<p>The <a href="https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_source_type.json">source_type</a> will depend on which experiment is being performed.  Options in the CV include: </p>
+<ul>
+<li>
+<p>AGCM (atmospheric general circulation model, including a land model), </p>
+</li>
+<li>
+<p>OGCM (ocean general circulation model, including a sea-ice model), </p>
+</li>
+<li>
+<p>AOGCM (atmosphere-ocean global climate model), </p>
+</li>
+<li>
+<p>LAND (land model but only if run “offline”), </p>
+</li>
+<li>
+<p>ISM (ice-sheet model, which may be run “offline” or coupled to an AOGCM), </p>
+</li>
+<li>
+<p>RAD (radiation code but only if run “offline”), </p>
+</li>
+<li>
+<p>BGC (for a model component that includes a biogeochemical treatment which  at the very least can account for carbon reservoirs and fluxes in the atmosphere, terrestrial biosphere, and ocean; for some model configurations, only part of the BGC component will be active.  For example, in a BGC model coupled to an AGCM, the ocean component of the BGC might be inactive, but the source_type would be “AGCM BGC”.   For a BGC model run coupled to an AOGCM, the source_type should include “AOGCM BGC”  both when atmospheric concentrations are calculated and when they are  prescribed),</p>
+</li>
+<li>
+<p>CHEM (appears with either AOGCM or AGCM in models that calculate, rather than rely on prescribed concentrations of atmospheric oxidants including at least ozone), </p>
+</li>
+<li>
+<p>AER (appears with AOGCM or AGCM in models that calculate tropospheric aerosols driven by emission fluxes, rather than relying on prescribed concentrations),</p>
+</li>
+<li>
+<p>SLAB (a slab-ocean model).  </p>
+</li>
+</ul>
+<p>All types that apply to the model (i.e., are active in a given experiment) should appear in a list with each type separated by a single space.  </p>
+<p>Sometimes source_type for CMIP6 simulations will be described by a single label, as in “AOGCM” or “AGCM” or “OGCM”, but when additional interactive components are included, then multiple labels should be found in source_type (e..g., “AOGCM BGC”, “AGCM CHEM AER”, “AOGCM AER”, “AOGCM ISM”, “AGCM SLAB”, “OGCM BGC”).  Single labels will be used for “offline” models such as “ISM” and “RAD”. </p>
+<p>For each of the CMIP6 experiments, the list of components that are required and the ones that are allowed but optional can be found in <a href="http://rawgit.com/WCRP-CMIP/CMIP6_CVs/master/src/CMIP6_experiment_id.html">http://rawgit.com/WCRP-CMIP/CMIP6_CVs/master/src/CMIP6_experiment_id.html</a> <a href="http://rawgit.com/WCRP-CMIP/CMIP6_CVs/master/src/CMIP6_experiment_id.html">(</a>o<a href="http://rawgit.com/WCRP-CMIP/CMIP6_CVs/master/src/CMIP6_experiment_id.html">r</a>, <a href="http://rawgit.com/WCRP-CMIP/CMIP6_CVs/master/src/CMIP6_experiment_id.html">a</a>l<a href="http://rawgit.com/WCRP-CMIP/CMIP6_CVs/master/src/CMIP6_experiment_id.html">t</a>e<a href="http://rawgit.com/WCRP-CMIP/CMIP6_CVs/master/src/CMIP6_experiment_id.html">r</a>n<a href="http://rawgit.com/WCRP-CMIP/CMIP6_CVs/master/src/CMIP6_experiment_id.html">a</a>t<a href="http://rawgit.com/WCRP-CMIP/CMIP6_CVs/master/src/CMIP6_experiment_id.html">i</a>v<a href="http://rawgit.com/WCRP-CMIP/CMIP6_CVs/master/src/CMIP6_experiment_id.html">e</a>l<a href="http://rawgit.com/WCRP-CMIP/CMIP6_CVs/master/src/CMIP6_experiment_id.html">y</a>,<a href="http://rawgit.com/WCRP-CMIP/CMIP6_CVs/master/src/CMIP6_experiment_id.html"> here</a>)<a href="http://rawgit.com/WCRP-CMIP/CMIP6_CVs/master/src/CMIP6_experiment_id.html">.</a> The following combinations for source_type can be found there:</p>
+<pre><code>AGCM  [BGC]  [AER]  [CHEM] [SLAB]
+AOGCM  [BGC]  [AER]  [CHEM] [ISM]
+OGCM
+LAND
+ISM
+RAD
+</code></pre>
+<p>where the text in brackets sometimes must appear, other times, may appear, and in still other cases should *not* appear, depending on the experiment.  The ordering of the components is arbitrary in source_type, and all brackets should be removed (see examples in earlier paragraph above).</p>
+</li>
+<li>
+<p><code>tracking_id</code> should be of the form <code>“hdl:21.14100/&lt;uuid&gt;”</code>  (e.g., <code>“hdl:21.14100/02d9e6d5-9467-382e-8f9b-9300a64ac3cd”</code>).  The tracking_id should be unique for each file published in ESGF.  The \<uuid> should be generated using the OSSP utility which supports a number of different DCE 1.1 variant UUID options.  For CMIP6, version 4 (random number based) is required.  Download the software from <a href="http://www.ossp.org/pkg/lib/uuid/">http://www.ossp.org/pkg/lib/uuid/</a>.</p>
+</li>
+<li>
+<p>It is recommended that variant_info include information identifying major distinguishing features of a variant, but care should be taken to record correct information.  Prudence dictates that this attribute include a warning along the following lines:  <code>“Information provided by this attribute may in some cases be flawed.  Users can find more comprehensive and up-to-date documentation via the further_info_url global attribute.</code>”</p>
+</li>
+<li>
+<p>The information stored in the “forcing” attribute in CMIP5 may in CMIP6 appear in the variant_info attribute.</p>
+</li>
+</ol>
+<h2 id="data-reference-syntax-drs-components">Data Reference Syntax (DRS) components</h2>
+<p>The DRS identifies experiments, simulations, ensembles of experiments, and atomic datasets.  Some of the DRS components are used, for example, to construct  file names, directory structures, the further_info_url, and in facets of some search tools.  The following components are needed for CMIP6 (along with their CMIP5 counterparts):</p>
+<ul>
+<li>
+<p>activity_id* (CMIP5: "activity") see <a href="https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_activity_id.json">CMIP6_activity_id.json</a></p>
+</li>
+<li>
+<p>institution_id (CMIP5: "institute") see <a href="https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_institution_id.json">CMIP6_institution_id.json</a></p>
+</li>
+<li>
+<p>source_id (CMIP5: "model") see <a href="https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_source_id.json">CMIP6_source_id.json</a></p>
+</li>
+<li>
+<p>experiment_id (CMIP5: "experiment") see <a href="https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_experiment_id.json">CMIP6_experiment_id.json</a></p>
+</li>
+<li>
+<p>variable_id (CMIP5: "variable name") see <a href="https://www.earthsystemcog.org/projects/wip/CMIP6DataRequest">data request</a></p>
+</li>
+<li>
+<p>table_id (CMIP5: "table_id") see <a href="https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_table_id.json">CMIP6_table_id.json</a></p>
+</li>
+<li>
+<p>variant_label (CMIP5: "ensemble member") construct from realization, initialization, physics, and forcing indices</p>
+</li>
+<li>
+<p>version (CMIP5: "version number") indicating approximate date of model output file. (This is the only DRS element that is not stored as a global attribute.)</p>
+</li>
+</ul>
+<p>We need additional components in CMIP6 to accommodate the more complex structure:</p>
+<ul>
+<li>
+<p>sub_experiment_id (set to "none" for most experiments) see <a href="https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_sub_experiment_id.json">CMIP6_sub_experiment_id.json</a></p>
+</li>
+<li>
+<p>grid_label (needed to distinguish the same field stored on more than one grid) see <a href="https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_grid_label.json">CMIP6_grid_label.json</a></p>
+</li>
+<li>
+<p>mip_era (needed to distinguish CMIP5 experiments and datasets from CMIP6.) set to “CMIP6”</p>
+</li>
+<li>
+<p>member_id a compound construction from sub_experiment_id and variant_label see below for further information</p>
+</li>
+</ul>
+<p>As in CMIP5, we also define additional DRS elements because they can be helpful in providing data discovery services:</p>
+<ul>
+<li>
+<p>frequency (CMIP5: "frequency") see <a href="https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_frequency.json">CMIP6_frequency.json</a></p>
+</li>
+<li>
+<p>realm*      (CMIP5: "modeling realm") see <a href="https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_realm.json">CMIP6_realm.json</a></p>
+</li>
+<li>
+<p>product         (CMIP5: "product") set to “model-output” in CMIP6</p>
+</li>
+<li>
+<p>nominal_resolution see <a href="https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_nominal_resolution.json">CMIP6_nominal_resolution.json </a>and <a href="#id.ibeh7ad2gpdi">Appendix 2</a></p>
+</li>
+<li>
+<p>source_type* see <a href="https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_source_type.json">CMIP6_source_type.json</a></p>
+</li>
+</ul>
+<p>The DRS elements marked with an asterisk (*) are associated with global attributes that may be space-separated lists of values.  Only the first item in a list is recognized by the DRS, but in faceted searches all listed items will be recognized. </p>
+<h2 id="file-name-template">File name template</h2>
+<p>Before constructing file names and directory structures, it is useful to define a member_id, which can be used to distinguish among different simulations belonging to a root experiment.  The member_id is constructed from the sub_experiment_id and variant_label  using the following algorithm:</p>
+<pre><code>if sub_experiment_id = “none”
+
+    member_id = &lt;variant_label&gt;
+
+else
+
+    member_id = &lt;sub_experiment_id&gt;-&lt;variant_label&gt;
+
+endif
+</code></pre>
+<p>With this segment defined, the file name can be constructed consistent with the following template:</p>
+<pre><code>&lt;variable_id&gt;_&lt;table_id&gt;_&lt;source_id&gt;_&lt;experiment_id &gt;_&lt;member_id&gt;_&lt;grid_label&gt;[_&lt;time_range&gt;].nc
+</code></pre>
+<p>For time-invariant fields, the last segment (<code>time_range</code>) above is omitted.</p>
+<p>Example when there is no sub-experiment: <code>tas_Amon_GFDL-CM4_historical_r1i1p1f1_gn_196001-199912.nc</code></p>
+<p>Example with a sub-experiment:   <code>pr_day_CNRM-CM6-1_dcppA-hindcast_s1960-r2i1p1f1_gn_198001-198412.nc</code></p>
+<p>All strings appearing in the file name are constructed using only the following characters:  a-z, A-Z, 0-9, and the hyphen ("-"), except the hyphen must not appear in variable_id.  Underscores are prohibited throughout except as shown in the template.</p>
+<p>Note that the last segment of the file name indicates the time-range spanned by the data in the file, and is omitted when inappropriate (e.g., if a variable is “fixed” for all time).  The format for this segment is as in CMIP5 (see <a href="http://cmip-pcmdi.llnl.gov/cmip5/docs/cmip5_data_reference_syntax.pdf">http://cmip-pcmdi.llnl.gov/cmip5/docs/cmip5_data_reference_syntax.pdf</a>):</p>
+<p>The \<time\_range> is a string generated consistent with the following:</p>
+<pre><code>If frequency = “fx” then
+
+    &lt;time_range&gt;=””
+
+else
+
+    &lt;time_range&gt; = M-N
+
+endif
+</code></pre>
+<p>where M and N are integers of the form <code>yyyy[MM[dd[hh[mm[ss]]]]][&lt;suffix&gt;]</code> (expressed as a string, where where ‘yyyy’, ‘MM’, ‘dd’, ‘hh’ ‘mm’ and ‘ss’ are integer year, month, day, hour, minute, and second, respectively) and <code>&lt;suffix&gt;</code> is defined as follows:</p>
+<pre><code>if the variable identified by variable_id has a time dimension with a “climatology” attribute then
+
+    suffix = “-clim”
+
+else
+
+    suffix = “”
+
+endif
+</code></pre>
+<p>and where the precision of the time_range strings is determined by the “frequency” global attribute as specified in Table 2.</p>
+<p><strong>Table 2:</strong> Precision of time labels used in file names.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>Frequency</strong></td>
+<td style="text-align: center;"><strong>Precision of time label</strong></td>
+<td style="text-align: center;"><strong>Notes</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">yr, dec, yrPt</td>
+<td style="text-align: center;">“yyyy”</td>
+<td style="text-align: center;">Label with the years recorded in the  first and last coordinate values.</td>
+</tr>
+<tr>
+<td style="text-align: center;">mon, monC</td>
+<td style="text-align: center;">“yyyyMM”</td>
+<td style="text-align: center;">For “mon”, label with the months recorded in the  first and last coordinate values; for “monC” label with the first and last months contributing to the climatology.</td>
+</tr>
+<tr>
+<td style="text-align: center;">day</td>
+<td style="text-align: center;">“yyyyMMdd”</td>
+<td style="text-align: center;">Label with the days recorded in the  first and last coordinate values.</td>
+</tr>
+<tr>
+<td style="text-align: center;">6hr, 3hr, 1hr, 1hrCM, 6hrPt, 3hrPt, 1hrPt</td>
+<td style="text-align: center;">“yyyyMMddhhmm”</td>
+<td style="text-align: center;">Label 1hrCM files with the beginning of the first hour and the end of the last hour contributing to climatology (rounded to the nearest minute); for other frequencies in this category, label with the first and last time-coordinate values (rounded to the nearest minute).</td>
+</tr>
+<tr>
+<td style="text-align: center;">subhrPt</td>
+<td style="text-align: center;">“yyyyMMddhhmmss”</td>
+<td style="text-align: center;">Label with the first and last time-coordinate values (rounded to the nearest second)</td>
+</tr>
+<tr>
+<td style="text-align: center;">fx</td>
+<td style="text-align: center;">Omit time label</td>
+<td style="text-align: center;">This frequency applies to variables that are independent of time (“fixed”).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="directory-structure-template">Directory structure template</h2>
+<p><div class="highlight"><pre><span></span><code>Directory structure = 
+    &lt;mip_era&gt;/
+        &lt;activity_id&gt;
+            &lt;institution_id&gt;/
+                &lt;source_id&gt;/
+                    &lt;experiment_id&gt;/
+                        &lt;member_id&gt;/
+                            &lt;table_id&gt;/
+                                &lt;variable_id&gt;/
+                                    &lt;grid_label&gt;/
+                                        &lt;version&gt;
+</code></pre></div>
+Note:</p>
+<ul>
+<li>
+<p><code>&lt;version&gt;</code> has the form “vYYYYMMDD” (e.g., “v20160314”), indicating a representative date for the version.   Note that files contained in a single <code>&lt;version&gt;</code>  subdirectory at the end of the directory path should represent all the available time-samples reported from the simulation; a time-series can be split across several files, but all the files must be found in the same subdirectory.  This implies that <code>&lt;version&gt;</code> will not generally be the actual date that all files in the subdirectory were written or published.</p>
+</li>
+<li>
+<p>If multiple activities are listed in the global attribute, the first one is used in the directory structure.  </p>
+</li>
+</ul>
+<p>Example when there is no sub-experiment: <code>CMIP6/CMIP/NOAA-GFDL/GFDL-CM4/1pctCO2/r1i1p1f1/Amon/tas/gn/v20150322</code></p>
+<p>Example with a sub-experiment: <code>CMIP6/DCPP/CNRM-CERFACS/CNRM-CM6-1/dcppA-hindcast/s1960-r2i1p1f3/day/pr/gn/v20160215</code></p>
+<p>The above directory structure is not the same as CMIP5’s directory structure.</p>
+<p><strong>Table 3:</strong> Quality assurance checks.  [Note that “CMIP6 data request” refers to information recorded in the “dreq” xml files.]  </p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>CMIP6 global attribute</strong> </td>
+<td style="text-align: center;"><strong>CMOR source of global attribute</strong></td>
+<td style="text-align: center;"><strong>Required attribute?</strong></td>
+<td style="text-align: center;"><strong>Check that type is</strong></td>
+<td style="text-align: center;"><strong>Require check against template or CV</strong></td>
+<td style="text-align: center;"><strong>Check also in file name?</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">activity_id</td>
+<td style="text-align: center;">CMIP6_experiment_id.json</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">CV (consistent with experiment_id)</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: center;">branch_method</td>
+<td style="text-align: center;">user input</td>
+<td style="text-align: center;">conditionally</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: center;">branch_time_in_child</td>
+<td style="text-align: center;">user input</td>
+<td style="text-align: center;">conditionally</td>
+<td style="text-align: center;">double precision </td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: center;">branch_time_in_parent</td>
+<td style="text-align: center;">user input</td>
+<td style="text-align: center;">conditionally</td>
+<td style="text-align: center;">double precision </td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: center;">comment</td>
+<td style="text-align: center;">user input</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: center;">contact</td>
+<td style="text-align: center;">user input</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: center;">Conventions</td>
+<td style="text-align: center;">Table 1</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">CV</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: center;">creation_date</td>
+<td style="text-align: center;">CMOR-generated</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">must be valid date represented as an ISO 8601 date and time string</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: center;">data_specs_version</td>
+<td style="text-align: center;">CMIP6 data request</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">CV</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: center;">experiment</td>
+<td style="text-align: center;">CMIP6_experiment_id.json</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">CV (consistent with experiment_id)</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: center;">experiment_id</td>
+<td style="text-align: center;">user input (drawn from CMIP6_experiment_id.json)</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">CV</td>
+<td style="text-align: center;">yes</td>
+</tr>
+<tr>
+<td style="text-align: center;">external_variables</td>
+<td style="text-align: center;">cell_measure values in CMIP6 data request</td>
+<td style="text-align: center;">conditionally</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">CV (consistent with variable_id and table_id)</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: center;">forcing_index</td>
+<td style="text-align: center;">user input</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">integer &gt;0</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: center;">frequency</td>
+<td style="text-align: center;">CMIP6 data request</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">CV (consistent with table_id)</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: center;">further_info_url</td>
+<td style="text-align: center;">CMOR-generated, based on other global attributes</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">CV (consistent with several global attributes)</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: center;">grid</td>
+<td style="text-align: center;">user input</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: center;">grid_label</td>
+<td style="text-align: center;">user input (drawn from CMIP6_grid_label.json)</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">CV</td>
+<td style="text-align: center;">yes</td>
+</tr>
+<tr>
+<td style="text-align: center;">history</td>
+<td style="text-align: center;">user, supplemented by CMOR</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: center;">initialization_index</td>
+<td style="text-align: center;">user input</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">integer &gt;0</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: center;">institution</td>
+<td style="text-align: center;">CMIP6_institution_id.json</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">CV (consistent with institution_id)</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: center;">institution_id</td>
+<td style="text-align: center;">user input</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">CV (consistent with source_id)</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: center;">license</td>
+<td style="text-align: center;">user input</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">defined structure/format and partially-defined text</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: center;">mip_era</td>
+<td style="text-align: center;">Table 1</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">CV (= “CMIP6”)</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: center;">nominal_resolution</td>
+<td style="text-align: center;">user input (drawn from CMIP6_nominal_resolution.json)</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">CV</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: center;">parent_activity_id</td>
+<td style="text-align: center;">CMIP6_experiment_id.json</td>
+<td style="text-align: center;">conditionally</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">CV (consistent with parent_experiment_id)</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: center;">parent_mip_era</td>
+<td style="text-align: center;">Table 1</td>
+<td style="text-align: center;">conditionally</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">CV (= “CMIP6”)</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: center;">parent_experiment_id</td>
+<td style="text-align: center;">CMIP6_experiment_id.json</td>
+<td style="text-align: center;">conditionally</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">CV (consistent with experiment_id)</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: center;">parent_source_id</td>
+<td style="text-align: center;">user input (drawn from CMIP6_source_id.json)</td>
+<td style="text-align: center;">conditionally</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">CV (usually the same as source_id)</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: center;">parent_time_units</td>
+<td style="text-align: center;">user input</td>
+<td style="text-align: center;">conditionally</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">check validity against udunits and the CF calendar CV</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: center;">parent_variant_label</td>
+<td style="text-align: center;">user input</td>
+<td style="text-align: center;">conditionally</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">defined structure/format</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: center;">physics_index</td>
+<td style="text-align: center;">user input</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">integer &gt;0</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: center;">product</td>
+<td style="text-align: center;">Table 1</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">CV (=”model-output”)</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: center;">realization_index</td>
+<td style="text-align: center;">user input</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">integer &gt;0</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: center;">realm</td>
+<td style="text-align: center;">CMIP6 data request</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">CV (consistent with table_id)</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: center;">references</td>
+<td style="text-align: center;">user input</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: center;">source</td>
+<td style="text-align: center;">Constructed from components recorded in CMIP6_source_id.json</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">CV (consistent with source_id)</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: center;">source_id</td>
+<td style="text-align: center;">user input (drawn from CMIP6_source_id.json)</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">CV</td>
+<td style="text-align: center;">yes</td>
+</tr>
+<tr>
+<td style="text-align: center;">source_type</td>
+<td style="text-align: center;">user input (drawn from CMIP6_source_type.json)</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">CV (consistent with experiment_id)</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: center;">sub_experiment</td>
+<td style="text-align: center;">CMIP6_sub_experiment_id.json</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">CV (consistent with sub_experiment_id)</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: center;">sub_experiment_id</td>
+<td style="text-align: center;">user input (drawn from list in CMIP6_sub_experiment_id.json)</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">CV (consistent with experiment_id)</td>
+<td style="text-align: center;">yes</td>
+</tr>
+<tr>
+<td style="text-align: center;">table_id</td>
+<td style="text-align: center;">user input (drawn from CMIP6_table_id.json)</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">CV </td>
+<td style="text-align: center;">yes</td>
+</tr>
+<tr>
+<td style="text-align: center;">title</td>
+<td style="text-align: center;">CMOR-generated (based on, source_id, mip_era, and experiment_id)</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: center;">tracking_id</td>
+<td style="text-align: center;">CMOR-generated uuid with handle prefix from Table 1</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">defined structure/format</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: center;">variable_id</td>
+<td style="text-align: center;">user input (drawn from CMIP6 data request)</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">CV (consistent with table_id)</td>
+<td style="text-align: center;">yes</td>
+</tr>
+<tr>
+<td style="text-align: center;">variant_info</td>
+<td style="text-align: center;">user input</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr>
+<td style="text-align: center;">variant_label</td>
+<td style="text-align: center;">CMOR-generated, based on 4 user-provided indices (“ripf”)</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: center;">defined structure/format constructed from indices</td>
+<td style="text-align: center;">yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="appendix-1-global-attributes-for-labeling-experiments">Appendix 1: Global Attributes for Labeling Experiments</h2>
+<p>Global attributes that label experiments are needed to construct filenames and directories and can generally be used as search facets.  Together, they should have the following characteristics:</p>
+<ul>
+<li>
+<p>Uniquely label each experiment within CMIP6 and distinguish experiments with specified conditions that differ in any way </p>
+</li>
+<li>
+<p>Easily be interpreted and remembered</p>
+</li>
+<li>
+<p>Facilitate representations of groups of experiments that are closely related (e.g., same forecast conditions but different start dates, or experiment with an “offline” model driven by output from various models) </p>
+</li>
+</ul>
+<p>Often several simulations will be performed that satisfy the conditions specified for an experiment.  For example, simulations of the historical period can branch from various points in a control run, and each of these will satisfy the conditions defining the experiment.  Together, such simulations constitute a “conforming ensemble” with members all satisfying the same experiment specifications.  There are also occasional cases where the experiment designers (MIP leaders) define a family of related simulations and choose to label these with a common “root” experiment name, followed by a “sub-experiment” name.  An example of this is the set of decadal prediction hindcasts that are all run similarly but started from different start dates (with each simulation identified by a different sub-experiment label).   Such “defined ensembles” of experiments will be labeled with a “root” experiment name, and a “sub-experiment_id” will be used to distinguish among members in the ensemble.  </p>
+<p>To accommodate the various CMIP6 experiments, we define three global attributes:</p>
+<ul>
+<li>
+<p>experiment_id: the label identifying the “root” experiment</p>
+</li>
+<li>
+<p>sub_experiment_id: the label identifying a sub-experiment of a “defined ensemble”; otherwise set to “none”</p>
+</li>
+<li>
+<p>variant_label: a label constructed from 4 indices stored as global attributes:  </p>
+<p>variant_label = <code>r&lt;k&gt;i&lt;l&gt;p&lt;m&gt;f&lt;n&gt;</code></p>
+<p>where</p>
+<ul>
+<li>
+<p>k = realization_index</p>
+</li>
+<li>
+<p>l = initialization_index</p>
+</li>
+<li>
+<p>m = physics_index</p>
+</li>
+<li>
+<p>n = forcing_index</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>Besides the above identifiers, additional descriptive information concerning the experiment is provided by the following global attributes:</p>
+<ul>
+<li>
+<p>experiment: brief descriptor of experiment (using CV)</p>
+</li>
+<li>
+<p>sub_experiment: brief descriptor of sub-experiment (using CV); if sub_experiment_id = “none”, then sub_experiment = “none”.</p>
+</li>
+<li>
+<p>variant_info: brief descriptor of what is unique about this “ripf” variant.</p>
+</li>
+</ul>
+<p>For the group of experiments included in CMIP6, the following structure will usually be followed:</p>
+<ul>
+<li>
+<p>Each experiment_id will comprise one or more segments separated by hyphens.</p>
+</li>
+<li>
+<p>The first segment indicates that an experiment should be run with a model other than an AOGCM or a concentration-driven ESM.  (This segment is omitted in experiments for AOGCMs and concentration-driven ESMs.)  CMIP6 examples of the first segment (shown in parentheses) include:</p>
+</li>
+<li>
+<p>Offline radiation code experiments (“rad”)</p>
+</li>
+<li>
+<p>Uncoupled ice-sheet models forced by AOGCM output (“ism”)</p>
+</li>
+<li>
+<p>Atmosphere (and land surface) models forced by prescribed SSTs and sea ice (e.g., “amip”, “piSST”, “piClim”, “histSST”, “ssp370SST”, “aqua”, “futureSST”, “G6SST1”, “G6SST2”, “G7SST1”, “G7SST2”, “highresSST”, “a4SST”, “a4SSTice”)</p>
+</li>
+<li>
+<p>Offline land-surface model (“land”)</p>
+</li>
+<li>
+<p>Ocean and sea ice model forced by prescribed atmospheric conditions (“omip1” or “omip2”)</p>
+</li>
+<li>
+<p>Earth system model forced by emissions (rather than concentrations) of CO2 (“esm”)</p>
+</li>
+<li>
+<p>The next segment is the first indication of experiment conditions</p>
+</li>
+<li>
+<p>Any additional segments indicate some relatively small variation on experiment conditions defined by the previous segment.   </p>
+</li>
+</ul>
+<p>We now provide two examples of the global attributes relevant to identifying a CMIP6 experiment, and the filenames and directory structures that make use of these global attributes. </p>
+<p>Example 1: The common case when there are no sub-experiments:</p>
+<p>Global attributes (relevant to experiment definition):\
+<div class="highlight"><pre><span></span><code>experiment_id = “1pctCO2”
+experiment = “1 percent per year increase in CO2 concentration”
+sub_experiment_id = “none”
+sub_experiment =  “none”
+realization_index = 1
+initialization_index = 1
+physics_index = 1
+forcing_index = 1
+variant_label = “r1i1p1f1”
+variant_info =  “realization 1” 
+</code></pre></div>
+file name:  <code>tas_Amon_CCSM2-1_1pctCO2_r1i1p1f1_gn_202001-202912.nc</code></p>
+<p>directory structure:   <code>CMIP6/CMIP/NCAR/CCSM2-1/1pctCO2/r1i1p1f1/Amon/tas/gn/v20150320/</code></p>
+<p>Example 2: The uncommon case (in  CMIP6) when there are sub-experiments defined:</p>
+<p>Global attributes (relevant to experiment definition):
+<div class="highlight"><pre><span></span><code>experiment_id = “dcppA-hindcast”
+experiment =  “year 1-5 hindcast initialized based on observations and using historical forcing”
+sub_experiment_id = “s1960”
+sub_experiment =  “initialized near end of year 1960”
+realization_index = 1
+initialization_index = 2
+physics_index = 1
+forcing_index = 1
+variant_label = “r1i2p1f1”
+variant_info = “initialized using anomaly approach (method 2)” 
+</code></pre></div></p>
+<p>file name:  <code>tas_Amon_CCSM2-1_hindcast_s1960-r1i2p1f1_gn_198001-198412.nc</code></p>
+<p>directory structure: <code>CMIP6/DCPP/NCAR/CCSM2-1/dcppA-hindcast/s1960-r1i2p1f1/Amon/tas/gr/v20150320/</code></p>
+<h2 id="appendix-2-algorithms-for-defining-the-nominal_resolution-attribute">Appendix 2: Algorithms for Defining the “nominal_resolution” Attribute</h2>
+<p>There are various ways grid resolution might be defined, but in CMIP6 this should be done in the same way by all models.  If the following procedure seems inappropriate for a model, the modeling group may request an exception from the WGCM Infrastructure Panel (WIP).  In general, the nominal resolution characterizes the resolution of <em>the grid used to report model output fields</em>, which may differ from the native grid on which the fields are calculated by the model.</p>
+<h3 id="algorithm-for-defining-the-nominal_resolution-global-attribute">Algorithm for defining the nominal_resolution global attribute:</h3>
+<p><strong>TODO: algebra in this section needs converting</strong></p>
+<ol>
+<li>
+<p>For each grid cell, calculate the distance (in km) between each pair of cell vertices and select the maximum distance (“<em>d</em><sup>max</sup>”).  For lonxlat grid cells, for example, <em>d</em><sup>max</sup> would be the diagonal distance.</p>
+</li>
+<li>
+<p>Calculate the mean over all cells of <em>d</em><sup>max</sup>, weighting each by the grid-cell’s area (<em>A</em>).  This defines the “mean resolution” (dmax).  The formula is:</p>
+<p>dmax=dimaxAiAi</p>
+<p>where the sums are over all grid cells except for the following cases:</p>
+<ul>
+<li>
+<p>For a global ocean grid, only sum over the ocean grid cells.  </p>
+</li>
+<li>
+<p>For a sea ice model calculated on the ocean grid, include <em>all</em> ocean cells, whether or not they contain sea ice.</p>
+</li>
+<li>
+<p>For land surface models calculated on the atmospheric grid include all grid cells (not just those over land).</p>
+</li>
+<li>
+<p>For a land surface model calculated on its own grid, include all land grid cells .</p>
+</li>
+<li>
+<p>For data reported on a sub-domain of the globe (e.g., northern high latitudes only), include only those grid cells in the domain.</p>
+</li>
+<li>
+<p>For data reported at individual sites, calculate as if every grid cell contained one site (i.e., include all grid cells).</p>
+</li>
+<li>
+<p>For zonal means, global means, sector or basin means, and similar area-means, the data provider may either report the nominal resolution of the native grid or the resolution of the primary grid on which data are reported. </p>
+</li>
+</ul>
+</li>
+<li>
+<p>Except in the case of a CMIP6 “standard grid” (see item 4 below), define the global attribute “nominal_resolution” according to:</p>
+<pre><code>if       dmax &lt; 0.72 km,  nominal_resolution = “0.5 km”
+else if  dmax &lt; 1.6 km,   nominal_resolution = “1 km”
+else if  dmax &lt;  3.6 km,  nominal_resolution = “2.5 km”
+else if  dmax &lt;  7.2 km,  nominal_resolution = “5 km” 
+else if  dmax &lt;  16 km,   nominal_resolution = “10 km” 
+else if  dmax &lt;  36 km,   nominal_resolution = “25 km” 
+else if  dmax &lt;  72 km,   nominal_resolution = “50 km” 
+else if  dmax &lt;  160 km,  nominal_resolution = “100 km” 
+else if  dmax &lt;  360 km,  nominal_resolution = “250 km” 
+else if  dmax &lt;  720 km,  nominal_resolution = “500 km” 
+else if  dmax &lt;  1600 km, nominal_resolution = “1000 km” 
+else if  dmax &lt;  3600 km, nominal_resolution = “2500 km” 
+else if  dmax &lt;  7200 km, nominal_resolution = “5000 km” 
+else nominal_resolution = “10000 km”
+</code></pre>
+<p>The different nominal_resolution values are approximately spaced logarithmically and the bounds on each are logarithmically approximately half-way between the values.</p>
+<p>For a regular latxlon global grid it is possible to calculate the approximate mean resolution analytically: </p>
+<p>dmax=rearthΔφ2[1+Δφ2+Δλ2Δφ Δλtan-1(ΔλΔφ)]</p>
+<p>where r<sub>earth</sub>  is the radius of the Earth (in km), and Δφ and Δλ are the latitude and longitude angular dimensions of  each cell (measured in radians).  If these dimensions are identical, then the mean resolution is:</p>
+<p>dmax=rearthΔφ2[1+π2]≈1.2854 rearthΔφ</p>
+<p>For a 0.5x0.5 degree grid, the mean resolution, according to this formula is 71.5 km (given 6371 km as the Earth’s radius).</p>
+</li>
+<li>
+<p>Note that for so-called “standard CMIP6 grids,” nominal_resolution will be assigned a string defined by the WGCM Infrastructure Panel (WIP), rather than applying the above algorithm.  Currently the only WIP-assigned standard grid is a 1x1 degree longitude by latitude  grid with 360 longitudes and 180 latitudes of equal (angular) width, and with one longitude centered at 0.5 degree east longitude (consistent with the World Ocean Atlas).  For this CMIP6 standard grid, nominal_resolution = “1x1 degree”, rather than “100 km” (which would be the result of the above algorithm).  Defining the standard grid resolution in this way makes it easy for users to download only data that have been regridded to the standard grid, since “1x1 degree” will be selectable from the “nominal_resolution” search facet on ESGF.  </p>
+</li>
+<li>
+<p>When the above formula for a regular lonxlat global grid is inapplicable, one can rely on a python code to calculate nominal_resolution for <em>any</em> grid.  The following links lead to the code and its documentation:</p>
+<ul>
+<li>
+<p>Code documentation:<a href="https://pcmdi.github.io/nominal_resolution/html/index.html"> https://pcmdi.github.io/nominal_resolution/html/index.html</a>.</p>
+</li>
+<li>
+<p>The code can be obtained via a conda package:</p>
+<p>conda install -c pcmdi nominal_resolution</p>
+</li>
+<li>
+<p>The package repository is hosted on Github at:<a href="https://github.com/pcmdi/nominal_resolution"> https://github.com/pcmdi/nominal_resolution</a></p>
+</li>
+<li>
+<p>The library source (api.py) is in the<a href="https://github.com/pcmdi/nominal_resolution/blob/master/lib"> lib</a> directory.</p>
+</li>
+<li>
+<p>The test codes reside in the<a href="https://github.com/pcmdi/nominal_resolution/blob/master/tests"> tests</a> directory.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="appendix-3-document-version-information">Appendix 3: Document version information</h2>
+<p>The document version number consists of 3 integers separated by “.”  The first integer is “6”, indicating the document applies to CMIP6.  The second integer will be incremented if changes are made that likely will require modifications in existing software or output files (e.g., an addition of a new global attribute).   The third digit will be incremented whenever a new release involves only minor changes (e.g., to a list of values appearing in a CV).</p>
+<p>6.0.0 (14th September 2016) - Initial release</p>
+<p>6.0.1 (5 October 2016):</p>
+<ul>
+<li>
+<p>Replaced source_type option “BCM” with “BGCM”  (biogeochemical model).</p>
+</li>
+<li>
+<p>Eliminated source_type options: “RCM (regional climate model)”, “ESD (empirical statistical downscaling model)”, and “EMIC (earth-system model of intermediate complexity)”.  This was done </p>
+</li>
+<li>
+<p>Modified algorithm for determining grid_resolution so that the label value will now nearly always be logarithmically the closest one to d-max.  This is consistent with the labels being logarithmically approximately evenly spaced.</p>
+</li>
+<li>
+<p>Corrected typos in note 13 after Table 1:  “sea ice” is now “sea_ice” (for consistency with other labels in that note).</p>
+</li>
+<li>
+<p>Added text at the beginning of this Appendix about incrementing the version number.</p>
+</li>
+</ul>
+<p>6.1.0 (15 November 2016):</p>
+<ul>
+<li>
+<p>Changed “grid_resolution” to “nominal_resolution”, which is less definitive and more appropriate.</p>
+</li>
+<li>
+<p>Noted that the length of source_id is limited to no more than 16 characters.</p>
+</li>
+<li>
+<p>Description of grid_label now includes specifications for global mean data and data stored on regional grids centered over Greenland or Antarctica.</p>
+</li>
+<li>
+<p>Corrected model_id to read source_id and model_type to read source_type in a couple of places.</p>
+</li>
+<li>
+<p>After discussions with Pierre Friedlingstein, renamed “BGCM” to read “BGC” and  eliminated distinction between ESM and “AOGCM BGC”.</p>
+</li>
+<li>
+<p>Expanded description of source_type attribute to help clarify.</p>
+</li>
+</ul>
+<p>6.2.0 (2 December 2016; shortened URL is <a href="http://goo.gl/v1drZl">goo.gl/v1drZl</a>):</p>
+<ul>
+<li>
+<p>Reversed the order of the \<source\_id>_\<experiment\_id> segment of the filename (with “source” now first) to be consistent with subsequent examples of filename in this document  and more like the ordering of the CMIP5 filename and the directory structure.</p>
+</li>
+<li>
+<p>Eliminated one of the optional sentences in the “license” attribute because it seemed unnecessary, given the more general statement made in the sentence that followed.</p>
+</li>
+</ul>
+<p>6.2.1 (21 December 2016):</p>
+<ul>
+<li>Corrected the URL in the license statement to now point to <a href="https://pcmdi.llnl.gov/home/CMIP6/CitationRequirements_v6-0.html">https://pcmdi.llnl.gov/home/CMIP6/CitationRequirements6-0.html</a> where the acknowledgement guidelines will be located.</li>
+</ul>
+<p>6.2.2 (23 March 2017):</p>
+<ul>
+<li>
+<p>Corrected the Creative Commons link in the license statement to now point to <a href="https://creativecommons.org/licenses/">https://creativecommons.org/licenses</a>/.  Also changed “should be” to “must be”, and modified spaces, hyphens, and quotes in the “Attribution-ShareAlike” part of the statement..  Also corrected link to terms of use document.</p>
+</li>
+<li>
+<p>Change “UGRID-0.9”, which can appear in the conventions attribute to “UGRID-1.0”.</p>
+</li>
+<li>
+<p>Clarified that one statement in footnote 5 referred to the decadal prediction runs only.</p>
+</li>
+<li>
+<p>Changed CMIP6 specification of “product” global attribute from “output” to “model-output”.  This better describes it and clearly differentiates it from “observations”, which is the text assigned to this attribute in input4MIPs and obs4MIPs.</p>
+</li>
+<li>
+<p>Corrected a few entries in the CMOR Source column of Table 2 (which has now been renumbered Table 3.</p>
+</li>
+<li>
+<p>Added links in several places to the reference CV’s found at <a href="https://github.com/WCRP-CMIP/CMIP6_CVs">https://github.com/WCRP-CMIP/CMIP6_CVs</a>.</p>
+</li>
+<li>
+<p>Clarified that the data_specs_version attribute records the version of the data request relied on in preparing model output.</p>
+</li>
+<li>
+<p>Added specific details on defining the time labels that appear in file names, which required addition of a new table and required Table 2 to be renumbered Table 3.</p>
+</li>
+<li>
+<p>Adjusted (by less than 3%) the values used to determine nominal resolution in <a href="#id.ibeh7ad2gpdi">Appendix 2,</a> so that models with latxlon resolution of 0.25, 0.5, 2.5 and 5.0 are now classified with nominal resolution of “25 km”, “50 km”, “250 km” and “500” km, respectively (instead of 50, 100, 500, and 1000 km). </p>
+</li>
+</ul>
+<p>6.2.3 (4 April 2017):</p>
+<ul>
+<li>
+<p>Deleted a double entry in table 2 and added a missing entry.</p>
+</li>
+<li>
+<p>Added links to the reference controlled vocabularies in the section defining the DRS.</p>
+</li>
+</ul>
+<p>6.2.4 (14 July 2017):</p>
+<ul>
+<li>
+<p>Revised note 8 for improved clarity.</p>
+</li>
+<li>
+<p>In note 13, corrected the terms used to describe each realm to be consistent with the CMIP6 CV.</p>
+</li>
+<li>
+<p>Augmented Table 2 with notes on how time-labels for file names should be constructed.  Also, changed frequency “decadal” to “dec” and eliminated 3hrClim since it isn’t needed for CMIP6.</p>
+</li>
+<li>
+<p>Corrected the examples of file name to make the order of the elements consistent with the template.</p>
+</li>
+<li>
+<p>Reworded a few sentences to improve clarity</p>
+</li>
+<li>
+<p>Corrected some instances of “product” to indicate for CMIP6 this should have the value “model-output”.</p>
+</li>
+<li>
+<p>Corrected CMIP6 version in Conventions attribute to be “CMIP-6.2”.</p>
+</li>
+</ul>
+<p>6.2.5 (14 September 2017):</p>
+<ul>
+<li>
+<p>Corrected/added options for frequency appearing in Table 2.</p>
+</li>
+<li>
+<p>Expanded notes describing the directory template.</p>
+</li>
+<li>
+<p>Corrected a few typos and URL addresses.</p>
+</li>
+</ul>
+<p>6.2.6 (20 December 2017):</p>
+<ul>
+<li>
+<p>Expanded description of realization_index, initialization_index, physics_index, and forcing_index in note 8 following Table 1.</p>
+</li>
+<li>
+<p>Removed “none provided” as an example of a branch_method in Table 1.</p>
+</li>
+<li>
+<p>Corrected the example of further_info_url given in note 9 following Table 1.</p>
+</li>
+<li>
+<p>Revised the description of source_type=”BGC” in note 14 following Table 1.</p>
+</li>
+<li>
+<p>Expanded explanation about how the tracking_id should be generated (in note 15 following Table 1).</p>
+</li>
+<li>
+<p>Added missing items to the DRS:  member_id, nominal_resolution, and source_type.</p>
+</li>
+<li>
+<p>Changed the name of institution and source appearing in the examples of file names and directory structures so that they are now consistent with names currently registered for CMIP6.</p>
+</li>
+<li>
+<p>Corrected a few typos.</p>
+</li>
+<li>
+<p>Indicated in Table 1 which global attributes are part of the DRS and which will likely be used as search facets in CoG.</p>
+</li>
+</ul>
+<p>6.2.7 (10 September 2018):</p>
+<ul>
+<li>
+<p>Added to Appendix 2 an item (5) pointing to a python code that can be used to calculate nominal resolution.</p>
+</li>
+<li>
+<p>Made corrections so that when a rectangular longitude-latitude grid is described, the longitude dimension always appears first.</p>
+</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        
+<!-- Footer -->
+<footer class="md-footer" height="20px">
+
+    <!-- Link to previous and/or next page -->
+    
+      
+        
+        <nav
+          class="md-footer__inner md-grid"
+          aria-label="Footer"
+          
+        >
+  
+          <!-- Link to previous page -->
+          
+            
+            <a
+              href="../.."
+              class="md-footer__link md-footer__link--prev"
+              aria-label="Previous: CMIP7 Documentation Wiki"
+            >
+              <div class="md-footer__button md-icon">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+              </div>
+              <div class="md-footer__title">
+                <span class="md-footer__direction">
+                  Previous
+                </span>
+                <div class="md-ellipsis">
+                  CMIP7 Documentation Wiki
+                </div>
+              </div>
+            </a>
+          
+  
+          <!-- Link to next page -->
+          
+            
+            <a
+              href="../guidance_for_esgf/"
+              class="md-footer__link md-footer__link--next"
+              aria-label="Next: CMIP7 Participation Guidance for Data Managers"
+            >
+              <div class="md-footer__title">
+                <span class="md-footer__direction">
+                  Next
+                </span>
+                <div class="md-ellipsis">
+                  CMIP7 Participation Guidance for Data Managers
+                </div>
+              </div>
+              <div class="md-footer__button md-icon">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+              </div>
+            </a>
+          
+        </nav>
+      
+    
+
+
+  </footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.footer", "search.suggest", "header.autohide"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../../scripts/embed.js"></script>
+      
+    
+  </body>
+</html>
