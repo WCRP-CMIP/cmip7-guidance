@@ -508,7 +508,7 @@
 <td style="text-align: center;">aids in interpreting branch times; units are the same as the units used for the child’s time axis.  If no parent, omit (preferred) or set to start time of the run.  </td>
 </tr>
 <tr>
-<td style="text-align: center;">branch_time_in_ parent</td>
+<td style="text-align: center;">branch_time_in_parent</td>
 <td style="text-align: center;">branch time with respect to parent time axis</td>
 <td style="text-align: center;">3650.0D0 (see note 5)</td>
 <td style="text-align: center;">branch_time</td>
@@ -646,7 +646,7 @@
 <td style="text-align: center;">initialization_index</td>
 <td style="text-align: center;">Index for variant of initialization method </td>
 <td style="text-align: center;">1</td>
-<td style="text-align: center;">initialization_ method</td>
+<td style="text-align: center;">initialization_method</td>
 <td style="text-align: center;">integer &gt;0(see note 8)</td>
 <td style="text-align: center;">always</td>
 <td style="text-align: center;">name changed to increase consistency; 0 is forbidden in CMIP6 </td>
@@ -745,7 +745,7 @@
 <td style="text-align: center;">parent_variant_label (modified form)</td>
 <td style="text-align: center;">parent variant label</td>
 <td style="text-align: center;">“r1i1p1f1”, “r1i2p223f3”,                     “no parent”</td>
-<td style="text-align: center;">parent_experiment_ rip</td>
+<td style="text-align: center;">parent_experiment_rip</td>
 <td style="text-align: center;">see Appendix 1</td>
 <td style="text-align: center;">whenever parent exists</td>
 <td style="text-align: center;">used to distinguish among variants of the parent; when no parent, omit or set to “no parent”</td>
@@ -921,19 +921,15 @@
 </li>
 <li>
 <p>The three attributes related to branching time (branch_time_in_child, branch_time_in_parent, parent_time_units) must be included if branch time is needed  to correctly interpret the data (e.g., in simulations spawned from a pre-industrial control run that has not reached equilibrium).  Suppose a model with a “noleap” calendar carries out a control run with the time coordinate reported in units of “days since 1000-1-1”.  Now suppose a historical simulation branches from that control run at day 3650 (i.e., on the date: 1010-1-1), and suppose the units of the time coordinate for the historical run are “days since 1850-01-01”.  Then in the historical run, the following global attributes should appear:</p>
-<pre><code>branch\_time\_in\_child = 0.0D0; # double precision float
-
-branch\_time\_in\_parent = 3650.0D0; # double precision float
-
-parent\_time\_units = “days since 1000-1-1”; # character string
+<pre><code>branch_time_in_child = 0.0D0; # double precision float
+branch_time_in_parent = 3650.0D0; # double precision float
+parent_time_units = “days since 1000-1-1”; # character string
 </code></pre>
 <p>If the calendar used in the parent is different from the child, then the parent’s calendar should be recorded in “parent_time_units”.  The CV for the calendar is the same as that for the CF calendar attribute. For example in the above case, if the child’s calendar is “gregorian”, but the parent’s is “noleap”, then parent_time_units=”days since 1000-1-1 (noleap)”. </p>
 <p>As another example, suppose a ScenarioMIP simulation “branches” from a historical run at the date 2015-1-1.  Suppose a noleap calendar is used in each and both have units of “days since 1850-1-1”.  (Note that ScenarioMIP simulations should always adopt the same units as the historical parent.)  In this case the following global attributes should appear in the ScenarioMIP output file:</p>
-<pre><code>branch\_time\_in\_child = 60225.0D0
-
-branch\_time\_in\_parent = 60225.0D0
-
-parent\_time\_units = “days since 1850-1-1”.
+<pre><code>branch_time_in_child = 60225.0D0
+branch_time_in_parent = 60225.0D0
+parent_time_units = “days since 1850-1-1”.
 </code></pre>
 <p>As a third example, consider a decadal prediction experiment initialized from observations (e.g., from an “analysis”).  In this case there is no parent so none of these attributes should be included.  (Note that the initialization time of the decadal prediction experiments will be recorded as a scalar coordinate dimension, pointed to by the “coordinates” attribute, which is attached to each variable.)</p>
 </li>
@@ -941,7 +937,7 @@ parent\_time\_units = “days since 1850-1-1”.
 <p>A description and examples of this global attribute may be found in the document: CMIP5_output_metadata_requirements (<a href="http://cmip-pcmdi.llnl.gov/cmip5/docs/CMIP5_output_metadata_requirements.pdf">http://cmip-pcmdi.llnl.gov/cmip5/docs/CMIP5_output_metadata_requirements.pdf</a>).   </p>
 </li>
 <li>
-<p>creation_date form: <em>YYYY-MM-DD_T_HH</em>:<em>MM</em>:_SS_Z  (e.g., “2010-03-23T05:56:23Z”)</p>
+<p>creation_date form: <code>YYYY-MM-DDTHH:MM:SSZ</code>  (e.g., “2010-03-23T05:56:23Z”)</p>
 </li>
 <li>
 <p>For a given experiment, the realization_index, initialization_index, physics_index, and forcing_index are used to uniquely identify each simulation of an ensemble of runs contributed by a single model.  These indices are defined as follows:\
@@ -970,11 +966,8 @@ parent\_time\_units = “days since 1850-1-1”.
 <li>
 <p>The “grid” global attribute can be used to describe the horizontal grid and regridding procedure.   There is no standard form used to record this information, but it is suggested that when appropriate the following be indicated:  brief description of native grid and resolution, and if data have been regridded, regridding procedure and description of target grid.  Here are some examples:</p>
 <pre><code>grid = “native atmosphere T63 gaussian grid (128x64 lonxlat)”
-
 grid = “data regridded to a CMIP6 standard 1x1 degree lonxlat grid from the native T63 grid using an area-average preserving method.”
-
 grid = “data regridded via  bilinear interpolation to a 3x3 deg lonxlat grid from the native atmosphere T63 gaussian grid (128x64 lonxlat)”
-
 grid = “native ocean tri-polar grid with 43200 ocean cells”
 </code></pre>
 </li>
@@ -1083,7 +1076,7 @@ landIce: &lt;model_name&gt; (&lt;technical_name&gt;)
 </ul>
 <p>All types that apply to the model (i.e., are active in a given experiment) should appear in a list with each type separated by a single space.  </p>
 <p>Sometimes source_type for CMIP6 simulations will be described by a single label, as in “AOGCM” or “AGCM” or “OGCM”, but when additional interactive components are included, then multiple labels should be found in source_type (e..g., “AOGCM BGC”, “AGCM CHEM AER”, “AOGCM AER”, “AOGCM ISM”, “AGCM SLAB”, “OGCM BGC”).  Single labels will be used for “offline” models such as “ISM” and “RAD”. </p>
-<p>For each of the CMIP6 experiments, the list of components that are required and the ones that are allowed but optional can be found in <a href="http://rawgit.com/WCRP-CMIP/CMIP6_CVs/master/src/CMIP6_experiment_id.html">http://rawgit.com/WCRP-CMIP/CMIP6_CVs/master/src/CMIP6_experiment_id.html</a> <a href="http://rawgit.com/WCRP-CMIP/CMIP6_CVs/master/src/CMIP6_experiment_id.html">(</a>o<a href="http://rawgit.com/WCRP-CMIP/CMIP6_CVs/master/src/CMIP6_experiment_id.html">r</a>, <a href="http://rawgit.com/WCRP-CMIP/CMIP6_CVs/master/src/CMIP6_experiment_id.html">a</a>l<a href="http://rawgit.com/WCRP-CMIP/CMIP6_CVs/master/src/CMIP6_experiment_id.html">t</a>e<a href="http://rawgit.com/WCRP-CMIP/CMIP6_CVs/master/src/CMIP6_experiment_id.html">r</a>n<a href="http://rawgit.com/WCRP-CMIP/CMIP6_CVs/master/src/CMIP6_experiment_id.html">a</a>t<a href="http://rawgit.com/WCRP-CMIP/CMIP6_CVs/master/src/CMIP6_experiment_id.html">i</a>v<a href="http://rawgit.com/WCRP-CMIP/CMIP6_CVs/master/src/CMIP6_experiment_id.html">e</a>l<a href="http://rawgit.com/WCRP-CMIP/CMIP6_CVs/master/src/CMIP6_experiment_id.html">y</a>,<a href="http://rawgit.com/WCRP-CMIP/CMIP6_CVs/master/src/CMIP6_experiment_id.html"> here</a>)<a href="http://rawgit.com/WCRP-CMIP/CMIP6_CVs/master/src/CMIP6_experiment_id.html">.</a> The following combinations for source_type can be found there:</p>
+<p>For each of the CMIP6 experiments, the list of components that are required and the ones that are allowed but optional can be found <a href="http://rawgit.com/WCRP-CMIP/CMIP6_CVs/master/src/CMIP6_experiment_id.html">here</a>. The following combinations for source_type can be found there:</p>
 <pre><code>AGCM  [BGC]  [AER]  [CHEM] [SLAB]
 AOGCM  [BGC]  [AER]  [CHEM] [ISM]
 OGCM
@@ -1168,13 +1161,9 @@ RAD
 <h2 id="file-name-template">File name template</h2>
 <p>Before constructing file names and directory structures, it is useful to define a member_id, which can be used to distinguish among different simulations belonging to a root experiment.  The member_id is constructed from the sub_experiment_id and variant_label  using the following algorithm:</p>
 <pre><code>if sub_experiment_id = “none”
-
     member_id = &lt;variant_label&gt;
-
 else
-
     member_id = &lt;sub_experiment_id&gt;-&lt;variant_label&gt;
-
 endif
 </code></pre>
 <p>With this segment defined, the file name can be constructed consistent with the following template:</p>
@@ -1185,26 +1174,18 @@ endif
 <p>Example with a sub-experiment:   <code>pr_day_CNRM-CM6-1_dcppA-hindcast_s1960-r2i1p1f1_gn_198001-198412.nc</code></p>
 <p>All strings appearing in the file name are constructed using only the following characters:  a-z, A-Z, 0-9, and the hyphen ("-"), except the hyphen must not appear in variable_id.  Underscores are prohibited throughout except as shown in the template.</p>
 <p>Note that the last segment of the file name indicates the time-range spanned by the data in the file, and is omitted when inappropriate (e.g., if a variable is “fixed” for all time).  The format for this segment is as in CMIP5 (see <a href="http://cmip-pcmdi.llnl.gov/cmip5/docs/cmip5_data_reference_syntax.pdf">http://cmip-pcmdi.llnl.gov/cmip5/docs/cmip5_data_reference_syntax.pdf</a>):</p>
-<p>The \<time\_range> is a string generated consistent with the following:</p>
+<p>The \<time_range> is a string generated consistent with the following:</p>
 <pre><code>If frequency = “fx” then
-
     &lt;time_range&gt;=””
-
 else
-
-    &lt;time_range&gt; = M-N
-
+    &lt;time_range&gt; = M-N 
 endif
 </code></pre>
 <p>where M and N are integers of the form <code>yyyy[MM[dd[hh[mm[ss]]]]][&lt;suffix&gt;]</code> (expressed as a string, where where ‘yyyy’, ‘MM’, ‘dd’, ‘hh’ ‘mm’ and ‘ss’ are integer year, month, day, hour, minute, and second, respectively) and <code>&lt;suffix&gt;</code> is defined as follows:</p>
 <pre><code>if the variable identified by variable_id has a time dimension with a “climatology” attribute then
-
     suffix = “-clim”
-
 else
-
     suffix = “”
-
 endif
 </code></pre>
 <p>and where the precision of the time_range strings is determined by the “frequency” global attribute as specified in Table 2.</p>
@@ -1695,22 +1676,12 @@ Note:</p>
 </li>
 <li>
 <p>variant_label: a label constructed from 4 indices stored as global attributes:  </p>
-<p>variant_label = <code>r&lt;k&gt;i&lt;l&gt;p&lt;m&gt;f&lt;n&gt;</code></p>
-<p>where</p>
-<ul>
-<li>
-<p>k = realization_index</p>
-</li>
-<li>
-<p>l = initialization_index</p>
-</li>
-<li>
-<p>m = physics_index</p>
-</li>
-<li>
-<p>n = forcing_index</p>
-</li>
-</ul>
+<p>variant_label = <code>r&lt;k&gt;i&lt;l&gt;p&lt;m&gt;f&lt;n&gt;</code>
+       where
+- k = realization_index
+- l = initialization_index
+- m = physics_index
+- n = forcing_index</p>
 </li>
 </ul>
 <p>Besides the above identifiers, additional descriptive information concerning the experiment is provided by the following global attributes:</p>
@@ -1736,27 +1707,13 @@ Note:</p>
 <li>
 <p>Offline radiation code experiments (“rad”)</p>
 </li>
-<li>
-<p>Uncoupled ice-sheet models forced by AOGCM output (“ism”)</p>
-</li>
-<li>
-<p>Atmosphere (and land surface) models forced by prescribed SSTs and sea ice (e.g., “amip”, “piSST”, “piClim”, “histSST”, “ssp370SST”, “aqua”, “futureSST”, “G6SST1”, “G6SST2”, “G7SST1”, “G7SST2”, “highresSST”, “a4SST”, “a4SSTice”)</p>
-</li>
-<li>
-<p>Offline land-surface model (“land”)</p>
-</li>
-<li>
-<p>Ocean and sea ice model forced by prescribed atmospheric conditions (“omip1” or “omip2”)</p>
-</li>
-<li>
-<p>Earth system model forced by emissions (rather than concentrations) of CO2 (“esm”)</p>
-</li>
-<li>
-<p>The next segment is the first indication of experiment conditions</p>
-</li>
-<li>
-<p>Any additional segments indicate some relatively small variation on experiment conditions defined by the previous segment.   </p>
-</li>
+<li>Uncoupled ice-sheet models forced by AOGCM output (“ism”)</li>
+<li>Atmosphere (and land surface) models forced by prescribed SSTs and sea ice (e.g., “amip”, “piSST”, “piClim”, “histSST”, “ssp370SST”, “aqua”, “futureSST”, “G6SST1”, “G6SST2”, “G7SST1”, “G7SST2”, “highresSST”, “a4SST”, “a4SSTice”)</li>
+<li>Offline land-surface model (“land”)</li>
+<li>Ocean and sea ice model forced by prescribed atmospheric conditions (“omip1” or “omip2”)</li>
+<li>Earth system model forced by emissions (rather than concentrations) of CO2 (“esm”)</li>
+<li>The next segment is the first indication of experiment conditions</li>
+<li>Any additional segments indicate some relatively small variation on experiment conditions defined by the previous segment.   </li>
 </ul>
 <p>We now provide two examples of the global attributes relevant to identifying a CMIP6 experiment, and the filenames and directory structures that make use of these global attributes. </p>
 <p>Example 1: The common case when there are no sub-experiments:</p>
@@ -1919,7 +1876,7 @@ else nominal_resolution = “10000 km”
 <p>6.2.0 (2 December 2016; shortened URL is <a href="http://goo.gl/v1drZl">goo.gl/v1drZl</a>):</p>
 <ul>
 <li>
-<p>Reversed the order of the \<source\_id>_\<experiment\_id> segment of the filename (with “source” now first) to be consistent with subsequent examples of filename in this document  and more like the ordering of the CMIP5 filename and the directory structure.</p>
+<p>Reversed the order of the <code>&lt;source_id&gt;_&lt;experiment_id&gt;</code> segment of the filename (with “source” now first) to be consistent with subsequent examples of filename in this document  and more like the ordering of the CMIP5 filename and the directory structure.</p>
 </li>
 <li>
 <p>Eliminated one of the optional sentences in the “license” attribute because it seemed unnecessary, given the more general statement made in the sentence that followed.</p>
