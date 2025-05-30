@@ -42,3 +42,6 @@ The following may be useful for reference:
 - [CMIP6Plus Controlled Vocabularies](https://github.com/WCRP-CMIP/CMIP6Plus_CVs)
 - [CMIP6Plus CMOR tables](https://github.com/PCMDI/mip-cmor-tables)
 
+## Development of this documentation
+
+This content is hosted using github pages and mkdocs. Changes can be made through pull requests to [this repository](https://github.com/matthew-mizielinski/cmip7-guidance).
