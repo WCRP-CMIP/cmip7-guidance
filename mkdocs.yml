@@ -40,3 +40,8 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
 extra_javascript:
   - scripts/embed.js
+
+nav:
+  - CMIP7 Guidance: index.md
+  - CMIP7: CMIP7/index.md
+  - CMIP6: CMIP6/index.md

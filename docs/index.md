@@ -1,10 +1,15 @@
-# CMIP7 Documentation Wiki 
+---
+layout: default
+title: CMIP7 Guidance and Documentation
+---
 
-
+# CMIP7 Guidance and Documentation
 
 !!! tip "Documentation in progress"
 
     The contents of the pages are currently in development and will change. 
+
+The github source for these pages can be found [here](https://github.com/matthew-mizielinski/cmip7-guidance)
 
 ## Guidance documents
 ### CMIP7
@@ -19,6 +24,7 @@
 ### CMIP6
 
 The following may be useful for reference:
+
 - [Global Attributes](CMIP6/global_attributes.md) (adapted from [https://goo.gl/v1drZl](http://goo.gl/v1drZl) )
 - [Guidance for modellers](CMIP6/guidance_for_modellers.md)
 - [Guidance for users](CMIP6/guidance_for_users.md)
@@ -30,7 +36,9 @@ The following may be useful for reference:
 
 ## Other links and documentation
 
-- CMOR: [Documentation](https://cmor.llnl.gov/) [Github](https://github.com/PCMDI/CMOR)
+- CMOR: 
+    - [Documentation](https://cmor.llnl.gov/) 
+    - [Github](https://github.com/PCMDI/CMOR)
 - [CMIP6Plus Controlled Vocabularies](https://github.com/WCRP-CMIP/CMIP6Plus_CVs)
 - [CMIP6Plus CMOR tables](https://github.com/PCMDI/mip-cmor-tables)
 
