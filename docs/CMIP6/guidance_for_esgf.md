@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CMIP7 Participation Guidance for Data Managers
+title: CMIP6 Participation Guidance for Data Managers
 ---
 
 <style type="text/css">
