@@ -38,6 +38,7 @@ The following may be useful for reference:
 - CMOR: 
     - [Documentation](https://cmor.llnl.gov/) 
     - [Github](https://github.com/PCMDI/CMOR)
+- [CF conventions](https://cfconventions.org/)
 - [CMIP6Plus Controlled Vocabularies](https://github.com/WCRP-CMIP/CMIP6Plus_CVs)
 - [CMIP6Plus CMOR tables](https://github.com/PCMDI/mip-cmor-tables)
 
