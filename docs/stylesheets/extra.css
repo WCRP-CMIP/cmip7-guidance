@@ -5,7 +5,7 @@
 .md-footer {
   background-color: transparent;
   backdrop-filter: blur(10px);
-  color: #239e52 !important;
+  /*color: #22bfb7 !important;*/
 }
 .md-footer__link .md-footer__title{
   margin:0;
@@ -28,7 +28,7 @@
 }
 
 .md-header {
-  background-color: #239e52
+  background-color: #22bfb7
 }
 
 .md-header__title{
@@ -57,7 +57,7 @@ body{
 }
 
 a{
-  color: #88ccf1;
+  color: #128aca;
 }
 
 /* Style for iframes */
