@@ -44,4 +44,4 @@ The following may be useful for reference:
 
 ## Development of this documentation
 
-This content is hosted using github pages and mkdocs. Changes can be made through pull requests to [this repository](https://github.com/matthew-mizielinski/cmip7-guidance).
+This content is hosted using github pages and mkdocs. Changes can be made through pull requests to [this repository](https://github.com/WCRP-CMIP/cmip7-guidance).
