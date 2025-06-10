@@ -19,6 +19,7 @@ title: CMIP7 Guidance and Documentation
 - [Guidance for ESGF node operators](CMIP7/guidance_for_esgf.md)
 - [Terms of use](CMIP7/terms_of_use.md)
 - [Data Request Software](https://github.com/CMIP-Data-Request/CMIP7_DReq_Software)
+- [Experiment naming guidance](https://zenodo.org/records/14929769)
 
 ### CMIP6
 
