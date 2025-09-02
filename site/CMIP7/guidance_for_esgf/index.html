@@ -12,7 +12,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
     
     
       
@@ -20,7 +20,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -342,32 +342,104 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-preparation-for-publication" class="md-nav__link">
+    <nav class="md-nav" aria-label="1. Installation and configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-esgf-software" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Preparation for publication
+      1.1 ESGF Software
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#3-dataset-publication-and-retraction" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#12-how-to-install" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Dataset publication and retraction
+      1.2 How to install
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#4-errata-and-data-versioning" class="md-nav__link">
+  <a href="#2-dataset-publication" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Errata and data versioning
+      2. Dataset publication
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="2. Dataset publication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-dataset-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Dataset preparation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-publisher-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Publisher introduction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-esg-publisher-software-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 ESG-Publisher software installation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-dataset-publication" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 Dataset publication
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-dataset-retraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Dataset retraction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Dataset retraction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-retraction-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Retraction process
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -389,9 +461,47 @@
 
 <h1 id="cmip7-participation-for-data-managers">CMIP7 Participation for Data Managers</h1>
 <h2 id="1-installation-and-configuration">1. Installation and configuration</h2>
-<h2 id="2-preparation-for-publication">2. Preparation for publication</h2>
-<h2 id="3-dataset-publication-and-retraction">3. Dataset publication and retraction</h2>
-<h2 id="4-errata-and-data-versioning">4. Errata and data versioning</h2>
+<p>All information on Earth System Grid Federation (ESGF) can be found <a href="https://esgf.github.io/">here</a> <em>this needs updating?</em></p>
+<p><em>Somewhere in the documentation below needs a) information about QC procedures for Data Managers and b) graphic of the ESGF NG setup (Forrest/Phil have sent examples to IPO)</em></p>
+<h3 id="11-esgf-software">1.1 ESGF Software</h3>
+<p><strong>Description</strong></p>
+<p>The ESGF Data Node software stack enables sites hosting earth system data to make it available to the community over several transfer protocols including http(s). ~~Index nodes enable search for hosted data via data publishing to the index, and these nodes include a search API and web frontend~~.<em>not sure this is relevant if indexing is deprecated</em>? Identity nodes manage user accounts. Nodes run as Docker containers and can be deployed via Ansible Playbooks or Helm Charts in a Kubernetes environment</p>
+<p><strong>New and exisiting installations</strong></p>
+<p>For new or exisiting ESGF node installations, first read the <a href="www.esgf.com">following document</a> <em>needs proper link and updating</em> on ESGF policies, as this will influence the type of installation you need to deploy. </p>
+<h3 id="12-how-to-install">1.2 How to install</h3>
+<p><strong>Requirements, setup and usage documentation</strong></p>
+<p><strong>Software Stack</strong>
+The ESGF software stack requires Linux RedHat Enterprise or Rocky/Alma distributions. Administrators must have full sudo privileges to root access or a Kubernetes Cluster.
+The services are meant to run on <a href="www.exaple.com">webserver-grade hardware</a> <em>need a practical example here with cost estimate</em>. 
+For data-sharing nodes the storage holding your data must be mounted on the node. </p>
+<p><strong>ESGF Docker</strong> 
+Instructions and links to any issuses can be <a href="https://github.com/ESGF/esgf-docker/">found here</a>.</p>
+<p><strong>Ansible</strong> 
+Legacy documentation is available <a href="https://esgf.github.io/esgf-ansible/intro/intro.html">here</a> <em>is this still valid?</em></p>
+<p><strong>Metagrid user interface</strong>
+To install the Metagrid UI for end-users to search and download data, read the documentation <a href="https://metagrid.readthedocs.io/en/latest/">here</a> and see the Github repo <a href="https://github.com/aims-group/metagrid">here</a><em>don't know if these links need updating</em>?</p>
+<h2 id="2-dataset-publication">2. Dataset publication</h2>
+<p><strong>Requirements</strong> </p>
+<p>Publishers to ESGF <strong>must</strong> have an existing Data Node installed at their site. Although the publisher software (from v5.x onwards) does not need to run on the Data Node it does require a <em>Data mount</em> for the software to access data files. </p>
+<h3 id="21-dataset-preparation">2.1 Dataset preparation</h3>
+<p>The ESGF publication process requires robust and effective data management, which can also be a burden for data managers. However, the ESGF esgprep toolbox is a piece of software that enables data preparation according to ESGF best practices. Esgprep allows the data providers and data node managers to easily prepare their data for publishing to an ESGF node - it is a standalone toolbox. It can be used to fetch required configuration files, apply the Data Reference Syntax on local filesystems and/or generate mapfiles for ESGF publication.</p>
+<p>Full details of <em>esgprep</em> and instructions for use provided by the team at Institut Pierre-Simon Laplace (IPSL) can be found <a href="https://esgf.github.io/esgf-prepare/">here</a></p>
+<h3 id="22-publisher-introduction">2.2 Publisher introduction</h3>
+<p>The esg-publisher or <em>esgcet</em> Python package contains a collection of command-line utilities to scan, manipulate and push dataset metadata to an ESGF index node. 
+The basic publication process takes several steps with some optional steps. Publisher functionality is available via several submodles/classes in the package.
+Please refer to the <a href="https://esg-publisher.readthedocs.io/en/stable/intro.html">user documentation</a> and <a href="https://github.com/ESGF/esg-publisher/issues">Github issues page</a></p>
+<h3 id="23-esg-publisher-software-installation">2.3 ESG-Publisher software installation</h3>
+<p><strong>Requirements</strong> </p>
+<ol>
+<li>A python environment, using venv, conda, miniforge/mamba etc. </li>
+<li>Mountpoint map to data on the same host as the publisher software installation, so the publisher scan utility (eg. autocurator) has access.</li>
+<li>Basic dataset information provided via the esg mapfile format. For example using the esgf-prepare/esgmapfile utility.</li>
+</ol>
+<h3 id="24-dataset-publication">2.4 Dataset publication</h3>
+<p>Full details of the dataset publication process using <em>pip install</em> to install <em>esgcet</em> can be found <a href="https://esg-publisher.readthedocs.io/en/stable/install.html">here</a></p>
+<h2 id="3-dataset-retraction">3. Dataset retraction</h2>
+<h3 id="31-retraction-process">3.1 Retraction process</h3>
+<p>The <em>esgunpublish</em> command retracts, or, upon specification, deletes a specified dataset(s). The output of this command is either a success or failure message accompanied with the id of the dataset that was retracted. <strong>Exercise caution</strong> when deleting datasets. If replicas have been made or if you will be republishing, <strong>you should retract</strong> rather than delete outright. Follow the instructions <a href="https://esg-publisher.readthedocs.io/en/stable/esgunpublish.html">here</a> and for an example, check out the <a href="https://nbviewer.org/github/ESGF/esg-publisher/blob/main/notebooks/unpublish-list.ipynb">Jupyter notebook</a></p>
 
 
 
@@ -437,10 +547,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.footer", "search.suggest", "header.autohide"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.footer", "search.suggest", "header.autohide"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
       
         <script src="../../scripts/embed.js"></script>
       
