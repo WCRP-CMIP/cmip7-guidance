@@ -387,6 +387,66 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="6. Software for preparing/checking output">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#important-caveats" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚧 Important Caveats
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#development-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠 Development Approach
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-get-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 How to Get Started
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-usage-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ Configuration, Usage &amp; Reporting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-now" class="md-nav__link">
+    <span class="md-ellipsis">
+      💡 Why Now?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-contribute" class="md-nav__link">
+    <span class="md-ellipsis">
+      🗣️ How to Contribute
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -439,6 +499,70 @@
 <h2 id="4-model-output-fields">4.  Model output fields</h2>
 <h2 id="5-model-output-requirements">5. Model output requirements</h2>
 <h2 id="6-software-for-preparingchecking-output">6.  Software for preparing/checking output</h2>
+<p>The <strong>ESGF Quality Control (QC) Framework</strong> is a new unified solution designed to validate and ensure the integrity of climate model outputs intended for publication on the Earth System Grid Federation (ESGF).<br />
+Historically, QC in ESGF has relied on a patchwork of tools (<strong>PrePARE</strong>, <strong>QA-DKRZ</strong>, <strong>nctime</strong>, and others) each covering different aspects of metadata and data checks. While effective, this fragmented approach introduced redundancy, maintenance challenges, and reduced transparency in QC workflows.  </p>
+<p>The goal of this framework is to provide a cohesive, extensible, and transparent system that consolidates key checks, covers at least the minimum requirements for ESGF publication, and produces standardized reporting.</p>
+<blockquote>
+<p>⚠️ <strong>We’re releasing an </strong>early version<strong> of this ESGF QC Framework</strong>. This release is the result of ongoing development and while not final, it aims to give <em>data managers</em> and <em>advanced users</em> an opportunity to explore the tool and adapt their workflows in anticipation of CMIP7. This early release is <em>not</em> intended for general use. It is primarily targeted at <em>data providers</em> responsible for the <strong>pre-publication QC</strong> of CMIP data on ESGF.</p>
+</blockquote>
+<h3 id="important-caveats">🚧 Important Caveats</h3>
+<ul>
+<li><strong>Scope is limited</strong>:  </li>
+<li>Support only the subset of <strong>CMIP6</strong> variables provided to the <strong>Copernicus Climate Data Store</strong></li>
+<li>
+<p><strong>CMIP7</strong> is not yet supported due to pending updates to the Controlled Vocabulary (CV)</p>
+</li>
+<li>
+<p><strong>Development in progress</strong>:  </p>
+</li>
+<li>The framework may still contain <strong>minor bugs</strong>  </li>
+<li>
+<p><strong>QC results may change</strong> in future releases and <strong>should not be treated as final</strong> .</p>
+</li>
+<li>
+<p><strong>Not yet validated</strong>:  </p>
+</li>
+<li>This version is for experimentation, not for compliance reporting.</li>
+</ul>
+<h3 id="development-approach">🛠 Development Approach</h3>
+<p>This framework was developed through a <strong>community-driven, iterative process</strong>:</p>
+<ul>
+<li>Forked from the <strong>IOOS Compliance Checker</strong> for its modular architecture</li>
+<li>Feature branches reviewed and merged after unit testing  </li>
+<li>Public GitHub repository with issue tracking and a contribution guide</li>
+<li>Development progress tracked via a shared, public QC checklist table</li>
+</ul>
+<h3 id="how-to-get-started">📦 How to Get Started</h3>
+<ul>
+<li>Installation instructions and basic usage are available here: 📘 https://esgf.github.io/esgf-qc/  </li>
+<li>GitHub release: 🔗 https://github.com/ESGF/esgf-qc/tree/v0.1-beta</li>
+</ul>
+<h3 id="configuration-usage-reporting">⚙️ Configuration, Usage &amp; Reporting</h3>
+<p>The framework can run specific or full QC suites against your NetCDF files. The framework was designed with a clear separation between definition and logic, ensuring that QC rules remain modular and easy to maintain.</p>
+<p>The <strong>configuration</strong> enables simple versioning and sharing of rule sets, while allowing users to quickly copy and customize configurations—for example, by adjusting the list of checks or their severity levels to match a specific project context through a human-readable <strong>TOML files</strong> that control:
+- Which checks are run
+- Their severity
+  - 🚫 <strong>MANDATORY</strong>: Must pass for file/dataset to be valid.
+  - ⚠️ <strong>WARNING</strong>: Does not block ingestion or impact critical downstream processes, but highlights issues that should be corrected from a user perspective to ensure data quality and usability.
+  - ℹ️ <strong>OPTIONAL</strong>: Informational checks with no impact on validity
+- Expected values or constraints where applicable</p>
+<blockquote>
+<p>⚠️ In this beta version, the <strong>variable registry is not yet queried</strong>. Variable information from CV relies on a <strong>manual mapping</strong> defined in the configuration file. To be automated via <strong>esgvoc</strong> in future releases.</p>
+</blockquote>
+<p><strong>Usage</strong> is built on the IOOS Compliance Checker, maintaining workflow flexibility for modeling groups that already operate their own QA/QC pipelines. It generates atomic log files per run (at both file and dataset levels) and supports seamless parallel execution, enabling straightforward integration with batch schedulers and large-scale production workflows. 
+  <div class="highlight"><pre><span></span><code>esgqc<span class="w"> </span>--test<span class="o">=</span>wcrp_cmip6:1.0<span class="w"> </span>/path/to/data/file.nc
+</code></pre></div></p>
+<p>The <strong>reporting system</strong> inherits the IOOS logic, combining output filtering, severity-based scoring, and granular reports suitable for both operational monitoring and expert review. Results can be easily mapped to standard logging levels (info, warning, critical), facilitating integration with existing QA dashboards. Future releases will extend these capabilities with consolidated dataset-level reports for a clearer overview of publication readiness.</p>
+<h3 id="why-now">💡 Why Now?</h3>
+<p>This early release aims to:</p>
+<ul>
+<li>Help <strong>data centres</strong> and <strong>modeling groups</strong> prepare for CMIP7 data workflows.</li>
+<li>Gather <strong>feedback</strong> on tool design, performance, and usability.</li>
+<li>Build alignment with emerging <strong>vocabulary and metadata conventions</strong>.</li>
+</ul>
+<h3 id="how-to-contribute">🗣️ How to Contribute</h3>
+<p>If you encounter issues or have suggestions, please <strong>open a GitHub issue</strong> on the project repository:<br />
+👉 https://github.com/ESGF/esgf-qc/issues</p>
 <h2 id="7-archivingpublishing-output">7.  Archiving/publishing output</h2>
 <h2 id="8-documentation-process">8.  Documentation Process</h2>
 <h2 id="9-cmip7-organisation-and-governance">9.  CMIP7 organisation and governance</h2>
