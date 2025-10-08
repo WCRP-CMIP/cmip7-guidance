@@ -41,6 +41,7 @@ Each file records a well-defined set of **global attributes** — some mandatory
 
 Values for many attributes are governed by **CMIP7 Controlled Vocabularies (CVs)** available at:  
 ➡️ [https://github.com/WCRP-CMIP/CMIP7_CVs/](https://github.com/WCRP-CMIP/CMIP7_CVs/)  
+[https://github.com/WCRP-CMIP/WCRP-Universe/](https://github.com/WCRP-CMIP/WCRP-Universe/)  
 Guidance documents: [https://wcrp-cmip.github.io/cmip7-guidance/](https://wcrp-cmip.github.io/cmip7-guidance/)
 
 ---
@@ -83,11 +84,9 @@ Provide additional context (e.g., `experiment`, `institution`, `license`, `sourc
 ## 4. File Name Template
 
 Each CMIP7 file follows a standardized pattern derived from global attributes:
-
-<variable_id><branding_suffix><frequency><region><grid_label><source_id><experiment_id><variant_label>[<timeRangeDD>].nc
-
-
-
+```
+<variable_id>_<branding_suffix>_<frequency>_<region>_<grid_label>_<source_id>_<experiment_id>_<variant_label>[_<timeRangeDD>].nc
+```
 ### Example:
 
 tas_tavg-h2m-hxy-u_mon_glb_g13s_CanESM6-MR_historical_r2i1p1f1_190001-190912.nc  
@@ -104,18 +103,15 @@ tas_tavg-h2m-hxy-u_mon_glb_g13s_CanESM6-MR_historical_r2i1p1f1_190001-190912.nc
 
 The CMIP7 archive organizes files hierarchically using the following DRS pattern:
 
-
-<drs_specs>/<mip_era>/<activity_id>/<institution_id>/<source_id>/<experiment_id>/<variant_label>/<region>/<frequency>/<variable_id>/<branding_suffix>/<grid_label>/<datasetEditionDD>
-
+```
+<drs_specs>/<mip_era>/<activity_id>/<institution_id>/<source_id>/<experiment_id>/<variant_label>/<region>/<frequency>/variable_d>/<branding_suffix>/<grid_label>/<directoryDateDD>
+```
 
 
 
 ### Example:
 
 MIP-DRS7/CMIP7/CMIP/CCCma/CanESM6-MR/historical/r2i1p1f1/glb/mon/tas/tavg-h2m-hxy-u/g13s/v20250622
-
-
-
 
 **`datasetEditionDD`** (e.g., `v20250622`) marks the dataset creation or revision date.
 
@@ -148,7 +144,7 @@ It is computed using a standard algorithm (updated from CMIP6 Appendix 2) that e
 - **Document Version:** v1.0  
 - **Publication Date:** 6 October 2025  
 - **DOI:** [10.5281/zenodo.17250297](https://doi.org/10.5281/zenodo.17250297)  
-- **Maintained by:** WCRP CMIP7 Data Standards Team  
+- **Maintained by:** WCRP CMIP7 CV TT Team  
 - **Reference CV Repository:** [CMIP7_CVs GitHub](https://github.com/WCRP-CMIP/CMIP7_CVs)
 
 ---
