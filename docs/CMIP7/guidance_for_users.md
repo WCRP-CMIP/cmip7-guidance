@@ -122,7 +122,8 @@ The variables produced in CMIP7 were recommended by the [CMIP7 Data Request task
 ### 3.3.  Source and Variant
 * [List of models][sourceIdhtml]
 * [Essential Model Documentation (EMD)][emd]
-* [ES-DOC][es-docsCmip]
+*  [Model Documentation][es-docsCmip]
+* [Ensemble documentation][es-docsEnsemblesSimulations]
 
 
 Many sources, or models, participate in CMIP7. Each CMIP6 model output file includes a global attribute called “further_info_url” which will link to a signpost web page providing simulation/ensemble information, model configuration details, current contact details, data citation details, etc.  Two types of documentation are available to understand the differences between models: 
@@ -165,9 +166,11 @@ Any ESGF user can report an error to the appropriate modeling group (see "contac
 [an easy and user-friendly form][errataFormCreateDoc]. A [command line client][errataCLCDoc] is also available. The aim is to clearly and concisely document the issue and through the PID integration, this errata service will include all the datasets/files affected when documentation is completed correctly.
 
 ## 6.  CMIP7 organisation and governance
-The [CMIP Panel][CMIPPanel], which is a standing subcommittee of the WCRP’s [Working Group on Climate Modeling][wgcmSite] provides overall guidance and oversight of CMIP activities. The CMIP Panel has delegated responsibility for most of the technical requirements of CMIP to the [WGCM Infrastructure Panel (WIP)][wip].More on the governance [here][gov].
+* [Governance documentation][gov]
 
-The [endorsed MIPs][CMIPEndorsedMips] are managed by independent committees, but acceptance of endorsement obligates them to follow CMIP’s technical requirements. Thus across all MIPs, the modeling groups can prepare their model output following a common procedure.
+The [CMIP Panel][CMIPPanel], which is a standing subcommittee of the WCRP’s [Working Group on Climate Modeling][wgcmSite] provides overall guidance and oversight of CMIP activities. The CMIP Panel has delegated responsibility for most of the technical requirements of CMIP to the [WGCM Infrastructure Panel (WIP)][wip]. The [endorsed MIPs][CMIPEndorsedMips] are managed by independent committees, but acceptance of endorsement obligates them to follow CMIP’s technical requirements. Thus across all MIPs, the modeling groups can prepare their model output following a common procedure.
+
+
 
 
 
@@ -229,11 +232,12 @@ You have a more specific question ? Ask it on the [Fresh Eyes Platform][platform
 [eld]: ?
 
  <!-- broken links -->
- [es-docsCmip]: https://es-doc.org/
- [es-docsExperiments]: https://es-doc.org/cmip6-experiments
- [es-docsModels]: https://es-doc.org/cmip6-models
- [ES-DOCErrataService]: https://errata.es-doc.org/static/index.html
- [errataSearchUIDoc]: https://es-doc.github.io/esdoc-errata-client/searchUI.html
- [errataPIDLookupDoc]: https://es-doc.github.io/esdoc-errata-client/lookup.html
- [errataFormCreateDoc]: https://es-doc.github.io/esdoc-errata-client/create.html
- [errataCLCDoc]: https://es-doc.github.io/esdoc-errata-client/client.html
+[es-docsCmip]: https://es-doc.org/
+[es-docsExperiments]: https://es-doc.org/cmip6-experiments
+[es-docsModels]: https://es-doc.org/cmip6-models
+[ES-DOCErrataService]: https://errata.es-doc.org/static/index.html
+[errataSearchUIDoc]: https://es-doc.github.io/esdoc-errata-client/searchUI.html
+[errataPIDLookupDoc]: https://es-doc.github.io/esdoc-errata-client/lookup.html
+[errataFormCreateDoc]: https://es-doc.github.io/esdoc-errata-client/create.html
+[errataCLCDoc]: https://es-doc.github.io/esdoc-errata-client/client.html
+[es-docsEnsemblesSimulations]: https://es-doc.org/cmip6-ensembles-simulations
