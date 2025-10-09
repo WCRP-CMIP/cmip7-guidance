@@ -23,7 +23,7 @@ There are X options to access the data:
     A python library that allows the user to interface with the ESGF search API. It handles scanning, downloading and updating datasets, files and queries from ESGF.
 
 
-TODO: maybe add secondary sources  ? I assume CMIP7 will also be on Copernicus climate data store and maybe a pangeo cloud ?
+TODO: maybe add secondary sources  ? I assume CMIP7 will also be on Copernicus climate data store and maybe a pangeo cloud, but not out at first ?
 
  <details>
     <summary>More on access</summary>
@@ -179,10 +179,6 @@ You have a more specific question ? Ask it on the [Fresh Eyes Platform][platform
 
 
 
-
-TODO: in PR list all I have removed and why. (eg. Experimental conformance, why is this different than experiment documentation)
-Tried to avoid wall-of-text and gear more towards users, not modellers or node manager.
-TODO: what should be here vs what should be on https://wcrp-cmip.org/cmip-phases/cmip7/ ? do we need both ? can we avoid proliferation of pages that say some but not all of the same thing ?
 #TODO: make pretty with more admonitions. https://squidfunk.github.io/mkdocs-material/reference/admonitions/
 
 
