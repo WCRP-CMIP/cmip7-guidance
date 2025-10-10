@@ -140,6 +140,8 @@ There are 4 indices defining an ensemble member: “r” for realization, “i�
 
 A useful tool to assess the models is the [Rapid Evaluation Framework (REF)][ref]. It is a systematic and rapid performance assessment of the expected models participating in the CMIP7 Assessment Fast Track. 
 
+#TODO: maybe add a grid section, when https://github.com/WCRP-CMIP/Variable-Registry/issues/111 is decided
+
 ## 4. CMIP7 data format
 
 As in previous phases, all CMIP7 output has been written to netCDF files with one variable stored per file. The data have been “cmorized” (i.e., written in conformance with the [CF-conventions][cfConventionsPage] and all the CMIP standards). There are mandatory [global attributes][cmipGlobalAttGoogleDoc] to include in each files.
@@ -171,7 +173,7 @@ Any ESGF user can report an error to the appropriate modeling group (see "contac
 The [CMIP Panel][CMIPPanel], which is a standing subcommittee of the WCRP’s [Working Group on Climate Modeling][wgcmSite] provides overall guidance and oversight of CMIP activities. The CMIP Panel has delegated responsibility for most of the technical requirements of CMIP to the [WGCM Infrastructure Panel (WIP)][wip]. The [endorsed MIPs][CMIPEndorsedMips] are managed by independent committees, but acceptance of endorsement obligates them to follow CMIP’s technical requirements. Thus across all MIPs, the modeling groups can prepare their model output following a common procedure.
 
 
-
+#TODO: maybe add a Differences with CMIP6 section
 
 
 ## 7. New to CMIP?
