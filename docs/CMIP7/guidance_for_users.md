@@ -167,10 +167,6 @@ The Errata Service provides the ability to query modifications and/or correction
 Any ESGF user can report an error to the appropriate modeling group (see "contact" attribute in the netCDF files), or through the <a href="mailto:esgf-user@llnl.gov">ESGF user mailing list</a>. After a report is received, the corresponding data manager can create a new errata entry using
 [an easy and user-friendly form][errataFormCreateDoc]. A [command line client][errataCLCDoc] is also available. The aim is to clearly and concisely document the issue and through the PID integration, this errata service will include all the datasets/files affected when documentation is completed correctly.
 
-## 6.  CMIP7 organisation and governance
-* [Governance documentation][gov]
-
-The [CMIP Panel][CMIPPanel], which is a standing subcommittee of the WCRP’s [Working Group on Climate Modeling][wgcmSite] provides overall guidance and oversight of CMIP activities. The CMIP Panel has delegated responsibility for most of the technical requirements of CMIP to the [WGCM Infrastructure Panel (WIP)][wip]. The [endorsed MIPs][CMIPEndorsedMips] are managed by independent committees, but acceptance of endorsement obligates them to follow CMIP’s technical requirements. Thus across all MIPs, the modeling groups can prepare their model output following a common procedure.
 
 
 #TODO: maybe add a Differences with CMIP6 section
