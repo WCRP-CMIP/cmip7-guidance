@@ -5,7 +5,7 @@ title: CMIP7 Guidance for Data Users
 
 # CMIP7 Guidance for Data Users
 
-This page is designed to inform data users on key CMIP7 concepts and tools and redirect them to the proper resources to learn more.
+This page is designed to inform data users on key CMIP7 concepts and tools. It is a landing page to redirect them to the proper resources to learn more.
 
 
 ## 1.  Accessing CMIP7 data
@@ -13,7 +13,7 @@ This page is designed to inform data users on key CMIP7 concepts and tools and r
 CMIP7 model output is available through a distributed data archive developed and operated by the Earth System Grid Federation (ESGF). 
 
 
-There are X options to access the data:
+There are 2 options to access the data:
  1. [**MetaGrid**][metagrid]
 
     An easy-to-use website that provides an interface to search and download ESGF data. It provides access through http downloads, wget script, OPENDAP URL and Globus transfers.
@@ -33,20 +33,20 @@ TODO: maybe add secondary sources  ? I assume CMIP7 will also be on Copernicus c
 
 ## 2.  Terms of use, citations and registration requirements
 
-To enable modeling groups and others who support CMIP7 to demonstrate its impact (and secure ongoing funding), you are required to cite and acknowledge those who have made CMIP7 possible. Data references give credit to the data providers and enable the traceability of research findings (see [contribution to the CMIP6 Model Analysis Workshop][citemaws]). When using CMIP7 data, you must: 
+To enable modeling groups and others who support CMIP7 to demonstrate its impact (and secure ongoing funding), you are required to cite and acknowledge those who have made CMIP7 possible. When using CMIP7 data, you must: 
 
  1. **Acknowledge CMIP7.**
 
     In the Acknowledgment section, please insert the following text:
 
-    "We acknowledge the World Climate Research Programme, which, through its Working Group on Coupled Modelling, coordinated and promoted CMIP6. We thank the climate modeling groups for producing and making available their model output, the Earth System Grid Federation (ESGF) for archiving the data and providing access, and the multiple funding agencies who support CMIP7 and ESGF."
+    "We acknowledge the World Climate Research Programme, which, through its Working Group on Coupled Modelling, coordinated and promoted CMIP7. We thank the climate modeling groups for producing and making available their model output, the Earth System Grid Federation (ESGF) for archiving the data and providing access, and the multiple funding agencies who support CMIP7 and ESGF."
 
  2. **Cite the specific dataset(s) used.**
 
     Data citations are accessible from the [Citation Search][citesearch], MetaGrid and via the furtherInfoUrl found in the global attributes of the data.
     Note that there are two citation granularities on experiment data and on model/MIP data.
 
-    Please include the data version to the given citation information in the form of:
+    Please include a citation in the form of:
 
         Authors/Data Creators (publication year): Title. Version YYYYMMDD. Earth System Grid Federation. DOI.
         
@@ -104,7 +104,7 @@ The CMIP7 protocol and experiments are described in a [special issue][GMDSpecial
 
 Each model participating in CMIP7 will contribute results from the eight DECK experiments (piControl, AMIP, abrupt4xCO2, 1pctCO2, historical, piClim-Control, piClim-anthro, piClim-4xCO2). These experiments are the only ones directly overseen by the [CMIP Panel][CMIPPanel], and together these constitute the ongoing (slowly evolving) “CMIP” activity. 
 
-In addition to the DECK, each modeling group may choose to contribute to any of the [CMIP7 endorsed MIPs][CMIPEndorsedMips]. See the [GMD Special CMIP6 Issue][GMDSpecialIssue] for descriptions of each MIP and its experiment specifications. The CMIP panel identifies key experiments to be prioritized on different timelines through fast tracks. The first one is the [Assessment Fast Track (AFT)][aft].
+In addition to the DECK, each modeling group may choose to contribute to any of the [CMIP7 endorsed MIPs][CMIPEndorsedMips]. The CMIP panel identifies key experiments to be prioritized on different timelines through fast tracks. The first one is the [Assessment Fast Track (AFT)][aft].
 
 
 
@@ -129,7 +129,7 @@ The variables produced in CMIP7 were recommended by the [CMIP7 Data Request task
 Many sources, or models, participate in CMIP7. Each CMIP6 model output file includes a global attribute called “further_info_url” which will link to a signpost web page providing simulation/ensemble information, model configuration details, current contact details, data citation details, etc.  Two types of documentation are available to understand the differences between models: 
 
 1. [**Essential Model Documentation (EMD)**][emd]
-    High-level description intended to contain information on model formulation that can be easily compared between different models. Mandatory in CMIP7
+    High-level description intended to contain information on model formulation that can be easily compared between different models.
 2. [**ES-DOC**][es-docsCmip]
     More in-depth but less standardized documentation of each model. Note that each model might also put documentation up on their own website.
 
@@ -138,7 +138,7 @@ In each model output file, the “ripf” identifier, named variant, is used to 
 #TODO: hopefully not True in CMIP7?
 There are 4 indices defining an ensemble member: “r” for realization, “i” for initialization, “p” for physics, and “f” for forcing. Modeling groups will record in ES-DOC the key to interpreting the differences between simulations identified by different indices. 
 
-A useful tool to assess the models is the [Rapid Evaluation Framework (REF)][ref]. It is a systematic and rapid performance assessment of the expected models participating in the CMIP7 Assessment Fast Track. 
+A useful tool to assess the models is the [Rapid Evaluation Framework (REF)][ref]. It is an assessment of the models participating in the CMIP7 Assessment Fast Track. 
 
 #TODO: maybe add a grid section, when https://github.com/WCRP-CMIP/Variable-Registry/issues/111 is decided
 
@@ -165,7 +165,7 @@ The Errata Service provides the ability to query modifications and/or correction
 * A **[search interface that helps retrace a specific dataset/file version history][errataPIDLookupDoc]**.
 
 Any ESGF user can report an error to the appropriate modeling group (see "contact" attribute in the netCDF files), or through the <a href="mailto:esgf-user@llnl.gov">ESGF user mailing list</a>. After a report is received, the corresponding data manager can create a new errata entry using
-[an easy and user-friendly form][errataFormCreateDoc]. A [command line client][errataCLCDoc] is also available. The aim is to clearly and concisely document the issue and through the PID integration, this errata service will include all the datasets/files affected when documentation is completed correctly.
+[an easy and user-friendly form][errataFormCreateDoc].
 
 
 
