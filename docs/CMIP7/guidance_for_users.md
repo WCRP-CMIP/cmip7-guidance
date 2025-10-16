@@ -10,25 +10,20 @@ This page is designed to inform data users on key CMIP7 concepts and tools. It i
 
 ## 1.  Accessing CMIP7 data
 
-CMIP7 model output is available through a distributed data archive developed and operated by the Earth System Grid Federation (ESGF). 
+CMIP7 model output is available through a distributed data archive developed and operated by the Earth System Grid Federation (ESGF). The data are hosted on a collection of nodes located at modeling centers or data centers across the world.
 
 
 There are 2 options to access the data:
- 1. [**MetaGrid**][metagrid]
 
-    An easy-to-use website that provides an interface to search and download ESGF data. It provides access through http downloads, wget script, OPENDAP URL and Globus transfers.
-    TODO:is there more than one link that works ?
+ 1. **MetaGrid** ([LLNL][metagridllnl], [DKRZ][metagriddkrz], [ORNL][metagridornl], [CEDA][metagridceda])
+
+    An easy-to-use website that provides an interface to search and download ESGF data. It provides access through http downloads, wget scripts, OPeNDAP URLs and Globus transfers. The data can be accessed through any of the CMIP7 web interfaces linked above, which enable users to search across the entire distributed archive as if it were all centrally located.
+
  2. [**ESGpull**][esgpull]
 
     A python library that allows the user to interface with the ESGF search API. It handles scanning, downloading and updating datasets, files and queries from ESGF.
 
-
-TODO: maybe add secondary sources  ? I assume CMIP7 will also be on Copernicus climate data store and maybe a pangeo cloud, but not out at first ?
-
- <details>
-    <summary>More on access</summary>
-    The data are hosted on a collection of nodes located at modeling centers or data centers across the world. The data can be accessed through any of the CMIP7 web interfaces, which enable users to search across the entire distributed archive as if it were all centrally located.
-</details>
+This page will be updated as other access routes become available.
 
 
 ## 2.  Terms of use, citations and registration requirements
@@ -39,18 +34,24 @@ To enable modeling groups and others who support CMIP7 to demonstrate its impact
 
     In the Acknowledgment section, please insert the following text:
 
-    "We acknowledge the World Climate Research Programme, which, through its Working Group on Coupled Modelling, coordinated and promoted CMIP7. We thank the climate modeling groups for producing and making available their model output, the Earth System Grid Federation (ESGF) for archiving the data and providing access, and the multiple funding agencies who support CMIP7 and ESGF."
+    >"We acknowledge the World Climate Research Programme, which, through its Working Group on Coupled Modelling, coordinated and promoted CMIP7. We thank the climate modeling groups for producing and making available their model output, the Earth System Grid Federation (ESGF) for archiving the data and providing access, and the multiple funding agencies who support CMIP7 and ESGF."
 
  2. **Cite the specific dataset(s) used.**
 
-    Data citations are accessible from the [Citation Search][citesearch], MetaGrid and via the furtherInfoUrl found in the global attributes of the data.
+    Data citations are accessible from the [Citation Search][citesearch] and MetaGrid.
     Note that there are two citation granularities on experiment data and on model/MIP data.
+
+    TODO: verify that there really isn't any way from the file to the citation (and documentation) directly.. 
+          Further_info is dead.
+          My current understanding is that there is a tracking_id  that is unique to the file (ex. http://hdl.handle.net/hdl:21.14100/c682c920-8175-47ad-8657-9836ff69709d). There is also unique identifier for the dataset (http://hdl.handle.net/hdl:21.14100/0f158e88-925f-3edf-983d-34109aa7269a). But in CMIP7 they will not be linked. I don't see the dataset id in the global attrs. and I don't see either link to a citation. Katharina Berger <berger@dkrz.de> seems to be the person in charge of this.
 
     Please include a citation in the form of:
 
         Authors/Data Creators (publication year): Title. Version YYYYMMDD. Earth System Grid Federation. DOI.
         
-    (e.g. Swart et al. (2019): CCCma CanESM5 model output prepared for CMIP6 ScenarioMIP. Version 20190429. Earth System Grid Federation. https://doi.org/10.22033/ESGF/CMIP6.1317. )
+    e.g. 
+
+        Swart et al. (2019): CCCma CanESM5 model output prepared for CMIP6 ScenarioMIP. Version 20190429. Earth System Grid Federation. https://doi.org/10.22033/ESGF/CMIP6.1317. 
 
     where ESGF is the data publisher and the DOI points to the data citation landing page. If the latest dataset version included in your study is unknown, use the date of data download instead to characterize the version.
     
@@ -61,12 +62,12 @@ To enable modeling groups and others who support CMIP7 to demonstrate its impact
 
  <!-- admonition test -->
 !!! warning
-   Please carefully read and adhere to</span> the [CMIP7 Terms of Use](terms_of_use.md). 
 
- <details>
-    <summary>More info on citations</summary>
-    Further information on the data citation concept for CMIP7 is available at [cmip6cite.wdc-climate.de][es-docsCmip] and described in [Stockhause and Lautenschlager (2017)][Stockhause2017]. Citations can also be search using [DataCite's catalog][datacitecat] and [Google's Dataset Search][gdatasetsearch].
-</details>
+    Please carefully read and adhere to</span> the [CMIP7 Terms of Use](terms_of_use.md).
+
+??? Note "More info on citations"
+    Further information on the data citation concept for CMIP7 is available [here][cmipcite] and described in [Stockhause and Lautenschlager (2017)][Stockhause2017]. Citations can also be search using [DataCite's catalog][datacitecat] and [Google's Dataset Search][gdatasetsearch]. [test](google.com)
+
 
 ## 3. CMIP7 facets and their documentation
 TODO: is facets the best word ?
@@ -87,18 +88,24 @@ CMIP7 datasets can be identified through a series of facets that represents key 
 
 The values associated with each facets are standardized through the [controlled vocabularies (CV)][cmipCvs]. They are used to search the ESGF database and can be found in the global attributes of the data. This section provides helpful links and gives a bit more information on a few key facets. 
 
-#TODO: do we still have ES-DOC in CMIP7 ? 
 
+### 3.1.  Source and Variant
+* [List of models][sourceIdhtml]
+* [Essential Model Documentation (EMD)][emd]
 
-### 3.1.  Experiment and Activity
+The Essential Model Documentation (EMD) contains high-level description intended to contain information on model formulation that can be easily compared between different models. EMD pages contain links to more in-depth model documentation for each source.
+
+The source facet gives the name of the model and the variant facet represents each member of an ensemble for a given source. It can also be called the “ripf” identifier (“r” for realization, “i” for initialization, “p” for physics, and “f” for forcing).
+
+A useful tool to assess the models is the [Rapid Evaluation Framework (REF)][ref]. It is an assessment of the models participating in the CMIP7 Assessment Fast Track. 
+
+TODO: maybe add a grid section, when https://github.com/WCRP-CMIP/Variable-Registry/issues/111 is decided
+
+### 3.2.  Experiment and Activity
 * [List of experiments][experimentIdhtml]
 * [List of activities][activityIdJson]
-* [Documentation](es-docsExperiments)
+* TODO: Does experiment doc exist for CMIP7 ?
 
- <details>
-    <summary>More on Documentation</summary>
-    The ES-DOC project has recorded documentation of the CMIP7 experiments including lists of forcings, model configuration, numerical requirements, information about building the ensembles, links to citations and contact information of the principal investigators as well as text descriptions and information about the rationale behind each experiment.
-</details>
  
 The CMIP7 protocol and experiments are described in a [special issue][GMDSpecialIssue] of Geoscientific Model Development with an overview of the design and scientific strategy provided in the lead article of that issue by [Dunne et al. (2025)][dunne2025].
 
@@ -109,67 +116,39 @@ In addition to the DECK, each modeling group may choose to contribute to any of 
 
 
 
-### 3.2. Variable
+### 3.3. Variable
 * [List of variables](URL)
 * [Branded variable documentation](branded_variable.md)
 
 The variables produced in CMIP7 were recommended by the [CMIP7 Data Request task team][cmipDataRequest]. In CMIP7, the concept of branded variable uniquely identifies each variable. It follows the  template: 
+
 ```
 <variableRootDD>_<temporalLabelDD>-<verticalLabelDD>-<horizontalLabelDD>-<areaLabelDD>
 ```
 
 
-### 3.3.  Source and Variant
-* [List of models][sourceIdhtml]
-* [Essential Model Documentation (EMD)][emd]
-*  [Model Documentation][es-docsCmip]
-* [Ensemble documentation][es-docsEnsemblesSimulations]
 
-
-Many sources, or models, participate in CMIP7. Each CMIP6 model output file includes a global attribute called “further_info_url” which will link to a signpost web page providing simulation/ensemble information, model configuration details, current contact details, data citation details, etc.  Two types of documentation are available to understand the differences between models: 
-
-1. [**Essential Model Documentation (EMD)**][emd]
-    High-level description intended to contain information on model formulation that can be easily compared between different models.
-2. [**ES-DOC**][es-docsCmip]
-    More in-depth but less standardized documentation of each model. Note that each model might also put documentation up on their own website.
-
-
-In each model output file, the “ripf” identifier, named variant, is used to uniquely distinguish each member of an ensemble, but the differences between members may not always be clearly (or correctly) recorded in the “variant_info” global attribute. ES-DOC will therefore serve as the reference source for understanding differences between ensemble members.
-#TODO: hopefully not True in CMIP7?
-There are 4 indices defining an ensemble member: “r” for realization, “i” for initialization, “p” for physics, and “f” for forcing. Modeling groups will record in ES-DOC the key to interpreting the differences between simulations identified by different indices. 
-
-A useful tool to assess the models is the [Rapid Evaluation Framework (REF)][ref]. It is an assessment of the models participating in the CMIP7 Assessment Fast Track. 
-
-#TODO: maybe add a grid section, when https://github.com/WCRP-CMIP/Variable-Registry/issues/111 is decided
 
 ## 4. CMIP7 data format
 
-As in previous phases, all CMIP7 output has been written to netCDF files with one variable stored per file. The data have been “cmorized” (i.e., written in conformance with the [CF-conventions][cfConventionsPage] and all the CMIP standards). There are mandatory [global attributes][cmipGlobalAttGoogleDoc] to include in each files.
+As in previous phases, all CMIP7 output has been written to netCDF files with one variable stored per file. The data have been “cmorized” (i.e., written in conformance with the [CF-conventions][cfConventionsPage] and all the CMIP standards). There are mandatory [global attributes][GlobalAttrs] to include in each files.
 
 
 For advanced users who want to understand the data better, the CMIP7 data requirements that were given to modelling centers are defined and discussed in the following documents:
-* [Specifications][cmipGlobalAttGoogleDoc] for file names, directory structures, and CMIP6 Data Reference Syntax (DRS)
-* Specifications for output file content, structure, and metadata are available in [draft google doc](https://goo.gl/neswPr).
-* [Guidance on grid requirements][cmipGridGoogleDoc]
-* [Information on pressure levels][cmipPressureLevelsPdf] requested
-* [Guidance on time-averaging][cmipTimeAveragesCog] (with masking)
+
+* [Guidance on grid requirements][grid]
+* more to come
 
 
 
 
 ## 5.  Reporting suspected errors
-Information about discovered issues of CMIP7 data is captured by the [ES-DOCs Errata Service][ES-DOCErrataService].
-The Errata Service provides the ability to query modifications and/or corrections applied to CMIP6 data in two ways:
+Information about discovered issues of CMIP7 data is captured by the [Errata Service][ErrataService].
 
-* A **[user friendly filtered list of ESGF known issues][errataSearchUIDoc]**.
-* A **[search interface that helps retrace a specific dataset/file version history][errataPIDLookupDoc]**.
-
-Any ESGF user can report an error to the appropriate modeling group (see "contact" attribute in the netCDF files), or through the <a href="mailto:esgf-user@llnl.gov">ESGF user mailing list</a>. After a report is received, the corresponding data manager can create a new errata entry using
-[an easy and user-friendly form][errataFormCreateDoc].
+Any CMIP data user can report an error to the appropriate modeling group (see "contact" attribute in the netCDF files), or through the <a href="mailto:esgf-user@llnl.gov">ESGF user mailing list</a>. After a report is received, the corresponding data manager can create a new errata entry.
 
 
-
-#TODO: maybe add a Differences with CMIP6 section
+TODO: contact global attr is gone 
 
 
 ## 7. New to CMIP?
@@ -180,14 +159,20 @@ You have a more specific question ? Ask it on the [Fresh Eyes Platform][platform
 
 
 
-#TODO: make pretty with more admonitions. https://squidfunk.github.io/mkdocs-material/reference/admonitions/
-
+TODO: make pretty with more admonitions. https://squidfunk.github.io/mkdocs-material/reference/admonitions/
+TODO: abbreviations ?
 
 ###### Document version: 2025-10-08
+ <!-- abbreviations -->
+ *[CMIP]: Coupled Model Intercomparison Project
+
 
  <!-- valid general links -->
-[metagrid]: [https://aims2.llnl.gov/search/]
-[esgpull]: [https://esgf.github.io/esgf-download/]
+[metagridllnl]: https://aims2.llnl.gov/search/
+[metagriddkrz]: https://esgf-metagrid.cloud.dkrz.de/search
+[metagridornl]: https://esgf-node.ornl.gov/search
+[metagridceda]: https://esgf-ui.ceda.ac.uk/search
+[esgpull]: https://esgf.github.io/esgf-download/
 [citemaws]: https://doi.org/10.5281/zenodo.2621084
 [Stockhause2017]: https://doi.org/10.5334/dsj-2017-030
 [gdatasetsearch]: https://toolbox.google.com/datasetsearch/
@@ -200,7 +185,7 @@ You have a more specific question ? Ask it on the [Fresh Eyes Platform][platform
 [CMIPEndorsedMips]: https://wcrp-cmip.org/mips/
 [platform]: https://github.com/orgs/Fresh-Eyes-on-CMIP/discussions
 [register]: https://github.com/Fresh-Eyes-on-CMIP/member-requests/issues/new?template=new_user.yml
-
+[ErrataService]: https://errata.ipsl.fr/static/index.html
 
  <!-- CMIP7 links -->
 [GMDSpecialIssue]: https://gmd.copernicus.org/articles/special_issue1315.html
@@ -211,6 +196,8 @@ You have a more specific question ? Ask it on the [Fresh Eyes Platform][platform
 [cmipCvs]: https://github.com/WCRP-CMIP/CMIP7-CVs
 [cmipDataRequest]: https://wcrp-cmip.org/cmip-phases/cmip7/cmip7-data-request/
 [FeoC]: https://wcrp-cmip.org/cmip7-task-teams/fresh-eyes-on-cmip/
+[GlobalAttrs]: https://zenodo.org/records/17250297
+[grid]: https://zenodo.org/records/15697025
 
 
 #TODO: all the links below need to be changed when the new version arrives
@@ -220,22 +207,8 @@ You have a more specific question ? Ask it on the [Fresh Eyes Platform][platform
 [experimentIdhtml]: https://wcrp-cmip.github.io/CMIP6_CVs/docs/CMIP6_experiment_id.html
 [activityIdJson]: https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_activity_id.json
 [sourceIdHtml]: https://wcrp-cmip.github.io/CMIP6_CVs/docs/CMIP6_source_id.html
-[cmipGlobalAttGoogleDoc]: http://goo.gl/v1drZl
-[cmipGridGoogleDoc]: http://goo.gl/1oA7bO
-[cmipPressureLevelsPdf]: https://cmip6dr.github.io/Data_Request_Home/Documents/CMIP6_pressure_levels.pdf
-[cmipTimeAveragesCog]: https://wcrp-cmip.github.io/WGCM_Infrastructure_Panel/CMIP6/time_and_area_averaging.html
+[cmipcite]: http://cmip6cite.wdc-climate.de
 
  <!-- unknown links -->
 [emd]:  ?
 [eld]: ?
-
- <!-- broken links -->
-[es-docsCmip]: https://es-doc.org/
-[es-docsExperiments]: https://es-doc.org/cmip6-experiments
-[es-docsModels]: https://es-doc.org/cmip6-models
-[ES-DOCErrataService]: https://errata.es-doc.org/static/index.html
-[errataSearchUIDoc]: https://es-doc.github.io/esdoc-errata-client/searchUI.html
-[errataPIDLookupDoc]: https://es-doc.github.io/esdoc-errata-client/lookup.html
-[errataFormCreateDoc]: https://es-doc.github.io/esdoc-errata-client/create.html
-[errataCLCDoc]: https://es-doc.github.io/esdoc-errata-client/client.html
-[es-docsEnsemblesSimulations]: https://es-doc.org/cmip6-ensembles-simulations
