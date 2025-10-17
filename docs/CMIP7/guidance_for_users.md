@@ -8,6 +8,7 @@ title: CMIP7 Guidance for Data Users
 This page is designed to inform data users on key CMIP7 concepts and tools. It is a landing page to redirect them to the proper resources to learn more.
 
 
+
 ## 1.  Accessing CMIP7 data
 
 CMIP7 model output is available through a distributed data archive developed and operated by the Earth System Grid Federation (ESGF). The data are hosted on a collection of nodes located at modeling centers or data centers across the world.
@@ -38,13 +39,6 @@ To enable modeling groups and others who support CMIP7 to demonstrate its impact
 
  2. **Cite the specific dataset(s) used.**
 
-    Data citations are accessible from the [Citation Search][citesearch] and MetaGrid.
-    Note that there are two citation granularities on experiment data and on model/MIP data.
-
-    TODO: verify that there really isn't any way from the file to the citation (and documentation) directly.. 
-          Further_info is dead.
-          My current understanding is that there is a tracking_id  that is unique to the file (ex. http://hdl.handle.net/hdl:21.14100/c682c920-8175-47ad-8657-9836ff69709d). There is also unique identifier for the dataset (http://hdl.handle.net/hdl:21.14100/0f158e88-925f-3edf-983d-34109aa7269a). But in CMIP7 they will not be linked. I don't see the dataset id in the global attrs. and I don't see either link to a citation. 
-
     Please include a citation in the form of:
 
         Authors/Data Creators (publication year): Title. Version YYYYMMDD. Earth System Grid Federation. DOI.
@@ -53,29 +47,39 @@ To enable modeling groups and others who support CMIP7 to demonstrate its impact
 
         Swart et al. (2019): CCCma CanESM5 model output prepared for CMIP6 ScenarioMIP. Version 20190429. Earth System Grid Federation. https://doi.org/10.22033/ESGF/CMIP6.1317. 
 
-    where ESGF is the data publisher and the DOI points to the data citation landing page. If the latest dataset version included in your study is unknown, use the date of data download instead to characterize the version.
+    If the latest dataset version included in your study is unknown, use the date of data download instead to characterize the version.
+    If multiple models are used in a publication, please include a table with the sources (name of the model), institutions and citations.
 
-    ??? Note "More info on citations"
+    ??? Note "How to find the DOI?"
+
+        The DOIs can be found through the [Citation Search][citesearch] or in the citation tab of a dataset on MetaGrid.
+
+        It is also possible to take the `tracking_id` global attribute of a file and append it to [https://handle-esgf.dkrz.de/lp/](https://handle-esgf.dkrz.de/lp/) (e.g., [https://handle-esgf.dkrz.de/lp/21.14100/3c2cf1eb-921d-3f48-b0c2-982ef55d93d4](https://handle-esgf.dkrz.de/lp/21.14100/3c2cf1eb-921d-3f48-b0c2-982ef55d93d4)). The DOI will appear on the page of the handle service.
+
+        Note that there are two citation granularities on experiment data and on model/MIP data.
 
         Further information on the data citation concept for CMIP7 is available [here][cmipcite] and described in [Stockhause and Lautenschlager (2017)][Stockhause2017]. Citations can also be search using [DataCite's catalog][datacitecat] and [Google's Dataset Search][gdatasetsearch].
     
- 3. **Register your work.**
+ 3. **Cite a paper from the GMD special issue**
+
+    Cite, as appropriate, one or more of the [CMIP7 GMD special issue][GMDSpecialIssue] articles, which include an overview of the CMIP7 experiment design and descriptions of the CMIP7 endorsed MIPs.
+    TODO: should we be clearer ? ask to cite Dunne specifically ?
+ 
+ 4. **Register your work.**
 
     Register your work on the [CMIP7 Publication Hub][CMIPpubs]. 
     TODO:do we still want this ?
 
-4. **Adhere to the license**
+5. **Adhere to the license**
+    
     Adhere to licensing restrictions associated with the Creative Commons Attribution 4.0 International ([CC BY 4.0]) license.
 
-5. **Cite a paper from the GMD special issue**
 
-    Cite, as appropriate, one or more of the [CMIP7 GMD special issue][GMDSpecialIssue] articles, which include an overview of the CMIP7 experiment design and descriptions of the CMIP7 Endorsed-MIPs, the CMIP7 forcing data sets, and the CMIP7 infrastructure.
+6. **Use the standard vocabularies**
 
-6. **Use the standard vocabulary**
-
-    Include in publications a table listing the models and institutions that provided model output for research use. In this table and as appropriate in figure legends, use the CMIP7 standard names as defined by the [controlled vocabularies (CV)][cmipCvs] (see [Section 3](#3-cmip7-facets-and-their-documentation)).
-    Refer to the collection of CMIP7 models as the “CMIP7 multi-model ensemble” (or similar) and use, as appropriate, phrases like “CMIP7 multi-model [archive/output/results/simulations/dataset/…]” to describe CMIP7 contributions and products.
-
+    Use the CMIP7 standard names as defined by the [controlled vocabularies (CVs)][cmipCvs] (see [Section 3](#3-cmip7-facets-and-their-documentation)). Refer to the collection of CMIP7 models as the “CMIP7 multi-model ensemble” (or similar) and use, as appropriate, phrases like “CMIP7 multi-model [archive/output/results/simulations/dataset/…]” to describe CMIP7 contributions and products.
+     
+    
 
 
 !!! warning
@@ -86,7 +90,6 @@ To enable modeling groups and others who support CMIP7 to demonstrate its impact
 
 
 ## 3. CMIP7 facets and their documentation
-TODO: is facets the best word ?
 
 CMIP7 datasets can be identified through a series of facets that represents key attributes of the data. The facets are:
 
@@ -102,7 +105,7 @@ CMIP7 datasets can be identified through a series of facets that represents key 
 * version
 
 
-The values associated with each facets are standardized through the [controlled vocabularies (CV)][cmipCvs]. They are used to search the ESGF database and can be found in the global attributes of the data. This section provides helpful links and gives a bit more information on a few key facets. 
+The values associated with each facets are standardized through the [CVs][cmipCvs]. They are used to search the ESGF database and can be found in the global attributes of the data. This section provides helpful links and gives a bit more information on a few key facets. 
 
 
 ### 3.1.  Source and Variant
@@ -113,9 +116,8 @@ The Essential Model Documentation (EMD) contains high-level description intended
 
 The source facet gives the name of the model and the variant facet represents each member of an ensemble for a given source. It can also be called the “ripf” identifier (“r” for realization, “i” for initialization, “p” for physics, and “f” for forcing).
 
-A useful tool to assess the models is the [Rapid Evaluation Framework (REF)][ref]. It is an assessment of the models participating in the CMIP7 Assessment Fast Track. 
+A useful tool to assess the models is the [Rapid Evaluation Framework (REF)][ref]. It is an assessment of the models participating in the CMIP7 Assessment Fast Track (AFT). 
 
-TODO: maybe add a grid section, when https://github.com/WCRP-CMIP/Variable-Registry/issues/111 is decided
 
 ### 3.2.  Experiment and Activity
 * [List of experiments][experimentIdhtml]
@@ -125,15 +127,11 @@ TODO: maybe add a grid section, when https://github.com/WCRP-CMIP/Variable-Regis
  
 The CMIP7 protocol and experiments are described in a [special issue][GMDSpecialIssue] of Geoscientific Model Development with an overview of the design and scientific strategy provided in the lead article of that issue by [Dunne et al. (2025)][dunne2025].
 
-Each model participating in CMIP7 will contribute results from the eight DECK experiments (piControl, AMIP, abrupt4xCO2, 1pctCO2, historical, piClim-Control, piClim-anthro, piClim-4xCO2). These experiments are the only ones directly overseen by the [CMIP Panel][CMIPPanel], and together these constitute the ongoing (slowly evolving) “CMIP” activity. 
-
-In addition to the DECK, each modeling group may choose to contribute to any of the [CMIP7 endorsed MIPs][CMIPEndorsedMips]. The CMIP panel identifies key experiments to be prioritized on different timelines through fast tracks. The first one is the [Assessment Fast Track (AFT)][aft].
-
-
+Each model participating in CMIP7 will contribute results from the eight DECK experiments. These experiments are the only ones directly overseen by the [CMIP Panel][CMIPPanel], and together these constitute the ongoing (slowly evolving) “CMIP” activity. In addition to the DECK, each modeling group may choose to contribute to any of the [CMIP7 endorsed MIPs][CMIPEndorsedMips]. The CMIP panel identifies key experiments to be prioritized on different timelines through fast tracks. The first one is the AFT.
 
 
 ### 3.3. Variable
-* [List of variables](URL)
+* [List of variables][variableid]
 * [Branded variable documentation](branded_variable.md)
 
 The variables produced in CMIP7 were recommended by the [CMIP7 Data Request task team][cmipDataRequest]. In CMIP7, the concept of branded variable uniquely identifies each variable. It follows the  template: 
@@ -161,10 +159,7 @@ For advanced users who want to understand the data better, the CMIP7 data requir
 ## 5.  Reporting suspected errors
 Information about discovered issues of CMIP7 data is captured by the [Errata Service][ErrataService].
 
-Any CMIP data user can report an error to the appropriate modeling group (see "contact" attribute in the netCDF files), or through the <a href="mailto:esgf-user@llnl.gov">ESGF user mailing list</a>. After a report is received, the corresponding data manager can create a new errata entry.
-
-
-TODO: contact global attr is gone 
+Any CMIP data user can report an error by submitting an issue through the Propose button on the Errata Service website.
 
 
 ## 7. New to CMIP?
@@ -175,11 +170,22 @@ You have a more specific question ? Ask it on the [Fresh Eyes Platform][platform
 
 
 
-TODO: make pretty with more admonitions. https://squidfunk.github.io/mkdocs-material/reference/admonitions/
-TODO: abbreviations ?
 
 ###### Document version: 2025-10-08
-
+ <!--  abbreviation -->
+*[CMIP7]: Coupled Model Intercomparison Project phase 7
+*[ESGF]: Earth System Grid Federation
+*[LLNL]: Lawrence Livermore National Laboratory
+*[DKRZ]: Deutsches Klimarechenzentrum (German Climate Computation Centre)
+*[ORNL]: Oak Ridge National Laboratory
+*[CEDA]: Centre for Environmental Data Analysis (at the National Centre for Atmospheric Science in the UK)
+*[GMD]: Geoscientific Model Development
+*[MIPs]: Model Intercomparison Projects
+*[CVs]: Controlled Vocabularies
+*[EMD]: Essential Model Documentation
+*[REF]: Rapid Evaluation Framework
+*[DECK]: Diagnostic, Evaluation and Characterization of Klima
+*[AFT]: Assessment Fast Track
 
  <!-- valid general links -->
 [metagridllnl]: https://aims2.llnl.gov/search/
@@ -213,15 +219,17 @@ TODO: abbreviations ?
 [FeoC]: https://wcrp-cmip.org/cmip7-task-teams/fresh-eyes-on-cmip/
 [GlobalAttrs]: https://zenodo.org/records/17250297
 [grid]: https://zenodo.org/records/15697025
+[variableid]: https://airtable.com/apphMYhEwBJfd0bUK/shrYC888Qxf8gkvky/tblpo5L8maBIGlM1B/viwNNzrqK5oPL7zk2
 
 
-#TODO: all the links below need to be changed when the new version arrives
- <!-- valid CMIP6 links -->
+ <!-- TODO: all the links below need to be changed when the new version arrives -->
+ <!-- CMIP6 links -->
 [citesearch]: http://bit.ly/CMIP6_Citation_Search   
 [CMIPpubs]: https://cmip-publications.llnl.gov/view/CMIP6/
 [experimentIdhtml]: https://wcrp-cmip.github.io/CMIP6_CVs/docs/CMIP6_experiment_id.html
 [activityIdJson]: https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_activity_id.json
 [sourceIdHtml]: https://wcrp-cmip.github.io/CMIP6_CVs/docs/CMIP6_source_id.html
+
 [cmipcite]: http://cmip6cite.wdc-climate.de
 
  <!-- unknown links -->
