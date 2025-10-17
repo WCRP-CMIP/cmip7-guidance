@@ -17,7 +17,7 @@ There are 2 options to access the data:
 
  1. **MetaGrid** ([LLNL][metagridllnl], [DKRZ][metagriddkrz], [ORNL][metagridornl], [CEDA][metagridceda])
 
-    An easy-to-use website that provides an interface to search and download ESGF data. It provides access through http downloads, wget scripts, OPeNDAP URLs and Globus transfers. The data can be accessed through any of the CMIP7 web interfaces linked above, which enable users to search across the entire distributed archive as if it were all centrally located.
+    Easy-to-use web interface to search and download ESGF data. It provides access through http downloads, wget scripts, OPeNDAP URLs and Globus transfers. The data can be accessed through any of the CMIP7 web interfaces linked above, which enable users to search across the entire distributed archive as if it were all centrally located.
 
  2. [**ESGpull**][esgpull]
 
@@ -34,7 +34,7 @@ To enable modeling groups and others who support CMIP7 to demonstrate its impact
 
     In the Acknowledgment section, please insert the following text:
 
-    >"We acknowledge the World Climate Research Programme, which, through its Working Group on Coupled Modelling, coordinated and promoted CMIP7. We thank the climate modeling groups for producing and making available their model output, the Earth System Grid Federation (ESGF) for archiving the data and providing access, and the multiple funding agencies who support CMIP7 and ESGF."
+    >We acknowledge the World Climate Research Programme, which, through its Working Group on Coupled Modelling, coordinated and promoted CMIP7. We thank the climate modeling groups for producing and making available their model output, the Earth System Grid Federation (ESGF) for archiving the data and providing access, and the multiple funding agencies who support CMIP7 and ESGF.
 
  2. **Cite the specific dataset(s) used.**
 
@@ -43,7 +43,7 @@ To enable modeling groups and others who support CMIP7 to demonstrate its impact
 
     TODO: verify that there really isn't any way from the file to the citation (and documentation) directly.. 
           Further_info is dead.
-          My current understanding is that there is a tracking_id  that is unique to the file (ex. http://hdl.handle.net/hdl:21.14100/c682c920-8175-47ad-8657-9836ff69709d). There is also unique identifier for the dataset (http://hdl.handle.net/hdl:21.14100/0f158e88-925f-3edf-983d-34109aa7269a). But in CMIP7 they will not be linked. I don't see the dataset id in the global attrs. and I don't see either link to a citation. Katharina Berger <berger@dkrz.de> seems to be the person in charge of this.
+          My current understanding is that there is a tracking_id  that is unique to the file (ex. http://hdl.handle.net/hdl:21.14100/c682c920-8175-47ad-8657-9836ff69709d). There is also unique identifier for the dataset (http://hdl.handle.net/hdl:21.14100/0f158e88-925f-3edf-983d-34109aa7269a). But in CMIP7 they will not be linked. I don't see the dataset id in the global attrs. and I don't see either link to a citation. 
 
     Please include a citation in the form of:
 
@@ -54,19 +54,35 @@ To enable modeling groups and others who support CMIP7 to demonstrate its impact
         Swart et al. (2019): CCCma CanESM5 model output prepared for CMIP6 ScenarioMIP. Version 20190429. Earth System Grid Federation. https://doi.org/10.22033/ESGF/CMIP6.1317. 
 
     where ESGF is the data publisher and the DOI points to the data citation landing page. If the latest dataset version included in your study is unknown, use the date of data download instead to characterize the version.
+
+    ??? Note "More info on citations"
+
+        Further information on the data citation concept for CMIP7 is available [here][cmipcite] and described in [Stockhause and Lautenschlager (2017)][Stockhause2017]. Citations can also be search using [DataCite's catalog][datacitecat] and [Google's Dataset Search][gdatasetsearch].
     
  3. **Register your work.**
 
     Register your work on the [CMIP7 Publication Hub][CMIPpubs]. 
     TODO:do we still want this ?
 
- <!-- admonition test -->
+4. **Adhere to the license**
+    Adhere to licensing restrictions associated with the Creative Commons Attribution 4.0 International ([CC BY 4.0]) license.
+
+5. **Cite a paper from the GMD special issue**
+
+    Cite, as appropriate, one or more of the [CMIP7 GMD special issue][GMDSpecialIssue] articles, which include an overview of the CMIP7 experiment design and descriptions of the CMIP7 Endorsed-MIPs, the CMIP7 forcing data sets, and the CMIP7 infrastructure.
+
+6. **Use the standard vocabulary**
+
+    Include in publications a table listing the models and institutions that provided model output for research use. In this table and as appropriate in figure legends, use the CMIP7 standard names as defined by the [controlled vocabularies (CV)][cmipCvs] (see [Section 3](#3-cmip7-facets-and-their-documentation)).
+    Refer to the collection of CMIP7 models as the “CMIP7 multi-model ensemble” (or similar) and use, as appropriate, phrases like “CMIP7 multi-model [archive/output/results/simulations/dataset/…]” to describe CMIP7 contributions and products.
+
+
+
 !!! warning
 
-    Please carefully read and adhere to</span> the [CMIP7 Terms of Use](terms_of_use.md).
+    The CMIP7 archive contains the output of scientific simulations of the past and potential future that are subject to multiple sources of error, ranging from errors in data handling, to errors in the representation of the real world in either the model, or the experimental setup for which the model was used. Different parts of the CMIP6 archive may be subject to differing levels of such errors, and users should be alert to these issues, and their potential consequences (and to the limitations of liability expressed in the data license).
 
-??? Note "More info on citations"
-    Further information on the data citation concept for CMIP7 is available [here][cmipcite] and described in [Stockhause and Lautenschlager (2017)][Stockhause2017]. Citations can also be search using [DataCite's catalog][datacitecat] and [Google's Dataset Search][gdatasetsearch]. [test](google.com)
+
 
 
 ## 3. CMIP7 facets and their documentation
@@ -163,8 +179,6 @@ TODO: make pretty with more admonitions. https://squidfunk.github.io/mkdocs-mate
 TODO: abbreviations ?
 
 ###### Document version: 2025-10-08
- <!-- abbreviations -->
- *[CMIP]: Coupled Model Intercomparison Project
 
 
  <!-- valid general links -->
@@ -186,6 +200,7 @@ TODO: abbreviations ?
 [platform]: https://github.com/orgs/Fresh-Eyes-on-CMIP/discussions
 [register]: https://github.com/Fresh-Eyes-on-CMIP/member-requests/issues/new?template=new_user.yml
 [ErrataService]: https://errata.ipsl.fr/static/index.html
+[CC BY 4.0]: https://creativecommons.org/licenses/by/4.0/
 
  <!-- CMIP7 links -->
 [GMDSpecialIssue]: https://gmd.copernicus.org/articles/special_issue1315.html
