@@ -5,24 +5,25 @@ title: CMIP7 Guidance for Data Users
 
 # CMIP7 Guidance for Data Users
 
-This page is designed to inform data users on key CMIP7 concepts and tools. It is a landing page to redirect them to the proper resources to learn more.
+This page is designed to inform users of climate model outputs on key CMIP7 concepts and tools. It is a landing page to redirect them to the proper resources to learn more.
 
-
+!!! Danger 
+    This page is a work-in-progress. Some links still point to the CMIP6 version of pages.
 
 ## 1.  Accessing CMIP7 data
 
-CMIP7 model output is available through a distributed data archive developed and operated by the Earth System Grid Federation (ESGF). The data are hosted on a collection of nodes located at modeling centers or data centers across the world.
+CMIP7 model output is available through a distributed data archive developed and operated by the Earth System Grid Federation (ESGF). The data are hosted on a collection of nodes located at centers across the world.
 
 
 There are 2 options to access the data:
 
  1. **MetaGrid** ([LLNL][metagridllnl], [DKRZ][metagriddkrz], [ORNL][metagridornl], [CEDA][metagridceda])
 
-    Web interface to search and download ESGF data. It provides access through http downloads, wget scripts, OPeNDAP URLs and Globus transfers. Best used for downloading a small number of files. The data can be accessed through any of the CMIP7 web interfaces linked above, which enable users to search across the entire distributed archive as if it were all centrally located.
+    Web interface to search and download ESGF data. It provides access through http downloads, wget scripts, OPeNDAP URLs and Globus transfers. It is most useful for browsing and downloading a small number of files. The data can be accessed through any of the CMIP7 web interfaces linked above, which enable users to search across the entire distributed archive as if it were all centrally located.
 
- 2. Using a python package
+ 2. **Using a python package**
 
-    For larger queries, it might be more approriate to automate the search and downloads. A few packages are available to do this task:
+    For larger queries, it might be more approriate to automate the search and downloads. A few packages are available to do this:
 
     * [ESGpull][esgpull]
     * [ESMValTool][esmvaltool]
@@ -54,7 +55,7 @@ To enable modeling groups and others who support CMIP7 to demonstrate its impact
   
     If multiple models are used in a publication, please include a table with the sources (name of the model), institutions and citations. If the journal has a citation limit, a table in the Supporting Information is acceptable.
 
-    ??? Note "How to find the DOI?"
+    ??? Question "How to find the DOI?"
 
         The DOIs can be found through the [Citation Search][citesearch] or in the citation tab of a dataset on MetaGrid.
 
@@ -64,18 +65,18 @@ To enable modeling groups and others who support CMIP7 to demonstrate its impact
 
         Further information on the data citation concept for CMIP7 is available [here][cmipcite] and described in [Stockhause and Lautenschlager (2017)][Stockhause2017]. Citations can also be search using [DataCite's catalog][datacitecat] and [Google's Dataset Search][gdatasetsearch].
     
-     <!-- TODO: add link ti tool to get DOI if it exists eventually -->
+     <!-- TODO: add link to tool to get DOI if it exists eventually -->
 
 
  3. **Cite a paper from the GMD special issue**
 
     Cite, as appropriate, one or more of the [CMIP7 GMD special issue][GMDSpecialIssue] articles, which include an overview of the CMIP7 experiment design and descriptions of the CMIP7 endorsed MIPs.
-    TODO: should we be clearer ? ask to cite Dunne specifically ?
+    <!--TODO: should we be clearer ? ask to cite Dunne specifically ? -->
  
  4. **Register your work.**
 
     Register your work on the [CMIP7 Publication Hub][CMIPpubs]. 
-    TODO:do we still want this ?
+      <!--TODO:do we still want this ? -->
 
 5. **Adhere to the license**
     
@@ -84,8 +85,7 @@ To enable modeling groups and others who support CMIP7 to demonstrate its impact
 
 6. **Use the standard vocabularies**
 
-    Where possible, we recommend using the CMIP7 standard names as defined by the [controlled vocabularies (CVs)][cmipCvs] (see [Section 3](#3-cmip7-facets-and-their-documentation)) to make references as clear and unambiguous as possible. However, if your audience requires different terms, then you should use those but we recommend keeping a mapping from the term your audience uses to the standard name, again to ensure that references can be unambiguously resolved where needed. Refer to the collection of CMIP7 models as the “CMIP7 multi-model ensemble” (or similar) and use, as appropriate, phrases like “CMIP7 multi-model [archive/output/results/simulations/dataset/…]” to describe CMIP7 contributions and products.
-     
+    Where possible, we recommend using the CMIP7 standard names as defined by the [controlled vocabularies (CVs)][cmipCvs] (see [Section 3](#3-cmip7-facets-and-their-documentation)) to make references as clear and unambiguous as possible. However, if your audience requires different terms, then you should use those but we recommend keeping a mapping from the term your audience uses to the standard name, again to ensure that references can be unambiguously resolved where needed. Refer to the collection of CMIP7 models as the “CMIP7 multi-model ensemble”.
     
 
 
@@ -126,7 +126,8 @@ The values associated with each facets are standardized through the [CVs][cmipCv
 
 The Essential Model Documentation (EMD) contains high-level description intended to contain information on model formulation that can be easily compared between different models. EMD pages contain links to more in-depth model documentation for each source.
 
-The source facet gives the name of the model and the variant facet represents each member of an ensemble for a given source. It can also be called the “ripf” identifier (“r” for realization, “i” for initialization, “p” for physics, and “f” for forcing).
+??? info "Basic Concepts to Understand Variants"
+    The source facet gives the name of the model and the variant facet represents each member of an ensemble for a given source. It can also be called the “ripf” identifier (“r” for realization, “i” for initialization, “p” for physics, and “f” for forcing).
 
 A useful tool to assess the models is the [Rapid Evaluation Framework (REF)][ref]. It is an assessment of the models participating in the CMIP7 Assessment Fast Track (AFT). 
 
@@ -134,19 +135,23 @@ A useful tool to assess the models is the [Rapid Evaluation Framework (REF)][ref
 ### 3.2.  Experiment and Activity
 * [List of experiments][experimentIdhtml]
 * [List of activities][activityIdJson]
-* TODO: Does experiment doc exist for CMIP7 ?
+<!--TODO: Does experiment doc exist for CMIP7 ? -->
 
  
 The CMIP7 protocol and experiments are described in a [special issue][GMDSpecialIssue] of Geoscientific Model Development with an overview of the design and scientific strategy provided in the lead article of that issue by [Dunne et al. (2025)][dunne2025].
 
 Each model participating in CMIP7 will contribute results from the eight DECK experiments. These experiments are the only ones directly overseen by the [CMIP Panel][CMIPPanel], and together these constitute the ongoing (slowly evolving) “CMIP” activity. In addition to the DECK, each modeling group may choose to contribute to any of the [CMIP7 endorsed MIPs][CMIPEndorsedMips]. The CMIP panel identifies key experiments to be prioritized on different timelines through fast tracks. The first one is the AFT.
 
+ <!--  A small explanation could be written by the CVs TT ? https://github.com/WCRP-CMIP/cmip7-guidance/pull/37/files#r2448940478-->
+??? info "Basic Concepts to Understand Experiments"
+    COMING SOON
+
 
 ### 3.3. Variable
 * [List of variables][variableid]
 * [Branded variable documentation](branded_variable.md)
 
-The variables produced in CMIP7 were recommended by the [CMIP7 Data Request task team][cmipDataRequest]. In CMIP7, the concept of branded variable identifies each variable. It follows the  template: 
+The variables produced in CMIP7 were recommended by the [CMIP7 Data Request task team][cmipDataRequest]. In CMIP7, the concept of branded variable identifies the variables. It follows the  template: 
 
 ```
 <variableRootDD>_<temporalLabelDD>-<verticalLabelDD>-<horizontalLabelDD>-<areaLabelDD>
@@ -157,24 +162,22 @@ The variables produced in CMIP7 were recommended by the [CMIP7 Data Request task
 
 ## 4. CMIP7 data format
 
-As in previous phases, all CMIP7 output has been written to netCDF files. The data have been “cmorized” (i.e., written in conformance with the [CF-conventions][cfConventionsPage] and all the CMIP standards). 
+As in previous phases, all CMIP7 output has been written to netCDF files.
+Before being published, these files must pass the [ESGF Quality Control (ESGF-QC)][esgfqc].
+Many modelling center use the [CMOR][cmor] software to standardize their files. They are then said to have been “CMORized”.
 
 Essential features of CMORized data are:
 
-* Standardized variable naming from CMIP CVs
-* Consistent file naming convention 
+* Standardized naming from CMIP [CVs][cmipCvs]
+* Consistent [file naming convention][GlobalAttrs]
 * Uniform metadata structure:
-    * Global attributes
+    * [Global attributes][GlobalAttrs]
     * Coordinate variables: time, lat, lon, (if appropiate, lev)
     * One variable per file
-* Self-describing: all metadata needed to interpret the data are included in the file
-* Consistent units and standard names following CF conventions
+* Self-describing (all metadata needed to interpret the data are included in the file)
+* Consistent units and standard names following [CF conventions][cfConventionsPage]
 
-Specs for the path, filename and global at
-tributes for CMIP7 are defined [here][GlobalAttrs].
-
-
-??? Note "More on the guidance for modellers"
+??? abstract "More on the guidance for modellers"
 
     For advanced users who want to understand the data better, the CMIP7 data requirements that were given to modelling centers are defined and discussed in the following documents:
 
@@ -182,7 +185,30 @@ tributes for CMIP7 are defined [here][GlobalAttrs].
     * [Guidance on grid requirements][grid]
     * more to come
 
-TODO: add something on QAQC. careful name of repo are going to change soon. https://github.com/ESGF/esgf-qc
+!!! info "Calendars and Time Handling in CMIP7"
+
+
+    Climate models often use simplified or idealized calendars for numerical and computational reasons.  
+    CMIP7 data include a `calendar` attribute associated with the `time` coordinate, which determines how dates are represented.  
+    Before working with any CMIP dataset, users should **check the calendar type** and handle it appropriately.
+
+    Common calendars found in CMIP data include:
+
+    - **gregorian** (or **standard**) — follows the real-world Gregorian calendar including leap years.  
+    - **noleap** — identical to Gregorian but without leap days (365 days every year).  
+    - **360_day** — each year has 12 months of 30 days (total 360 days).  
+    - **proleptic_gregorian** — a continuous Gregorian calendar extended backward in time.  
+    - **all_leap** — every year has 366 days (all years include a leap day).
+
+    These calendars are stored in the `calendar` attribute of the `time` variable, for example:
+
+    ```bash
+    ncdump -h tas_day_ACCESS-ESM1-5_ssp585.nc | grep calendar
+    ```
+
+    Further reading in CF conventions for time coordinate: [https://cfconventions.org/Data/cf-conventions/cf-conventions-1.12/cf-conventions.html#time-coordinate](https://cfconventions.org/Data/cf-conventions/cf-conventions-1.12/cf-conventions.html#time-coordinate)
+
+    It is recommended that users use the [cftime][cftime] library to handle time.
 
 
 ## 5.  Reporting suspected errors
@@ -191,7 +217,7 @@ Information about discovered issues of CMIP7 data is captured by the [Errata Ser
 Any CMIP data user can report an error by submitting an issue through the Propose button on the Errata Service website.
 
 
-## 7. New to CMIP?
+## 6. New to CMIP?
 
 First time using CMIP? Need a bit more help ? Check out the [Entry-Level Documentation][eld] (COMING SOON), put together by the [Fresh Eyes on CMIP][FeoC] group.
 
@@ -239,6 +265,8 @@ You have a more specific question ? Ask it on the [Fresh Eyes Platform][platform
 [CC BY 4.0]: https://creativecommons.org/licenses/by/4.0/
 [esmvaltool]: https://esmvaltool.org/
 [intakeesgf]: https://github.com/esgf2-us/intake-esgf
+[cmor]:https://cmor.llnl.gov/
+[cftime]: https://unidata.github.io/cftime/
 
  <!-- CMIP7 links -->
 [GMDSpecialIssue]: https://gmd.copernicus.org/articles/special_issue1315.html
@@ -261,9 +289,10 @@ You have a more specific question ? Ask it on the [Fresh Eyes Platform][platform
 [experimentIdhtml]: https://wcrp-cmip.github.io/CMIP6_CVs/docs/CMIP6_experiment_id.html
 [activityIdJson]: https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_activity_id.json
 [sourceIdHtml]: https://wcrp-cmip.github.io/CMIP6_CVs/docs/CMIP6_source_id.html
-
 [cmipcite]: http://cmip6cite.wdc-climate.de
+
 
  <!-- unknown links -->
 [emd]:  ?
 [eld]: ?
+[esgfqc]:https://github.com/ESGF/esgf-qc
