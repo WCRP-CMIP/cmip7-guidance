@@ -54,7 +54,44 @@ provided as early as possible):
 ## 3.  Forcing data sets
 ## 4.  Model output fields
 ## 5.  Model output requirements
-## 6.  Software for preparing/checking output
+## 6.  Software for preparing output
+
+While CMOR is widely used for preparing standardised model output for CMIP and other projects, other tools are available.
+Developers of tools that do an equivalent job to CMOR for CMIP7 are invited to 
+[raise an issue](https://github.com/WCRP-CMIP/cmip7-guidance/issues/new) on github and ideally provide a PR with an 
+update to this section of the documentation.
+
+### 6a. CMOR
+
+CMOR, the `Climate Model Output Rewriter`, is a library written in C with interfaces for both Fortran and Python, with the aim of enforcing correct data and metadata structures for projects such as CMIP, which are now used widely across many projects.
+CMOR is maintained by PCMDI on [github](https://github.com/PCMDI/cmor) and is available for installation via [conda](https://anaconda.org/conda-forge/cmor) and has documentation [here](https://cmor.llnl.gov/).
+For CMIP7 the CMOR library, available sice CMIP7, has been updated in line with the changes to the [CMIP7 Global Attributes](https://zenodo.org/records/17250297). 
+Data producers should update to version [v3.13](https://cmor.llnl.gov/news/2025/10/14/cmor3/) of CMOR to gain access to the necessary changes.
+THe MIP tables 
+
+The CMOR PrePARE tool, used for quality checking in CMIP6, has been retired and data producers should refer to section 7 below for guidance on esgf-qc.
+
+
+### 6b. Inputs to CMOR: 
+
+CMOR uses three main inputs;
+
+| Input component | Description | 
+| --- | --- |
+| `MIP tables`| JSON files describing the variables and their structure |
+| `Controlled Vocabulary`| A JSON file describing the allowed values of metadata fields |
+| The `Input JSON file` | control information and specific values of metadata to be used in the creation of output files |
+
+For CMIP7 the [MIP tables](https://github.com/WCRP-CMIP/cmip7-development-mip-tables/) have been constructed from 
+the [CMIP7 data request](https://wcrp-cmip.org/cmip-phases/cmip7/cmip7-data-request/) and releases of these tables, starting with version v1.2.2.2, will follow data request releases until the [Variable Registry](https://github.com/WCRP-CMIP/Variable-Registry/) is established.
+
+The Controlled Vocabulary JSON file used by CMOR will be produced and made available as part of the [CMIP7-CVs](https://github.com/WCRP-CMIP/CMIP7-CVs) repository. 
+For testing purposes sample files are available via the [MIP tables](https://github.com/WCRP-CMIP/cmip7-development-mip-tables/tree/test) repository.
+
+Examples of the input JSON file for CMOR are available via [a jupyter notebook](https://github.com/WCRP-CMIP/cmip7-development-mip-tables/blob/main/cmor_demo.ipynb).
+
+
+## 7.  Software for checking output
 
 The **ESGF Quality Control (QC) Framework** is a new unified solution designed to validate and ensure the integrity of climate model outputs intended for publication on the Earth System Grid Federation (ESGF).  
 Historically, QC in ESGF has relied on a patchwork of tools (**PrePARE**, **QA-DKRZ**, **nctime**, and others) each covering different aspects of metadata and data checks. While effective, this fragmented approach introduced redundancy, maintenance challenges, and reduced transparency in QC workflows.  
@@ -124,6 +161,6 @@ This early release aims to:
 If you encounter issues or have suggestions, please **open a GitHub issue** on the project repository:  
 👉 https://github.com/ESGF/esgf-qc/issues
 
-## 7.  Archiving/publishing output
-## 8.  Documentation Process
-## 9.  CMIP7 organisation and governance
+## 8.  Archiving/publishing output
+## 9.  Documentation Process
+## 10.  CMIP7 organisation and governance
