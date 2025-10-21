@@ -18,12 +18,12 @@ provided as early as possible):
   institutions can be found at ***link needed*** and the registration process is 
   via ***link needed***.
 
-* Ensure that you have joined the modelling group mailing list -- if unsure please 
-  contact the [CMIP IPO](mailto:cmip-ipo@esa.int) for further details.
-
 * Following, or as part of, the registration of your models you will be able to indicate your
   intention to participate in community MIPs through the `activity_participation` information
   for your models. Information on community MIPs can be found [here](https://wcrp-cmip.org/mips).
+
+* Ensure that you have joined the modelling group mailing list -- if unsure please 
+  contact the [CMIP IPO](mailto:cmip-ipo@esa.int) for further details.
 
 * Perform required DECK and MIP experiments, using the required 
   [standard forcing datasets](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/).
