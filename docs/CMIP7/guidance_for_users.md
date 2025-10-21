@@ -78,7 +78,7 @@ To enable modeling groups and others who support CMIP7 to demonstrate its impact
 
 6. **Use the standard vocabularies**
 
-    Use the CMIP7 standard names as defined by the [controlled vocabularies (CVs)][cmipCvs] (see [Section 3](#3-cmip7-facets-and-their-documentation)). Refer to the collection of CMIP7 models as the “CMIP7 multi-model ensemble” (or similar) and use, as appropriate, phrases like “CMIP7 multi-model [archive/output/results/simulations/dataset/…]” to describe CMIP7 contributions and products.
+    Where possible, we recommend using the CMIP7 standard names as defined by the [controlled vocabularies (CVs)][cmipCvs] (see [Section 3](#3-cmip7-facets-and-their-documentation)) to make references as clear and unambiguous as possible. However, if your audience requires different terms, then you should use those but we recommend keeping a mapping from the term your audience uses to the standard name, again to ensure that references can be unambiguously resolved where needed. Refer to the collection of CMIP7 models as the “CMIP7 multi-model ensemble” (or similar) and use, as appropriate, phrases like “CMIP7 multi-model [archive/output/results/simulations/dataset/…]” to describe CMIP7 contributions and products.
      
     
 
