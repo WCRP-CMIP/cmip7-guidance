@@ -111,7 +111,7 @@ EMD comprises the following sections:
 
 - Top-level model
   - A top-level description of the model as whole.
-  - Includes model the name and family and an overview description.
+  - Includes model name, family and an overview description.
 - Model components
   - A description of each dynamically simulated model component.
   - Includes the component name and family, an overview description, and the relationship to other components.
