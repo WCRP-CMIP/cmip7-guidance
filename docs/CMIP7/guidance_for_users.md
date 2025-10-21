@@ -18,14 +18,15 @@ There are 2 options to access the data:
 
  1. **MetaGrid** ([LLNL][metagridllnl], [DKRZ][metagriddkrz], [ORNL][metagridornl], [CEDA][metagridceda])
 
-    Easy-to-use web interface to search and download ESGF data. It provides access through http downloads, wget scripts, OPeNDAP URLs and Globus transfers. The data can be accessed through any of the CMIP7 web interfaces linked above, which enable users to search across the entire distributed archive as if it were all centrally located.
+    Web interface to search and download ESGF data. It provides access through http downloads, wget scripts, OPeNDAP URLs and Globus transfers. Best used for downloading a small number of files. The data can be accessed through any of the CMIP7 web interfaces linked above, which enable users to search across the entire distributed archive as if it were all centrally located.
 
  2. [**ESGpull**][esgpull]
 
     A python library that allows the user to interface with the ESGF search API. It handles scanning, downloading and updating datasets, files and queries from ESGF.
 
-This page will be updated as other access routes become available.
+TODO: add the suggested packages
 
+This page will be updated as other access routes become available.
 
 ## 2.  Terms of use, citations and registration requirements
 
@@ -48,7 +49,7 @@ To enable modeling groups and others who support CMIP7 to demonstrate its impact
         Swart et al. (2019): CCCma CanESM5 model output prepared for CMIP6 ScenarioMIP. Version 20190429. Earth System Grid Federation. https://doi.org/10.22033/ESGF/CMIP6.1317. 
 
     If the latest dataset version included in your study is unknown, use the date of data download instead to characterize the version.
-    If multiple models are used in a publication, please include a table with the sources (name of the model), institutions and citations.
+    If multiple models are used in a publication, please include a table with the sources (name of the model), institutions and citations. If the journal has a citation limit, a table in the Supporting Information is acceptable.
 
     ??? Note "How to find the DOI?"
 
@@ -72,7 +73,7 @@ To enable modeling groups and others who support CMIP7 to demonstrate its impact
 
 5. **Adhere to the license**
     
-    Adhere to licensing restrictions associated with the Creative Commons Attribution 4.0 International ([CC BY 4.0]) license.
+    Adhere to the license conditions listed in the global attribute of each dataset.
 
 
 6. **Use the standard vocabularies**
@@ -91,7 +92,7 @@ To enable modeling groups and others who support CMIP7 to demonstrate its impact
 
 ## 3. CMIP7 facets and their documentation
 
-CMIP7 datasets can be identified through a series of facets that represents key attributes of the data. The facets are:
+CMIP7 datasets can be identified through a series of facets that represents key attributes of the data. The main facets are:
 
 * activity
 * institution
@@ -104,8 +105,13 @@ CMIP7 datasets can be identified through a series of facets that represents key 
 * grid
 * version
 
+!!! tip inline end
+
+    Current advice from the CVs task team is to only access the CVs via [ESGVOC](https://esgf.github.io/esgf-vocab/). This will be subject to change in the future.
 
 The values associated with each facets are standardized through the [CVs][cmipCvs]. They are used to search the ESGF database and can be found in the global attributes of the data. This section provides helpful links and gives a bit more information on a few key facets. 
+
+
 
 
 ### 3.1.  Source and Variant
@@ -134,7 +140,7 @@ Each model participating in CMIP7 will contribute results from the eight DECK ex
 * [List of variables][variableid]
 * [Branded variable documentation](branded_variable.md)
 
-The variables produced in CMIP7 were recommended by the [CMIP7 Data Request task team][cmipDataRequest]. In CMIP7, the concept of branded variable uniquely identifies each variable. It follows the  template: 
+The variables produced in CMIP7 were recommended by the [CMIP7 Data Request task team][cmipDataRequest]. In CMIP7, the concept of branded variable identifies each variable. It follows the  template: 
 
 ```
 <variableRootDD>_<temporalLabelDD>-<verticalLabelDD>-<horizontalLabelDD>-<areaLabelDD>
@@ -145,13 +151,30 @@ The variables produced in CMIP7 were recommended by the [CMIP7 Data Request task
 
 ## 4. CMIP7 data format
 
-As in previous phases, all CMIP7 output has been written to netCDF files with one variable stored per file. The data have been “cmorized” (i.e., written in conformance with the [CF-conventions][cfConventionsPage] and all the CMIP standards). There are mandatory [global attributes][GlobalAttrs] to include in each files.
+As in previous phases, all CMIP7 output has been written to netCDF files. The data have been “cmorized” (i.e., written in conformance with the [CF-conventions][cfConventionsPage] and all the CMIP standards). 
+
+Essential features of CMORized data are:
+
+* Standardized variable naming from CMIP CVs
+* Consistent file naming convention 
+* Uniform metadata structure:
+    * Global attributes
+    * Coordinate variables: time, lat, lon, (if appropiate, lev)
+    * One variable per file
+* Self-describing: all metadata needed to interpret the data are included in the file
+* Consistent units and standard names following CF conventions
+
+Specs for the path, filename and global at
+tributes for CMIP7 are defined [here][GlobalAttrs].
 
 
-For advanced users who want to understand the data better, the CMIP7 data requirements that were given to modelling centers are defined and discussed in the following documents:
+??? Note "More on the guidance for modellers"
 
-* [Guidance on grid requirements][grid]
-* more to come
+    For advanced users who want to understand the data better, the CMIP7 data requirements that were given to modelling centers are defined and discussed in the following documents:
+
+    * [Guidance for modellers](guidance_for_modellers.md)
+    * [Guidance on grid requirements][grid]
+    * more to come
 
 
 
@@ -186,6 +209,7 @@ You have a more specific question ? Ask it on the [Fresh Eyes Platform][platform
 *[REF]: Rapid Evaluation Framework
 *[DECK]: Diagnostic, Evaluation and Characterization of Klima
 *[AFT]: Assessment Fast Track
+*[CMOR]: Climate Model Output Rewriter
 
  <!-- valid general links -->
 [metagridllnl]: https://aims2.llnl.gov/search/
