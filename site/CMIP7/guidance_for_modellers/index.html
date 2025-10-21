@@ -494,10 +494,62 @@
 
 <h1 id="cmip7-participation-guidance-for-modellers">CMIP7 Participation Guidance for Modellers</h1>
 <h2 id="1-requirements-expectations">1. Requirements &amp; Expectations</h2>
+<p>Groups who plan to participate in CMIP7 should (in roughly this order, although model documentation should be 
+provided as early as possible):</p>
+<ul>
+<li>
+<p>Indicate your intention to participate by registering your institution and model with the 
+  <a href="https://github.com/WCRP-CMIP/CMIP7-CVs">CMIP7 Controlled Vocabularies</a> when the registration
+  process is available. Publication of your model output (on ESGF) will not be possible
+  without first registering your institution and model, which includes providing the
+  <em>Essential Model Documentation</em> for your model. The list of currently registered
+  institutions can be found at <strong><em>link needed</em></strong> and the registration process is 
+  via <strong><em>link needed</em></strong>.</p>
+</li>
+<li>
+<p>Following, or as part of, the registration of your models you will be able to indicate your
+  intention to participate in community MIPs through the <code>activity_participation</code> information
+  for your models. Information on community MIPs can be found <a href="https://wcrp-cmip.org/mips">here</a>.</p>
+</li>
+<li>
+<p>Ensure that you have joined the modelling group mailing list -- if unsure please 
+  contact the <a href="mailto:cmip-ipo@esa.int">CMIP IPO</a> for further details.</p>
+</li>
+<li>
+<p>Perform required DECK and MIP experiments, using the required 
+  <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/">standard forcing datasets</a>.</p>
+</li>
+<li>
+<p>Save all requested model output as specified in the 
+  <a href="https://wcrp-cmip.org/cmip-phases/cmip7/cmip7-data-request/">Data Request</a> where possible (see section 4 below).
+  Prioritise the <a href="https://gmd.copernicus.org/articles/18/2639/2025/">Baseline Climate Variables</a>, a group of 135 variables that are requested from all experiments.</p>
+</li>
+<li>
+<p>Document all simulations including forcing information and a description of ensemble variants
+  (details to be clarified later).</p>
+</li>
+<li>
+<p>Prepare and make available model output according to CMIP7 specifications (see sections 5, 6, 
+  and 7 below).</p>
+</li>
+<li>
+<p>Plans for DOI registration and citation facilities are under consideration and 
+  further information will be provided in due course.</p>
+</li>
+<li>
+<p>Correct published data when errors are discovered. Errors should be documented using the
+  <a href="https://errata.ipsl.fr/">ES-DOC Errata Service</a> before further action is taken, e.g. retraction
+  and publication of replacement datasets.  Please note that the Errata Service supports 
+  <a href="https://ipsl.gitbook.io/esgf-errata-service/errata-service-web-pages/propose-an-issue-through-webforms">user proposed issues</a>,
+  which are moderated and passed to modelling groups as required. Further information about the
+  service is available in the 
+  <a href="https://ipsl.gitbook.io/esgf-errata-service">Errata Service Documentation</a>.</p>
+</li>
+</ul>
 <h2 id="2-experiment-design">2.  Experiment Design</h2>
 <h2 id="3-forcing-data-sets">3.  Forcing data sets</h2>
 <h2 id="4-model-output-fields">4.  Model output fields</h2>
-<h2 id="5-model-output-requirements">5. Model output requirements</h2>
+<h2 id="5-model-output-requirements">5.  Model output requirements</h2>
 <h2 id="6-software-for-preparingchecking-output">6.  Software for preparing/checking output</h2>
 <p>The <strong>ESGF Quality Control (QC) Framework</strong> is a new unified solution designed to validate and ensure the integrity of climate model outputs intended for publication on the Earth System Grid Federation (ESGF).<br />
 Historically, QC in ESGF has relied on a patchwork of tools (<strong>PrePARE</strong>, <strong>QA-DKRZ</strong>, <strong>nctime</strong>, and others) each covering different aspects of metadata and data checks. While effective, this fragmented approach introduced redundancy, maintenance challenges, and reduced transparency in QC workflows.  </p>
