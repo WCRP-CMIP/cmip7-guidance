@@ -85,7 +85,7 @@ If you encounter issues or have suggestions, please **open a GitHub issue** on t
 
 ### Model documentation
 
-The Essential Model Documentation (EMD) is a high-level description of an earth system model.
+The Essential Model Documentation (EMD) is a high-level description of an Earth System Model.
 
 It contains information about model configuration that is helpful to all communities who are expected to make use of the model output, whilst not being so detailed that it becomes too much of a burden on the modelling groups who have to provide the information.
 
