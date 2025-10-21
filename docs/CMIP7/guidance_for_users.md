@@ -20,11 +20,14 @@ There are 2 options to access the data:
 
     Web interface to search and download ESGF data. It provides access through http downloads, wget scripts, OPeNDAP URLs and Globus transfers. Best used for downloading a small number of files. The data can be accessed through any of the CMIP7 web interfaces linked above, which enable users to search across the entire distributed archive as if it were all centrally located.
 
- 2. [**ESGpull**][esgpull]
+ 2. Using a python package
 
-    A python library that allows the user to interface with the ESGF search API. It handles scanning, downloading and updating datasets, files and queries from ESGF.
+    For larger queries, it might be more approriate to automate the search and downloads. A few packages are available to do this task:
 
-TODO: add the suggested packages
+    * [ESGpull][esgpull]
+    * [ESMValTool][esmvaltool]
+    * [intake-esgf][intakeesgf]
+
 
 This page will be updated as other access routes become available.
 
@@ -36,7 +39,7 @@ To enable modeling groups and others who support CMIP7 to demonstrate its impact
 
     In the Acknowledgment section, please insert the following text:
 
-    >We acknowledge the World Climate Research Programme, which, through its Working Group on Coupled Modelling, coordinated and promoted CMIP7. We thank the climate modeling groups for producing and making available their model output, the Earth System Grid Federation (ESGF) for archiving the data and providing access, and the multiple funding agencies who support CMIP7 and ESGF.
+    >We acknowledge the World Climate Research Programme's Coupled Model Intercomparison Project contributors who coordinated and promoted CMIP7. We thank the climate modelling groups for producing and making available their model output, the Earth System Grid Federation (ESGF) for archiving the data and providing access, and the multiple funding agencies who support CMIP7 and ESGF.
 
  2. **Cite the specific dataset(s) used.**
 
@@ -48,7 +51,7 @@ To enable modeling groups and others who support CMIP7 to demonstrate its impact
 
         Swart et al. (2019): CCCma CanESM5 model output prepared for CMIP6 ScenarioMIP. Version 20190429. Earth System Grid Federation. https://doi.org/10.22033/ESGF/CMIP6.1317. 
 
-    If the latest dataset version included in your study is unknown, use the date of data download instead to characterize the version.
+  
     If multiple models are used in a publication, please include a table with the sources (name of the model), institutions and citations. If the journal has a citation limit, a table in the Supporting Information is acceptable.
 
     ??? Note "How to find the DOI?"
@@ -61,6 +64,9 @@ To enable modeling groups and others who support CMIP7 to demonstrate its impact
 
         Further information on the data citation concept for CMIP7 is available [here][cmipcite] and described in [Stockhause and Lautenschlager (2017)][Stockhause2017]. Citations can also be search using [DataCite's catalog][datacitecat] and [Google's Dataset Search][gdatasetsearch].
     
+     <!-- TODO: add link ti tool to get DOI if it exists eventually -->
+
+
  3. **Cite a paper from the GMD special issue**
 
     Cite, as appropriate, one or more of the [CMIP7 GMD special issue][GMDSpecialIssue] articles, which include an overview of the CMIP7 experiment design and descriptions of the CMIP7 endorsed MIPs.
@@ -78,7 +84,7 @@ To enable modeling groups and others who support CMIP7 to demonstrate its impact
 
 6. **Use the standard vocabularies**
 
-    Use the CMIP7 standard names as defined by the [controlled vocabularies (CVs)][cmipCvs] (see [Section 3](#3-cmip7-facets-and-their-documentation)). Refer to the collection of CMIP7 models as the “CMIP7 multi-model ensemble” (or similar) and use, as appropriate, phrases like “CMIP7 multi-model [archive/output/results/simulations/dataset/…]” to describe CMIP7 contributions and products.
+    Where possible, we recommend using the CMIP7 standard names as defined by the [controlled vocabularies (CVs)][cmipCvs] (see [Section 3](#3-cmip7-facets-and-their-documentation)) to make references as clear and unambiguous as possible. However, if your audience requires different terms, then you should use those but we recommend keeping a mapping from the term your audience uses to the standard name, again to ensure that references can be unambiguously resolved where needed. Refer to the collection of CMIP7 models as the “CMIP7 multi-model ensemble” (or similar) and use, as appropriate, phrases like “CMIP7 multi-model [archive/output/results/simulations/dataset/…]” to describe CMIP7 contributions and products.
      
     
 
@@ -176,7 +182,7 @@ tributes for CMIP7 are defined [here][GlobalAttrs].
     * [Guidance on grid requirements][grid]
     * more to come
 
-
+TODO: add something on QAQC. careful name of repo are going to change soon. https://github.com/ESGF/esgf-qc
 
 
 ## 5.  Reporting suspected errors
@@ -231,6 +237,8 @@ You have a more specific question ? Ask it on the [Fresh Eyes Platform][platform
 [register]: https://github.com/Fresh-Eyes-on-CMIP/member-requests/issues/new?template=new_user.yml
 [ErrataService]: https://errata.ipsl.fr/static/index.html
 [CC BY 4.0]: https://creativecommons.org/licenses/by/4.0/
+[esmvaltool]: https://esmvaltool.org/
+[intakeesgf]: https://github.com/esgf2-us/intake-esgf
 
  <!-- CMIP7 links -->
 [GMDSpecialIssue]: https://gmd.copernicus.org/articles/special_issue1315.html
