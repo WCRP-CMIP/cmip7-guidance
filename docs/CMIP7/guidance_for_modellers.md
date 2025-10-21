@@ -97,7 +97,7 @@ To guarantee this, providing EMD is a mandatory requirement for CMIP7 participat
 
 #### Creating EMD
 
-The on-line form that will be used for CMIP7 model registration will include a section for entering the EMD.
+The online form that will be used for CMIP7 model registration will include a section for completing the EMD.
 The EMD will be checked by software and reviewed by a human, and when it is accepted the model registration can be completed.
 The on-line form will also enable those documenting a model to import documentation components from other, already registered models, which can then be edited if required - significantly reducing the time taken to create the content.
 
