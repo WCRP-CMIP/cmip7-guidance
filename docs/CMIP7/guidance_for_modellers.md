@@ -98,7 +98,7 @@ To guarantee this, providing EMD is a mandatory requirement for CMIP7 participat
 #### Creating EMD
 
 The online form that will be used for CMIP7 model registration will include a section for completing the EMD.
-The EMD will be checked by software and reviewed by a human, and when it is accepted the model registration can be completed.
+The EMD will be automatically validated, reviewed by a human and once accepted the model registration can be completed.
 The on-line form will also enable those documenting a model to import documentation components from other, already registered models, which can then be edited if required - significantly reducing the time taken to create the content.
 
 The EMD content is stored in GitHub (in JSON files), and may be edited at any time to add further information, or to correct any mistakes. All such changes will go through the usual GitHub-based review process in a  fully transparent and traceable manner.
