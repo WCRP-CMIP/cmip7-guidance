@@ -129,7 +129,7 @@ The Essential Model Documentation (EMD) contains high-level description intended
 ??? info "Basic Concepts to Understand Variants"
     The source facet gives the name of the model and the variant facet represents each member of an ensemble for a given source. It can also be called the “ripf” identifier (“r” for realization, “i” for initialization, “p” for physics, and “f” for forcing).
 
-A useful tool to assess the models is the [Rapid Evaluation Framework (REF)][ref]. It is an assessment of the models participating in the CMIP7 Assessment Fast Track (AFT). 
+A useful tool to evaluate the models is the [Rapid Evaluation Framework (REF)][https://dashboard.climate-ref.org]. It is an evaluation of the models participating in CMIP6 and the CMIP7 Assessment Fast Track (AFT).
 
 
 ### 3.2.  Experiment and Activity
