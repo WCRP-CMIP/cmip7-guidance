@@ -78,17 +78,17 @@ CMOR uses three main inputs;
 
 | Input component | Description | 
 | --- | --- |
-| `MIP tables`| JSON files describing the variables and their structure |
+| `CMOR tables`| JSON files describing the variables and their structure |
 | `Controlled Vocabulary`| A JSON file describing the allowed values of metadata fields |
 | The `Input JSON file` | control information and specific values of metadata to be used in the creation of output files |
 
-For CMIP7 the [MIP tables](https://github.com/WCRP-CMIP/cmip7-development-mip-tables/) have been constructed from 
+For CMIP7 the [CMOR tables](https://github.com/WCRP-CMIP/cmip7-cmor-tables/) have been constructed from 
 the [CMIP7 data request](https://wcrp-cmip.org/cmip-phases/cmip7/cmip7-data-request/) and releases of these tables, starting with version v1.2.2.2, will follow data request releases until the [Variable Registry](https://github.com/WCRP-CMIP/Variable-Registry/) is established.
 
 The Controlled Vocabulary JSON file used by CMOR will be produced and made available as part of the [CMIP7-CVs](https://github.com/WCRP-CMIP/CMIP7-CVs) repository. 
-For testing purposes sample files are available via the [MIP tables](https://github.com/WCRP-CMIP/cmip7-development-mip-tables/tree/test) repository.
+For testing purposes sample files are available via the [CMOR tables](https://github.com/WCRP-CMIP/cmip7-cmor-tables/tree/test) repository.
 
-Examples of the input JSON file for CMOR are available via [a jupyter notebook](https://github.com/WCRP-CMIP/cmip7-development-mip-tables/blob/main/cmor_demo.ipynb).
+Examples of the input JSON file for CMOR are available via [a jupyter notebook](https://github.com/WCRP-CMIP/cmip7-cmor-tables/blob/main/cmor_demo.ipynb).
 
 
 ## 7.  Software for checking output
