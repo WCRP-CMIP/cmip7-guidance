@@ -46,7 +46,7 @@ To enable modeling groups and others who support CMIP7 to demonstrate its impact
 
     Please include a citation in the form of:
 
-        Authors/Data Creators (publication year): Title. Version YYYYMMDD. Earth System Grid Federation. DOI.
+        Authors/Data Creators (publication year): _Title_. Version YYYYMMDD. Earth System Grid Federation. DOI.
         
     e.g. 
 
@@ -57,9 +57,11 @@ To enable modeling groups and others who support CMIP7 to demonstrate its impact
 
     ??? Question "How to find the DOI?"
 
-        The DOIs can be found through the [Citation Search][citesearch] or in the citation tab of a dataset on MetaGrid.
+        🔍 The DOIs can be found through the [Citation Search][citesearch] or in the citation tab of a dataset on MetaGrid.
 
-        It is also possible to take the `tracking_id` global attribute of a file and append it to [https://handle-esgf.dkrz.de/lp/](https://handle-esgf.dkrz.de/lp/) (e.g., [https://handle-esgf.dkrz.de/lp/21.14100/3c2cf1eb-921d-3f48-b0c2-982ef55d93d4](https://handle-esgf.dkrz.de/lp/21.14100/3c2cf1eb-921d-3f48-b0c2-982ef55d93d4)). The DOI will appear on the page of the handle service.
+        🖱️ It is also possible to take the `tracking_id` global attribute of a file and append it to [https://handle-esgf.dkrz.de/lp/](https://handle-esgf.dkrz.de/lp/) (e.g., [https://handle-esgf.dkrz.de/lp/21.14100/3c2cf1eb-921d-3f48-b0c2-982ef55d93d4](https://handle-esgf.dkrz.de/lp/21.14100/3c2cf1eb-921d-3f48-b0c2-982ef55d93d4)). From there, you can follow "The file is part of the following aggregation(s)" and find the DOI and version of the dataset.
+
+        🤖 Instead of doing this by hand, you can also use the [file2citation.py](../assets/file2citation.py){:download="file2citation.py"} python script (PROTOTYPE). Input tracking_id(s) or file paths(s) to retrieve the citation (textually or in the bibtex format).
 
         Note that there are two citation granularities on experiment data and on model/MIP data.
 
@@ -129,7 +131,7 @@ The Essential Model Documentation (EMD) contains high-level description intended
 ??? info "Basic Concepts to Understand Variants"
     The source facet gives the name of the model and the variant facet represents each member of an ensemble for a given source. It can also be called the “ripf” identifier (“r” for realization, “i” for initialization, “p” for physics, and “f” for forcing).
 
-A useful tool to evaluate the models is the [Rapid Evaluation Framework (REF)][https://dashboard.climate-ref.org]. It is an evaluation of the models participating in CMIP6 and the CMIP7 Assessment Fast Track (AFT).
+A useful tool to evaluate the models is the [Rapid Evaluation Framework (REF)][ref]. It is an evaluation of the models participating in CMIP6 and the CMIP7 Assessment Fast Track (AFT).
 
 
 ### 3.2.  Experiment and Activity
@@ -149,7 +151,7 @@ Each model participating in CMIP7 will contribute results from the eight DECK ex
 
 ### 3.3. Variable
 * [List of variables][variableid]
-* [Branded variable documentation](branded_variable.md)
+* [Branded variable documentation](branded_variables.md)
 
 The variables produced in CMIP7 were recommended by the [CMIP7 Data Request task team][cmipDataRequest]. In CMIP7, the concept of branded variable identifies the variables. It follows the  template: 
 
@@ -267,12 +269,13 @@ You have a more specific question ? Ask it on the [Fresh Eyes Platform][platform
 [intakeesgf]: https://github.com/esgf2-us/intake-esgf
 [cmor]:https://cmor.llnl.gov/
 [cftime]: https://unidata.github.io/cftime/
+[ref]: https://dashboard.climate-ref.org
 
  <!-- CMIP7 links -->
 [GMDSpecialIssue]: https://gmd.copernicus.org/articles/special_issue1315.html
 [dunne2025]: https://gmd.copernicus.org/articles/18/6671/2025/
 [Durack2025]:https://journals.ametsoc.org/view/journals/bams/106/8/BAMS-D-25-0119.1.xml
-[ref]: https://wcrp-cmip.org/cmip-phases/cmip7/rapid-evaluation-framework/
+
 [aft]: https://wcrp-cmip.org/cmip-phases/cmip7/fast-track/
 [cmipCvs]: https://github.com/WCRP-CMIP/CMIP7-CVs
 [cmipDataRequest]: https://wcrp-cmip.org/cmip-phases/cmip7/cmip7-data-request/
