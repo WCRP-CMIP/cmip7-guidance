@@ -127,3 +127,17 @@ If you encounter issues or have suggestions, please **open a GitHub issue** on t
 ## 7.  Archiving/publishing output
 ## 8.  Documentation Process
 ## 9.  CMIP7 organisation and governance
+
+The [CMIP panel](https://wcrp-cmip.org/cmip-governance/cmip-panel/) which is under 
+[WCRP ESMO SSG](https://www.wcrp-esmo.org/about/the-esmo-team/the-esmo-scientific-steering-group) 
+provides overall guidance and oversight of CMIP activities. 
+The CMIP panel sets out the scientific priorities, experiments and protocols for CMIP7. 
+Although the [CMIP7 webpages](https://wcrp-cmip.org/cmip-phases/cmip7/) provide additional information 
+that may be of interest to CMIP7 participants, 
+only the CMIP7 Guide (these pages) provides definitive documentation of CMIP7 technical requirements.
+The experiments within the Assessment Fast Track are managed by independent MIP committees, but the 
+modelling groups are asked to prepare their model output following a common procedure (Sections 4-7 above).
+
+The WCRP-ESMO Infrastructure Panel (WIP) has responsibility for most of the technical requirements of CMIP. 
+The mission, rationale and Terms of Reference for the WIP can be found 
+[here](https://wcrp-cmip.org/cmip-governance/wip/).
