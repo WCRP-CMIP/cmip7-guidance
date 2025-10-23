@@ -8,6 +8,7 @@ import os
 from netCDF4 import Dataset
 from pyhandle.handleclient import RESTHandleClient
 import requests
+import re
 
 def main():
     parser = argparse.ArgumentParser(
@@ -26,6 +27,14 @@ def main():
         default="text",
         help="Output format (default: text)"
     )
+
+    parser.add_argument(
+        "-a", "--authors",
+        choices=["long", "short",],
+        default="short",
+        help="Author list format for text output (default: short). Long writes all authors, short uses 'et al.'"
+    )
+
     args = parser.parse_args()
 
     for item in args.inputs:
@@ -56,8 +65,18 @@ def main():
             r = requests.get(f"https://api.datacite.org/dois/{doi}")
             data=r.json()['data']['attributes']
 
-            # Q?: et al or list everyone ?
-            citation= f"{data['creators'][0]['familyName']} et al. ({data['publicationYear']}): {data['titles'][0]['title']}. Version {version}. {data['publisher']}. https://doi.org/{doi}."
+            # et al version
+            if args.authors == "short":
+                # name exception for consortium
+                if len(data['creators'])==1:
+                    creators= data['creators'][0]['name']
+                else:
+                    creators= f"{data['creators'][0]['familyName']} et al."
+            # everybody version
+            elif args.authors == "long":
+                creators = "; ".join([c['name'] for c in data['creators']])
+
+            citation= f"{creators} ({data['publicationYear']}): {data['titles'][0]['title']}. Version {version}. {data['publisher']}. https://doi.org/{doi}."
             print(citation)
 
         # get bibtex
@@ -66,7 +85,15 @@ def main():
             headers = {"accept": "application/x-bibtex"}
             r = requests.get(url, headers=headers)
             bib=r.text
-            print(bib) #no version.. Q?: should I add it manually ?
+            # add version to title
+            bib=re.sub(r'title = {(.*?)}', lambda m: f'title = {{{m.group(1)}. Version {version}.}}', bib)
+
+            print(bib)
+
+            
+            
+            
+            #TODO: add extra citations. Dunne et al. (2025)? Activity paper based on experiment ?
 
 
 

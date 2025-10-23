@@ -46,7 +46,7 @@ To enable modeling groups and others who support CMIP7 to demonstrate its impact
 
     Please include a citation in the form of:
 
-        Authors/Data Creators (publication year): _Title_. Version YYYYMMDD. Earth System Grid Federation. DOI.
+        Authors/Data Creators (publication year): Title. Version YYYYMMDD. Earth System Grid Federation. DOI.
         
     e.g. 
 
@@ -59,21 +59,20 @@ To enable modeling groups and others who support CMIP7 to demonstrate its impact
 
         🔍 The DOIs can be found through the [Citation Search][citesearch] or in the citation tab of a dataset on MetaGrid.
 
-        🖱️ It is also possible to take the `tracking_id` global attribute of a file and append it to [https://handle-esgf.dkrz.de/lp/](https://handle-esgf.dkrz.de/lp/) (e.g., [https://handle-esgf.dkrz.de/lp/21.14100/3c2cf1eb-921d-3f48-b0c2-982ef55d93d4](https://handle-esgf.dkrz.de/lp/21.14100/3c2cf1eb-921d-3f48-b0c2-982ef55d93d4)). From there, you can follow "The file is part of the following aggregation(s)" and find the DOI and version of the dataset.
+        🖱️ It is also possible to take the `tracking_id` global attribute of a file and append it to [http://hdl.handle.net/](http://hdl.handle.net/) (e.g., [http://hdl.handle.net/hdl:21.14100/be06a059-363d-47a4-97a2-d5253190fd15](http://hdl.handle.net/hdl:21.14100/be06a059-363d-47a4-97a2-d5253190fd15)). From there, you can follow "The file is part of the following aggregation(s)" and find the DOI and version of the dataset.
 
-        🤖 Instead of doing this by hand, you can also use the [file2citation.py](../assets/file2citation.py){:download="file2citation.py"} python script (PROTOTYPE). Input tracking_id(s) or file paths(s) to retrieve the citation (textually or in the bibtex format).
+        🤖 Instead of doing this by hand, you can also use the PROTOTYPE [file2citation.py](../assets/file2citation.py){:download="file2citation.py"} python script. Input tracking_id(s) or file paths(s) to retrieve the citation (textually or in the bibtex format).
 
         Note that there are two citation granularities on experiment data and on model/MIP data.
 
         Further information on the data citation concept for CMIP7 is available [here][cmipcite] and described in [Stockhause and Lautenschlager (2017)][Stockhause2017]. Citations can also be search using [DataCite's catalog][datacitecat] and [Google's Dataset Search][gdatasetsearch].
     
-     <!-- TODO: add link to tool to get DOI if it exists eventually -->
 
 
  3. **Cite a paper from the GMD special issue**
 
     Cite, as appropriate, one or more of the [CMIP7 GMD special issue][GMDSpecialIssue] articles, which include an overview of the CMIP7 experiment design and descriptions of the CMIP7 endorsed MIPs.
-    <!--TODO: should we be clearer ? ask to cite Dunne specifically ? -->
+    <!--TODO: should we be clearer ? ask to cite Dunne specifically ? include in file2citation ? -->
  
  4. **Register your work.**
 
