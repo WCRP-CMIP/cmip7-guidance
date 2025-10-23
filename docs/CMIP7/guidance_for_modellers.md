@@ -52,7 +52,55 @@ provided as early as possible):
 
 ## 2.  Experiment Design
 ## 3.  Forcing data sets
+
 ## 4.  Model output fields
+
+The [CMIP7 Data Request](https://wcrp-cmip.org/cmip-phases/cmip7/cmip7-data-request/) specifies the model output variables should be saved from each of the CMIP7 experiments. The Data Request is structured into three main components: **Core**, **Harmonised**, and **Unharmonised**. It is further subdivided into **Opportunities**, which encapsulate scientific goals and the model output needed to achieve them. 
+
+### Core request
+
+This component of the CMIP7 Data Request comprises of core list of 135 variables that are **requested from all experiments**. 
+These model output variables, referred to as the Baseline Climate Variables, enable evaluation of climate simulations across CMIP phases and MIP experiments as described in [Juckes et al. (2025)](https://doi.org/10.5194/gmd-18-2639-2025).
+To promote their consistent availability across the ESGF archive, modellers are requested to provide these variables with highest priority.
+
+### Harmonised request
+
+The Harmonised component of the CMIP7 Data Request is organized into 46 **Opportunities** that are grouped by five scientific **themes**: Atmosphere, Earth System, Impacts & Adaptation, Land & Land-ice, and Ocean & Sea-ice.
+Five **thematic papers** in the [CMIP7 GMD Special Issue](https://gmd.copernicus.org/articles/special_issue1315.html) give an overview of the scientific rationale and requested variables for each theme's Opportunities.
+
+Each **Opportunity** in the Data Request database specifies:
+
+- A description of its scientific topic, justification of resources, and expected scientific impacts;
+- The experiments from which output is requested (organized into Experiment Groups);
+- The variables requested from those experiments (organized into Variable Groups).
+
+Each Variable Group is assigned a **Priority Level** of High, Medium, or Low:
+
+- High: The variables support the core objectives of the Opportunity, and are required to make it viable.
+- Medium: These variables deliver extra information enabling analysts push the scientific boundaries further.
+- Low: These variables help to fill gaps and are more speculative. This priority level can also be used for data that has prior agreement to be produced by particular modelling centres, so it is not expected by additional centres unless they wish to participate.
+
+Opportunities are intended to make the reasons why variables are requested more transparent, and give modellers the flexibility to support community-driven scientific questions aligned with their own goals.
+Modellers wishing to avoid this complexity can simply choose to support *all Opportunities*.
+The [Data Request Software](https://github.com/CMIP-Data-Request/CMIP7_DReq_software) will determine lists of requested variables for each experiment based on the Opportunities are supported (see "Tools", below).
+Note that the Baseline Climate Variables (Core Request) are included as one of the Opportunities in the database (in this particular case, the Opportunity requests output from all experiments).
+
+The Harmonised component is targeted primarily at AFT experiments and has been developed to meet AR7 deadlines, but also includes experiments outside the AFT.
+
+### Unharmonised request
+
+This component will be driven by community MIPs, with high flexibility, following the initial phase of CMIP7 production focusing on the AR7 AFT experiments.
+Development of the Unharmonised component is in progress, with guidance to follow. 
+It is likely to involve MIP-defined Opportunities defining their requests subject only to transparent technical requirements.
+
+### Tools to access and use the Data Request
+
+The [CMIP7 Data Request](https://wcrp-cmip.org/cmip-phases/cmip7/cmip7-data-request/) webpage provides links to the latest version of the Data Request, which can be viewed online in the cloud-based Airtable application. User guidance on accessing the Data Request via Airtable are also provided. 
+
+The [Data Request Software](https://github.com/CMIP-Data-Request/CMIP7_DReq_software) provides a python API and scripts that can be used to query the data request and incorporate it into modelling workflows. 
+As noted above, given a list of Opportunities supported, the software will determine the resulting lists of variables to output from each experiment by combining the separate requests from each Opportunity (i.e., modellers do not have to manually combine the requests of multiple Opportunities themselves).
+
+
 ## 5.  Model output requirements
 ## 6.  Software for preparing/checking output
 
