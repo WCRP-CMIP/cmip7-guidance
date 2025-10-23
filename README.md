@@ -3,6 +3,14 @@
 [![MkDocs Build + Deploy](https://github.com/WCRP-CMIP/cmip7-guidance/actions/workflows/deploy.yml/badge.svg?branch=main)](https://github.com/WCRP-CMIP/cmip7-guidance/workflows/deploy.yml) [![Deploy static content to Pages](https://github.com/WCRP-CMIP/cmip7-guidance/actions/workflows/staticpublish.yml/badge.svg)](https://github.com/WCRP-CMIP/cmip7-guidance/actions/workflows/staticpublish.yml)
 
 
+-------
+
+> [!NOTE]
+> The live site is located at [wcrp-cmip.github.io/cmip7-guidance/](https://wcrp-cmip.github.io/cmip7-guidance/)
+
+--------
+
+
 ## Editing the documentation.
 
 Docmentation is found in the `docs` folder with the file names and hierarchy affecting the navigational menu. 
