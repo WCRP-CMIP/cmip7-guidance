@@ -61,31 +61,30 @@ Developers of tools that do an equivalent job to CMOR for CMIP7 are invited to
 [raise an issue](https://github.com/WCRP-CMIP/cmip7-guidance/issues/new) on github and ideally provide a PR with an 
 update to this section of the documentation.
 
-### 6a. CMOR
+### 6a CMOR
 
 CMOR, the `Climate Model Output Rewriter`, is a library written in C with interfaces for both Fortran and Python, with the aim of enforcing correct data and metadata structures for projects such as CMIP, which are now used widely across many projects.
 CMOR is maintained by PCMDI on [github](https://github.com/PCMDI/cmor) and is available for installation via [conda](https://anaconda.org/conda-forge/cmor) and has documentation [here](https://cmor.llnl.gov/).
 For CMIP7, the CMOR library has been updated in line with the changes to the [CMIP7 Global Attributes](https://zenodo.org/records/17250297). 
 Data producers should update to version [v3.13](https://cmor.llnl.gov/news/2025/10/14/cmor3/) of CMOR to gain access to the necessary changes.
 
-The CMOR PrePARE tool, used for quality checking in CMIP6, has been retired and data producers should refer to section 7 below for guidance on esgf-qc.
-
-
-### 6b. Inputs to CMOR: 
+The CMOR PrePARE tool, used for quality checking in CMIP6, has been retired and data producers should refer to section 7 below for guidance on the new quality control tool, `esgf-qc`.
 
 CMOR uses three main inputs;
 
 | Input component | Description | 
 | --- | --- |
-| `CMOR tables`| JSON files describing the variables and their structure |
+| `CMOR tables`| JSON files describing the variables (metadata attributes for variables) |
 | `Controlled Vocabulary`| A JSON file describing the allowed values of metadata fields |
-| The `Input JSON file` | control information and specific values of metadata to be used in the creation of output files |
+| The `Input JSON file` | control information and specific values of metadata (global attributes) to be used in the creation of output files |
 
 For CMIP7 the [CMOR tables](https://github.com/WCRP-CMIP/cmip7-cmor-tables/) have been constructed from 
-the [CMIP7 data request](https://wcrp-cmip.org/cmip-phases/cmip7/cmip7-data-request/) and releases of these tables, starting with version v1.2.2.2, will follow data request releases until the [Variable Registry](https://github.com/WCRP-CMIP/Variable-Registry/) is established.
+the [CMIP7 data request](https://wcrp-cmip.org/cmip-phases/cmip7/cmip7-data-request/) and releases of these tables, starting with version v1.2.2.2, will follow data request releases until the new WCRP Variable Registry is established.
+Note that CMOR tables may also be referred to in some contexts as MIP tables.
 
-The Controlled Vocabulary JSON file used by CMOR will be produced and made available as part of the [CMIP7-CVs](https://github.com/WCRP-CMIP/CMIP7-CVs) repository. 
-For testing purposes sample files are available via the [CMOR tables](https://github.com/WCRP-CMIP/cmip7-cmor-tables/tree/test) repository.
+The Controlled Vocabulary JSON file used by CMOR will be produced and made available as part of the [CMIP7-CVs](https://github.com/WCRP-CMIP/CMIP7-CVs) repository and versioned separately. 
+Note that this is a change relative to CMIP6 and further guidance alongside the CMOR tables when this file is ready for use. 
+For testing purposes sample CV JSON files are available via the [CMOR tables](https://github.com/WCRP-CMIP/cmip7-cmor-tables/tree/test) repository.
 
 Examples of the input JSON file for CMOR are available via [a jupyter notebook](https://github.com/WCRP-CMIP/cmip7-cmor-tables/blob/main/cmor_demo.ipynb).
 
