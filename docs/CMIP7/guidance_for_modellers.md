@@ -65,9 +65,8 @@ update to this section of the documentation.
 
 CMOR, the `Climate Model Output Rewriter`, is a library written in C with interfaces for both Fortran and Python, with the aim of enforcing correct data and metadata structures for projects such as CMIP, which are now used widely across many projects.
 CMOR is maintained by PCMDI on [github](https://github.com/PCMDI/cmor) and is available for installation via [conda](https://anaconda.org/conda-forge/cmor) and has documentation [here](https://cmor.llnl.gov/).
-For CMIP7 the CMOR library, available sice CMIP7, has been updated in line with the changes to the [CMIP7 Global Attributes](https://zenodo.org/records/17250297). 
+For CMIP7, the CMOR library has been updated in line with the changes to the [CMIP7 Global Attributes](https://zenodo.org/records/17250297). 
 Data producers should update to version [v3.13](https://cmor.llnl.gov/news/2025/10/14/cmor3/) of CMOR to gain access to the necessary changes.
-THe MIP tables 
 
 The CMOR PrePARE tool, used for quality checking in CMIP6, has been retired and data producers should refer to section 7 below for guidance on esgf-qc.
 
