@@ -51,6 +51,21 @@ provided as early as possible):
   [Errata Service Documentation](https://ipsl.gitbook.io/esgf-errata-service).
 
 ## 2.  Experiment Design
+
+The CMIP7 protocol and experiments are described in a special issue of Geoscientific Model Development with an overview 
+of the overall design and scientific strategy provided in the lead article of that issue by 
+[Dunne et al. (2025)]( https://doi.org/10.5194/gmd-18-6671-2025).
+
+-	Each model participating in CMIP7 is encouraged to contribute results from the eight DECK experiments 
+  (`amip`, `piControl`/`esm-piControl`, `abrupt-4xCO2`, `1pctCO2`, `historical`/`esm-hist`, `piClim-control`, `piClim-anthro`, 
+  `piClim-4xCO2`). See [Dunne et al. (2025)]( https://doi.org/10.5194/gmd-18-6671-2025) where the experiment protocol 
+  is documented. These experiments are considered to baseline the climate models and are directly overseen by the CMIP panel. 
+  With the introduction of emission driven simulations, the panel now allows emission driven or concentration driven simulations.
+-	In addition to the DECK, each modelling group is encouraged to complete the Assessment Fast Track experiments described in 
+  [Dunne et al. (2025)]( https://doi.org/10.5194/gmd-18-6671-2025). 
+-	When called for by the experiment protocol, it is requested that the standard forcing datasets (see Section 3) are used 
+  and that any deviation from the standard forcing is documented (guidance to be confirmed).
+
 ## 3.  Forcing data sets
 ## 4.  Model output fields
 ## 5.  Model output requirements
@@ -162,3 +177,17 @@ If you encounter issues or have suggestions, please **open a GitHub issue** on t
 ## 8.  Archiving/publishing output
 ## 9.  Documentation Process
 ## 10.  CMIP7 organisation and governance
+
+The [CMIP panel](https://wcrp-cmip.org/cmip-governance/cmip-panel/) which is under 
+[WCRP ESMO SSG](https://www.wcrp-esmo.org/about/the-esmo-team/the-esmo-scientific-steering-group) 
+provides overall guidance and oversight of CMIP activities. 
+The CMIP panel sets out the scientific priorities, experiments and protocols for CMIP7. 
+Although the [CMIP7 webpages](https://wcrp-cmip.org/cmip-phases/cmip7/) provide additional information 
+that may be of interest to CMIP7 participants, 
+only the CMIP7 Guide (these pages) provides definitive documentation of CMIP7 technical requirements.
+The experiments within the Assessment Fast Track are managed by independent MIP committees, but the 
+modelling groups are asked to prepare their model output following a common procedure (Sections 4-7 above).
+
+The WCRP-ESMO Infrastructure Panel (WIP) has responsibility for most of the technical requirements of CMIP. 
+The mission, rationale and Terms of Reference for the WIP can be found 
+[here](https://wcrp-cmip.org/cmip-governance/wip/).
