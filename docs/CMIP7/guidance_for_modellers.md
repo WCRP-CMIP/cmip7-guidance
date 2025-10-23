@@ -63,8 +63,8 @@ of the overall design and scientific strategy provided in the lead article of th
   With the introduction of emission driven simulations, the panel now allows emission driven or concentration driven simulations.
 -	In addition to the DECK, each modelling group is encouraged to complete the Assessment Fast Track experiments described in 
   [Dunne et al. (2025)]( https://doi.org/10.5194/gmd-18-6671-2025). 
--	When called for by the experiment protocol, it is requested that the standard forcing datasets are used and that any deviation 
-  from the standard forcing is documented.
+-	When called for by the experiment protocol, it is requested that the standard forcing datasets (see Section 3) are used 
+  and that any deviation from the standard forcing is documented (guidance to be confirmed).
 
 ## 3.  Forcing data sets
 ## 4.  Model output fields
