@@ -110,6 +110,7 @@ It is likely to involve MIP-defined Opportunities defining their requests subjec
 ### Tools to access and use the Data Request
 
 The [CMIP7 Data Request](https://wcrp-cmip.org/cmip-phases/cmip7/cmip7-data-request/) webpage provides links to the latest version of the Data Request, which can be viewed online in the cloud-based **Airtable** application. User guidance on accessing the Data Request via Airtable is provided. 
+An HTML-based Github-hosted view of the latest Data Request version is also [available here](https://cmip-data-request.github.io/cmip7-dreq-webview/latest/index.html).
 
 The [Data Request Software](https://github.com/CMIP-Data-Request/CMIP7_DReq_software) provides a **python API** and scripts that can be used to query the data request and incorporate it into modelling workflows. 
 Given a list of Opportunities supported, the software will determine the resulting lists of variables to output from each experiment by combining the separate requests from each Opportunity.
