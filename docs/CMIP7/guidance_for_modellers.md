@@ -55,7 +55,7 @@ provided as early as possible):
 
 ## 4.  Model output fields
 
-The [CMIP7 Data Request](https://wcrp-cmip.org/cmip-phases/cmip7/cmip7-data-request/) specifies the model output variables should be saved from each of the CMIP7 experiments. The Data Request is structured into three main components: **Core**, **Harmonised**, and **Unharmonised**. It is further subdivided into **Opportunities**, which encapsulate scientific goals and the model output needed to achieve them. 
+The [CMIP7 Data Request](https://wcrp-cmip.org/cmip-phases/cmip7/cmip7-data-request/) specifies the list of model output variables that should be saved from each of the CMIP7 experiments. The Data Request variables can be categorised into three main components: **Core**, **Harmonised**, and **Unharmonised**. It is further subdivided into **Opportunities**, which encapsulate scientific goals and the model output needed to achieve them.
 
 ### Core request
 
