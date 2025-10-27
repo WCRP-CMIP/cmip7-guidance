@@ -74,7 +74,7 @@ Each **Opportunity** in the Data Request database specifies:
 - The experiments from which output is requested (organized into Experiment Groups);
 - The variables requested from those experiments (organized into Variable Groups).
 
-Each Variable Group is assigned a **Priority Level** of High, Medium, or Low:
+Each Variable Group, other than the Baseline Climate Variables, is assigned a **Priority Level** of High, Medium, or Low:
 
 - High: The variables support the core objectives of the Opportunity, and are required to make it viable.
 - Medium: These variables deliver extra information enabling analysts push the scientific boundaries further.
