@@ -61,7 +61,7 @@ The [CMIP7 Data Request](https://wcrp-cmip.org/cmip-phases/cmip7/cmip7-data-requ
 
 This component of the CMIP7 Data Request comprises of core list of 135 variables that are **requested from all experiments**. 
 These model output variables, referred to as the Baseline Climate Variables, enable evaluation of climate simulations across CMIP phases and MIP experiments as described in [Juckes et al. (2025)](https://doi.org/10.5194/gmd-18-2639-2025).
-To promote their consistent availability across the ESGF archive, modellers are requested to provide these variables with highest priority.
+To promote their consistent availability across the ESGF archive, modellers are requested to provide these variables with highest priority from every experiment .
 
 ### Harmonised request
 
