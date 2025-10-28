@@ -113,15 +113,15 @@ Each question asked in the on-line EMD creation form will also be accompanied by
 EMD comprises the following sections:
 
 - Top-level model
-  - A top-level description of the model as whole.
-  - Includes model name, family and an overview description.
+   - A top-level description of the model as whole.
+   - Includes model name, family and an overview description.
 - Model components
-  - A description of each dynamically simulated model component.
-  - Includes the component name and family, an overview description, and the relationship to other components.
+   - A description of each dynamically simulated model component.
+   - Includes the component name and family, an overview description, and the relationship to other components.
 - Horizontal and vertical grids
-  - For each model component, a description of its native grid.
+   - For each model component, a description of its native grid.
 - References
-  - References to published work for the top-level model or one its model components.
+   - References to published work for the top-level model or one its model components.
 
 
 ## 9.  CMIP7 organisation and governance
