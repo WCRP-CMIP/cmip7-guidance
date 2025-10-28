@@ -105,7 +105,10 @@ The EMD content is stored in GitHub (in JSON files), and may be edited at any ti
 
 #### EMD structure
 
-The full EMD specification may be found at https://doi.org/10.5281/zenodo.15439551. However, each question asked in the on-line EMD creation form will also be accompanied by detailed guidance, so reference to the full specification should not generally be necessary during the actual creation process.
+The full EMD specification may be found at:
+🗣️ [https://doi.org/10.5281/zenodo.15439551](https://doi.org/10.5281/zenodo.15439551)
+
+Each question asked in the on-line EMD creation form will also be accompanied by the relevant guidance, so reference to the full specification should not generally be necessary during the creation process.
 
 EMD comprises the following sections:
 
