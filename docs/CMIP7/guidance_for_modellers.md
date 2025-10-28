@@ -123,5 +123,6 @@ EMD comprises the following sections:
 - References
    - References to published work for the top-level model or one its model components.
 
+While not part of the EMD, output grids for regridded data must also be registered via an online form (i.e. for any grid used to report data that is not the model's native grid)."
 
 ## 9.  CMIP7 organisation and governance
