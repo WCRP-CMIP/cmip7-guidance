@@ -99,16 +99,16 @@ To guarantee this, providing EMD is a mandatory requirement for CMIP7 participat
 
 The online form that will be used for CMIP7 model registration will include a section for completing the EMD.
 The EMD will be automatically validated, reviewed by a human and once accepted the model registration can be completed.
-The on-line form will also enable those documenting a model to import documentation components from other, already registered models, which can then be edited if required - significantly reducing the time taken to create the content.
+The online form will also enable those documenting a model to import documentation components from other, already registered models, which can then be edited if required - significantly reducing the time taken to create the content.
 
 The EMD content is stored in GitHub (in JSON files), and may be edited at any time to add further information, or to correct any mistakes. All such changes will go through the usual GitHub-based review process in a  fully transparent and traceable manner.
 
 #### EMD structure
 
-The full EMD specification may be found at:
+The full EMD specification, which contains examples of filled-out EMD entries for model components and grids, may be found at:
 🗣️ [https://doi.org/10.5281/zenodo.15439551](https://doi.org/10.5281/zenodo.15439551)
 
-Each question asked in the on-line EMD creation form will also be accompanied by the relevant guidance, so reference to the full specification should not generally be necessary during the creation process.
+Each question asked in the online EMD creation form will also be accompanied by the relevant guidance, so reference to the full specification should not generally be necessary during the creation process.
 
 EMD comprises the following sections:
 
