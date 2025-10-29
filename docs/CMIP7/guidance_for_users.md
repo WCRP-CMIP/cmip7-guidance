@@ -8,7 +8,7 @@ title: CMIP7 Guidance for Data Users
 This page is designed to inform users of climate model outputs on key CMIP7 concepts and tools. It is a landing page to redirect them to the proper resources to learn more.
 
 !!! Danger 
-    This page is a work-in-progress. Some links still point to the CMIP6 version of pages.
+    This page is a work-in-progress.
 
 ## 1.  Accessing CMIP7 data
 
@@ -55,29 +55,29 @@ To enable modeling groups and others who support CMIP7 to demonstrate its impact
   
     If multiple models are used in a publication, please include a table with the sources (name of the model), institutions and citations. If the journal has a citation limit, a table in the Supporting Information is acceptable.
 
-    ??? Question "How to find the DOI?"
+    ??? Question "How to find the DOI and the version?"
 
-        🔍 The DOIs can be found through the [Citation Search][citesearch] or in the citation tab of a dataset on MetaGrid.
+        🔍 The DOIs can be found through the [Citation Search][citesearch] or in the citation tab of a dataset on MetaGrid. The version is indicated in a column on MetaGrid.
 
         🖱️ It is also possible to take the `tracking_id` global attribute of a file and append it to [http://hdl.handle.net/](http://hdl.handle.net/) (e.g., [http://hdl.handle.net/hdl:21.14100/be06a059-363d-47a4-97a2-d5253190fd15](http://hdl.handle.net/hdl:21.14100/be06a059-363d-47a4-97a2-d5253190fd15)). From there, you can follow "The file is part of the following aggregation(s)" and find the DOI and version of the dataset.
 
-        🤖 Instead of doing this by hand, you can also use the PROTOTYPE [file2citation.py](../assets/file2citation.py){:download="file2citation.py"} python script. Input tracking_id(s) or file paths(s) to retrieve the citation (textually or in the bibtex format).
+        🤖 Instead of doing this by hand, you can also use the PROTOTYPE python librairy [CMIPcite][cmipcite]. Input tracking_id(s), PID(s) or file paths(s) to retrieve the citation (textually or in the bibtex format).
 
         Note that there are two citation granularities on experiment data and on model/MIP data.
 
-        Further information on the data citation concept for CMIP7 is available [here][cmipcite] and described in [Stockhause and Lautenschlager (2017)][Stockhause2017]. Citations can also be search using [DataCite's catalog][datacitecat] and [Google's Dataset Search][gdatasetsearch].
+        Further information on the data citation concept for CMIP7 is described in [Stockhause and Lautenschlager (2017)][Stockhause2017]. Citations can also be search using [DataCite's catalog][datacitecat] and [Google's Dataset Search][gdatasetsearch].
     
 
 
  3. **Cite a paper from the GMD special issue**
 
     Cite, as appropriate, one or more of the [CMIP7 GMD special issue][GMDSpecialIssue] articles, which include an overview of the CMIP7 experiment design and descriptions of the CMIP7 endorsed MIPs.
-    <!--TODO: should we be clearer ? ask to cite Dunne specifically ? include in file2citation ? -->
+    <!--TODO: Be clearer about what we actually want here. Maybe use experiment CV to get the right citation, once they have that information. -->
  
  4. **Register your work.**
 
-    Register your work on the [CMIP7 Publication Hub][CMIPpubs]. 
-      <!--TODO:do we still want this ? -->
+    Register your work on the [CMIP7 Publication Hub][CMIPpubs] (COMING SOON). 
+
 
 5. **Adhere to the license**
     
@@ -122,8 +122,8 @@ The values associated with each facets are standardized through the [CVs][cmipCv
 
 
 ### 3.1.  Source and Variant
-* [List of models][sourceIdhtml]
-* [Essential Model Documentation (EMD)][emd]
+* [List of models][sourceIdhtml] (COMING SOON)
+* [Essential Model Documentation (EMD)][emd] (COMING SOON)
 
 The Essential Model Documentation (EMD) contains high-level description intended to contain information on model formulation that can be easily compared between different models. EMD pages contain links to more in-depth model documentation for each source.
 
@@ -134,9 +134,8 @@ A useful tool to evaluate the models is the [Rapid Evaluation Framework (REF)][r
 
 
 ### 3.2.  Experiment and Activity
-* [List of experiments][experimentIdhtml]
-* [List of activities][activityIdJson]
-<!--TODO: Does experiment doc exist for CMIP7 ? -->
+* [List of experiments][experimentIdhtml] (COMING SOON)
+* [List of activities][activityIdJson] (COMING SOON)
 
  
 The CMIP7 protocol and experiments are described in a [special issue][GMDSpecialIssue] of Geoscientific Model Development with an overview of the design and scientific strategy provided in the lead article of that issue by [Dunne et al. (2025)][dunne2025].
@@ -269,6 +268,9 @@ You have a more specific question ? Ask it on the [Fresh Eyes Platform][platform
 [cmor]:https://cmor.llnl.gov/
 [cftime]: https://unidata.github.io/cftime/
 [ref]: https://dashboard.climate-ref.org
+[cmipcite]: https://cmipcite.readthedocs.io/en/latest/
+[citesearch]: https://www.wdc-climate.de/ords/f?p=127:2 
+[esgfqc]:https://github.com/ESGF/esgf-qc  <!-- might change ? -->
 
  <!-- CMIP7 links -->
 [GMDSpecialIssue]: https://gmd.copernicus.org/articles/special_issue1315.html
@@ -286,15 +288,13 @@ You have a more specific question ? Ask it on the [Fresh Eyes Platform][platform
 
  <!-- TODO: all the links below need to be changed when the new version arrives -->
  <!-- CMIP6 links -->
-[citesearch]: http://bit.ly/CMIP6_Citation_Search   
-[CMIPpubs]: https://cmip-publications.llnl.gov/view/CMIP6/
+ <!--[CMIPpubs]: https://cmip-publications.llnl.gov/view/CMIP6/  
 [experimentIdhtml]: https://wcrp-cmip.github.io/CMIP6_CVs/docs/CMIP6_experiment_id.html
 [activityIdJson]: https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_activity_id.json
-[sourceIdHtml]: https://wcrp-cmip.github.io/CMIP6_CVs/docs/CMIP6_source_id.html
-[cmipcite]: http://cmip6cite.wdc-climate.de
+[sourceIdHtml]: https://wcrp-cmip.github.io/CMIP6_CVs/docs/CMIP6_source_id.html -->
 
 
  <!-- unknown links -->
 [emd]:  ?
 [eld]: ?
-[esgfqc]:https://github.com/ESGF/esgf-qc
+
