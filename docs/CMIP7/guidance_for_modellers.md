@@ -71,8 +71,9 @@ These Opportunities were developed through a wide community consultation, leadin
 
 ### Core request
 
-This component of the CMIP7 Data Request comprises a core list of 135 variables that are **requested from all experiments**. 
-These model output variables, referred to as the **Baseline Climate Variables**, enable evaluation of climate simulations across CMIP phases and MIP experiments as described in [Juckes et al. (2025)](https://doi.org/10.5194/gmd-18-2639-2025).
+This component of the CMIP7 Data Request comprises a core list of 131 variables that are **requested from all experiments**. 
+These model output variables, referred to as **Baseline Climate Variables for Earth System Modelling** (ESM-BCVs), enable evaluation of climate simulations across CMIP phases and MIP experiments. 
+The development of the first version of the ESM-BCVs list, which segued into the wider public consultation process that developed the CMIP7 Data Request, is described in [Juckes et al. (2025)](https://doi.org/10.5194/gmd-18-2639-2025).
 To promote their consistent availability across the ESGF archive, modellers are requested to provide these variables with highest priority, from every experiment.
 The **Priority Level** of these variables is denoted as **Core**.
 
@@ -87,7 +88,7 @@ Each **Opportunity** in the Data Request database specifies:
 - The experiments from which output is requested (organized into Experiment Groups);
 - The variables requested from those experiments (organized into Variable Groups).
 
-Each Variable Group, other than the Baseline Climate Variables, is assigned a **Priority Level** of High, Medium, or Low:
+Each Variable Group, other than the ESM-BCVs, is assigned a **Priority Level** of High, Medium, or Low:
 
 - **High**: The variables support the core objectives of the Opportunity, and are required to make it viable.
 - **Medium**: These variables deliver extra information enabling analysts push the scientific boundaries further.
@@ -97,7 +98,7 @@ Opportunities document why variables are requested and provide modellers the fle
 Based on a set of Opportunities supported, the [Data Request Software](https://github.com/CMIP-Data-Request/CMIP7_DReq_software) produces lists of requested variables for each experiment (see [Tools](#tools-to-access-and-use-the-data-request), below).
 Modellers preferring not to customize their data production via Opportunity selection can simply choose to support *all* Opportunities.
 
-In the Data Request database, the Baseline Climate Variables are included as an Opportunity that requests output from *all* experiments, with its Variable Groups having a priority level of **Core** (higher than other priority levels).
+In the Data Request database, the ESM-BCVs are included as an Opportunity that requests output from *all* experiments, with its Variable Groups having a priority level of **Core** (interpreted as higher than other three priority levels).
 
 <!-- The Harmonised component has been developed to meet AR7 deadlines and is targeted primarily at the AFT experiments, but also includes experiments outside the AFT. -->
 
