@@ -68,6 +68,8 @@ of the overall design and scientific strategy provided in the lead article of th
 
 ## 3.  Forcing data sets
 
+Forcing information can be found [here](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/).
+
 ## 4.  Model output fields
 
 The [CMIP7 Data Request](https://wcrp-cmip.org/cmip-phases/cmip7/cmip7-data-request/) specifies the list of model output variables that should be saved from each of the CMIP7 experiments. 
