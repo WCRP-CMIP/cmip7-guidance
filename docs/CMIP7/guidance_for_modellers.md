@@ -137,7 +137,48 @@ The [Data Request Software](https://github.com/CMIP-Data-Request/CMIP7_DReq_soft
 Given a list of Opportunities supported, the software will determine the resulting lists of variables to output from each experiment by combining the separate requests from each Opportunity.
 
 
+
 ## 5.  Model output requirements
+
+CMIP7 model output requirements are similar to those in CMIP6, with notable changes including:
+
+- Updated [Global Attributes and Data Reference Syntax (DRS)](./global_attributes.md)
+- Introduction of [Branded Variable Names](./branded_variables.md) used in output filenames, directory paths, and [CMOR tables](https://github.com/WCRP-CMIP/cmip7-cmor-tables/)
+- Information on the [Data Request](#4--model-output-fields) is available via several entry points: [Airtable database](https://bit.ly/CMIP7-DReq-latest), [web viewer](https://cmip-data-request.github.io/cmip7-dreq-webview/latest), and [python API](https://github.com/CMIP-Data-Request/CMIP7_DReq_software)
+
+As in CMIP6, all CMIP7 output will be stored in netCDF files with one variable stored per file.
+The requested output fields can be determined [from the Data Request as described above](#4--model-output-fields).
+As in CMIP6, the data must be “CMORized” (i.e., written in conformance with all the CMIP standards). 
+The CMIP standards build on the [CF-conventions](https://cfconventions.org/), which define metadata that provide a description of the variables and their spatial and temporal properties. 
+This facilitates analysis of the data by users who can read and interpret data from all models in the same way.
+
+!!! warning "Quality Control of netCDF files"
+
+    [Publication to ESGF](./guidance_for_esgf.md) requires CMORized netCDF files to pass Quality Control (QC) checks.
+    More information on the **ESGF Quality Control (QC) Framework** [is here](#7--software-for-checking-output).
+
+As [described below](#6--software-for-preparing-output) it is recommended, but not required, that the CMOR software library be used to rewrite model output in conformance with the standards.
+Data requirements are defined and discussed in the following documents:
+
+- [Definition of CMIP6 netCDF Global Attributes](https://zenodo.org/records/17250297), which includes specifications for file names and directory structures
+- [Reference "controlled vocabularies" (CVs) for CMIP7](https://github.com/WCRP-CMIP/CMIP7-CVs)
+- [Guidance on output grids](https://zenodo.org/records/15697025)
+- Requested atmospheric pressure levels are described in [Table 2 / Figure 2 of Dingley et al. 2025](https://egusphere.copernicus.org/preprints/2025/egusphere-2025-3189/)
+- [Guidance on time averaging (with masking)](https://wcrp-cmip.github.io/WGCM_Infrastructure_Panel/CMIP6/time_and_area_averaging.html)
+
+Additional metadata requirements are imposed on a variable by variable basis as specified in the Data Request.
+Many of these are recognized by CMOR (through input via the CMIP7 CMOR Tables), which will ensure compliance.
+In addition to standardized metadata (e.g., cell methods) provided in the Data Request (and CMOR tables) for each requested variable, data producers should be aware that important information may be given in the **Processing Note** and **Description** of a requested variable.
+These may be viewed in the Data Request [using Airtable](https://bit.ly/CMIP7-DReq-latest) ("Variables" tab, 3rd from left) or in the [web viewer](https://cmip-data-request.github.io/cmip7-dreq-webview/latest/variables.html).
+
+Data producers should note that Controlled Vocabularies (CVs) play a key role in ensuring uniformity in the description of datasets across all models.
+CVs are relied on in constructing file names and directory structures, and enable faceted searches of the CMIP7 ESGF archive. 
+CMIP7 output requirements that are critical for successful ingestion and access via ESGF [will be enforced](#7--software-for-checking-output) when publication of the data is initiated.
+The success of CMIP7 also depends on making sure that even the requirements that cannot be checked by ESGF are met. 
+This is the responsibility of all data producers preparing model output for CMIP7.
+
+
+
 ## 6.  Software for preparing output
 
 While CMOR is widely used for preparing standardised model output for CMIP and other projects, other tools are available.
