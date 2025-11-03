@@ -10,7 +10,7 @@ This page is designed to inform users of climate model outputs on key CMIP7 conc
 
 ## 1.  Accessing CMIP7 data
 
-CMIP7 model output is available through a distributed data archive developed and operated by the Earth System Grid Federation (ESGF). The data are hosted on a collection of nodes located at centers across the world.
+CMIP7 model output is available through a distributed data archive developed and operated by the Earth System Grid Federation (ESGF). The data are hosted on a collection of nodes located at centres across the world.
 
 ??? info "Understanding ESGF Nodes"
 
@@ -29,7 +29,7 @@ There are 3 options to access the data:
 
  2. **Using a python package**
 
-    For larger queries, it might be more approriate to automate the search and downloads. A few packages are available to do this:
+    For larger queries, it might be more appropriate to automate the search and downloads. A few packages are available to do this:
 
     * [ESGpull][esgpull]
     * [ESMValTool][esmvaltool]
@@ -47,8 +47,8 @@ There are 3 options to access the data:
 
 ## 2.  Terms of use, citations and registration requirements
 <!--TODO: Maybe divide in mandatory and optional https://github.com/WCRP-CMIP/cmip7-guidance/issues/30 -->
-<!--TODO: Try to add a link to this in global attrs if possible-->
-To enable modeling groups and others who support CMIP7 to demonstrate its impact (and secure ongoing funding), you are required to cite and acknowledge those who have made CMIP7 possible. When using CMIP7 data, you must: 
+<!--TODO: Try to add a link to this in global attrs if possiblee-->
+To enable modelling groups and others who support CMIP7 to demonstrate its impact (and secure ongoing funding), you are required to cite and acknowledge those who have made CMIP7 possible. When using CMIP7 data, you must 
 
  1. **Acknowledge CMIP7.**
 
@@ -71,16 +71,16 @@ To enable modeling groups and others who support CMIP7 to demonstrate its impact
 
     ??? Question "How to find the DOI and the version?"
 
-        🔍 The DOIs can be found through the [Citation Search][citesearch] or in the citation tab of a dataset on MetaGrid. The version is indicated in a column on MetaGrid.
+        🔍 DOIs can be found through the [Citation Search][citesearch] or in the citation tab of a dataset on MetaGrid. The version is indicated in a column on MetaGrid.
 
         🖱️ It is also possible to take the `tracking_id` global attribute of a file and append it to [http://hdl.handle.net/](http://hdl.handle.net/) (e.g., [http://hdl.handle.net/hdl:21.14100/be06a059-363d-47a4-97a2-d5253190fd15](http://hdl.handle.net/hdl:21.14100/be06a059-363d-47a4-97a2-d5253190fd15)). From there, you can follow "The file is part of the following aggregation(s)" and find the DOI and version of the dataset.
 
-        🤖 Instead of doing this by hand, you can also use the PROTOTYPE python librairy [CMIPcite][cmipcite]. Input tracking_id(s), dataset PID(s) or file paths(s) to retrieve the citation (textually or in the bibtex format).
+        🤖 Instead of doing this by hand, you can also use the PROTOTYPE python library [CMIPcite][cmipcite]. Input tracking_id(s), dataset PID(s) or file paths(s) to retrieve the citation (textually or in the bibtex format).
 
         Note that there are two citation granularities on experiment data and on model/MIP data.
         <!--TODO: How should the user choose which one to use ?  -->
 
-        Further information on the data citation concept is described in [Stockhause and Lautenschlager (2017)][Stockhause2017]. Citations can also be search using [DataCite's catalog][datacitecat] and [Google's Dataset Search][gdatasetsearch].
+        Further information on the data citation concept is described in [Stockhause and Lautenschlager (2017)][Stockhause2017]. Citations can also be searched using [DataCite's catalogue][datacitecat] and [Google's Dataset Search][gdatasetsearch].
     
 
 
@@ -114,7 +114,7 @@ To enable modeling groups and others who support CMIP7 to demonstrate its impact
 
 ## 3. CMIP7 facets and their documentation
 
-CMIP7 datasets can be identified through a series of facets that represents key attributes of the data. The main facets are:
+CMIP7 datasets can be identified through a series of facets that represents key attributes of the data. The main facets are
 
 * activity
 * institution
@@ -131,7 +131,7 @@ CMIP7 datasets can be identified through a series of facets that represents key 
 
     Current advice from the CVs task team is to only access the CVs via [ESGVOC](https://esgf.github.io/esgf-vocab/). This will be subject to change in the future.
 
-The values associated with each facets are standardized through the [CVs][cmipCvs]. They are used to search the ESGF database and can be found in the global attributes of the data. This section provides helpful links and gives a bit more information on a few key facets. 
+The values associated with each facet are standardized through the [CVs][cmipCvs]. They are used to search the ESGF database and can be found in the global attributes of the data. This section provides helpful links and gives a bit more information on a few key facets. 
 
 
 
@@ -140,7 +140,7 @@ The values associated with each facets are standardized through the [CVs][cmipCv
 * [List of models][sourcelist]
 * [Essential Model Documentation (EMD)][emd]
 
-The Essential Model Documentation (EMD) contains high-level description intended to contain information on model formulation that can be easily compared between different models. EMD pages contain links to more in-depth model documentation for each source.
+The Essential Model Documentation (EMD) contains a high-level description intended to contain information on model formulation that can be easily compared between different models. EMD pages contain links to more in-depth model documentation for each source.
 
 ??? info "Basic Concepts to Understand Variants"
     The source facet gives the name of the model and the variant facet represents each member of an ensemble for a given source. It can also be called the “ripf” identifier (“r” for realization, “i” for initialization, “p” for physics, and “f” for forcing).
@@ -176,7 +176,7 @@ The variables produced in CMIP7 were recommended by the [CMIP7 Data Request task
 ```
 <variableRootDD>_<temporalLabelDD>-<verticalLabelDD>-<horizontalLabelDD>-<areaLabelDD>
 ```
-<!--TODO: add more about Data Request. Not super clear to be how it can be useful to users yet.-->
+<!--TODO: add more about Data Request. Not super clear to me how it can be useful to users yet.-->
 
 ### 3.4 Frequency
 * [List of frequencies][freqlist]
@@ -203,15 +203,15 @@ Different MIPs also different requirements for vertical grid reporting. Output c
 
 As in previous phases, all CMIP7 output has been written to netCDF files.
 Before being published, these files must pass the [ESGF Quality Control (ESGF-QC)][esgfqc].
-Many modelling center use the [CMOR][cmor] software to standardize their files. They are then said to have been “CMORized”.
+Many modelling centres use the [CMOR][cmor] software to standardize their files. They are then said to have been “CMORized”.
 
-Essential features of CMORized data are:
+Essential features of CMORized data are :
 
 * Standardized naming from CMIP [CVs][cmipCvs]
 * Consistent [file naming convention][GlobalAttrs]
 * Uniform metadata structure:
     * [Global attributes][GlobalAttrs]
-    * Coordinate variables: time, lat, lon, (if appropiate, lev)
+    * Coordinate variables: time, lat, lon, (if appropriate, lev)
     * One variable per file
 * Self-describing (all metadata needed to interpret the data are included in the file)
 * Consistent units and standard names following [CF conventions][cfConventionsPage]
@@ -247,7 +247,7 @@ Essential features of CMORized data are:
 Information about discovered issues of CMIP7 data is captured by the [Errata Service][ErrataService].
 
 Any CMIP data user can report an error by submitting an issue through the Propose button on the Errata Service website.
-Proposing an errata through the webform requires a contact email address. Once the webform is validated and created, a special link is created and can be shared but the issue won’t appear on the index page. A moderator (from the relevant modelling centre providing data) will validate, update or reject the entry. If no moderation action is taken after 14 day validation period, the issue will be publicly indexed, albeit with a special flag.
+Proposing erratum through the webform requires a contact email address. Once the webform is validated and created, a special link is created and can be shared but the issue won’t appear on the index page. A moderator (from the relevant modelling centre providing data) will validate, update or reject the entry. If no moderation action is taken after the 14-day validation period, the issue will be publicly indexed, albeit with a special flag.
 
 <!--TODO: Add info on contact when decided https://github.com/WCRP-CMIP/cmip7-guidance/issues/45 -->
 
