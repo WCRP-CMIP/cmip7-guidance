@@ -12,7 +12,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
     
     
       
@@ -329,6 +329,65 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#branding-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Branding labels
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Branding labels">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#temporal-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Temporal labels
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vertical-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vertical labels
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#horizontal-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Horizontal labels
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#area-type-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Area type labels
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -344,6 +403,412 @@
 
 
 <h1 id="branded-variables-for-cmip7">Branded Variables for CMIP7</h1>
+<p>A new naming system for variables is being introduced in CMIP7, referred to as <strong>branded variables</strong>.
+The new system retains the familiar short variable names used in earlier CMIP phases to denote a physical quantity ("pr" for precipitation, for example). 
+It introduces a new label, termed the <strong>branded suffix</strong> or <strong>branding label</strong>, that describes how a variable is sampled temporally and spatially.
+This label is used in the output filenames and directory path structures of CMIP7 datasets.</p>
+<p>For comparison with the previous CMIP naming scheme, consider the global monthly-mean near-surface air temperature, which in CMIP6 was denoted as "tas" in the "Amon" MIP table (also referred to as a CMOR table).
+A compound name constructed from these terms, "Amon.tas", uniquely identifies the variable.
+The "Amon" table is a collection of atmospheric variables at monthly frequency; other MIP tables (Omon, SImon, ...) collect together other variables that usually are similar in realm, frequency, and region.
+While familiar to experienced users of CMIP data, this system led to a proliferation of table names in CMIP6 due to the large number of requested variables (~2000).</p>
+<p>The <strong>branded variable</strong> corresponding to "Amon.tas" is "tas_tavg-h2m-hxy-u".
+Here the short name identifying the physical quantity, "tas", is unchanged.
+The branding label, "tavg-h2m-hxy-u", describes how the variable is temporally and spatially sampled.
+It is composed of four parts, which for this variable are:</p>
+<ul>
+<li><strong>temporal label</strong>: "tavg" denotes a time average.</li>
+<li><strong>vertical label</strong>: "h2m" denotes near-surface at 2m above ground.</li>
+<li><strong>horizontal label</strong>: "hxy" denotes a horizontal field spanning latitude and longitude.</li>
+<li><strong>area type label</strong>: for other variables this indicates masking (e.g., over sea ice only); in this case, "u" denotes no masking.</li>
+</ul>
+<p>As defined, "tas_tavg-h2m-hxy-u" is not fully equivalent to "Amon.tas" because the branded name does not identify the variable's frequency, or its region.
+By additionally specifying the frequency as monthly, and the region as global, "tas_tavg-h2m-hxy-u" then becomes equivalent to "Amon.tas".
+The CMIP7 Data Request specifies the branded variable name, frequency, and region of every requested variable.</p>
+<p>The branded variable approach (Taylor et al., in prep) aims to be more systematic and scalable to future CMIP phases and wider use across community MIPs.</p>
+<h2 id="branding-labels">Branding labels</h2>
+<p>The four components of the branded variables are derived from variable metadata using the 
+<a href="https://cmip-branded-variable-mapper.readthedocs.io/en/latest/">cmip-branded-variable-mapper package</a>.
+The following tables show the meaning of each element of the branding.</p>
+<h3 id="temporal-labels">Temporal labels</h3>
+<table>
+<thead>
+<tr>
+<th>Label</th>
+<th>notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tavg</code></td>
+<td>Time average (cell_measures include <code>time: mean</code>)</td>
+</tr>
+<tr>
+<td><code>tpt</code></td>
+<td>Synoptic samples (cell_measures include <code>time: point</code>, dimensions use <code>time1</code>)</td>
+</tr>
+<tr>
+<td><code>tmax</code></td>
+<td>Time maximum (cell_measures include <code>time: max</code>)</td>
+</tr>
+<tr>
+<td><code>tmin</code></td>
+<td>Time minimum (cell_measures include <code>time: min</code>)</td>
+</tr>
+<tr>
+<td><code>tsum</code></td>
+<td>Time sum (cell measures include <code>time: sum</code>)</td>
+</tr>
+<tr>
+<td><code>tclm</code></td>
+<td>Climatology (dimensions use <code>time2</code>)</td>
+</tr>
+<tr>
+<td><code>tclmdc</code></td>
+<td>Diurnal mean climatology (dimensions use <code>time3</code>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="vertical-labels">Vertical labels</h3>
+<table>
+<thead>
+<tr>
+<th>Label</th>
+<th>Data Request Dimension</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>1000hPa</code></td>
+<td><code>p1000</code></td>
+</tr>
+<tr>
+<td><code>100hPa</code></td>
+<td><code>p100</code></td>
+</tr>
+<tr>
+<td><code>10hPa</code></td>
+<td><code>p10</code></td>
+</tr>
+<tr>
+<td><code>200hPa</code></td>
+<td><code>p200</code></td>
+</tr>
+<tr>
+<td><code>220hPa</code></td>
+<td><code>p220</code></td>
+</tr>
+<tr>
+<td><code>500hPa</code></td>
+<td><code>p500</code></td>
+</tr>
+<tr>
+<td><code>560hPa</code></td>
+<td><code>p560</code></td>
+</tr>
+<tr>
+<td><code>700hPa</code></td>
+<td><code>p700</code></td>
+</tr>
+<tr>
+<td><code>700hPa</code></td>
+<td><code>pl700</code></td>
+</tr>
+<tr>
+<td><code>840hPa</code></td>
+<td><code>p840</code></td>
+</tr>
+<tr>
+<td><code>850hPa</code></td>
+<td><code>p850</code></td>
+</tr>
+<tr>
+<td><code>925hPa</code></td>
+<td><code>p925</code></td>
+</tr>
+<tr>
+<td><code>al</code></td>
+<td><code>alevel</code></td>
+</tr>
+<tr>
+<td><code>alh</code></td>
+<td><code>alevhalf</code></td>
+</tr>
+<tr>
+<td><code>d0m</code></td>
+<td><code>depth0m</code></td>
+</tr>
+<tr>
+<td><code>d1000m</code></td>
+<td><code>depth1000m</code></td>
+</tr>
+<tr>
+<td><code>d100cm</code></td>
+<td><code>sdepth100cm</code></td>
+</tr>
+<tr>
+<td><code>d100m</code></td>
+<td><code>depth100m</code></td>
+</tr>
+<tr>
+<td><code>d100m</code></td>
+<td><code>olayer100m</code></td>
+</tr>
+<tr>
+<td><code>d10cm</code></td>
+<td><code>sdepth10cm</code></td>
+</tr>
+<tr>
+<td><code>d2000m</code></td>
+<td><code>depth2000m</code></td>
+</tr>
+<tr>
+<td><code>d2000m</code></td>
+<td><code>olayer2000m</code></td>
+</tr>
+<tr>
+<td><code>d300m</code></td>
+<td><code>depth300m</code></td>
+</tr>
+<tr>
+<td><code>d300m</code></td>
+<td><code>olayer300m</code></td>
+</tr>
+<tr>
+<td><code>d700m</code></td>
+<td><code>depth700m</code></td>
+</tr>
+<tr>
+<td><code>d700m</code></td>
+<td><code>olayer700m</code></td>
+</tr>
+<tr>
+<td><code>h100m</code></td>
+<td><code>height100m</code></td>
+</tr>
+<tr>
+<td><code>h10m</code></td>
+<td><code>height10m</code></td>
+</tr>
+<tr>
+<td><code>h16</code></td>
+<td><code>alt16</code></td>
+</tr>
+<tr>
+<td><code>h2m</code></td>
+<td><code>height2m</code></td>
+</tr>
+<tr>
+<td><code>h40</code></td>
+<td><code>alt40</code></td>
+</tr>
+<tr>
+<td><code>ol</code></td>
+<td><code>olevel</code></td>
+</tr>
+<tr>
+<td><code>olh</code></td>
+<td><code>olevhalf</code></td>
+</tr>
+<tr>
+<td><code>op20bar</code></td>
+<td><code>op20bar</code></td>
+</tr>
+<tr>
+<td><code>op4</code></td>
+<td><code>oplayer4</code></td>
+</tr>
+<tr>
+<td><code>p19</code></td>
+<td><code>plev19</code></td>
+</tr>
+<tr>
+<td><code>p27</code></td>
+<td><code>plev27</code></td>
+</tr>
+<tr>
+<td><code>p39</code></td>
+<td><code>plev39</code></td>
+</tr>
+<tr>
+<td><code>p3</code></td>
+<td><code>plev3</code></td>
+</tr>
+<tr>
+<td><code>p4</code></td>
+<td><code>plev4</code></td>
+</tr>
+<tr>
+<td><code>p5u</code></td>
+<td><code>plev5u</code></td>
+</tr>
+<tr>
+<td><code>p6</code></td>
+<td><code>plev6</code></td>
+</tr>
+<tr>
+<td><code>p7c</code></td>
+<td><code>plev7c</code></td>
+</tr>
+<tr>
+<td><code>p7h</code></td>
+<td><code>plev7h</code></td>
+</tr>
+<tr>
+<td><code>p8</code></td>
+<td><code>plev8</code></td>
+</tr>
+<tr>
+<td><code>rho</code></td>
+<td><code>rho</code></td>
+</tr>
+<tr>
+<td><code>sl</code></td>
+<td><code>sdepth</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="horizontal-labels">Horizontal labels</h3>
+<table>
+<thead>
+<tr>
+<th>Label</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>hxy</code></td>
+<td>longitude-latitude field</td>
+</tr>
+<tr>
+<td><code>hy</code></td>
+<td>zonal mean</td>
+</tr>
+<tr>
+<td><code>hyb</code></td>
+<td>zonal mean by ocean basin</td>
+</tr>
+<tr>
+<td><code>hs</code></td>
+<td>site specific</td>
+</tr>
+<tr>
+<td><code>ht</code></td>
+<td>transect</td>
+</tr>
+</tbody>
+</table>
+<h3 id="area-type-labels">Area type labels</h3>
+<table>
+<thead>
+<tr>
+<th>Label</th>
+<th>Corresponding masking in cell_methods</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>lsi</code></td>
+<td><code>area: mean (over land and sea ice)</code></td>
+</tr>
+<tr>
+<td><code>air</code></td>
+<td><code>where air</code></td>
+</tr>
+<tr>
+<td><code>cl</code></td>
+<td><code>where cloud</code></td>
+</tr>
+<tr>
+<td><code>ccl</code></td>
+<td><code>where convective_cloud</code></td>
+</tr>
+<tr>
+<td><code>crp</code></td>
+<td><code>where crops</code></td>
+</tr>
+<tr>
+<td><code>fis</code></td>
+<td><code>where floating_ice_shelf</code></td>
+</tr>
+<tr>
+<td><code>gis</code></td>
+<td><code>where grounded_ice_sheet</code></td>
+</tr>
+<tr>
+<td><code>ifs</code></td>
+<td><code>where ice_free_sea</code></td>
+</tr>
+<tr>
+<td><code>is</code></td>
+<td><code>where ice_sheet</code></td>
+</tr>
+<tr>
+<td><code>lnd</code></td>
+<td><code>where land</code></td>
+</tr>
+<tr>
+<td><code>li</code></td>
+<td><code>where land_ice</code></td>
+</tr>
+<tr>
+<td><code>ng</code></td>
+<td><code>where natural_grasses</code></td>
+</tr>
+<tr>
+<td><code>pst</code></td>
+<td><code>where pastures</code></td>
+</tr>
+<tr>
+<td><code>sea</code></td>
+<td><code>where sea</code></td>
+</tr>
+<tr>
+<td><code>si</code></td>
+<td><code>where sea_ice</code></td>
+</tr>
+<tr>
+<td><code>simp</code></td>
+<td><code>where sea_ice_melt_pond</code></td>
+</tr>
+<tr>
+<td><code>sir</code></td>
+<td><code>where sea_ice_ridges</code></td>
+</tr>
+<tr>
+<td><code>multi</code></td>
+<td><code>where sector</code></td>
+</tr>
+<tr>
+<td><code>shb</code></td>
+<td><code>where shrubs</code></td>
+</tr>
+<tr>
+<td><code>sn</code></td>
+<td><code>where snow</code></td>
+</tr>
+<tr>
+<td><code>scl</code></td>
+<td><code>where stratiform_cloud</code></td>
+</tr>
+<tr>
+<td><code>tree</code></td>
+<td><code>where trees</code></td>
+</tr>
+<tr>
+<td><code>ufs</code></td>
+<td><code>where unfrozen_soil</code></td>
+</tr>
+<tr>
+<td><code>veg</code></td>
+<td><code>where vegetation</code></td>
+</tr>
+<tr>
+<td><code>wl</code></td>
+<td><code>where wetland</code></td>
+</tr>
+</tbody>
+</table>
 
 
 
