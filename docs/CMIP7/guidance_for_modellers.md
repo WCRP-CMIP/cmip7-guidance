@@ -43,7 +43,7 @@ provided as early as possible):
   further information will be provided in due course.
 
 * Correct published data when errors are discovered. Errors should be documented using the
-  [ES-DOC Errata Service](https://errata.ipsl.fr/) before further action is taken, e.g. retraction
+  [ESGF Errata Service](https://errata.ipsl.fr/) before further action is taken, e.g. retraction
   and publication of replacement datasets.  Please note that the Errata Service supports 
   [user proposed issues](https://ipsl.gitbook.io/esgf-errata-service/errata-service-web-pages/propose-an-issue-through-webforms),
   which are moderated and passed to modelling groups as required. Further information about the
