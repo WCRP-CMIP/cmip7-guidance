@@ -160,7 +160,7 @@ This facilitates analysis of the data by users who can read and interpret data f
 As [described below](#6--software-for-preparing-output) it is recommended, but not required, that the CMOR software library be used to rewrite model output in conformance with the standards.
 Data requirements are defined and discussed in the following documents:
 
-- [Definition of CMIP6 netCDF Global Attributes](https://zenodo.org/records/17250297), which includes specifications for file names and directory structures
+- [Definition of CMIP7 netCDF Global Attributes](https://zenodo.org/records/17250297), which includes specifications for file names and directory structures
 - [Reference "controlled vocabularies" (CVs) for CMIP7](https://github.com/WCRP-CMIP/CMIP7-CVs)
 - [Guidance on output grids](https://zenodo.org/records/15697025)
 - Requested atmospheric pressure levels are described in [Table 2 / Figure 2 of Dingley et al. 2025](https://egusphere.copernicus.org/preprints/2025/egusphere-2025-3189/)
