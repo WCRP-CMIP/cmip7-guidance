@@ -157,7 +157,7 @@ This facilitates analysis of the data by users who can read and interpret data f
     [Publication to ESGF](./guidance_for_esgf.md) requires CMORized netCDF files to pass Quality Control (QC) checks.
     More information on the **ESGF Quality Control (QC) Framework** [is here](#7--software-for-checking-output).
 
-As [described below](#6--software-for-preparing-output) it is recommended, but not required, that the CMOR software library be used to rewrite model output in conformance with the standards.
+As [described below](#6-software-for-preparing-output) it is recommended, but not required, that the CMOR software library be used to rewrite model output in conformance with the standards.
 Data requirements are defined and discussed in the following documents:
 
 - [Definition of CMIP7 netCDF Global Attributes](https://zenodo.org/records/17250297), which includes specifications for file names and directory structures
