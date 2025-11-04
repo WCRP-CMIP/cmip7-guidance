@@ -173,7 +173,7 @@ These may be viewed in the Data Request [using Airtable](https://bit.ly/CMIP7-DR
 
 Data producers should note that Controlled Vocabularies (CVs) play a key role in ensuring uniformity in the description of datasets across all models.
 CVs are relied on in constructing file names and directory structures, and enable faceted searches of the CMIP7 ESGF archive. 
-CMIP7 output requirements that are critical for successful ingestion and access via ESGF [will be enforced](#7--software-for-checking-output) when publication of the data is initiated.
+CMIP7 output requirements that are critical for successful ingestion and access via ESGF [will be enforced](#7-software-for-checking-output) when publication of the data is initiated.
 The success of CMIP7 also depends on making sure that even the requirements that cannot be checked by ESGF are met. 
 This is the responsibility of all data producers preparing model output for CMIP7.
 
