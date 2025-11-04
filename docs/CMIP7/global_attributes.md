@@ -5,6 +5,15 @@ title: CMIP7 Global Attributes
 
 # CMIP7 Global Attributes
 
+A guidance document describing the CMIP7 Global Attributes, Data Reference Syntax (DRS), 
+file and directory naming and interaction with the Controlled Vocabularies can be found 
+[on Zenodo](https://zenodo.org/records/17250297).  
+
+These pages will be updated with summary information from the Zenodo document in the near 
+future.
+
+
+<!--
 1. Executive Summary
 2. Introduction
 3. Data Reference Syntax (DRS) components
@@ -22,3 +31,4 @@ title: CMIP7 Global Attributes
 ## Appendix 1: Global Attributes for Labeling Experiments
 ## Appendix 2: Algorithms for Defining the “nominal_resolution” Attribute
 ## Appendix 3: Document version information
+-->
