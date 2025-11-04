@@ -5,36 +5,53 @@ title: CMIP7 Participation Guidance for Data Managers
 
 # CMIP7 Participation for Data Managers
 
-## 1. Installation and configuration
-All information on Earth System Grid Federation (ESGF) can be found [here](https://esgf.github.io/) _this needs updating?_
+!!! tip "Documentation in progress"
 
-_Somewhere in the documentation below needs a) information about QC procedures for Data Managers and b) graphic of the ESGF NG setup (Forrest/Phil have sent examples to IPO)_
+    The contents of the pages are currently in development.
+    They will updated when ESGF-NG (Next Generation ESGF) is available for CMIP7 data publication.
+    [See here](https://wcrp-cmip.org/esgf-information/) for previous announcements about ESGF changes.
+
+
+## 1. Installation and configuration
+All information on Earth System Grid Federation (ESGF) can be [found here](https://esgf.github.io/).
+<!-- _this needs updating?_ -->
+<!-- _Somewhere in the documentation below needs a) information about QC procedures for Data Managers and b) graphic of the ESGF NG setup (Forrest/Phil have sent examples to IPO)_ -->
 
 ### 1.1 ESGF Software
 **Description**
 
-The ESGF Data Node software stack enables sites hosting earth system data to make it available to the community over several transfer protocols including http(s). ~~Index nodes enable search for hosted data via data publishing to the index, and these nodes include a search API and web frontend~~._not sure this is relevant if indexing is deprecated_? Identity nodes manage user accounts. Nodes run as Docker containers and can be deployed via Ansible Playbooks or Helm Charts in a Kubernetes environment
+The ESGF Data Node software stack enables sites hosting earth system data to make it available to the community over several transfer protocols including http(s). 
+<!-- ~~Index nodes enable search for hosted data via data publishing to the index, and these nodes include a search API and web frontend~~._not sure this is relevant if indexing is deprecated_?  -->
+<!-- Identity nodes manage user accounts. Nodes run as Docker containers and can be deployed via Ansible Playbooks or Helm Charts in a Kubernetes environment. -->
 
 **New and exisiting installations**
 
-For new or exisiting ESGF node installations, first read the [following document](www.esgf.com) _needs proper link and updating_ on ESGF policies, as this will influence the type of installation you need to deploy. 
+For new or exisiting ESGF node installations, ESGF policies will influence the type of installation you need to deploy.
+Updated information on ESGF policies will be added here soon.
+<!-- For new or exisiting ESGF node installations, first read the [following document](www.esgf.com) on ESGF policies, as this will influence the type of installation you need to deploy.  -->
+<!-- _needs proper link and updating_  -->
 
 ### 1.2 How to install
 **Requirements, setup and usage documentation**
 
 **Software Stack**
 The ESGF software stack requires Linux RedHat Enterprise or Rocky/Alma distributions. Administrators must have full sudo privileges to root access or a Kubernetes Cluster.
-The services are meant to run on [webserver-grade hardware](www.exaple.com) _need a practical example here with cost estimate_. 
+The services are meant to run on webserver-grade hardware.
 For data-sharing nodes the storage holding your data must be mounted on the node. 
+<!-- _need a practical example here with cost estimate_.  -->
+<!-- The services are meant to run on [webserver-grade hardware](www.exaple.com).  ADD VALID LINK -->
 
 **ESGF Docker** 
 Instructions and links to any issuses can be [found here](https://github.com/ESGF/esgf-docker/).
 
 **Ansible** 
-Legacy documentation is available [here](https://esgf.github.io/esgf-ansible/intro/intro.html) _is this still valid?_
+Legacy documentation is available [here](https://esgf.github.io/esgf-ansible/intro/intro.html).
+ <!-- _is this still valid?_ -->
 
 **Metagrid user interface**
-To install the Metagrid UI for end-users to search and download data, read the documentation [here](https://metagrid.readthedocs.io/en/latest/) and see the Github repo [here](https://github.com/aims-group/metagrid)_don't know if these links need updating_?
+To install the Metagrid UI for end-users to search and download data, read the documentation [here](https://metagrid.readthedocs.io/en/latest/) and see the Github repo [here](https://github.com/aims-group/metagrid).
+<!-- _don't know if these links need updating_? -->
+
 
 ## 2. Dataset publication 
 **Requirements** 
@@ -42,9 +59,9 @@ To install the Metagrid UI for end-users to search and download data, read the d
 Publishers to ESGF **must** have an existing Data Node installed at their site. Although the publisher software (from v5.x onwards) does not need to run on the Data Node it does require a _Data mount_ for the software to access data files. 
 
 ### 2.1 Dataset preparation 
-The ESGF publication process requires robust and effective data management, which can also be a burden for data managers. However, the ESGF esgprep toolbox is a piece of software that enables data preparation according to ESGF best practices. Esgprep allows the data providers and data node managers to easily prepare their data for publishing to an ESGF node - it is a standalone toolbox. It can be used to fetch required configuration files, apply the Data Reference Syntax on local filesystems and/or generate mapfiles for ESGF publication.
+The ESGF publication process requires robust and effective data management, which can also be a burden for data managers. However, the [ESGF esgprep toolbox](https://esgf.github.io/esgf-prepare/) is a piece of software that enables data preparation according to ESGF best practices. Esgprep allows the data providers and data node managers to easily prepare their data for publishing to an ESGF node - it is a standalone toolbox. It can be used to fetch required configuration files, apply the Data Reference Syntax on local filesystems and/or generate mapfiles for ESGF publication.
 
-Full details of _esgprep_ and instructions for use provided by the team at Institut Pierre-Simon Laplace (IPSL) can be found [here](https://esgf.github.io/esgf-prepare/)
+Full details of _esgprep_ and instructions for use provided by the team at Institut Pierre-Simon Laplace (IPSL) can be [found here](https://esgf.github.io/esgf-prepare/).
 
 ### 2.2 Publisher introduction 
 The esg-publisher or _esgcet_ Python package contains a collection of command-line utilities to scan, manipulate and push dataset metadata to an ESGF index node. 
@@ -61,8 +78,8 @@ Please refer to the [user documentation](https://esg-publisher.readthedocs.io/en
 ### 2.4 Dataset publication
 Full details of the dataset publication process using _pip install_ to install _esgcet_ can be found [here](https://esg-publisher.readthedocs.io/en/stable/install.html)
 
-## 3. Dataset retraction
 
+## 3. Dataset retraction
 
 ### 3.1 Retraction process
 The _esgunpublish_ command retracts, or, upon specification, deletes a specified dataset(s). The output of this command is either a success or failure message accompanied with the id of the dataset that was retracted. **Exercise caution** when deleting datasets. If replicas have been made or if you will be republishing, **you should retract** rather than delete outright. Follow the instructions [here](https://esg-publisher.readthedocs.io/en/stable/esgunpublish.html) and for an example, check out the [Jupyter notebook](https://nbviewer.org/github/ESGF/esg-publisher/blob/main/notebooks/unpublish-list.ipynb)
