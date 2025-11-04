@@ -147,7 +147,7 @@ CMIP7 model output requirements are similar to those in CMIP6, with notable chan
 - Information on the [Data Request](#4-model-output-fields) is available via several entry points: [Airtable database](https://bit.ly/CMIP7-DReq-latest), [web viewer](https://cmip-data-request.github.io/cmip7-dreq-webview/latest), and [python API](https://github.com/CMIP-Data-Request/CMIP7_DReq_software)
 
 As in CMIP6, all CMIP7 output will be stored in netCDF files with one variable stored per file.
-The requested output fields can be determined [from the Data Request as described above](#4--model-output-fields).
+The requested output fields can be determined [from the Data Request as described above](#4-model-output-fields).
 As in CMIP6, the data must be “CMORized” (i.e., written in conformance with all the CMIP standards). 
 The CMIP standards build on the [CF-conventions](https://cfconventions.org/), which define metadata that provide a description of the variables and their spatial and temporal properties. 
 This facilitates analysis of the data by users who can read and interpret data from all models in the same way.
