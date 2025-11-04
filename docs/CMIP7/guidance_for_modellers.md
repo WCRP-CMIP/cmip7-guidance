@@ -6,11 +6,174 @@ title: CMIP7 Participation Guidance for Modellers
 # CMIP7 Participation Guidance for Modellers
 
 ## 1. Requirements & Expectations
+
+Groups who plan to participate in CMIP7 should (in roughly this order, although model documentation should be 
+provided as early as possible):
+
+* Indicate your intention to participate by registering your institution and model with the 
+  [CMIP7 Controlled Vocabularies](https://github.com/WCRP-CMIP/CMIP7-CVs) when the registration
+  process is available. Publication of your model output (on ESGF) will not be possible
+  without first registering your institution and model, which includes providing the
+  *Essential Model Documentation* for your model. The list of currently registered
+  institutions can be found at ***link needed*** and the registration process is 
+  via ***link needed***.
+
+* Following, or as part of, the registration of your models you will be able to indicate your
+  intention to participate in community MIPs through the `activity_participation` information
+  for your models. Information on community MIPs can be found [here](https://wcrp-cmip.org/mips).
+
+* Ensure that you have joined the modelling group mailing list -- if unsure please 
+  contact the [CMIP IPO](mailto:cmip-ipo@esa.int) for further details.
+
+* Perform required DECK and MIP experiments, using the required 
+  [standard forcing datasets](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/).
+
+* Save all requested model output as specified in the 
+  [Data Request](https://wcrp-cmip.org/cmip-phases/cmip7/cmip7-data-request/) where possible (see section 4 below).
+  Prioritise the [Baseline Climate Variables](https://gmd.copernicus.org/articles/18/2639/2025/), a group of 135 variables that are requested from all experiments.
+
+
+* Document all simulations including forcing information and a description of ensemble variants
+  (details to be clarified later).
+
+* Prepare and make available model output according to CMIP7 specifications (see sections 5, 6, 
+  and 7 below).
+
+* Plans for DOI registration and citation facilities are under consideration and 
+  further information will be provided in due course.
+
+* Correct published data when errors are discovered. Errors should be documented using the
+  [ES-DOC Errata Service](https://errata.ipsl.fr/) before further action is taken, e.g. retraction
+  and publication of replacement datasets.  Please note that the Errata Service supports 
+  [user proposed issues](https://ipsl.gitbook.io/esgf-errata-service/errata-service-web-pages/propose-an-issue-through-webforms),
+  which are moderated and passed to modelling groups as required. Further information about the
+  service is available in the 
+  [Errata Service Documentation](https://ipsl.gitbook.io/esgf-errata-service).
+
 ## 2.  Experiment Design
+
+The CMIP7 protocol and experiments are described in a special issue of Geoscientific Model Development with an overview 
+of the overall design and scientific strategy provided in the lead article of that issue by 
+[Dunne et al. (2025)]( https://doi.org/10.5194/gmd-18-6671-2025).
+
+-	Each model participating in CMIP7 is encouraged to contribute results from the eight DECK experiments 
+  (`amip`, `piControl`/`esm-piControl`, `abrupt-4xCO2`, `1pctCO2`, `historical`/`esm-hist`, `piClim-control`, `piClim-anthro`, 
+  `piClim-4xCO2`). See [Dunne et al. (2025)]( https://doi.org/10.5194/gmd-18-6671-2025) where the experiment protocol 
+  is documented. These experiments are considered to baseline the climate models and are directly overseen by the CMIP panel. 
+  With the introduction of emission driven simulations, the panel now allows emission driven or concentration driven simulations.
+-	In addition to the DECK, each modelling group is encouraged to complete the Assessment Fast Track experiments described in 
+  [Dunne et al. (2025)]( https://doi.org/10.5194/gmd-18-6671-2025). 
+-	When called for by the experiment protocol, it is requested that the standard forcing datasets (see Section 3) are used 
+  and that any deviation from the standard forcing is documented (guidance to be confirmed).
+
 ## 3.  Forcing data sets
+
+Forcing information can be found [here](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/).
+
 ## 4.  Model output fields
-## 5. Model output requirements
-## 6.  Software for preparing/checking output
+
+The [CMIP7 Data Request](https://wcrp-cmip.org/cmip-phases/cmip7/cmip7-data-request/) specifies the list of model output variables that should be saved from each of the CMIP7 experiments. 
+Find the [latest Data Request release here](https://wcrp-cmip.org/cmip7-data-request-latest).
+
+The Data Request is organized into **Opportunities** describing scientific goals and the model output needed to achieve them. 
+These Opportunities were developed through a wide community consultation, leading to a Data Request structured into three overarching parts: **Core**, **Harmonised**, and **Unharmonised**.
+
+!!! note "Changes since CMIP6"
+
+    Key new features of the CMIP7 Data Request include:
+
+    - Use of **Opportunities** to document scientific objectives
+    - The three-part structure, with **Core** denoting a relatively small number of highest-priority variables
+    - Access via the online **Airtable** [web browser interface](https://bit.ly/CMIP7-DReq-latest) as well as a [python API](https://github.com/CMIP-Data-Request/CMIP7_DReq_software) for programmatic use
+
+    These features are explained in more detail below.
+
+### Core request
+
+This component of the CMIP7 Data Request comprises a core list of 131 variables that are **requested from all experiments**. 
+These model output variables, referred to as **Baseline Climate Variables for Earth System Modelling** (ESM-BCVs), enable evaluation of climate simulations across CMIP phases and MIP experiments. 
+
+The development of the first version of the ESM-BCVs list, which segued into the wider public consultation process that developed the CMIP7 Data Request, is described in [Juckes et al. (2025)](https://doi.org/10.5194/gmd-18-2639-2025).
+To promote their consistent availability across the ESGF archive, modellers are requested to provide these variables with highest priority, from every experiment.
+The **Priority Level** of these variables is denoted as **Core**.
+
+### Harmonised request
+
+The Harmonised component of the CMIP7 Data Request is organized into 46 **Opportunities** that are grouped by five scientific **themes**: Atmosphere, Earth System, Impacts & Adaptation, Land & Land-ice, and Ocean & Sea-ice.
+Five **thematic papers** in the [CMIP7 GMD Special Issue](https://gmd.copernicus.org/articles/special_issue1315.html) give an overview of the scientific rationale and requested variables for each theme's Opportunities.
+
+Each **Opportunity** in the Data Request database specifies:
+
+- A description of its scientific topic, justification of resources, and expected scientific impacts;
+- The experiments from which output is requested (organized into **Experiment Groups**);
+- The variables requested from those experiments (organized into **Variable Groups**).
+
+The ESM-BCVs are represent as an Opportunity that requests output from *all* experiments, with its Variable Groups having a **Priority Level** of **Core** (interpreted as higher than other three priority levels).
+All other Variable Groups are assigned a priority of **High**, **Medium**, or **Low**:
+
+- **High**: The variables support the core objectives of the Opportunity, and are required to make it viable.
+- **Medium**: These variables deliver extra information enabling analysts push the scientific boundaries further.
+- **Low**: These variables help to fill gaps and are more speculative. This priority level can also be used for data that has prior agreement to be produced by particular modelling centres, so it is not expected by additional centres unless they wish to participate.
+
+Opportunities document why variables are requested and provide modellers the flexibility to support community-driven scientific questions aligning with their own goals.
+Based on a set of Opportunities supported, the [Data Request Software](https://github.com/CMIP-Data-Request/CMIP7_DReq_software) produces lists of requested variables for each experiment (see [Tools](#tools-to-access-and-use-the-data-request), below).
+Modellers preferring not to customize their data production via Opportunity selection may simply choose to support *all* Opportunities.
+
+
+<!-- The Harmonised component has been developed to meet AR7 deadlines and is targeted primarily at the AFT experiments, but also includes experiments outside the AFT. -->
+
+### Unharmonised request
+
+This component will be driven by community MIPs, with high flexibility, following the initial phase of CMIP7 production focusing on the AR7 AFT experiments.
+Development of the Unharmonised component is in progress, with guidance to follow. 
+It is likely to involve MIP-defined Opportunities defining their requests subject only to transparent technical requirements.
+
+### Tools to access and use the Data Request
+
+The [CMIP7 Data Request](https://wcrp-cmip.org/cmip-phases/cmip7/cmip7-data-request/) webpage provides links to the [latest version of the Data Request](https://wcrp-cmip.org/cmip7-data-request-latest), which can be [viewed online](https://bit.ly/CMIP7-DReq-latest) in the cloud-based **Airtable** application. User guidance on accessing the Data Request via Airtable is provided. 
+An HTML-based Github-hosted view of the latest Data Request version is also [available here](https://cmip-data-request.github.io/cmip7-dreq-webview/latest/index.html).
+
+The [Data Request Software](https://github.com/CMIP-Data-Request/CMIP7_DReq_software) provides a **python API** and scripts that can be used to query the data request and incorporate it into modelling workflows. 
+Given a list of Opportunities supported, the software will determine the resulting lists of variables to output from each experiment by combining the separate requests from each Opportunity.
+
+
+## 5.  Model output requirements
+## 6.  Software for preparing output
+
+While CMOR is widely used for preparing standardised model output for CMIP and other projects, other tools are available.
+Developers of tools that do an equivalent job to CMOR for CMIP7 are invited to 
+[raise an issue](https://github.com/WCRP-CMIP/cmip7-guidance/issues/new) on github and ideally provide a PR with an 
+update to this section of the documentation.
+
+### 6a CMOR
+
+CMOR, the `Climate Model Output Rewriter`, is a library written in C with interfaces for both Fortran and Python, with the aim of enforcing correct data and metadata structures for projects such as CMIP, which are now used widely across many projects.
+CMOR is maintained by PCMDI on [github](https://github.com/PCMDI/cmor) and is available for installation via [conda](https://anaconda.org/conda-forge/cmor) and has documentation [here](https://cmor.llnl.gov/).
+For CMIP7, the CMOR library has been updated in line with the changes to the [CMIP7 Global Attributes](https://zenodo.org/records/17250297). 
+Data producers should update to version [v3.13](https://cmor.llnl.gov/news/2025/10/14/cmor3/) of CMOR to gain access to the necessary changes.
+
+The CMOR PrePARE tool, used for quality checking in CMIP6, has been retired and data producers should refer to section 7 below for guidance on the new quality control tool, `esgf-qc`.
+
+CMOR uses three main inputs;
+
+| Input component | Description | 
+| --- | --- |
+| `CMOR tables`| JSON files describing the variables (metadata attributes for variables) |
+| `Controlled Vocabulary`| A JSON file describing the allowed values of metadata fields |
+| The `Input JSON file` | control information and specific values of metadata (global attributes) to be used in the creation of output files |
+
+For CMIP7 the [CMOR tables](https://github.com/WCRP-CMIP/cmip7-cmor-tables/) have been constructed from 
+the [CMIP7 data request](https://wcrp-cmip.org/cmip-phases/cmip7/cmip7-data-request/) and releases of these tables, starting with version v1.2.2.2, will follow data request releases until the new WCRP Variable Registry is established.
+Note that CMOR tables may also be referred to in some contexts as MIP tables.
+
+The Controlled Vocabulary JSON file used by CMOR will be produced and made available as part of the [CMIP7-CVs](https://github.com/WCRP-CMIP/CMIP7-CVs) repository and versioned separately. 
+Note that this is a change relative to CMIP6 and further guidance alongside the CMOR tables when this file is ready for use. 
+For testing purposes sample CV JSON files are available via the [CMOR tables](https://github.com/WCRP-CMIP/cmip7-cmor-tables/tree/test) repository.
+
+Examples of the input JSON file for CMOR are available via [a jupyter notebook](https://github.com/WCRP-CMIP/cmip7-cmor-tables/blob/main/cmor_demo.ipynb).
+
+
+## 7.  Software for checking output
 
 The **ESGF Quality Control (QC) Framework** is a new unified solution designed to validate and ensure the integrity of climate model outputs intended for publication on the Earth System Grid Federation (ESGF).  
 Historically, QC in ESGF has relied on a patchwork of tools (**PrePARE**, **QA-DKRZ**, **nctime**, and others) each covering different aspects of metadata and data checks. While effective, this fragmented approach introduced redundancy, maintenance challenges, and reduced transparency in QC workflows.  
@@ -80,8 +243,8 @@ This early release aims to:
 If you encounter issues or have suggestions, please **open a GitHub issue** on the project repository:  
 👉 https://github.com/ESGF/esgf-qc/issues
 
-## 7.  Archiving/publishing output
-## 8.  Documentation Process
+## 8.  Archiving/publishing output
+## 9.  Documentation Process
 
 ### Model documentation
 
@@ -125,4 +288,18 @@ EMD comprises the following sections:
 
 While not part of the EMD, output grids for regridded data must also be registered via an online form (i.e. for any grid used to report data that is not the model's native grid)."
 
-## 9.  CMIP7 organisation and governance
+## 10.  CMIP7 organisation and governance
+
+The [CMIP panel](https://wcrp-cmip.org/cmip-governance/cmip-panel/) which is under 
+[WCRP ESMO SSG](https://www.wcrp-esmo.org/about/the-esmo-team/the-esmo-scientific-steering-group) 
+provides overall guidance and oversight of CMIP activities. 
+The CMIP panel sets out the scientific priorities, experiments and protocols for CMIP7. 
+Although the [CMIP7 webpages](https://wcrp-cmip.org/cmip-phases/cmip7/) provide additional information 
+that may be of interest to CMIP7 participants, 
+only the CMIP7 Guide (these pages) provides definitive documentation of CMIP7 technical requirements.
+The experiments within the Assessment Fast Track are managed by independent MIP committees, but the 
+modelling groups are asked to prepare their model output following a common procedure (Sections 4-7 above).
+
+The WCRP-ESMO Infrastructure Panel (WIP) has responsibility for most of the technical requirements of CMIP. 
+The mission, rationale and Terms of Reference for the WIP can be found 
+[here](https://wcrp-cmip.org/cmip-governance/wip/).
