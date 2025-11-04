@@ -643,7 +643,7 @@ provided as early as possible):</p>
 </li>
 <li>
 <p>Correct published data when errors are discovered. Errors should be documented using the
-  <a href="https://errata.ipsl.fr/">ES-DOC Errata Service</a> before further action is taken, e.g. retraction
+  <a href="https://errata.ipsl.fr/">ESGF Errata Service</a> before further action is taken, e.g. retraction
   and publication of replacement datasets.  Please note that the Errata Service supports 
   <a href="https://ipsl.gitbook.io/esgf-errata-service/errata-service-web-pages/propose-an-issue-through-webforms">user proposed issues</a>,
   which are moderated and passed to modelling groups as required. Further information about the
@@ -720,6 +720,40 @@ An HTML-based Github-hosted view of the latest Data Request version is also <a h
 <p>The <a href="https://github.com/CMIP-Data-Request/CMIP7_DReq_software">Data Request Software</a> provides a <strong>python API</strong> and scripts that can be used to query the data request and incorporate it into modelling workflows. 
 Given a list of Opportunities supported, the software will determine the resulting lists of variables to output from each experiment by combining the separate requests from each Opportunity.</p>
 <h2 id="5-model-output-requirements">5.  Model output requirements</h2>
+<p>CMIP7 model output requirements are similar to those in CMIP6, with notable changes including:</p>
+<ul>
+<li>Updated <a href="../global_attributes/">Global Attributes and Data Reference Syntax (DRS)</a></li>
+<li>Introduction of <a href="../branded_variables/">Branded Variable Names</a> used in output filenames, directory paths, and <a href="https://github.com/WCRP-CMIP/cmip7-cmor-tables/">CMOR tables</a></li>
+<li>Information on the <a href="#4-model-output-fields">Data Request</a> is available via several entry points: <a href="https://bit.ly/CMIP7-DReq-latest">Airtable database</a>, <a href="https://cmip-data-request.github.io/cmip7-dreq-webview/latest">web viewer</a>, and <a href="https://github.com/CMIP-Data-Request/CMIP7_DReq_software">python API</a></li>
+</ul>
+<p>As in CMIP6, all CMIP7 output will be stored in netCDF files with one variable stored per file.
+The requested output fields can be determined <a href="#4-model-output-fields">from the Data Request as described above</a>.
+As in CMIP6, the data must be “CMORized” (i.e., written in conformance with all the CMIP standards). 
+The CMIP standards build on the <a href="https://cfconventions.org/">CF-conventions</a>, which define metadata that provide a description of the variables and their spatial and temporal properties. 
+This facilitates analysis of the data by users who can read and interpret data from all models in the same way.</p>
+<div class="admonition warning">
+<p class="admonition-title">Quality Control of netCDF files</p>
+<p><a href="../guidance_for_esgf/">Publication to ESGF</a> requires CMORized netCDF files to pass Quality Control (QC) checks.
+More information on the <strong>ESGF Quality Control (QC) Framework</strong> <a href="#7--software-for-checking-output">is here</a>.</p>
+</div>
+<p>As <a href="#6-software-for-preparing-output">described below</a> it is recommended, but not required, that the CMOR software library be used to rewrite model output in conformance with the standards.
+Data requirements are defined and discussed in the following documents:</p>
+<ul>
+<li><a href="https://zenodo.org/records/17250297">Definition of CMIP7 netCDF Global Attributes</a>, which includes specifications for file names and directory structures</li>
+<li><a href="https://github.com/WCRP-CMIP/CMIP7-CVs">Reference "controlled vocabularies" (CVs) for CMIP7</a></li>
+<li><a href="https://zenodo.org/records/15697025">Guidance on output grids</a></li>
+<li>Requested atmospheric pressure levels are described in <a href="https://egusphere.copernicus.org/preprints/2025/egusphere-2025-3189/">Table 2 / Figure 2 of Dingley et al. 2025</a></li>
+<li><a href="../../CMIP6/time_and_area_averaging/">Guidance on time averaging (with masking)</a> (CMIP6 guidance, to be reviewed).</li>
+</ul>
+<p>Additional metadata requirements are imposed on a variable by variable basis as specified in the Data Request.
+Many of these are recognized by CMOR (through input via the CMIP7 CMOR Tables), which will ensure compliance.
+In addition to standardized metadata (e.g., cell methods) provided in the Data Request (and CMOR tables) for each requested variable, data producers should be aware that important information may be given in the <strong>Processing Note</strong> and <strong>Description</strong> of a requested variable.
+These may be viewed in the Data Request <a href="https://bit.ly/CMIP7-DReq-latest">using Airtable</a> ("Variables" tab, 3rd from left) or in the <a href="https://cmip-data-request.github.io/cmip7-dreq-webview/latest/variables.html">web viewer</a>.</p>
+<p>Data producers should note that Controlled Vocabularies (CVs) play a key role in ensuring uniformity in the description of datasets across all models.
+CVs are relied on in constructing file names and directory structures, and enable faceted searches of the CMIP7 ESGF archive. 
+CMIP7 output requirements that are critical for successful ingestion and access via ESGF <a href="#7-software-for-checking-output">will be enforced</a> when publication of the data is initiated.
+The success of CMIP7 also depends on making sure that even the requirements that cannot be checked by ESGF are met. 
+This is the responsibility of all data producers preparing model output for CMIP7.</p>
 <h2 id="6-software-for-preparing-output">6.  Software for preparing output</h2>
 <p>While CMOR is widely used for preparing standardised model output for CMIP and other projects, other tools are available.
 Developers of tools that do an equivalent job to CMOR for CMIP7 are invited to 
