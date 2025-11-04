@@ -531,6 +531,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="9. Documentation Process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model documentation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Model documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-emd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating EMD
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emd-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      EMD structure
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -788,7 +827,50 @@ Historically, QC in ESGF has relied on a patchwork of tools (<strong>PrePARE</st
 <p>If you encounter issues or have suggestions, please <strong>open a GitHub issue</strong> on the project repository:<br />
 👉 https://github.com/ESGF/esgf-qc/issues</p>
 <h2 id="8-archivingpublishing-output">8.  Archiving/publishing output</h2>
+<p>The <a href="https://esgf.github.io/">Earth System Grid Federation (ESGF)</a> will facilitate the global distribution of CMIP7 output.</p>
+<div class="admonition tip">
+<p class="admonition-title">Documentation in progress</p>
+<p>Full guidance on the new ESGF-NG (Next Generation) system used for CMIP7 is in development</p>
+</div>
+<p>Data producers should note several key points:</p>
+<ul>
+<li><strong>Data compliance checking</strong>: <a href="#7-software-for-checking-output">Quality Control (QC) checks</a> will be required to check that data is in conformance with output requirements outlined in the sections above.</li>
+<li><strong>Correcting errors</strong>: when errors in published data are discovered, they should be documented using the <a href="https://errata.ipsl.fr/">ESGF Errata Service</a>, and the erroneous datasets retracted. Corrected datasets should be published using an updated dataset version identifier.</li>
+<li><strong>Replication</strong>: Some data nodes plan to replicate some of the data published by other nodes. This will provide some redundancy protecting against loss of at least some of the data in the event of a catastrophic storage failure at one node. It will also provide a backup source of data when one node is temporarily offline. Not all data will be replicated, so it is recommended that modeling groups retain a backup copy of their model output.</li>
+<li><strong>Long-term archival</strong>: A “snapshot” of CMIP7 data as it exists at the time of a deadline imposed by the IPCC’s 7th Assessment Report (IPCC-AR7) will be archived at the <a href="https://www.ipcc-data.org/">IPCC Data Distribution Centre (IPCC DDC)</a>.</li>
+</ul>
+<p>Further guidance on publishing data to ESGF is <a href="../guidance_for_esgf/">available here</a>.</p>
 <h2 id="9-documentation-process">9.  Documentation Process</h2>
+<h3 id="model-documentation">Model documentation</h3>
+<p>The Essential Model Documentation (EMD) is a high-level description of an Earth System Model.</p>
+<p>It contains information about model configuration that is helpful to all communities who are expected to make use of the model output, whilst not being so detailed that it becomes too much of a burden on the modelling groups who have to provide the information.</p>
+<p>Note that it is not intended to contain all information about a model's formulation.
+More detailed documentation than that provided by the EMD is to be found in the references cited as part of the EMD.</p>
+<p>The EMD, which has been designed to be applicable to any earth system model, will only be truly valuable when it is provided for all models.
+To guarantee this, providing EMD is a mandatory requirement for CMIP7 participation, and the registration of a CMIP7 model will not be possible unless its EMD has been provided.</p>
+<h4 id="creating-emd">Creating EMD</h4>
+<p>The online form that will be used for CMIP7 model registration will include a section for completing the EMD.
+The EMD will be automatically validated, reviewed by a human and once accepted the model registration can be completed.
+The online form will also enable those documenting a model to import documentation components from other, already registered models, which can then be edited if required - significantly reducing the time taken to create the content.</p>
+<p>The EMD content is stored in GitHub (in JSON files), and may be edited at any time to add further information, or to correct any mistakes. All such changes will go through the usual GitHub-based review process in a  fully transparent and traceable manner.</p>
+<h4 id="emd-structure">EMD structure</h4>
+<p>The full EMD specification, which contains examples of filled-out EMD entries for model components and grids, may be found at:
+🗣️ <a href="https://doi.org/10.5281/zenodo.15439551">https://doi.org/10.5281/zenodo.15439551</a></p>
+<p>Each question asked in the online EMD creation form will also be accompanied by the relevant guidance, so reference to the full EMD specification should not generally be necessary during the creation process.</p>
+<p>EMD comprises the following sections:</p>
+<ul>
+<li>Top-level model</li>
+<li>A top-level description of the model as whole.</li>
+<li>Includes model name, family and an overview description.</li>
+<li>Model components</li>
+<li>A description of each dynamically simulated model component.</li>
+<li>Includes the component name and family, an overview description, and the relationship to other components.</li>
+<li>Horizontal and vertical grids</li>
+<li>For each model component, a description of its native grid.</li>
+<li>References</li>
+<li>References to published work for the top-level model or one its model components.</li>
+</ul>
+<p>While not part of the EMD, output grids for regridded data must also be registered via an online form (i.e. for any grid used to report data that is not the model's native grid)."</p>
 <h2 id="10-cmip7-organisation-and-governance">10.  CMIP7 organisation and governance</h2>
 <p>The <a href="https://wcrp-cmip.org/cmip-governance/cmip-panel/">CMIP panel</a> which is under 
 <a href="https://www.wcrp-esmo.org/about/the-esmo-team/the-esmo-scientific-steering-group">WCRP ESMO SSG</a> 
