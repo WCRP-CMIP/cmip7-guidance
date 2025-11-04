@@ -35,6 +35,7 @@ The DRS system connects file naming, directory organization, and dataset metadat
 
 CMIP7 continues the CMIP framework with updated and expanded metadata definitions.  
 Each file records a well-defined set of **global attributes** — some mandatory, some optional — required to:
+
 - Identify the model and experiment
 - Ensure reproducibility and data discovery
 - Enable automated validation and search
