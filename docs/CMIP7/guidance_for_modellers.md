@@ -108,7 +108,7 @@ The EMD content is stored in GitHub (in JSON files), and may be edited at any ti
 The full EMD specification, which contains examples of filled-out EMD entries for model components and grids, may be found at:
 🗣️ [https://doi.org/10.5281/zenodo.15439551](https://doi.org/10.5281/zenodo.15439551)
 
-Each question asked in the online EMD creation form will also be accompanied by the relevant guidance, so reference to the full specification should not generally be necessary during the creation process.
+Each question asked in the online EMD creation form will also be accompanied by the relevant guidance, so reference to the full EMD specification should not generally be necessary during the creation process.
 
 EMD comprises the following sections:
 
