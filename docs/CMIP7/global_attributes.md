@@ -50,7 +50,8 @@ Guidance documents: [https://wcrp-cmip.github.io/cmip7-guidance/](https://wcrp-c
 ## 3. Data Reference Syntax (DRS) Components
 
 The **DRS** defines how datasets are uniquely identified and organized. It uses a subset of global attributes to construct:
-- **Filenames**
++  
++ - **Filenames**
 - **Directory paths**
 - **URLs and search facets**
 
@@ -64,7 +65,7 @@ The **DRS** defines how datasets are uniquely identified and organized. It uses 
 | | `source_id` | `CanESM6-MR` | Model identifier |
 | **Versioning** | `data_specs_version` | `MIP-DS7.1.0.0` | Version of data specifications |
 | | `drs_specs` | `MIP-DRS7` | Label for DRS version |
-| **Simulation Variants** | `realization_index` | `r1` | Different ensemble member |
+| **Simulation Variants** | `realization_index` | `r1` | Ensemble members differing only by initial conditions |
 | | `initialization_index` | `i1` | Initialization method/date |
 | | `physics_index` | `p1` | Physics configuration |
 | | `forcing_index` | `f1` | Forcing variant |
@@ -75,7 +76,7 @@ The **DRS** defines how datasets are uniquely identified and organized. It uses 
 | **Other Required Fields** | `frequency`, `grid_label`, `region`, `realm`, `variable_id`, `tracking_id` |  | Define data frequency, grid, domain, and unique file IDs |
 
 **Conditionally Required Attributes:**  
-Used only when datasets branch from parent simulations (e.g., `branch_time_in_parent`, `parent_activity_id`).
+Used mainly when datasets branch from parent simulations (e.g., `branch_time_in_parent`, `parent_activity_id`).
 
 **Optional Attributes:**  
 Provide additional context (e.g., `experiment`, `institution`, `license`, `source`, `title`, `variant_info`).
@@ -138,18 +139,3 @@ These ensure reproducibility and traceability between related simulations.
 The `nominal_resolution` describes approximate horizontal grid spacing (e.g., `"1 km"`, `"250 km"`).  
 It is computed using a standard algorithm (updated from CMIP6 Appendix 2) that ensures consistent comparison of model resolutions across CMIP7 datasets.
 
----
-
-## 8. Appendix 3: Document Version Information
-
-- **Document Version:** v1.0  
-- **Publication Date:** 6 October 2025  
-- **DOI:** [10.5281/zenodo.17250297](https://doi.org/10.5281/zenodo.17250297)  
-- **Maintained by:** WCRP CMIP7 CV TT Team  
-- **Reference CV Repository:** [CMIP7_CVs GitHub](https://github.com/WCRP-CMIP/CMIP7_CVs)
-
----
-
-**For further guidance and updates:**  
-Visit the CMIP7 documentation portal:  
-🔗 [https://wcrp-cmip.github.io/cmip7-guidance/](https://wcrp-cmip.github.io/cmip7-guidance/)
