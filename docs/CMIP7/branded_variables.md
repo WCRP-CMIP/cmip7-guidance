@@ -44,6 +44,8 @@ For example, "tas_tavg-h2m-hxy-u" reported at daily frequency is denoted "day.ta
 The branded variable approach (Taylor et al., in preparation) aims to be more systematic and scalable to future CMIP phases and wider use across community MIPs.
 [CMOR tables](https://github.com/WCRP-CMIP/cmip7-cmor-tables) keyed by branded variable name define the metadata characteristics of variables apart from the frequency, region, or specific grids on which these variables should be reported.
 Guidance on reporting grids for CMIP output is [given here](https://zenodo.org/records/15697025).
+The exact reporting convention and associated CV is being finalised.
+If you wish to see the full discussion, please see https://github.com/WCRP-CMIP/CMIP7-CVs/issues/202
 
 
 ## Branding labels
