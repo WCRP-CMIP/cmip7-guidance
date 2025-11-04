@@ -32,10 +32,19 @@ This is because the branded variable name does not identify a variable's frequen
 By *additionally* specifying the frequency as monthly, and the region as global, "tas_tavg-h2m-hxy-u" then becomes equivalent to "Amon.tas".
 The same branded variable could alternately be reported at other frequencies, or for other regions.
 For example, "tas_tavg-h2m-hxy-u" reported at daily frequency is denoted "day.tas" in CMIP6.
-The CMIP7 Data Request specifies the branded variable name, frequency, and region of every requested variable.
+
+!!! note "Viewing branded variables in the Data Request"
+
+    The branded variable name, frequency, and region of every requested variable are specified in the CMIP7 Data Request, and can be viewed using [Airtable](https://bit.ly/CMIP7-DReq-latest), the [github-based web viewer](https://cmip-data-request.github.io/cmip7-dreq-webview/latest/index.html), or the [python API](https://github.com/CMIP-Data-Request/CMIP7_DReq_software).
+
+    For every variable, the Data Request specifies *both* its CMIP7-era branded name and CMIP6-era name.
+    This provides a mapping from old to new names, to simplify the transition to branded names.
+    The ["Variables" table of the Data Request](https://cmip-data-request.github.io/cmip7-dreq-webview/latest/variables.html) provides a unique identifiers using both flavours of name, termed "CMIP7 Compound Name" and "CMIP6 Compound Name".
+    For the above example (monthly near-surface air temperature) these are "atmos.tas.tavg-h2m-hxy-u.mon.GLB" and "Amon.tas", respectively.
 
 The branded variable approach (Taylor et al., in preparation) aims to be more systematic and scalable to future CMIP phases and wider use across community MIPs.
 [CMOR tables](https://github.com/WCRP-CMIP/cmip7-cmor-tables) keyed by branded variable name define the metadata characteristics of variables apart from the frequency, region, or specific grids on which these variables should be reported.
+Guidance on reporting grids for CMIP output is [given here](https://zenodo.org/records/15697025).
 
 
 ## Branding labels
@@ -69,51 +78,51 @@ Set to "u" (unspecified) if none of the following apply.
 
 | Label | Data Request Dimension |
 | --- | --- | 
-| `1000hPa` | `p1000` |
-| `100hPa` | `p100` |
 | `10hPa` | `p10` |
+| `100hPa` | `p100` |
 | `200hPa` | `p200` |
 | `220hPa` | `p220` |
 | `500hPa` | `p500` |
 | `560hPa` | `p560` |
 | `700hPa` | `p700` |
-| `700hPa` | `pl700` |
+<!-- | `700hPa` | `pl700` | --> 
 | `840hPa` | `p840` |
 | `850hPa` | `p850` |
 | `925hPa` | `p925` |
+| `1000hPa` | `p1000` |
 | `al` | `alevel` |
 | `alh` | `alevhalf` |
-| `d0m` | `depth0m` |
-| `d1000m` | `depth1000m` |
-| `d100cm` | `sdepth100cm` |
-| `d100m` | `depth100m` |
-| `d100m` | `olayer100m` |
 | `d10cm` | `sdepth10cm` |
-| `d2000m` | `depth2000m` |
-| `d2000m` | `olayer2000m` |
-| `d300m` | `depth300m` |
+| `d100cm` | `sdepth100cm` |
+| `d0m` | `depth0m` |
+| `d100m` | `depth100m` |
+<!-- | `d100m` | `olayer100m` | -->
+<!-- | `d300m` | `depth300m` | -->
 | `d300m` | `olayer300m` |
-| `d700m` | `depth700m` |
+<!-- | `d700m` | `depth700m` | -->
 | `d700m` | `olayer700m` |
-| `h100m` | `height100m` |
-| `h10m` | `height10m` |
+| `d1000m` | `depth1000m` |
+<!-- | `d2000m` | `depth2000m` | -->
+| `d2000m` | `olayer2000m` |
 | `h16` | `alt16` |
-| `h2m` | `height2m` |
 | `h40` | `alt40` |
+| `h2m` | `height2m` |
+| `h10m` | `height10m` |
+| `h100m` | `height100m` |
 | `ol` | `olevel` |
 | `olh` | `olevhalf` |
 | `op20bar` | `op20bar` |
 | `op4` | `oplayer4` |
-| `p19` | `plev19` |
-| `p27` | `plev27` |
-| `p39` | `plev39` |
 | `p3` | `plev3` |
-| `p4` | `plev4` |
+<!-- | `p4` | `plev4` | -->
 | `p5u` | `plev5u` |
 | `p6` | `plev6` |
 | `p7c` | `plev7c` |
 | `p7h` | `plev7h` |
-| `p8` | `plev8` |
+<!-- | `p8` | `plev8` | -->
+| `p19` | `plev19` |
+<!-- | `p27` | `plev27` | -->
+| `p39` | `plev39` |
 | `rho` | `rho` |
 | `sl` | `sdepth` |
 | `u`  | unspecified |
