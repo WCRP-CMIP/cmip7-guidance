@@ -38,7 +38,7 @@ For example, "tas_tavg-h2m-hxy-u" reported at daily frequency is denoted "day.ta
 
     For every variable, the Data Request specifies *both* its CMIP7-era branded name and CMIP6-era name.
     This provides a mapping from old to new names, to simplify the transition to branded names.
-    The ["Variables" table of the Data Request](https://cmip-data-request.github.io/cmip7-dreq-webview/latest/variables.html) provides a unique identifiers using both flavours of name, termed "CMIP7 Compound Name" and "CMIP6 Compound Name".
+    The ["Variables" table of the Data Request](https://cmip-data-request.github.io/cmip7-dreq-webview/latest/variables.html) provides a unique identifier using both flavours of name, termed "CMIP7 Compound Name" and "CMIP6 Compound Name".
     For the above example (monthly near-surface air temperature) these are "atmos.tas.tavg-h2m-hxy-u.mon.GLB" and "Amon.tas", respectively.
 
 The branded variable approach (Taylor et al., in preparation) aims to be more systematic and scalable to future CMIP phases and wider use across community MIPs.
