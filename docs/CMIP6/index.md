@@ -15,3 +15,4 @@ title: CMIP6 Guidance
 - [CMIP6 data request snapshots](https://github.com/cmip6dr/data_request_snapshots)
 - [CMIP6 Controlled Vocabularies](https://github.com/WCRP-CMIP/CMIP6_CVs)
 - [CMIP6 CMOR tables](https://github.com/PCMDI/cmip6-cmor-tables/)
+- [Time and Masked Area Averages in the Data Request -- use of Cell Methods](time_and_area_averaging.md)
