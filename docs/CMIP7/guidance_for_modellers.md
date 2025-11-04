@@ -144,7 +144,7 @@ CMIP7 model output requirements are similar to those in CMIP6, with notable chan
 
 - Updated [Global Attributes and Data Reference Syntax (DRS)](./global_attributes.md)
 - Introduction of [Branded Variable Names](./branded_variables.md) used in output filenames, directory paths, and [CMOR tables](https://github.com/WCRP-CMIP/cmip7-cmor-tables/)
-- Information on the [Data Request](#4--model-output-fields) is available via several entry points: [Airtable database](https://bit.ly/CMIP7-DReq-latest), [web viewer](https://cmip-data-request.github.io/cmip7-dreq-webview/latest), and [python API](https://github.com/CMIP-Data-Request/CMIP7_DReq_software)
+- Information on the [Data Request](#4-model-output-fields) is available via several entry points: [Airtable database](https://bit.ly/CMIP7-DReq-latest), [web viewer](https://cmip-data-request.github.io/cmip7-dreq-webview/latest), and [python API](https://github.com/CMIP-Data-Request/CMIP7_DReq_software)
 
 As in CMIP6, all CMIP7 output will be stored in netCDF files with one variable stored per file.
 The requested output fields can be determined [from the Data Request as described above](#4--model-output-fields).
