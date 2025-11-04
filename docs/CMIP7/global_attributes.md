@@ -50,8 +50,8 @@ Guidance documents: [https://wcrp-cmip.github.io/cmip7-guidance/](https://wcrp-c
 ## 3. Data Reference Syntax (DRS) Components
 
 The **DRS** defines how datasets are uniquely identified and organized. It uses a subset of global attributes to construct:
-+  
-+ - **Filenames**
+  
+ - **Filenames**
 - **Directory paths**
 - **URLs and search facets**
 
