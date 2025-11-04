@@ -254,7 +254,7 @@ The [Earth System Grid Federation (ESGF)](https://esgf.github.io/) will facilita
 
 Data producers should note several key points:
 
-- **Data compliance checking**: [Quality Control (QC) checks](#7--software-for-checking-output) will be required to check that data is in conformance with output requirements outlined in the sections above.
+- **Data compliance checking**: [Quality Control (QC) checks](#7-software-for-checking-output) will be required to check that data is in conformance with output requirements outlined in the sections above.
 - **Correcting errors**: when errors in published data are discovered, they should be documented using the [ESGF Errata Service](https://errata.ipsl.fr/), and the erroneous datasets retracted. Corrected datasets should be published using an updated dataset version identifier.
 - **Replication**: Some data nodes plan to replicate some of the data published by other nodes. This will provide some redundancy protecting against loss of at least some of the data in the event of a catastrophic storage failure at one node. It will also provide a backup source of data when one node is temporarily offline. Not all data will be replicated, so it is recommended that modeling groups retain a backup copy of their model output.
 - **Long-term archival**: A “snapshot” of CMIP7 data as it exists at the time of a deadline imposed by the IPCC’s 7th Assessment Report (IPCC-AR7) will be archived at the [IPCC Data Distribution Centre (IPCC DDC)](https://www.ipcc-data.org/).
