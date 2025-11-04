@@ -245,6 +245,49 @@ If you encounter issues or have suggestions, please **open a GitHub issue** on t
 
 ## 8.  Archiving/publishing output
 ## 9.  Documentation Process
+
+### Model documentation
+
+The Essential Model Documentation (EMD) is a high-level description of an Earth System Model.
+
+It contains information about model configuration that is helpful to all communities who are expected to make use of the model output, whilst not being so detailed that it becomes too much of a burden on the modelling groups who have to provide the information.
+
+Note that it is not intended to contain all information about a model's formulation.
+More detailed documentation than that provided by the EMD is to be found in the references cited as part of the EMD.
+
+The EMD, which has been designed to be applicable to any earth system model, will only be truly valuable when it is provided for all models.
+To guarantee this, providing EMD is a mandatory requirement for CMIP7 participation, and the registration of a CMIP7 model will not be possible unless its EMD has been provided.
+
+#### Creating EMD
+
+The online form that will be used for CMIP7 model registration will include a section for completing the EMD.
+The EMD will be automatically validated, reviewed by a human and once accepted the model registration can be completed.
+The online form will also enable those documenting a model to import documentation components from other, already registered models, which can then be edited if required - significantly reducing the time taken to create the content.
+
+The EMD content is stored in GitHub (in JSON files), and may be edited at any time to add further information, or to correct any mistakes. All such changes will go through the usual GitHub-based review process in a  fully transparent and traceable manner.
+
+#### EMD structure
+
+The full EMD specification, which contains examples of filled-out EMD entries for model components and grids, may be found at:
+🗣️ [https://doi.org/10.5281/zenodo.15439551](https://doi.org/10.5281/zenodo.15439551)
+
+Each question asked in the online EMD creation form will also be accompanied by the relevant guidance, so reference to the full EMD specification should not generally be necessary during the creation process.
+
+EMD comprises the following sections:
+
+- Top-level model
+   - A top-level description of the model as whole.
+   - Includes model name, family and an overview description.
+- Model components
+   - A description of each dynamically simulated model component.
+   - Includes the component name and family, an overview description, and the relationship to other components.
+- Horizontal and vertical grids
+   - For each model component, a description of its native grid.
+- References
+   - References to published work for the top-level model or one its model components.
+
+While not part of the EMD, output grids for regridded data must also be registered via an online form (i.e. for any grid used to report data that is not the model's native grid)."
+
 ## 10.  CMIP7 organisation and governance
 
 The [CMIP panel](https://wcrp-cmip.org/cmip-governance/cmip-panel/) which is under 
