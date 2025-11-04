@@ -164,7 +164,7 @@ Data requirements are defined and discussed in the following documents:
 - [Reference "controlled vocabularies" (CVs) for CMIP7](https://github.com/WCRP-CMIP/CMIP7-CVs)
 - [Guidance on output grids](https://zenodo.org/records/15697025)
 - Requested atmospheric pressure levels are described in [Table 2 / Figure 2 of Dingley et al. 2025](https://egusphere.copernicus.org/preprints/2025/egusphere-2025-3189/)
-- [Guidance on time averaging (with masking)](https://wcrp-cmip.github.io/WGCM_Infrastructure_Panel/CMIP6/time_and_area_averaging.html)
+- [Guidance on time averaging (with masking)](../CMIP6/time_and_area_averaging.md) (CMIP6 guidance, to be reviewed).
 
 Additional metadata requirements are imposed on a variable by variable basis as specified in the Data Request.
 Many of these are recognized by CMOR (through input via the CMIP7 CMOR Tables), which will ensure compliance.
