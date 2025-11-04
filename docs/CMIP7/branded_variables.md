@@ -24,8 +24,7 @@ The branding label, "tavg-h2m-hxy-u", describes how the variable is temporally a
 - **horizontal label**: "hxy" indicates a horizontal field spanning latitude and longitude.
 - **area label**: "u" indicates "unmasked".
 
-Branding labels are always composed of these four components.
-The full list of their possible values is [given below](#branding-labels).
+Branding labels are always composed of these four components, and their various possible values are [tabulated below](#branding-labels).
 
 Importantly, "tas_tavg-h2m-hxy-u" is not *fully* equivalent to "Amon.tas". 
 This is because the branded variable name does not identify a variable's frequency, or its region.
@@ -85,7 +84,6 @@ Set to "u" (unspecified) if none of the following apply.
 | `500hPa` | `p500` |
 | `560hPa` | `p560` |
 | `700hPa` | `p700` |
-<!-- | `700hPa` | `pl700` | --> 
 | `840hPa` | `p840` |
 | `850hPa` | `p850` |
 | `925hPa` | `p925` |
@@ -96,13 +94,9 @@ Set to "u" (unspecified) if none of the following apply.
 | `d100cm` | `sdepth100cm` |
 | `d0m` | `depth0m` |
 | `d100m` | `depth100m` |
-<!-- | `d100m` | `olayer100m` | -->
-<!-- | `d300m` | `depth300m` | -->
 | `d300m` | `olayer300m` |
-<!-- | `d700m` | `depth700m` | -->
 | `d700m` | `olayer700m` |
 | `d1000m` | `depth1000m` |
-<!-- | `d2000m` | `depth2000m` | -->
 | `d2000m` | `olayer2000m` |
 | `h16` | `alt16` |
 | `h40` | `alt40` |
@@ -114,18 +108,24 @@ Set to "u" (unspecified) if none of the following apply.
 | `op20bar` | `op20bar` |
 | `op4` | `oplayer4` |
 | `p3` | `plev3` |
-<!-- | `p4` | `plev4` | -->
 | `p5u` | `plev5u` |
 | `p6` | `plev6` |
 | `p7c` | `plev7c` |
 | `p7h` | `plev7h` |
-<!-- | `p8` | `plev8` | -->
 | `p19` | `plev19` |
-<!-- | `p27` | `plev27` | -->
 | `p39` | `plev39` |
 | `rho` | `rho` |
 | `sl` | `sdepth` |
 | `u`  | unspecified |
+
+<!-- | `700hPa` | `pl700` | --> 
+<!-- | `d100m` | `olayer100m` | -->
+<!-- | `d300m` | `depth300m` | -->
+<!-- | `d700m` | `depth700m` | -->
+<!-- | `d2000m` | `depth2000m` | -->
+<!-- | `p4` | `plev4` | -->
+<!-- | `p8` | `plev8` | -->
+<!-- | `p27` | `plev27` | -->
 
 ### Horizontal labels
 
