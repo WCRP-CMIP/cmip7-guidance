@@ -13,43 +13,60 @@ This label is used in the output filenames and directory path structures of CMIP
 For comparison with the previous CMIP naming scheme, consider the global monthly-mean near-surface air temperature, which in CMIP6 was denoted as "tas" in the "Amon" MIP table (also referred to as a CMOR table).
 A compound name constructed from these terms, "Amon.tas", uniquely identifies the variable.
 The "Amon" table is a collection of atmospheric variables at monthly frequency; other MIP tables (Omon, SImon, ...) collect together other variables that usually are similar in realm, frequency, and region.
-While familiar to experienced users of CMIP data, this system led to a proliferation of table names in CMIP6 due to the large number of requested variables (~2000).
+While familiar to experienced users of CMIP data, this system led to a proliferation of table names in CMIP6 due to the large number of requested variables (~2000), and the rationale for their names was not always clear (for example, table name "Amon" included the realm while "3hr" and "day" used only the frequency).
 
 The **branded variable** corresponding to "Amon.tas" is "tas_tavg-h2m-hxy-u".
 Here the short name identifying the physical quantity, "tas", is unchanged.
-The branding label, "tavg-h2m-hxy-u", describes how the variable is temporally and spatially sampled.
-It is composed of four parts, which for this variable are:
+The branding label, "tavg-h2m-hxy-u", describes how the variable is temporally and spatially sampled and is composed of four parts:
 
-- **temporal label**: "tavg" denotes a time average.
-- **vertical label**: "h2m" denotes near-surface at 2m above ground.
-- **horizontal label**: "hxy" denotes a horizontal field spanning latitude and longitude.
-- **area type label**: for other variables this indicates masking (e.g., over sea ice only); in this case, "u" denotes no masking.
+- **temporal label**: "tavg" indicates a time average.
+- **vertical label**: "h2m" indicates near-surface at 2m above ground.
+- **horizontal label**: "hxy" indicates a horizontal field spanning latitude and longitude.
+- **area label**: "u" indicates "unmasked".
 
-As defined, "tas_tavg-h2m-hxy-u" is not fully equivalent to "Amon.tas" because the branded name does not identify the variable's frequency, or its region.
-By additionally specifying the frequency as monthly, and the region as global, "tas_tavg-h2m-hxy-u" then becomes equivalent to "Amon.tas".
+Branding labels are always composed of these four components.
+The full list of their possible values is [given below](#branding-labels).
+
+Importantly, "tas_tavg-h2m-hxy-u" is not *fully* equivalent to "Amon.tas". 
+This is because the branded variable name does not identify a variable's frequency, or its region.
+By *additionally* specifying the frequency as monthly, and the region as global, "tas_tavg-h2m-hxy-u" then becomes equivalent to "Amon.tas".
+The same branded variable could alternately be reported at other frequencies, or for other regions.
+For example, "tas_tavg-h2m-hxy-u" reported at daily frequency is denoted "day.tas" in CMIP6.
 The CMIP7 Data Request specifies the branded variable name, frequency, and region of every requested variable.
 
-The branded variable approach (Taylor et al., in prep) aims to be more systematic and scalable to future CMIP phases and wider use across community MIPs.
+The branded variable approach (Taylor et al., in preparation) aims to be more systematic and scalable to future CMIP phases and wider use across community MIPs.
+[CMOR tables](https://github.com/WCRP-CMIP/cmip7-cmor-tables) keyed by branded variable name define the metadata characteristics of variables apart from the frequency, region, or specific grids on which these variables should be reported.
+
 
 ## Branding labels
 
 The four components of the branded variables are derived from variable metadata using the 
 [cmip-branded-variable-mapper package](https://cmip-branded-variable-mapper.readthedocs.io/en/latest/).
 The following tables show the meaning of each element of the branding.
+Each of these labels is a global attribute written to output netCDF files (`temporal_label`, `vertical_label`, `horizontal_label`, `area_label`).
 
 ### Temporal labels
 
+Identifies how the variable is sampled in the time domain: time average, instantaneous, etc.
+
 | Label | notes |
-| --- | --- | 
-| `tavg` | Time average (cell_measures include `time: mean`) |
-| `tpt` | Synoptic samples (cell_measures include `time: point`, dimensions use `time1`) |
-| `tmax` | Time maximum (cell_measures include `time: max`) |
-| `tmin` | Time minimum (cell_measures include `time: min`) |
-| `tsum` | Time sum (cell measures include `time: sum`) |
+| --- | --- |
+| `tavg` | Time average (cell_methods include `time: mean`) |
 | `tclm` | Climatology (dimensions use `time2`) |
 | `tclmdc` | Diurnal mean climatology (dimensions use `time3`) |
+| `ti` | Time independent |
+| `tmax` | Time maximum (cell_methods include `time: max`) |
+| `tmin` | Time minimum (cell_methods include `time: min`) |
+| `tmaxavg` | Time mean of daily maxima (cell_methods include `time: maximum within days time: mean over days`) |
+| `tminavg` | Time mean of daily minima (cell_methods include `time: minimum within days time: mean over days`) |
+| `tpt` | Synoptic samples (cell_methods include `time: point`, dimensions use `time1`) |
+| `tsum` | Time sum (cell_methods include `time: sum`) |
 
 ### Vertical labels
+
+Identifies how the variable is sampled in the vertical domain: on pressure levels, model levels, at a single level, etc.
+Set to "u" (unspecified) if none of the following apply.
+
 | Label | Data Request Dimension |
 | --- | --- | 
 | `1000hPa` | `p1000` |
@@ -99,18 +116,27 @@ The following tables show the meaning of each element of the branding.
 | `p8` | `plev8` |
 | `rho` | `rho` |
 | `sl` | `sdepth` |
+| `u`  | unspecified |
 
 ### Horizontal labels
 
+Identifies how the variable is sampled horizontally: function of latitude and longitude, only latitude, site data, etc.
+Note that this label does **not** denote a particular choice of reporting grid (e.g., 1° × 1°).
+Guidance on reporting grids can be [found here](https://zenodo.org/records/15697025).
+
 | Label | Notes |
-| --- | --- | 
+| --- | --- |
 | `hxy` | longitude-latitude field |
 | `hy` | zonal mean |
 | `hyb` | zonal mean by ocean basin |
 | `hs` | site specific |
 | `ht` | transect |
+| `hm` | horizontal mean |
 
-### Area type labels
+### Area labels
+
+Identifies the unmasked area type for which data are reported: sea ice, land, ice sheet, etc.
+Set to "u" (unmasked) if no masking is applied.
 
 | Label | Corresponding masking in cell_methods |
 | --- | --- | 
@@ -139,3 +165,4 @@ The following tables show the meaning of each element of the branding.
 | `ufs` | `where unfrozen_soil` |
 | `veg` | `where vegetation` |
 | `wl` | `where wetland` |
+| `u`  | unmasked |
