@@ -373,9 +373,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#area-type-labels" class="md-nav__link">
+  <a href="#area-labels" class="md-nav__link">
     <span class="md-ellipsis">
-      Area type labels
+      Area labels
     </span>
   </a>
   
@@ -410,26 +410,42 @@ This label is used in the output filenames and directory path structures of CMIP
 <p>For comparison with the previous CMIP naming scheme, consider the global monthly-mean near-surface air temperature, which in CMIP6 was denoted as "tas" in the "Amon" MIP table (also referred to as a CMOR table).
 A compound name constructed from these terms, "Amon.tas", uniquely identifies the variable.
 The "Amon" table is a collection of atmospheric variables at monthly frequency; other MIP tables (Omon, SImon, ...) collect together other variables that usually are similar in realm, frequency, and region.
-While familiar to experienced users of CMIP data, this system led to a proliferation of table names in CMIP6 due to the large number of requested variables (~2000).</p>
+While familiar to experienced users of CMIP data, this system led to a proliferation of table names in CMIP6 due to the large number of requested variables (~2000), and the rationale for their names was not always clear (for example, table name "Amon" included the realm while "3hr" and "day" used only the frequency).</p>
 <p>The <strong>branded variable</strong> corresponding to "Amon.tas" is "tas_tavg-h2m-hxy-u".
 Here the short name identifying the physical quantity, "tas", is unchanged.
-The branding label, "tavg-h2m-hxy-u", describes how the variable is temporally and spatially sampled.
-It is composed of four parts, which for this variable are:</p>
+The branding label, "tavg-h2m-hxy-u", describes how the variable is temporally and spatially sampled and is composed of four parts:</p>
 <ul>
-<li><strong>temporal label</strong>: "tavg" denotes a time average.</li>
-<li><strong>vertical label</strong>: "h2m" denotes near-surface at 2m above ground.</li>
-<li><strong>horizontal label</strong>: "hxy" denotes a horizontal field spanning latitude and longitude.</li>
-<li><strong>area type label</strong>: for other variables this indicates masking (e.g., over sea ice only); in this case, "u" denotes no masking.</li>
+<li><strong>temporal label</strong>: "tavg" indicates a time average.</li>
+<li><strong>vertical label</strong>: "h2m" indicates near-surface at 2m above ground.</li>
+<li><strong>horizontal label</strong>: "hxy" indicates a horizontal field spanning latitude and longitude.</li>
+<li><strong>area label</strong>: "u" indicates "unmasked".</li>
 </ul>
-<p>As defined, "tas_tavg-h2m-hxy-u" is not fully equivalent to "Amon.tas" because the branded name does not identify the variable's frequency, or its region.
-By additionally specifying the frequency as monthly, and the region as global, "tas_tavg-h2m-hxy-u" then becomes equivalent to "Amon.tas".
-The CMIP7 Data Request specifies the branded variable name, frequency, and region of every requested variable.</p>
-<p>The branded variable approach (Taylor et al., in prep) aims to be more systematic and scalable to future CMIP phases and wider use across community MIPs.</p>
+<p>Branding labels are always composed of these four components, and their various possible values are <a href="#branding-labels">tabulated below</a>.</p>
+<p>Importantly, "tas_tavg-h2m-hxy-u" is not <em>fully</em> equivalent to "Amon.tas". 
+This is because the branded variable name does not identify a variable's frequency, or its region.
+By <em>additionally</em> specifying the frequency as monthly, and the region as global, "tas_tavg-h2m-hxy-u" then becomes equivalent to "Amon.tas".
+The same branded variable could alternately be reported at other frequencies, or for other regions.
+For example, "tas_tavg-h2m-hxy-u" reported at daily frequency is denoted "day.tas" in CMIP6.</p>
+<div class="admonition note">
+<p class="admonition-title">Viewing branded variables in the Data Request</p>
+<p>The branded variable name, frequency, and region of every requested variable are specified in the CMIP7 Data Request, and can be viewed using <a href="https://bit.ly/CMIP7-DReq-latest">Airtable</a>, the <a href="https://cmip-data-request.github.io/cmip7-dreq-webview/latest/index.html">github-based web viewer</a>, or the <a href="https://github.com/CMIP-Data-Request/CMIP7_DReq_software">python API</a>.</p>
+<p>For every variable, the Data Request specifies <em>both</em> its CMIP7-era branded name and CMIP6-era name.
+This provides a mapping from old to new names, to simplify the transition to branded names.
+The <a href="https://cmip-data-request.github.io/cmip7-dreq-webview/latest/variables.html">"Variables" table of the Data Request</a> provides a unique identifier using both flavours of name, termed "CMIP7 Compound Name" and "CMIP6 Compound Name".
+For the above example (monthly near-surface air temperature) these are "atmos.tas.tavg-h2m-hxy-u.mon.GLB" and "Amon.tas", respectively.</p>
+</div>
+<p>The branded variable approach (Taylor et al., in preparation) aims to be more systematic and scalable to future CMIP phases and wider use across community MIPs.
+<a href="https://github.com/WCRP-CMIP/cmip7-cmor-tables">CMOR tables</a> keyed by branded variable name define the metadata characteristics of variables apart from the frequency, region, or specific grids on which these variables should be reported.
+Guidance on reporting grids for CMIP output is <a href="https://zenodo.org/records/15697025">given here</a>.
+The exact reporting convention and associated CV is being finalised.
+If you wish to see the full discussion, please see https://github.com/WCRP-CMIP/CMIP7-CVs/issues/202</p>
 <h2 id="branding-labels">Branding labels</h2>
 <p>The four components of the branded variables are derived from variable metadata using the 
 <a href="https://cmip-branded-variable-mapper.readthedocs.io/en/latest/">cmip-branded-variable-mapper package</a>.
-The following tables show the meaning of each element of the branding.</p>
+The following tables show the meaning of each element of the branding.
+Each of these labels is a global attribute written to output netCDF files (<code>temporal_label</code>, <code>vertical_label</code>, <code>horizontal_label</code>, <code>area_label</code>).</p>
 <h3 id="temporal-labels">Temporal labels</h3>
+<p>Identifies how the variable is sampled in the time domain: time average, instantaneous, etc.</p>
 <table>
 <thead>
 <tr>
@@ -440,23 +456,7 @@ The following tables show the meaning of each element of the branding.</p>
 <tbody>
 <tr>
 <td><code>tavg</code></td>
-<td>Time average (cell_measures include <code>time: mean</code>)</td>
-</tr>
-<tr>
-<td><code>tpt</code></td>
-<td>Synoptic samples (cell_measures include <code>time: point</code>, dimensions use <code>time1</code>)</td>
-</tr>
-<tr>
-<td><code>tmax</code></td>
-<td>Time maximum (cell_measures include <code>time: max</code>)</td>
-</tr>
-<tr>
-<td><code>tmin</code></td>
-<td>Time minimum (cell_measures include <code>time: min</code>)</td>
-</tr>
-<tr>
-<td><code>tsum</code></td>
-<td>Time sum (cell measures include <code>time: sum</code>)</td>
+<td>Time average (cell_methods include <code>time: mean</code>)</td>
 </tr>
 <tr>
 <td><code>tclm</code></td>
@@ -466,9 +466,39 @@ The following tables show the meaning of each element of the branding.</p>
 <td><code>tclmdc</code></td>
 <td>Diurnal mean climatology (dimensions use <code>time3</code>)</td>
 </tr>
+<tr>
+<td><code>ti</code></td>
+<td>Time independent</td>
+</tr>
+<tr>
+<td><code>tmax</code></td>
+<td>Time maximum (cell_methods include <code>time: max</code>)</td>
+</tr>
+<tr>
+<td><code>tmin</code></td>
+<td>Time minimum (cell_methods include <code>time: min</code>)</td>
+</tr>
+<tr>
+<td><code>tmaxavg</code></td>
+<td>Time mean of daily maxima (cell_methods include <code>time: maximum within days time: mean over days</code>)</td>
+</tr>
+<tr>
+<td><code>tminavg</code></td>
+<td>Time mean of daily minima (cell_methods include <code>time: minimum within days time: mean over days</code>)</td>
+</tr>
+<tr>
+<td><code>tpt</code></td>
+<td>Synoptic samples (cell_methods include <code>time: point</code>, dimensions use <code>time1</code>)</td>
+</tr>
+<tr>
+<td><code>tsum</code></td>
+<td>Time sum (cell_methods include <code>time: sum</code>)</td>
+</tr>
 </tbody>
 </table>
 <h3 id="vertical-labels">Vertical labels</h3>
+<p>Identifies how the variable is sampled in the vertical domain: on pressure levels, model levels, at a single level, etc.
+Set to "u" (unspecified) if none of the following apply.</p>
 <table>
 <thead>
 <tr>
@@ -478,16 +508,12 @@ The following tables show the meaning of each element of the branding.</p>
 </thead>
 <tbody>
 <tr>
-<td><code>1000hPa</code></td>
-<td><code>p1000</code></td>
+<td><code>10hPa</code></td>
+<td><code>p10</code></td>
 </tr>
 <tr>
 <td><code>100hPa</code></td>
 <td><code>p100</code></td>
-</tr>
-<tr>
-<td><code>10hPa</code></td>
-<td><code>p10</code></td>
 </tr>
 <tr>
 <td><code>200hPa</code></td>
@@ -510,10 +536,6 @@ The following tables show the meaning of each element of the branding.</p>
 <td><code>p700</code></td>
 </tr>
 <tr>
-<td><code>700hPa</code></td>
-<td><code>pl700</code></td>
-</tr>
-<tr>
 <td><code>840hPa</code></td>
 <td><code>p840</code></td>
 </tr>
@@ -526,6 +548,10 @@ The following tables show the meaning of each element of the branding.</p>
 <td><code>p925</code></td>
 </tr>
 <tr>
+<td><code>1000hPa</code></td>
+<td><code>p1000</code></td>
+</tr>
+<tr>
 <td><code>al</code></td>
 <td><code>alevel</code></td>
 </tr>
@@ -534,40 +560,20 @@ The following tables show the meaning of each element of the branding.</p>
 <td><code>alevhalf</code></td>
 </tr>
 <tr>
-<td><code>d0m</code></td>
-<td><code>depth0m</code></td>
-</tr>
-<tr>
-<td><code>d1000m</code></td>
-<td><code>depth1000m</code></td>
+<td><code>d10cm</code></td>
+<td><code>sdepth10cm</code></td>
 </tr>
 <tr>
 <td><code>d100cm</code></td>
 <td><code>sdepth100cm</code></td>
 </tr>
 <tr>
+<td><code>d0m</code></td>
+<td><code>depth0m</code></td>
+</tr>
+<tr>
 <td><code>d100m</code></td>
 <td><code>depth100m</code></td>
-</tr>
-<tr>
-<td><code>d100m</code></td>
-<td><code>olayer100m</code></td>
-</tr>
-<tr>
-<td><code>d10cm</code></td>
-<td><code>sdepth10cm</code></td>
-</tr>
-<tr>
-<td><code>d2000m</code></td>
-<td><code>depth2000m</code></td>
-</tr>
-<tr>
-<td><code>d2000m</code></td>
-<td><code>olayer2000m</code></td>
-</tr>
-<tr>
-<td><code>d300m</code></td>
-<td><code>depth300m</code></td>
 </tr>
 <tr>
 <td><code>d300m</code></td>
@@ -575,31 +581,35 @@ The following tables show the meaning of each element of the branding.</p>
 </tr>
 <tr>
 <td><code>d700m</code></td>
-<td><code>depth700m</code></td>
-</tr>
-<tr>
-<td><code>d700m</code></td>
 <td><code>olayer700m</code></td>
 </tr>
 <tr>
-<td><code>h100m</code></td>
-<td><code>height100m</code></td>
+<td><code>d1000m</code></td>
+<td><code>depth1000m</code></td>
 </tr>
 <tr>
-<td><code>h10m</code></td>
-<td><code>height10m</code></td>
+<td><code>d2000m</code></td>
+<td><code>olayer2000m</code></td>
 </tr>
 <tr>
 <td><code>h16</code></td>
 <td><code>alt16</code></td>
 </tr>
 <tr>
+<td><code>h40</code></td>
+<td><code>alt40</code></td>
+</tr>
+<tr>
 <td><code>h2m</code></td>
 <td><code>height2m</code></td>
 </tr>
 <tr>
-<td><code>h40</code></td>
-<td><code>alt40</code></td>
+<td><code>h10m</code></td>
+<td><code>height10m</code></td>
+</tr>
+<tr>
+<td><code>h100m</code></td>
+<td><code>height100m</code></td>
 </tr>
 <tr>
 <td><code>ol</code></td>
@@ -618,24 +628,8 @@ The following tables show the meaning of each element of the branding.</p>
 <td><code>oplayer4</code></td>
 </tr>
 <tr>
-<td><code>p19</code></td>
-<td><code>plev19</code></td>
-</tr>
-<tr>
-<td><code>p27</code></td>
-<td><code>plev27</code></td>
-</tr>
-<tr>
-<td><code>p39</code></td>
-<td><code>plev39</code></td>
-</tr>
-<tr>
 <td><code>p3</code></td>
 <td><code>plev3</code></td>
-</tr>
-<tr>
-<td><code>p4</code></td>
-<td><code>plev4</code></td>
 </tr>
 <tr>
 <td><code>p5u</code></td>
@@ -654,8 +648,12 @@ The following tables show the meaning of each element of the branding.</p>
 <td><code>plev7h</code></td>
 </tr>
 <tr>
-<td><code>p8</code></td>
-<td><code>plev8</code></td>
+<td><code>p19</code></td>
+<td><code>plev19</code></td>
+</tr>
+<tr>
+<td><code>p39</code></td>
+<td><code>plev39</code></td>
 </tr>
 <tr>
 <td><code>rho</code></td>
@@ -665,9 +663,25 @@ The following tables show the meaning of each element of the branding.</p>
 <td><code>sl</code></td>
 <td><code>sdepth</code></td>
 </tr>
+<tr>
+<td><code>u</code></td>
+<td>unspecified</td>
+</tr>
 </tbody>
 </table>
+<!-- | `700hPa` | `pl700` | -->
+<!-- | `d100m` | `olayer100m` | -->
+<!-- | `d300m` | `depth300m` | -->
+<!-- | `d700m` | `depth700m` | -->
+<!-- | `d2000m` | `depth2000m` | -->
+<!-- | `p4` | `plev4` | -->
+<!-- | `p8` | `plev8` | -->
+<!-- | `p27` | `plev27` | -->
+
 <h3 id="horizontal-labels">Horizontal labels</h3>
+<p>Identifies how the variable is sampled horizontally: function of latitude and longitude, only latitude, site data, etc.
+Note that this label does <strong>not</strong> denote a particular choice of reporting grid (e.g., 1° × 1°).
+Guidance on reporting grids can be <a href="https://zenodo.org/records/15697025">found here</a>.</p>
 <table>
 <thead>
 <tr>
@@ -696,9 +710,15 @@ The following tables show the meaning of each element of the branding.</p>
 <td><code>ht</code></td>
 <td>transect</td>
 </tr>
+<tr>
+<td><code>hm</code></td>
+<td>horizontal mean</td>
+</tr>
 </tbody>
 </table>
-<h3 id="area-type-labels">Area type labels</h3>
+<h3 id="area-labels">Area labels</h3>
+<p>Identifies the unmasked area type for which data are reported: sea ice, land, ice sheet, etc.
+Set to "u" (unmasked) if no masking is applied.</p>
 <table>
 <thead>
 <tr>
@@ -707,10 +727,6 @@ The following tables show the meaning of each element of the branding.</p>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><code>lsi</code></td>
-<td><code>area: mean (over land and sea ice)</code></td>
-</tr>
 <tr>
 <td><code>air</code></td>
 <td><code>where air</code></td>
@@ -744,12 +760,20 @@ The following tables show the meaning of each element of the branding.</p>
 <td><code>where ice_sheet</code></td>
 </tr>
 <tr>
+<td><code>li</code></td>
+<td><code>where land_ice</code></td>
+</tr>
+<tr>
 <td><code>lnd</code></td>
 <td><code>where land</code></td>
 </tr>
 <tr>
-<td><code>li</code></td>
-<td><code>where land_ice</code></td>
+<td><code>lsi</code></td>
+<td><code>area: mean (over land and sea ice)</code></td>
+</tr>
+<tr>
+<td><code>multi</code></td>
+<td><code>where sector</code></td>
 </tr>
 <tr>
 <td><code>ng</code></td>
@@ -758,6 +782,10 @@ The following tables show the meaning of each element of the branding.</p>
 <tr>
 <td><code>pst</code></td>
 <td><code>where pastures</code></td>
+</tr>
+<tr>
+<td><code>scl</code></td>
+<td><code>where stratiform_cloud</code></td>
 </tr>
 <tr>
 <td><code>sea</code></td>
@@ -776,20 +804,12 @@ The following tables show the meaning of each element of the branding.</p>
 <td><code>where sea_ice_ridges</code></td>
 </tr>
 <tr>
-<td><code>multi</code></td>
-<td><code>where sector</code></td>
-</tr>
-<tr>
 <td><code>shb</code></td>
 <td><code>where shrubs</code></td>
 </tr>
 <tr>
 <td><code>sn</code></td>
 <td><code>where snow</code></td>
-</tr>
-<tr>
-<td><code>scl</code></td>
-<td><code>where stratiform_cloud</code></td>
 </tr>
 <tr>
 <td><code>tree</code></td>
@@ -806,6 +826,10 @@ The following tables show the meaning of each element of the branding.</p>
 <tr>
 <td><code>wl</code></td>
 <td><code>where wetland</code></td>
+</tr>
+<tr>
+<td><code>u</code></td>
+<td>unmasked (no "where" directive included in <code>cell_methods</code>)</td>
 </tr>
 </tbody>
 </table>
