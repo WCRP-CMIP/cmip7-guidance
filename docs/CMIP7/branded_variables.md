@@ -149,7 +149,6 @@ Set to "u" (unmasked) if no masking is applied.
 
 | Label | Corresponding masking in cell_methods |
 | --- | --- | 
-| `lsi` | `area: mean (over land and sea ice)` |
 | `air` | `where air` |
 | `cl` | `where cloud` |
 | `ccl` | `where convective_cloud` |
@@ -158,20 +157,21 @@ Set to "u" (unmasked) if no masking is applied.
 | `gis` | `where grounded_ice_sheet` |
 | `ifs` | `where ice_free_sea` |
 | `is` | `where ice_sheet` |
-| `lnd` | `where land` |
 | `li` | `where land_ice` |
+| `lnd` | `where land` |
+| `lsi` | `area: mean (over land and sea ice)` |
+| `multi` | `where sector` |
 | `ng` | `where natural_grasses` |
 | `pst` | `where pastures` |
+| `scl` | `where stratiform_cloud` |
 | `sea` | `where sea` |
 | `si` | `where sea_ice` |
 | `simp` | `where sea_ice_melt_pond` |
 | `sir` | `where sea_ice_ridges` |
-| `multi` | `where sector` |
 | `shb` | `where shrubs` |
 | `sn` | `where snow` |
-| `scl` | `where stratiform_cloud` |
 | `tree` | `where trees` |
 | `ufs` | `where unfrozen_soil` |
 | `veg` | `where vegetation` |
 | `wl` | `where wetland` |
-| `u`  | unmasked |
+| `u`  | unmasked (no "where" directive included in `cell_methods`) |
