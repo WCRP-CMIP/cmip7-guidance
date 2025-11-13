@@ -62,7 +62,7 @@ To enable modelling groups and others who support CMIP7 to demonstrate its impac
         Swart et al. (2019): CCCma CanESM5 model output prepared for CMIP6 ScenarioMIP. Version 20190429. Earth System Grid Federation. https://doi.org/10.22033/ESGF/CMIP6.1317. 
 
 
-    Please include a table with at minimum the sources, institutions and citations, as well as a data availability statement pointing to the table. If the journal has a citation limit, putting the table in the Supporting Information is acceptable.
+    Please include a table with at minimum the sources, institutions and citations, as well as a data availability statement pointing to the table and acknowledging ESGF. If the journal has a citation limit, putting the table in the Supporting Information is acceptable.
 
     ??? Question "How to find the DOI and the version?"
         🤖 You can use the python library [CMIPcite][cmipcite]. Input tracking_id(s), dataset PID(s) or file paths(s) to retrieve the citation (textually or in the bibtex format).
