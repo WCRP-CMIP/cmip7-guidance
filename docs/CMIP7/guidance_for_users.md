@@ -37,7 +37,7 @@ There are 3 options to access the data:
 
 3. **Alternative Access Platforms**
 
-    Some CMIP data is also hosted in non-ESGF storage facilities. Below are links to some of these. If you know of another place CMIP data is currently being stored, please submit [this form][altaccess] to let us and the community know!
+    Some CMIP data is also hosted in "dark" (non-ESGF) storage facilities. Below are links to some of these. If you know of another place CMIP data is currently being stored, please submit [this form][altaccess] to let us and the community know!
 
     * COMING SOON
 
@@ -45,18 +45,13 @@ There are 3 options to access the data:
 
 
 
-## 2.  Terms of use, citations and registration requirements
-<!--TODO: Maybe divide in mandatory and optional https://github.com/WCRP-CMIP/cmip7-guidance/issues/30 -->
-<!--TODO: Try to add a link to this in global attrs if possiblee-->
-To enable modelling groups and others who support CMIP7 to demonstrate its impact (and secure ongoing funding), you are required to cite and acknowledge those who have made CMIP7 possible. When using CMIP7 data, you must 
+## 2.  Terms of use and citations requirements
+<!--TODO: Make sure we have a link (with persistent URL) to this in the license global attrs-->
+To enable modelling groups and others who support CMIP7 to demonstrate its impact (and secure ongoing funding), you are required to cite and acknowledge those who have made CMIP7 possible. Some best practices are also recommended.
 
- 1. **Acknowledge CMIP7.**
+### Mandatory
 
-    In the Acknowledgment section, please insert the following text:
-
-    >We acknowledge the World Climate Research Programme's Coupled Model Intercomparison Project contributors who coordinated and promoted CMIP7. We thank the climate modelling groups for producing and making available their model output, the Earth System Grid Federation (ESGF) for archiving the data and providing access, and the multiple funding agencies who support CMIP7 and ESGF.
-
- 2. **Cite the specific dataset(s) used.**
+1. **Cite the specific dataset(s) used.**
 
     Please include a citation in the form of:
 
@@ -66,52 +61,64 @@ To enable modelling groups and others who support CMIP7 to demonstrate its impac
 
         Swart et al. (2019): CCCma CanESM5 model output prepared for CMIP6 ScenarioMIP. Version 20190429. Earth System Grid Federation. https://doi.org/10.22033/ESGF/CMIP6.1317. 
 
-  
-    If multiple models are used in a publication, please include a table with the sources (name of the model), institutions and citations. If the journal has a citation limit, a table in the Supporting Information is acceptable.
+
+    Please include a table with at minimum the sources, institutions and citations, as well as a data availability statement pointing to the table. If the journal has a citation limit, putting the table in the Supporting Information is acceptable.
 
     ??? Question "How to find the DOI and the version?"
+        🤖 You can use the python library [CMIPcite][cmipcite]. Input tracking_id(s), dataset PID(s) or file paths(s) to retrieve the citation (textually or in the bibtex format).
 
-        🔍 DOIs can be found through the [Citation Search][citesearch] or in the citation tab of a dataset on MetaGrid. The version is indicated in a column on MetaGrid.
+        🖱️ You can also do the work on CMIPcite by hand: Take the `tracking_id` global attribute of a file and append it to [http://hdl.handle.net/](http://hdl.handle.net/) (e.g., [http://hdl.handle.net/hdl:21.14100/be06a059-363d-47a4-97a2-d5253190fd15](http://hdl.handle.net/hdl:21.14100/be06a059-363d-47a4-97a2-d5253190fd15)). From there, you can follow "The file is part of the following aggregation(s)" and find the DOI and version of the dataset.
 
-        🖱️ It is also possible to take the `tracking_id` global attribute of a file and append it to [http://hdl.handle.net/](http://hdl.handle.net/) (e.g., [http://hdl.handle.net/hdl:21.14100/be06a059-363d-47a4-97a2-d5253190fd15](http://hdl.handle.net/hdl:21.14100/be06a059-363d-47a4-97a2-d5253190fd15)). From there, you can follow "The file is part of the following aggregation(s)" and find the DOI and version of the dataset.
+        🔍 You can also search databases.  The [Citation Search][citesearch] can help you find the DOI (but not the version). MetaGrid results indicate the version and have a citation tab.
 
-        🤖 Instead of doing this by hand, you can also use the PROTOTYPE python library [CMIPcite][cmipcite]. Input tracking_id(s), dataset PID(s) or file paths(s) to retrieve the citation (textually or in the bibtex format).
+        Note that there are two citation granularities (MIP-model-experiment data and MIP-model data) and that the version has to be added separately as it is not included in the DOI.
 
-        Note that there are two citation granularities on experiment data and on model/MIP data.
-        Also, the version has to be added separately as it is not included in the DOI.
         <!--TODO: How should the user choose which one to use ?  -->
-
-        Further information on the data citation concept is described in [Stockhause and Lautenschlager (2017)][Stockhause2017]. Citations can also be searched using [DataCite's catalogue][datacitecat] and [Google's Dataset Search][gdatasetsearch].
-    
+        
 
 
- 3. **Cite a paper from the GMD special issue**
+        Further information on the data citation concept is described in [Stockhause and Lautenschlager (2017)][Stockhause2017].
 
-    Cite, as appropriate, one or more of the [CMIP7 GMD special issue][GMDSpecialIssue] articles, which include an overview of the CMIP7 experiment design and descriptions of the CMIP7 endorsed MIPs.
-    <!--TODO: Be clearer about what we actually want here. Maybe use experiment CV to get the right citation, once they have that information. -->
+    <!--TODO: Is this necessary for funding ? or could it be replaced by a data availability statement.-->
+
+2. **Acknowledge CMIP7.**
+
+    In the Acknowledgment section, insert the following text:
+
+    >We acknowledge the World Climate Research Programme's Coupled Model Intercomparison Project contributors who coordinated and promoted CMIP7. We thank the climate modelling groups for producing and making available their model output, the Earth System Grid Federation (ESGF) for archiving the data and providing access, and the multiple funding agencies who support CMIP7 and ESGF.
+
+3. **Adhere to the license**
+        
+    Adhere to the license conditions listed in the global attribute of each dataset.
+
+###  Recommended
+
+ 1. **Cite papers from the GMD special issue**
+
+    To provide more context, cite one or more of the [CMIP7 GMD special issue][GMDSpecialIssue] articles:
+
+    * Overview of the CMIP7 experiment design: [Dunne et al. (2025)][dunne2025]
+    * CMIP standard and infrastructure: [Durack et al. (2025)][Durack2025]
+    * Papers describing MIPs associated with experiment used
+
+    <!--Maybe use experiment CV to get the right citation, once they have that information. -->
  
- 4. **Register your work.**
+ 2. **Register your work.**
 
     Register your work on the [CMIP7 Publication Hub][CMIPpubs] (coming soon). 
 
 
-5. **Adhere to the license**
-    
-    Adhere to the license conditions listed in the global attribute of each dataset.
-
-
-6. **Use the standard vocabularies**
+ 3. **Use the standard vocabularies**
 
     Where possible, we recommend using the CMIP7 standard names as defined by the [controlled vocabularies (CVs)][cmipCvs] (see [Section 3](#3-cmip7-facets-and-their-documentation)) to make references as clear and unambiguous as possible. However, if your audience requires different terms, then you should use those but we recommend keeping a mapping from the term your audience uses to the standard name, again to ensure that references can be unambiguously resolved where needed. Refer to the collection of CMIP7 models as the “CMIP7 multi-model ensemble”.
     
 
 
-!!! warning
+!!! warning "Disclaimer"
 
-    The CMIP7 archive contains the output of scientific simulations of the past and potential future that are subject to multiple sources of error, ranging from errors in data handling, to errors in the representation of the real world in either the model, or the experimental setup for which the model was used. Different parts of the CMIP7 archive may be subject to differing levels of such errors, and users should be alert to these issues, and their potential consequences (and to the limitations of liability expressed in the data license).
+    CMIP data is provided in its current state with no guarantee of quality, performance, stability or functionality. Every effort is being made to identify and address errors and bugs. Users can assist by [reporting these via the Errata service](#5-reporting-suspected-errors).
 
-
-
+    WCRP and CMIP governing bodies, the CMIP International Project Office, CMIP modelling centres, and funders accept no responsibility for any injury, loss, damage, or delay - direct, indirect or consequential - that may result from the use of the CMIP data or reliance on its results.
 
 ## 3. CMIP7 facets and their documentation
 
@@ -161,7 +168,7 @@ The CMIP7 protocol and experiments are described in a [special issue][GMDSpecial
  
 ??? info "Basic Concepts to Understand Experiments"
 
-    Each model participating in CMIP7 will contribute results from the eight DECK experiments. These experiments are the only ones directly overseen by the [CMIP Panel][CMIPPanel], and together these constitute the ongoing (slowly evolving) “CMIP” activity. In addition to the DECK, each modeling group may choose to contribute to any of the [CMIP7 Community MIPs][CMIPMips]. The CMIP panel identifies key experiments to be prioritized on different timelines through fast tracks. The first one is the AFT, which includes a set of Community MIP experiments endorsed by the CMIP panel to address specific needs.
+    Each model participating in CMIP7 will contribute results from the eight DECK experiments. These experiments are the only ones directly overseen by the [CMIP Panel][CMIPPanel], and together these constitute the ongoing (slowly evolving) “CMIP” activity. In addition to the DECK, each modeling group may choose to contribute to any of the [CMIP7 Community MIPs][CMIPMips]. The CMIP panel identifies key experiments to be prioritized on different timelines through fast tracks. The first one is the AFT, which includes a set of Community MIP experiments chosen by the CMIP panel to address specific needs.
     
     MORE COMING SOON
 
@@ -241,6 +248,7 @@ Essential features of CMORized data are :
     * One variable per file
 * Self-describing (all metadata needed to interpret the data are included in the file)
 * Consistent units and standard names following [CF conventions][cfConventionsPage]
+* [Standard chunking](guidance_for_modellers.md#5-model-output-requirements)
 
 
 
