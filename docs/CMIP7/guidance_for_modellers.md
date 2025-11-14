@@ -178,7 +178,7 @@ The success of CMIP7 also depends on making sure that even the requirements that
 This is the responsibility of all data producers preparing model output for CMIP7.
 
 An additional requirement, that was not present in CMIP6, is the need to ensure that all model output files published to ESGF must have a cloud-optimised internal file structure that allows for efficient remote access to the files (i.e. accessing the data directly from the archive _without_ downloading a local copy).
-The cloud-optimisation of a netCDF file had no impact on the actual values of the files attributes or data, but relates to data array "chunk" sizes, as well as other "internal file metadata" (sometimes referred to as "B-trees").
+The cloud-optimisation of a netCDF file has no impact on the actual values of the files attributes or data, but relates to data array "chunk" sizes, as well as other "internal file metadata" (sometimes referred to as "B-trees").
 
 All CMIP7 datasets must be structured with the following features (in summary), which have been shown to be a necessary condition for efficient remote access:
 
