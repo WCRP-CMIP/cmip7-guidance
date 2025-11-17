@@ -177,6 +177,19 @@ CMIP7 output requirements that are critical for successful ingestion and access 
 The success of CMIP7 also depends on making sure that even the requirements that cannot be checked by ESGF are met. 
 This is the responsibility of all data producers preparing model output for CMIP7.
 
+An additional requirement, that was not present in CMIP6, is the need to ensure that all model output files published to ESGF must have a cloud-optimised internal file structure that allows for efficient remote access to the files (i.e. accessing the data directly from the archive _without_ downloading a local copy).
+The cloud-optimisation of a netCDF file has no impact on the actual values of the file's attributes or data, but relates to data array "chunk" sizes, as well as other internal file structure (sometimes referred to as "B-trees").
+
+All CMIP7 datasets must be structured with the following features (in summary), which are necessary for efficient remote access:
+
+- The time coordinate and time bounds variables, if they exist, each have a single data chunk.
+
+- The data variable has data chunks that are at least 4 mebibytes in size.
+
+- All of the internal file metadata are collated to a contiguous block at the start of the file.
+
+As [described below](#6-software-for-preparing-output), it is recommended, but not required, that the `cmip7repack` software library be used to rewrite model output in conformance with these internal file structure requirements.
+There is also a `check_cmip7_packing` software library that can be used to check if a file is compliant, and this tool will be used as part of the [ESGF Quality Control (QC) Framework](#7--software-for-checking-output).
 
 
 ## 6.  Software for preparing output
@@ -213,6 +226,49 @@ For testing purposes sample CV JSON files are available via the [CMOR tables](ht
 
 Examples of the input JSON file for CMOR are available via [a jupyter notebook](https://github.com/WCRP-CMIP/cmip7-cmor-tables/blob/main/cmor_demo.ipynb).
 
+### 6b cmip7repack
+
+`cmip7repack`, for repacking CMIP7 datasets to have a cloud-optimized internal structure, is a command-line tool maintained by NCAS on [github](https://github.com/NCAS-CMS/cmip7repack), will be available for installation via [conda](https://anaconda.org/conda-forge/cmip7repack), and has documentation [here](https://github.com/NCAS-CMS/cmip7repack).
+
+`cmip7repack` is easy to use, taking a list of CMIP7 datasets as inputs and writing out new cloud-optimised files, _for which all attributes and data values are unchanged_. This should be the last file-processing step prior to publication to ESGF, because further processing steps, such as CMORization, could change the internal file structure in a non-optimal manner.
+
+For example, to repack a number of netCDF datasets, creating new files with the file name suffix "_cmip7repack":
+
+```
+$ cmip7repack *.nc
+```
+
+It can also be configured to overwrite the original files:
+
+```
+$ cmip7repack -o *.nc
+```
+
+There are also other configuration options that may be useful in adapting this tool to your workflow:
+
+```
+$ cmip7repack
+USAGE: cmip7repack [-d size] [-h] [-o] [-v] [-V] [-x] [-z n] FILE [FILE ...]
+Full man page with -h
+```
+
+`check_cmip7_packing`, for checking whether or not CMIP7 datasets have an acceptable cloud-optimized internal structure, is a command-line tool maintained by NCAS on [github](https://github.com/NCAS-CMS/cmip7repack), will be available for installation via [conda](https://anaconda.org/conda-forge/cmip7repack), and has documentation [here](https://github.com/NCAS-CMS/cmip7repack).
+
+`check_cmip7repack` is easy to use, taking a list of CMIP7 datasets as inputs and checking each one for compliance, reporting on the reasons of non-compliance for any files which fail the checks.
+
+For example, to check a number of netCDF datasets:
+
+```
+$ check_cmip7_packing *.nc
+```
+
+There are also configuration options that may be useful in adapting this tool to your workflow:
+
+```
+$ check_cmip7_packing
+usage: check_cmip7_packing [-h] [-v] [-V] FILE [FILE ...]
+Full man page with -h
+```
 
 ## 7.  Software for checking output
 
