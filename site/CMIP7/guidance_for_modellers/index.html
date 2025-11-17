@@ -485,6 +485,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#6b-cmip7repack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6b cmip7repack
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -825,6 +836,22 @@ CVs are relied on in constructing file names and directory structures, and enabl
 CMIP7 output requirements that are critical for successful ingestion and access via ESGF <a href="#7-software-for-checking-output">will be enforced</a> when publication of the data is initiated.
 The success of CMIP7 also depends on making sure that even the requirements that cannot be checked by ESGF are met. 
 This is the responsibility of all data producers preparing model output for CMIP7.</p>
+<p>An additional requirement, that was not present in CMIP6, is the need to ensure that all model output files published to ESGF must have a cloud-optimised internal file structure that allows for efficient remote access to the files (i.e. accessing the data directly from the archive <em>without</em> downloading a local copy).
+The cloud-optimisation of a netCDF file has no impact on the actual values of the file's attributes or data, but relates to data array "chunk" sizes, as well as other internal file structure (sometimes referred to as "B-trees").</p>
+<p>All CMIP7 datasets must be structured with the following features (in summary), which are necessary for efficient remote access:</p>
+<ul>
+<li>
+<p>The time coordinate and time bounds variables, if they exist, each have a single data chunk.</p>
+</li>
+<li>
+<p>The data variable has data chunks that are at least 4 mebibytes in size.</p>
+</li>
+<li>
+<p>All of the internal file metadata are collated to a contiguous block at the start of the file.</p>
+</li>
+</ul>
+<p>As <a href="#6-software-for-preparing-output">described below</a>, it is recommended, but not required, that the <code>cmip7repack</code> software library be used to rewrite model output in conformance with these internal file structure requirements.
+There is also a <code>check_cmip7_packing</code> software library that can be used to check if a file is compliant, and this tool will be used as part of the <a href="#7--software-for-checking-output">ESGF Quality Control (QC) Framework</a>.</p>
 <h2 id="6-software-for-preparing-output">6.  Software for preparing output</h2>
 <p>While CMOR is widely used for preparing standardised model output for CMIP and other projects, other tools are available.
 Developers of tools that do an equivalent job to CMOR for CMIP7 are invited to 
@@ -866,6 +893,30 @@ Note that CMOR tables may also be referred to in some contexts as MIP tables.</p
 Note that this is a change relative to CMIP6 and further guidance alongside the CMOR tables when this file is ready for use. 
 For testing purposes sample CV JSON files are available via the <a href="https://github.com/WCRP-CMIP/cmip7-cmor-tables/tree/test">CMOR tables</a> repository.</p>
 <p>Examples of the input JSON file for CMOR are available via <a href="https://github.com/WCRP-CMIP/cmip7-cmor-tables/blob/main/cmor_demo.ipynb">a jupyter notebook</a>.</p>
+<h3 id="6b-cmip7repack">6b cmip7repack</h3>
+<p><code>cmip7repack</code>, for repacking CMIP7 datasets to have a cloud-optimized internal structure, is a command-line tool maintained by NCAS on <a href="https://github.com/NCAS-CMS/cmip7repack">github</a>, will be available for installation via <a href="https://anaconda.org/conda-forge/cmip7repack">conda</a>, and has documentation <a href="https://github.com/NCAS-CMS/cmip7repack">here</a>.</p>
+<p><code>cmip7repack</code> is easy to use, taking a list of CMIP7 datasets as inputs and writing out new cloud-optimised files, <em>for which all attributes and data values are unchanged</em>. This should be the last file-processing step prior to publication to ESGF, because further processing steps, such as CMORization, could change the internal file structure in a non-optimal manner.</p>
+<p>For example, to repack a number of netCDF datasets, creating new files with the file name suffix "_cmip7repack":</p>
+<div class="highlight"><pre><span></span><code>$ cmip7repack *.nc
+</code></pre></div>
+<p>It can also be configured to overwrite the original files:</p>
+<div class="highlight"><pre><span></span><code>$ cmip7repack -o *.nc
+</code></pre></div>
+<p>There are also other configuration options that may be useful in adapting this tool to your workflow:</p>
+<div class="highlight"><pre><span></span><code>$ cmip7repack
+USAGE: cmip7repack [-d size] [-h] [-o] [-v] [-V] [-x] [-z n] FILE [FILE ...]
+Full man page with -h
+</code></pre></div>
+<p><code>check_cmip7_packing</code>, for checking whether or not CMIP7 datasets have an acceptable cloud-optimized internal structure, is a command-line tool maintained by NCAS on <a href="https://github.com/NCAS-CMS/cmip7repack">github</a>, will be available for installation via <a href="https://anaconda.org/conda-forge/cmip7repack">conda</a>, and has documentation <a href="https://github.com/NCAS-CMS/cmip7repack">here</a>.</p>
+<p><code>check_cmip7repack</code> is easy to use, taking a list of CMIP7 datasets as inputs and checking each one for compliance, reporting on the reasons of non-compliance for any files which fail the checks.</p>
+<p>For example, to check a number of netCDF datasets:</p>
+<div class="highlight"><pre><span></span><code>$ check_cmip7_packing *.nc
+</code></pre></div>
+<p>There are also configuration options that may be useful in adapting this tool to your workflow:</p>
+<div class="highlight"><pre><span></span><code>$ check_cmip7_packing
+usage: check_cmip7_packing [-h] [-v] [-V] FILE [FILE ...]
+Full man page with -h
+</code></pre></div>
 <h2 id="7-software-for-checking-output">7.  Software for checking output</h2>
 <p>The <strong>ESGF Quality Control (QC) Framework</strong> is a new unified solution designed to validate and ensure the integrity of climate model outputs intended for publication on the Earth System Grid Federation (ESGF).<br />
 Historically, QC in ESGF has relied on a patchwork of tools (<strong>PrePARE</strong>, <strong>QA-DKRZ</strong>, <strong>nctime</strong>, and others) each covering different aspects of metadata and data checks. While effective, this fragmented approach introduced redundancy, maintenance challenges, and reduced transparency in QC workflows.  </p>
