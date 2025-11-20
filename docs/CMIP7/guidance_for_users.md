@@ -93,16 +93,17 @@ To enable modelling groups and others who support CMIP7 to demonstrate its impac
 
 ###  Recommended
 
- 1. **Cite papers from the GMD special issue**
+ 1. **Cite the CMIP literature**
 
-    To provide more context, cite one or more of the [CMIP7 GMD special issue][GMDSpecialIssue] articles:
+    To provide more context, we recommend citing relevant articles. For example:
 
     * Overview of the CMIP7 experiment design: [Dunne et al. (2025)][dunne2025]
     * CMIP standard and infrastructure: [Durack et al. (2025)][Durack2025]
-    * Papers describing MIPs associated with experiment used
+    * Papers describing MIPs associated with experiment(s) used
+        <!--Maybe use experiment CV to get the right citation, once they have that information. -->
+    * Model documentation papers associated the model(s) used
 
-It may also be appropriate to cite available model documentation papers that describe the models used.
-    <!--Maybe use experiment CV to get the right citation, once they have that information. -->
+In general, the [CMIP7 GMD special issue][GMDSpecialIssue] is a good place to look for relevant literature.
  
  2. **Register your work.**
 
