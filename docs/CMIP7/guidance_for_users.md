@@ -12,6 +12,7 @@ This page is designed to inform users of climate model outputs on key CMIP7 conc
 
 CMIP7 model output is available through a distributed data archive developed and operated by the Earth System Grid Federation (ESGF). The data are hosted on a collection of nodes located at centres across the world.
 
+
 ??? info "Understanding ESGF Nodes"
 
     ESGF is a collaboration of groups, agencies and institutions around the world, that are dedicated to the development and operation of a long-term system for the management, access and analysis of climate data. The ESGF architecture is based on a system of autonomous and distributed Nodes. Data is hosted on a collection of nodes located at modelling centres or data centres across the world. Nodes exchange information about their data holdings and services, trust each other for registering users and establishing access control decisions. The net result is that a user can use a web browser or rich desktop client, connect to any Node, and seamlessly find and access data throughout the federation.
@@ -42,7 +43,6 @@ There are 3 options to access the data:
     * COMING SOON
 
     For all non-ESGF data access routes, we encourage users to verify that the data used is the latest version. 
-
 
 
 ## 2.  Terms of use and citations requirements
@@ -257,12 +257,18 @@ Essential features of CMORized data are :
 
 
 ## 5.  Reporting suspected errors
+
+
+!!! Warning inline end
+    The CMIP7 archive contains the output of scientific simulations of the past and potential future that are subject to multiple sources of error, ranging from errors in data handling, to errors in the representation of the real world in either the model, or the experimental setup for which the model was used. Different parts of the CMIP7 archive may be subject to differing levels of such errors, and users should be alert to these issues, and their potential consequences.
+
 Information about discovered issues of CMIP7 data is captured by the [Errata Service][ErrataService].
 
 Any CMIP data user can report an error by submitting an issue through the Propose button on the Errata Service website.
 Proposing erratum through the webform requires a contact email address. Once the webform is validated and created, a special link is created and can be shared but the issue won’t appear on the index page. A moderator (from the relevant modelling centre providing data) will validate, update or reject the entry. When data errors are discovered, data providers are expected to retract the affected datasets from ESGF and, if possible, republish corrected data using updated dataset version identifiers. If no moderation action is taken after the 14-day validation period, the issue will be publicly indexed, albeit with a special flag.
 
 <!--TODO: Add info on contact when decided https://github.com/WCRP-CMIP/cmip7-guidance/issues/45 -->
+
 
 
 ## 6. New to CMIP?
