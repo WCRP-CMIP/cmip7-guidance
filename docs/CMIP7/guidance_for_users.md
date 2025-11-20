@@ -53,7 +53,7 @@ To enable modelling groups and others who support CMIP7 to demonstrate its impac
 
 1. **Cite the specific dataset(s) used.**
 
-    Please include a citation in the form of:
+    For each model whose data is used, please include a citation in the form of:
 
         Authors/Data Creators (publication year): Title. Version YYYYMMDD. Earth System Grid Federation. DOI.
         
@@ -62,7 +62,7 @@ To enable modelling groups and others who support CMIP7 to demonstrate its impac
         Swart et al. (2019): CCCma CanESM5 model output prepared for CMIP6 ScenarioMIP. Version 20190429. Earth System Grid Federation. https://doi.org/10.22033/ESGF/CMIP6.1317. 
 
 
-    Please include a table with at minimum the sources, institutions and citations, as well as a data availability statement pointing to the table and acknowledging ESGF. If the journal has a citation limit, putting the table in the Supporting Information is acceptable.
+    Please include a table with at minimum the models ("sources"), institutions, and data citations as above, as well as a data availability statement pointing to the table and acknowledging ESGF. If the journal has a citation limit, putting the table in the Supporting Information is acceptable.
 
     ??? Question "How to find the DOI and the version?"
         🤖 You can use the python library [CMIPcite][cmipcite]. Input tracking_id(s), dataset PID(s) or file paths(s) to retrieve the citation (textually or in the bibtex format).
@@ -101,6 +101,7 @@ To enable modelling groups and others who support CMIP7 to demonstrate its impac
     * CMIP standard and infrastructure: [Durack et al. (2025)][Durack2025]
     * Papers describing MIPs associated with experiment used
 
+It may also be appropriate to cite available model documentation papers that describe the models used.
     <!--Maybe use experiment CV to get the right citation, once they have that information. -->
  
  2. **Register your work.**
@@ -110,7 +111,7 @@ To enable modelling groups and others who support CMIP7 to demonstrate its impac
 
  3. **Use the standard vocabularies**
 
-    Where possible, we recommend using the CMIP7 standard names as defined by the [controlled vocabularies (CVs)][cmipCvs] (see [Section 3](#3-cmip7-facets-and-their-documentation)) to make references as clear and unambiguous as possible. However, if your audience requires different terms, then you should use those but we recommend keeping a mapping from the term your audience uses to the standard name, again to ensure that references can be unambiguously resolved where needed. Refer to the collection of CMIP7 models as the “CMIP7 multi-model ensemble”.
+    Where possible, we recommend using the CMIP7 standardized names as defined by the [controlled vocabularies (CVs)][cmipCvs] (see [Section 3](#3-cmip7-facets-and-their-documentation)) for terms such as the source (model) or experiment, in order to make references as clear and unambiguous as possible. However, if your audience requires different terms, then you should use those but we recommend keeping a mapping from the term your audience uses to the standardized name, again to ensure that references can be unambiguously resolved where needed. Refer to the collection of CMIP7 models as the “CMIP7 multi-model ensemble”.
     
 
 
