@@ -288,7 +288,7 @@ The goal of this plugin is to provide a cohesive, extensible, and transparent sy
 
 - **Development in progress**:  
   - The framework may still contain **minor bugs**  
-  - Tests have been mainly made on variables provided to the **Copernicus Climate Data Store**
+  - For CMIP6 data, tests have been mainly made on variables provided to the **Copernicus Climate Data Store**
   - **QC results may change** in future releases and **should not be treated as final** .
 
 - **Not yet validated**:  
