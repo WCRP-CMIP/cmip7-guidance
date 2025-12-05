@@ -20,7 +20,7 @@ All information on Earth System Grid Federation (ESGF) can be [found here](https
 ### 1.1 ESGF Software
 **Description**
 
-The ESGF Data Node software stack enables sites hosting earth system data to make it available to the community over several transfer protocols including http(s).  Data node sites run esg-publisher softaware to 
+The ESGF Data Node software stack enables sites hosting earth system data to make it available to the community over several transfer protocols including http(s).  Data node sites run esg-publisher software to register their hosted data to the ESGF index managed by the ESGF core team.  Sites may additonally run optional esgf-compute software (WPS) to support server-side computation over the hosted data.
 <!-- ~~Index nodes enable search for hosted data via data publishing to the index, and these nodes include a search API and web frontend~~._not sure this is relevant if indexing is deprecated_?  -->
 <!-- Identity nodes manage user accounts. Nodes run as Docker containers and can be deployed via Ansible Playbooks or Helm Charts in a Kubernetes environment. -->
 
@@ -31,7 +31,7 @@ Updated information on ESGF policies will be added here soon.
 <!-- For new or exisiting ESGF node installations, first read the [following document](www.esgf.com) on ESGF policies, as this will influence the type of installation you need to deploy.  -->
 <!-- _needs proper link and updating_  -->
 
-### 1.2 How to install
+### 1.2 How to install data node services
 **Requirements, setup and usage documentation**
 
 **Software Stack**
@@ -48,10 +48,13 @@ Instructions and links to any issuses can be [found here](https://github.com/ESG
 **Metagrid user interface - optional**
 To install the Metagrid UI for end-users to search and download data, read the documentation [here](https://metagrid.readthedocs.io/en/latest/) and see the Github repo [here](https://github.com/esgf2-us/metagrid). 
 
+### 1.3 Compute Node services
 
+_Coming soon...._
 
 ## 2. Dataset publication - NOT CMIP7-ready 
 
+_the command-line tools described in this section are not complete for CMIP7 publication nor yet compatible with the forthcoming ESGF-NG STAC APIs. 
 
 **Requirements** 
 
