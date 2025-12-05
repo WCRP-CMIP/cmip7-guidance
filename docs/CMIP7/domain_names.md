@@ -16,6 +16,7 @@ To update this list please raise an issue (pull requests welcome) via [github](h
 | Errata | `errata.ipsl.fr` | 
 | Errata Documentation | `ipsl.gitbook.io` | 
 | CMIP6 Citation service | `www.wdc-climate.de` | 
+| PID / Handle service | `handle-esgf.dkrz.de` |
 | REF activities | `*.climate-ref.org` | 
 | REF documentation | `climate-ref.readthedocs.io` | 
 | LLNL ESGF Metagrid | `aims2.llnl.gov` | 
