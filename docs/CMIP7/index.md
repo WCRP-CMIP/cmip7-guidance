@@ -14,3 +14,4 @@ title: CMIP7 Guidance
 - [Terms of use](terms_of_use.md)
 - [Guidance for MIPs](guidance_for_mips.md)
 - [Frequently Asked Questions](FAQ.md)
+- [DECK Forcings](Forcings/DECK.md)
