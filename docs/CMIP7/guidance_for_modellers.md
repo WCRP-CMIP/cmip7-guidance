@@ -177,6 +177,19 @@ CMIP7 output requirements that are critical for successful ingestion and access 
 The success of CMIP7 also depends on making sure that even the requirements that cannot be checked by ESGF are met. 
 This is the responsibility of all data producers preparing model output for CMIP7.
 
+An additional requirement, that was not present in CMIP6, is the need to ensure that all model output files published to ESGF must have a cloud-optimised internal file structure that allows for efficient remote access to the files (i.e. accessing the data directly from the archive _without_ downloading a local copy).
+The cloud-optimisation of a netCDF file has no impact on the actual values of the file's attributes or data, but relates to data array "chunk" sizes, as well as other internal file structure (sometimes referred to as "B-trees").
+
+All CMIP7 datasets must be structured with the following features (in summary), which are necessary for efficient remote access:
+
+- The time coordinate and time bounds variables, if they exist, each have a single data chunk.
+
+- The data variable has data chunks that are at least 4 mebibytes in size.
+
+- All of the internal file metadata are collated to a contiguous block at the start of the file.
+
+As [described below](#6-software-for-preparing-output), it is recommended, but not required, that the `cmip7repack` software library be used to rewrite model output in conformance with these internal file structure requirements.
+There is also a `check_cmip7_packing` software library that can be used to check if a file is compliant, and this tool will be used as part of the [ESGF Quality Control (QC) Framework](#7--software-for-checking-output).
 
 
 ## 6.  Software for preparing output
@@ -213,24 +226,69 @@ For testing purposes sample CV JSON files are available via the [CMOR tables](ht
 
 Examples of the input JSON file for CMOR are available via [a jupyter notebook](https://github.com/WCRP-CMIP/cmip7-cmor-tables/blob/main/cmor_demo.ipynb).
 
+### 6b cmip7repack
+
+`cmip7repack`, for repacking CMIP7 datasets to have a cloud-optimized internal structure, is a command-line tool maintained by NCAS on [github](https://github.com/NCAS-CMS/cmip7repack), will be available for installation via [conda](https://anaconda.org/conda-forge/cmip7repack), and has documentation [here](https://github.com/NCAS-CMS/cmip7repack).
+
+`cmip7repack` is easy to use, taking a list of CMIP7 datasets as inputs and writing out new cloud-optimised files, _for which all attributes and data values are unchanged_. This should be the last file-processing step prior to publication to ESGF, because further processing steps, such as CMORization, could change the internal file structure in a non-optimal manner.
+
+For example, to repack a number of netCDF datasets, creating new files with the file name suffix "_cmip7repack":
+
+```
+$ cmip7repack *.nc
+```
+
+It can also be configured to overwrite the original files:
+
+```
+$ cmip7repack -o *.nc
+```
+
+There are also other configuration options that may be useful in adapting this tool to your workflow:
+
+```
+$ cmip7repack
+USAGE: cmip7repack [-d size] [-h] [-o] [-v] [-V] [-x] [-z n] FILE [FILE ...]
+Full man page with -h
+```
+
+`check_cmip7_packing`, for checking whether or not CMIP7 datasets have an acceptable cloud-optimized internal structure, is a command-line tool maintained by NCAS on [github](https://github.com/NCAS-CMS/cmip7repack), will be available for installation via [conda](https://anaconda.org/conda-forge/cmip7repack), and has documentation [here](https://github.com/NCAS-CMS/cmip7repack).
+
+`check_cmip7repack` is easy to use, taking a list of CMIP7 datasets as inputs and checking each one for compliance, reporting on the reasons of non-compliance for any files which fail the checks.
+
+For example, to check a number of netCDF datasets:
+
+```
+$ check_cmip7_packing *.nc
+```
+
+There are also configuration options that may be useful in adapting this tool to your workflow:
+
+```
+$ check_cmip7_packing
+usage: check_cmip7_packing [-h] [-v] [-V] FILE [FILE ...]
+Full man page with -h
+```
 
 ## 7.  Software for checking output
 
-The **ESGF Quality Control (QC) Framework** is a new unified solution designed to validate and ensure the integrity of climate model outputs intended for publication on the Earth System Grid Federation (ESGF).  
+The **ESGF Quality Control (QC) solution** is built around a new plugin developed for the [IOOS Compliance Checker](http://ioos.github.io/compliance-checker/), providing a unified and extensible way to validate climate model outputs intended for publication on the Earth System Grid Federation (ESGF). 
+Recent development of [ESGF-QC](https://esgf.github.io/esgf-qc/) has ceased as it will be more efficient to maintain a compliance checker plugin rather than a fork of the entire code base.
 Historically, QC in ESGF has relied on a patchwork of tools (**PrePARE**, **QA-DKRZ**, **nctime**, and others) each covering different aspects of metadata and data checks. While effective, this fragmented approach introduced redundancy, maintenance challenges, and reduced transparency in QC workflows.  
 
-The goal of this framework is to provide a cohesive, extensible, and transparent system that consolidates key checks, covers at least the minimum requirements for ESGF publication, and produces standardized reporting.
+The goal of this plugin is to provide a cohesive, extensible, and transparent system that consolidates key checks for WCRP projects, covers at least the minimum requirements for ESGF publication, and produces standardized reporting.
 
-> ⚠️ **We’re releasing an **early version** of this ESGF QC Framework**. This release is the result of ongoing development and while not final, it aims to give *data managers* and *advanced users* an opportunity to explore the tool and adapt their workflows in anticipation of CMIP7. This early release is *not* intended for general use. It is primarily targeted at *data providers* responsible for the **pre-publication QC** of CMIP data on ESGF.
+> ⚠️ **We’re releasing an **early version** of this ESGF QC IOOS plugin*. This release is the result of ongoing development and while not final, it aims to give *data managers* and *advanced users* an opportunity to explore the tool and adapt their workflows in anticipation of CMIP7. This early release is *not* intended for general use. It is primarily targeted at *data providers* responsible for the **pre-publication QC** of CMIP data on ESGF.
 
 ### 🚧 Important Caveats
 
 - **Scope is limited**:  
-  - Support only the subset of **CMIP6** variables provided to the **Copernicus Climate Data Store**
-  - **CMIP7** is not yet supported due to pending updates to the Controlled Vocabulary (CV)
+  - Support **CMIP6** and **CORDEX-CMIP6** 
+  - **CMIP7** is coming soon
 
 - **Development in progress**:  
   - The framework may still contain **minor bugs**  
+  - For CMIP6 data, tests have been mainly made on variables provided to the **Copernicus Climate Data Store**
   - **QC results may change** in future releases and **should not be treated as final** .
 
 - **Not yet validated**:  
@@ -240,19 +298,19 @@ The goal of this framework is to provide a cohesive, extensible, and transparent
 
 This framework was developed through a **community-driven, iterative process**:
 
-- Forked from the **IOOS Compliance Checker** for its modular architecture
+- As a plugin for the **IOOS Compliance Checker** for its modular architecture
 - Feature branches reviewed and merged after unit testing  
 - Public GitHub repository with issue tracking and a contribution guide
 - Development progress tracked via a shared, public QC checklist table
 
 ### 📦 How to Get Started
 
-- Installation instructions and basic usage are available here: 📘 https://esgf.github.io/esgf-qc/  
-- GitHub release: 🔗 https://github.com/ESGF/esgf-qc/tree/v0.1-beta
+- Installation instructions and basic usage are available here: 📘 https://github.com/ESGF/cc-plugin-wcrp  
+- GitHub release: 🔗 https://github.com/ESGF/cc-plugin-wcrp/releases/tag/v1.0.1
 
 ### ⚙️ Configuration, Usage & Reporting
 
-The framework can run specific or full QC suites against your NetCDF files. The framework was designed with a clear separation between definition and logic, ensuring that QC rules remain modular and easy to maintain.
+The plugin can run specific or full QC suites against your NetCDF files. It was designed with a clear separation between definition and logic, ensuring that QC rules remain modular and easy to maintain.
 
 The **configuration** enables simple versioning and sharing of rule sets, while allowing users to quickly copy and customize configurations—for example, by adjusting the list of checks or their severity levels to match a specific project context through a human-readable **TOML files** that control:
 - Which checks are run
@@ -266,10 +324,16 @@ The **configuration** enables simple versioning and sharing of rule sets, while 
 
 **Usage** is built on the IOOS Compliance Checker, maintaining workflow flexibility for modeling groups that already operate their own QA/QC pipelines. It generates atomic log files per run (at both file and dataset levels) and supports seamless parallel execution, enabling straightforward integration with batch schedulers and large-scale production workflows. 
   ```bash
-  esgqc --test=wcrp_cmip6:1.0 /path/to/data/file.nc
+  compliance-checker -t wcrp_cmip6:1.0 /path/to/data/file.nc
   ```
 
-The **reporting system** inherits the IOOS logic, combining output filtering, severity-based scoring, and granular reports suitable for both operational monitoring and expert review. Results can be easily mapped to standard logging levels (info, warning, critical), facilitating integration with existing QA dashboards. Future releases will extend these capabilities with consolidated dataset-level reports for a clearer overview of publication readiness.
+The **reporting system** inherits the IOOS logic, combining output filtering, severity-based scoring, and granular reports suitable for both operational monitoring and expert review. Results can be easily mapped to standard logging levels (info, warning, critical), facilitating integration with existing QA dashboards.
+
+In addition, an [`esgf-qa` module](https://github.com/ESGF/esgf-qa) provides a higher-level orchestration layer on top of the IOOS Compliance Checker. It applies the `cc-plugin-wcrp` consistently at the dataset level, automatically parallelizes checker execution across multiple files, and produces user-friendly aggregated reports. This greatly simplifies large-scale QC operations and makes results easier to browse, interpret, and integrate into your workflows. See [`esgf-qa` documentation for the installation procedure](https://esgf.github.io/esgf-qa/).
+
+```bash 
+$ esgqa -t wcrp_cmip6:latest -t cf:1.11 -o /path/to/results/output /path/to/dataset
+```
 
 ### 💡 Why Now?
 
@@ -282,8 +346,7 @@ This early release aims to:
 ### 🗣️ How to Contribute
 
 If you encounter issues or have suggestions, please **open a GitHub issue** on the project repository:  
-👉 https://github.com/ESGF/esgf-qc/issues
-
+👉 https://github.com/ESGF/cc-plugin-wcrp/issues
 
 ## 8.  Archiving/publishing output
 

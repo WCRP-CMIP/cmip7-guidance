@@ -15,3 +15,4 @@ title: CMIP7 Guidance
 - [Terms of use](terms_of_use.md)
 - [Guidance for MIPs](guidance_for_mips.md)
 - [Domains names for CMIP7 services](domain_names.md)
+- [Frequently Asked Questions](FAQ.md)
