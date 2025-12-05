@@ -14,3 +14,4 @@ title: CMIP7 Guidance
 - [Guidance for ESGF node operators](guidance_for_esgf.md)
 - [Terms of use](terms_of_use.md)
 - [Guidance for MIPs](guidance_for_mips.md)
+- [Domains names for CMIP7 services](domain_names.md)

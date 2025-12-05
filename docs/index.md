@@ -20,6 +20,7 @@ title: CMIP7 Guidance and Documentation
 - [Guidance for ESGF node operators](CMIP7/guidance_for_esgf.md)
 - [Terms of use](CMIP7/terms_of_use.md)
 - [Guidance for MIPs](CMIP7/guidance_for_mips.md)
+- [Domains names for CMIP7 services](CMIP7/domain_names.md)
 
 ### CMIP6
 
