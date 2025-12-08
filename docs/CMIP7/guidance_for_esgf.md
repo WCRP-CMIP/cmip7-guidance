@@ -54,7 +54,7 @@ _Coming soon...._
 
 ## 2. Dataset publication - NOT CMIP7-ready 
 
-_the command-line tools described in this section are not complete for CMIP7 publication nor yet compatible with the forthcoming ESGF-NG STAC APIs. 
+_the command-line tools described in this section are not complete for CMIP7 publication nor yet compatible with the forthcoming ESGF-NG STAC APIs._
 
 **Requirements** 
 
