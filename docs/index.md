@@ -12,6 +12,7 @@ title: CMIP7 Guidance and Documentation
 
 ## Guidance documents
 ### CMIP7
+- [Updates for modelling groups](updates/CMIP7_modellers.md)
 - [Global Attributes](CMIP7/global_attributes.md)
 - [Branded Variables information](CMIP7/branded_variables.md)
 - [Guidance for modellers](CMIP7/guidance_for_modellers.md)
@@ -19,6 +20,7 @@ title: CMIP7 Guidance and Documentation
 - [Guidance for ESGF node operators](CMIP7/guidance_for_esgf.md)
 - [Terms of use](CMIP7/terms_of_use.md)
 - [Guidance for MIPs](CMIP7/guidance_for_mips.md)
+- [Domains names for CMIP7 services](CMIP7/domain_names.md)
 - [Frequently Asked Questions](CMIP7/FAQ.md)
 
 ### CMIP6
