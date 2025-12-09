@@ -20,7 +20,7 @@ All information on Earth System Grid Federation (ESGF) can be [found here](https
 ### 1.1 ESGF Software
 **Description**
 
-The ESGF Data Node software stack enables sites hosting earth system data to make it available to the community over several transfer protocols including http(s). 
+The ESGF Data Node software stack enables sites hosting earth system data to make it available to the community over several transfer protocols including http(s).  Data node sites run esg-publisher software to register their hosted data to the ESGF index managed by the ESGF core team.  Sites may additonally run optional esgf-compute software (WPS) to support server-side computation over the hosted data.
 <!-- ~~Index nodes enable search for hosted data via data publishing to the index, and these nodes include a search API and web frontend~~._not sure this is relevant if indexing is deprecated_?  -->
 <!-- Identity nodes manage user accounts. Nodes run as Docker containers and can be deployed via Ansible Playbooks or Helm Charts in a Kubernetes environment. -->
 
@@ -31,7 +31,7 @@ Updated information on ESGF policies will be added here soon.
 <!-- For new or exisiting ESGF node installations, first read the [following document](www.esgf.com) on ESGF policies, as this will influence the type of installation you need to deploy.  -->
 <!-- _needs proper link and updating_  -->
 
-### 1.2 How to install
+### 1.2 How to install data node services
 **Requirements, setup and usage documentation**
 
 **Software Stack**
@@ -44,16 +44,18 @@ For data-sharing nodes the storage holding your data must be mounted on the node
 **ESGF Docker** 
 Instructions and links to any issuses can be [found here](https://github.com/ESGF/esgf-docker/).
 
-**Ansible** 
-Legacy documentation is available [here](https://esgf.github.io/esgf-ansible/intro/intro.html).
- <!-- _is this still valid?_ -->
 
-**Metagrid user interface**
-To install the Metagrid UI for end-users to search and download data, read the documentation [here](https://metagrid.readthedocs.io/en/latest/) and see the Github repo [here](https://github.com/aims-group/metagrid).
-<!-- _don't know if these links need updating_? -->
+**Metagrid user interface - optional**
+To install the Metagrid UI for end-users to search and download data, read the documentation [here](https://metagrid.readthedocs.io/en/latest/) and see the Github repo [here](https://github.com/esgf2-us/metagrid). 
 
+### 1.3 Compute Node services
 
-## 2. Dataset publication 
+_Coming soon...._
+
+## 2. Dataset publication - NOT CMIP7-ready 
+
+_the command-line tools described in this section are not complete for CMIP7 publication nor yet compatible with the forthcoming ESGF-NG STAC APIs._
+
 **Requirements** 
 
 Publishers to ESGF **must** have an existing Data Node installed at their site. Although the publisher software (from v5.x onwards) does not need to run on the Data Node it does require a _Data mount_ for the software to access data files. 
@@ -61,7 +63,8 @@ Publishers to ESGF **must** have an existing Data Node installed at their site. 
 ### 2.1 Dataset preparation 
 The ESGF publication process requires robust and effective data management, which can also be a burden for data managers. However, the [ESGF esgprep toolbox](https://esgf.github.io/esgf-prepare/) is a piece of software that enables data preparation according to ESGF best practices. Esgprep allows the data providers and data node managers to easily prepare their data for publishing to an ESGF node - it is a standalone toolbox. It can be used to fetch required configuration files, apply the Data Reference Syntax on local filesystems and/or generate mapfiles for ESGF publication.
 
-Full details of _esgprep_ and instructions for use provided by the team at Institut Pierre-Simon Laplace (IPSL) can be [found here](https://esgf.github.io/esgf-prepare/).
+Full details of _esgprep_ and instructions for use provided by the team at Institut Pierre-Simon Laplace (IPSL) can be [found here](https://esgf.github.io/esgf-prepare/).  
+
 
 ### 2.2 Publisher introduction 
 The esg-publisher or _esgcet_ Python package contains a collection of command-line utilities to scan, manipulate and push dataset metadata to an ESGF index node. 
