@@ -73,13 +73,8 @@ To enable modelling groups and others who support CMIP7 to demonstrate its impac
 
         Note that there are two citation granularities (MIP-model-experiment data and MIP-model data) and that the version has to be added separately as it is not included in the DOI.
 
-        <!--TODO: How should the user choose which one to use ?  -->
-        
-
-
         Further information on the data citation concept is described in [Stockhause and Lautenschlager (2017)][Stockhause2017].
 
-    <!--TODO: Is this necessary for funding ? or could it be replaced by a data availability statement.-->
 
     ??? Question "Do I cite the model based on activity or experiment?"
 
@@ -94,6 +89,8 @@ To enable modelling groups and others who support CMIP7 to demonstrate its impac
         Experiment-specific data citations are useful for tracking the impact of specific CMIP7 experiments, which is valuable information for modelling centres and planning of future CMIP phases. 
         However it is recognized that their finer granularity could result in an unmanageable number of references for data users, journals may limit the number of references, and a balance between the number of data and literature citations is desirable in scholarly publications.
         
+    <!--TODO: Is #2 acknoledgmet necessary for funding ? or could it be replaced by a data availability statement.-->
+
 2. **Acknowledge CMIP7.**
 
     In the Acknowledgment section, insert the following text:
@@ -129,11 +126,19 @@ In general, the [CMIP7 GMD special issue][GMDSpecialIssue] is a good place to lo
     
 
 
-!!! warning "Disclaimer"
+??? warning "Disclaimer"
 
-    CMIP data is provided in its current state with no guarantee of quality, performance, stability or functionality. Every effort is being made to identify and address errors and bugs. Users can assist by [reporting these via the Errata service](#5-reporting-suspected-errors).
+    CMIP data , where “CMIP data” applies to data delivered under current (CMIP6Plus and CMIP7) and previous (CMIP2, 3, 5, 6) phases, is provided “as is” and “as available,” without any warranties or representations of any kind, whether express, implied, statutory, or otherwise, including without limitation any warranties of accuracy, completeness, quality, performance, stability, fitness for a particular purpose , merchantability, non-infringement, or that the data or any services will be error-free, secure, or uninterrupted. The CMIP data archive contains the output of scientific simulations of the past and potential future that are subject to multiple sources of error, ranging from errors in data handling, to errors in the representation of the real world in either the model, or the experimental setup for which the model was used. Different parts of the CMIP data archive may be subject to differing levels of such errors, and users should be alert to these issues, and their potential consequences (and to the limitations of liability expressed in the data license).
 
-    WCRP and CMIP governing bodies, the CMIP International Project Office, CMIP modelling centres, and funders accept no responsibility for any injury, loss, damage, or delay - direct, indirect or consequential - that may result from the use of the CMIP data or reliance on its results.
+    Every effort by The World Climate Research Programme (WCRP), CMIP governing bodies, the CMIP International Project Office, CMIP modelling centres, their contributors, and funders and the Earth System Grid Federation, its contributors, and funders (together, the “CMIP Parties”) may be made to identify and address errors and bugs. Users may assist by reporting issues via the [Errata service](https://ipsl.gitbook.io/esgf-errata-service) ; however, any such efforts do not create any warranty, obligation to correct, or commitment to provide support.
+
+    The CMIP Parties will not be liable for any loss, injury, claim, liability, or damage of any kind arising out of or relating to the data, publications and/or digital platform(s ) whose content is supplied by one or more of the CMIP Parties, t any services, or any reliance thereon, including without limitation direct, indirect, incidental, special, exemplary, punitive, or consequential damages, loss of use, loss of data, business interruption, or loss of profits, even if advised of the possibility of such damages.
+
+    Use of the data is at the user’s sole risk and discretion. By using the data, the user accepts full responsibility for any issues that arise from their use of it.
+
+    Without limiting the foregoing, the data may contain errors, omissions, uncertainties, or methodological assumptions and may be changed, updated, or withdrawn at any time without notice. The CMIP Parties do not warrant that any results, analyses, forecasts, or conclusions derived from the data are suitable for any particular purpose or decision, including scientific, commercial, operational, safety, or policy uses, and users are solely responsible for validating and interpreting the data and for complying with all applicable laws and third-party rights.
+
+    The access, storage and replication of CMIP data is the responsibility of the Earth System Grid Federation. The World Climate Research Programme (WCRP), CMIP governing bodies, the CMIP International Project Office have no data control, processing, storage nor access responsibility.
 
 ## 3. CMIP7 facets and their documentation
 
