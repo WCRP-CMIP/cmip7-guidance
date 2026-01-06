@@ -15,24 +15,4 @@
 --------
 
 
-## Editing the documentation.
-
-Docmentation is found in the `docs` folder with the file names and hierarchy affecting the navigational menu. 
-
-### Editing materials. 
-
-- menu/page name is determined by the `#` header tag at the top of a file. 
-
-## MkDocs setup for development
-
-1. Create a conda environment with mkdocs. From the root of this repo;
-   
-    `conda env create -f environment.yml`
-   
-3. when complete activate the conda environment and run
-   
-    `mkdocs serve`
-   
-   You should see the link to a local process that is running a webserver -- connect to that and you can browse the pages as you edit them.
-
-
+Information on how to update the documentation can be found [here](https://github.com/WCRP-CMIP/cmip7-guidance?tab=contributing-ov-file)
