@@ -440,9 +440,9 @@
 The new system retains the familiar short variable names used in earlier CMIP phases to denote a physical quantity ("pr" for precipitation, for example). 
 It introduces a new label, termed the <strong>branded suffix</strong> or <strong>branding label</strong>, that describes how a variable is sampled temporally and spatially.
 This label is used in the output filenames and directory path structures of CMIP7 datasets.</p>
-<p>For comparison with the previous CMIP naming scheme, consider the global monthly-mean near-surface air temperature, which in CMIP6 was denoted as "tas" in the "Amon" MIP table (also referred to as a CMOR table).
-A compound name constructed from these terms, "Amon.tas", uniquely identifies the variable.
-The "Amon" table is a collection of atmospheric variables at monthly frequency; other MIP tables (Omon, SImon, ...) collect together other variables that usually are similar in realm, frequency, and region.
+<p>For comparison with the previous CMIP naming scheme for variables, consider the global monthly-mean near-surface air temperature, which in CMIP6 was denoted as "tas" in the "Amon" MIP table (a MIP table is also sometimes referred to as a CMOR table).
+A compound name constructed from these terms, "Amon.tas", uniquely identifies the variable in the collection of all CMIP6 variables.
+The "Amon" table is a collection of atmospheric variables at monthly frequency, and other MIP tables (Omon, SImon, ...) collect together other variables that usually are similar in realm, frequency, and region.
 While familiar to experienced users of CMIP data, this system led to a proliferation of table names in CMIP6 due to the large number of requested variables (~2000), and the rationale for their names was not always clear (for example, table name "Amon" included the realm while "3hr" and "day" used only the frequency).</p>
 <p>The <strong>branded variable</strong> corresponding to "Amon.tas" is "tas_tavg-h2m-hxy-u".
 Here the short name identifying the physical quantity, "tas", is unchanged.
@@ -467,11 +467,10 @@ This provides a mapping from old to new names, to simplify the transition to bra
 The <a href="https://cmip-data-request.github.io/cmip7-dreq-webview/latest/variables.html">"Variables" table of the Data Request</a> provides a unique identifier using both flavours of name, termed "CMIP7 Compound Name" and "CMIP6 Compound Name".
 For the above example (monthly near-surface air temperature) these are "atmos.tas.tavg-h2m-hxy-u.mon.GLB" and "Amon.tas", respectively.</p>
 </div>
-<p>The branded variable approach (Taylor et al., in preparation) aims to be more systematic and scalable to future CMIP phases and wider use across community MIPs.
+<p>The branded variable approach (Taylor et al., in preparation) aims to be more systematic and scalable to future CMIP phases and wider use across community MIPs and other WCRP projects.
 <a href="https://github.com/WCRP-CMIP/cmip7-cmor-tables">CMOR tables</a> keyed by branded variable name define the metadata characteristics of variables apart from the frequency, region, or specific grids on which these variables should be reported.
 Guidance on reporting grids for CMIP output is <a href="https://zenodo.org/records/15697025">given here</a>.
-The exact reporting convention and associated CV is being finalised.
-If you wish to see the full discussion, please see https://github.com/WCRP-CMIP/CMIP7-CVs/issues/202</p>
+The exact reporting convention for grids and associated CV is being finalised; if you wish to see the full discussion, please see https://github.com/WCRP-CMIP/CMIP7-CVs/issues/202.</p>
 <h2 id="branding-labels">Branding labels</h2>
 <p>The four components of the branded variables are derived from variable metadata using the 
 <a href="https://cmip-branded-variable-mapper.readthedocs.io/en/latest/">cmip-branded-variable-mapper package</a>.
@@ -651,6 +650,10 @@ Set to "u" (unspecified) if none of the following apply.</p>
 <tr>
 <td><code>olh</code></td>
 <td><code>olevhalf</code></td>
+</tr>
+<tr>
+<td><code>ols</code></td>
+<td><code>osurf</code></td>
 </tr>
 <tr>
 <td><code>op20bar</code></td>
