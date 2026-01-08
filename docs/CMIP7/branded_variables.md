@@ -10,9 +10,9 @@ The new system retains the familiar short variable names used in earlier CMIP ph
 It introduces a new label, termed the **branded suffix** or **branding label**, that describes how a variable is sampled temporally and spatially.
 This label is used in the output filenames and directory path structures of CMIP7 datasets.
 
-For comparison with the previous CMIP naming scheme, consider the global monthly-mean near-surface air temperature, which in CMIP6 was denoted as "tas" in the "Amon" MIP table (also referred to as a CMOR table).
-A compound name constructed from these terms, "Amon.tas", uniquely identifies the variable.
-The "Amon" table is a collection of atmospheric variables at monthly frequency; other MIP tables (Omon, SImon, ...) collect together other variables that usually are similar in realm, frequency, and region.
+For comparison with the previous CMIP naming scheme for variables, consider the global monthly-mean near-surface air temperature, which in CMIP6 was denoted as "tas" in the "Amon" MIP table (a MIP table is also sometimes referred to as a CMOR table).
+A compound name constructed from these terms, "Amon.tas", uniquely identifies the variable in the collection of all CMIP6 variables.
+The "Amon" table is a collection of atmospheric variables at monthly frequency, and other MIP tables (Omon, SImon, ...) collect together other variables that usually are similar in realm, frequency, and region.
 While familiar to experienced users of CMIP data, this system led to a proliferation of table names in CMIP6 due to the large number of requested variables (~2000), and the rationale for their names was not always clear (for example, table name "Amon" included the realm while "3hr" and "day" used only the frequency).
 
 The **branded variable** corresponding to "Amon.tas" is "tas_tavg-h2m-hxy-u".
@@ -41,11 +41,10 @@ For example, "tas_tavg-h2m-hxy-u" reported at daily frequency is denoted "day.ta
     The ["Variables" table of the Data Request](https://cmip-data-request.github.io/cmip7-dreq-webview/latest/variables.html) provides a unique identifier using both flavours of name, termed "CMIP7 Compound Name" and "CMIP6 Compound Name".
     For the above example (monthly near-surface air temperature) these are "atmos.tas.tavg-h2m-hxy-u.mon.GLB" and "Amon.tas", respectively.
 
-The branded variable approach (Taylor et al., in preparation) aims to be more systematic and scalable to future CMIP phases and wider use across community MIPs.
+The branded variable approach (Taylor et al., in preparation) aims to be more systematic and scalable to future CMIP phases and wider use across community MIPs and other WCRP projects.
 [CMOR tables](https://github.com/WCRP-CMIP/cmip7-cmor-tables) keyed by branded variable name define the metadata characteristics of variables apart from the frequency, region, or specific grids on which these variables should be reported.
 Guidance on reporting grids for CMIP output is [given here](https://zenodo.org/records/15697025).
-The exact reporting convention and associated CV is being finalised.
-If you wish to see the full discussion, please see https://github.com/WCRP-CMIP/CMIP7-CVs/issues/202
+The exact reporting convention for grids and associated CV is being finalised; if you wish to see the full discussion, please see https://github.com/WCRP-CMIP/CMIP7-CVs/issues/202.
 
 
 ## Branding labels
@@ -107,6 +106,7 @@ Set to "u" (unspecified) if none of the following apply.
 | `h100m` | `height100m` |
 | `ol` | `olevel` |
 | `olh` | `olevhalf` |
+| `ols` | `osurf` |
 | `op20bar` | `op20bar` |
 | `op4` | `oplayer4` |
 | `p3` | `plev3` |
