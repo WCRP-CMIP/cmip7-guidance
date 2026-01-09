@@ -369,13 +369,41 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-terms-of-use-citations-and-registration-requirements" class="md-nav__link">
+  <a href="#2-terms-of-use-and-citations-requirements" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Terms of use, citations and registration requirements
+        2. Terms of use and citations requirements
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="2. Terms of use and citations requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mandatory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mandatory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -545,66 +573,90 @@
 </li>
 <li>
 <p><strong>Alternative Access Platforms</strong></p>
-<p>Some CMIP data is also hosted in non-<abbr title="Earth System Grid Federation">ESGF</abbr> storage facilities. Below are links to some of these. If you know of another place CMIP data is currently being stored, please submit <a href="http://bit.ly/CMIP-data-platform">this form</a> to let us and the community know!</p>
+<p>While all published <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> data is available from <abbr title="Earth System Grid Federation">ESGF</abbr>, some of it is additionally hosted in non-<abbr title="Earth System Grid Federation">ESGF</abbr> storage facilities. Below are links to some of these replicas. If you know of another place CMIP data is currently being stored, please submit <a href="http://bit.ly/CMIP-data-platform">this form</a> to let us and the community know!</p>
 <ul>
 <li>COMING SOON</li>
 </ul>
 <p>For all non-<abbr title="Earth System Grid Federation">ESGF</abbr> data access routes, we encourage users to verify that the data used is the latest version. </p>
 </li>
 </ol>
-<h2 id="2-terms-of-use-citations-and-registration-requirements">2.  Terms of use, citations and registration requirements</h2>
-<!--TODO: Maybe divide in mandatory and optional https://github.com/WCRP-CMIP/cmip7-guidance/issues/30 -->
-<!--TODO: Try to add a link to this in global attrs if possiblee-->
-<p>To enable modelling groups and others who support <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> to demonstrate its impact (and secure ongoing funding), you are required to cite and acknowledge those who have made <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> possible. When using <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> data, you must </p>
+<h2 id="2-terms-of-use-and-citations-requirements">2.  Terms of use and citations requirements</h2>
+<!--TODO: Make sure we have a link (with persistent URL) to this in the license global attrs-->
+<p>To enable modelling groups and others who support <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> to demonstrate its impact (and secure ongoing funding), you are required to cite and acknowledge those who have made <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> possible. Some best practices are also recommended.</p>
+<h3 id="mandatory">Mandatory</h3>
 <ol>
 <li>
-<p><strong>Acknowledge <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr>.</strong></p>
-<p>In the Acknowledgment section, please insert the following text:</p>
-<blockquote>
-<p>We acknowledge the World Climate Research Programme's Coupled Model Intercomparison Project contributors who coordinated and promoted <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr>. We thank the climate modelling groups for producing and making available their model output, the Earth System Grid Federation (<abbr title="Earth System Grid Federation">ESGF</abbr>) for archiving the data and providing access, and the multiple funding agencies who support <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> and <abbr title="Earth System Grid Federation">ESGF</abbr>.</p>
-</blockquote>
-</li>
-<li>
 <p><strong>Cite the specific dataset(s) used.</strong></p>
-<p>Please include a citation in the form of:</p>
+<p>For each model whose data is used, please include a citation in the form of:</p>
 <pre><code>Authors/Data Creators (publication year): Title. Version YYYYMMDD. Earth System Grid Federation. DOI.
 </code></pre>
 <p>e.g. </p>
 <pre><code>Swart et al. (2019): CCCma CanESM5 model output prepared for CMIP6 ScenarioMIP. Version 20190429. Earth System Grid Federation. https://doi.org/10.22033/<abbr title="Earth System Grid Federation">ESGF</abbr>/CMIP6.1317.
 </code></pre>
-<p>If multiple models are used in a publication, please include a table with the sources (name of the model), institutions and citations. If the journal has a citation limit, a table in the Supporting Information is acceptable.</p>
+<p>Please include a table with at minimum the models ("sources"), institutions, and data citations as above, as well as a data availability statement pointing to the table and acknowledging <abbr title="Earth System Grid Federation">ESGF</abbr>. If the journal has a citation limit, putting the table in the Supporting Information is acceptable.</p>
 <details class="question">
 <summary>How to find the DOI and the version?</summary>
-<p>🔍 DOIs can be found through the <a href="https://www.wdc-climate.de/ords/f?p=127:2">Citation Search</a> or in the citation tab of a dataset on MetaGrid. The version is indicated in a column on MetaGrid.</p>
-<p>🖱️ It is also possible to take the <code>tracking_id</code> global attribute of a file and append it to <a href="http://hdl.handle.net/">http://hdl.handle.net/</a> (e.g., <a href="http://hdl.handle.net/hdl:21.14100/be06a059-363d-47a4-97a2-d5253190fd15">http://hdl.handle.net/hdl:21.14100/be06a059-363d-47a4-97a2-d5253190fd15</a>). From there, you can follow "The file is part of the following aggregation(s)" and find the DOI and version of the dataset.</p>
-<p>🤖 Instead of doing this by hand, you can also use the PROTOTYPE python library <a href="https://cmipcite.readthedocs.io/en/latest/">CMIPcite</a>. Input tracking_id(s), dataset PID(s) or file paths(s) to retrieve the citation (textually or in the bibtex format).</p>
-<p>Note that there are two citation granularities on experiment data and on model/MIP data.
-Also, the version has to be added separately as it is not included in the DOI.
-<!--TODO: How should the user choose which one to use ?  --></p>
-<p>Further information on the data citation concept is described in <a href="https://doi.org/10.5334/dsj-2017-030">Stockhause and Lautenschlager (2017)</a>. Citations can also be searched using <a href="https://search.datacite.org/works?query=prefix:10.22033">DataCite's catalogue</a> and <a href="https://toolbox.google.com/datasetsearch/">Google's Dataset Search</a>.</p>
+<p>🤖 You can use the python library <a href="https://cmipcite.readthedocs.io/en/latest/">CMIPcite</a>. Input tracking_id(s), dataset PID(s) or file paths(s) to retrieve the citation (textually or in the bibtex format).</p>
+<p>🖱️ You can also do the work on CMIPcite by hand: Take the <code>tracking_id</code> global attribute of a file and append it to <a href="http://hdl.handle.net/">http://hdl.handle.net/</a> (e.g., <a href="http://hdl.handle.net/hdl:21.14100/be06a059-363d-47a4-97a2-d5253190fd15">http://hdl.handle.net/hdl:21.14100/be06a059-363d-47a4-97a2-d5253190fd15</a>). From there, you can follow "The file is part of the following aggregation(s)" and find the DOI and version of the dataset.</p>
+<p>🔍 You can also search databases.  The <a href="https://www.wdc-climate.de/ords/f?p=127:2">Citation Search</a> can help you find the DOI (but not the version). MetaGrid results indicate the version and have a citation tab.</p>
+<p>Note that there are two citation granularities (MIP-model-experiment data and MIP-model data) and that the version has to be added separately as it is not included in the DOI.</p>
+<p>Further information on the data citation concept is described in <a href="https://doi.org/10.5334/dsj-2017-030">Stockhause and Lautenschlager (2017)</a>.</p>
 </details>
+<details class="question">
+<summary>Do I cite the model based on activity or experiment?</summary>
+<p>For each participating model, data citations exist at two high-level aggregations: activity and experiment. 
+The activity-level citation refers to all experiments defined by that activity (i.e., MIP) for a given model. 
+While data citation is mandatory, data users can choose which of these aggregation levels should be cited. 
+It is recommended that:</p>
+<ul>
+<li>Wherever possible cite the experiments used (e.g., historical), using the experiment-level data citations.</li>
+<li>If this isn't feasible (e.g. limitations of the number of data citations imposed by a journal), use the activity-level data citation.</li>
+</ul>
+<p>Experiment-specific data citations are useful for tracking the impact of specific <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> experiments, which is valuable information for modelling centres and planning of future CMIP phases. 
+However it is recognized that their finer granularity could result in an unmanageable number of references for data users, journals may limit the number of references, and a balance between the number of data and literature citations is desirable in scholarly publications.</p>
+</details>
+<!--TODO: Is #2 acknoledgmet necessary for funding ? or could it be replaced by a data availability statement.-->
 </li>
 <li>
-<p><strong>Cite a paper from the <abbr title="Geoscientific Model Development">GMD</abbr> special issue</strong></p>
-<p>Cite, as appropriate, one or more of the <a href="https://gmd.copernicus.org/articles/special_issue1315.html"><abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> <abbr title="Geoscientific Model Development">GMD</abbr> special issue</a> articles, which include an overview of the <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> experiment design and descriptions of the <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> endorsed <abbr title="Model Intercomparison Projects">MIPs</abbr>.
-<!--TODO: Be clearer about what we actually want here. Maybe use experiment CV to get the right citation, once they have that information. --></p>
-</li>
-<li>
-<p><strong>Register your work.</strong></p>
-<p>Register your work on the <a href="?"><abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> Publication Hub</a> (coming soon). </p>
+<p><strong>Acknowledge <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr>.</strong></p>
+<p>In the Acknowledgment section, insert the following text:</p>
+<blockquote>
+<p>We acknowledge the World Climate Research Programme's Coupled Model Intercomparison Project contributors who coordinated and promoted <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr>. We thank the climate modelling groups for producing and making available their model output, the Earth System Grid Federation (<abbr title="Earth System Grid Federation">ESGF</abbr>) for archiving the data and providing access, and the multiple funding agencies who support <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> and <abbr title="Earth System Grid Federation">ESGF</abbr>.</p>
+</blockquote>
 </li>
 <li>
 <p><strong>Adhere to the license</strong></p>
 <p>Adhere to the license conditions listed in the global attribute of each dataset.</p>
 </li>
+</ol>
+<h3 id="recommended">Recommended</h3>
+<ol>
+<li>
+<p><strong>Cite the CMIP literature</strong></p>
+<p>To provide more context, we recommend citing relevant articles. For example:</p>
+<ul>
+<li>Overview of the <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> experiment design: <a href="https://gmd.copernicus.org/articles/18/6671/2025/">Dunne et al. (2025)</a></li>
+<li>CMIP standard and infrastructure: <a href="https://journals.ametsoc.org/view/journals/bams/106/8/BAMS-D-25-0119.1.xml">Durack et al. (2025)</a></li>
+<li>Papers describing <abbr title="Model Intercomparison Projects">MIPs</abbr> associated with experiment(s) used
+    <!--Maybe use experiment CV to get the right citation, once they have that information. --></li>
+<li>Model documentation papers associated the model(s) used</li>
+</ul>
+</li>
+</ol>
+<p>In general, the <a href="https://gmd.copernicus.org/articles/special_issue1315.html"><abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> <abbr title="Geoscientific Model Development">GMD</abbr> special issue</a> is a good place to look for relevant literature.</p>
+<ol>
+<li>
+<p><strong>Register your work.</strong></p>
+<p>Register your work on the <a href="?"><abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> Publication Hub</a> (coming soon). </p>
+</li>
 <li>
 <p><strong>Use the standard vocabularies</strong></p>
-<p>Where possible, we recommend using the <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> standard names as defined by the <a href="https://github.com/WCRP-CMIP/CMIP7-CVs">controlled vocabularies (<abbr title="Controlled Vocabularies">CVs</abbr>)</a> (see <a href="#3-cmip7-facets-and-their-documentation">Section 3</a>) to make references as clear and unambiguous as possible. However, if your audience requires different terms, then you should use those but we recommend keeping a mapping from the term your audience uses to the standard name, again to ensure that references can be unambiguously resolved where needed. Refer to the collection of <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> models as the “<abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> multi-model ensemble”.</p>
+<p>Where possible, we recommend using the <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> standardized names as defined by the <a href="https://github.com/WCRP-CMIP/CMIP7-CVs">controlled vocabularies (<abbr title="Controlled Vocabularies">CVs</abbr>)</a> (see <a href="#3-cmip7-facets-and-their-documentation">Section 3</a>) for terms such as the source (model) or experiment, in order to make references as clear and unambiguous as possible. However, if your audience requires different terms, then you should use those but we recommend keeping a mapping from the term your audience uses to the standardized name, again to ensure that references can be unambiguously resolved where needed. Refer to the collection of <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> models as the “<abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> multi-model ensemble”.</p>
 </li>
 </ol>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> archive contains the output of scientific simulations of the past and potential future that are subject to multiple sources of error, ranging from errors in data handling, to errors in the representation of the real world in either the model, or the experimental setup for which the model was used. Different parts of the <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> archive may be subject to differing levels of such errors, and users should be alert to these issues, and their potential consequences (and to the limitations of liability expressed in the data license).</p>
+<p class="admonition-title">Disclaimer</p>
+<p>The data disclaimer for CMIP is available <a href="https://doi.org/10.5281/zenodo.18155119">here</a>.</p>
 </div>
 <h2 id="3-cmip7-facets-and-their-documentation">3. <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> facets and their documentation</h2>
 <p><abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> datasets can be identified through a series of facets that represents key attributes of the data. The main facets are</p>
@@ -644,7 +696,7 @@ Also, the version has to be added separately as it is not included in the DOI.
 <p>The <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> protocol and experiments are described in a <a href="https://gmd.copernicus.org/articles/special_issue1315.html">special issue</a> of Geoscientific Model Development with an overview of the design and scientific strategy provided in the lead article of that issue by <a href="https://gmd.copernicus.org/articles/18/6671/2025/">Dunne et al. (2025)</a>.</p>
 <details class="info">
 <summary>Basic Concepts to Understand Experiments</summary>
-<p>Each model participating in <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> will contribute results from the eight <abbr title="Diagnostic, Evaluation and Characterization of Klima">DECK</abbr> experiments. These experiments are the only ones directly overseen by the <a href="https://www.wcrp-climate.org/wgcm-cmip/cmip-panel">CMIP Panel</a>, and together these constitute the ongoing (slowly evolving) “CMIP” activity. In addition to the <abbr title="Diagnostic, Evaluation and Characterization of Klima">DECK</abbr>, each modeling group may choose to contribute to any of the <a href="https://wcrp-cmip.org/mips/"><abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> Community <abbr title="Model Intercomparison Projects">MIPs</abbr></a>. The CMIP panel identifies key experiments to be prioritized on different timelines through fast tracks. The first one is the <abbr title="Assessment Fast Track">AFT</abbr>, which includes a set of Community MIP experiments endorsed by the CMIP panel to address specific needs.</p>
+<p>Each model participating in <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> will contribute results from the eight <abbr title="Diagnostic, Evaluation and Characterization of Klima">DECK</abbr> experiments. These experiments are the only ones directly overseen by the <a href="https://www.wcrp-climate.org/wgcm-cmip/cmip-panel">CMIP Panel</a>, and together these constitute the ongoing (slowly evolving) “CMIP” activity. In addition to the <abbr title="Diagnostic, Evaluation and Characterization of Klima">DECK</abbr>, each modeling group may choose to contribute to any of the <a href="https://wcrp-cmip.org/mips/"><abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> Community <abbr title="Model Intercomparison Projects">MIPs</abbr></a>. The CMIP panel identifies key experiments to be prioritized on different timelines through fast tracks. The first one is the <abbr title="Assessment Fast Track">AFT</abbr>, which includes a set of Community MIP experiments chosen by the CMIP panel to address specific needs.</p>
 <p>MORE COMING SOON</p>
 </details>
 <!--TODO: https://github.com/WCRP-CMIP/cmip7-guidance/issues/46-->
@@ -711,8 +763,13 @@ Many modelling centres use the <a href="https://cmor.llnl.gov/"><abbr title="Cli
 </li>
 <li>Self-describing (all metadata needed to interpret the data are included in the file)</li>
 <li>Consistent units and standard names following <a href="http://cfconventions.org/">CF conventions</a></li>
+<li><a href="../guidance_for_modellers/#5-model-output-requirements">Standard chunking</a></li>
 </ul>
 <h2 id="5-reporting-suspected-errors">5.  Reporting suspected errors</h2>
+<div class="admonition warning inline end">
+<p class="admonition-title">Warning</p>
+<p>The <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> archive contains the output of scientific simulations of the past and potential future that are subject to multiple sources of error, ranging from errors in data handling, to errors in the representation of the real world in either the model, or the experimental setup for which the model was used. Different parts of the <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> archive may be subject to differing levels of such errors, and users should be alert to these issues, and their potential consequences.</p>
+</div>
 <p>Information about discovered issues of <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> data is captured by the <a href="https://errata.ipsl.fr/static/index.html">Errata Service</a>.</p>
 <p>Any CMIP data user can report an error by submitting an issue through the Propose button on the Errata Service website.
 Proposing erratum through the webform requires a contact email address. Once the webform is validated and created, a special link is created and can be shared but the issue won’t appear on the index page. A moderator (from the relevant modelling centre providing data) will validate, update or reject the entry. When data errors are discovered, data providers are expected to retract the affected datasets from <abbr title="Earth System Grid Federation">ESGF</abbr> and, if possible, republish corrected data using updated dataset version identifiers. If no moderation action is taken after the 14-day validation period, the issue will be publicly indexed, albeit with a special flag.</p>
