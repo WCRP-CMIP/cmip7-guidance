@@ -53,7 +53,15 @@ To install the Metagrid UI for end-users to search and download data, read the d
 _Coming soon...._
 
 ## 2. Dataset publication - Preliminary testing for CMIP7
+=======
 
+### 1.3 Compute Node services
+
+_Coming soon...._
+
+## 2. Dataset publication - NOT CMIP7-ready 
+
+_the command-line tools described in this section are not complete for CMIP7 publication nor yet compatible with the forthcoming ESGF-NG STAC APIs._
 
 _the command-line tools described in this section are not production-ready for CMIP7 publication nor yet compatible with the forthcoming ESGF-NG STAC APIs._
 
@@ -101,7 +109,7 @@ Please refer to the [user documentation](https://esg-publisher.readthedocs.io/en
 **Requirements** 
 
 1. A python environment, using venv, conda, miniforge/mamba etc. 
-2. Mountpoint map to data on the same host as the publisher software installation, so the publisher scan utility (eg. autocurator) has access.
+2. Mountpoint map to data on the same host as the publisher software installation, so the publisher has access to scan data using the integrated XArray package.
 3. Basic dataset information provided via the esg mapfile format. For example using the esgf-prepare/esgmapfile utility.
 
 ### 2.4 Dataset publication
