@@ -30,8 +30,6 @@ For data-sharing nodes the storage holding your data must be mounted on the node
 **ESGF Docker** 
 Instructions and links to any issuses can be [found here](https://github.com/ESGF/esgf-docker/).
 
-**Ansible** 
-Legacy documentation is available [here](https://esgf.github.io/esgf-ansible/intro/intro.html) _is this still valid?_
 
 **Metagrid user interface**
 To install the Metagrid UI for end-users to search and download data, read the documentation [here](https://metagrid.readthedocs.io/en/latest/) and see the Github repo [here](https://github.com/aims-group/metagrid)_don't know if these links need updating_?
@@ -55,7 +53,7 @@ Please refer to the [user documentation](https://esg-publisher.readthedocs.io/en
 **Requirements** 
 
 1. A python environment, using venv, conda, miniforge/mamba etc. 
-2. Mountpoint map to data on the same host as the publisher software installation, so the publisher scan utility (eg. autocurator) has access.
+2. Mountpoint map to data on the same host as the publisher software installation, so the publisher has access to scan data using the integrated XArray package.
 3. Basic dataset information provided via the esg mapfile format. For example using the esgf-prepare/esgmapfile utility.
 
 ### 2.4 Dataset publication
