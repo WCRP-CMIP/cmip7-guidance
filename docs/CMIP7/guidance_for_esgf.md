@@ -52,9 +52,35 @@ To install the Metagrid UI for end-users to search and download data, read the d
 
 _Coming soon...._
 
-## 2. Dataset publication - NOT CMIP7-ready 
+## 2. Dataset publication - Preliminary testing for CMIP7
 
-_the command-line tools described in this section are not complete for CMIP7 publication nor yet compatible with the forthcoming ESGF-NG STAC APIs._
+
+_the command-line tools described in this section are not production-ready for CMIP7 publication nor yet compatible with the forthcoming ESGF-NG STAC APIs._
+
+ - Apply for Integration testing group membership here:  (https://app.globus.org/groups/e3329078-b8f6-11f0-9fdd-0e7d9e9fc9e3)
+   - You may use your insitution or well-known Social Auth provider to log in to Globus
+ - Install  esg
+   - Follow instructions linked from the *esgf-prepare* docs site on CMIP7 vocabulary
+ - Install the esg-publisher `esgcet` package:
+
+   ```
+   pip install git+https://github.com/ESGF/esg-publisher.git@esgf-ng-v5.4a#ubdirectory=src/python
+   ```
+- Add the following to your esg.yaml config file for publishing:
+  ```
+      stac_config:
+        stac_client:
+            client_id:  ec5f07c0-7ed8-4f2b-94f2-ddb6f8fc91a3
+            redirect_uri:  https://auth.globus.org/v2/web/auth-code
+        token_storage_file: ~/.esgf2-publisher.json
+        stac_transaction_api:
+            client_id: 6fa3b827-5484-42b9-84db-f00c7a183a6a
+            access_control_policy: https://esgf2.s3.amazonaws.com/access_control_policy.json
+        #    scope_string: https://auth.globus.org/scopes/ec5f07c0-7ed8-4f2b-94f2-ddb6f8fc91a3/ingest
+            scope_string: https://auth.globus.org/scopes/6fa3b827-5484-42b9-84db-f00c7a183a6a/ingest    
+            base_url: https://client-integration-transaction.api.stac.esgf-west.org
+        stac_api: https://api.stac.esgf-west.org
+  ```
 
 **Requirements** 
 
