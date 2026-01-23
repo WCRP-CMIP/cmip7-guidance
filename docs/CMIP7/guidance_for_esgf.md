@@ -53,17 +53,8 @@ To install the Metagrid UI for end-users to search and download data, read the d
 _Coming soon...._
 
 ## 2. Dataset publication - Preliminary testing for CMIP7
-=======
 
-### 1.3 Compute Node services
-
-_Coming soon...._
-
-## 2. Dataset publication - NOT CMIP7-ready 
-
-_the command-line tools described in this section are not complete for CMIP7 publication nor yet compatible with the forthcoming ESGF-NG STAC APIs._
-
-_the command-line tools described in this section are not production-ready for CMIP7 publication nor yet compatible with the forthcoming ESGF-NG STAC APIs._
+_the command-line tools described in this section are not production-ready for CMIP7 publication, however we welcome test users who have successfully produced CMORized data to test out the tools/workflows. Follow the steps below specific to testing_
 
  - Apply for Integration testing group membership here:  (https://app.globus.org/groups/e3329078-b8f6-11f0-9fdd-0e7d9e9fc9e3)
    - You may use your insitution or well-known Social Auth provider to log in to Globus
