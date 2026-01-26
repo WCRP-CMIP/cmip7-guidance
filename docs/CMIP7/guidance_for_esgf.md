@@ -66,20 +66,19 @@ _the command-line tools described in this section are not production-ready for C
    pip install git+https://github.com/ESGF/esg-publisher.git@esgf-ng-v5.4a#ubdirectory=src/python
    ```
 - Add the following to your esg.yaml config file for publishing:
-  ```
-      stac_config:
-        stac_client:
-            client_id:  ec5f07c0-7ed8-4f2b-94f2-ddb6f8fc91a3
-            redirect_uri:  https://auth.globus.org/v2/web/auth-code
-        token_storage_file: ~/.esgf2-publisher.json
-        stac_transaction_api:
-            client_id: 6fa3b827-5484-42b9-84db-f00c7a183a6a
-            access_control_policy: https://esgf2.s3.amazonaws.com/access_control_policy.json
-        #    scope_string: https://auth.globus.org/scopes/ec5f07c0-7ed8-4f2b-94f2-ddb6f8fc91a3/ingest
-            scope_string: https://auth.globus.org/scopes/6fa3b827-5484-42b9-84db-f00c7a183a6a/ingest    
-            base_url: https://client-integration-transaction.api.stac.esgf-west.org
-        stac_api: https://api.stac.esgf-west.org
-  ```
+```
+stac_config:
+  stac_client:
+    client_id:  ec5f07c0-7ed8-4f2b-94f2-ddb6f8fc91a3
+    redirect_uri:  https://auth.globus.org/v2/web/auth-code
+  token_storage_file: ~/.esgf2-publisher.json 
+  stac_transaction_api:
+    client_id: 6fa3b827-5484-42b9-84db-f00c7a183a6a
+    access_control_policy: https://esgf2.s3.amazonaws.com/access_control_policy.json
+    scope_string: https://auth.globus.org/scopes/6fa3b827-5484-42b9-84db-f00c7a183a6a/ingest    
+    base_url: https://client-integration-transaction.api.stac.esgf-west.org
+  stac_api: https://integration-testing.api.stac.esgf-west.org
+```
 
 **Requirements** 
 
