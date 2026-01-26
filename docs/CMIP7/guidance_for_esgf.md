@@ -58,9 +58,10 @@ _the command-line tools described in this section are not production-ready for C
 
  - Apply for Integration testing group membership here:  (https://app.globus.org/groups/e3329078-b8f6-11f0-9fdd-0e7d9e9fc9e3)
    - You may use your insitution or well-known Social Auth provider to log in to Globus
- - Install  esg
-   - Follow instructions linked from the *esgf-prepare* docs site on CMIP7 vocabulary
- - Install the esg-publisher `esgcet` package:
+ - Install `esgprep` and configure.
+   - Follow instructions linked from the *esgf-prepare* docs site on CMIP7 vocabulary installation with `esgvoc`
+   - https://esgf.github.io/esgf-prepare/
+ - Install the esg-publisher `esgcet` package from GitHub:
 
    ```
    pip install git+https://github.com/ESGF/esg-publisher.git@esgf-ng-v5.4a#ubdirectory=src/python
@@ -79,6 +80,7 @@ stac_config:
     base_url: https://client-integration-transaction.api.stac.esgf-west.org
   stac_api: https://integration-testing.api.stac.esgf-west.org
 ```
+- When you run `esgpublish`, and provided that your data scans for extraction without error, you will be prompted to fetch a token by *copy/pasting* a link to your browser.  Follow instructions with the authorization code.  This process will establish your access token to publish.
 
 **Requirements** 
 
