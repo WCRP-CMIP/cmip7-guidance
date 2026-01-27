@@ -52,9 +52,35 @@ To install the Metagrid UI for end-users to search and download data, read the d
 
 _Coming soon...._
 
-## 2. Dataset publication - NOT CMIP7-ready 
+## 2. Dataset publication - Preliminary testing for CMIP7
 
-_the command-line tools described in this section are not complete for CMIP7 publication nor yet compatible with the forthcoming ESGF-NG STAC APIs._
+_the command-line tools described in this section are not production-ready for CMIP7 publication, however we welcome test users who have successfully produced CMORized data to test out the tools/workflows. Follow the steps below specific to testing_
+
+ - Apply for Integration testing group membership here:  (https://app.globus.org/groups/e3329078-b8f6-11f0-9fdd-0e7d9e9fc9e3)
+   - You may use your insitution or well-known Social Auth provider to log in to Globus
+ - Install `esgprep` and configure.
+   - Follow instructions linked from the *esgf-prepare* docs site on CMIP7 vocabulary installation with `esgvoc`
+   - https://esgf.github.io/esgf-prepare/
+ - Install the esg-publisher `esgcet` package from GitHub:
+
+   ```
+   pip install git+https://github.com/ESGF/esg-publisher.git@esgf-ng-v5.4a#ubdirectory=src/python
+   ```
+- Add the following to your esg.yaml config file for publishing:
+```
+stac_config:
+  stac_client:
+    client_id:  ec5f07c0-7ed8-4f2b-94f2-ddb6f8fc91a3
+    redirect_uri:  https://auth.globus.org/v2/web/auth-code
+  token_storage_file: ~/.esgf2-publisher.json 
+  stac_transaction_api:
+    client_id: 6fa3b827-5484-42b9-84db-f00c7a183a6a
+    access_control_policy: https://esgf2.s3.amazonaws.com/access_control_policy.json
+    scope_string: https://auth.globus.org/scopes/6fa3b827-5484-42b9-84db-f00c7a183a6a/ingest    
+    base_url: https://client-integration-transaction.api.stac.esgf-west.org
+  stac_api: https://integration-testing.api.stac.esgf-west.org
+```
+- When you run `esgpublish`, and provided that your data scans for extraction without error, you will be prompted to fetch a token by *copy/pasting* a link to your browser.  Follow instructions with the authorization code.  This process will establish your access token to publish.
 
 **Requirements** 
 
@@ -75,7 +101,7 @@ Please refer to the [user documentation](https://esg-publisher.readthedocs.io/en
 **Requirements** 
 
 1. A python environment, using venv, conda, miniforge/mamba etc. 
-2. Mountpoint map to data on the same host as the publisher software installation, so the publisher scan utility (eg. autocurator) has access.
+2. Mountpoint map to data on the same host as the publisher software installation, so the publisher has access to scan data using the integrated XArray package.
 3. Basic dataset information provided via the esg mapfile format. For example using the esgf-prepare/esgmapfile utility.
 
 ### 2.4 Dataset publication
