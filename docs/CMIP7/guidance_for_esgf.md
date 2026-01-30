@@ -66,7 +66,7 @@ _the command-line tools described in this section are not production-ready for C
    ```
    pip install git+https://github.com/ESGF/esg-publisher.git@esgf-ng-v5.4a#ubdirectory=src/python
    ```
-- Add the following to your esg.yaml config file for publishing:
+ - Add the following to your esg.yaml config file for publishing:
 ```
 stac_config:
   stac_client:
@@ -80,7 +80,7 @@ stac_config:
     base_url: https://client-integration-transaction.api.stac.esgf-west.org
   stac_api: https://integration-testing.api.stac.esgf-west.org
 ```
-- When you run `esgpublish`, and provided that your data scans for extraction without error, you will be prompted to fetch a token by *copy/pasting* a link to your browser.  Follow instructions with the authorization code.  This process will establish your access token to publish.
+ - When you run `esgpublish`, and provided that your data scans for extraction without error, you will be prompted to fetch a token by *copy/pasting* a link to your browser.  Follow instructions with the authorization code.  This process will establish your access token to publish.
 
 **Requirements** 
 
