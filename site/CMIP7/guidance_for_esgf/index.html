@@ -420,10 +420,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#21-dataset-preparation" class="md-nav__link">
+  <a href="#21-requirements" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.1 Dataset preparation
+        2.1 Requirements
       
     </span>
   </a>
@@ -431,10 +431,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#22-publisher-introduction" class="md-nav__link">
+  <a href="#22-dataset-preparation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.2 Publisher introduction
+        2.2 Dataset preparation
       
     </span>
   </a>
@@ -442,10 +442,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#23-esg-publisher-software-installation" class="md-nav__link">
+  <a href="#23-publisher-introduction" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.3 ESG-Publisher software installation
+        2.3 Publisher introduction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-esg-publisher-software-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 ESG-Publisher software installation
       
     </span>
   </a>
@@ -564,7 +575,7 @@ To install the Metagrid UI for end-users to search and download data, read the d
 </ul>
 <p><div class="highlight"><pre><span></span><code>pip install git+https://github.com/ESGF/esg-publisher.git@esgf-ng-v5.4a#ubdirectory=src/python
 </code></pre></div>
-- Add the following to your esg.yaml config file for publishing:
+ - Add the following to your esg.yaml config file for publishing:
 <div class="highlight"><pre><span></span><code>stac_config:
   stac_client:
     client_id:  ec5f07c0-7ed8-4f2b-94f2-ddb6f8fc91a3
@@ -577,17 +588,17 @@ To install the Metagrid UI for end-users to search and download data, read the d
     base_url: https://client-integration-transaction.api.stac.esgf-west.org
   stac_api: https://integration-testing.api.stac.esgf-west.org
 </code></pre></div>
-- When you run <code>esgpublish</code>, and provided that your data scans for extraction without error, you will be prompted to fetch a token by <em>copy/pasting</em> a link to your browser.  Follow instructions with the authorization code.  This process will establish your access token to publish.</p>
-<p><strong>Requirements</strong> </p>
+ - When you run <code>esgpublish</code>, and provided that your data scans for extraction without error, you will be prompted to fetch a token by <em>copy/pasting</em> a link to your browser.  Follow instructions with the authorization code.  This process will establish your access token to publish.</p>
+<h3 id="21-requirements">2.1 Requirements</h3>
 <p>Publishers to ESGF <strong>must</strong> have an existing Data Node installed at their site. Although the publisher software (from v5.x onwards) does not need to run on the Data Node it does require a <em>Data mount</em> for the software to access data files. </p>
-<h3 id="21-dataset-preparation">2.1 Dataset preparation</h3>
+<h3 id="22-dataset-preparation">2.2 Dataset preparation</h3>
 <p>The ESGF publication process requires robust and effective data management, which can also be a burden for data managers. However, the <a href="https://esgf.github.io/esgf-prepare/">ESGF esgprep toolbox</a> is a piece of software that enables data preparation according to ESGF best practices. Esgprep allows the data providers and data node managers to easily prepare their data for publishing to an ESGF node - it is a standalone toolbox. It can be used to fetch required configuration files, apply the Data Reference Syntax on local filesystems and/or generate mapfiles for ESGF publication.</p>
 <p>Full details of <em>esgprep</em> and instructions for use provided by the team at Institut Pierre-Simon Laplace (IPSL) can be <a href="https://esgf.github.io/esgf-prepare/">found here</a>.  </p>
-<h3 id="22-publisher-introduction">2.2 Publisher introduction</h3>
+<h3 id="23-publisher-introduction">2.3 Publisher introduction</h3>
 <p>The esg-publisher or <em>esgcet</em> Python package contains a collection of command-line utilities to scan, manipulate and push dataset metadata to an ESGF index node. 
 The basic publication process takes several steps with some optional steps. Publisher functionality is available via several submodles/classes in the package.
 Please refer to the <a href="https://esg-publisher.readthedocs.io/en/stable/intro.html">user documentation</a> and <a href="https://github.com/ESGF/esg-publisher/issues">Github issues page</a></p>
-<h3 id="23-esg-publisher-software-installation">2.3 ESG-Publisher software installation</h3>
+<h3 id="24-esg-publisher-software-installation">2.4 ESG-Publisher software installation</h3>
 <p><strong>Requirements</strong> </p>
 <ol>
 <li>A python environment, using venv, conda, miniforge/mamba etc. </li>
