@@ -66,7 +66,7 @@ _the command-line tools described in this section are not production-ready for C
    ```
    pip install git+https://github.com/ESGF/esg-publisher.git@esgf-ng-v5.4a#ubdirectory=src/python
    ```
-- Add the following to your esg.yaml config file for publishing:
+ - Add the following to your esg.yaml config file for publishing:
 ```
 stac_config:
   stac_client:
@@ -80,24 +80,23 @@ stac_config:
     base_url: https://client-integration-transaction.api.stac.esgf-west.org
   stac_api: https://integration-testing.api.stac.esgf-west.org
 ```
-- When you run `esgpublish`, and provided that your data scans for extraction without error, you will be prompted to fetch a token by *copy/pasting* a link to your browser.  Follow instructions with the authorization code.  This process will establish your access token to publish.
+ - When you run `esgpublish`, and provided that your data scans for extraction without error, you will be prompted to fetch a token by *copy/pasting* a link to your browser.  Follow instructions with the authorization code.  This process will establish your access token to publish.
 
-**Requirements** 
+### 2.1 Requirements
 
 Publishers to ESGF **must** have an existing Data Node installed at their site. Although the publisher software (from v5.x onwards) does not need to run on the Data Node it does require a _Data mount_ for the software to access data files. 
 
-### 2.1 Dataset preparation 
+### 2.2 Dataset preparation 
 The ESGF publication process requires robust and effective data management, which can also be a burden for data managers. However, the [ESGF esgprep toolbox](https://esgf.github.io/esgf-prepare/) is a piece of software that enables data preparation according to ESGF best practices. Esgprep allows the data providers and data node managers to easily prepare their data for publishing to an ESGF node - it is a standalone toolbox. It can be used to fetch required configuration files, apply the Data Reference Syntax on local filesystems and/or generate mapfiles for ESGF publication.
 
 Full details of _esgprep_ and instructions for use provided by the team at Institut Pierre-Simon Laplace (IPSL) can be [found here](https://esgf.github.io/esgf-prepare/).  
 
-
-### 2.2 Publisher introduction 
+### 2.3 Publisher introduction 
 The esg-publisher or _esgcet_ Python package contains a collection of command-line utilities to scan, manipulate and push dataset metadata to an ESGF index node. 
 The basic publication process takes several steps with some optional steps. Publisher functionality is available via several submodles/classes in the package.
 Please refer to the [user documentation](https://esg-publisher.readthedocs.io/en/stable/intro.html) and [Github issues page](https://github.com/ESGF/esg-publisher/issues)
 
-### 2.3 ESG-Publisher software installation 
+### 2.4 ESG-Publisher software installation 
 **Requirements** 
 
 1. A python environment, using venv, conda, miniforge/mamba etc. 
