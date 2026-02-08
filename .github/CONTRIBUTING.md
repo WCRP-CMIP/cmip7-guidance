@@ -1,4 +1,7 @@
 
+
+
+
 ## Editing the documentation.
 
 Docmentation is found in the `docs` folder with the file names and hierarchy affecting the navigational menu. 
@@ -6,6 +9,7 @@ Docmentation is found in the `docs` folder with the file names and hierarchy aff
 ### Editing materials. 
 
 - menu/page name is determined by the `#` header tag at the top of a file. 
+All other editing advice can be found on the mkdocs documentation. 
 
 ## MkDocs setup for development
 
@@ -15,6 +19,9 @@ Docmentation is found in the `docs` folder with the file names and hierarchy aff
    
 3. when complete activate the conda environment and run
    
-    `mkdocs serve`
+    `mkdocs serve -f src/mkdocs/mkdocs.yml`
    
    You should see the link to a local process that is running a webserver -- connect to that and you can browse the pages as you edit them.
+
+
+
