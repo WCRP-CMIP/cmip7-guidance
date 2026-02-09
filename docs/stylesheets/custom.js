@@ -71,6 +71,79 @@ function init() {
   addVersionSelector();
   setupHeaderAnchors();
   setupTabbedContent();
+  processDetailsMarkdown();
+}
+
+// ============================================
+// PROCESS MARKDOWN IN DETAILS (fallback for unprocessed content)
+// ============================================
+
+function processDetailsMarkdown() {
+  document.querySelectorAll('details').forEach(details => {
+    // Skip if already processed
+    if (details.dataset.mdProcessed) return;
+    details.dataset.mdProcessed = 'true';
+    
+    // Get all text nodes that aren't already in proper elements
+    const walker = document.createTreeWalker(
+      details,
+      NodeFilter.SHOW_TEXT,
+      {
+        acceptNode: function(node) {
+          // Skip summary and already processed content
+          if (node.parentNode.tagName === 'SUMMARY') return NodeFilter.FILTER_REJECT;
+          if (node.parentNode.tagName === 'PRE') return NodeFilter.FILTER_REJECT;
+          if (node.parentNode.tagName === 'CODE') return NodeFilter.FILTER_REJECT;
+          // Only process if parent is details itself (raw text)
+          if (node.parentNode.tagName === 'DETAILS' && node.textContent.trim()) {
+            return NodeFilter.FILTER_ACCEPT;
+          }
+          return NodeFilter.FILTER_REJECT;
+        }
+      }
+    );
+    
+    const textNodes = [];
+    while (walker.nextNode()) textNodes.push(walker.currentNode);
+    
+    textNodes.forEach(node => {
+      const text = node.textContent;
+      if (!text.trim()) return;
+      
+      // Create a wrapper div
+      const wrapper = document.createElement('div');
+      wrapper.className = 'details-content';
+      wrapper.style.padding = '0 1rem 1rem 1rem';
+      
+      // Basic markdown processing
+      let html = text
+        // Bold
+        .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+        .replace(/__(.+?)__/g, '<strong>$1</strong>')
+        // Italic
+        .replace(/\*(.+?)\*/g, '<em>$1</em>')
+        .replace(/_(.+?)_/g, '<em>$1</em>')
+        // Inline code
+        .replace(/`(.+?)`/g, '<code>$1</code>')
+        // Links
+        .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
+        // Line breaks to paragraphs
+        .split(/\n\n+/)
+        .filter(p => p.trim())
+        .map(p => {
+          // Check if it's a list
+          if (p.trim().match(/^[-*]\s/m)) {
+            const items = p.split(/\n/).filter(l => l.trim());
+            return '<ul>' + items.map(i => '<li>' + i.replace(/^[-*]\s+/, '') + '</li>').join('') + '</ul>';
+          }
+          return '<p>' + p.replace(/\n/g, '<br>') + '</p>';
+        })
+        .join('');
+      
+      wrapper.innerHTML = html;
+      node.parentNode.replaceChild(wrapper, node);
+    });
+  });
 }
 
 // ============================================

@@ -20,6 +20,8 @@
   - [Guidance For Modellers](CMIP7/guidance_for_modellers.md)
   - [Guidance For Users](CMIP7/guidance_for_users.md)
   - [Index](CMIP7/index.md)
+- How To Guides:
+  - [Energy Consumption And Carbon Footprint Spreadsheet](How_to_Guides/Energy_Consumption_and_Carbon_Footprint_Spreadsheet.md)
 - Technical:
   - [Creating Issue Templates](technical/creating-issue-templates.md)
   - [Styling](technical/styling.md)

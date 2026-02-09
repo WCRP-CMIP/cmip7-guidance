@@ -148,11 +148,11 @@ Used with `dropdown` and `multi-select` to extract values from `DATA`:
 
 ### Field Guidance
 
-The `field_guidance` object maps `field_id` to help text. This creates a collapsible `<details>` section below the field description.
+The `field_guidance` object maps `field_id` to help text. This creates a collapsible `<details markdown="1">` section below the field description, ensuring markdown content is properly rendered.
 
 **Behavior by field type:**
 
-- **Non-markdown fields**: Guidance wrapped in collapsible `<details>` with `dropdown_title` as summary
+- **Non-markdown fields**: Guidance wrapped in collapsible `<details markdown="1">` with `dropdown_title` as summary
 - **Markdown fields**: Guidance appended directly (no collapsible)
 
 ### Template Substitution

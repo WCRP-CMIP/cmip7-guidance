@@ -136,3 +136,48 @@ article a {
 ```
 
 Use existing variables for consistency throughout your customizations.
+
+## Collapsible Content (Details/Summary)
+
+For collapsible sections, use one of these methods to ensure markdown content is properly rendered:
+
+### Method 1: PyMDownX Details Syntax (Recommended)
+
+Use the `??? note` syntax for admonition-style collapsibles:
+
+```markdown
+??? note "Click to expand"
+    This content is **markdown** and will be properly rendered.
+    
+    - Lists work
+    - `code` works
+    - [Links](https://example.com) work
+
+???+ info "Expanded by default"
+    Use `???+` to have the section open by default.
+```
+
+### Method 2: HTML with markdown attribute
+
+Add `markdown="1"` to enable markdown processing inside HTML tags:
+
+```html
+<details markdown="1">
+<summary>Click to expand</summary>
+
+This content is **markdown** and will be properly rendered.
+
+- Lists work
+- `code` works
+- [Links](https://example.com) work
+
+</details>
+```
+
+### Styling
+
+Details/summary elements are styled with:
+- Summary text: `--guidance-primary-dark` color
+- Chevron indicator that rotates on expand
+- Light background with subtle border
+- Proper spacing for nested content

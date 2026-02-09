@@ -405,6 +405,174 @@ main, article {
   color: currentColor;
 }
 
+/* ============================================
+   DETAILS / SUMMARY (Collapsible sections)
+   ============================================ */
+
+/*
+ * NOTE: For markdown to render inside <details> tags, use either:
+ * 1. <details markdown="1"> attribute
+ * 2. pymdownx.details syntax: ??? note "Title"
+ */
+
+details {
+  border: 1px solid var(--guidance-border);
+  border-radius: 6px;
+  padding: 0;
+  margin: 1rem 0;
+  background: var(--guidance-bg);
+}
+
+details summary {
+  color: var(--guidance-primary-dark);
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+  background: var(--guidance-bg-secondary);
+  border-radius: 6px;
+}
+
+details[open] summary {
+  border-radius: 6px 6px 0 0;
+  border-bottom: 1px solid var(--guidance-border);
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details summary::after {
+  content: "▸";
+  color: var(--guidance-primary-dark);
+  font-size: 0.75rem;
+  transition: transform 0.2s ease;
+  margin-left: 0.5rem;
+}
+
+details[open] summary::after {
+  transform: rotate(90deg);
+}
+
+details summary:hover {
+  background: var(--guidance-bg-tertiary);
+}
+
+/* Details content container */
+details > *:not(summary) {
+  padding: 0 1rem;
+}
+
+details > p,
+details > ul,
+details > ol,
+details > pre,
+details > blockquote,
+details > table,
+details > div {
+  margin: 0.5rem 0;
+}
+
+details > *:last-child {
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+/* Typography inheritance for details content */
+details .typography,
+details .prose,
+details article {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+/* Ensure code blocks in details are styled */
+details pre {
+  background: var(--guidance-bg-secondary) !important;
+  border: 1px solid var(--guidance-border);
+  border-radius: 4px;
+  padding: 0.75rem;
+  overflow-x: auto;
+  margin: 0.5rem 1rem;
+}
+
+details code {
+  background: var(--guidance-bg-secondary);
+  padding: 0.15rem 0.3rem;
+  border-radius: 3px;
+  font-size: 0.875em;
+}
+
+details pre code {
+  background: transparent;
+  padding: 0;
+}
+
+/* Lists in details */
+details ul,
+details ol {
+  padding-left: 1.5rem;
+  margin-left: 1rem;
+}
+
+details li {
+  margin: 0.25rem 0;
+}
+
+/* Raw text content - white-space handling for unprocessed content */
+details > br + br {
+  display: block;
+  content: "";
+  margin: 0.5rem 0;
+}
+
+/* Headings in details */
+details h1, details h2, details h3, details h4, details h5, details h6 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--guidance-text);
+}
+
+details h1 { font-size: 1.5rem; }
+details h2 { font-size: 1.25rem; }
+details h3 { font-size: 1.1rem; }
+details h4, details h5, details h6 { font-size: 1rem; }
+
+/* JS-processed details content */
+.details-content {
+  line-height: 1.6;
+}
+
+.details-content p {
+  margin: 0.5rem 0;
+}
+
+.details-content ul,
+.details-content ol {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.details-content li {
+  margin: 0.25rem 0;
+}
+
+.details-content a {
+  color: var(--guidance-primary);
+  text-decoration: underline;
+}
+
+.details-content code {
+  background: var(--guidance-bg-secondary);
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+  font-size: 0.875em;
+}
+
 /* Override Tailwind typography/prose max-width (default is 65ch ≈ 672px) */
 .typography {
   max-width: 1200px !important;
@@ -1100,27 +1268,29 @@ th[data-sort="desc"] .sort-indicator {
 /* Tab labels container */
 .tabbed-labels {
   display: flex;
-  gap: 0.25rem;
-  border-bottom: 2px solid var(--guidance-border);
-  margin-bottom: 1rem;
+  gap: 0.125rem;
+  border-bottom: 1px solid var(--guidance-border);
+  margin-bottom: 0.5rem;
+  background: transparent;
 }
 
 /* Individual tab labels */
 .tabbed-labels > label {
-  padding: 0.5rem 1rem;
+  padding: 0.35rem 0.75rem;
   cursor: pointer;
   border-bottom: 2px solid transparent;
-  margin-bottom: -2px;
-  font-size: 0.875rem;
+  margin-bottom: -1px;
+  font-size: 0.8rem;
   font-weight: 500;
   color: var(--guidance-text-secondary);
-  transition: all 0.2s ease;
+  background: transparent;
+  transition: all 0.15s ease;
   user-select: none;
 }
 
 .tabbed-labels > label:hover {
-  color: var(--guidance-text);
-  background: var(--guidance-bg-secondary);
+  color: var(--guidance-primary);
+  background: transparent;
 }
 
 /* Active tab label - using ID selectors for specificity */
@@ -1131,9 +1301,11 @@ th[data-sort="desc"] .sort-indicator {
 #__tabbed_2_2:checked ~ .tabbed-labels > label[for="__tabbed_2_2"],
 #__tabbed_2_3:checked ~ .tabbed-labels > label[for="__tabbed_2_3"],
 #__tabbed_2_4:checked ~ .tabbed-labels > label[for="__tabbed_2_4"],
-#__tabbed_2_5:checked ~ .tabbed-labels > label[for="__tabbed_2_5"] {
+#__tabbed_2_5:checked ~ .tabbed-labels > label[for="__tabbed_2_5"],
+.tabbed-labels > label[data-active="true"] {
   color: var(--guidance-primary) !important;
   border-bottom-color: var(--guidance-primary) !important;
+  background: transparent !important;
 }
 
 /* Hide all tab content by default */

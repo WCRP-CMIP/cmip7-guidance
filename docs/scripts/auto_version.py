@@ -5,22 +5,20 @@ Auto-versioning for documentation using mike.
 This script:
 1. Checks if on production branch (main/master)
 2. Detects if .md files have changed since last deploy
-3. Auto-increments patch version and deploys
+3. Creates date-based version (v.yy.mm.dd) and deploys
 
-Version is tracked in docs/.version file.
+Version format: v.yy.mm.dd (e.g., v.25.02.09)
+If a version already exists for the day, it replaces the old one.
 
 Usage:
     python auto_version.py              # Check and deploy if needed
     python auto_version.py --force      # Force deploy current version
-    python auto_version.py --bump minor # Bump minor version
-    python auto_version.py --bump major # Bump major version
     python auto_version.py --status     # Show current status
 """
 
 import argparse
 import subprocess
 import sys
-import re
 from pathlib import Path
 from datetime import datetime
 
@@ -88,7 +86,6 @@ def has_md_changes_since(commit: str) -> bool:
     ])
     
     if not success:
-        # Try without the commit (compare to working tree)
         success, output = run_command([
             "git", "diff", "--name-only", "--", "docs/*.md", "docs/**/*.md"
         ])
@@ -112,44 +109,28 @@ def get_changed_md_files(commit: str = None) -> list:
     return []
 
 
-def read_version() -> tuple:
-    """Read version from .version file. Returns (major, minor, patch)."""
+def get_date_version() -> str:
+    """Get version string based on current date: v.yy.mm.dd"""
+    now = datetime.now()
+    return f"v.{now.strftime('%y.%m.%d')}"
+
+
+def read_version() -> str:
+    """Read version from .version file."""
     if VERSION_FILE.exists():
-        content = VERSION_FILE.read_text().strip()
-        match = re.match(r'v?(\d+)\.(\d+)\.(\d+)', content)
-        if match:
-            return int(match.group(1)), int(match.group(2)), int(match.group(3))
-    return 0, 1, 0  # Default starting version
+        return VERSION_FILE.read_text().strip()
+    return get_date_version()
 
 
-def write_version(major: int, minor: int, patch: int):
+def write_version(version: str):
     """Write version to .version file."""
-    version_str = f"v{major}.{minor}.{patch}"
-    VERSION_FILE.write_text(f"{version_str}\n")
-    return version_str
-
-
-def bump_version(bump_type: str = "patch") -> str:
-    """Bump version and return new version string."""
-    major, minor, patch = read_version()
-    
-    if bump_type == "major":
-        major += 1
-        minor = 0
-        patch = 0
-    elif bump_type == "minor":
-        minor += 1
-        patch = 0
-    else:  # patch
-        patch += 1
-    
-    return write_version(major, minor, patch)
+    VERSION_FILE.write_text(f"{version}\n")
+    return version
 
 
 def get_version_string() -> str:
-    """Get current version as string."""
-    major, minor, patch = read_version()
-    return f"v{major}.{minor}.{patch}"
+    """Get current date-based version string."""
+    return get_date_version()
 
 
 def deploy_version(version: str, set_latest: bool = True, push: bool = True) -> bool:
@@ -167,9 +148,10 @@ def deploy_version(version: str, set_latest: bool = True, push: bool = True) -> 
     success, output = run_command(cmd, cwd=str(MKDOCS_DIR), capture=False)
     
     if success:
-        # Save commit hash
+        # Save commit hash and version
         current_commit = get_current_commit()
         save_last_deploy_commit(current_commit)
+        write_version(version)
         print(f"✓ Deployed {version}")
         return True
     else:
@@ -182,13 +164,15 @@ def show_status():
     branch = get_current_branch()
     is_prod = is_production_branch()
     version = get_version_string()
+    last_version = read_version()
     last_commit = get_last_deploy_commit()
     current_commit = get_current_commit()
     has_changes = has_md_changes_since(last_commit)
     changed_files = get_changed_md_files(last_commit)
     
     print(f"Branch:           {branch} {'(production)' if is_prod else '(not production)'}")
-    print(f"Current version:  {version}")
+    print(f"Today's version:  {version}")
+    print(f"Last deployed:    {last_version}")
     print(f"Current commit:   {current_commit[:8] if current_commit else 'unknown'}")
     print(f"Last deploy:      {last_commit[:8] if last_commit else 'never'}")
     print(f"MD changes:       {'yes' if has_changes else 'no'}")
@@ -216,17 +200,17 @@ def auto_deploy(force: bool = False, push: bool = True) -> bool:
         print("Skipping: no .md file changes since last deploy")
         return False
     
-    # Bump patch version
-    new_version = bump_version("patch")
-    print(f"Bumping to {new_version}")
+    # Get date-based version (replaces same-day versions automatically)
+    new_version = get_date_version()
+    print(f"Deploying version {new_version}")
     
-    # Deploy
+    # Deploy (mike will replace existing version with same name)
     return deploy_version(new_version, set_latest=True, push=push)
 
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Auto-versioning for documentation",
+        description="Auto-versioning for documentation (date-based: v.yy.mm.dd)",
         formatter_class=argparse.RawDescriptionHelpFormatter
     )
     
@@ -241,11 +225,6 @@ def main():
         help="Force deploy even without changes"
     )
     parser.add_argument(
-        "--bump",
-        choices=["patch", "minor", "major"],
-        help="Bump version type"
-    )
-    parser.add_argument(
         "--no-push",
         action="store_true",
         help="Don't push to gh-pages"
@@ -253,22 +232,13 @@ def main():
     parser.add_argument(
         "--deploy",
         action="store_true",
-        help="Deploy current version without bumping"
+        help="Deploy current version"
     )
     
     args = parser.parse_args()
     
     if args.status:
         show_status()
-        return 0
-    
-    if args.bump:
-        new_version = bump_version(args.bump)
-        print(f"Bumped to {new_version}")
-        
-        if args.deploy:
-            success = deploy_version(new_version, push=not args.no_push)
-            return 0 if success else 1
         return 0
     
     if args.deploy:
