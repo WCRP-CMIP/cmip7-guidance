@@ -155,7 +155,7 @@ This facilitates analysis of the data by users who can read and interpret data f
 !!! warning "Quality Control of netCDF files"
 
     [Publication to ESGF](./guidance_for_esgf.md) requires CMORized netCDF files to pass Quality Control (QC) checks.
-    More information on the **ESGF Quality Control (QC) Framework** [is here](#7--software-for-checking-output).
+    More information on the **ESGF Quality Control (QC) Framework** [is here](#7-software-for-checking-output).
 
 As [described below](#6-software-for-preparing-output) it is recommended, but not required, that the CMOR software library be used to rewrite model output in conformance with the standards.
 Data requirements are defined and discussed in the following documents:
@@ -164,7 +164,7 @@ Data requirements are defined and discussed in the following documents:
 - [Reference "controlled vocabularies" (CVs) for CMIP7](https://github.com/WCRP-CMIP/CMIP7-CVs)
 - [Guidance on output grids](https://zenodo.org/records/15697025)
 - Requested atmospheric pressure levels are described in [Table 2 / Figure 2 of Dingley et al. 2025](https://egusphere.copernicus.org/preprints/2025/egusphere-2025-3189/)
-- [Guidance on time averaging (with masking)](../CMIP6/time_and_area_averaging.md) (CMIP6 guidance, to be reviewed).
+- [Guidance on time averaging (with masking)](../03_CMIP6/time_and_area_averaging.md) (CMIP6 guidance, to be reviewed).
 
 Additional metadata requirements are imposed on a variable by variable basis as specified in the Data Request.
 Many of these are recognized by CMOR (through input via the CMIP7 CMOR Tables), which will ensure compliance.
@@ -189,7 +189,7 @@ All CMIP7 datasets must be structured with the following features (in summary), 
 - All of the internal file metadata are collated to a contiguous block at the start of the file.
 
 As [described below](#6-software-for-preparing-output), it is recommended, but not required, that the `cmip7repack` software library be used to rewrite model output in conformance with these internal file structure requirements.
-There is also a `check_cmip7_packing` software library that can be used to check if a file is compliant, and this tool will be used as part of the [ESGF Quality Control (QC) Framework](#7--software-for-checking-output).
+There is also a `check_cmip7_packing` software library that can be used to check if a file is compliant, and this tool will be used as part of the [ESGF Quality Control (QC) Framework](#7-software-for-checking-output).
 
 
 ## 6.  Software for preparing output

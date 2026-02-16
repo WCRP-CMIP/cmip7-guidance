@@ -15,11 +15,12 @@ All other editing advice can be found on the mkdocs documentation.
 
 1. Create a conda environment with mkdocs. From the root of this repo;
    
-    `conda env create -f environment.yml`
+
+    `pip install src/mkdocs/requirements.txt`
    
 3. when complete activate the conda environment and run
    
-    `mkdocs serve -f src/mkdocs/mkdocs.yml`
+    `mkdocs build -f src/mkdocs/mkdocs.yml; mkdocs serve -f src/mkdocs/mkdocs.yml`
    
    You should see the link to a local process that is running a webserver -- connect to that and you can browse the pages as you edit them.
 

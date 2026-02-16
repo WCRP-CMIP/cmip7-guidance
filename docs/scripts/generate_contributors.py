@@ -19,7 +19,7 @@ DOCS_DIR = SCRIPT_DIR.parent
 
 def main():
     """Generate contributors.md using cmipld."""
-    output_path = DOCS_DIR / "contributors.md"
+    output_path = DOCS_DIR / "99_contributors.md"
     
     print(f"Generating contributors page: {output_path}")
     

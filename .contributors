@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-02-09T11:04:31.707976",
+  "last_updated": "2026-02-16T10:35:01.323506",
   "files": {
     "docs/CMIP7/guidance_for_esgf.md": {
       "contributors": [
@@ -946,7 +946,7 @@
         "matthew-mizielinski",
         "wolfiex"
       ],
-      "last_updated": "2026-02-08T23:21:47+00:00"
+      "last_updated": "2026-02-09T11:05:11+00:00"
     },
     "docs/assets/.DS_Store": {
       "contributors": [
@@ -1075,7 +1075,7 @@
       "contributors": [
         "wolfiex"
       ],
-      "last_updated": "2026-02-08T23:21:47+00:00"
+      "last_updated": "2026-02-09T11:05:11+00:00"
     },
     ".copier-answers.yml": {
       "contributors": [
@@ -1093,19 +1093,19 @@
       "contributors": [
         "wolfiex"
       ],
-      "last_updated": "2026-02-08T23:21:47+00:00"
+      "last_updated": "2026-02-09T11:05:11+00:00"
     },
     "docs/.version": {
       "contributors": [
         "wolfiex"
       ],
-      "last_updated": "2026-02-08T23:21:47+00:00"
+      "last_updated": "2026-02-09T11:05:11+00:00"
     },
     "docs/SUMMARY.md": {
       "contributors": [
         "wolfiex"
       ],
-      "last_updated": "2026-02-08T23:21:47+00:00"
+      "last_updated": "2026-02-09T11:05:11+00:00"
     },
     "docs/assets/favicon-32x32.png": {
       "contributors": [
@@ -1141,7 +1141,7 @@
       "contributors": [
         "wolfiex"
       ],
-      "last_updated": "2026-02-08T23:21:47+00:00"
+      "last_updated": "2026-02-09T11:05:11+00:00"
     },
     "docs/links.yml": {
       "contributors": [
@@ -1153,7 +1153,7 @@
       "contributors": [
         "wolfiex"
       ],
-      "last_updated": "2026-02-08T23:21:47+00:00"
+      "last_updated": "2026-02-09T11:05:11+00:00"
     },
     "docs/scripts/__pycache__/deploy_version.cpython-310.pyc": {
       "contributors": [
@@ -1177,7 +1177,7 @@
       "contributors": [
         "wolfiex"
       ],
-      "last_updated": "2026-02-08T23:21:47+00:00"
+      "last_updated": "2026-02-09T11:05:11+00:00"
     },
     "docs/scripts/deploy_version.py": {
       "contributors": [
@@ -1207,13 +1207,13 @@
       "contributors": [
         "wolfiex"
       ],
-      "last_updated": "2026-02-08T23:21:47+00:00"
+      "last_updated": "2026-02-09T11:05:11+00:00"
     },
     "docs/stylesheets/custom.js": {
       "contributors": [
         "wolfiex"
       ],
-      "last_updated": "2026-02-08T23:21:47+00:00"
+      "last_updated": "2026-02-09T11:05:11+00:00"
     },
     "docs/stylesheets/embed.js": {
       "contributors": [
@@ -1231,13 +1231,13 @@
       "contributors": [
         "wolfiex"
       ],
-      "last_updated": "2026-02-08T23:21:47+00:00"
+      "last_updated": "2026-02-09T11:05:11+00:00"
     },
     "docs/technical/styling.md": {
       "contributors": [
         "wolfiex"
       ],
-      "last_updated": "2026-02-08T23:21:47+00:00"
+      "last_updated": "2026-02-09T11:05:11+00:00"
     },
     "src/mkdocs/.gitignore": {
       "contributors": [
@@ -1292,6 +1292,18 @@
         "wolfiex"
       ],
       "last_updated": "2026-02-08T23:21:47+00:00"
+    },
+    "docs/How_to_Guides/Energy_Consumption_and_Carbon_Footprint_Spreadsheet.md": {
+      "contributors": [
+        "wolfiex"
+      ],
+      "last_updated": "2026-02-09T11:05:11+00:00"
+    },
+    "docs/postprocess.ipynb": {
+      "contributors": [
+        "wolfiex"
+      ],
+      "last_updated": "2026-02-09T11:05:11+00:00"
     }
   },
   "folders": {
@@ -1312,7 +1324,7 @@
         "Darwyn72",
         "wolfiex"
       ],
-      "last_updated": "2026-02-08T23:21:47+00:00"
+      "last_updated": "2026-02-09T11:05:11+00:00"
     },
     "docs/CMIP7": {
       "contributors": [
@@ -1603,7 +1615,7 @@
         "matthew-mizielinski",
         "wolfiex"
       ],
-      "last_updated": "2026-02-08T23:21:47+00:00"
+      "last_updated": "2026-02-09T11:05:11+00:00"
     },
     "docs/.delete": {
       "contributors": [
@@ -1725,7 +1737,7 @@
         "matthew-mizielinski",
         "wolfiex"
       ],
-      "last_updated": "2026-02-08T23:21:47+00:00"
+      "last_updated": "2026-02-09T11:05:11+00:00"
     },
     "overrides": {
       "contributors": [
@@ -1745,7 +1757,7 @@
       "contributors": [
         "wolfiex"
       ],
-      "last_updated": "2026-02-08T23:21:47+00:00"
+      "last_updated": "2026-02-09T11:05:11+00:00"
     },
     "docs/scripts/paused": {
       "contributors": [
@@ -1757,7 +1769,7 @@
       "contributors": [
         "wolfiex"
       ],
-      "last_updated": "2026-02-08T23:21:47+00:00"
+      "last_updated": "2026-02-09T11:05:11+00:00"
     },
     "src": {
       "contributors": [
@@ -1794,6 +1806,12 @@
         "wolfiex"
       ],
       "last_updated": "2026-02-08T23:21:47+00:00"
+    },
+    "docs/How_to_Guides": {
+      "contributors": [
+        "wolfiex"
+      ],
+      "last_updated": "2026-02-09T11:05:11+00:00"
     }
   },
   "contributors": {
@@ -1860,8 +1878,8 @@
       ],
       "username": "wolfiex",
       "first_seen": "2026-02-07T23:39:44.009066",
-      "last_seen": "2026-02-08T23:24:48.434412",
-      "commit_count": 26,
+      "last_seen": "2026-02-09T15:57:03.320526",
+      "commit_count": 28,
       "website": "showcase.danielellisresearch.com",
       "orcid": "0000-0001-6733-7028",
       "company": "ESA",
