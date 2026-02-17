@@ -12,7 +12,7 @@ title: CMIP7 Guidance
 - [Guidance for modellers](guidance_for_modellers.md)
 - [Guidance for users](guidance_for_users.md)
 - [Guidance for ESGF node operators and publishers](guidance_for_esgf.md)
-- [Terms of use](../03_CMIP6/terms_of_use.md)
+- [Terms of use](../110_CMIP6/terms_of_use.md)
 - [Guidance for MIPs](guidance_for_mips.md)
 - [Domains names for CMIP7 services](domain_names.md)
 - [Frequently Asked Questions](FAQ.md)

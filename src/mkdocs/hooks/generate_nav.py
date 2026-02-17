@@ -10,11 +10,11 @@ import yaml
 from pathlib import Path
 
 
-def on_files(files, config):
-    """Hook that runs after gen-files."""
+def on_config(config):
+    """Hook that runs BEFORE plugins - generates SUMMARY.md."""
     docs_dir = Path(config['docs_dir'])
-    generate_navigation(docs_dir, files)
-    return files
+    generate_navigation(docs_dir)
+    return config
 
 
 def clean_title_folder(name):
@@ -121,7 +121,6 @@ def build_subtree(dir_path, base_path):
     for item in dir_path.iterdir():
         if item.name.startswith('.') or item.name.startswith('_'):
             continue
-        # Skip index.md in subdirectories - literate-nav handles these with implicit_index
         if item.name == 'index.md':
             continue
         
@@ -159,12 +158,11 @@ def items_to_nav(items, nav_lines, indent=""):
             items_to_nav(item['children'], nav_lines, indent + "  ")
 
 
-def generate_navigation(docs_path, mkdocs_files):
-    """Generate SUMMARY.md."""
+def generate_navigation(docs_path):
+    """Generate SUMMARY.md with source paths (for literate-nav to find files)."""
     items = build_tree(docs_path)
     nav_lines = []
     
-    # Separate index.md from other items (root level only)
     index_item = None
     other_items = []
     
@@ -174,19 +172,15 @@ def generate_navigation(docs_path, mkdocs_files):
         else:
             other_items.append(item)
     
-    # Home first
     if index_item:
         nav_lines.append('- [Home](index.md)')
     
-    # All other items sorted together by numerical prefix
     items_to_nav(other_items, nav_lines, "")
     
-    # Custom links
 
     links = parse_links_file(docs_path)
     nav_lines = add_links_to_nav(nav_lines, links)
 
     
-    # Write
     with open(docs_path / 'SUMMARY.md', 'w') as f:
         f.write('\n'.join(nav_lines))

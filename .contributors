@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-02-17T14:07:54.589041",
+  "last_updated": "2026-02-17T14:31:35.951865",
   "files": {
     "docs/CMIP7/guidance_for_esgf.md": {
       "contributors": [
@@ -536,7 +536,7 @@
         "JamesAnstey",
         "wolfiex"
       ],
-      "last_updated": "2026-02-16T10:39:44+00:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     "docs/updates/CMIP7_modellers.md": {
       "contributors": [
@@ -614,43 +614,49 @@
         "matthew-mizielinski",
         "wolfiex"
       ],
-      "last_updated": "2026-02-08T23:21:47+00:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     ".idea/.gitignore": {
       "contributors": [
-        "glevava"
+        "glevava",
+        "wolfiex"
       ],
-      "last_updated": "2025-08-07T11:35:12+02:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     ".idea/cmip7-guidance.iml": {
       "contributors": [
-        "glevava"
+        "glevava",
+        "wolfiex"
       ],
-      "last_updated": "2025-08-07T11:35:12+02:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     ".idea/inspectionProfiles/Project_Default.xml": {
       "contributors": [
-        "glevava"
+        "glevava",
+        "wolfiex"
       ],
-      "last_updated": "2025-08-07T11:35:12+02:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     ".idea/inspectionProfiles/profiles_settings.xml": {
       "contributors": [
-        "glevava"
+        "glevava",
+        "wolfiex"
       ],
-      "last_updated": "2025-08-07T11:35:12+02:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     ".idea/modules.xml": {
       "contributors": [
-        "glevava"
+        "glevava",
+        "wolfiex"
       ],
-      "last_updated": "2025-08-07T11:35:12+02:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     ".idea/vcs.xml": {
       "contributors": [
-        "glevava"
+        "glevava",
+        "wolfiex"
       ],
-      "last_updated": "2025-08-07T11:35:12+02:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     "docs/CMIP7/CVs_discussion.md": {
       "contributors": [
@@ -963,109 +969,126 @@
         "matthew-mizielinski",
         "wolfiex"
       ],
-      "last_updated": "2026-02-16T10:39:44+00:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     "docs/assets/.DS_Store": {
       "contributors": [
-        "matthew-mizielinski"
+        "matthew-mizielinski",
+        "wolfiex"
       ],
-      "last_updated": "2025-05-23T11:39:21+01:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     "docs/assets/CMIP_Icon_CMYK_negative.svg": {
       "contributors": [
-        "matthew-mizielinski"
+        "matthew-mizielinski",
+        "wolfiex"
       ],
-      "last_updated": "2025-05-23T11:39:21+01:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     "docs/assets/MS_whitelist.png": {
       "contributors": [
-        "matthew-mizielinski"
+        "matthew-mizielinski",
+        "wolfiex"
       ],
-      "last_updated": "2025-05-23T11:39:21+01:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     "docs/assets/demo_images/action_pull.png": {
       "contributors": [
-        "matthew-mizielinski"
+        "matthew-mizielinski",
+        "wolfiex"
       ],
-      "last_updated": "2025-05-23T11:39:21+01:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     "docs/assets/demo_images/action_verbose.png": {
       "contributors": [
-        "matthew-mizielinski"
+        "matthew-mizielinski",
+        "wolfiex"
       ],
-      "last_updated": "2025-05-23T11:39:21+01:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     "docs/assets/demo_images/cli1.png": {
       "contributors": [
-        "matthew-mizielinski"
+        "matthew-mizielinski",
+        "wolfiex"
       ],
-      "last_updated": "2025-05-23T11:39:21+01:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     "docs/assets/demo_images/cli2.png": {
       "contributors": [
-        "matthew-mizielinski"
+        "matthew-mizielinski",
+        "wolfiex"
       ],
-      "last_updated": "2025-05-23T11:39:21+01:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     "docs/assets/demo_images/cli3.png": {
       "contributors": [
-        "matthew-mizielinski"
+        "matthew-mizielinski",
+        "wolfiex"
       ],
-      "last_updated": "2025-05-23T11:39:21+01:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     "docs/assets/demo_images/cli4.png": {
       "contributors": [
-        "matthew-mizielinski"
+        "matthew-mizielinski",
+        "wolfiex"
       ],
-      "last_updated": "2025-05-23T11:39:21+01:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     "docs/assets/demo_images/cli5.png": {
       "contributors": [
-        "matthew-mizielinski"
+        "matthew-mizielinski",
+        "wolfiex"
       ],
-      "last_updated": "2025-05-23T11:39:21+01:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     "docs/assets/demo_images/cli6.png": {
       "contributors": [
-        "matthew-mizielinski"
+        "matthew-mizielinski",
+        "wolfiex"
       ],
-      "last_updated": "2025-05-23T11:39:21+01:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     "docs/assets/demo_images/idweb1.png": {
       "contributors": [
-        "matthew-mizielinski"
+        "matthew-mizielinski",
+        "wolfiex"
       ],
-      "last_updated": "2025-05-23T11:39:21+01:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     "docs/assets/demo_images/issue1.png": {
       "contributors": [
-        "matthew-mizielinski"
+        "matthew-mizielinski",
+        "wolfiex"
       ],
-      "last_updated": "2025-05-23T11:39:21+01:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     "docs/assets/demo_images/issue_form.png": {
       "contributors": [
-        "matthew-mizielinski"
+        "matthew-mizielinski",
+        "wolfiex"
       ],
-      "last_updated": "2025-05-23T11:39:21+01:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     "docs/assets/demo_images/issue_options.png": {
       "contributors": [
-        "matthew-mizielinski"
+        "matthew-mizielinski",
+        "wolfiex"
       ],
-      "last_updated": "2025-05-23T11:39:21+01:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     "docs/assets/demo_images/issue_submission.png": {
       "contributors": [
-        "matthew-mizielinski"
+        "matthew-mizielinski",
+        "wolfiex"
       ],
-      "last_updated": "2025-05-23T11:39:21+01:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     "docs/assets/demo_images/issues_created.png": {
       "contributors": [
-        "matthew-mizielinski"
+        "matthew-mizielinski",
+        "wolfiex"
       ],
-      "last_updated": "2025-05-23T11:39:21+01:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     "docs/scripts/embed.js": {
       "contributors": [
@@ -1092,7 +1115,7 @@
       "contributors": [
         "wolfiex"
       ],
-      "last_updated": "2026-02-16T10:39:44+00:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     ".copier-answers.yml": {
       "contributors": [
@@ -1110,7 +1133,7 @@
       "contributors": [
         "wolfiex"
       ],
-      "last_updated": "2026-02-16T10:39:44+00:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     "docs/.version": {
       "contributors": [
@@ -1122,7 +1145,7 @@
       "contributors": [
         "wolfiex"
       ],
-      "last_updated": "2026-02-16T10:39:44+00:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     "docs/assets/favicon-32x32.png": {
       "contributors": [
@@ -1140,13 +1163,13 @@
       "contributors": [
         "wolfiex"
       ],
-      "last_updated": "2026-02-08T23:21:47+00:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     "docs/assets/logo-light.svg": {
       "contributors": [
         "wolfiex"
       ],
-      "last_updated": "2026-02-08T23:21:47+00:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     "docs/assets/logo.svg": {
       "contributors": [
@@ -1170,25 +1193,25 @@
       "contributors": [
         "wolfiex"
       ],
-      "last_updated": "2026-02-09T11:05:11+00:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     "docs/scripts/__pycache__/deploy_version.cpython-310.pyc": {
       "contributors": [
         "wolfiex"
       ],
-      "last_updated": "2026-02-08T23:21:47+00:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     "docs/scripts/__pycache__/example_generator.cpython-310.pyc": {
       "contributors": [
         "wolfiex"
       ],
-      "last_updated": "2026-02-08T23:21:47+00:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     "docs/scripts/__pycache__/generate_contributors.cpython-310.pyc": {
       "contributors": [
         "wolfiex"
       ],
-      "last_updated": "2026-02-16T10:39:44+00:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     "docs/scripts/auto_version.py": {
       "contributors": [
@@ -1212,7 +1235,7 @@
       "contributors": [
         "wolfiex"
       ],
-      "last_updated": "2026-02-16T10:39:44+00:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     "docs/scripts/paused/generate_contributors.py": {
       "contributors": [
@@ -1224,13 +1247,13 @@
       "contributors": [
         "wolfiex"
       ],
-      "last_updated": "2026-02-09T11:05:11+00:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     "docs/stylesheets/custom.js": {
       "contributors": [
         "wolfiex"
       ],
-      "last_updated": "2026-02-09T11:05:11+00:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     "docs/stylesheets/embed.js": {
       "contributors": [
@@ -1242,7 +1265,7 @@
       "contributors": [
         "wolfiex"
       ],
-      "last_updated": "2026-02-08T23:21:47+00:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     "docs/technical/creating-issue-templates.md": {
       "contributors": [
@@ -1266,7 +1289,7 @@
       "contributors": [
         "wolfiex"
       ],
-      "last_updated": "2026-02-08T23:21:47+00:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     "src/mkdocs/hooks/post_build.py": {
       "contributors": [
@@ -1284,7 +1307,7 @@
       "contributors": [
         "wolfiex"
       ],
-      "last_updated": "2026-02-08T23:21:47+00:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     "src/mkdocs/overrides/.gitkeep": {
       "contributors": [
@@ -1308,13 +1331,13 @@
       "contributors": [
         "wolfiex"
       ],
-      "last_updated": "2026-02-08T23:21:47+00:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     "docs/How_to_Guides/Energy_Consumption_and_Carbon_Footprint_Spreadsheet.md": {
       "contributors": [
         "wolfiex"
       ],
-      "last_updated": "2026-02-09T11:05:11+00:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     "docs/postprocess.ipynb": {
       "contributors": [
@@ -1326,7 +1349,7 @@
       "contributors": [
         "wolfiex"
       ],
-      "last_updated": "2026-02-16T10:39:44+00:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     ".github/CONTRIBUTING.md": {
       "contributors": [
@@ -1339,6 +1362,66 @@
         "wolfiex"
       ],
       "last_updated": "2026-02-16T10:39:44+00:00"
+    },
+    "CMIP_Logo_CMYK.svg": {
+      "contributors": [
+        "wolfiex"
+      ],
+      "last_updated": "2026-02-17T14:08:38+00:00"
+    },
+    "docs/01_CMIP7/index.md": {
+      "contributors": [
+        "wolfiex"
+      ],
+      "last_updated": "2026-02-17T14:08:38+00:00"
+    },
+    "docs/99_contributors.md": {
+      "contributors": [
+        "wolfiex"
+      ],
+      "last_updated": "2026-02-17T14:08:38+00:00"
+    },
+    "docs/assets/cmip-logo.svg": {
+      "contributors": [
+        "wolfiex"
+      ],
+      "last_updated": "2026-02-17T14:08:38+00:00"
+    },
+    "docs/scripts/__pycache__/generate_summaries.cpython-310.pyc": {
+      "contributors": [
+        "wolfiex"
+      ],
+      "last_updated": "2026-02-17T14:08:38+00:00"
+    },
+    "docs/scripts/generate_summaries.py": {
+      "contributors": [
+        "wolfiex"
+      ],
+      "last_updated": "2026-02-17T14:08:38+00:00"
+    },
+    "docs/scripts/paused/summaries_config.example.py": {
+      "contributors": [
+        "wolfiex"
+      ],
+      "last_updated": "2026-02-17T14:08:38+00:00"
+    },
+    "src/mkdocs/overrides/components/icon.html": {
+      "contributors": [
+        "wolfiex"
+      ],
+      "last_updated": "2026-02-17T14:08:38+00:00"
+    },
+    "src/mkdocs/overrides/templates/bottom_sidebar.html": {
+      "contributors": [
+        "wolfiex"
+      ],
+      "last_updated": "2026-02-17T14:08:38+00:00"
+    },
+    "src/mkdocs/overrides/templates/sidebar.html": {
+      "contributors": [
+        "wolfiex"
+      ],
+      "last_updated": "2026-02-17T14:08:38+00:00"
     }
   },
   "folders": {
@@ -1359,7 +1442,7 @@
         "Darwyn72",
         "wolfiex"
       ],
-      "last_updated": "2026-02-16T10:39:44+00:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     "docs/CMIP7": {
       "contributors": [
@@ -1632,26 +1715,28 @@
         "matthew-mizielinski",
         "wolfiex"
       ],
-      "last_updated": "2026-02-08T23:21:47+00:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     ".idea": {
       "contributors": [
-        "glevava"
+        "glevava",
+        "wolfiex"
       ],
-      "last_updated": "2025-08-07T11:35:12+02:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     ".idea/inspectionProfiles": {
       "contributors": [
-        "glevava"
+        "glevava",
+        "wolfiex"
       ],
-      "last_updated": "2025-08-07T11:35:12+02:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     "docs/stylesheets": {
       "contributors": [
         "matthew-mizielinski",
         "wolfiex"
       ],
-      "last_updated": "2026-02-09T11:05:11+00:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     "docs/.delete": {
       "contributors": [
@@ -1764,16 +1849,17 @@
     },
     "docs/assets/demo_images": {
       "contributors": [
-        "matthew-mizielinski"
+        "matthew-mizielinski",
+        "wolfiex"
       ],
-      "last_updated": "2025-05-23T11:39:21+01:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     "docs/scripts": {
       "contributors": [
         "matthew-mizielinski",
         "wolfiex"
       ],
-      "last_updated": "2026-02-16T10:39:44+00:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     "overrides": {
       "contributors": [
@@ -1793,13 +1879,13 @@
       "contributors": [
         "wolfiex"
       ],
-      "last_updated": "2026-02-16T10:39:44+00:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     "docs/scripts/paused": {
       "contributors": [
         "wolfiex"
       ],
-      "last_updated": "2026-02-08T23:21:47+00:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     "docs/technical": {
       "contributors": [
@@ -1811,25 +1897,25 @@
       "contributors": [
         "wolfiex"
       ],
-      "last_updated": "2026-02-08T23:21:47+00:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     "src/mkdocs": {
       "contributors": [
         "wolfiex"
       ],
-      "last_updated": "2026-02-08T23:21:47+00:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     "src/mkdocs/hooks": {
       "contributors": [
         "wolfiex"
       ],
-      "last_updated": "2026-02-08T23:21:47+00:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     "src/mkdocs/overrides": {
       "contributors": [
         "wolfiex"
       ],
-      "last_updated": "2026-02-08T23:21:47+00:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
     },
     "src/mkdocs/overrides/.icons": {
       "contributors": [
@@ -1847,7 +1933,25 @@
       "contributors": [
         "wolfiex"
       ],
-      "last_updated": "2026-02-09T11:05:11+00:00"
+      "last_updated": "2026-02-17T14:08:38+00:00"
+    },
+    "docs/01_CMIP7": {
+      "contributors": [
+        "wolfiex"
+      ],
+      "last_updated": "2026-02-17T14:08:38+00:00"
+    },
+    "src/mkdocs/overrides/components": {
+      "contributors": [
+        "wolfiex"
+      ],
+      "last_updated": "2026-02-17T14:08:38+00:00"
+    },
+    "src/mkdocs/overrides/templates": {
+      "contributors": [
+        "wolfiex"
+      ],
+      "last_updated": "2026-02-17T14:08:38+00:00"
     }
   },
   "contributors": {
@@ -1914,8 +2018,8 @@
       ],
       "username": "wolfiex",
       "first_seen": "2026-02-07T23:39:44.009066",
-      "last_seen": "2026-02-17T12:31:51.890966",
-      "commit_count": 30,
+      "last_seen": "2026-02-17T14:10:22.670578",
+      "commit_count": 32,
       "website": "showcase.danielellisresearch.com",
       "orcid": "0000-0001-6733-7028",
       "company": "ESA",
