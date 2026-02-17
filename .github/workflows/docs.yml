@@ -106,7 +106,7 @@ jobs:
         working-directory: src/mkdocs
         run: |
           echo "🏗️ Building MkDocs documentation..."
-          mkdocs build --site-dir ../../../production/docs
+          mkdocs build -f src/mkdocs/mkdocs.yml
           echo "✅ Build complete"
 
       # ==========================================
