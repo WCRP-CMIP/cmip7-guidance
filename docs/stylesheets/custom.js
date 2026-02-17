@@ -1,4 +1,4 @@
-// CMIP7 Guidance and Documentation - Custom Scripts for shadcn theme
+// Guidance and Documentation - Custom Scripts for shadcn theme
 
 // Configuration
 const CONFIG = {
@@ -58,6 +58,7 @@ async function loadCustomLinks() {
 document.addEventListener('DOMContentLoaded', function() {
   init();
   loadCustomLinks();
+  initMermaid();
   setTimeout(init, 300);
   setTimeout(init, 1000);
 });
@@ -206,7 +207,7 @@ function setupCollapsibleNav() {
   const isHomePage = currentPath === baseUrl || 
                      currentPath === baseUrl.replace(/\/$/, '') ||
                      currentPath.endsWith('/index.html') ||
-                     currentPath.match(/^\/[^\/]*\/?$/) !== null;
+                     currentPath === '/' + baseUrl.split('/').filter(Boolean)[0] + '/';
   
   groups.forEach((group, index) => {
     const label = group.querySelector('[data-slot="sidebar-group-label"]');
@@ -232,14 +233,16 @@ function setupCollapsibleNav() {
     // Check if any link in this group is active (current page)
     let hasActivePage = content.querySelector('a[data-active="true"]') !== null;
     
-    // Fallback: check if current URL matches any link in this group (exact match)
-    if (!hasActivePage && !isHomePage) {
+    // Fallback: check if current URL matches any link in this group
+    if (!hasActivePage) {
       const links = content.querySelectorAll('a[href]');
       for (const link of links) {
         const href = link.getAttribute('href');
-        const normalizedHref = href.replace(/\/$/, '').replace(/^\.\//, '');
-        const normalizedPath = currentPath.replace(/\/$/, '');
-        if (normalizedPath.endsWith(normalizedHref) || normalizedPath === normalizedHref) {
+        const normalizedHref = href.replace(/\/$/, '').replace(/^\.\//, '').replace(/^\//, '');
+        const normalizedPath = currentPath.replace(/\/$/, '').replace(/^\//, '');
+        if (normalizedPath.endsWith(normalizedHref) || 
+            normalizedPath === normalizedHref ||
+            normalizedPath.includes('/' + normalizedHref)) {
           hasActivePage = true;
           break;
         }
@@ -247,10 +250,10 @@ function setupCollapsibleNav() {
     }
     
     // On first run: set initial state
-    // Home page: all closed. Nested pages: open if contains active page
+    // If group contains active page, always expand it
     if (!label.dataset.collapsibleSetup) {
       label.classList.remove('expanded');
-      if (hasActivePage && !isHomePage) {
+      if (hasActivePage) {
         label.classList.add('expanded');
       }
     }
@@ -469,6 +472,55 @@ function addVersionSelector() {
 
 // Export for debugging
 window.EMDCustom = { init, CONFIG };
+
+// ============================================
+// MERMAID INITIALIZATION
+// ============================================
+
+function initMermaid() {
+  if (typeof mermaid === 'undefined') {
+    // Retry after mermaid loads
+    setTimeout(initMermaid, 100);
+    return;
+  }
+  
+  mermaid.initialize({
+    startOnLoad: false,
+    theme: 'default',
+    securityLevel: 'loose',
+    flowchart: {
+      useMaxWidth: true,
+      htmlLabels: true,
+      curve: 'basis'
+    }
+  });
+  
+  // Find all mermaid code blocks and render them
+  document.querySelectorAll('pre code.language-mermaid, .mermaid').forEach((el, index) => {
+    if (el.dataset.mermaidRendered) return;
+    el.dataset.mermaidRendered = 'true';
+    
+    const code = el.textContent;
+    const container = document.createElement('div');
+    container.className = 'mermaid-container';
+    
+    // Replace the pre/code with a div for mermaid
+    const pre = el.closest('pre') || el;
+    pre.parentNode.insertBefore(container, pre);
+    pre.style.display = 'none';
+    
+    mermaid.render(`mermaid-${index}`, code).then(result => {
+      container.innerHTML = result.svg;
+      // Make SVG clickable links work
+      container.querySelectorAll('a').forEach(a => {
+        a.setAttribute('target', '_blank');
+      });
+    }).catch(err => {
+      console.error('Mermaid render error:', err);
+      pre.style.display = 'block';
+    });
+  });
+}
 
 // ============================================
 // TABBED CONTENT SUPPORT

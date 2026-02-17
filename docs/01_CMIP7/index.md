@@ -6,7 +6,7 @@ title: CMIP7 Guidance
 
 # CMIP7 Guidance and Documentation
 
-- [Updates for modelling groups](../02_updates_for_modellers.md)
+- [Updates for modelling groups](../02_Updates_for_Modellers.md)
 - [Global Attributes](global_attributes.md)
 - [Branded Variables information](branded_variables.md)
 - [Guidance for modellers](guidance_for_modellers.md)

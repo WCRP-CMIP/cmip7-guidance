@@ -1,4 +1,4 @@
-/* CMIP7 Guidance and Documentation - Custom Styles for shadcn theme */
+/* Guidance and Documentation - Custom Styles for shadcn theme */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans:wght@400;500;600;700&display=swap');
 
@@ -1541,6 +1541,14 @@ th[data-sort="desc"] .sort-indicator {
   visibility: visible !important;
 }
 
+
+/* ============================================
+   DOCS CONTENT AREA PADDING
+   ============================================ */
+
+[data-slot="docs"] {
+  padding-bottom: 3em !important;
+}
 
 /* ============================================
    ROOT GROUP (Home, Contributors) - NO LABEL

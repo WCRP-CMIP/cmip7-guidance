@@ -4,7 +4,7 @@ _src_path: /Users/daniel.ellis/WIPwork/CMIP-LD/copier/documentation
 _commit: None
 
 # Project Configuration
-project_name: CMIP7 Guidance and Documentation
+project_name: Guidance and Documentation
 repo_name: cmip7-guidance
 repo_owner: WCRP-CMIP
 url_prefix: guidance
@@ -20,3 +20,5 @@ enable_custom_links: True
 links_section_title: Additional Resources
 
 enable_scripts: True
+use_cmip_logo: True
+css_prefix: guidance
