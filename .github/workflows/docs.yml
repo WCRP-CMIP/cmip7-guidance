@@ -1,16 +1,20 @@
 name: Build and Deploy Documentation
 
 on:
+  # Manual trigger
   workflow_dispatch:
     inputs:
-      version:
-        description: 'Version to deploy (leave empty to use docs/.version)'
+      force:
+        description: 'Force deploy even without changes'
         required: false
-        default: ''
+        default: false
+        type: boolean
 
+  # Dispatch event from other workflows
   repository_dispatch:
     types: [deploy-docs]
 
+  # On push to docs branch or docs folder changes
   push:
     branches:
       - docs
@@ -31,14 +35,18 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     outputs:
-      version: ${{ steps.version.outputs.version }}
+      version: ${{ steps.deploy.outputs.version }}
+      deployed: ${{ steps.deploy.outputs.deployed }}
     
     steps:
+      # ==========================================
+      # Setup
+      # ==========================================
       - name: Checkout production branch
         uses: actions/checkout@v4
         with:
           ref: production
-          fetch-depth: 0
+          fetch-depth: 0  # Mike needs full history
 
       - name: Set up Git
         run: |
@@ -50,130 +58,86 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Fetch docs source from docs branch
-        run: |
-          echo "📥 Fetching docs source from docs branch..."
-          git fetch origin docs:docs
-          git checkout origin/docs -- docs/ src/
-          echo "✅ Docs source ready"
-
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
+          pip install mike
           
+          # Install mkdocs requirements
           if [ -f "src/mkdocs/requirements.txt" ]; then
             pip install -r src/mkdocs/requirements.txt
           else
             pip install mkdocs mkdocs-shadcn mkdocs-gen-files mkdocs-literate-nav pymdown-extensions
           fi
 
-      - name: Get version
-        id: version
+      # ==========================================
+      # Get docs source from docs branch
+      # ==========================================
+      - name: Fetch docs source
         run: |
-          if [ -n "${{ github.event.inputs.version }}" ]; then
-            VERSION="${{ github.event.inputs.version }}"
-          elif [ -f "docs/.version" ]; then
-            VERSION=$(cat docs/.version | tr -d '[:space:]')
-          else
-            VERSION="v0.1.0"
-          fi
+          echo "📥 Fetching docs source from docs branch..."
+          git fetch origin docs:docs
           
-          echo "version=$VERSION" >> $GITHUB_OUTPUT
-          echo "📌 Version: $VERSION"
+          # Copy docs source and mkdocs config from docs branch
+          git checkout origin/docs -- docs/ src/
+          
+          echo "✅ Docs source ready"
 
       # ==========================================
-      # Build Documentation
+      # Auto-version and deploy with mike
       # ==========================================
-      - name: Build documentation
+      - name: Auto-version and deploy
+        id: deploy
         working-directory: src/mkdocs
         run: |
-          echo "🏗️ Building MkDocs documentation..."
-          # Set SITE_URL for this build (enables proper links)
-          export SITE_URL="https://WCRP-CMIP.github.io/cmip7-guidance/"
-          mkdocs build -f mkdocs.yml
-          echo "✅ Build complete"
-
-      # ==========================================
-      # Deploy to Root AND Version Directory
-      # ==========================================
-      - name: Deploy to root and version directory
-        run: |
-          VERSION="${{ steps.version.outputs.version }}"
+          FORCE_FLAG=""
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then
+            FORCE_FLAG="--force"
+          fi
           
-          echo "📦 Deploying to root and version directory..."
+          echo "🏗️ Running auto-version script..."
           
-          # Clean old content from docs/
-          rm -rf docs/*
+          # Add docs/scripts to Python path
+          export PYTHONPATH="../../docs/scripts:$PYTHONPATH"
           
-          # Copy built site to root (current/latest version)
-          cp -r src/mkdocs/site/* docs/
+          # Run auto_version.py which uses mike
+          cd ../../docs/scripts
+          python auto_version.py --deploy $FORCE_FLAG
           
-          # ALSO copy to version directory
-          mkdir -p docs/versions/$VERSION
-          cp -r src/mkdocs/site/* docs/versions/$VERSION/
-          
-          # Create/update versions.json manifest
-          cat > docs/versions.json << EOF
-          {
-            "current": "$VERSION",
-            "versions": [
-              {
-                "version": "$VERSION",
-                "title": "$VERSION",
-                "aliases": ["latest"]
-              }
-            ]
-          }
-          EOF
-          
-          # Create version redirect at /v.X.X.X/ (without /versions/ prefix)
-          mkdir -p docs/$VERSION
-          cat > docs/$VERSION/index.html << 'EOF'
-          <!DOCTYPE html>
-          <html>
-          <head>
-            <meta http-equiv="refresh" content="0; url=../versions/$VERSION/">
-            <script>window.location.href = '../versions/$VERSION/';</script>
-          </head>
-          <body>Redirecting to version $VERSION...</body>
-          </html>
-          EOF
-          
-          sed -i "s/\$VERSION/$VERSION/g" docs/$VERSION/index.html
-          
-          echo "✅ Deployed to:"
-          echo "   - Root: docs/"
-          echo "   - Version: docs/versions/$VERSION/"
-          echo "   - Redirect: docs/$VERSION/ → docs/versions/$VERSION/"
-
-      - name: Commit to production
-        run: |
-          git add docs/
-          
-          if [ -n "$(git status --porcelain)" ]; then
-            git commit -m "📚 Deploy documentation ${{ steps.version.outputs.version }}"
-            git push origin production
-            echo "✅ Changes committed to production"
+          # Get the version that was deployed
+          if [ -f "../.version" ]; then
+            VERSION=$(cat ../.version | tr -d '[:space:]')
+            echo "version=$VERSION" >> $GITHUB_OUTPUT
+            echo "deployed=true" >> $GITHUB_OUTPUT
+            echo "✅ Deployed version: $VERSION"
           else
-            echo "ℹ️ No changes to commit"
+            echo "deployed=false" >> $GITHUB_OUTPUT
+            echo "ℹ️ No deployment (no changes)"
           fi
 
       - name: Summary
+        if: steps.deploy.outputs.deployed == 'true'
         run: |
+          VERSION="${{ steps.deploy.outputs.version }}"
           echo "### 🚀 Documentation Deployed!" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**Version:** ${{ steps.version.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Version:** $VERSION (date-based)" >> $GITHUB_STEP_SUMMARY
+          echo "**Latest:** Yes" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**URLs:**" >> $GITHUB_STEP_SUMMARY
-          echo "- Root: https://wcrp-cmip.github.io/cmip7-guidance/" >> $GITHUB_STEP_SUMMARY
-          echo "- Version: https://wcrp-cmip.github.io/cmip7-guidance/versions/${{ steps.version.outputs.version }}/" >> $GITHUB_STEP_SUMMARY
-          echo "- Shortcut: https://wcrp-cmip.github.io/cmip7-guidance/${{ steps.version.outputs.version }}/" >> $GITHUB_STEP_SUMMARY
+          echo "**Version URL:** https://wcrp-cmip.github.io/cmip7-guidance/$VERSION/" >> $GITHUB_STEP_SUMMARY
+          echo "**Latest URL:** https://wcrp-cmip.github.io/cmip7-guidance/latest/" >> $GITHUB_STEP_SUMMARY
+          echo "**Root URL:** https://wcrp-cmip.github.io/cmip7-guidance/" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Also accessible at:" >> $GITHUB_STEP_SUMMARY
+          echo "- https://wcrp-cmip.github.io/guidance/$VERSION/" >> $GITHUB_STEP_SUMMARY
+          echo "- https://wcrp-cmip.github.io/guidance/latest/" >> $GITHUB_STEP_SUMMARY
 
   # ==========================================
   # Deploy to GitHub Pages
   # ==========================================
   deploy-pages:
     needs: build-and-deploy
+    if: needs.build-and-deploy.outputs.deployed == 'true'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -201,3 +165,4 @@ jobs:
         run: |
           echo "### 📚 Pages Deployed" >> $GITHUB_STEP_SUMMARY
           echo "**URL:** ${{ steps.deployment.outputs.page_url }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Version:** ${{ needs.build-and-deploy.outputs.version }}" >> $GITHUB_STEP_SUMMARY
