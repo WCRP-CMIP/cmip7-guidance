@@ -40,6 +40,7 @@ When these discussions are finalised, these guidance pages will be updated.
 #. [esm-piControl](./esm-picontrol.md)
 #. [historical](./historical.md)
 #. [esm-hist](./esm-hist.md)
+#. [1pctCO2](./1pctco2.md)
 #. [abrupt-4xCO2](./abrupt-4xco2.md)
 
 ## Assessment Fast Track (AFT) experiments
@@ -62,4 +63,4 @@ When these discussions are finalised, these guidance pages will be updated.
 
 <!-- TODO: ScenarioMIP description here based on esgvoc -->
 
-#. [vl](./vl.md)
+#. [scen7-vl](./scen7-vl.md)
