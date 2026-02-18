@@ -1,21 +1,19 @@
 ---
 layout: default
-title: piControl Experiment Setup and Forcings Guidance
+title: historical Experiment Setup and Forcings Guidance
 ---
 
-# piControl Experiment Setup and Forcings Guidance
+# historical Experiment Setup and Forcings Guidance
 
 <!-- TODO: get this one line description from esgvoc -->
-Pre-industrial control simulation with prescribed carbon dioxide concentrations (for prescribed carbon dioxide emissions, see `esm-piControl`). Used to characterise natural variability and unforced behaviour.
+Simulation of the climate of the recent past (typically meaning 1850 to present-day) with prescribed carbon dioxide concentrations (for prescribed carbon dioxide emissions, see `esm-hist`).
 
 ## Experiment set up
 
-The pre-industrial control simulation uses a specific set of forcings (see [forcings](#forcings)).
-These should be applied on repeat for the entirety of the simulation.
+The historical simulation uses a specific set of forcings (see [forcings](#forcings)).
+These should be applied as transient (i.e. time-changing) forcings over the length of the simulation.
 <!-- TODO: consider whether we can generate these sentences automatically based on esgvoc -->
-You are free to start the time axis of your outputs at whatever year you like
-(e.g. starting at year 1, or 1850, or year 500).
-Simulations should be at least 400 years in length.
+The simulation output should start on 1850-01-01 and end on 2021-12-31.
 Only one ensemble member is required.
 
 ### Parent experiment
@@ -24,9 +22,9 @@ Only one ensemble member is required.
     TODO: use esgvoc to fill out the template
     `<experiment-name>` branches from the `<parent-experiment-name>` simulation (part of `<parent-experiment-activity>`).
 -->
-`piControl` branches from the `piControl-spinup` simulation (part of `CMIP`).
+`historical` branches from the `piControl` simulation (part of `CMIP`).
 <!-- TODO: get branch information from esgvoc -->
-Branch from `piControl-spinup` at a time of your choosing.
+Branch from `piControl` at a time of your choosing.
 
 ## Forcings
 
@@ -44,7 +42,7 @@ which should be used when running this simulation.
     "land-use": ["UofMD-landState-3-1-1"],
     "greenhouse-gas-concentrations": ["CR-CMIP-1-0-0"],
     "stratospheric-aerosol-forcing ": ["UOEXETER-CMIP-2-2-1"],
-    "ozone": ["FZJ-CMIP-ozone-1-2"],
+    "ozone": ["FZJ-CMIP-ozone-2-0"],
     "nitrogen-deposition": ["FZJ-CMIP-nitrogen-1-2"],
     "solar": ["SOLARIS-HEPPA-CMIP-4-6"],
     "aerosol-optical-properties": null,
@@ -70,11 +68,10 @@ The following pages give further information on each forcing:
 
 Beyond the information on these pages, please also note the following:
 
-It can require some care to use the correct forcings for `piControl`.
-This is particularly true for stratospheric aerosol forcing, ozone and solar
-as the `piControl` values for these forcings aren't simply a repeat of 1850 values.
-Please read the guidance pages linked above carefully
-to ensure that you use the correct forcing values.
+The ozone forcing should come from file with the source ID `FZJ-CMIP-ozone-2-0`.
+`FZJ-CMIP-ozone-2-0` was released quite late, so if you have simulations based on `FZJ-CMIP-ozone-1-2`,
+these would also be of interest to the Forcings Task Team so please publish them
+([discussion of how to set the value for the forcing 'f' identifier in such files is ongoing](https://github.com/PCMDI/input4MIPs_CVs/issues/415)).
 
 The aerosol optical properties based on the MACv2-SP parameterisation are not distrubuted via the ESGF.
 <!-- TODO: add CI to check all URLs are live -->
@@ -96,9 +93,9 @@ which is likely to be much more data than you actually need to run your model.
 ```bash
 #!/bin/bash
 
-EXPERIMENT_NAME="piControl"
+EXPERIMENT_NAME="historical"
 
-esgpull add --track --tag ${EXPERIMENT_NAME} source_id:CEDS-CMIP-2025-04-18,CEDS-CMIP-2025-04-18-supplemental,DRES-CMIP-BB4CMIP7-2-0,UofMD-landState-3-1-1,CR-CMIP-1-0-0,UOEXETER-CMIP-2-2-1,FZJ-CMIP-ozone-1-2,FZJ-CMIP-nitrogen-1-2,SOLARIS-HEPPA-CMIP-4-6,PIK-CMIP-1-0-1
+esgpull add --track --tag ${EXPERIMENT_NAME} source_id:CEDS-CMIP-2025-04-18,CEDS-CMIP-2025-04-18-supplemental,DRES-CMIP-BB4CMIP7-2-0,UofMD-landState-3-1-1,CR-CMIP-1-0-0,UOEXETER-CMIP-2-2-1,FZJ-CMIP-ozone-2-0,FZJ-CMIP-nitrogen-1-2,SOLARIS-HEPPA-CMIP-4-6,PIK-CMIP-1-0-1
 esgpull update --tag ${EXPERIMENT_NAME} --yes
 esgpull download --tag ${EXPERIMENT_NAME}
 ```
