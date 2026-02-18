@@ -1,16 +1,16 @@
 ---
 layout: default
-title: piControl Experiment Setup and Forcings Guidance
+title: esm-piControl Experiment Setup and Forcings Guidance
 ---
 
-# piControl Experiment Setup and Forcings Guidance
+# esm-piControl Experiment Setup and Forcings Guidance
 
 <!-- TODO: get this one line description from esgvoc -->
-Pre-industrial control simulation with prescribed carbon dioxide concentrations (for prescribed carbon dioxide emissions, see `esm-piControl`). Used to characterise natural variability and unforced behaviour.
+Pre-industrial control simulation with prescribed carbon dioxide emissions (for prescribed carbon dioxide concentrations, see `piControl`). Used to characterise natural variability and unforced behaviour.
 
 ## Experiment set up
 
-The pre-industrial control simulation uses a specific set of forcings (see [forcings](#forcings)).
+The emissions driven pre-industrial control simulation uses a specific set of forcings (see [forcings](#forcings)).
 These should be applied on repeat for the entirety of the simulation.
 <!-- TODO: consider whether we can generate these sentences automatically based on esgvoc -->
 You are free to start the time axis of your outputs at whatever year you like
@@ -24,9 +24,9 @@ Only one ensemble member is required.
     TODO: use esgvoc to fill out the template
     `<experiment-name>` branches from the `<parent-experiment-name>` simulation (part of `<parent-experiment-activity>`).
 -->
-`piControl` branches from the `piControl-spinup` simulation (part of `CMIP`).
+`esm-piControl` branches from the `esm-piControl-spinup` simulation (part of `CMIP`).
 <!-- TODO: get branch information from esgvoc -->
-Branch from `piControl-spinup` at a time of your choosing.
+Branch from `esm-piControl-spinup` at a time of your choosing.
 
 ## Forcings
 
@@ -70,9 +70,9 @@ The following pages give further information on each forcing:
 
 Beyond the information on these pages, please also note the following:
 
-It can require some care to use the correct forcings for `piControl`.
+It can require some care to use the correct forcings for `esm-piControl`.
 This is particularly true for stratospheric aerosol forcing, ozone and solar
-as the `piControl` values for these forcings aren't simply a repeat of 1850 values.
+as the `esm-piControl` values for these forcings aren't simply a repeat of 1850 values.
 Please read the guidance pages linked above carefully
 to ensure that you use the correct forcing values.
 
@@ -96,7 +96,7 @@ which is likely to be much more data than you actually need to run your model.
 ```bash
 #!/bin/bash
 
-EXPERIMENT_NAME="piControl"
+EXPERIMENT_NAME="esm-piControl"
 
 esgpull add --track --tag ${EXPERIMENT_NAME} source_id:CEDS-CMIP-2025-04-18,CEDS-CMIP-2025-04-18-supplemental,DRES-CMIP-BB4CMIP7-2-0,UofMD-landState-3-1-1,CR-CMIP-1-0-0,UOEXETER-CMIP-2-2-1,FZJ-CMIP-ozone-1-2,FZJ-CMIP-nitrogen-1-2,SOLARIS-HEPPA-CMIP-4-6,PIK-CMIP-1-0-1
 esgpull update --tag ${EXPERIMENT_NAME} --yes

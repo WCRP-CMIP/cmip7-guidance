@@ -37,6 +37,7 @@ When these discussions are finalised, these guidance pages will be updated.
 <!-- TODO: CMIP description here based on esgvoc -->
 
 #. [piControl](./picontrol.md)
+#. [esm-piControl](./esm-picontrol.md)
 #. [historical](./historical.md)
 #. [esm-hist](./esm-hist.md)
 #. [abrupt-4xCO2](./abrupt-4xco2.md)

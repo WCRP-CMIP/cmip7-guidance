@@ -18,7 +18,7 @@ Only one ensemble member is required.
 
 ### Parent experiment
 
-<!-- 
+<!--
     TODO: use esgvoc to fill out the template
     `<experiment-name>` branches from the `<parent-experiment-name>` simulation (part of `<parent-experiment-activity>`).
 -->
@@ -68,7 +68,7 @@ The following pages give further information on each forcing:
 
 Beyond the information on these pages, please also note the following:
 
-The ozone forcing should come from file with the source ID `FZJ-CMIP-ozone-2-0`.
+The ozone forcing should come from files with the source ID `FZJ-CMIP-ozone-2-0`.
 `FZJ-CMIP-ozone-2-0` was released quite late, so if you have simulations based on `FZJ-CMIP-ozone-1-2`,
 these would also be of interest to the Forcings Task Team so please publish them
 ([discussion of how to set the value for the forcing 'f' identifier in such files is ongoing](https://github.com/PCMDI/input4MIPs_CVs/issues/415)).
