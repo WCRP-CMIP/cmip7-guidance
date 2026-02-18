@@ -1,20 +1,9 @@
 name: Build and Deploy Documentation
 
 on:
-  # Manual trigger
   workflow_dispatch:
-    inputs:
-      force:
-        description: 'Force deploy even without changes'
-        required: false
-        default: false
-        type: boolean
-
-  # Dispatch event from other workflows
   repository_dispatch:
     types: [deploy-docs]
-
-  # On push to docs branch or docs folder changes
   push:
     branches:
       - docs
@@ -32,112 +21,47 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     outputs:
-      version: ${{ steps.deploy.outputs.version }}
-      deployed: ${{ steps.deploy.outputs.deployed }}
+      version: ${{ steps.build.outputs.version }}
     
     steps:
-      # ==========================================
-      # Setup
-      # ==========================================
       - name: Checkout production branch
         uses: actions/checkout@v4
         with:
           ref: production
-          fetch-depth: 0  # Mike needs full history
+          fetch-depth: 0
 
       - name: Set up Git
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Build and deploy docs
+        id: build
+        uses: WCRP-CMIP/CMIPLD/actions/build-docs@copier
         with:
+          production-branch: production
+          docs-branch: docs
           python-version: '3.11'
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install mike
-          
-          # Install mkdocs requirements
-          if [ -f "src/mkdocs/requirements.txt" ]; then
-            pip install -r src/mkdocs/requirements.txt
-          else
-            pip install mkdocs mkdocs-shadcn mkdocs-gen-files mkdocs-literate-nav pymdown-extensions
-          fi
+  # Archive version to versions branch
+  archive:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Archive to versions branch
+        uses: WCRP-CMIP/CMIPLD/actions/archive-version@copier
+        with:
+          version: ${{ needs.build.outputs.version }}
+          artifact-name: docs-build
+          versions-branch: versions
+          repository: ${{ github.repository }}
 
-      # ==========================================
-      # Get docs source from docs branch
-      # ==========================================
-      - name: Fetch docs source
-        run: |
-          echo "📥 Fetching docs source from docs branch..."
-          git fetch origin docs:docs
-          
-          # Copy docs source and mkdocs config from docs branch
-          git checkout origin/docs -- docs/ src/
-          
-          echo "✅ Docs source ready"
-
-      # ==========================================
-      # Auto-version and deploy with mike
-      # ==========================================
-      - name: Auto-version and deploy
-        id: deploy
-        working-directory: src/mkdocs
-        run: |
-          FORCE_FLAG=""
-          if [ "${{ github.event.inputs.force }}" = "true" ]; then
-            FORCE_FLAG="--force"
-          fi
-          
-          echo "🏗️ Running auto-version script..."
-          
-          # Add docs/scripts to Python path
-          export PYTHONPATH="../../docs/scripts:$PYTHONPATH"
-          
-          # Run auto_version.py which uses mike
-          cd ../../docs/scripts
-          python auto_version.py --deploy $FORCE_FLAG
-          
-          # Get the version that was deployed
-          if [ -f "../.version" ]; then
-            VERSION=$(cat ../.version | tr -d '[:space:]')
-            echo "version=$VERSION" >> $GITHUB_OUTPUT
-            echo "deployed=true" >> $GITHUB_OUTPUT
-            echo "✅ Deployed version: $VERSION"
-          else
-            echo "deployed=false" >> $GITHUB_OUTPUT
-            echo "ℹ️ No deployment (no changes)"
-          fi
-
-      - name: Summary
-        if: steps.deploy.outputs.deployed == 'true'
-        run: |
-          VERSION="${{ steps.deploy.outputs.version }}"
-          echo "### 🚀 Documentation Deployed!" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**Version:** $VERSION (date-based)" >> $GITHUB_STEP_SUMMARY
-          echo "**Latest:** Yes" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**Version URL:** https://wcrp-cmip.github.io/cmip7-guidance/$VERSION/" >> $GITHUB_STEP_SUMMARY
-          echo "**Latest URL:** https://wcrp-cmip.github.io/cmip7-guidance/latest/" >> $GITHUB_STEP_SUMMARY
-          echo "**Root URL:** https://wcrp-cmip.github.io/cmip7-guidance/" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "Also accessible at:" >> $GITHUB_STEP_SUMMARY
-          echo "- https://wcrp-cmip.github.io/guidance/$VERSION/" >> $GITHUB_STEP_SUMMARY
-          echo "- https://wcrp-cmip.github.io/guidance/latest/" >> $GITHUB_STEP_SUMMARY
-
-  # ==========================================
   # Deploy to GitHub Pages
-  # ==========================================
   deploy-pages:
-    needs: build-and-deploy
-    if: needs.build-and-deploy.outputs.deployed == 'true'
+    needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -155,7 +79,7 @@ jobs:
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'docs'
+          path: '.'
 
       - name: Deploy to GitHub Pages
         id: deployment
@@ -163,6 +87,8 @@ jobs:
 
       - name: Summary
         run: |
-          echo "### 📚 Pages Deployed" >> $GITHUB_STEP_SUMMARY
-          echo "**URL:** ${{ steps.deployment.outputs.page_url }}" >> $GITHUB_STEP_SUMMARY
-          echo "**Version:** ${{ needs.build-and-deploy.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "### 🚀 Documentation Deployed!" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Version:** ${{ needs.build.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Main URL:** ${{ steps.deployment.outputs.page_url }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Archived:** versions branch" >> $GITHUB_STEP_SUMMARY

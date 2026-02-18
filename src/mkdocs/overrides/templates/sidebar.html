@@ -1,6 +1,7 @@
 {# 
   Custom sidebar that preserves navigation order from literate-nav (SUMMARY.md)
-  Instead of separating pages and sections, renders them in their original order.
+  Handles: pages, sections with/without index
+  External links are NOT shown here - they appear in bottom_sidebar only
 #}
 <div view-transition-name="sidebar" data-slot="sidebar-group" data-sidebar="group"
     class="relative flex w-full min-w-0 flex-col p-2 no-scrollbar">
@@ -16,19 +17,26 @@
     {% set current = nav|selectattr("is_page") %}
     {% endif %}
 
-    {# Macro to render a nav item (page or section) #}
+    {# Macro to render a nav item (page or section) - excludes external links #}
     {% macro render_nav_item(item, is_root=false) %}
-        {% if item.is_page %}
-            {# Single page item #}
-            {% with sidebar_item = item %}
-            {% include "components/sidebar_item.html" %}
-            {% endwith %}
+        {% if item.is_link %}
+            {# Skip external links in main sidebar #}
         {% elif item.children %}
             {# Section with children #}
             <div data-slot="sidebar-group" data-sidebar="group" class="relative flex w-full min-w-0 flex-col p-2">
-                <div data-slot="sidebar-group-label" data-sidebar="group-label"
-                    class="ring-sidebar-ring flex h-8 shrink-0 items-center rounded-md px-2 text-xs outline-hidden transition-[margin,opacity] duration-200 ease-linear focus-visible:ring-2 [&amp;&gt;svg]:size-4 [&amp;&gt;svg]:shrink-0 group-data-[collapsible=icon]:-mt-8 group-data-[collapsible=icon]:opacity-0 text-muted-foreground font-medium">
-                    {{ item.title }}</div>
+                {% if item.is_page and item.url %}
+                    {# Section header IS a link (has index.md) #}
+                    <a href="{{ item.url | url }}" data-slot="sidebar-group-label" data-sidebar="group-label"
+                        class="ring-sidebar-ring flex h-8 shrink-0 items-center rounded-md px-2 text-xs outline-hidden transition-[margin,opacity] duration-200 ease-linear focus-visible:ring-2 [&amp;&gt;svg]:size-4 [&amp;&gt;svg]:shrink-0 group-data-[collapsible=icon]:-mt-8 group-data-[collapsible=icon]:opacity-0 text-muted-foreground font-medium hover:text-foreground hover:bg-sidebar-accent">
+                        {{ item.title }}
+                    </a>
+                {% else %}
+                    {# Section header is just text (no URL) #}
+                    <div data-slot="sidebar-group-label" data-sidebar="group-label"
+                        class="ring-sidebar-ring flex h-8 shrink-0 items-center rounded-md px-2 text-xs outline-hidden transition-[margin,opacity] duration-200 ease-linear focus-visible:ring-2 [&amp;&gt;svg]:size-4 [&amp;&gt;svg]:shrink-0 group-data-[collapsible=icon]:-mt-8 group-data-[collapsible=icon]:opacity-0 text-muted-foreground font-medium">
+                        {{ item.title }}
+                    </div>
+                {% endif %}
                 <div data-slot="sidebar-group-content" data-sidebar="group-content" class="w-full text-sm">
                     <ul data-slot="sidebar-menu" data-sidebar="menu" class="flex w-full min-w-0 flex-col gap-0.5">
                         {% for child in item.children %}
@@ -41,6 +49,11 @@
                     </ul>
                 </div>
             </div>
+        {% elif item.is_page %}
+            {# Single page item #}
+            {% with sidebar_item = item %}
+            {% include "components/sidebar_item.html" %}
+            {% endwith %}
         {% endif %}
     {% endmacro %}
 

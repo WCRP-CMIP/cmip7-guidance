@@ -17,16 +17,28 @@ def on_config(config):
     return config
 
 
+def clean_name(name):
+    """Remove numeric prefix from name."""
+    return re.sub(r'^\d+[-_.](?=\w)', '', name)
+
+
+def clean_path(path):
+    """Clean numeric prefixes from all components of a path."""
+    parts = path.split('/')
+    clean_parts = [clean_name(part) for part in parts]
+    return '/'.join(clean_parts)
+
+
 def clean_title_folder(name):
     """Convert folder name to display title - preserves original casing."""
-    name = re.sub(r'^\d+[-_.](?=\w)', '', name)
+    name = clean_name(name)
     return name.replace('_', ' ').replace('-', ' ')
 
 
 def clean_title_file(filename):
     """Convert filename to display title - preserves original casing."""
     name = filename.replace('.md', '').replace('.html', '')
-    name = re.sub(r'^\d+[-_.](?=\w)', '', name)
+    name = clean_name(name)
     return name.replace('_', ' ').replace('-', ' ')
 
 
@@ -98,7 +110,7 @@ def build_tree(docs_path, exclude=None):
             items.append({
                 'type': 'file',
                 'name': item.name,
-                'path': item.name,
+                'path': item.name,  # Use original path with prefixes for MkDocs to find
                 'sort': get_sort_key(item.name)
             })
         elif item.is_dir():
@@ -127,10 +139,11 @@ def build_subtree(dir_path, base_path):
         rel = item.relative_to(base_path)
         
         if item.is_file() and item.suffix in ('.md', '.html'):
+            original_path = str(rel).replace(os.sep, '/')
             items.append({
                 'type': 'file',
                 'name': item.name,
-                'path': str(rel).replace(os.sep, '/'),
+                'path': original_path,  # Keep original path so MkDocs can find files during build
                 'sort': get_sort_key(item.name)
             })
         elif item.is_dir():
@@ -146,20 +159,40 @@ def build_subtree(dir_path, base_path):
     return items
 
 
-def items_to_nav(items, nav_lines, indent=""):
-    """Convert items to nav lines, sorted by numerical prefix."""
+def items_to_nav(items, nav_lines, indent="", base_path=None):
+    """Convert items to nav lines, sorted by numerical prefix.
+    
+    Uses original paths (with numeric prefixes) so MkDocs can find the files.
+    The post_build hook will rename files and fix links after build completes.
+    """
     for item in sorted(items, key=lambda x: x['sort']):
         if item['type'] == 'file':
             title = clean_title_file(item['name'])
+            # Use original path so MkDocs can find the file during build
             nav_lines.append(f"{indent}- [{title}]({item['path']})")
         else:
             title = clean_title_folder(item['name'])
-            nav_lines.append(f'{indent}- {title}:')
-            items_to_nav(item['children'], nav_lines, indent + "  ")
+            # Check if folder has index.md - if so, make section header a link
+            if base_path:
+                folder_path = base_path / item['name']
+                if (folder_path / 'index.md').exists():
+                    # Section with index - make it a clickable link
+                    index_path = f"{item['name']}/index.md"
+                    nav_lines.append(f'{indent}- [{title}]({index_path})')
+                else:
+                    # Section without index - just a header
+                    nav_lines.append(f'{indent}- {title}:')
+            else:
+                # No base_path provided, use section header
+                nav_lines.append(f'{indent}- {title}:')
+            items_to_nav(item['children'], nav_lines, indent + "  ", base_path)
 
 
 def generate_navigation(docs_path):
-    """Generate SUMMARY.md with source paths (for literate-nav to find files)."""
+    """Generate SUMMARY.md with original paths (MkDocs needs to find source files).
+    
+    The post_build hook will rename files and update all links after build completes.
+    """
     items = build_tree(docs_path)
     nav_lines = []
     
@@ -175,7 +208,7 @@ def generate_navigation(docs_path):
     if index_item:
         nav_lines.append('- [Home](index.md)')
     
-    items_to_nav(other_items, nav_lines, "")
+    items_to_nav(other_items, nav_lines, "", docs_path)
     
 
     links = parse_links_file(docs_path)

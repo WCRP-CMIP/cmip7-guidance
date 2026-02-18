@@ -4,14 +4,45 @@
 const CONFIG = {
   repoUrl: 'https://github.com/WCRP-CMIP/cmip7-guidance',
   repoName: 'WCRP-CMIP/cmip7-guidance',
-  customLinks: []
+  customLinks: [],
+  urlPrefix: 'guidance'
 };
+
+// Detect the base path from current URL
+// Works for localhost and production domains
+function detectBasePath() {
+  const path = window.location.pathname;
+  const parts = path.split('/').filter(Boolean);
+  
+  // Check if we're on localhost or production
+  const isLocalhost = window.location.hostname === 'localhost' || 
+                      window.location.hostname === '127.0.0.1';
+  
+  // Find the base path (first path component that matches url_prefix or common pattern)
+  const urlPrefix = 'guidance';
+  
+  // If path starts with urlPrefix, use it
+  if (parts.length > 0 && parts[0] === urlPrefix) {
+    return '/' + urlPrefix + '/';
+  }
+  
+  // On localhost with mkdocs serve, typically no base path
+  if (isLocalhost && parts.length > 0) {
+    // Check if first part looks like a base path (not a page)
+    if (!parts[0].includes('.html') && parts.length > 1) {
+      return '/' + parts[0] + '/';
+    }
+  }
+  
+  // Default to root
+  return '/';
+}
 
 // Load custom links from links.yml
 async function loadCustomLinks() {
   try {
     // Use MkDocs base_url to get correct path from any page depth
-    const baseUrl = typeof base_url !== 'undefined' ? base_url : 'guidance';
+    const baseUrl = detectBasePath();
     const paths = [
       baseUrl + 'links.yml',
       baseUrl + '/links.yml',
@@ -203,7 +234,7 @@ function setupCollapsibleNav() {
   const currentPath = window.location.pathname;
   
   // Check if we're on the home/index page
-  const baseUrl = typeof base_url !== 'undefined' ? base_url : 'guidance';
+  const baseUrl = detectBasePath();
   const isHomePage = currentPath === baseUrl || 
                      currentPath === baseUrl.replace(/\/$/, '') ||
                      currentPath.endsWith('/index.html') ||
@@ -407,18 +438,24 @@ function updateFooter() {
     main.appendChild(footer);
   }
   
-  // Add attribution
+  // Add attribution to docs div (not always visible - only appears at bottom after scrolling)
   if (!document.querySelector('.footer-attribution')) {
-    const attribution = document.createElement('div');
-    attribution.className = 'footer-attribution';
-    attribution.innerHTML = `
-      <p>
-        Built by <a href="https://github.com/wolfiex">Daniel Ellis</a>
-        for <a href="https://wcrp-cmip.org">WCRP-CMIP</a>
-        using the <a href="https://github.com/asiffer/mkdocs-shadcn">shadcn</a> theme.
-      </p>
-    `;
-    document.body.appendChild(attribution);
+    const docsDiv = document.querySelector('[data-slot="docs"]');
+    if (docsDiv) {
+      // Ensure docs div has minimum height
+      docsDiv.style.minHeight = '85vh';
+      
+      const attribution = document.createElement('div');
+      attribution.className = 'footer-attribution';
+      attribution.innerHTML = `
+        <p>
+          Built by <a href="https://github.com/wolfiex">Daniel Ellis</a>
+          for <a href="https://wcrp-cmip.org">WCRP-CMIP</a>
+          using the <a href="https://github.com/asiffer/mkdocs-shadcn">shadcn</a> theme.
+        </p>
+      `;
+      docsDiv.appendChild(attribution);
+    }
   }
 }
 
@@ -429,9 +466,7 @@ function updateFooter() {
 function addVersionSelector() {
   if (document.querySelector('.version-selector')) return;
   
-  const baseUrl = typeof base_url !== 'undefined' 
-    ? base_url 
-    : window.location.pathname.split('/').slice(0, -2).join('/') + '/';
+  const baseUrl = detectBasePath();
   
   fetch(baseUrl + '../versions.json')
     .then(r => r.ok ? r.json() : Promise.reject())
@@ -626,8 +661,8 @@ async function buildNestedNavigation() {
   window.nestedNavBuilt = true;
   
   try {
-    // MkDocs provides base_url as a relative path that works from any page
-    const baseUrl = typeof base_url !== 'undefined' ? base_url : 'guidance';
+    // Detect base URL dynamically
+    const baseUrl = detectBasePath();
     const response = await fetch(baseUrl + 'SUMMARY.md');
     
     if (!response.ok) {
@@ -711,6 +746,11 @@ function processGroupForNested(group, baseUrl) {
 function createNestedFolder(parentMenu, folder, baseUrl) {
   const currentPath = window.location.pathname;
   
+  // Detect base path from current URL
+  // On localhost: /emd/ or /repo-name/
+  // On production: /emd/ or /repo-name/
+  const detectedBase = detectBasePath();
+  
   const li = document.createElement('li');
   li.className = 'nested-folder-item';
   li.style.margin = '2px 0';
@@ -757,7 +797,9 @@ function createNestedFolder(parentMenu, folder, baseUrl) {
     itemLi.style.margin = '0';
     
     const link = document.createElement('a');
-    link.href = baseUrl + child.path.replace('.md', '/');
+    // Use detected base path for correct URL construction
+    const cleanPath = child.path.replace('.md', '.html').replace('.html', '.html');
+    link.href = detectedBase + cleanPath;
     link.textContent = child.title;
     link.style.cssText = `
       display: block;

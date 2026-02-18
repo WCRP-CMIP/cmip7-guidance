@@ -1,5 +1,6 @@
 site_name: Guidance and Documentation
-site_url: !ENV [SITE_URL, '']  # Empty for relative paths - works at /guidance/ or /cmip7-guidance/
+# site_url: Empty for relative paths - works at any deployment location (/project/, /custom/, etc.)
+site_url: ''
 repo_url: https://github.com/WCRP-CMIP/cmip7-guidance
 repo_name: WCRP-CMIP/cmip7-guidance
 site_description: Documentation for CMIP7.
@@ -7,6 +8,7 @@ site_author: CMIP-IPO
 
 docs_dir: ../../docs
 site_dir: site
+use_directory_urls: true  # Creates clean URLs like /page/ instead of /page.html
 
 # Theme configuration
 theme:
@@ -43,9 +45,6 @@ hooks:
 
 extra:
   generator: false
-  version:
-    provider: mike
-    default: latest
 
 extra_css:
   - stylesheets/custom.css

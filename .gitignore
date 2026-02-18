@@ -13,8 +13,6 @@ venv
 # Generated during MkDocs build - do not commit
 docs/SUMMARY.md
 docs/*_Contributors.md
-docs/999_Contributors.md
-docs/contributors.md
 contributors.html
 .contributors
 docs/.version

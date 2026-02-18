@@ -5,7 +5,7 @@ mkdocs-gen-files>=0.5.0
 mkdocs-literate-nav>=0.6.0
 pymdown-extensions>=10.0
 pyyaml>=6.0
-mike>=2.0.0
+# mike>=2.0.0  # Removed - simple deployment without versioning
 beautifulsoup4>=4.9.0
 
 # Generator script dependencies

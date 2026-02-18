@@ -6,15 +6,16 @@
         tabindex="-1">
         <div class="flex flex-col gap-12 overflow-auto px-6 py-6">
             {% if nav|length > 1 %}
-            {# Sort by title instead of meta.order to avoid errors with missing frontmatter #}
-            {% set top_items = nav|selectattr("is_page")|sort(attribute="title") %}
-            {% set other_items = nav|rejectattr("is_page")|list %}
+            {# Separate pages, sections, and external links #}
+            {% set top_items = nav|selectattr("is_page")|list %}
+            {% set section_items = nav|rejectattr("is_page")|rejectattr("is_link")|list %}
+            {% set link_items = nav|selectattr("is_link")|list %}
 
             {% if top_items|length > 0 %}
             <div class="flex flex-col gap-4">
                 <div class="text-muted-foreground text-sm font-medium">Menu</div>
                 <div class="flex flex-col gap-3">
-                    {% for top_item in top_items %}
+                    {% for top_item in top_items|sort(attribute="title") %}
                     <a class="text-2xl font-medium" href="{{ top_item.url | url }}">
                         {% if top_item.meta and top_item.meta.sidebar_title %}
                         {{ top_item.meta.sidebar_title }}
@@ -27,14 +28,13 @@
             </div>
             {% endif %}
 
-            {% if other_items|length > 0 %}
+            {% if section_items|length > 0 %}
             <div class="flex flex-col gap-8">
-                {% for top_item in other_items %}
+                {% for top_item in section_items %}
                 <div class="flex flex-col gap-4">
                     <div class="text-muted-foreground text-sm font-medium">{{ top_item.title }}</div>
                     {% if top_item.children %}
                     <div class="flex flex-col gap-3">
-                        {# Sort by title instead of meta.order to avoid errors with missing frontmatter #}
                         {% for sidebar_item in top_item.children|selectattr("is_page")|sort(attribute="title") %}
                         <a class="text-2xl font-medium" href="{{ sidebar_item.url | url}}">
                             {% if sidebar_item.meta and sidebar_item.meta.sidebar_title %}
@@ -48,6 +48,20 @@
                     {% endif %}
                 </div>
                 {% endfor %}
+            </div>
+            {% endif %}
+
+            {% if link_items|length > 0 %}
+            <div class="flex flex-col gap-4">
+                <div class="text-muted-foreground text-sm font-medium">Links</div>
+                <div class="flex flex-col gap-3">
+                    {% for link_item in link_items %}
+                    <a class="text-2xl font-medium flex items-center gap-2" href="{{ link_item.url }}" target="_blank" rel="noopener">
+                        {{ link_item.title }}
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-50"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    </a>
+                    {% endfor %}
+                </div>
             </div>
             {% endif %}
             {% endif %}
