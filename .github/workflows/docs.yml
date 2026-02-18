@@ -4,14 +4,10 @@ on:
   # Manual trigger
   workflow_dispatch:
     inputs:
-      version:
-        description: 'Version to deploy (leave empty to use docs/.version)'
+      force:
+        description: 'Force deploy even without changes'
         required: false
-        default: ''
-      set_latest:
-        description: 'Set as latest version'
-        required: false
-        default: 'true'
+        default: false
         type: boolean
 
   # Dispatch event from other workflows
@@ -36,33 +32,26 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     outputs:
-      version: ${{ steps.version.outputs.version }}
+      version: ${{ steps.deploy.outputs.version }}
+      deployed: ${{ steps.deploy.outputs.deployed }}
     
     steps:
       # ==========================================
       # Setup
       # ==========================================
-      - name: Checkout docs branch
-        uses: actions/checkout@v4
-        with:
-          ref: docs
-          path: build
-          fetch-depth: 0
-
       - name: Checkout production branch
         uses: actions/checkout@v4
         with:
           ref: production
-          path: production
-          fetch-depth: 0
+          fetch-depth: 0  # Mike needs full history
 
       - name: Set up Git
         run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -72,102 +61,83 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          
-          if [ -f "build/src/mkdocs/requirements.txt" ]; then
-            pip install -r build/src/mkdocs/requirements.txt
-          else
-            pip install mkdocs mkdocs-shadcn mkdocs-gen-files mkdocs-literate-nav pymdown-extensions mike
-          fi
-          
-          # Ensure mike is installed
           pip install mike
+          
+          # Install mkdocs requirements
+          if [ -f "src/mkdocs/requirements.txt" ]; then
+            pip install -r src/mkdocs/requirements.txt
+          else
+            pip install mkdocs mkdocs-shadcn mkdocs-gen-files mkdocs-literate-nav pymdown-extensions
+          fi
 
       # ==========================================
-      # Get Version
+      # Get docs source from docs branch
       # ==========================================
-      - name: Get version
-        id: version
+      - name: Fetch docs source
         run: |
-          if [ -n "${{ github.event.inputs.version }}" ]; then
-            VERSION="${{ github.event.inputs.version }}"
-          elif [ -f "build/docs/.version" ]; then
-            VERSION=$(cat build/docs/.version | tr -d '[:space:]')
-          else
-            VERSION="v0.1.0"
+          echo "📥 Fetching docs source from docs branch..."
+          git fetch origin docs:docs
+          
+          # Copy docs source and mkdocs config from docs branch
+          git checkout origin/docs -- docs/ src/
+          
+          echo "✅ Docs source ready"
+
+      # ==========================================
+      # Auto-version and deploy with mike
+      # ==========================================
+      - name: Auto-version and deploy
+        id: deploy
+        working-directory: src/mkdocs
+        run: |
+          FORCE_FLAG=""
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then
+            FORCE_FLAG="--force"
           fi
           
-          echo "version=$VERSION" >> $GITHUB_OUTPUT
-          echo "📌 Version: $VERSION"
-
-      # ==========================================
-      # Build with MkDocs
-      # ==========================================
-      - name: Build documentation
-        working-directory: build/src/mkdocs
-        run: |
-          echo "🏗️ Building MkDocs documentation..."
-          mkdocs build -f mkdocs.yml
-          echo "✅ Build complete"
-
-      # ==========================================
-      # Deploy with Mike (versioning)
-      # ==========================================
-      - name: Setup mike versioning
-        working-directory: build/src/mkdocs
-        continue-on-error: true
-        run: |
-          VERSION="${{ steps.version.outputs.version }}"
-          SET_LATEST="${{ github.event.inputs.set_latest || 'true' }}"
+          echo "🏗️ Running auto-version script..."
           
-          echo "🏗️ Setting up mike versioning for $VERSION..."
+          # Add docs/scripts to Python path
+          export PYTHONPATH="../../docs/scripts:$PYTHONPATH"
           
-          # Mike versioning (optional - won't block deployment if it fails)
-          if [ "$SET_LATEST" = "true" ]; then
-            mike deploy "$VERSION" latest --update-aliases -F mkdocs.yml || echo "⚠️ Mike deploy skipped"
+          # Run auto_version.py which uses mike
+          cd ../../docs/scripts
+          python auto_version.py --deploy $FORCE_FLAG
+          
+          # Get the version that was deployed
+          if [ -f "../.version" ]; then
+            VERSION=$(cat ../.version | tr -d '[:space:]')
+            echo "version=$VERSION" >> $GITHUB_OUTPUT
+            echo "deployed=true" >> $GITHUB_OUTPUT
+            echo "✅ Deployed version: $VERSION"
           else
-            mike deploy "$VERSION" -F mkdocs.yml || echo "⚠️ Mike deploy skipped"
+            echo "deployed=false" >> $GITHUB_OUTPUT
+            echo "ℹ️ No deployment (no changes)"
           fi
-          
-          mike set-default latest -F mkdocs.yml || echo "⚠️ Mike set-default skipped"
-          
-          echo "✅ Versioning step complete"
 
-      # ==========================================
-      # Save versions artifact
-      # ==========================================
-      - name: Upload versions artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: docs-versions
-          path: build/src/mkdocs/site
-          retention-days: 30
-          if-no-files-found: warn
-
-      # ==========================================
-      # Commit to production branch
-      # ==========================================
-      - name: Commit docs to production
+      - name: Summary
+        if: steps.deploy.outputs.deployed == 'true'
         run: |
-          # Copy built documentation to production branch
-          mkdir -p production/docs
-          cp -r build/src/mkdocs/site/* production/docs/
-          
-          cd production
-          git add docs/
-          
-          if [ -n "$(git status --porcelain)" ]; then
-            git commit -m "📚 Build documentation ${{ steps.version.outputs.version }}"
-            git push origin production
-            echo "✅ Documentation committed to production"
-          else
-            echo "ℹ️ No changes to commit"
-          fi
+          VERSION="${{ steps.deploy.outputs.version }}"
+          echo "### 🚀 Documentation Deployed!" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Version:** $VERSION (date-based)" >> $GITHUB_STEP_SUMMARY
+          echo "**Latest:** Yes" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Version URL:** https://wcrp-cmip.github.io/cmip7-guidance/$VERSION/" >> $GITHUB_STEP_SUMMARY
+          echo "**Latest URL:** https://wcrp-cmip.github.io/cmip7-guidance/latest/" >> $GITHUB_STEP_SUMMARY
+          echo "**Root URL:** https://wcrp-cmip.github.io/cmip7-guidance/" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Also accessible at:" >> $GITHUB_STEP_SUMMARY
+          echo "- https://wcrp-cmip.github.io/guidance/$VERSION/" >> $GITHUB_STEP_SUMMARY
+          echo "- https://wcrp-cmip.github.io/guidance/latest/" >> $GITHUB_STEP_SUMMARY
 
   # ==========================================
   # Deploy to GitHub Pages
   # ==========================================
   deploy-pages:
-    needs: build
+    needs: build-and-deploy
+    if: needs.build-and-deploy.outputs.deployed == 'true'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -193,59 +163,6 @@ jobs:
 
       - name: Summary
         run: |
-          echo "### 🚀 Documentation deployed!" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 📚 Pages Deployed" >> $GITHUB_STEP_SUMMARY
           echo "**URL:** ${{ steps.deployment.outputs.page_url }}" >> $GITHUB_STEP_SUMMARY
-          echo "**Version:** ${{ needs.build.outputs.version }}" >> $GITHUB_STEP_SUMMARY
-
-  # ==========================================
-  # Update versions branch
-  # ==========================================
-  update-versions:
-    needs: build
-    runs-on: ubuntu-latest
-    
-    steps:
-      - name: Checkout versions branch
-        uses: actions/checkout@v4
-        with:
-          ref: versions
-          fetch-depth: 0
-        continue-on-error: true
-
-      - name: Create versions branch if needed
-        run: |
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
-          
-          # Check if we're on versions branch, if not create it
-          CURRENT_BRANCH=$(git branch --show-current 2>/dev/null || echo "")
-          if [ "$CURRENT_BRANCH" != "versions" ]; then
-            git checkout --orphan versions
-            git rm -rf . 2>/dev/null || true
-          fi
-
-      - name: Download versions artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: docs-versions
-          path: .
-        continue-on-error: true
-
-      - name: Commit versions
-        run: |
-          git add -A
-          
-          if [ -n "$(git status --porcelain)" ]; then
-            git commit -m "📚 Update versions - ${{ needs.build.outputs.version }}"
-            git push origin versions --force-with-lease || git push origin versions --force
-            echo "✅ Versions branch updated"
-          else
-            echo "ℹ️ No version changes to commit"
-          fi
-
-      - name: Summary
-        run: |
-          echo "### 📌 Versions Updated" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "Version **${{ needs.build.outputs.version }}** added to versions branch" >> $GITHUB_STEP_SUMMARY
+          echo "**Version:** ${{ needs.build-and-deploy.outputs.version }}" >> $GITHUB_STEP_SUMMARY

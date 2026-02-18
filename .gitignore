@@ -1,5 +1,24 @@
 .DS_Store
 */.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Auto-generated documentation files
+# Generated during MkDocs build - do not commit
+docs/SUMMARY.md
+docs/*_Contributors.md
+docs/999_Contributors.md
+docs/contributors.md
+contributors.html
+.contributors
+docs/.version
+docs/.last_deploy_commit
+
 # Logs
 logs
 *.log
