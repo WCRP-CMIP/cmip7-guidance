@@ -1,0 +1,1634 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        // for search plugin notably
+        const base_url = "";
+    </script>
+    <script>
+    const darkTheme = window.matchMedia("(prefers-color-scheme: dark)");
+    darkTheme.onchange = (e) => {
+        if (e.matches) {
+            document.documentElement.classList.add("dark")
+            localStorage.theme = 'dark';
+        } else {
+            document.documentElement.classList.remove("dark")
+            localStorage.removeItem("theme")
+        }
+    };
+
+    // On page load. Priotiry to lcaolStorage
+    if (localStorage.theme === "dark") {
+        document.documentElement.classList.add("dark")
+    } else if (localStorage.theme === "light") {
+        document.documentElement.classList.remove("dark")
+    } else if (darkTheme.matches) {
+        document.documentElement.classList.add("dark")
+    } else {
+        document.documentElement.classList.remove("dark")
+    }
+
+    // set the layout based on localStorage
+    document.documentElement.classList.add(localStorage.getItem("html-layout") || "layout-fixed");
+</script>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>guidance for modellers - Guidance and Documentation</title>
+    
+
+
+<title>CMIP7 Participation Guidance for Modellers</title>
+
+
+
+
+
+
+
+
+
+
+<!-- Open Graph (Facebook, LinkedIn) -->
+
+<meta property="og:title" content="CMIP7 Participation Guidance for Modellers">
+
+
+
+
+
+
+
+
+
+
+<!-- Twitter Card -->
+
+<meta name="twitter:title" content="CMIP7 Participation Guidance for Modellers">
+
+
+
+
+
+
+<!-- JSON-LD Structured Data -->
+
+
+
+    <link rel="icon" href="../../assets/favicon.svg">
+
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/geist.css" rel="stylesheet">
+
+    
+    <link href="../../stylesheets/custom.css" rel="stylesheet">
+
+    
+
+    <script src="../../js/callbacks.js"></script>
+
+    
+
+    
+
+    
+
+</head>
+
+<body
+    class="text-foreground group/body overscroll-none font-sans antialiased [--footer-height:calc(var(--spacing)*14)] [--header-height:calc(var(--spacing)*14)] xl:[--footer-height:calc(var(--spacing)*24)] theme-default">
+    <div id="inner-body" class="bg-background relative z-10 flex min-h-svh flex-col">
+        <header class="bg-background sticky top-0 z-50 w-full" view-transition-name="header">
+    <div class="container-wrapper 3xl:fixed:px-0 px-6">
+        <div class="3xl:fixed:container flex h-(--header-height) items-center gap-2 **:data-[slot=separator]:!h-4">
+            <button id="menu-button" data-slot="popover-trigger" onclick="onMobileMenuButtonClick(event)"
+                class="group whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:text-accent-foreground px-4 py-2 has-[&gt;svg]:px-3 extend-touch-target h-8 touch-manipulation items-center justify-start gap-2.5 !p-0 hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 active:bg-transparent dark:hover:bg-transparent flex lg:hidden"
+                type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-«Rmplb»"
+                data-state="closed">
+                <div class="relative flex h-8 w-4 items-center justify-center">
+                    <div class="relative size-4">
+                        <!-- 16px x 16px -->
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="0" x2="16" y1="5" y2="5"
+                                class="group-data-[state=open]:translate-y-[2.25px] group-data-[state=open]:-translate-x-[2.25px] group-data-[state=open]:rotate-45 transition-all duration-300 origin-center" />
+                            <line x1="0" x2="16" y1="11" y2="11"
+                                class="group-data-[state=open]:-translate-y-[2.25px] group-data-[state=open]:-translate-x-[2.25px] group-data-[state=open]:-rotate-45 transition-all duration-300 origin-center" />
+                        </svg>
+                    </div>
+
+                    <span class="sr-only">Toggle Menu</span>
+                </div>
+                <span class="flex h-8 items-center text-lg leading-none font-medium">Menu</span>
+            </button>
+            <a data-slot="button"
+                class="items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-5 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 hidden h-8 lg:flex"
+                href="">
+                <span class="size-8 flex flex-row justify-center items-center">
+                    
+
+<img class="size-8" src="../../assets/cmip-logo.svg" alt="icon">
+
+
+                </span>
+
+                
+                <h1 class="pr-2">Guidance and Documentation</h1>
+                
+            </a>
+            
+            <div class="ml-auto flex items-center gap-2 md:flex-1 md:justify-end">
+                <div class="hidden w-full flex-1 md:flex md:w-auto md:flex-none">
+                    <button data-slot="dialog-trigger" onclick="onSearchBarClick(event)"
+    class="inline-flex items-center gap-2 whitespace-nowrap rounded-md text-sm transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-secondary/80 px-4 py-2 has-[&gt;svg]:px-3 bg-surface text-surface-foreground/60 dark:bg-card relative h-8 w-full justify-start pl-2.5 font-normal shadow-none sm:pr-12 md:w-40 lg:w-56 xl:w-64"
+    type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-«R66plb»" data-state="closed">
+    <span class="text-muted-foreground hidden lg:inline-flex">Search documentation...</span>
+    <span class="text-muted-foreground inline-flex lg:hidden">Search...</span>
+    <div class="absolute top-1.5 right-1.5 hidden gap-1 sm:flex">
+        <kbd
+            class="bg-background text-muted-foreground pointer-events-none flex h-5 items-center justify-center gap-1 rounded border px-1 font-sans text-[0.7rem] font-medium select-none [&amp;_svg:not([class*='size-'])]:size-3">Ctrl</kbd><kbd
+            class="bg-background text-muted-foreground pointer-events-none flex h-5 items-center justify-center gap-1 rounded border px-1 font-sans text-[0.7rem] font-medium select-none [&amp;_svg:not([class*='size-'])]:size-3 aspect-square">K</kbd>
+    </div>
+</button>
+<dialog id="search-dialog" onclick="onSearchDialogClick(event)"
+    class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-background rounded-lg shadow-lg border overflow-hidden p-0">
+    <div class="w-lg gap-4">
+        <div class="flex h-full w-full flex-col overflow-hidden rounded-md bg-popover text-popover-foreground">
+            <div data-slot="command-input-wrapper" class="flex h-9 items-center gap-2 border-b px-3"><svg
+                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-search size-4 shrink-0 opacity-50">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.3-4.3"></path>
+                </svg>
+                <input data-slot="command-input"
+                    class="placeholder:text-muted-foreground flex h-10 w-full rounded-md bg-transparent py-3 text-sm outline-hidden disabled:cursor-not-allowed disabled:opacity-50"
+                    placeholder="Search documentation..." cmdk-input="" autocomplete="off" autocorrect="off"
+                    spellcheck="false" aria-autocomplete="list" role="combobox" aria-expanded="true"
+                    aria-controls="radix-«r1t6»" aria-labelledby="radix-«r1t7»" id="radix-«r1t8»" type="text" value=""
+                    aria-activedescendant="radix-«r1th»" oninput="onInputHandler(event)">
+            </div>
+        </div>
+        <div id="mkdocs-search-results">
+            <!-- search results go there -->
+        </div>
+    </div>
+</dialog>
+<script>
+    document.removeEventListener("keydown", searchShortcutHandler);
+    document.addEventListener("keydown", searchShortcutHandler);
+</script>
+                </div>
+                <div data-orientation="vertical" role="none" data-slot="separator"
+                    class="bg-border shrink-0 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-px ml-2 hidden lg:block">
+                </div>
+                <a target="_blank" rel="noreferrer" data-slot="button"
+                    class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 rounded-md gap-1.5 px-3 has-[&gt;svg]:px-2.5 h-8 shadow-none"
+                    href="https://github.com/WCRP-CMIP/cmip7-guidance">
+                    <svg viewBox="0 0 438.549 438.549">
+                        <path fill="currentColor"
+                            d="M409.132 114.573c-19.608-33.596-46.205-60.194-79.798-79.8-33.598-19.607-70.277-29.408-110.063-29.408-39.781 0-76.472 9.804-110.063 29.408-33.596 19.605-60.192 46.204-79.8 79.8C9.803 148.168 0 184.854 0 224.63c0 47.78 13.94 90.745 41.827 128.906 27.884 38.164 63.906 64.572 108.063 79.227 5.14.954 8.945.283 11.419-1.996 2.475-2.282 3.711-5.14 3.711-8.562 0-.571-.049-5.708-.144-15.417a2549.81 2549.81 0 01-.144-25.406l-6.567 1.136c-4.187.767-9.469 1.092-15.846 1-6.374-.089-12.991-.757-19.842-1.999-6.854-1.231-13.229-4.086-19.13-8.559-5.898-4.473-10.085-10.328-12.56-17.556l-2.855-6.57c-1.903-4.374-4.899-9.233-8.992-14.559-4.093-5.331-8.232-8.945-12.419-10.848l-1.999-1.431c-1.332-.951-2.568-2.098-3.711-3.429-1.142-1.331-1.997-2.663-2.568-3.997-.572-1.335-.098-2.43 1.427-3.289 1.525-.859 4.281-1.276 8.28-1.276l5.708.853c3.807.763 8.516 3.042 14.133 6.851 5.614 3.806 10.229 8.754 13.846 14.842 4.38 7.806 9.657 13.754 15.846 17.847 6.184 4.093 12.419 6.136 18.699 6.136 6.28 0 11.704-.476 16.274-1.423 4.565-.952 8.848-2.383 12.847-4.285 1.713-12.758 6.377-22.559 13.988-29.41-10.848-1.14-20.601-2.857-29.264-5.14-8.658-2.286-17.605-5.996-26.835-11.14-9.235-5.137-16.896-11.516-22.985-19.126-6.09-7.614-11.088-17.61-14.987-29.979-3.901-12.374-5.852-26.648-5.852-42.826 0-23.035 7.52-42.637 22.557-58.817-7.044-17.318-6.379-36.732 1.997-58.24 5.52-1.715 13.706-.428 24.554 3.853 10.85 4.283 18.794 7.952 23.84 10.994 5.046 3.041 9.089 5.618 12.135 7.708 17.705-4.947 35.976-7.421 54.818-7.421s37.117 2.474 54.823 7.421l10.849-6.849c7.419-4.57 16.18-8.758 26.262-12.565 10.088-3.805 17.802-4.853 23.134-3.138 8.562 21.509 9.325 40.922 2.279 58.24 15.036 16.18 22.559 35.787 22.559 58.817 0 16.178-1.958 30.497-5.853 42.966-3.9 12.471-8.941 22.457-15.125 29.979-6.191 7.521-13.901 13.85-23.131 18.986-9.232 5.14-18.182 8.85-26.84 11.136-8.662 2.286-18.415 4.004-29.263 5.146 9.894 8.562 14.842 22.077 14.842 40.539v60.237c0 3.422 1.19 6.279 3.572 8.562 2.379 2.279 6.136 2.95 11.276 1.995 44.163-14.653 80.185-41.062 108.068-79.226 27.88-38.161 41.825-81.126 41.825-128.906-.01-39.771-9.818-76.454-29.414-110.049z">
+                        </path>
+                    </svg>
+                    
+                </a>
+                <div data-orientation="vertical" role="none" data-slot="separator"
+                    class="bg-border shrink-0 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-px 3xl:flex hidden">
+                </div>
+                <button data-slot="button"
+                    class="items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 size-8 3xl:flex hidden"
+                    title="Toggle layout" onclick="toggleLayout(event)">
+                    <span class="sr-only">Toggle layout</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-gallery-horizontal">
+                        <path d="M2 3v18"></path>
+                        <rect width="12" height="18" x="6" y="3" rx="2"></rect>
+                        <path d="M22 3v18"></path>
+                    </svg>
+                </button>
+                <div data-orientation="vertical" role="none" data-slot="separator"
+                    class="bg-border shrink-0 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-px">
+                </div>
+                <button data-slot="button"
+                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 group/toggle extend-touch-target size-8"
+                    title="Toggle theme" onclick="onThemeSwitch(event)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="size-4.5">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+                        <path d="M12 3l0 18"></path>
+                        <path d="M12 9l4.65 -4.65"></path>
+                        <path d="M12 14.3l7.37 -7.37"></path>
+                        <path d="M12 19.6l8.85 -8.85"></path>
+                    </svg>
+                    <span class="sr-only">Toggle theme</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+        <main class="flex flex-1 flex-col">
+            <div class="container-wrapper flex flex-1 flex-col px-2">
+                <div data-slot="sidebar-wrapper" style="--sidebar-width: 16rem; --sidebar-width-icon: 3rem;"
+                    class="group/sidebar-wrapper has-data-[variant=inset]:bg-sidebar flex w-full 3xl:fixed:container 3xl:fixed:px-3 min-h-min flex-1 items-start px-0 [--sidebar-width:220px] [--top-spacing:0] lg:grid lg:grid-cols-[var(--sidebar-width)_minmax(0,1fr)] lg:[--sidebar-width:240px] lg:[--top-spacing:calc(var(--spacing)*4)]">
+                    <div data-slot="sidebar"
+                        class="text-sidebar-foreground w-(--sidebar-width) flex-col sticky top-[calc(var(--header-height)+1px)] z-30 hidden h-[calc(100svh-var(--header-height)-var(--footer-height))] bg-transparent lg:flex">
+                        <div data-slot="sidebar-content" data-sidebar="content"
+                            class="flex min-h-0 flex-1 flex-col gap-2 overflow-auto group-data-[collapsible=icon]:overflow-hidden no-scrollbar px-2 pb-12">
+                            <div class="h-(--top-spacing) shrink-0"></div>
+                            
+<div view-transition-name="sidebar" data-slot="sidebar-group" data-sidebar="group"
+    class="relative flex w-full min-w-0 flex-col p-2 no-scrollbar">
+    
+
+    
+    
+    
+
+    
+
+    
+    
+
+    
+    
+        
+        
+            
+            
+            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="../.."
+        class="hover:bg-sidebar-accent hover:text-sidebar-accent-foreground peer/menu-button flex items-center gap-2 rounded-md p-2 text-left outline-hidden ring-sidebar-ring transition-[width,height,padding] focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 data-[active=true]:bg-accent data-[active=true]:border-accent 3xl:fixed:w-full 3xl:fixed:max-w-48 relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md">
+
+        
+        Home
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+            
+        
+    
+    
+        
+        
+            
+            
+            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="../../Updates_for_Modellers/"
+        class="hover:bg-sidebar-accent hover:text-sidebar-accent-foreground peer/menu-button flex items-center gap-2 rounded-md p-2 text-left outline-hidden ring-sidebar-ring transition-[width,height,padding] focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 data-[active=true]:bg-accent data-[active=true]:border-accent 3xl:fixed:w-full 3xl:fixed:max-w-48 relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md">
+
+        
+        Updates for Modellers
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+            
+        
+    
+    
+        
+        
+            
+            <div data-slot="sidebar-group" data-sidebar="group" class="relative flex w-full min-w-0 flex-col p-2">
+                
+                    
+                    <div data-slot="sidebar-group-label" data-sidebar="group-label"
+                        class="ring-sidebar-ring flex h-8 shrink-0 items-center rounded-md px-2 text-xs outline-hidden transition-[margin,opacity] duration-200 ease-linear focus-visible:ring-2 [&amp;&gt;svg]:size-4 [&amp;&gt;svg]:shrink-0 group-data-[collapsible=icon]:-mt-8 group-data-[collapsible=icon]:opacity-0 text-muted-foreground font-medium">
+                        CMIP7
+                    </div>
+                
+                <div data-slot="sidebar-group-content" data-sidebar="group-content" class="w-full text-sm">
+                    <ul data-slot="sidebar-menu" data-sidebar="menu" class="flex w-full min-w-0 flex-col gap-0.5">
+                        
+                            
+                                
+                                <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="../"
+        class="hover:bg-sidebar-accent hover:text-sidebar-accent-foreground peer/menu-button flex items-center gap-2 rounded-md p-2 text-left outline-hidden ring-sidebar-ring transition-[width,height,padding] focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 data-[active=true]:bg-accent data-[active=true]:border-accent 3xl:fixed:w-full 3xl:fixed:max-w-48 relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md">
+
+        
+        CMIP7 Guidance
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+                                
+                            
+                        
+                            
+                                
+                                <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="../branded_variables/"
+        class="hover:bg-sidebar-accent hover:text-sidebar-accent-foreground peer/menu-button flex items-center gap-2 rounded-md p-2 text-left outline-hidden ring-sidebar-ring transition-[width,height,padding] focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 data-[active=true]:bg-accent data-[active=true]:border-accent 3xl:fixed:w-full 3xl:fixed:max-w-48 relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md">
+
+        
+        branded variables
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+                                
+                            
+                        
+                            
+                                
+                                <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="../CVs_discussion/"
+        class="hover:bg-sidebar-accent hover:text-sidebar-accent-foreground peer/menu-button flex items-center gap-2 rounded-md p-2 text-left outline-hidden ring-sidebar-ring transition-[width,height,padding] focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 data-[active=true]:bg-accent data-[active=true]:border-accent 3xl:fixed:w-full 3xl:fixed:max-w-48 relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md">
+
+        
+        CVs discussion
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+                                
+                            
+                        
+                            
+                                
+                                <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="../domain_names/"
+        class="hover:bg-sidebar-accent hover:text-sidebar-accent-foreground peer/menu-button flex items-center gap-2 rounded-md p-2 text-left outline-hidden ring-sidebar-ring transition-[width,height,padding] focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 data-[active=true]:bg-accent data-[active=true]:border-accent 3xl:fixed:w-full 3xl:fixed:max-w-48 relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md">
+
+        
+        domain names
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+                                
+                            
+                        
+                            
+                                
+                                <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="../FAQ/"
+        class="hover:bg-sidebar-accent hover:text-sidebar-accent-foreground peer/menu-button flex items-center gap-2 rounded-md p-2 text-left outline-hidden ring-sidebar-ring transition-[width,height,padding] focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 data-[active=true]:bg-accent data-[active=true]:border-accent 3xl:fixed:w-full 3xl:fixed:max-w-48 relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md">
+
+        
+        FAQ
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+                                
+                            
+                        
+                            
+                                
+                                <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="../global_attributes/"
+        class="hover:bg-sidebar-accent hover:text-sidebar-accent-foreground peer/menu-button flex items-center gap-2 rounded-md p-2 text-left outline-hidden ring-sidebar-ring transition-[width,height,padding] focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 data-[active=true]:bg-accent data-[active=true]:border-accent 3xl:fixed:w-full 3xl:fixed:max-w-48 relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md">
+
+        
+        global attributes
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+                                
+                            
+                        
+                            
+                                
+                                <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="../guidance_for_esgf/"
+        class="hover:bg-sidebar-accent hover:text-sidebar-accent-foreground peer/menu-button flex items-center gap-2 rounded-md p-2 text-left outline-hidden ring-sidebar-ring transition-[width,height,padding] focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 data-[active=true]:bg-accent data-[active=true]:border-accent 3xl:fixed:w-full 3xl:fixed:max-w-48 relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md">
+
+        
+        guidance for esgf
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+                                
+                            
+                        
+                            
+                                
+                                <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="../guidance_for_mips/"
+        class="hover:bg-sidebar-accent hover:text-sidebar-accent-foreground peer/menu-button flex items-center gap-2 rounded-md p-2 text-left outline-hidden ring-sidebar-ring transition-[width,height,padding] focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 data-[active=true]:bg-accent data-[active=true]:border-accent 3xl:fixed:w-full 3xl:fixed:max-w-48 relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md">
+
+        
+        guidance for mips
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+                                
+                            
+                        
+                            
+                                
+                                <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="true" data-sidebar="menu-button"
+        data-size="default" href="./"
+        class="hover:bg-sidebar-accent hover:text-sidebar-accent-foreground peer/menu-button flex items-center gap-2 rounded-md p-2 text-left outline-hidden ring-sidebar-ring transition-[width,height,padding] focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 data-[active=true]:bg-accent data-[active=true]:border-accent 3xl:fixed:w-full 3xl:fixed:max-w-48 relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md">
+
+        
+        guidance for modellers
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+                                
+                            
+                        
+                            
+                                
+                                <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="../guidance_for_users/"
+        class="hover:bg-sidebar-accent hover:text-sidebar-accent-foreground peer/menu-button flex items-center gap-2 rounded-md p-2 text-left outline-hidden ring-sidebar-ring transition-[width,height,padding] focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 data-[active=true]:bg-accent data-[active=true]:border-accent 3xl:fixed:w-full 3xl:fixed:max-w-48 relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md">
+
+        
+        guidance for users
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+                                
+                            
+                        
+                    </ul>
+                </div>
+            </div>
+        
+    
+    
+        
+        
+            
+            <div data-slot="sidebar-group" data-sidebar="group" class="relative flex w-full min-w-0 flex-col p-2">
+                
+                    
+                    <div data-slot="sidebar-group-label" data-sidebar="group-label"
+                        class="ring-sidebar-ring flex h-8 shrink-0 items-center rounded-md px-2 text-xs outline-hidden transition-[margin,opacity] duration-200 ease-linear focus-visible:ring-2 [&amp;&gt;svg]:size-4 [&amp;&gt;svg]:shrink-0 group-data-[collapsible=icon]:-mt-8 group-data-[collapsible=icon]:opacity-0 text-muted-foreground font-medium">
+                        How to Guides:
+                    </div>
+                
+                <div data-slot="sidebar-group-content" data-sidebar="group-content" class="w-full text-sm">
+                    <ul data-slot="sidebar-menu" data-sidebar="menu" class="flex w-full min-w-0 flex-col gap-0.5">
+                        
+                            
+                                
+                                <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="../../How_to_Guides/Energy_Consumption_and_Carbon_Footprint_Spreadsheet/"
+        class="hover:bg-sidebar-accent hover:text-sidebar-accent-foreground peer/menu-button flex items-center gap-2 rounded-md p-2 text-left outline-hidden ring-sidebar-ring transition-[width,height,padding] focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 data-[active=true]:bg-accent data-[active=true]:border-accent 3xl:fixed:w-full 3xl:fixed:max-w-48 relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md">
+
+        
+        Energy Consumption and Carbon Footprint Spreadsheet
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+                                
+                            
+                        
+                    </ul>
+                </div>
+            </div>
+        
+    
+    
+        
+        
+            
+            <div data-slot="sidebar-group" data-sidebar="group" class="relative flex w-full min-w-0 flex-col p-2">
+                
+                    
+                    <div data-slot="sidebar-group-label" data-sidebar="group-label"
+                        class="ring-sidebar-ring flex h-8 shrink-0 items-center rounded-md px-2 text-xs outline-hidden transition-[margin,opacity] duration-200 ease-linear focus-visible:ring-2 [&amp;&gt;svg]:size-4 [&amp;&gt;svg]:shrink-0 group-data-[collapsible=icon]:-mt-8 group-data-[collapsible=icon]:opacity-0 text-muted-foreground font-medium">
+                        CMIP6
+                    </div>
+                
+                <div data-slot="sidebar-group-content" data-sidebar="group-content" class="w-full text-sm">
+                    <ul data-slot="sidebar-menu" data-sidebar="menu" class="flex w-full min-w-0 flex-col gap-0.5">
+                        
+                            
+                                
+                                <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="../../CMIP6/"
+        class="hover:bg-sidebar-accent hover:text-sidebar-accent-foreground peer/menu-button flex items-center gap-2 rounded-md p-2 text-left outline-hidden ring-sidebar-ring transition-[width,height,padding] focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 data-[active=true]:bg-accent data-[active=true]:border-accent 3xl:fixed:w-full 3xl:fixed:max-w-48 relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md">
+
+        
+        CMIP6 Guidance
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+                                
+                            
+                        
+                            
+                                
+                                <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="../../CMIP6/global_attributes/"
+        class="hover:bg-sidebar-accent hover:text-sidebar-accent-foreground peer/menu-button flex items-center gap-2 rounded-md p-2 text-left outline-hidden ring-sidebar-ring transition-[width,height,padding] focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 data-[active=true]:bg-accent data-[active=true]:border-accent 3xl:fixed:w-full 3xl:fixed:max-w-48 relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md">
+
+        
+        global attributes
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+                                
+                            
+                        
+                            
+                                
+                                <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="../../CMIP6/guidance_for_esgf/"
+        class="hover:bg-sidebar-accent hover:text-sidebar-accent-foreground peer/menu-button flex items-center gap-2 rounded-md p-2 text-left outline-hidden ring-sidebar-ring transition-[width,height,padding] focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 data-[active=true]:bg-accent data-[active=true]:border-accent 3xl:fixed:w-full 3xl:fixed:max-w-48 relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md">
+
+        
+        guidance for esgf
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+                                
+                            
+                        
+                            
+                                
+                                <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="../../CMIP6/guidance_for_modellers/"
+        class="hover:bg-sidebar-accent hover:text-sidebar-accent-foreground peer/menu-button flex items-center gap-2 rounded-md p-2 text-left outline-hidden ring-sidebar-ring transition-[width,height,padding] focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 data-[active=true]:bg-accent data-[active=true]:border-accent 3xl:fixed:w-full 3xl:fixed:max-w-48 relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md">
+
+        
+        guidance for modellers
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+                                
+                            
+                        
+                            
+                                
+                                <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="../../CMIP6/guidance_for_users/"
+        class="hover:bg-sidebar-accent hover:text-sidebar-accent-foreground peer/menu-button flex items-center gap-2 rounded-md p-2 text-left outline-hidden ring-sidebar-ring transition-[width,height,padding] focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 data-[active=true]:bg-accent data-[active=true]:border-accent 3xl:fixed:w-full 3xl:fixed:max-w-48 relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md">
+
+        
+        guidance for users
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+                                
+                            
+                        
+                            
+                                
+                                <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="../../CMIP6/terms_of_use/"
+        class="hover:bg-sidebar-accent hover:text-sidebar-accent-foreground peer/menu-button flex items-center gap-2 rounded-md p-2 text-left outline-hidden ring-sidebar-ring transition-[width,height,padding] focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 data-[active=true]:bg-accent data-[active=true]:border-accent 3xl:fixed:w-full 3xl:fixed:max-w-48 relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md">
+
+        
+        terms of use
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+                                
+                            
+                        
+                            
+                                
+                                <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="../../CMIP6/time_and_area_averaging/"
+        class="hover:bg-sidebar-accent hover:text-sidebar-accent-foreground peer/menu-button flex items-center gap-2 rounded-md p-2 text-left outline-hidden ring-sidebar-ring transition-[width,height,padding] focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 data-[active=true]:bg-accent data-[active=true]:border-accent 3xl:fixed:w-full 3xl:fixed:max-w-48 relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md">
+
+        
+        time and area averaging
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+                                
+                            
+                        
+                    </ul>
+                </div>
+            </div>
+        
+    
+    
+        
+        
+            
+        
+    
+    
+        
+        
+            
+        
+    
+    
+        
+        
+            
+        
+    
+    
+        
+        
+            
+        
+    
+    
+        
+        
+            
+        
+    
+    
+
+    
+</div>
+                        </div>
+                    </div>
+                    <div class="h-full w-full">
+                        <div data-slot="docs" class="flex items-stretch text-[1.05rem] sm:text-[15px] xl:w-full">
+                            <div class="flex min-w-0 flex-1 flex-col">
+                                <div class="h-(--top-spacing) shrink-0"></div>
+                                <article class="w-full" view-transition-name="page">
+  <div class="flex flex-col gap-2">
+    <div class="flex flex-col gap-2">
+      <div id="page-header" class="flex items-start justify-between">
+        <h1
+          class="scroll-m-20 text-4xl font-semibold tracking-tight sm:text-3xl xl:text-4xl"
+        >
+          CMIP7 Participation Guidance for Modellers
+        </h1>
+
+        <div class="flex items-center gap-2 pt-1.5">
+          
+<button onclick="fetch(`/CMIP7/guidance_for_modellers.md`).then((r) => r.blob()).then((blob) => navigator.clipboard.write([new ClipboardItem({ 'text/plain': blob })]))" 
+        data-slot="button" 
+        class="cursor-pointer inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-md gap-1.5 px-3 has-[&>svg]:px-2.5 h-8 shadow-none md:h-7 md:text-[0.8rem]">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-copy ">
+    <path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z"></path><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1"></path>
+</svg>
+<span class="max-md:hidden">Copy Page</span>
+</button> 
+           
+          
+        </div>
+      </div>
+      
+    </div>
+    <div class="flex justify-end items-center">
+       
+    </div>
+  </div>
+  <div class="typography w-full flex-1 *:data-[slot=alert]:first:mt-0">
+    <h2 id="1-requirements-expectations">1. Requirements &amp; Expectations<a class="headerlink" href="#1-requirements-expectations" title="Permanent link">&para;</a></h2>
+<p>Groups who plan to participate in CMIP7 should (in roughly this order, although model documentation should be 
+provided as early as possible):</p>
+<ul>
+<li>
+<p>Indicate your intention to participate by registering your institution and model with the 
+  <a href="https://github.com/WCRP-CMIP/CMIP7-CVs">CMIP7 Controlled Vocabularies</a> when the registration
+  process is available. Publication of your model output (on ESGF) will not be possible
+  without first registering your institution and model, which includes providing the
+  <em>Essential Model Documentation</em> for your model. The list of currently registered
+  institutions can be found at <strong><em>link needed</em></strong> and the registration process is 
+  via <strong><em>link needed</em></strong>.</p>
+</li>
+<li>
+<p>Following, or as part of, the registration of your models you will be able to indicate your
+  intention to participate in community MIPs through the <code>activity_participation</code> information
+  for your models. Information on community MIPs can be found <a href="https://wcrp-cmip.org/mips">here</a>.</p>
+</li>
+<li>
+<p>Ensure that you have joined the modelling group mailing list -- if unsure please 
+  contact the <a href="mailto:cmip-ipo@esa.int">CMIP IPO</a> for further details.</p>
+</li>
+<li>
+<p>Perform required DECK and MIP experiments, using the required 
+  <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/">standard forcing datasets</a>.</p>
+</li>
+<li>
+<p>Save all requested model output as specified in the 
+  <a href="https://wcrp-cmip.org/cmip-phases/cmip7/cmip7-data-request/">Data Request</a> where possible (see section 4 below).
+  Prioritise the <a href="https://gmd.copernicus.org/articles/18/2639/2025/">Baseline Climate Variables</a>, a group of 135 variables that are requested from all experiments.</p>
+</li>
+<li>
+<p>Document all simulations including forcing information and a description of ensemble variants
+  (details to be clarified later).</p>
+</li>
+<li>
+<p>Prepare and make available model output according to CMIP7 specifications (see sections 5, 6, 
+  and 7 below).</p>
+</li>
+<li>
+<p>Plans for DOI registration and citation facilities are under consideration and 
+  further information will be provided in due course.</p>
+</li>
+<li>
+<p>Correct published data when errors are discovered. Errors should be documented using the
+  <a href="https://errata.ipsl.fr/">ESGF Errata Service</a> before further action is taken, e.g. retraction
+  and publication of replacement datasets.  Please note that the Errata Service supports 
+  <a href="https://ipsl.gitbook.io/esgf-errata-service/errata-service-web-pages/propose-an-issue-through-webforms">user proposed issues</a>,
+  which are moderated and passed to modelling groups as required. Further information about the
+  service is available in the 
+  <a href="https://ipsl.gitbook.io/esgf-errata-service">Errata Service Documentation</a>.</p>
+</li>
+</ul>
+<h2 id="2-experiment-design">2.  Experiment Design<a class="headerlink" href="#2-experiment-design" title="Permanent link">&para;</a></h2>
+<p>The CMIP7 protocol and experiments are described in a special issue of Geoscientific Model Development with an overview 
+of the overall design and scientific strategy provided in the lead article of that issue by 
+<a href="https://doi.org/10.5194/gmd-18-6671-2025">Dunne et al. (2025)</a>.</p>
+<ul>
+<li>Each model participating in CMIP7 is encouraged to contribute results from the eight DECK experiments 
+  (<code>amip</code>, <code>piControl</code>/<code>esm-piControl</code>, <code>abrupt-4xCO2</code>, <code>1pctCO2</code>, <code>historical</code>/<code>esm-hist</code>, <code>piClim-control</code>, <code>piClim-anthro</code>, 
+  <code>piClim-4xCO2</code>). See <a href="https://doi.org/10.5194/gmd-18-6671-2025">Dunne et al. (2025)</a> where the experiment protocol 
+  is documented. These experiments are considered to baseline the climate models and are directly overseen by the CMIP panel. 
+  With the introduction of emission driven simulations, the panel now allows emission driven or concentration driven simulations.</li>
+<li>In addition to the DECK, each modelling group is encouraged to complete the Assessment Fast Track experiments described in 
+  <a href="https://doi.org/10.5194/gmd-18-6671-2025">Dunne et al. (2025)</a>. </li>
+<li>When called for by the experiment protocol, it is requested that the standard forcing datasets (see Section 3) are used 
+  and that any deviation from the standard forcing is documented (guidance to be confirmed).</li>
+</ul>
+<h2 id="3-forcing-data-sets">3.  Forcing data sets<a class="headerlink" href="#3-forcing-data-sets" title="Permanent link">&para;</a></h2>
+<p>Forcing information can be found <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/">here</a>.</p>
+<h2 id="4-model-output-fields">4.  Model output fields<a class="headerlink" href="#4-model-output-fields" title="Permanent link">&para;</a></h2>
+<p>The <a href="https://wcrp-cmip.org/cmip-phases/cmip7/cmip7-data-request/">CMIP7 Data Request</a> specifies the list of model output variables that should be saved from each of the CMIP7 experiments. 
+Find the <a href="https://wcrp-cmip.org/cmip7-data-request-latest">latest Data Request release here</a>.</p>
+<p>The Data Request is organized into <strong>Opportunities</strong> describing scientific goals and the model output needed to achieve them. 
+These Opportunities were developed through a wide community consultation, leading to a Data Request structured into three overarching parts: <strong>Core</strong>, <strong>Harmonised</strong>, and <strong>Unharmonised</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Changes since CMIP6</p>
+<p>Key new features of the CMIP7 Data Request include:</p>
+<ul>
+<li>Use of <strong>Opportunities</strong> to document scientific objectives</li>
+<li>The three-part structure, with <strong>Core</strong> denoting a relatively small number of highest-priority variables</li>
+<li>Access via the online <strong>Airtable</strong> <a href="https://bit.ly/CMIP7-DReq-latest">web browser interface</a> as well as a <a href="https://github.com/CMIP-Data-Request/CMIP7_DReq_software">python API</a> for programmatic use</li>
+</ul>
+<p>These features are explained in more detail below.</p>
+</div>
+<h3 id="core-request">Core request<a class="headerlink" href="#core-request" title="Permanent link">&para;</a></h3>
+<p>This component of the CMIP7 Data Request comprises a core list of 131 variables that are <strong>requested from all experiments</strong>. 
+These model output variables, referred to as <strong>Baseline Climate Variables for Earth System Modelling</strong> (ESM-BCVs), enable evaluation of climate simulations across CMIP phases and MIP experiments. </p>
+<p>The development of the first version of the ESM-BCVs list, which segued into the wider public consultation process that developed the CMIP7 Data Request, is described in <a href="https://doi.org/10.5194/gmd-18-2639-2025">Juckes et al. (2025)</a>.
+To promote their consistent availability across the ESGF archive, modellers are requested to provide these variables with highest priority, from every experiment.
+The <strong>Priority Level</strong> of these variables is denoted as <strong>Core</strong>.</p>
+<h3 id="harmonised-request">Harmonised request<a class="headerlink" href="#harmonised-request" title="Permanent link">&para;</a></h3>
+<p>The Harmonised component of the CMIP7 Data Request is organized into 46 <strong>Opportunities</strong> that are grouped by five scientific <strong>themes</strong>: Atmosphere, Earth System, Impacts &amp; Adaptation, Land &amp; Land-ice, and Ocean &amp; Sea-ice.
+Five <strong>thematic papers</strong> in the <a href="https://gmd.copernicus.org/articles/special_issue1315.html">CMIP7 GMD Special Issue</a> give an overview of the scientific rationale and requested variables for each theme's Opportunities.</p>
+<p>Each <strong>Opportunity</strong> in the Data Request database specifies:</p>
+<ul>
+<li>A description of its scientific topic, justification of resources, and expected scientific impacts;</li>
+<li>The experiments from which output is requested (organized into <strong>Experiment Groups</strong>);</li>
+<li>The variables requested from those experiments (organized into <strong>Variable Groups</strong>).</li>
+</ul>
+<p>The ESM-BCVs are represent as an Opportunity that requests output from <em>all</em> experiments, with its Variable Groups having a <strong>Priority Level</strong> of <strong>Core</strong> (interpreted as higher than other three priority levels).
+All other Variable Groups are assigned a priority of <strong>High</strong>, <strong>Medium</strong>, or <strong>Low</strong>:</p>
+<ul>
+<li><strong>High</strong>: The variables support the core objectives of the Opportunity, and are required to make it viable.</li>
+<li><strong>Medium</strong>: These variables deliver extra information enabling analysts push the scientific boundaries further.</li>
+<li><strong>Low</strong>: These variables help to fill gaps and are more speculative. This priority level can also be used for data that has prior agreement to be produced by particular modelling centres, so it is not expected by additional centres unless they wish to participate.</li>
+</ul>
+<p>Opportunities document why variables are requested and provide modellers the flexibility to support community-driven scientific questions aligning with their own goals.
+Based on a set of Opportunities supported, the <a href="https://github.com/CMIP-Data-Request/CMIP7_DReq_software">Data Request Software</a> produces lists of requested variables for each experiment (see <a href="#tools-to-access-and-use-the-data-request">Tools</a>, below).
+Modellers preferring not to customize their data production via Opportunity selection may simply choose to support <em>all</em> Opportunities.</p>
+<!-- The Harmonised component has been developed to meet AR7 deadlines and is targeted primarily at the AFT experiments, but also includes experiments outside the AFT. -->
+
+<h3 id="unharmonised-request">Unharmonised request<a class="headerlink" href="#unharmonised-request" title="Permanent link">&para;</a></h3>
+<p>This component will be driven by community MIPs, with high flexibility, following the initial phase of CMIP7 production focusing on the AR7 AFT experiments.
+Development of the Unharmonised component is in progress, with guidance to follow. 
+It is likely to involve MIP-defined Opportunities defining their requests subject only to transparent technical requirements.</p>
+<h3 id="tools-to-access-and-use-the-data-request">Tools to access and use the Data Request<a class="headerlink" href="#tools-to-access-and-use-the-data-request" title="Permanent link">&para;</a></h3>
+<p>The <a href="https://wcrp-cmip.org/cmip-phases/cmip7/cmip7-data-request/">CMIP7 Data Request</a> webpage provides links to the <a href="https://wcrp-cmip.org/cmip7-data-request-latest">latest version of the Data Request</a>, which can be <a href="https://bit.ly/CMIP7-DReq-latest">viewed online</a> in the cloud-based <strong>Airtable</strong> application. User guidance on accessing the Data Request via Airtable is provided. 
+An HTML-based Github-hosted view of the latest Data Request version is also <a href="https://cmip-data-request.github.io/cmip7-dreq-webview/latest/index.html">available here</a>.</p>
+<p>The <a href="https://github.com/CMIP-Data-Request/CMIP7_DReq_software">Data Request Software</a> provides a <strong>python API</strong> and scripts that can be used to query the data request and incorporate it into modelling workflows. 
+Given a list of Opportunities supported, the software will determine the resulting lists of variables to output from each experiment by combining the separate requests from each Opportunity.</p>
+<h2 id="5-model-output-requirements">5.  Model output requirements<a class="headerlink" href="#5-model-output-requirements" title="Permanent link">&para;</a></h2>
+<p>CMIP7 model output requirements are similar to those in CMIP6, with notable changes including:</p>
+<ul>
+<li>Updated <a href="../global_attributes/">Global Attributes and Data Reference Syntax (DRS)</a></li>
+<li>Introduction of <a href="../branded_variables/">Branded Variable Names</a> used in output filenames, directory paths, and <a href="https://github.com/WCRP-CMIP/cmip7-cmor-tables/">CMOR tables</a></li>
+<li>Information on the <a href="#4-model-output-fields">Data Request</a> is available via several entry points: <a href="https://bit.ly/CMIP7-DReq-latest">Airtable database</a>, <a href="https://cmip-data-request.github.io/cmip7-dreq-webview/latest">web viewer</a>, and <a href="https://github.com/CMIP-Data-Request/CMIP7_DReq_software">python API</a></li>
+</ul>
+<p>As in CMIP6, all CMIP7 output will be stored in netCDF files with one variable stored per file.
+The requested output fields can be determined <a href="#4-model-output-fields">from the Data Request as described above</a>.
+As in CMIP6, the data must be “CMORized” (i.e., written in conformance with all the CMIP standards). 
+The CMIP standards build on the <a href="https://cfconventions.org/">CF-conventions</a>, which define metadata that provide a description of the variables and their spatial and temporal properties. 
+This facilitates analysis of the data by users who can read and interpret data from all models in the same way.</p>
+<div class="admonition warning">
+<p class="admonition-title">Quality Control of netCDF files</p>
+<p><a href="../guidance_for_esgf/">Publication to ESGF</a> requires CMORized netCDF files to pass Quality Control (QC) checks.
+More information on the <strong>ESGF Quality Control (QC) Framework</strong> <a href="#7-software-for-checking-output">is here</a>.</p>
+</div>
+<p>As <a href="#6-software-for-preparing-output">described below</a> it is recommended, but not required, that the CMOR software library be used to rewrite model output in conformance with the standards.
+Data requirements are defined and discussed in the following documents:</p>
+<ul>
+<li><a href="https://zenodo.org/records/17250297">Definition of CMIP7 netCDF Global Attributes</a>, which includes specifications for file names and directory structures</li>
+<li><a href="https://github.com/WCRP-CMIP/CMIP7-CVs">Reference "controlled vocabularies" (CVs) for CMIP7</a></li>
+<li><a href="https://zenodo.org/records/15697025">Guidance on output grids</a></li>
+<li>Requested atmospheric pressure levels are described in <a href="https://egusphere.copernicus.org/preprints/2025/egusphere-2025-3189/">Table 2 / Figure 2 of Dingley et al. 2025</a></li>
+<li><a href="../../CMIP6/time_and_area_averaging/">Guidance on time averaging (with masking)</a> (CMIP6 guidance, to be reviewed).</li>
+</ul>
+<p>Additional metadata requirements are imposed on a variable by variable basis as specified in the Data Request.
+Many of these are recognized by CMOR (through input via the CMIP7 CMOR Tables), which will ensure compliance.
+In addition to standardized metadata (e.g., cell methods) provided in the Data Request (and CMOR tables) for each requested variable, data producers should be aware that important information may be given in the <strong>Processing Note</strong> and <strong>Description</strong> of a requested variable.
+These may be viewed in the Data Request <a href="https://bit.ly/CMIP7-DReq-latest">using Airtable</a> ("Variables" tab, 3rd from left) or in the <a href="https://cmip-data-request.github.io/cmip7-dreq-webview/latest/variables.html">web viewer</a>.</p>
+<p>Data producers should note that Controlled Vocabularies (CVs) play a key role in ensuring uniformity in the description of datasets across all models.
+CVs are relied on in constructing file names and directory structures, and enable faceted searches of the CMIP7 ESGF archive. 
+CMIP7 output requirements that are critical for successful ingestion and access via ESGF <a href="#7-software-for-checking-output">will be enforced</a> when publication of the data is initiated.
+The success of CMIP7 also depends on making sure that even the requirements that cannot be checked by ESGF are met. 
+This is the responsibility of all data producers preparing model output for CMIP7.</p>
+<p>An additional requirement, that was not present in CMIP6, is the need to ensure that all model output files published to ESGF must have a cloud-optimised internal file structure that allows for efficient remote access to the files (i.e. accessing the data directly from the archive <em>without</em> downloading a local copy).
+The cloud-optimisation of a netCDF file has no impact on the actual values of the file's attributes or data, but relates to data array "chunk" sizes, as well as other internal file structure (sometimes referred to as "B-trees").</p>
+<p>All CMIP7 datasets must be structured with the following features (in summary), which are necessary for efficient remote access:</p>
+<ul>
+<li>
+<p>The time coordinate and time bounds variables, if they exist, each have a single data chunk.</p>
+</li>
+<li>
+<p>The data variable has data chunks that are at least 4 mebibytes in size.</p>
+</li>
+<li>
+<p>All of the internal file metadata are collated to a contiguous block at the start of the file.</p>
+</li>
+</ul>
+<p>As <a href="#6-software-for-preparing-output">described below</a>, it is recommended, but not required, that the <code>cmip7repack</code> software library be used to rewrite model output in conformance with these internal file structure requirements.
+There is also a <code>check_cmip7_packing</code> software library that can be used to check if a file is compliant, and this tool will be used as part of the <a href="#7-software-for-checking-output">ESGF Quality Control (QC) Framework</a>.</p>
+<h2 id="6-software-for-preparing-output">6.  Software for preparing output<a class="headerlink" href="#6-software-for-preparing-output" title="Permanent link">&para;</a></h2>
+<p>While CMOR is widely used for preparing standardised model output for CMIP and other projects, other tools are available.
+Developers of tools that do an equivalent job to CMOR for CMIP7 are invited to 
+<a href="https://github.com/WCRP-CMIP/cmip7-guidance/issues/new">raise an issue</a> on github and ideally provide a PR with an 
+update to this section of the documentation.</p>
+<h3 id="6a-cmor">6a CMOR<a class="headerlink" href="#6a-cmor" title="Permanent link">&para;</a></h3>
+<p>CMOR, the <code>Climate Model Output Rewriter</code>, is a library written in C with interfaces for both Fortran and Python, with the aim of enforcing correct data and metadata structures for projects such as CMIP, which are now used widely across many projects.
+CMOR is maintained by PCMDI on <a href="https://github.com/PCMDI/cmor">github</a> and is available for installation via <a href="https://anaconda.org/conda-forge/cmor">conda</a> and has documentation <a href="https://cmor.llnl.gov/">here</a>.
+For CMIP7, the CMOR library has been updated in line with the changes to the <a href="https://zenodo.org/records/17250297">CMIP7 Global Attributes</a>. 
+Data producers should update to version <a href="https://cmor.llnl.gov/news/2025/10/14/cmor3/">v3.13</a> of CMOR to gain access to the necessary changes.</p>
+<p>The CMOR PrePARE tool, used for quality checking in CMIP6, has been retired and data producers should refer to section 7 below for guidance on the new quality control tool, <code>esgf-qc</code>.</p>
+<p>CMOR uses three main inputs;</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Input component</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CMOR tables</code></td>
+<td>JSON files describing the variables (metadata attributes for variables)</td>
+</tr>
+<tr>
+<td><code>Controlled Vocabulary</code></td>
+<td>A JSON file describing the allowed values of metadata fields</td>
+</tr>
+<tr>
+<td>The <code>Input JSON file</code></td>
+<td>control information and specific values of metadata (global attributes) to be used in the creation of output files</td>
+</tr>
+</tbody>
+</table></div>
+<p>For CMIP7 the <a href="https://github.com/WCRP-CMIP/cmip7-cmor-tables/">CMOR tables</a> have been constructed from 
+the <a href="https://wcrp-cmip.org/cmip-phases/cmip7/cmip7-data-request/">CMIP7 data request</a> and releases of these tables, starting with version v1.2.2.2, will follow data request releases until the new WCRP Variable Registry is established.
+Note that CMOR tables may also be referred to in some contexts as MIP tables.</p>
+<p>The Controlled Vocabulary JSON file used by CMOR will be produced and made available as part of the <a href="https://github.com/WCRP-CMIP/CMIP7-CVs">CMIP7-CVs</a> repository and versioned separately. 
+Note that this is a change relative to CMIP6 and further guidance alongside the CMOR tables when this file is ready for use. 
+For testing purposes sample CV JSON files are available via the <a href="https://github.com/WCRP-CMIP/cmip7-cmor-tables/tree/test">CMOR tables</a> repository.</p>
+<p>Examples of the input JSON file for CMOR are available via <a href="https://github.com/WCRP-CMIP/cmip7-cmor-tables/blob/main/cmor_demo.ipynb">a jupyter notebook</a>.</p>
+<h3 id="6b-cmip7repack">6b cmip7repack<a class="headerlink" href="#6b-cmip7repack" title="Permanent link">&para;</a></h3>
+<p><code>cmip7repack</code>, for repacking CMIP7 datasets to have a cloud-optimized internal structure, is a command-line tool maintained by NCAS on <a href="https://github.com/NCAS-CMS/cmip7repack">github</a>, will be available for installation via <a href="https://anaconda.org/conda-forge/cmip7repack">conda</a>, and has documentation <a href="https://github.com/NCAS-CMS/cmip7repack">here</a>.</p>
+<p><code>cmip7repack</code> is easy to use, taking a list of CMIP7 datasets as inputs and writing out new cloud-optimised files, <em>for which all attributes and data values are unchanged</em>. This should be the last file-processing step prior to publication to ESGF, because further processing steps, such as CMORization, could change the internal file structure in a non-optimal manner.</p>
+<p>For example, to repack a number of netCDF datasets, creating new files with the file name suffix "_cmip7repack":</p>
+<pre class="highlight"><code>$ cmip7repack *.nc</code></pre>
+<p>It can also be configured to overwrite the original files:</p>
+<pre class="highlight"><code>$ cmip7repack -o *.nc</code></pre>
+<p>There are also other configuration options that may be useful in adapting this tool to your workflow:</p>
+<pre class="highlight"><code>$ cmip7repack
+USAGE: cmip7repack [-d size] [-h] [-o] [-v] [-V] [-x] [-z n] FILE [FILE ...]
+Full man page with -h</code></pre>
+<p><code>check_cmip7_packing</code>, for checking whether or not CMIP7 datasets have an acceptable cloud-optimized internal structure, is a command-line tool maintained by NCAS on <a href="https://github.com/NCAS-CMS/cmip7repack">github</a>, will be available for installation via <a href="https://anaconda.org/conda-forge/cmip7repack">conda</a>, and has documentation <a href="https://github.com/NCAS-CMS/cmip7repack">here</a>.</p>
+<p><code>check_cmip7repack</code> is easy to use, taking a list of CMIP7 datasets as inputs and checking each one for compliance, reporting on the reasons of non-compliance for any files which fail the checks.</p>
+<p>For example, to check a number of netCDF datasets:</p>
+<pre class="highlight"><code>$ check_cmip7_packing *.nc</code></pre>
+<p>There are also configuration options that may be useful in adapting this tool to your workflow:</p>
+<pre class="highlight"><code>$ check_cmip7_packing
+usage: check_cmip7_packing [-h] [-v] [-V] FILE [FILE ...]
+Full man page with -h</code></pre>
+<h2 id="7-software-for-checking-output">7.  Software for checking output<a class="headerlink" href="#7-software-for-checking-output" title="Permanent link">&para;</a></h2>
+<p>The <strong>ESGF Quality Control (QC) solution</strong> is built around a new plugin developed for the <a href="http://ioos.github.io/compliance-checker/">IOOS Compliance Checker</a>, providing a unified and extensible way to validate climate model outputs intended for publication on the Earth System Grid Federation (ESGF). 
+Recent development of <a href="https://esgf.github.io/esgf-qc/">ESGF-QC</a> has ceased as it will be more efficient to maintain a compliance checker plugin rather than a fork of the entire code base.
+Historically, QC in ESGF has relied on a patchwork of tools (<strong>PrePARE</strong>, <strong>QA-DKRZ</strong>, <strong>nctime</strong>, and others) each covering different aspects of metadata and data checks. While effective, this fragmented approach introduced redundancy, maintenance challenges, and reduced transparency in QC workflows.  </p>
+<p>The goal of this plugin is to provide a cohesive, extensible, and transparent system that consolidates key checks for WCRP projects, covers at least the minimum requirements for ESGF publication, and produces standardized reporting.</p>
+<blockquote>
+<p>⚠️ <strong>We’re releasing an </strong>early version<strong> of this ESGF QC IOOS plugin<em>. This release is the result of ongoing development and while not final, it aims to give </em>data managers<em> and </em>advanced users<em> an opportunity to explore the tool and adapt their workflows in anticipation of CMIP7. This early release is </em>not<em> intended for general use. It is primarily targeted at </em>data providers* responsible for the </strong>pre-publication QC** of CMIP data on ESGF.</p>
+</blockquote>
+<h3 id="important-caveats">🚧 Important Caveats<a class="headerlink" href="#important-caveats" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Scope is limited</strong>:  </li>
+<li>Support <strong>CMIP6</strong> and <strong>CORDEX-CMIP6</strong> </li>
+<li>
+<p><strong>CMIP7</strong> is coming soon</p>
+</li>
+<li>
+<p><strong>Development in progress</strong>:  </p>
+</li>
+<li>The framework may still contain <strong>minor bugs</strong>  </li>
+<li>For CMIP6 data, tests have been mainly made on variables provided to the <strong>Copernicus Climate Data Store</strong></li>
+<li>
+<p><strong>QC results may change</strong> in future releases and <strong>should not be treated as final</strong> .</p>
+</li>
+<li>
+<p><strong>Not yet validated</strong>:  </p>
+</li>
+<li>This version is for experimentation, not for compliance reporting.</li>
+</ul>
+<h3 id="development-approach">🛠 Development Approach<a class="headerlink" href="#development-approach" title="Permanent link">&para;</a></h3>
+<p>This framework was developed through a <strong>community-driven, iterative process</strong>:</p>
+<ul>
+<li>As a plugin for the <strong>IOOS Compliance Checker</strong> for its modular architecture</li>
+<li>Feature branches reviewed and merged after unit testing  </li>
+<li>Public GitHub repository with issue tracking and a contribution guide</li>
+<li>Development progress tracked via a shared, public QC checklist table</li>
+</ul>
+<h3 id="how-to-get-started">📦 How to Get Started<a class="headerlink" href="#how-to-get-started" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Installation instructions and basic usage are available here: 📘 https://github.com/ESGF/cc-plugin-wcrp  </li>
+<li>GitHub release: 🔗 https://github.com/ESGF/cc-plugin-wcrp/releases/tag/v1.0.1</li>
+</ul>
+<h3 id="configuration-usage-reporting">⚙️ Configuration, Usage &amp; Reporting<a class="headerlink" href="#configuration-usage-reporting" title="Permanent link">&para;</a></h3>
+<p>The plugin can run specific or full QC suites against your NetCDF files. It was designed with a clear separation between definition and logic, ensuring that QC rules remain modular and easy to maintain.</p>
+<p>The <strong>configuration</strong> enables simple versioning and sharing of rule sets, while allowing users to quickly copy and customize configurations—for example, by adjusting the list of checks or their severity levels to match a specific project context through a human-readable <strong>TOML files</strong> that control:
+- Which checks are run
+- Their severity
+  - 🚫 <strong>MANDATORY</strong>: Must pass for file/dataset to be valid.
+  - ⚠️ <strong>WARNING</strong>: Does not block ingestion or impact critical downstream processes, but highlights issues that should be corrected from a user perspective to ensure data quality and usability.
+  - ℹ️ <strong>OPTIONAL</strong>: Informational checks with no impact on validity
+- Expected values or constraints where applicable</p>
+<blockquote>
+<p>⚠️ In this beta version, the <strong>variable registry is not yet queried</strong>. Variable information from CV relies on a <strong>manual mapping</strong> defined in the configuration file. To be automated via <strong>esgvoc</strong> in future releases.</p>
+</blockquote>
+<p><strong>Usage</strong> is built on the IOOS Compliance Checker, maintaining workflow flexibility for modeling groups that already operate their own QA/QC pipelines. It generates atomic log files per run (at both file and dataset levels) and supports seamless parallel execution, enabling straightforward integration with batch schedulers and large-scale production workflows. 
+  <pre class="highlight"><code class="language-bash">compliance-checker -t wcrp_cmip6:1.0 /path/to/data/file.nc</code></pre></p>
+<p>The <strong>reporting system</strong> inherits the IOOS logic, combining output filtering, severity-based scoring, and granular reports suitable for both operational monitoring and expert review. Results can be easily mapped to standard logging levels (info, warning, critical), facilitating integration with existing QA dashboards.</p>
+<p>In addition, an <a href="https://github.com/ESGF/esgf-qa"><code>esgf-qa</code> module</a> provides a higher-level orchestration layer on top of the IOOS Compliance Checker. It applies the <code>cc-plugin-wcrp</code> consistently at the dataset level, automatically parallelizes checker execution across multiple files, and produces user-friendly aggregated reports. This greatly simplifies large-scale QC operations and makes results easier to browse, interpret, and integrate into your workflows. See <a href="https://esgf.github.io/esgf-qa/"><code>esgf-qa</code> documentation for the installation procedure</a>.</p>
+<pre class="highlight"><code class="language-bash">$ esgqa -t wcrp_cmip6:latest -t cf:1.11 -o /path/to/results/output /path/to/dataset</code></pre>
+<h3 id="why-now">💡 Why Now?<a class="headerlink" href="#why-now" title="Permanent link">&para;</a></h3>
+<p>This early release aims to:</p>
+<ul>
+<li>Help <strong>data centres</strong> and <strong>modeling groups</strong> prepare for CMIP7 data workflows.</li>
+<li>Gather <strong>feedback</strong> on tool design, performance, and usability.</li>
+<li>Build alignment with emerging <strong>vocabulary and metadata conventions</strong>.</li>
+</ul>
+<h3 id="how-to-contribute">🗣️ How to Contribute<a class="headerlink" href="#how-to-contribute" title="Permanent link">&para;</a></h3>
+<p>If you encounter issues or have suggestions, please <strong>open a GitHub issue</strong> on the project repository:<br />
+👉 https://github.com/ESGF/cc-plugin-wcrp/issues</p>
+<h2 id="8-archivingpublishing-output">8.  Archiving/publishing output<a class="headerlink" href="#8-archivingpublishing-output" title="Permanent link">&para;</a></h2>
+<p>The <a href="https://esgf.github.io/">Earth System Grid Federation (ESGF)</a> will facilitate the global distribution of CMIP7 output.</p>
+<div class="admonition tip">
+<p class="admonition-title">Documentation in progress</p>
+<p>Full guidance on the new ESGF-NG (Next Generation) system used for CMIP7 is in development</p>
+</div>
+<p>Data producers should note several key points:</p>
+<ul>
+<li><strong>Data compliance checking</strong>: <a href="#7-software-for-checking-output">Quality Control (QC) checks</a> will be required to check that data is in conformance with output requirements outlined in the sections above.</li>
+<li><strong>Correcting errors</strong>: when errors in published data are discovered, they should be documented using the <a href="https://errata.ipsl.fr/">ESGF Errata Service</a>, and the erroneous datasets retracted. Corrected datasets should be published using an updated dataset version identifier.</li>
+<li><strong>Replication</strong>: Some data nodes plan to replicate some of the data published by other nodes. This will provide some redundancy protecting against loss of at least some of the data in the event of a catastrophic storage failure at one node. It will also provide a backup source of data when one node is temporarily offline. Not all data will be replicated, so it is recommended that modeling groups retain a backup copy of their model output.</li>
+<li><strong>Long-term archival</strong>: A “snapshot” of CMIP7 data as it exists at the time of a deadline imposed by the IPCC’s 7th Assessment Report (IPCC-AR7) will be archived at the <a href="https://www.ipcc-data.org/">IPCC Data Distribution Centre (IPCC DDC)</a>.</li>
+</ul>
+<p>Further guidance on publishing data to ESGF is <a href="../guidance_for_esgf/">available here</a>.</p>
+<h2 id="9-documentation-process">9.  Documentation Process<a class="headerlink" href="#9-documentation-process" title="Permanent link">&para;</a></h2>
+<h3 id="model-documentation">Model documentation<a class="headerlink" href="#model-documentation" title="Permanent link">&para;</a></h3>
+<p>The Essential Model Documentation (EMD) is a high-level description of an Earth System Model.</p>
+<p>It contains information about model configuration that is helpful to all communities who are expected to make use of the model output, whilst not being so detailed that it becomes too much of a burden on the modelling groups who have to provide the information.</p>
+<p>Note that it is not intended to contain all information about a model's formulation.
+More detailed documentation than that provided by the EMD is to be found in the references cited as part of the EMD.</p>
+<p>The EMD, which has been designed to be applicable to any earth system model, will only be truly valuable when it is provided for all models.
+To guarantee this, providing EMD is a mandatory requirement for CMIP7 participation, and the registration of a CMIP7 model will not be possible unless its EMD has been provided.</p>
+<h4 id="creating-emd">Creating EMD<a class="headerlink" href="#creating-emd" title="Permanent link">&para;</a></h4>
+<p>The online form that will be used for CMIP7 model registration will include a section for completing the EMD.
+The EMD will be automatically validated, reviewed by a human and once accepted the model registration can be completed.
+The online form will also enable those documenting a model to import documentation components from other, already registered models, which can then be edited if required - significantly reducing the time taken to create the content.</p>
+<p>The EMD content is stored in GitHub (in JSON files), and may be edited at any time to add further information, or to correct any mistakes. All such changes will go through the usual GitHub-based review process in a  fully transparent and traceable manner.</p>
+<h4 id="emd-structure">EMD structure<a class="headerlink" href="#emd-structure" title="Permanent link">&para;</a></h4>
+<p>The full EMD specification, which contains examples of filled-out EMD entries for model components and grids, may be found at:
+🗣️ <a href="https://doi.org/10.5281/zenodo.15439551">https://doi.org/10.5281/zenodo.15439551</a></p>
+<p>Each question asked in the online EMD creation form will also be accompanied by the relevant guidance, so reference to the full EMD specification should not generally be necessary during the creation process.</p>
+<p>EMD comprises the following sections:</p>
+<ul>
+<li>Top-level model</li>
+<li>A top-level description of the model as whole.</li>
+<li>Includes model name, family and an overview description.</li>
+<li>Model components</li>
+<li>A description of each dynamically simulated model component.</li>
+<li>Includes the component name and family, an overview description, and the relationship to other components.</li>
+<li>Horizontal and vertical grids</li>
+<li>For each model component, a description of its native grid.</li>
+<li>References</li>
+<li>References to published work for the top-level model or one its model components.</li>
+</ul>
+<p>While not part of the EMD, output grids for regridded data must also be registered via an online form (i.e. for any grid used to report data that is not the model's native grid)."</p>
+<h2 id="10-cmip7-organisation-and-governance">10.  CMIP7 organisation and governance<a class="headerlink" href="#10-cmip7-organisation-and-governance" title="Permanent link">&para;</a></h2>
+<p>The <a href="https://wcrp-cmip.org/cmip-governance/cmip-panel/">CMIP panel</a> which is under 
+<a href="https://www.wcrp-esmo.org/about/the-esmo-team/the-esmo-scientific-steering-group">WCRP ESMO SSG</a> 
+provides overall guidance and oversight of CMIP activities. 
+The CMIP panel sets out the scientific priorities, experiments and protocols for CMIP7. 
+Although the <a href="https://wcrp-cmip.org/cmip-phases/cmip7/">CMIP7 webpages</a> provide additional information 
+that may be of interest to CMIP7 participants, 
+only the CMIP7 Guide (these pages) provides definitive documentation of CMIP7 technical requirements.
+The experiments within the Assessment Fast Track are managed by independent MIP committees, but the 
+modelling groups are asked to prepare their model output following a common procedure (Sections 4-7 above).</p>
+<p>The WCRP-ESMO Infrastructure Panel (WIP) has responsibility for most of the technical requirements of CMIP. 
+The mission, rationale and Terms of Reference for the WIP can be found 
+<a href="https://wcrp-cmip.org/cmip-governance/wip/">here</a>.</p>
+  </div>
+</article>
+                                <div class="mx-auto flex flex-wrap h-16 w-full max-w-2xl items-center gap-2 px-4 md:px-0">
+    
+    
+</div>
+                                <dialog id="bottom-sidebar" onclick="onBottomSidebarDialogClick(event)" class="bg-transparent"
+    style="position: fixed; left: 0px; top: 0px; transform: translate(0px, 58px); min-width: max-content; --radix-popper-transform-origin: 0% 0px; will-change: transform; z-index: 50; --radix-popper-available-width: 504px; --radix-popper-available-height: 857px; --radix-popper-anchor-width: 72.94999694824219px; --radix-popper-anchor-height: 32px;">
+    <div data-side="bottom" data-align="start" data-state="open" role="dialog" data-slot="popover-content"
+        class="text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 origin-(--radix-popover-content-transform-origin) border outline-hidden bg-background/90 no-scrollbar h-(--radix-popper-available-height) w-(--radix-popper-available-width) overflow-y-auto rounded-none border-none p-0 shadow-none backdrop-blur duration-100"
+        style="--radix-popover-content-transform-origin: var(--radix-popper-transform-origin); --radix-popover-content-available-width: var(--radix-popper-available-width); --radix-popover-content-available-height: var(--radix-popper-available-height); --radix-popover-trigger-width: var(--radix-popper-anchor-width); --radix-popover-trigger-height: var(--radix-popper-anchor-height);"
+        tabindex="-1">
+        <div class="flex flex-col gap-12 overflow-auto px-6 py-6">
+            
+            
+            
+            
+            
+
+            
+            <div class="flex flex-col gap-4">
+                <div class="text-muted-foreground text-sm font-medium">Menu</div>
+                <div class="flex flex-col gap-3">
+                    
+                    <a class="text-2xl font-medium" href="../..">
+                        
+                        Home
+                        
+                    </a>
+                    
+                    <a class="text-2xl font-medium" href="../../Updates_for_Modellers/">
+                        
+                        Updates for Modellers
+                        
+                    </a>
+                    
+                </div>
+            </div>
+            
+
+            
+            <div class="flex flex-col gap-8">
+                
+                <div class="flex flex-col gap-4">
+                    <div class="text-muted-foreground text-sm font-medium">CMIP7</div>
+                    
+                    <div class="flex flex-col gap-3">
+                        
+                        <a class="text-2xl font-medium" href="../branded_variables/">
+                            
+                            branded variables
+                            
+                        </a>
+                        
+                        <a class="text-2xl font-medium" href="../">
+                            
+                            CMIP7 Guidance
+                            
+                        </a>
+                        
+                        <a class="text-2xl font-medium" href="../CVs_discussion/">
+                            
+                            CVs discussion
+                            
+                        </a>
+                        
+                        <a class="text-2xl font-medium" href="../domain_names/">
+                            
+                            domain names
+                            
+                        </a>
+                        
+                        <a class="text-2xl font-medium" href="../FAQ/">
+                            
+                            FAQ
+                            
+                        </a>
+                        
+                        <a class="text-2xl font-medium" href="../global_attributes/">
+                            
+                            global attributes
+                            
+                        </a>
+                        
+                        <a class="text-2xl font-medium" href="../guidance_for_esgf/">
+                            
+                            guidance for esgf
+                            
+                        </a>
+                        
+                        <a class="text-2xl font-medium" href="../guidance_for_mips/">
+                            
+                            guidance for mips
+                            
+                        </a>
+                        
+                        <a class="text-2xl font-medium" href="./">
+                            
+                            guidance for modellers
+                            
+                        </a>
+                        
+                        <a class="text-2xl font-medium" href="../guidance_for_users/">
+                            
+                            guidance for users
+                            
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+                
+                <div class="flex flex-col gap-4">
+                    <div class="text-muted-foreground text-sm font-medium">How to Guides:</div>
+                    
+                    <div class="flex flex-col gap-3">
+                        
+                        <a class="text-2xl font-medium" href="../../How_to_Guides/Energy_Consumption_and_Carbon_Footprint_Spreadsheet/">
+                            
+                            Energy Consumption and Carbon Footprint Spreadsheet
+                            
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+                
+                <div class="flex flex-col gap-4">
+                    <div class="text-muted-foreground text-sm font-medium">CMIP6</div>
+                    
+                    <div class="flex flex-col gap-3">
+                        
+                        <a class="text-2xl font-medium" href="../../CMIP6/">
+                            
+                            CMIP6 Guidance
+                            
+                        </a>
+                        
+                        <a class="text-2xl font-medium" href="../../CMIP6/global_attributes/">
+                            
+                            global attributes
+                            
+                        </a>
+                        
+                        <a class="text-2xl font-medium" href="../../CMIP6/guidance_for_esgf/">
+                            
+                            guidance for esgf
+                            
+                        </a>
+                        
+                        <a class="text-2xl font-medium" href="../../CMIP6/guidance_for_modellers/">
+                            
+                            guidance for modellers
+                            
+                        </a>
+                        
+                        <a class="text-2xl font-medium" href="../../CMIP6/guidance_for_users/">
+                            
+                            guidance for users
+                            
+                        </a>
+                        
+                        <a class="text-2xl font-medium" href="../../CMIP6/terms_of_use/">
+                            
+                            terms of use
+                            
+                        </a>
+                        
+                        <a class="text-2xl font-medium" href="../../CMIP6/time_and_area_averaging/">
+                            
+                            time and area averaging
+                            
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+
+            
+            <div class="flex flex-col gap-4">
+                <div class="text-muted-foreground text-sm font-medium">Links</div>
+                <div class="flex flex-col gap-3">
+                    
+                    <a class="text-2xl font-medium flex items-center gap-2" href="https://emd.mipcvs.dev/docs/" target="_blank" rel="noopener">
+                        Essential Model Documentation
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-50"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    </a>
+                    
+                    <a class="text-2xl font-medium flex items-center gap-2" href="https://constants.mipcvs.dev/docs/" target="_blank" rel="noopener">
+                        CVs Constants
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-50"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    </a>
+                    
+                    <a class="text-2xl font-medium flex items-center gap-2" href="https://cmip7.mipcvs.dev/docs/" target="_blank" rel="noopener">
+                        CVs CMIP7
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-50"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    </a>
+                    
+                    <a class="text-2xl font-medium flex items-center gap-2" href="https://wcrp-cmip.org/" target="_blank" rel="noopener">
+                        CMIP Website
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-50"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    </a>
+                    
+                    <a class="text-2xl font-medium flex items-center gap-2" href="https://www.wcrp-climate.org/" target="_blank" rel="noopener">
+                        WCRP
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-50"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    </a>
+                    
+                </div>
+            </div>
+            
+            
+
+        </div>
+    </div>
+</dialog>
+                            </div>
+                            <div
+                                class="sticky top-[calc(var(--header-height)+1px)] z-30 ml-auto hidden h-[calc(100svh-var(--header-height)-var(--footer-height))] w-72 flex-col gap-4 overflow-hidden overscroll-none pb-8 xl:flex">
+                                <div class="h-(--top-spacing) shrink-0"></div>
+                                <div view-transition-name="toc" class="no-scrollbar overflow-y-auto px-8">
+    <div class="flex flex-col gap-2 p-4 pt-0 text-sm">
+        <p class="text-muted-foreground bg-background sticky top-0 h-6 text-xs">On This Page</p>
+        
+        
+        
+        
+        <a href="#1-requirements-expectations"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2">
+            1. Requirements &amp; Expectations
+        </a>
+        
+
+        
+        <a href="#2-experiment-design"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2">
+            2. Experiment Design
+        </a>
+        
+
+        
+        <a href="#3-forcing-data-sets"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2">
+            3. Forcing data sets
+        </a>
+        
+
+        
+        <a href="#4-model-output-fields"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2">
+            4. Model output fields
+        </a>
+        
+        
+        <a href="#core-request"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3">
+            Core request
+        </a>
+        
+        <a href="#harmonised-request"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3">
+            Harmonised request
+        </a>
+        
+        <a href="#unharmonised-request"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3">
+            Unharmonised request
+        </a>
+        
+        <a href="#tools-to-access-and-use-the-data-request"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3">
+            Tools to access and use the Data Request
+        </a>
+        
+        
+
+        
+        <a href="#5-model-output-requirements"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2">
+            5. Model output requirements
+        </a>
+        
+
+        
+        <a href="#6-software-for-preparing-output"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2">
+            6. Software for preparing output
+        </a>
+        
+        
+        <a href="#6a-cmor"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3">
+            6a CMOR
+        </a>
+        
+        <a href="#6b-cmip7repack"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3">
+            6b cmip7repack
+        </a>
+        
+        
+
+        
+        <a href="#7-software-for-checking-output"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2">
+            7. Software for checking output
+        </a>
+        
+        
+        <a href="#important-caveats"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3">
+            🚧 Important Caveats
+        </a>
+        
+        <a href="#development-approach"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3">
+            🛠 Development Approach
+        </a>
+        
+        <a href="#how-to-get-started"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3">
+            📦 How to Get Started
+        </a>
+        
+        <a href="#configuration-usage-reporting"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3">
+            ⚙️ Configuration, Usage &amp; Reporting
+        </a>
+        
+        <a href="#why-now"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3">
+            💡 Why Now?
+        </a>
+        
+        <a href="#how-to-contribute"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3">
+            🗣️ How to Contribute
+        </a>
+        
+        
+
+        
+        <a href="#8-archivingpublishing-output"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2">
+            8. Archiving/publishing output
+        </a>
+        
+
+        
+        <a href="#9-documentation-process"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2">
+            9. Documentation Process
+        </a>
+        
+        
+        <a href="#model-documentation"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3">
+            Model documentation
+        </a>
+        
+        
+
+        
+        <a href="#10-cmip7-organisation-and-governance"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2">
+            10. CMIP7 organisation and governance
+        </a>
+        
+
+        
+        
+        
+        
+
+    </div>
+    <div class="h-12"></div>
+</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer view-transition-name="footer"
+    class="group-has-[.section-soft]/body:bg-surface/40 3xl:fixed:bg-transparent dark:bg-transparent">
+    <div class="container-wrapper px-4 xl:px-6">
+        <div class="flex h-(--footer-height) items-center justify-between">
+            <div class="text-muted-foreground w-full text-center text-xs leading-loose sm:text-sm">
+                
+                Built by<!-- --> <span>CMIP-IPO</span> &mdash;
+                
+                <a href="https://github.com/asiffer/mkdocs-shadcn">shadcn theme</a> provided by
+                <a href="https://github.com/asiffer">@asiffer</a>
+            </div>
+        </div>
+    </div>
+</footer>
+    </div>
+     
+
+<script src="../../stylesheets/custom.js"></script>
+
+     
+
+<script src="../../stylesheets/embed.js"></script>
+
+     
+
+<script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+
+     
+
+<script src="../../search/main.js"></script>
+
+
+    
+
+    <script src="../../js/copy-button.js"></script>
+    <script>updatePygmentsStylesheet();</script>
+    
+    
+    
+    <script type="speculationrules">
+{
+  "prerender": [
+    {
+      "where": {
+          "selector_matches": ["#next-button", "#previous-button"],
+      }
+    }
+  ]
+}
+</script>
+</body>
+
+</html>
