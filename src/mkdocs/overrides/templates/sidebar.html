@@ -1,6 +1,6 @@
 {# 
   Custom sidebar that preserves navigation order from literate-nav (SUMMARY.md)
-  Handles: pages, sections with/without index
+  Handles: pages, sections with/without index, nested sections
   External links are NOT shown here - they appear in bottom_sidebar only
 #}
 <div view-transition-name="sidebar" data-slot="sidebar-group" data-sidebar="group"
@@ -44,6 +44,9 @@
                                 {% with sidebar_item = child %}
                                 {% include "components/sidebar_item.html" %}
                                 {% endwith %}
+                            {% elif child.children %}
+                                {# Nested section - recurse #}
+                                {{ render_nav_item(child, false) }}
                             {% endif %}
                         {% endfor %}
                     </ul>
