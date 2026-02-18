@@ -1,10 +1,12 @@
 - [Home](index.md)
-- [Updates for Modellers](02_Updates_for_Modellers.md)
+- [updates for modellers](02_updates_for_modellers.md)
 - CMIP7:
   - [branded variables](101_CMIP7/branded_variables.md)
   - [CVs discussion](101_CMIP7/CVs_discussion.md)
   - [domain names](101_CMIP7/domain_names.md)
   - [FAQ](101_CMIP7/FAQ.md)
+  - forcings:
+    - [picontrol](101_CMIP7/forcings/picontrol.md)
   - [global attributes](101_CMIP7/global_attributes.md)
   - [guidance for esgf](101_CMIP7/guidance_for_esgf.md)
   - [guidance for mips](101_CMIP7/guidance_for_mips.md)
