@@ -853,9 +853,11 @@
 <li>
 <p><strong>Cite the specific dataset(s) used.</strong></p>
 <p>For each model whose data is used, please include a citation in the form of:</p>
-<pre class="highlight"><code>Authors/Data Creators (publication year): Title. Version YYYYMMDD. Earth System Grid Federation. DOI.</code></pre>
+<div class="highlight"><pre><span></span><code>Authors/Data Creators (publication year): Title. Version YYYYMMDD. Earth System Grid Federation. DOI.
+</code></pre></div>
 <p>e.g. </p>
-<pre class="highlight"><code>Swart et al. (2019): CCCma CanESM5 model output prepared for CMIP6 ScenarioMIP. Version 20190429. Earth System Grid Federation. https://doi.org/10.22033/ESGF/CMIP6.1317.</code></pre>
+<div class="highlight"><pre><span></span><code>Swart et al. (2019): CCCma CanESM5 model output prepared for CMIP6 ScenarioMIP. Version 20190429. Earth System Grid Federation. https://doi.org/10.22033/ESGF/CMIP6.1317.
+</code></pre></div>
 <p>Please include a table with at minimum the models ("sources"), institutions, and data citations as above, as well as a data availability statement pointing to the table and acknowledging ESGF. If the journal has a citation limit, putting the table in the Supporting Information is acceptable.</p>
 <details class="question">
 <summary>How to find the DOI and the version?</summary>
@@ -970,7 +972,8 @@ However it is recognized that their finer granularity could result in an unmanag
 <li><a href="../branded_variables/">Branded variable documentation</a></li>
 </ul>
 <p>The variables produced in CMIP7 were recommended by the <a href="https://wcrp-cmip.org/cmip-phases/cmip7/cmip7-data-request/">CMIP7 Data Request task team</a>. In CMIP7, the concept of branded variable identifies the variables. It follows the template: </p>
-<pre class="highlight"><code>&lt;variableRootDD&gt;_&lt;temporalLabelDD&gt;-&lt;verticalLabelDD&gt;-&lt;horizontalLabelDD&gt;-&lt;areaLabelDD&gt;</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&lt;variableRootDD&gt;_&lt;temporalLabelDD&gt;-&lt;verticalLabelDD&gt;-&lt;horizontalLabelDD&gt;-&lt;areaLabelDD&gt;
+</code></pre></div>
 <!--TODO: add more about Data Request. Not super clear to me how it can be useful to users yet.-->
 
 <h3 id="34-frequency">3.4 Frequency<a class="headerlink" href="#34-frequency" title="Permanent link">&para;</a></h3>
@@ -992,7 +995,8 @@ Before working with any CMIP dataset, users should <strong>check the calendar ty
 <li><strong>all_leap</strong> — every year has 366 days (all years include a leap day).</li>
 </ul>
 <p>These calendars are stored in the <code>calendar</code> attribute of the <code>time</code> variable, for example:</p>
-<pre class="highlight"><code class="language-bash">ncdump -h tas_day_ACCESS-ESM1-5_ssp585.nc | grep calendar</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ncdump<span class="w"> </span>-h<span class="w"> </span>tas_day_ACCESS-ESM1-5_ssp585.nc<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>calendar
+</code></pre></div>
 <p>Further reading in CF conventions for time coordinate: <a href="https://cfconventions.org/Data/cf-conventions/cf-conventions-1.12/cf-conventions.html#time-coordinate">https://cfconventions.org/Data/cf-conventions/cf-conventions-1.12/cf-conventions.html#time-coordinate</a></p>
 <p>It is recommended that users use the <a href="https://unidata.github.io/cftime/">cftime</a> library to handle time.</p>
 </details>

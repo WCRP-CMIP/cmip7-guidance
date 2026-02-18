@@ -868,20 +868,25 @@
 <h2 id="temporal-means">Temporal means<a class="headerlink" href="#temporal-means" title="Permanent link">&para;</a></h2>
 <p>These area types are used in the following constructions:</p>
 <h3 id="area-weighted-mean">Area weighted mean:<a class="headerlink" href="#area-weighted-mean" title="Permanent link">&para;</a></h3>
-<p><pre class="highlight"><code>area: time: mean where &lt;area_type&gt;</code></pre>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>area: time: mean where &lt;area_type&gt;
+</code></pre></div>
 For time invariant area types, this is equivalent to "area: mean where <area_type> time: mean". This mean gives equal weight to every square metre occupied by the declared area type. It will typically be calculated by first evaluating a masked area mean at each time step, and then calculating a mean of the time series weighted by the masked area at each time step. A spatial map will show values characteristic of the area type, with undefined values where the area type does not exist.</p>
 <p>A comment field is added to indicate the area fraction field which is associated with the same area type, e.g. "area: time: mean where trees (comment: mask=treeFrac)". This construction is used for vegetation, shrubs, natural_grasses, trees, sea_ice, sea_ice_melt_pond. For sea_ice, there are two different mask, siconc and siitdconc: the second specifying area fraction in ice thickness categories.</p>
 <h3 id="partial-mean">Partial mean<a class="headerlink" href="#partial-mean" title="Permanent link">&para;</a></h3>
-<p><pre class="highlight"><code>area: mean where &lt;area_type&gt; over all_area_types time: mean</code></pre>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>area: mean where &lt;area_type&gt; over all_area_types time: mean
+</code></pre></div>
 This is equivalent to averaging over the whole cell after assigning a value of zero to areas which do not belong to the declared area type. Equal weight is given to each grid cell.  A spatial map will show zero where the area type does not exist.</p>
 <h3 id="partial-mean-over-sea">Partial Mean over Sea<a class="headerlink" href="#partial-mean-over-sea" title="Permanent link">&para;</a></h3>
-<p><pre class="highlight"><code>area: mean where &lt;area_type&gt; over sea time: mean</code></pre>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>area: mean where &lt;area_type&gt; over sea time: mean
+</code></pre></div>
 This is similar to the partial mean, except that it is restricted to ocean grid points (treating the sea area as constant: this construction becomes ambiguous if the sea area varies in time).</p>
 <h3 id="mass-weighted-mean">Mass weighted mean<a class="headerlink" href="#mass-weighted-mean" title="Permanent link">&para;</a></h3>
-<p><pre class="highlight"><code>area: mean where land time: mean (with samples weighted by snow mass)</code></pre>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>area: mean where land time: mean (with samples weighted by snow mass)
+</code></pre></div>
 There is no explicit formulation for a mass weighted mean, which is used for one variable in CMIP6 (the mean temperature of snow), so the option of adding an explanatory comment in brackets is taken.</p>
 <h3 id="mean-at-a-specific-height">Mean at a specific height<a class="headerlink" href="#mean-at-a-specific-height" title="Permanent link">&para;</a></h3>
-<p><pre class="highlight"><code>area: mean where sea depth: minimum (shallowest local minimum) time: mean</code></pre>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>area: mean where sea depth: minimum (shallowest local minimum) time: mean
+</code></pre></div>
 This cell methods string is used for one ocean variable, the "Oxygen Minimum Concentration" (o2min). First, a cell average is taken, and then shallowest local minimum is found, and this is averaged over time.</p>
 <h3 id="mean-over-a-set-of-different-area-types">Mean over a set of different area types<a class="headerlink" href="#mean-over-a-set-of-different-area-types" title="Permanent link">&para;</a></h3>
 <p>When the diagnostic is a vector of values for different area types, as for the "cSoilLut" variable (Soil Carbon Content on Land Use Tiles), the cell methods string takes the form "area: mean where landuse", and "landuse" is a dimension of the diagnostic.</p>
