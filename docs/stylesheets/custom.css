@@ -1,0 +1,1573 @@
+/* Guidance and Documentation - Custom Styles for shadcn theme */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans:wght@400;500;600;700&display=swap');
+
+/* ============================================
+   CSS VARIABLES - TEAL THEME
+   ============================================ */
+
+
+
+:root {
+  --guidance-primary: #009688;
+  --guidance-primary-light: #b2dfdb;
+  --guidance-primary-dark: #00796b;
+  --guidance-accent: #009688;
+  --guidance-text: #1e293b;
+  --guidance-text-secondary: #475569;
+  --guidance-text-tertiary: #94a3b8;
+  --guidance-bg: #ffffff;
+  --guidance-bg-secondary: #f8fafc;
+  --guidance-bg-tertiary: #f1f5f9;
+  --guidance-border: #e2e8f0;
+  --guidance-border-light: #f1f5f9;
+  
+  color: var(--guidance-text);
+}
+
+.dark {
+  --guidance-primary: #b2dfdb;
+  --guidance-primary-light: rgba(255, 255, 255, 0.1);
+  --guidance-primary-dark: #009688;
+  --guidance-text: #f1f5f9;
+  --guidance-text-secondary: #cbd5e1;
+  --guidance-text-tertiary: #64748b;
+  --guidance-bg: #0f172a;
+  --guidance-bg-secondary: #1e293b;
+  --guidance-bg-tertiary: #334155;
+  --guidance-border: #334155;
+  --guidance-border-light: #1e293b;
+  
+  color: var(--guidance-text);
+}
+  --guidance-border-light: #1e293b;
+  
+  /* Map shadcn theme variables to emd-primary blue (dark mode) */
+  --primary: 213 94% 68%;
+  --primary-foreground: 222.2 47.4% 11.2%;
+  --accent: 213 94% 68%;
+  --accent-foreground: 222.2 47.4% 11.2%;
+  --sidebar-primary: 213 94% 68%;
+  --sidebar-primary-foreground: 222.2 47.4% 11.2%;
+  --sidebar-accent: 213 94% 68%;
+  --ring: 213 94% 68%;
+  
+  color: var(--guidance-text);
+}
+
+/* ============================================
+   HIDE DEFAULT THEME ELEMENTS
+   ============================================ */
+
+/* Hide shadcn theme's default GitHub link */
+header a[target="_blank"]:not(.header-repo):has(svg[viewBox="0 0 438.549 438.549"]),
+header a[href*="github.com"][target="_blank"]:not(.header-repo) {
+  display: none !important;
+}
+
+/* Hide Copy Page button */
+button[onclick*="clipboard"],
+button:has(.tabler-icon-copy) {
+  display: none !important;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+
+header {
+  background: var(--guidance-bg) !important;
+  border-bottom: 1px solid var(--guidance-border) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+/* Logo and home link SVGs */
+header a[href="/"] svg,
+header a[href="./"] svg,
+header [data-slot="logo"] svg,
+[data-slot="sidebar"] a[href="/"] svg,
+[data-slot="sidebar"] a[href="./"] svg,
+[data-slot="sidebar"] [data-slot="logo"] svg {
+  stroke: var(--guidance-primary) !important;
+  fill: none !important;
+  color: var(--guidance-primary) !important;
+}
+
+/* Header SVGs and icons - primary stroke */
+header svg {
+  stroke: var(--guidance-primary) !important;
+  color: var(--guidance-primary) !important;
+}
+
+/* Header buttons */
+header button svg {
+  fill: none !important;
+  stroke: var(--guidance-primary) !important;
+}
+
+header h1,
+header [data-slot="title"] {
+  font-family: "Noto Sans", var(--font-sans), system-ui;
+  font-weight: 700 !important;
+  color: var(--guidance-primary-dark) !important;
+  font-size: 0.95rem !important;
+}
+
+/* GitHub repo link in title */
+.header-repo {
+  color: var(--guidance-text) !important;
+  text-decoration: none;
+  font-family: "Noto Sans", var(--font-sans), system-ui;
+  font-weight: 400;
+  font-size: 1.1rem;
+  transition: color 0.2s, opacity 0.2s;
+}
+
+.header-repo:hover {
+  color: var(--guidance-text-secondary) !important;
+  opacity: 0.8;
+}
+
+/* Search styling */
+header input[type="search"],
+header [data-slot="input"] {
+  background: white !important;
+  border: 1px solid var(--guidance-border) !important;
+  border-radius: 4px !important;
+  outline: none !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+header input[type="search"]:focus,
+header [data-slot="input"]:focus {
+  border-color: var(--guidance-primary) !important;
+  box-shadow: 0 0 0 3px rgba(var(--guidance-primary-rgb), 0.15) !important;
+}
+
+header input[type="search"]::placeholder {
+  opacity: 0.6;
+}
+
+/* Search dialog trigger button - override Tailwind focus ring */
+button[data-slot="dialog-trigger"] {
+  border: 1px solid var(--guidance-border) !important;
+}
+
+button[data-slot="dialog-trigger"] kbd {
+  border-color: var(--guidance-primary) !important;
+}
+
+button[data-slot="dialog-trigger"]:hover {
+  border-color: var(--guidance-primary) !important;
+  background: var(--guidance-bg-secondary) !important;
+}
+
+button[data-slot="dialog-trigger"]:focus,
+button[data-slot="dialog-trigger"]:focus-visible,
+button[data-slot="dialog-trigger"]:focus-within {
+  border-color: var(--guidance-primary) !important;
+  outline: 3px solid rgba(var(--guidance-primary-rgb), 0.3) !important;
+  outline-offset: 0 !important;
+}
+
+/* ============================================
+   SIDEBAR NAVIGATION
+   ============================================ */
+
+/* Sidebar container - full height */
+[data-slot="sidebar"] {
+  min-height: 100vh !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+[data-slot="sidebar"] > * {
+  flex-shrink: 0;
+}
+
+/* Sidebar icons and SVGs */
+[data-slot="sidebar"] svg,
+[data-slot="sidebar-menu"] svg,
+[data-slot="sidebar-menu-item"] svg {
+  color: var(--guidance-primary);
+  stroke: var(--guidance-primary);
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+}
+
+/* Active menu item icons - white */
+[data-slot="sidebar-menu-item"] a[data-active="true"] svg,
+[data-slot="sidebar-menu-button"][data-active="true"] svg {
+  color: white;
+  stroke: white;
+}
+
+/* Sidebar menu items - allow text to wrap and center vertically */
+[data-slot="sidebar-menu-button"],
+[data-slot="sidebar-menu"] a,
+.sidebar-menu-button,
+nav a {
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: unset !important;
+  height: auto !important;
+  min-height: 1.5rem;
+  line-height: 1.2 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* Items inside groups/dropdowns - smaller, indented, tighter spacing */
+[data-slot="sidebar-group-content"] [data-slot="sidebar-menu-item"],
+[data-slot="sidebar-group-content"] a,
+.nav-children a {
+  margin: 0 !important;
+  padding: 0.15rem 0.5rem 0.15rem 1rem !important;
+  font-size: 0.75rem !important;
+  min-height: 1.25rem !important;
+}
+
+[data-slot="sidebar-group-content"] [data-slot="sidebar-menu-item"] {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+[data-slot="sidebar-group-content"] ul {
+  gap: 0 !important;
+}
+
+/* Active sidebar item text color */
+[data-active="true"],
+.data-\[active\=true\]\:text-sidebar-accent-foreground[data-active=true] {
+  color: var(--guidance-primary) !important;
+}
+
+/* Reduce vertical spacing between nav items */
+[data-slot="sidebar-menu"] > *,
+[data-slot="sidebar-group-content"] > *,
+.nav-children > * {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+[data-slot="sidebar-menu-item"],
+[data-slot="sidebar-group"] {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Tighter spacing for dropdown items */
+[data-slot="sidebar-group-content"] a,
+.nav-children a {
+  margin: 0 !important;
+  font-size: 0.8rem !important;
+}
+
+/* Group labels (section headers) */
+[data-slot="sidebar-group-label"] {
+  padding: 0.4rem 0.5rem !important;
+  margin-top: 0.5rem !important;
+  margin-bottom: 0 !important;
+}
+
+/* First group label doesn't need top margin */
+[data-slot="sidebar-group"]:first-child [data-slot="sidebar-group-label"] {
+  margin-top: 0 !important;
+}
+
+/* ============================================
+   COLLAPSIBLE NAVIGATION
+   ============================================ */
+
+/* Collapsible triggers */
+.nav-collapsible,
+[data-slot="sidebar-group-label"].nav-collapsible {
+  cursor: pointer;
+  position: relative;
+}
+
+.nav-collapsible::before,
+[data-slot="sidebar-group-label"].nav-collapsible::before {
+  content: "▸";
+  display: inline-block;
+  margin-right: 0.4rem;
+  font-size: 0.7rem;
+  opacity: 0.6;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.nav-collapsible.expanded::before,
+[data-slot="sidebar-group-label"].expanded::before {
+  transform: rotate(90deg);
+}
+
+/* Default: content after a label is COLLAPSED */
+[data-slot="sidebar-group-label"] + [data-slot="sidebar-group-content"] {
+  overflow: hidden;
+  max-height: 0 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transition: max-height 0.3s ease-out, opacity 0.2s ease;
+}
+
+/* Expanded: when label has .expanded class */
+[data-slot="sidebar-group-label"].expanded + [data-slot="sidebar-group-content"] {
+  max-height: 2000px !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+/* Root groups (no label) - always visible */
+[data-slot="sidebar-group"]:not(:has([data-slot="sidebar-group-label"])) [data-slot="sidebar-group-content"] {
+  max-height: none !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  display: block !important;
+}
+
+/* Ensure all sidebar groups are always visible on all pages */
+[data-slot="sidebar-group"] {
+  display: block !important;
+  visibility: visible !important;
+}
+
+[data-slot="sidebar-group-label"] {
+  display: flex !important;
+  visibility: visible !important;
+}
+
+/* ============================================
+   CUSTOM LINKS SECTION
+   ============================================ */
+
+.custom-links-section {
+  margin-top: 1rem !important;
+  padding-top: 0.5rem !important;
+  border-top: 1px solid var(--guidance-border-light) !important;
+  display: block !important;
+}
+
+.custom-links-list {
+  display: block !important;
+}
+
+.custom-links-title {
+  font-family: "Noto Sans", var(--font-sans), system-ui !important;
+  font-size: 0.55rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  color: var(--guidance-text-tertiary) !important;
+  padding: 0.5rem 0.6rem 0.3rem !important;
+}
+
+.custom-link {
+  display: block !important;
+  font-size: 0.75rem !important;
+  color: var(--guidance-text-secondary) !important;
+  padding: 0.3rem 0.6rem !important;
+  margin: 1px 0.4rem !important;
+  border-radius: 4px !important;
+  text-decoration: none !important;
+  transition: all 0.15s ease !important;
+}
+
+.custom-link:hover {
+  background: var(--guidance-bg-secondary) !important;
+  color: var(--guidance-text) !important;
+}
+
+/* ============================================
+   CONTENT AREA
+   ============================================ */
+
+main, article {
+  background: var(--guidance-bg) !important;
+}
+
+/* Admonition icons */
+.admonition-title svg {
+  color: currentColor;
+}
+
+/* Lucide and other icon libraries */
+.lucide, [data-lucide] {
+  color: currentColor;
+  stroke: currentColor;
+}
+
+/* Material icons */
+.material-icons, .md-icon {
+  color: currentColor;
+}
+
+/* ============================================
+   DETAILS / SUMMARY (Collapsible sections)
+   ============================================ */
+
+/*
+ * NOTE: For markdown to render inside <details> tags, use either:
+ * 1. <details markdown="1"> attribute
+ * 2. pymdownx.details syntax: ??? note "Title"
+ */
+
+details {
+  border: 1px solid var(--guidance-border);
+  border-radius: 6px;
+  padding: 0;
+  margin: 1rem 0;
+  background: var(--guidance-bg);
+}
+
+details summary {
+  color: var(--guidance-primary-dark);
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+  background: var(--guidance-bg-secondary);
+  border-radius: 6px;
+}
+
+details[open] summary {
+  border-radius: 6px 6px 0 0;
+  border-bottom: 1px solid var(--guidance-border);
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details summary::after {
+  content: "▸";
+  color: var(--guidance-primary-dark);
+  font-size: 0.75rem;
+  transition: transform 0.2s ease;
+  margin-left: 0.5rem;
+}
+
+details[open] summary::after {
+  transform: rotate(90deg);
+}
+
+details summary:hover {
+  background: var(--guidance-bg-tertiary);
+}
+
+/* Details content container */
+details > *:not(summary) {
+  padding: 0 1rem;
+}
+
+details > p,
+details > ul,
+details > ol,
+details > pre,
+details > blockquote,
+details > table,
+details > div {
+  margin: 0.5rem 0;
+}
+
+details > *:last-child {
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+/* Typography inheritance for details content */
+details .typography,
+details .prose,
+details article {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+/* Ensure code blocks in details are styled */
+details pre {
+  background: var(--guidance-bg-secondary) !important;
+  border: 1px solid var(--guidance-border);
+  border-radius: 4px;
+  padding: 0.75rem;
+  overflow-x: auto;
+  margin: 0.5rem 1rem;
+}
+
+details code {
+  background: var(--guidance-bg-secondary);
+  padding: 0.15rem 0.3rem;
+  border-radius: 3px;
+  font-size: 0.875em;
+}
+
+details pre code {
+  background: transparent;
+  padding: 0;
+}
+
+/* Lists in details */
+details ul,
+details ol {
+  padding-left: 1.5rem;
+  margin-left: 1rem;
+}
+
+details li {
+  margin: 0.25rem 0;
+}
+
+/* Raw text content - white-space handling for unprocessed content */
+details > br + br {
+  display: block;
+  content: "";
+  margin: 0.5rem 0;
+}
+
+/* Headings in details */
+details h1, details h2, details h3, details h4, details h5, details h6 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--guidance-text);
+}
+
+details h1 { font-size: 1.5rem; }
+details h2 { font-size: 1.25rem; }
+details h3 { font-size: 1.1rem; }
+details h4, details h5, details h6 { font-size: 1rem; }
+
+/* JS-processed details content */
+.details-content {
+  line-height: 1.6;
+}
+
+.details-content p {
+  margin: 0.5rem 0;
+}
+
+.details-content ul,
+.details-content ol {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.details-content li {
+  margin: 0.25rem 0;
+}
+
+.details-content a {
+  color: var(--guidance-primary);
+  text-decoration: underline;
+}
+
+.details-content code {
+  background: var(--guidance-bg-secondary);
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+  font-size: 0.875em;
+}
+
+/* Override Tailwind typography/prose max-width (default is 65ch ≈ 672px) */
+.typography {
+  max-width: 1200px !important;
+  padding: 0 2rem !important;
+}
+
+/* Also target common prose classes */
+.prose {
+  max-width: 1200px !important;
+  padding: 0 2rem !important;
+}
+
+/* Ensure article itself can expand */
+article.w-full {
+  max-width: 1200px !important;
+  padding: 0 1rem !important;
+}
+
+/* Headers as full anchor links */
+article h1,
+article h2,
+article h3,
+article h4,
+article h5,
+article h6 {
+  position: relative;
+}
+
+article h1 a.anchor,
+article h2 a.anchor,
+article h3 a.anchor,
+article h4 a.anchor,
+article h5 a.anchor,
+article h6 a.anchor,
+article h1 a[href^="#"],
+article h2 a[href^="#"],
+article h3 a[href^="#"],
+article h4 a[href^="#"],
+article h5 a[href^="#"],
+article h6 a[href^="#"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+/* Hide the permalink symbol */
+article h1 a.anchor::after,
+article h2 a.anchor::after,
+article h3 a.anchor::after,
+article h4 a.anchor::after,
+article h5 a.anchor::after,
+article h6 a.anchor::after,
+article .headerlink,
+article .anchor-link,
+article [href^="#"]::after,
+a.headerlink {
+  display: none !important;
+  content: none !important;
+  visibility: hidden !important;
+}
+
+/* Permalink character hidden */
+article h1 a[href^="#"]:not(:only-child),
+article h2 a[href^="#"]:not(:only-child),
+article h3 a[href^="#"]:not(:only-child),
+article h4 a[href^="#"]:not(:only-child),
+article h5 a[href^="#"]:not(:only-child),
+article h6 a[href^="#"]:not(:only-child) {
+  font-size: 0;
+}
+
+/* But keep the header text visible */
+article h1 a[href^="#"]:not(:only-child)::before,
+article h2 a[href^="#"]:not(:only-child)::before,
+article h3 a[href^="#"]:not(:only-child)::before {
+  font-size: 1rem;
+}
+
+/* Header hover effect */
+article h1:hover,
+article h2:hover,
+article h3:hover,
+article h4:hover,
+article h5:hover,
+article h6:hover {
+  cursor: pointer;
+}
+
+article h1 {
+  font-family: "Noto Sans", var(--font-sans), system-ui !important;
+  font-size: 2rem !important;
+  font-weight: 700 !important;
+  color: var(--guidance-text) !important;
+  border-bottom: 1px solid var(--guidance-border-light) !important;
+  padding-bottom: 0.5rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+article h2 {
+  font-family: "Noto Sans", var(--font-sans), system-ui !important;
+  font-size: 1.4rem !important;
+  font-weight: 600 !important;
+  color: var(--guidance-text) !important;
+  border-bottom: 1px solid var(--guidance-border-light) !important;
+  padding-bottom: 0.4rem !important;
+  margin-top: 2rem !important;
+}
+
+article h3 {
+  font-family: "Noto Sans", var(--font-sans), system-ui !important;
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  color: var(--guidance-text) !important;
+}
+
+article p {
+  color: var(--guidance-text-secondary) !important;
+  line-height: 1.7 !important;
+}
+
+article a {
+  color: var(--guidance-primary) !important;
+  text-decoration: none !important;
+}
+
+article a:hover {
+  color: var(--guidance-primary-dark) !important;
+  text-decoration: underline !important;
+}
+
+/* Code */
+article code {
+  font-family: "JetBrains Mono", monospace !important;
+  font-size: 0.8rem !important;
+  background: var(--guidance-bg-tertiary) !important;
+  border: 1px solid var(--guidance-border) !important;
+  border-radius: 4px !important;
+  padding: 0.15em 0.4em !important;
+}
+
+article pre {
+  background: var(--guidance-bg-secondary) !important;
+  border: 1px solid var(--guidance-border) !important;
+  border-radius: 8px !important;
+}
+
+article pre code {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+/* Tables */
+article table {
+  border: 1px solid var(--guidance-border) !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+}
+
+article table a {
+  color: var(--guidance-primary) !important;
+}
+
+article thead {
+}
+
+article th {
+  background: var(--guidance-bg-secondary) !important;
+  font-family: "Noto Sans", var(--font-sans), system-ui !important;
+  font-weight: 600 !important;
+  font-size: 0.7rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+}
+
+article tr:hover td {
+  background: var(--guidance-bg-secondary) !important;
+}
+
+/* ============================================
+   FOOTER - MATERIAL STYLE PREV/NEXT NAVIGATION
+   ============================================ */
+
+/* Hide shadcn's default footer */
+body > div > footer {
+  display: none !important;
+}
+
+/* Our Material-style footer */
+.md-footer {
+  background: transparent;
+  margin-top: 3rem;
+  padding: 0 1rem;
+}
+
+.md-footer__inner {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--guidance-border-light);
+  padding: 1rem 0;
+}
+
+.md-footer__link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--guidance-primary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.md-footer__link:hover {
+  color: var(--guidance-primary-dark);
+}
+
+.md-footer__link--prev {
+  margin-right: auto;
+}
+
+.md-footer__link--next {
+  margin-left: auto;
+  flex-direction: row-reverse;
+}
+
+.md-footer__link--next .md-footer__title {
+  text-align: right;
+}
+
+.md-footer__button {
+  display: flex;
+  align-items: center;
+  justify-center: center;
+  color: var(--guidance-primary);
+}
+
+.md-footer__button svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: currentColor;
+}
+
+.md-footer__title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.md-footer__direction {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--guidance-text-tertiary);
+}
+
+.md-ellipsis {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--guidance-primary);
+  max-width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ============================================
+   COPYRIGHT FOOTER - FIXED AT BOTTOM
+   ============================================ */
+
+.footer-attribution {
+  position: fixed !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  pointer-events: none !important;
+  z-index: 1000 !important;
+  background: transparent !important;
+  padding: 0.5rem 1rem !important;
+  text-align: center !important;
+  border-top: none !important;
+}
+
+.footer-attribution p {
+  font-size: 0.5rem !important;
+  color: var(--guidance-text-tertiary) !important;
+  margin: 0 !important;
+  opacity: 0.7 !important;
+}
+
+.footer-attribution a {
+  color: var(--guidance-primary) !important;
+  text-decoration: none !important;
+  pointer-events: auto !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: inline !important;
+  font-size: inherit !important;
+}
+
+.footer-attribution a:hover {
+  text-decoration: underline !important;
+}
+
+/* Footer attribution handled in HIDE DEFAULT THEME ELEMENTS section */
+
+/* ============================================
+   VERSION SELECTOR
+   ============================================ */
+
+.version-selector {
+  display: flex;
+  align-items: center;
+}
+
+.version-selector select {
+  appearance: auto;
+  background: var(--guidance-bg);
+  border: 1px solid var(--guidance-border);
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  color: var(--guidance-text);
+}
+
+.version-selector select:hover {
+  background: var(--guidance-bg-secondary);
+}
+
+/* ============================================
+   TOC - RIGHT SIDEBAR
+   ============================================ */
+
+[view-transition-name="toc"] a,
+.toc a {
+  font-size: 0.7rem !important;
+  color: var(--guidance-text-tertiary) !important;
+  padding: 0.25rem 0.6rem !important;
+  margin: 1px 0.3rem !important;
+}
+
+[view-transition-name="toc"] a:hover,
+.toc a:hover {
+  color: var(--guidance-primary) !important;
+}
+
+/* ============================================
+   SCROLLBAR
+   ============================================ */
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--guidance-border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--guidance-text-tertiary); }
+
+/* ============================================
+   SELECTION
+   ============================================ */
+
+::selection {
+  background: var(--guidance-primary-light);
+  color: var(--guidance-primary);
+}
+
+/* ============================================
+   PRINT
+   ============================================ */
+
+@media print {
+  [data-slot="sidebar"], aside, .footer-attribution, .version-selector {
+    display: none !important;
+  }
+  main, article { max-width: 100% !important; }
+}
+
+/* ============================================
+   EMBED MODE STYLES
+   ============================================ */
+
+/* Floating expand button */
+.floating-expand-btn {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: var(--guidance-primary, #3b82f6);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 9999;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.floating-expand-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Embed mode body state */
+body.embed-mode {
+  overflow-x: hidden;
+}
+
+body.embed-mode header,
+body.embed-mode [data-slot="sidebar"],
+body.embed-mode aside,
+body.embed-mode nav:not(.table-nav),
+body.embed-mode .footer-attribution,
+body.embed-mode [view-transition-name="toc"] {
+  display: none !important;
+}
+
+body.embed-mode main {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 15px !important;
+}
+
+body.embed-mode article {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 5px !important;
+  padding: 0 !important;
+}
+
+body.embed-mode .typography {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+/* Tables expand more in embed mode */
+body.embed-mode table {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+body.embed-mode .table-responsive {
+  max-width: 100% !important;
+}
+
+/* Table controls */
+.table-controls {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+body.embed-mode .table-controls {
+  display: flex !important;
+}
+
+.table-search {
+  padding: 8px 12px;
+  border: 1px solid var(--guidance-border, #e2e8f0);
+  border-radius: 6px;
+  font-size: 0.875rem;
+  width: 250px;
+  max-width: 100%;
+  background: var(--guidance-bg, white);
+  color: var(--guidance-text, #1e293b);
+}
+
+.table-search:focus {
+  outline: none;
+  border-color: var(--guidance-primary, #3b82f6);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.table-expand-btn {
+  padding: 8px 12px;
+  border: 1px solid var(--guidance-border, #e2e8f0);
+  border-radius: 6px;
+  background: var(--guidance-bg-secondary, #f8fafc);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.table-expand-btn:hover {
+  background: var(--guidance-bg-tertiary, #f1f5f9);
+}
+
+/* Table responsive wrapper */
+.table-responsive {
+  overflow-x: auto;
+  max-width: 100%;
+  margin-bottom: 1rem;
+}
+
+/* Sort indicators */
+th[data-sort="asc"] .sort-indicator,
+th[data-sort="desc"] .sort-indicator {
+  opacity: 1 !important;
+  color: var(--guidance-primary) !important;
+}
+
+/* Embed mode overlay */
+.embed-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--guidance-bg, white);
+  z-index: 10000;
+  overflow: auto;
+  padding: 0;
+}
+
+.embed-overlay article {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+.embed-overlay .typography {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+.embed-overlay .table-wrapper,
+.embed-overlay table {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.dark .embed-overlay {
+  background: var(--guidance-bg, #0f172a);
+}
+
+/* Table fullscreen overlay */
+.table-fullscreen-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--guidance-bg, white);
+  z-index: 10000;
+  overflow: auto;
+  padding: 10px;
+}
+
+.table-fullscreen-overlay table {
+  width: 100% !important;
+  max-width: 100% !important;
+  table-layout: auto !important;
+  border: 1px solid var(--guidance-border) !important;
+  border-radius: 8px !important;
+  border-collapse: collapse !important;
+}
+
+.table-fullscreen-overlay th {
+  background: var(--guidance-bg-secondary) !important;
+  font-weight: 600 !important;
+  font-size: 0.75rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  padding: 0.75rem 1rem !important;
+  text-align: left !important;
+  border-bottom: 1px solid var(--guidance-border) !important;
+  cursor: pointer;
+}
+
+.table-fullscreen-overlay td {
+  padding: 0.75rem 1rem !important;
+  border-bottom: 1px solid var(--guidance-border) !important;
+  white-space: normal !important;
+  word-wrap: break-word !important;
+}
+
+.table-fullscreen-overlay tr:hover td {
+  background: var(--guidance-bg-secondary) !important;
+}
+
+.table-fullscreen-overlay a {
+  color: var(--guidance-primary) !important;
+}
+
+.dark .table-fullscreen-overlay {
+  background: var(--guidance-bg, #0f172a);
+}
+
+/* ============================================
+   TABLE FOOTER WITH DOWNLOAD BUTTON
+   ============================================ */
+
+.table-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+  padding: 0.25rem 0;
+  font-size: 0.85rem;
+  color: var(--guidance-text-secondary);
+}
+
+.table-footer span {
+  font-style: italic;
+}
+
+.table-footer-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.table-footer-search {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  border: 1px solid var(--guidance-primary) !important;
+  border-radius: 4px;
+  background: var(--guidance-bg);
+  color: var(--guidance-text);
+  width: 150px;
+  outline: none;
+}
+
+.table-footer-search:focus {
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.table-footer-search::placeholder {
+  color: var(--guidance-text-secondary);
+  opacity: 0.7;
+}
+
+.table-footer-expand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.85rem;
+  color: var(--guidance-primary) !important;
+  background: var(--guidance-bg-secondary);
+  border: 1px solid var(--guidance-primary) !important;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.table-footer-expand:hover {
+  background: var(--guidance-primary-light);
+}
+
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--guidance-primary) !important;
+  background: var(--guidance-bg-secondary);
+  border: 1px solid var(--guidance-border);
+  border-radius: 4px;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+}
+
+.download-btn:hover {
+  background: var(--guidance-primary-light);
+  border-color: var(--guidance-primary);
+  text-decoration: none !important;
+}
+
+/* ============================================
+   MATERIAL FOR MKDOCS TABBED CONTENT
+   ============================================ */
+
+/* Hide the radio buttons */
+.tabbed-set > input[type="radio"] {
+  display: none !important;
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Tab labels container */
+.tabbed-labels {
+  display: flex;
+  gap: 0.125rem;
+  border-bottom: 1px solid var(--guidance-border);
+  margin-bottom: 0.5rem;
+  background: transparent;
+}
+
+/* Individual tab labels */
+.tabbed-labels > label {
+  padding: 0.35rem 0.75rem;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--guidance-text-secondary);
+  background: transparent;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.tabbed-labels > label:hover {
+  color: var(--guidance-primary);
+  background: transparent;
+}
+
+/* Active tab label - using ID selectors for specificity */
+#__tabbed_1_1:checked ~ .tabbed-labels > label[for="__tabbed_1_1"],
+#__tabbed_1_2:checked ~ .tabbed-labels > label[for="__tabbed_1_2"],
+#__tabbed_1_3:checked ~ .tabbed-labels > label[for="__tabbed_1_3"],
+#__tabbed_2_1:checked ~ .tabbed-labels > label[for="__tabbed_2_1"],
+#__tabbed_2_2:checked ~ .tabbed-labels > label[for="__tabbed_2_2"],
+#__tabbed_2_3:checked ~ .tabbed-labels > label[for="__tabbed_2_3"],
+#__tabbed_2_4:checked ~ .tabbed-labels > label[for="__tabbed_2_4"],
+#__tabbed_2_5:checked ~ .tabbed-labels > label[for="__tabbed_2_5"],
+.tabbed-labels > label[data-active="true"] {
+  color: var(--guidance-primary) !important;
+  border-bottom-color: var(--guidance-primary) !important;
+  background: transparent !important;
+}
+
+/* Hide all tab content by default */
+.tabbed-set .tabbed-content .tabbed-block {
+  display: none !important;
+}
+
+/* Show first tab content when first radio is checked */
+#__tabbed_1_1:checked ~ .tabbed-content > .tabbed-block:nth-child(1),
+#__tabbed_2_1:checked ~ .tabbed-content > .tabbed-block:nth-child(1) {
+  display: block !important;
+}
+
+/* Show second tab content when second radio is checked */
+#__tabbed_1_2:checked ~ .tabbed-content > .tabbed-block:nth-child(2),
+#__tabbed_2_2:checked ~ .tabbed-content > .tabbed-block:nth-child(2) {
+  display: block !important;
+}
+
+/* Show third tab content when third radio is checked */
+#__tabbed_1_3:checked ~ .tabbed-content > .tabbed-block:nth-child(3),
+#__tabbed_2_3:checked ~ .tabbed-content > .tabbed-block:nth-child(3) {
+  display: block !important;
+}
+
+/* Show fourth tab content when fourth radio is checked */
+#__tabbed_2_4:checked ~ .tabbed-content > .tabbed-block:nth-child(4) {
+  display: block !important;
+}
+
+/* Show fifth tab content when fifth radio is checked */
+#__tabbed_2_5:checked ~ .tabbed-content > .tabbed-block:nth-child(5) {
+  display: block !important;
+}
+
+/* Content styling */
+.tabbed-content {
+  padding: 0;
+}
+
+.tabbed-block {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Code blocks inside tabs */
+.tabbed-block pre {
+  margin-top: 0;
+}
+
+/* Make sure code highlighting works inside tabs */
+.tabbed-block .highlight {
+  margin: 0;
+}
+
+
+
+/* ============================================
+   TABBED CONTENT - FORCE VISIBILITY
+   ============================================ */
+
+/* Force container visible */
+.tabbed-set {
+  display: block !important;
+  visibility: visible !important;
+  margin: 1.5rem 0 !important;
+}
+
+/* Force labels visible */
+.tabbed-labels {
+  display: flex !important;
+  visibility: visible !important;
+  gap: 0.25rem;
+  border-bottom: 2px solid var(--guidance-border);
+  margin-bottom: 1rem;
+}
+
+.tabbed-labels > label {
+  display: block !important;
+  visibility: visible !important;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--guidance-text-secondary);
+  transition: all 0.2s ease;
+  user-select: none;
+  background: transparent;
+}
+
+.tabbed-labels > label:hover {
+  color: var(--guidance-text);
+  background: var(--guidance-bg-secondary);
+}
+
+/* Active tab styling - enhanced by JavaScript */
+.tabbed-labels > label[data-active="true"] {
+  color: var(--guidance-primary) !important;
+  border-bottom-color: var(--guidance-primary) !important;
+}
+
+/* Force content container visible */
+.tabbed-content {
+  display: block !important;
+  visibility: visible !important;
+  padding: 0;
+}
+
+/* Blocks controlled by JavaScript - just set base styles */
+.tabbed-block {
+  background: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+/* Animation for visible blocks */
+.tabbed-block[data-active="true"] {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Code blocks inside tabs */
+.tabbed-block pre {
+  margin-top: 0;
+}
+
+.tabbed-block .highlight {
+  margin: 0;
+}
+
+
+/* ============================================
+   NESTED SIDEBAR GROUPS
+   ============================================ */
+
+/* Nested groups within groups */
+[data-slot="sidebar-group-content"] [data-slot="sidebar-group"] {
+  margin-left: 0.5rem;
+  padding-left: 0.5rem;
+  border-left: 1px solid var(--guidance-border-light);
+}
+
+/* Nested group labels should be smaller */
+[data-slot="sidebar-group-content"] [data-slot="sidebar-group-label"] {
+  font-size: 0.7rem !important;
+  padding: 0.3rem 0.4rem !important;
+}
+
+/* Make nested items more compact */
+[data-slot="sidebar-group-content"] [data-slot="sidebar-group-content"] a {
+  font-size: 0.75rem !important;
+  padding-left: 1rem !important;
+}
+
+
+/* ============================================
+   NESTED NAVIGATION ITEMS (JS-generated)
+   ============================================ */
+
+/* Nested folder headers */
+.nested-folder {
+  position: relative;
+}
+
+.nested-folder::before {
+  content: "▸";
+  display: inline-block;
+  margin-right: 0.4rem;
+  font-size: 0.7rem;
+  opacity: 0.6;
+  transition: transform 0.2s ease;
+}
+
+.nested-folder.expanded::before {
+  transform: rotate(90deg);
+}
+
+.nested-folder:hover {
+  background: var(--guidance-bg-secondary) !important;
+  color: var(--guidance-text) !important;
+}
+
+/* Nested items list */
+.nested-items {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease-out, opacity 0.2s ease;
+  opacity: 0;
+}
+
+.nested-items:not(.collapsed) {
+  max-height: 500px !important;
+  opacity: 1 !important;
+}
+
+
+/* ============================================
+   FORCE ROOT MENU ITEMS VISIBLE
+   ============================================ */
+
+/* Force Home and Contributors links to always be visible */
+[data-slot="sidebar-menu"] > [data-slot="sidebar-menu-item"] {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Ensure the links inside are visible */
+[data-slot="sidebar-menu"] > [data-slot="sidebar-menu-item"] > a {
+  display: flex !important;
+  visibility: visible !important;
+}
+
+
+/* ============================================
+   DOCS CONTENT AREA PADDING
+   ============================================ */
+
+[data-slot="docs"] {
+  padding-bottom: 3em !important;
+}
+
+/* ============================================
+   ROOT GROUP (Home, Contributors) - NO LABEL
+   ============================================ */
+
+/* The first sidebar-group has no label - it contains Home and Contributors */
+/* Force it to always be visible and not collapsible */
+[data-slot="sidebar-group"]:not(:has([data-slot="sidebar-group-label"])) {
+  display: block !important;
+}
+
+[data-slot="sidebar-group"]:not(:has([data-slot="sidebar-group-label"])) [data-slot="sidebar-group-content"] {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  max-height: none !important;
+}
+
+[data-slot="sidebar-group"]:not(:has([data-slot="sidebar-group-label"])) [data-slot="sidebar-menu-item"] {
+  display: block !important;
+  visibility: visible !important;
+}

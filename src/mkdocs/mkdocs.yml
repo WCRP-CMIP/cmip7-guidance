@@ -1,0 +1,79 @@
+site_name: Guidance and Documentation
+# site_url: Empty for relative paths - works at any deployment location (/project/, /custom/, etc.)
+site_url: ''
+repo_url: https://github.com/WCRP-CMIP/cmip7-guidance
+repo_name: WCRP-CMIP/cmip7-guidance
+site_description: Documentation for CMIP7.
+site_author: CMIP-IPO
+
+docs_dir: ../../docs
+site_dir: site
+use_directory_urls: true  # Creates clean URLs like /page/ instead of /page.html
+
+# Theme configuration
+theme:
+  name: shadcn
+  custom_dir: overrides
+  palette:
+    primary: teal
+    accent: teal
+  show_stargazers: false
+  favicon: assets/favicon.svg
+
+  icon: assets/cmip-logo.svg
+
+
+# Plugins
+plugins:
+  - search:
+      lang: en
+      separator: '[\s\-\.]+'
+
+  - gen-files:
+      scripts:
+        - hooks/run_scripts.py
+
+  - literate-nav:
+      nav_file: SUMMARY.md
+      implicit_index: true
+      tab_length: 2
+
+# Hooks
+hooks:
+  - hooks/generate_nav.py
+  - hooks/post_build.py
+
+extra:
+  generator: false
+
+extra_css:
+  - stylesheets/custom.css
+
+extra_javascript:
+  - stylesheets/custom.js
+  - stylesheets/embed.js
+  - https://unpkg.com/mermaid@10/dist/mermaid.min.js
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
