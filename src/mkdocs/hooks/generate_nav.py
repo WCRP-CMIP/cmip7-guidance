@@ -214,7 +214,6 @@ def items_to_nav(items, nav_lines, docs_root, indent="", base_path=None):
                 base_path=base_path / item["name"],
                 docs_root=docs_root,
             )
-            # items_to_nav(item["children"], nav_lines, indent + "  ", base_path)
 
 
 def generate_navigation(docs_path):
