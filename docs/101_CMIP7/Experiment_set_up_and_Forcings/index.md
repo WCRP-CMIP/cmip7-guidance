@@ -14,16 +14,15 @@ title: Overview
     https://github.com/WCRP-CMIP/cmip7-guidance/issues/new and tag @znichollscr.
 
 These pages provide guidance on the experimental setup and forcings to be used in CMIP7.
-They are updated regularly, hence should be considered the source of truth.
-The papers which describe the experiments in the scientific literature are the original source of truth,
+They are updated regularly, hence should be considered the current source of guidance.
+The papers which describe the experiments in the scientific literature are the original source and key reference,
 but they may still contain errors which cannot be fixed after publication so should not be relied upon in isolation.
-The papers are, of course, the best source of further information about each simulation
+The papers also provide further information about each simulation than what is provided here,
 such as the motivation, history and results from previous CMIP phases.
 
 These pages specify the intended way to run each simulation.
 However, we understand that modelling groups sometimes need to make changes for a variety of reasons.
-This is fine, but please make sure that you document these alterations clearly.
-How this should be documented is still being discussed
+We are currently discussing a mechanism for modeling centers to document these alterations in a central, publicly accessible location
 (for example, [discussion of how to choose values for the forcing 'f' identifier is ongoing](https://github.com/PCMDI/input4MIPs_CVs/issues/415)).
 When these discussions are finalised, these guidance pages will be updated.
 <!-- TODO: do we have a section to cross-link to? -->
