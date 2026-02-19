@@ -197,7 +197,6 @@ def items_to_nav(items, nav_lines, docs_root, indent="", base_path=None):
                 folder_index = folder_path / "index.md"
                 if folder_index.exists():
                     # Section with index - make it a clickable link
-                    # index_path = f"{item['name']}/index.md"
                     index_path = folder_index.relative_to(docs_root).as_posix()
                     nav_lines.append(f"{indent}- [{title}]({index_path})")
                 else:
