@@ -10,7 +10,6 @@ Radiatively coupled simulation (i.e. the carbon cycle only 'sees' the increase i
 
 ## Experiment set up
 
-<!-- TODO: check internal link when docs are rendered -->
 <!-- TODO: decide and then consistently apply some convention about whether experiment names are always surround by backticks `` or not -->
 The 1pctCO2-rad simulation has the same forcing setup as the [1pctCO2 simulation](./1pctco2.md).
 The difference is that your model should be configured such that the carbon cycle

@@ -10,7 +10,6 @@ Abrupt halving of atmospheric carbon dioxide levels. All other conditions are ke
 
 ## Experiment set up
 
-<!-- TODO: check internal link when docs are rendered -->
 <!-- TODO: decide and then consistently apply some convention about whether experiment names are always surround by backticks `` or not -->
 The abrupt CO<sub>2</sub> halving simulation is a simple branch from the [piControl simulation](./picontrol.md).
 After branching, the atmospheric CO<sub>2</sub> concentrations should be set to half

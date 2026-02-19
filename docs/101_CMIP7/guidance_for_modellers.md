@@ -25,12 +25,8 @@ provided as early as possible):
 * Ensure that you have joined the modelling group mailing list -- if unsure please 
   contact the [CMIP IPO](mailto:cmip-ipo@esa.int) for further details.
 
-<!-- 
-    TODO Dan: fix link to point to internal docs page.
-    The nav generation is too custom for me to get my head around why this isn't working.
--->
 * Perform required DECK and MIP experiments, using the required 
-  [experiment set up and associated forcing datasets](./experiment-set-up-and-forcings/index.md).
+  [experiment set up and associated forcing datasets](./Experiment_set_up_and_Forcings/index.md).
 
 * Save all requested model output as specified in the 
   [Data Request](https://wcrp-cmip.org/cmip-phases/cmip7/cmip7-data-request/) where possible (see section 4 below).

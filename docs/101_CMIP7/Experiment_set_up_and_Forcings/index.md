@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CMIP7 Experiment Setup and Forcings Guidance
+title: Overview
 ---
 
 # CMIP7 Experiment Setup and Forcings Guidance
@@ -29,19 +29,18 @@ When these discussions are finalised, these guidance pages will be updated.
 <!-- TODO: do we have a section to cross-link to? -->
 
 <!--- TODO: alter this page so that the MIP headings are auto-generated and inject the MIP descriptions from esgvoc. -->
-<!--- TODO: check if internal cross-links work once pages are built -->
 ## DECK experiments
 
 ### CMIP
 
 <!-- TODO: CMIP description here based on esgvoc -->
 
-#. [piControl](./picontrol.md)
-#. [esm-piControl](./esm-picontrol.md)
-#. [historical](./historical.md)
-#. [esm-hist](./esm-hist.md)
-#. [1pctCO2](./1pctco2.md)
-#. [abrupt-4xCO2](./abrupt-4xco2.md)
+1. [piControl](./picontrol.md)
+1. [esm-piControl](./esm-picontrol.md)
+1. [historical](./historical.md)
+1. [esm-hist](./esm-hist.md)
+1. [1pctCO2](./1pctco2.md)
+1. [abrupt-4xCO2](./abrupt-4xco2.md)
 
 ## Assessment Fast Track (AFT) experiments
 
@@ -49,18 +48,18 @@ When these discussions are finalised, these guidance pages will be updated.
 
 <!-- TODO: CFMIP description here based on esgvoc -->
 
-#. [abrupt-2xCO2](./abrupt-2xco2.md)
-#. [abrupt-0p5xCO2](./abrupt-0p5xco2.md)
+1. [abrupt-2xCO2](./abrupt-2xco2.md)
+1. [abrupt-0p5xCO2](./abrupt-0p5xco2.md)
 
 ### C4MIP
 
 <!-- TODO: C4MIP description here based on esgvoc -->
 
-#. [1pctco2-bgc](./1pctco2-bgc.md)
-#. [1pctco2-rad](./1pctco2-rad.md)
+1. [1pctco2-bgc](./1pctco2-bgc.md)
+1. [1pctco2-rad](./1pctco2-rad.md)
 
 ### ScenarioMIP
 
 <!-- TODO: ScenarioMIP description here based on esgvoc -->
 
-#. [scen7-vl](./scen7-vl.md)
+1. [scen7-vl](./scen7-vl.md)
