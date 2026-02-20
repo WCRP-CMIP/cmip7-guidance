@@ -26,9 +26,9 @@ If you already understand how to collect HPC performance metrics:
    - For each machine: location, [PUE](https://edgebuildings.com/wp-content/uploads/2024/03/240313-EDGE-Certification-for-Data-Centers-V4.pdf), emission factor, energy mix %, source
 
 3. **Experiment Metrics tab**
-   - Complete **Tier 1 (Strongly recommended)**
-   - Add **Tier 2 (Recommended)**
-   - Add **Tier 3 (Optional)**
+    - Complete **Tier 1 (Strongly recommended)**
+    - Add **Tier 2 (Recommended)**
+    - Add **Tier 3 (Optional)**
 
 4. Add any comments if needed, for example where metrics cannot be provided due to institution regulations. 
 5. Use **Metrics short descriptions** tab as glossary
