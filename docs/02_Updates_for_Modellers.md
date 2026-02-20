@@ -281,6 +281,8 @@ Other recent publications of note include:
 *	[Climate models need more frequent releases of input data — here’s how to do it (Naik et al, 2025)](https://rdcu.be/eCsz2)
 *	[Towards provision of regularly updated climate data from the Coupled Model Intercomparison Project (Hewitt et al., 2025)](https://journals.plos.org/climate/article?id=10.1371/journal.pclm.0000708)
 
+[October-2025_Modelling-centre-update_CMIP.pdf](https://github.com/user-attachments/files/25295255/October-2025_Modelling-centre-update_CMIP.pdf)
+
 ---
 
 ## 29th September 2025
