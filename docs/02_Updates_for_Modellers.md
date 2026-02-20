@@ -97,6 +97,90 @@ During November 2025, modelling centres completed a survey indicating likely ini
 **Where to ask questions and raise issues about the forcing datasets**
 These discussions are all being [captured on the input4MIPs GitHub](https://github.com/PCMDI/input4MIPs_CVs/discussions). Issues related to any datasets can also be raised here https://github.com/PCMDI/input4MIPs_CVs/issues. Please go to these pages to read and engage in any discussions. The page has search functionality so you can find what you need.
 
+
+---
+
+## 21st December 2025
+### Essential Model Documentation (EMD) spreadsheet
+
+Dear Modelling Centres,
+
+Please find attached the Essential Model Documentation (EMD) v1.0 Excel template for documenting your model configuration. You can also access the spreadsheet at [https://cloud.ipsl.fr/index.php/s/jXpfnJba2w6NH9W](https://cloud.ipsl.fr/index.php/s/jXpfnJba2w6NH9W)
+
+### What is the EMD Template?
+
+The Essential Model Documentation (EMD) is a standardized format for documenting Earth System Model configurations for CMIP7 and other international modelling projects. This Excel template captures:
+
+- **Top-level model information** including references to publications
+- **Model components** (atmosphere, ocean, sea ice, land surface, etc.)
+- **Horizontal grid structures** with full support for staggered grids (Arakawa arrangements)
+- **Vertical grid specifications** with coordinate types and layer information
+- **Controlled vocabularies** ensuring consistency across modelling centres
+
+The EMD v1.0 specification is available at: [https://zenodo.org/records/17853724](https://zenodo.org/records/17853724)
+
+### How to Use This Template
+
+1. **Start with the COMPONENT_SELECTOR sheet**
+    - Use the Yes/No dropdowns to indicate which components are Dynamic, Prescribed, or Omitted in your model
+
+2. **Fill in the Top-Level Model sheet**
+    - Document your model's overall properties
+    - Add reference IDs that point to publications (you'll define these in the References sheet)
+
+3. **Add all references in the References sheet**
+    - Each reference needs a unique ID (e.g., REF001), citation, and DOI
+    - These reference IDs will be used throughout the template
+
+4. **Define your grids** (hierarchical 2-step process):
+    - **HGrid_ComputationalGrid**: Define each computational grid with its arrangement (e.g., arakawa_c)
+    - **HGrid_Subgrids**: For each computational grid, define subgrids specifying which variables (mass, x_velocity, y_velocity) are at which locations
+    - **Vertical Grid**: Define vertical coordinate structure (all measurements in metres)
+
+5. **Document each dynamic component in Model Components sheet**
+    - Link each component to its horizontal and vertical grids using the Grid IDs you defined
+
+6. **Use the CV_* sheets as reference**
+    - These tabs contain controlled vocabulary values with exact descriptions from the EMD specification
+    - Each CV tab includes the EMD section number and a link to the full specification
+
+### About This Template and Model Registration
+
+This Excel file is a helper tool to facilitate registering your model documentation.
+
+A web-based registration form will be available at some point in the future. However, the web form is currently difficult to fill out by multiple people asynchronously, which is often necessary given that model documentation requires input from different experts across your team.
+
+This Excel template solves this problem by:
+
+- Allowing easy sharing among team members who each know different aspects of the model
+- Enabling collaborative editing and review before final submission
+- Providing offline access and version control
+
+If you would like to work on this template online, please contact [cmip-ipo@esa.int](mailto:cmip-ipo@esa.int) who  can provide an accessible, editable link (e.g., via cloud storage) that can be shared with the various people at your modelling centre who have knowledge about different components of your model.
+
+### If you are planning to publish CMIP7 Assessment Fast Track data before March 2026
+Once your Excel sheet is completed, please:
+
+1. Let us know if you would prefer an online collaborative link 
+2. Save your filled template in the format “EMD_Modelling-centre-name.xls”
+3. Return the completed Excel file to [cmip-ipo@esa.int](mailto:cmip-ipo@esa.int) 
+4. Contact us if you have any questions or encounter any issues
+
+We will inform you once the web-based form is ready for submissions for those planning to publish later in 2026.
+
+### Support
+
+If you need assistance:
+
+- Refer to the EMD specification: [https://zenodo.org/records/17853724](https://zenodo.org/records/17853724)
+- Each sheet includes detailed instructions and examples
+- Contact [cmip-ipo@esa.int](mailto:cmip-ipo@esa.int) who will forward your query to relevant member of the EMD or CVs Task Teams for questions
+
+Best regards,
+
+CMIP IPO (on behalf of the CMIP Model Documentation and Controlled Vocabularies Task Teams)
+
+
 ---
 
 ## 19th December 2025
