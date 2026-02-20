@@ -5,13 +5,30 @@ title: CMIP7 Updates for modelling groups
 
 # Updates for Modelling groups
 
-This page will be updated with information of interest to modelling groups.
+This page will be updated with information of interest to modelling groups that the CMIP IPO has communicated by email (most recent at top).
+
+---
+
+## 16th February 2026
+
+### CMIP7 forcings: piControl update
+
+Further to the update circulated on 12 February, there has been an iteration on the recommendation for piControl as follows:
+
+### Recommendation for pre-industrial control
+The piControl forcing should come from files with the source ID FZJ-CMIP-ozone-1-2 data, (there are no specific piControl files available in the FZJ-CMIP-ozone-2-0 data). Note that this guidance differs from the email communication sent by the CMIP IPO on 12 February 2026.
+
+For pre-industrial control, there are two options. The first is the monthly climatology file (frequency value of monC). This dataset averages over a longer simulation, essentially removing variability like the QBO. If you wish to use this forcing for your piControl, simply apply it on repeat.
+
+The second is a transient file which has a time range equal to 182901-184912 in the filename. This file is found in the same directory as the historical forcing so please be careful to only use it for piControl and do not include it in historical forcing. This transient piControl forcing includes the QBO signal but uses average solar forcing and repeating 1850 emissions. If you wish to use this forcing for your piControl, simply apply it on repeat.
+
+For full details on the ozone dataset please see [Ozone concentrations - input4MIPs Controlled Vocabularies (CVs)](https://input4mips-cvs--413.org.readthedocs.build/en/413/dataset-overviews/ozone/)
+
+---
 
 ## 12th February 2026
 
 ### CMIP7 forcings: modelling centres’ update
-
-Date issued: 12 February 2026
 
 This update provides the status of the delivery of the CMIP7 forcing datasets including an important notification on the historical ozone (v1.2) dataset. The homepage for CMIP7 Forcings datasets can be found [here](https://wcrp-cmip.org/cmip-phases/cmip7/cmip7-forcing-datasets/).
 
@@ -19,7 +36,7 @@ This update provides the status of the delivery of the CMIP7 forcing datasets in
 Given the update on the error in v1.2 historical ozone dataset and scenario forcing data availability below, we would ask modelling centres to provide feedback by completing [this form ](https://airtable.com/applbQctZtl09L2Ga/pagKlDzoY8Fd0KCLL/form).
 
 **IMPORTANT: Updated dataset to address discontinuity between the PI control climatology and the historical ozone**
-A member of the community raised an issue with a discontinuity between the piControl climatology and the historical ozone. The full discussion is at https://github.com/PCMDI/input4MIPs_CVs/issues/400 
+A member of the community raised an issue with a discontinuity between the piControl climatology and the historical ozone. The full discussion is at <https://github.com/PCMDI/input4MIPs_CVs/issues/400>
 
 The ozone forcing providers have uploaded an updated version (v2.0) of the historical ozone concentrations to correct for the discontinuity in v1.2. The new historical ozone forcing v2.0, which can be found at [this link](https://esgf-node.ornl.gov/search?project=input4MIPs&activeFacets=%7B%22mip_era%22%3A%22CMIP7%22%2C%22institution_id%22%3A%22FZJ%22%2C%22source_version%22%3A%222.0%22%7D), has an increased historical ozone burden of about 10% (primarily due to a vertical shift in the stratospheric ozone distribution). 
 
@@ -80,6 +97,8 @@ During November 2025, modelling centres completed a survey indicating likely ini
 **Where to ask questions and raise issues about the forcing datasets**
 These discussions are all being [captured on the input4MIPs GitHub](https://github.com/PCMDI/input4MIPs_CVs/discussions). Issues related to any datasets can also be raised here https://github.com/PCMDI/input4MIPs_CVs/issues. Please go to these pages to read and engage in any discussions. The page has search functionality so you can find what you need.
 
+---
+
 ## 19th December 2025
 ### Data Request v1.2.2.3
 Dear CMIP community,
@@ -105,6 +124,7 @@ CMIP IPO (on behalf of the Data Request Task Team)
  
 Apologies for any cross-posting of this announcement.
 
+---
 
 ## 8th December 2025
 
@@ -252,6 +272,8 @@ Other recent publications of note include:
 •	[Climate models need more frequent releases of input data — here’s how to do it (Naik et al, 2025)](https://rdcu.be/eCsz2)
 •	[Towards provision of regularly updated climate data from the Coupled Model Intercomparison Project (Hewitt et al., 2025)](https://journals.plos.org/climate/article?id=10.1371/journal.pclm.0000708)
 
+---
+
 ## 29th September 2025
 ### Data Request v1.2.2.1
 Dear CMIP community,
@@ -276,6 +298,36 @@ CMIP IPO (on behalf of the Data Request Task Team)
  
 Apologies for any cross-posting of this announcement.
 
+---
+
+## 25th July 2025
+### Data Request v1.2.2
+
+Dear CMIP community,
+ 
+We are pleased to release [v1.2.2 of the CMIP7 Data Request](https://wcrp-cmip.org/cmip7-data-request-v1-2-2/). Today's release provides technical updates to the variables from the v1.2.1, release plus includes an early version of the branded variable names, which are new for CMIP7. 
+ 
+The key components of the Data Request that you can access from today are:
+
+1. [The online database (hosted on Airtable)](https://bit.ly/CMIP7-DReq-v1_2_2),
+2. [Database guidance pages (hosted on ScribeHow)](https://bit.ly/CMIP7-DReq-guidance)
+3. [v1.2.2 release webpage and release notes](https://wcrp-cmip.org/cmip7-data-request-v1-2-2/)
+4. [Data Request software package (API, hosted on GitHub)](https://github.com/CMIP-Data-Request/CMIP7_DReq_Software)
+
+Included in the v1.2.2 are the Branded Variable Names – the new way of naming variables which is being implemented for CMIP7. Please note that we anticipate an additional release v1.2.3 in late Summer/early Autumn, providing minor technical updates to the variables, mostly confined to the cell methods and dimensions. This release will also update a small number of the branded variable names. To reassure data producers, out of the 1991 variables in the v1.2.2 request, 123 have provisional names which are subject to change. The remaining names can be considered mostly stable, allowing modelling centres starting to use the Data Request to configure their workflows. The 123 provisional names are further split into two categories – ‘likely accepted’ (100 variables) and ‘requires discussion’ (23 variables). Variables names in the latter category are the least stable, however we encourage all data producers to check for name updates for all 123 provisional names in the forthcoming v1.2.3 release.
+
+The [Data Request Task Team’s Technical Implementation Subgroup (DR-TISG)](https://wcrp-cmip.org/cmip7-task-teams/data-request/#working_groups) have created Python code to allow users to interact with the CMIP7 Data Request. It provides an API and scripts that can produce lists of the variables requested for each CMIP7 experiment, information about the requested variables, and in general will support different ways of querying and utilising the information in the data request. The API is now available, though a new update of the API will be released roughly two weeks following this content release. This separation of content and software timelines is important for managing Task Team and IPO workloads and allows the TISG to fix any issues in the code following the content release.
+
+If you would like more information about the new structure of the Data Request for CMIP7, or some background information about how the Data Request was developed, you can find this on the [CMIP7 Data Request webpage](https://wcrp-cmip.org/cmip-phases/cmip7/cmip7-data-request/). 
+
+This release would not have been possible without the immense amount of work contributed by the [Thematic Author Team](https://airtable.com/appVPW6XAZfbOZjYM/shrH4w1SMsaSGOO7F) members and the [Data Request Task Team](https://wcrp-cmip.org/cmip7-task-teams/data-request/) and [Controlled Vocabularies Task Team](https://wcrp-cmip.org/cmip7-task-teams/cvs/).  
+
+Best wishes,
+CMIP IPO (on behalf of the Data Request Task Team)
+ 
+Apologies for any cross-posting of this announcement.
+
+---
 
 ## June 2025
 ### Data Request update
