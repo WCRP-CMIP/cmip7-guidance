@@ -131,12 +131,12 @@ Apologies for any cross-posting of this announcement.
 ### Updates from the WIP
 
 * Following the infrastructure drop-in sessions in November updates have been made to the 
-  [CMIP7 guidance for modellers webpages](https://wcrp-cmip.github.io/cmip7-guidance/CMIP7/guidance_for_modellers/). These include:
+  [CMIP7 guidance for modellers webpages](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/guidance_for_modellers/). These include:
     * Information on repacking netCDF files that are to be published to CMIP7 has been added, and the cmip7repack tool is available for testing. 
       Note that repacking will be **required** for publishing data to ESGF. Questions and queries are welcome via the [cmip7repack github repository](https://github.com/NCAS-CMS/cmip7_repack).
     * There has been a change to the guidance on QC tools, with a IOOS/compliance-checker plugin replacing a fork of the compliance checker code.
 * QA/QC: early testing is possible, see details in the 
-  [guidance for modellers pages](https://wcrp-cmip.github.io/cmip7-guidance/CMIP7/guidance_for_modellers/#7-software-for-checking-output). 
+  [guidance for modellers pages](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/guidance_for_modellers/#7-software-for-checking-output). 
   Users should note that:
     * Checks for CMIP6 and CORDEX-CMIP6 data are implemented, while CMIP7 checks are being finalized.
     * Some checks will be required by the ESGF publisher, but data producers can also choose to run a heavier set of checks, 
@@ -233,21 +233,27 @@ chemistry-climate models to be initiated.
 ### Rapid Evaluation Framework
 The Rapid Evaluation Framework (REF) provides diagnostics to characterise climate model performance and highlight model spread, diversity and differences. These results may help researchers identify models suitable for specific applications but should not be interpreted as identifying “good” or “bad” models. This version 1 release of the REF serves as a starting point for deeper exploration and investigation into CMIP6 and CMIP6Plus model output. This version was launched at the ESM2025 Final General Assembly on the 07 October 2025. You can access it through [https://dashboard.climate-ref.org/](http://dashboard.climate-ref.org/). A tour of the dashboard is available [here](https://www.youtube.com/watch?v=bK6S_ilf6H8). The containerised version installation is available here: [https://climate-ref.readthedocs.io/](https://api.climate-ref.org/)
 
+
 The Climate REF Dashboard provides multiple interfaces for accessing evaluation results:
-* [Data Explorer](https://dashboard.climate-ref.org/explorer/themes): Interactive interface for querying and visualizing model evaluation results. Users can select specific models, variables, and experiments for detailed analysis.
-* [Diagnostic Browser](https://dashboard.climate-ref.org/diagnostics): Pre-computed evaluation metrics organized by model component and diagnostic type. Results include statistical summaries, spatial maps, and time series comparisons.
+    
+- [Data Explorer](https://dashboard.climate-ref.org/explorer/themes): Interactive interface for querying and visualizing model evaluation results. Users can select specific models, variables, and experiments for detailed analysis.
+- [Diagnostic Browser](https://dashboard.climate-ref.org/diagnostics): Pre-computed evaluation metrics organized by model component and diagnostic type. Results include statistical summaries, spatial maps, and time series comparisons.
+
 Comprehensive documentation is available at [climate-ref.readthedocs.io](https://climate-ref.readthedocs.io/en/latest/), including:
-* Technical specifications
-* Diagnostic descriptions and equations
-* API documentation for programmatic access
-* Example workflows and use cases
-We are keen to hear from modelling centres who would be interested in running the containerised version of the REF prior to publication. Sharing early simulation  data and prioritizing variables listed in Table B1 (p27) of the[ REF documentation paper](https://egusphere.copernicus.org/preprints/2025/egusphere-2025-2685/), will greatly  support the development of the CMIP7 ready REF to be launched at the CMIP Community Workshop in March 2026. Those who have already indicated interest will be contacted individually with further detail very soon.  We would also like to highlight the [CMIP7 Data Request REF Opportunity](https://airtable.com/apphMYhEwBJfd0bUK/shrYC888Qxf8gkvky/tbljoSaMlK7m0DunX/viw0evRBr0vqp658c/recrX8mfa5CgX7SLm).
+    
+- Technical specifications
+- Diagnostic descriptions and equations
+- API documentation for programmatic access
+- Example workflows and use cases
+
+We are keen to hear from modelling centres who would be interested in running the containerised version of the REF prior to publication. Sharing early simulation  data and prioritizing variables listed in Table B1 (p27) of the[ REF documentation paper](https://egusphere.copernicus.org/preprints/2025/egusphere-2025-2685/), will greatly  support the development of the CMIP7 ready REF to be launched at the CMIP Community Workshop in March 2026. Those who have already indicated interest will be contacted individually with further detail very soon.  We would also like to highlight the [CMIP7 Data Request REF Opportunity](https://airtable.com/app2jDtttIhxC5fx7/shrAlTC2M6rDigwAr/tbljoSaMlK7m0DunX/viw0evRBr0vqp658c/recpCG10UEZxH22BR).
 
 If you have any feedback, ideas or questions please raise an issue on the [Climate-REF Github](https://github.com/Climate-REF/climate-ref/issues).
 
 ### CMIP7 Infrastructure
 Final development of the key parts of the CMIP7 infrastructure is nearing completion including the Controlled Vocabularies (CVs), Essential Model Documentation (EMD) and testing of the Earth System Grid Next Generation (ESGF-NG) to facilitate initiation of simulations and CMIP7 data publication before the end of 2025. 
 To find out more about CMIP7 infrastructure, and what has changed from CMIP6, please register to attend one of two drop-in sessions (to accommodate all time zones):
+
 * [Wednesday 5 November, 08:00-09:00 UTC](https://wcrp-cmip.org/event/cmip7-infrastructure-dropin-5nov/)
 * [Thursday 6 November, 17:00-18:00 UTC](https://wcrp-cmip.org/event/cmip7-infrastructure-dropin-6nov/)
 
@@ -256,9 +262,10 @@ The latest release of the CMIP7 Data Request is available [here](https://wcrp-cm
 
 **Energy Consumption and Carbon Footprint**
 The [Energy Consumption and Carbon Footprint Task Team](https://wcrp-cmip.org/cmip7-task-teams/energy-consumption/) would like to ask all modelling centres participating in CMIP7 AFT and MIPs to report energy consumption, which enables the estimation of the carbon footprint associated with running climate model experiments. The proposed protocol is based on CPMIP and consists of three Tiers of questions:  
- * Tier 1 (Mandatory) metrics including platform name, emission factor, energy mix, power usage effectiveness, experiment type, simulated years, core hours, data usage etc., to facilitate comparison across institutions and HPC platforms. 
- * Tier 2 (Recommended) metrics providing information to analyse and interpret Tier 1 results, including model configuration and performance indicators.
- * Tier 3 (Optional) metrics offering a deeper understanding of model and system behaviour through more detailed performance indicators, to identify bottlenecks and improve cross-platform comparability.
+
+* Tier 1 (Mandatory) metrics including platform name, emission factor, energy mix, power usage effectiveness, experiment type, simulated years, core hours, data usage etc., to facilitate comparison across institutions and HPC platforms. 
+* Tier 2 (Recommended) metrics providing information to analyse and interpret Tier 1 results, including model configuration and performance indicators.
+* Tier 3 (Optional) metrics offering a deeper understanding of model and system behaviour through more detailed performance indicators, to identify bottlenecks and improve cross-platform comparability.
 
 A [draft guideline document](https://zenodo.org/records/17464967) is available with further information and instructions on how the Task Team would like data to be collected. We welcome your feedback on this proposal through the relevant questions in the survey.
 
@@ -268,9 +275,11 @@ The Working Group on Coupled Modelling (WGCM) would like to invite you to join t
 ### Publications
 The [CMIP7 Geoscientific Model Development Special Issue](https://gmd.copernicus.org/articles/special_issue1315.html) now has fifteen papers available including the highlight paper:
 [An evolving Coupled Model Intercomparison Project phase 7 (CMIP7) and Fast Track in support of future climate assessment (Dunne et al., 2025)](https://gmd.copernicus.org/articles/18/6671/2025/gmd-18-6671-2025.pdf)
+
 Other recent publications of note include:
-•	[Climate models need more frequent releases of input data — here’s how to do it (Naik et al, 2025)](https://rdcu.be/eCsz2)
-•	[Towards provision of regularly updated climate data from the Coupled Model Intercomparison Project (Hewitt et al., 2025)](https://journals.plos.org/climate/article?id=10.1371/journal.pclm.0000708)
+
+*	[Climate models need more frequent releases of input data — here’s how to do it (Naik et al, 2025)](https://rdcu.be/eCsz2)
+*	[Towards provision of regularly updated climate data from the Coupled Model Intercomparison Project (Hewitt et al., 2025)](https://journals.plos.org/climate/article?id=10.1371/journal.pclm.0000708)
 
 ---
 
@@ -353,6 +362,32 @@ DEADLINE: 08:00 UTC, 30th June 2025
 
 Apologies for the tight timeline. As we know many centres are starting/have started configuring their model, we need to gather this information as quickly as possible.
 
+---
+
+## 29th May 2025
+
+### Update to stratospheric volcanic aerosol forcing and resulting impact on ozone concentration and nitrogen deposition dataset delivery
+ 
+Following the release of the [UOEXETER-CMIP-2-0-0 Stratospheric volcanic SO2 emissions and aerosol optical properties dataset](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/stratospheric-volcanic-so2-emissions-aod/) in January 2025, feedback from modelling centres via the [Github discussion](https://github.com/PCMDI/input4MIPs_CVs/discussions/175) identified an issue with NaN values affecting mostly high altitude or lowermost stratospheric extratropical regions after Pinatubo. Further questions were raised at the VolImpact workshop in April 2025 regarding Agung 1963 forcing being too latitudinally symmetric in v2.0.0 instead of mostly in the southern hemisphere and how this may affect simulated climate response.
+ 
+Updating the dataset to resolve these issues affects the piControl climatology and will require reinitiation of the simulations that are producing the ozone forcing datasets. As a result, there will be around a two-week delay in delivery of the CMIP7 ozone concentration and nitrogen deposition datasets. The CMIP Forcings Task Team co-leads and CMIP Panel co-chairs carefully considered the implications of this delay but concluded that addressing the issues, particularly given the community feedback, and ensuring consistency was paramount.
+ 
+In response to feedback,  the stratospheric volcanic SO2 emissions and aerosol optical properties dataset has been updated, and will be available on the ESGF soon - if you have an urgent need to access the updated dataset please contact [cmip-ipo@esa.int](mailto:cmip-ipo@esa.int) . The new estimated delivery of the CMIP7 ozone and nitrogen deposition datasets are: piControl dataset by end of June 2025 and historical datasets by end of August 2025.
+ 
+We are aware that updates and delays are disruptive to the workflows of the modelling centres/groups seeking to deliver to the CMIP Assessment Fast Track and therefore no further updates will be made, only retractions as agreed by the CMIP Panel.
+ 
+### Development of new population dataset for CMIP7
+ 
+As ESMs are moving towards modelling fires interactively, thereby simulating the feedbacks on both terrestrial vegetation, carbon cycle as well as atmospheric composition. This presents some new forcing data requirements including population density data required for fire ignitions (see details in [this presentation](https://wcrp-cmip.org/wp-content/uploads/2024/10/S5_JMulcahy.pdf)).
+In response to this need, a dataset will be created by collaboration of the [COMPASS](https://compass-climate.eu/) and [WorldPop](https://www.worldpop.org/) projects. It is based on the approach of merging exposure dataset described in [this document](https://compass-climate.eu/Public%20Deliverables/D3.1_Exposure%20datasets%20at%20multiple%20scales.pdf), but with the main change being the inclusion of the new WorldPop dataset. Gridded population at resolutions of 1 km or lower (such as 0.5 degree for ESMs) will utilize WorldPop gridded data for 2015-2100, with extrapolation back to 1975 with Global Human Settlement Layer (GHSL) and back to 1850 with History database of the Global Environment (HYDE; main source of data so far). As the gridded data comes in 5- or 10-year resolution, it will be interpolated. Then, the gridded data will be adjusted to annual timeseries at country level using a new compilation of historical data from project COMPASS for 1850-2023 (near-equal to UN World Population Prospects for 1950-2023) and then will follow the SSP database, specifically the upcoming SSP v3.2 data which will also be used in ScenarioMIP. The graph below schematically shows how the data is combined.
+ 
+The change in the dataset is proposed to improve quality of both gridded and national data compared to HYDE and increase available resolution for impact data. Validation for Europe has shown that WorldPop and GHSL reduce the error in population distribution (measured by average error per grid cell) by more than half. At a 0.5 degree resolution, the average difference in grid-cell population compared to HYDE would be about 20%. The importance of population data quality and resolution is much larger for impact models, therefore a switch to a new data source already for ESMs is beneficial. The change will not introduce a major discrepancy in land use as it has limited relation to population data after 1960 in HYDE, while pre-1960 population trends are largely preserved (with limited exceptions to improve data accuracy).
+We are currently awaiting final version of SSP v3.2 and WorldPop gridded population projections. The historical period will be provided first relatively soon, and SSP-based projections by end of June 2025.
+
+
+---
+
+
 ## 27th April 2025
 ### Data Request v1.2.1
 
@@ -392,6 +427,8 @@ CMIP IPO (on behalf of the Data Request Task Team)
  
 Apologies for any cross-posting of this announcement.
 
+---
+
 ## 22nd April 2025
 ### Data Request v1.2.1 in preparation
 
@@ -406,6 +443,8 @@ We want to understand the impact making this change would have, so if any centre
 Best wishes,
 CMIP IPO
 
+---
+
 
 ## 15th April 2025
 
@@ -413,7 +452,6 @@ CMIP IPO
 
 We are aware that some of you are already following the [An evolving Coupled Model Intercomparison Project phase 7 (CMIP7) and Fast Track in support of future climate assessment](https://egusphere.copernicus.org/preprints/2024/egusphere-2024-3874/) preprint Table 1. Some errors have been found regarding the volcanic and solar forcing entries, which will be corrected for final submission, and are **highlighted in bold** below:
 
- 
 
 | Experiment short name | Experiment description | Anthropogenic Forcing | Volcanic Forcing | Solar Forcing | Start Year | End Year | Main purpose |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -427,6 +465,26 @@ We are aware that some of you are already following the [An evolving Coupled Mod
 | piClim-4xCO2 (amip) | As piClim-Control  except CO2 concentrations set to 4 times preindustrial | All 1850 except CO2 prescribed at 4 times preindustrial concentration | Same as piControl | Same as piControl | 1 | 30 | Quantify ERF of 4 × CO2 |
 
 The CMIP Panel, WIP and relevant TTs are working on a dynamic format for the experiment specifications to ensure everyone can access the most up to date information rather than referring to a static paper going forwards. In the meantime, for forcings information and descriptions, we strongly recommend referring to the information/documentation found at https://wcrp-cmip.org/cmip-phases/cmip7/cmip7-forcing-datasets/ linking to the dataset overviews at https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/
+
+
+---
+
+## 4th April 2025
+### Model output technical updates
+
+Dear Modelling Centre technical leads,
+ 
+The WGCM Infrastructure Panel (WIP) have prepared a short update (attached) outlining some upcoming technical changes in the CMIP7 data requirements, mainly regarding model output preparation. Each change from CMIP6 practices has been carefully considered by the WIP and associated task teams, and while modelling groups will need to adapt their data preparation procedures to the changes, we believe that the effort required will not be onerous. 
+ 
+If you have any questions or feedback or this email has come to the wrong contact at your centre, please email [cmip-ipo@esa.int](mailto:cmip-ipo@esa.int)
+
+Best wishes,
+ 
+CMIP IPO (on behalf of WIP)
+
+[2025-04-04_CMIP7-Infrastructure-update.pdf](https://github.com/user-attachments/files/25296271/2025-04-04_CMIP7-Infrastructure-update.pdf)
+
+---
 
 ## 1st April 2025 
 ### Data Request v1.2
@@ -462,6 +520,7 @@ CMIP IPO (on behalf of the Data Request Task Team)
  
 Apologies for any cross-posting of this announcement.
 
+---
 
 ## 27th March 2025
 ### Forcings update
@@ -473,6 +532,9 @@ The [CMIP Forcings Task Team](https://wcrp-cmip.org/cmip7-task-teams/forcings/) 
 - For models that require ozone and nitrogen deposition as inputs, we expect ozone and nitrogen deposition piControl datasets to be available before the end of April.
 - Please see [https://wcrp-cmip.org/cmip-phases/cmip7/cmip7-forcing-datasets/](https://wcrp-cmip.org/cmip-phases/cmip7/cmip7-forcing-datasets/) for links to the data, where and how to feedback, and how to ensure you stay updated on the latest announcements.
 
+
+---
+
 ## 31st January 2025
 
 ### Request for update on your plans for AR7 Fast Track
@@ -481,8 +543,11 @@ On the 17 January we provided an update of key CMIP components to facilitate you
 ### Update on CMIP6Plus stratospheric aerosol optical property and volcanic sulfur emission datasets
 Version 1.3.0 of the CMIP6Plus stratospheric aerosol optical property and volcanic sulfur emission datasets are now [available on ESGF](https://esgf-node.ornl.gov/search?project=input4MIPs&activeFacets=%7B%22source_id%22%3A%22UOEXETER-CMIP-1-3-1%22%7D) with succinct documentation [available here](https://docs.google.com/document/d/1blX5kv0We1BteqWzMKs0OuhazAcAonay/edit?usp=sharing&ouid=111400553859688856208&rtpof=true&sd=true). A key development in this version is the addition of small-magnitude volcanic eruption pre-satellite era, addressing an important bias in previous versions. This development means that the piControl climatology for stratospheric aerosol optical properties should be very stable from now on, and that if you start spinning up your model with this version, we expect minor effects when you implement future updates, including the final version that will be frozen for use in the AR7 Fast Track at the end of February. We encourage users to test the available datasets and provide feedback via the input4MIPs_CVs repository discussions on [GitHub](https://github.com/PCMDI/input4MIPs_CVs/discussions).
 
+---
+
 ## 30th January 2025
 ### Data Request v1.1
+
 Dear CMIP Modelling Centres,
  
 We are pleased to release [v1.1 of the CMIP7 Data Request](https://wcrp-cmip.org/cmip7-data-request-v1-1/).
@@ -524,3 +589,91 @@ Best wishes,
 CMIP IPO (on behalf of the Data Request Task Team)
  
 Apologies for any cross-posting of this announcement.
+
+---
+
+## 17th January 2025
+### AFT updates
+
+Dear All,
+ 
+We are writing to provide an update of key CMIP components to facilitate your participation in the AR7 Fast Track simulations (see attached or available for download [here](https://wcrp-cmip.org/wp-content/uploads/2025/01/25-01_Modelling-centre-update_FINAL.pdf)). The update contains details on:
+
+1. CMIP7 description paper
+2. Historical forcing dataset availability
+3. Scenarios and harmonisation
+4. Data request
+5. Rapid Evaluation Framework
+ 
+Given this information, we ask you to provide information on your centre/group’s planning for spin up, piControl, historical and wider AR7 Fast Track simulations in this [short form](https://airtable.com/applbQctZtl09L2Ga/pagZPvPgcuOkVspkx/form) by 08:00 UTC Friday 14th February. This information has been specifically requested from downstream communities such as CORDEX, ISIMIP, ISMIP7 and others to support their planning for contribution to AR7. Please ensure you submit a consolidated response from your centre/group.
+ 
+Best wishes,
+
+CMIP IPO (on behalf of the CMIP Panel and WIP)
+
+---
+
+## 22nd November 2024
+### Data Request v1.0
+
+Dear MIPs and Modelling Centres,
+ 
+We are pleased to [release v1.0 of the CMIP7 Data Request](https://wcrp-cmip.org/cmip7-data-request-v1-0). There are two key components of the request that you can access and review from today: 
+
+1. [the online database (hosted on Airtable),](https://bit.ly/CMIP7-DReq-v1_0)
+2. [the software package hosted on GitHub](https://github.com/CMIP-Data-Request/CMIP7_DReq_Software). 
+
+ 
+All information about accessing and using the request is available on our website at [https://wcrp-cmip.org/cmip7-data-request-v1-0](https://wcrp-cmip.org/cmip7-data-request-v1-0) for future reference, including links to guidance documents – please read this carefully.
+ 
+Please feel free to continue to provide feedback using the Excel spreadsheets and/or Variable Comment forms circulated [during the v1.0beta release](https://wcrp-cmip.org/cmip7-data-request-v1-0beta/). These will continuously be incorporated into the request.
+ 
+We would like to thank the thematic author teams for all their hard work developing the request.
+ 
+Best wishes,
+CMIP IPO
+
+---
+
+## 13th November 2024
+### CMIP6Plus preliminary forcing datasets
+
+A number of CMIP6Plus preliminary forcing datasets have been made [available ](https://input4mips-controlled-vocabularies-cvs.readthedocs.io/en/latest/database-views/input4MIPs_delivery-summary_CMIP6Plus.html)via ESGF through the input4MIPs project ([https://aims2.llnl.gov/search/input4MIPs](https://aims2.llnl.gov/search?project=input4MIPs&activeFacets=%7B%22mip_era%22%3A%22CMIP6Plus%22%7D)) and are ready for testing by any interested modelling centres or data analysts.
+
+ We encourage users to test the [available datasets ](https://input4mips-controlled-vocabularies-cvs.readthedocs.io/en/latest/database-views/input4MIPs_delivery-summary_CMIP6Plus.html)and provide feedback via the input4MIPs_CVs repository discussions on [GitHub (https://github.com/PCMDI/input4MIPs_CVs/discussions)](https://github.com/PCMDI/input4MIPs_CVs/discussions). For further details on the CMIP DECK forcing suite please see the [CMIP Forcings Task Team webpage](https://wcrp-cmip.org/cmip7-task-teams/forcings/), the recent open community drop-in session [slides](https://wcrp-cmip.org/wp-content/uploads/2024/10/2024-10-29_Forcings-drop-in_session.pdf) and [recording](19a0cdb6fd9d5ada593958dfb1a9daf2), and the input4MIPs documentation repository ([https://input4mips-controlled-vocabularies-cvs.readthedocs.io/en/latest/dataset-overviews/](https://input4mips-controlled-vocabularies-cvs.readthedocs.io/en/latest/dataset-overviews/)) 
+
+All CMIP6Plus era data sets are for testing purposes only, i.e. they are not to be relied upon for CMIP7 production runs. CMIP7 datasets to support the AR7 Fast Track will be made available in early 2025.
+
+We would like to extend a huge thank you to the Forcings Task Team for their work in coordinating this effort.
+
+---
+
+## 21st October 2024
+### Data Request v1.0beta
+
+Dear CMIP Modelling Centres,
+ 
+We are pleased to release v1.0beta of the CMIP7 Data Request today. There are three key components of the request that you can access and review from today: 
+
+1. [the online database (hosted on Airtable),](https://bit.ly/CMIP7-DReq-v1_0beta)
+2. an Excel spreadsheet to gather feedback (attached), and 
+3. [the software package hosted on GitHub](https://github.com/CMIP-Data-Request/CMIP7_DReq_Software). 
+
+ 
+All information for the review is available on our website at [https://wcrp-cmip.org/cmip7-data-request-v1-0beta](https://wcrp-cmip.org/cmip7-data-request-v1-0beta)for future reference including links to guidance documents – please read this carefully.
+ 
+Feedback requested
+Modelling centres and MIPs are invited to provide feedback on v1.0beta. Feedback is not compulsory; however, the Data Request Task Team appreciates any feedback to improve the request. The full v1.0 release will be published on 22nd November 2024. The deadline for feedback which you would like to be considered in advance of the full public v1.0 release should be submitted by 23:59 UTC on 17th November 2024. Feedback submitted after this date is still welcome and will be considered for v1.1 later this year. 
+ 
+The earlier the Task Team receive feedback, the more stable future Data Request releases will be. Key feedback from CMIP6 highlighted that a the frequently evolving Data Request caused issues for many modelling centres. The ongoing work and public consultations aim to reduce the number of updates required for the CMIP7 Data Request. Your feedback is essential for this. 
+ 
+We request one consolidated response from each modelling centre, so please circulate the materials to all necessary people in your centre, collate the responses into the attached feedback spreadsheet and email to [cmip-ipo@esa.int](mailto:cmip-ipo@esa.int). 
+ 
+Please visit our dedicated webpage at https://wcrp-cmip.org/cmip7-data-request-v1-0beta/ for detailed information about reading and reviewing the CMIP7 Data Request, including links to guidance documents.
+ 
+Best wishes,
+CMIP IPO (on behalf of the Data Request Task Team)
+
+---
+
+
