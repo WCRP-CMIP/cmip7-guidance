@@ -75,8 +75,7 @@ for data access information.
 
 ### Getting the data
 
-The data is available on ESGF and searchable via metagrid
-(https://esgf-node.ornl.gov/search?project=input4MIPs&versionType=all&activeFacets=%7B%22mip_era%22%3A%22CMIP7%22%7D),
+The data is available on ESGF and searchable [via metagrid](https://esgf-node.ornl.gov/search?project=input4MIPs&versionType=all&activeFacets=%7B%22mip_era%22%3A%22CMIP7%22%7D),
 although this method of finding and downloading the data can involve a lot of clicking.
 
 If you install [esgpull](https://esgf.github.io/esgf-download/),

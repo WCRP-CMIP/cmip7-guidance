@@ -17,7 +17,7 @@ These pages provide guidance on the experimental setup and forcings to be used i
 They are updated regularly, hence should be considered the current source of guidance.
 The papers which describe the experiments in the scientific literature are the original source and key reference,
 but they may still contain errors which cannot be fixed after publication so should not be relied upon in isolation.
-The papers also provide further information about each simulation than what is provided here,
+[The papers](https://gmd.copernicus.org/articles/special_issue1315.html) also provide further information about each simulation than what is provided here,
 such as the motivation, history and results from previous CMIP phases.
 
 These pages specify the intended way to run each simulation.
