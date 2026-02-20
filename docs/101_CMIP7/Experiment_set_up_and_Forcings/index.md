@@ -32,7 +32,8 @@ When these discussions are finalised, these guidance pages will be updated.
 
 ### CMIP
 
-<!-- TODO: CMIP description here based on esgvoc -->
+<!-- TODO: get this from esgvoc automatically -->
+CMIP core common experiments i.e. the DECK (Diagnostic, Evaluation and Characterization of Klima).
 
 1. [piControl](./picontrol.md)
 1. [esm-piControl](./esm-picontrol.md)
@@ -45,20 +46,26 @@ When these discussions are finalised, these guidance pages will be updated.
 
 ### CFMIP
 
-<!-- TODO: CFMIP description here based on esgvoc -->
+<!-- TODO: get this from esgvoc automatically -->
+Cloud feedback model intercomparison project.
+Focussed primarily on cloud feedbacks with a secondary focus on understanding of response to
+forcing, model biases, circulation, regional-scale precipitation, and non-linear changes.
 
 1. [abrupt-2xCO2](./abrupt-2xco2.md)
 1. [abrupt-0p5xCO2](./abrupt-0p5xco2.md)
 
 ### C4MIP
 
-<!-- TODO: C4MIP description here based on esgvoc -->
+<!-- TODO: get this from esgvoc automatically -->
+Coupled climate carbon cycle model intercomparison project: exploration of the response of the coupled carbon-climate system.
 
 1. [1pctco2-bgc](./1pctco2-bgc.md)
 1. [1pctco2-rad](./1pctco2-rad.md)
 
 ### ScenarioMIP
 
-<!-- TODO: ScenarioMIP description here based on esgvoc -->
+<!-- TODO: get this from esgvoc automatically -->
+Future scenario experiments.
+Exploration of the future climate under a (selected) range of possible boundary conditions.
 
 1. [scen7-vl](./scen7-vl.md)

@@ -65,8 +65,7 @@ of the overall design and scientific strategy provided in the lead article of th
 -	Each model participating in CMIP7 is encouraged to contribute results from the eight DECK experiments 
   (`amip`, `piControl`/`esm-piControl`, `abrupt-4xCO2`, `1pctCO2`, `historical`/`esm-hist`, `piClim-control`, `piClim-anthro`, 
   `piClim-4xCO2`).
-  <!-- TODO Dan: figure out internal hyperlink -->
-  The experiment set up for each simulation can be found in [TODO internal link to experiment-set-up-and-forcings].
+  The experiment set up for each simulation can be found in [experiment set up and forcings](./Experiment_set_up_and_Forcings/index.md).
   The simulation protocols were published in [Dunne et al. (2025)](https://doi.org/10.5194/gmd-18-6671-2025)
   (but modelling teams are encouraged to use these pages as the source of truth in case errors have been discovered since publication,
   if there is any confusion please raise an issue at https://github.com/WCRP-CMIP/cmip7-guidance/issues/new).
@@ -74,14 +73,28 @@ of the overall design and scientific strategy provided in the lead article of th
   With the introduction of emission driven simulations, where relevant,
   the panel now allows models to complete the DECK simulations in emission driven or concentration driven simulations.
 -	In addition to the DECK, each modelling group is encouraged to complete the Assessment Fast Track experiments described in 
-  [Dunne et al. (2025)](https://doi.org/10.5194/gmd-18-6671-2025). 
-  [TODO: add list/reference]
-  As above, the experiment set up for each simulation can be found in [TODO internal link to experiment-set-up-and-forcings]
+  [Dunne et al. (2025)](https://doi.org/10.5194/gmd-18-6671-2025)
+  <!-- TODO: double check against esgvoc names -->
+  (`esm-scen7-h-AQ`, `esm-scen7-h-Aer`, `esm-scen7-vl-AQ`, `esm-scen7-vl-Aer`, `hist-piAQ`, `hist-piAer`,
+  `piClim-CH4`, `piClim-N2O`, `piClim-NOx`, `piClim-ODS`, `piClim-SO2`,
+  `1pctCO2-bgc`, `1pctCO2-rad`, `esm-flat10`, `esm-flat10-cdr`, `esm-flat10-zec`,
+  `amip-p4k`, `amip-piForcing`, `abrupt-2xCO2`, `abrupt-0p5xCO2`,
+  `hist-aer`, `hist-GHG`, `hist-nat`, `dcppB-forecast-cmip6`, `g7-1p5K-sai`, `land-hist`,
+  `abrupt-127k`, `piClim-aer`, `piClim-histaer`, `piClim-histall`,
+  `scen7-vl`/`esm-scen7-vl`, `scen7-vl-ext`/`esm-scen7-vl-ext`,
+  `scen7-ln`/`esm-scen7-ln`, `scen7-ln-ext`/`esm-scen7-ln-ext`,
+  `scen7-l`/`esm-scen7-l`, `scen7-l-ext`/`esm-scen7-l-ext`,
+  `scen7-ml`/`esm-scen7-ml`, `scen7-ml-ext`/`esm-scen7-ml-ext`,
+  `scen7-m`/`esm-scen7-m`, `scen7-m-ext`/`esm-scen7-m-ext`,
+  `scen7-hl`/`esm-scen7-hl`, `scen7-hl-ext`/`esm-scen7-hl-ext`,
+  `scen7-h`/`esm-scen7-h`, `scen7-h-ext`/`esm-scen7-h-ext`,
+  ).
+  As above, the experiment set up for each simulation can be found in [experiment set up and forcings](./Experiment_set_up_and_Forcings/index.md)
   and modelling teams are encouraged to use these pages as the source of truth in case errors have been discovered since publication.
 
 ## 3.  Forcing data sets
 
-Forcing information can be found at [TODO internal link to experiment-set-up-and-forcings].
+Forcing information can be found at [experiment set up and forcings](./Experiment_set_up_and_Forcings/index.md).
 
 ## 4.  Model output fields
 
