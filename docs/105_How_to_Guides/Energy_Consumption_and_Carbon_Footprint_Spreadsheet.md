@@ -19,8 +19,8 @@ Its purpose is to collect HPC performance information that enables the Task Team
 If you already understand how to collect HPC performance metrics:
 
 1. **General Information tab**
-   - Enter modelling group and contact details
-   - Add HPC platform name(s)
+    - Enter modelling group and contact details
+    - Add HPC platform name(s)
 
 2. **HPC centre information**
    - For each machine: location, [PUE](https://edgebuildings.com/wp-content/uploads/2024/03/240313-EDGE-Certification-for-Data-Centers-V4.pdf), emission factor, energy mix %, source
