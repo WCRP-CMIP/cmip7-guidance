@@ -1,0 +1,94 @@
+name: Build and Deploy Documentation
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: [deploy-docs]
+  push:
+    branches:
+      - docs
+    paths:
+      - 'docs/**'
+      - 'src/mkdocs/**'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "docs-deploy"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.build.outputs.version }}
+    
+    steps:
+      - name: Checkout production branch
+        uses: actions/checkout@v4
+        with:
+          ref: production
+          fetch-depth: 0
+
+      - name: Set up Git
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+
+      - name: Build and deploy docs
+        id: build
+        uses: WCRP-CMIP/CMIPLD/actions/build-docs@copier
+        with:
+          production-branch: production
+          docs-branch: docs
+          python-version: '3.11'
+
+  # Archive version to versions branch
+  archive:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Archive to versions branch
+        uses: WCRP-CMIP/CMIPLD/actions/archive-version@copier
+        with:
+          version: ${{ needs.build.outputs.version }}
+          artifact-name: docs-build
+          versions-branch: versions
+          repository: ${{ github.repository }}
+
+  # Deploy to GitHub Pages
+  deploy-pages:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    
+    steps:
+      - name: Checkout production branch
+        uses: actions/checkout@v4
+        with:
+          ref: production
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Summary
+        run: |
+          echo "### 🚀 Documentation Deployed!" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Version:** ${{ needs.build.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Main URL:** ${{ steps.deployment.outputs.page_url }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Archived:** versions branch" >> $GITHUB_STEP_SUMMARY
