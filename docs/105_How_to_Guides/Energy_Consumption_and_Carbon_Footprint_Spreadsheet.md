@@ -4,34 +4,36 @@
 
 This spreadsheet is distributed to modelling centres participating in **CMIP7 AFT** and ongoing **CMIP7 experiments**.
 
-Its purpose is to collect consistent information that enables the Task Team to:
+Its purpose is to collect HPC performance information that enables the Task Team to:
 
-- estimate **energy consumption**
-- calculate the **carbon footprint**
-- compare efficiency across platforms and experiments
+- Estimate **energy consumption**
+- Calculate the **carbon footprint**
+- Compare efficiency across platforms and experiments
+
+## Please refer to the Guidance notes available on [Zenodo](https://doi.org/10.5281/zenodo.17464966). 
 
 ---
 
 ## Quick Start (Experienced Users)
 
-If you already know the metrics:
+If you already understand how to collect HPC performance metrics:
 
 1. **General Information tab**
-   - Fill modelling group + contact details
-   - Add HPC platform names
+    - Enter modelling group and contact details
+    - Add HPC platform name(s)
 
 2. **HPC centre information**
-   - For each machine: location, PUE, emission factor, energy mix %, source
+    - For each machine: location, [PUE](https://edgebuildings.com/wp-content/uploads/2024/03/240313-EDGE-Certification-for-Data-Centers-V4.pdf), emission factor, energy mix %, source
 
 3. **Experiment Metrics tab**
-   - Complete **Tier 1 (required)**
-   - Add **Tier 2 (recommended)**
-   - Add **Tier 3 (optional)**
+    - Complete **Tier 1 (Strongly recommended)**
+    - Add **Tier 2 (Recommended)**
+    - Add **Tier 3 (Optional)**
 
-4. Add comments if needed
+4. Add any comments if needed, for example where metrics cannot be provided due to institution regulations. 
 5. Use **Metrics short descriptions** tab as glossary
 
-For definitions or formulas → open the **Guidelines (Zenodo link)** at top of the sheet.
+For definitions or formulas → open the **[Guidelines](https://doi.org/10.5281/zenodo.17464966)** at top of the spreadsheet.
 
 ---
 
@@ -42,7 +44,7 @@ For definitions or formulas → open the **Guidelines (Zenodo link)** at top of 
 ## General Information Tab
 
 <details markdown="1">
-<summary><strong>Open the spreadsheet and locate key guidance links</strong></summary>
+<summary><strong>Open the spreadsheet to locate the key guidance links</strong></summary>
 
 ### Step 1 — Open the tab
 
@@ -55,11 +57,12 @@ For definitions or formulas → open the **Guidelines (Zenodo link)** at top of 
 
 ### Step 2 — Guidelines document (Zenodo)
 
-The **Zenodo link** provides:
+The [**Zenodo link**](https://doi.org/10.5281/zenodo.17464966) provides:
+
 - Tier 1–3 metric definitions
-- calculation methods
-- PUE and emission factor explanations
-- best practices
+- Calculation methods
+- PUE and emission factor explanations and links
+- Best practice
 
 <figure>
 <img src="https://colony-recorder.s3.amazonaws.com/files/2026-01-28/9836a0d2-e8be-49e6-897d-0a06b20ac614/ascreenshot_3c8738de214c42b69013890aff02fcbc_text_export.jpeg" width="800">
@@ -70,7 +73,7 @@ The **Zenodo link** provides:
 
 ### Step 3 — FAQ and contact
 
-- FAQ link (updated over time)
+- [FAQ link](https://wcrp-cmip.org/cmip7-task-teams/energy-consumption/#faqs) (updated over time)
 - Task Team support email
 
 <figure>
@@ -85,7 +88,7 @@ The **Zenodo link** provides:
 ## Modelling Group Information
 
 <details markdown="1">
-<summary><strong>Enter details about your centre</strong></summary>
+<summary><strong>Enter details about your modelling centre</strong></summary>
 
 Fill in:
 
@@ -215,7 +218,7 @@ Provides deeper insight into performance and resource use.
 | Coupling cost | 0.12 |
 | Memory bloat | 50 |
 
-Complete only if data is available.
+Complete only if this data is available.
 
 </details>
 
@@ -224,10 +227,11 @@ Complete only if data is available.
 ## Comments
 
 Add any notes or explanations related to:
-- assumptions
-- estimates
-- missing values
-- special configurations
+
+- Assumptions
+- Estimates
+- Missing values
+- Special configurations
 
 <figure>
 <img src="https://colony-recorder.s3.amazonaws.com/files/2026-01-28/e5a712bd-9921-4d6e-882e-bd804b65f8df/ascreenshot_ac6744b2b8234c45b2cb5e980868a7cc_text_export.jpeg" width="800">
@@ -245,7 +249,7 @@ Open **Metrics short descriptions** for definitions of all fields.
 <figcaption>Glossary of metric descriptions.</figcaption>
 </figure>
 
-For detailed explanations or formulas, return to the **Guidelines document** in the General Information tab.
+For detailed explanations or formulas, please refer to the **Guidelines document** in the General Information tab.
 
 ---
 
