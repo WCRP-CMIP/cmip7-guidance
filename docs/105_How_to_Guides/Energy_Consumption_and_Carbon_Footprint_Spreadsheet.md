@@ -57,7 +57,8 @@ For definitions or formulas → open the **[Guidelines](https://doi.org/10.5281/
 
 ### Step 2 — Guidelines document (Zenodo)
 
-The **Zenodo link** provides:
+The [**Zenodo link**](https://doi.org/10.5281/zenodo.17464966) provides:
+
 - Tier 1–3 metric definitions
 - Calculation methods
 - PUE and emission factor explanations and links
