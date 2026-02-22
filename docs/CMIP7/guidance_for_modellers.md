@@ -26,22 +26,27 @@ provided as early as possible):
   contact the [CMIP IPO](mailto:cmip-ipo@esa.int) for further details.
 
 * Perform required DECK and MIP experiments, using the required 
-  [standard forcing datasets](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/).
+  [experiment set up and associated forcing datasets](./Experiment_set_up_and_Forcings/index.md).
 
 * Save all requested model output as specified in the 
   [Data Request](https://wcrp-cmip.org/cmip-phases/cmip7/cmip7-data-request/) where possible (see section 4 below).
   Prioritise the [Baseline Climate Variables](https://gmd.copernicus.org/articles/18/2639/2025/), a group of 135 variables that are requested from all experiments.
 
-
 * Document all simulations including forcing information and a description of ensemble variants
-  (details to be clarified later).
+  (details to be clarified later,
+  discussion of how to capture forcing information [here](https://github.com/PCMDI/input4MIPs_CVs/issues/415)).
 
-* Prepare and make available model output according to CMIP7 specifications (see sections 5, 6, 
-  and 7 below).
+* Prepare and make available model output according to CMIP7 specifications
+  (see sections 
+  [5](#5-model-output-requirements),
+  [6](#6-software-for-preparing-output),
+  and [7](#7-software-for-checking-output)
+  below).
 
 * Plans for DOI registration and citation facilities are under consideration and 
   further information will be provided in due course.
 
+<!-- TODO discuss: Does errata service even exist anymore? -->
 * Correct published data when errors are discovered. Errors should be documented using the
   [ESGF Errata Service](https://errata.ipsl.fr/) before further action is taken, e.g. retraction
   and publication of replacement datasets.  Please note that the Errata Service supports 
@@ -56,19 +61,40 @@ The CMIP7 protocol and experiments are described in a special issue of Geoscient
 of the overall design and scientific strategy provided in the lead article of that issue by 
 [Dunne et al. (2025)]( https://doi.org/10.5194/gmd-18-6671-2025).
 
+<!-- 'required' rather than 'encouraged' ? I thought DECK was entry ticket to being able to do anything... -->
 -	Each model participating in CMIP7 is encouraged to contribute results from the eight DECK experiments 
   (`amip`, `piControl`/`esm-piControl`, `abrupt-4xCO2`, `1pctCO2`, `historical`/`esm-hist`, `piClim-control`, `piClim-anthro`, 
-  `piClim-4xCO2`). See [Dunne et al. (2025)]( https://doi.org/10.5194/gmd-18-6671-2025) where the experiment protocol 
-  is documented. These experiments are considered to baseline the climate models and are directly overseen by the CMIP panel. 
-  With the introduction of emission driven simulations, the panel now allows emission driven or concentration driven simulations.
+  `piClim-4xCO2`).
+  The experiment set up for each simulation can be found in [experiment set up and forcings](./Experiment_set_up_and_Forcings/index.md).
+  The simulation protocols were published in [Dunne et al. (2025)](https://doi.org/10.5194/gmd-18-6671-2025)
+  (but modelling teams are encouraged to use these pages as the source of truth in case errors have been discovered since publication,
+  if there is any confusion please raise an issue at https://github.com/WCRP-CMIP/cmip7-guidance/issues/new).
+  These experiments are considered to baseline the climate models and are directly overseen by the CMIP panel. 
+  With the introduction of emission driven simulations, where relevant,
+  the panel now allows models to complete the DECK simulations in emission driven or concentration driven simulations.
 -	In addition to the DECK, each modelling group is encouraged to complete the Assessment Fast Track experiments described in 
-  [Dunne et al. (2025)]( https://doi.org/10.5194/gmd-18-6671-2025). 
--	When called for by the experiment protocol, it is requested that the standard forcing datasets (see Section 3) are used 
-  and that any deviation from the standard forcing is documented (guidance to be confirmed).
+  [Dunne et al. (2025)](https://doi.org/10.5194/gmd-18-6671-2025)
+  <!-- TODO: double check against esgvoc names -->
+  (`esm-scen7-h-AQ`, `esm-scen7-h-Aer`, `esm-scen7-vl-AQ`, `esm-scen7-vl-Aer`, `hist-piAQ`, `hist-piAer`,
+  `piClim-CH4`, `piClim-N2O`, `piClim-NOx`, `piClim-ODS`, `piClim-SO2`,
+  `1pctCO2-bgc`, `1pctCO2-rad`, `esm-flat10`, `esm-flat10-cdr`, `esm-flat10-zec`,
+  `amip-p4k`, `amip-piForcing`, `abrupt-2xCO2`, `abrupt-0p5xCO2`,
+  `hist-aer`, `hist-GHG`, `hist-nat`, `dcppB-forecast-cmip6`, `g7-1p5K-sai`, `land-hist`,
+  `abrupt-127k`, `piClim-aer`, `piClim-histaer`, `piClim-histall`,
+  `scen7-vl`/`esm-scen7-vl`, `scen7-vl-ext`/`esm-scen7-vl-ext`,
+  `scen7-ln`/`esm-scen7-ln`, `scen7-ln-ext`/`esm-scen7-ln-ext`,
+  `scen7-l`/`esm-scen7-l`, `scen7-l-ext`/`esm-scen7-l-ext`,
+  `scen7-ml`/`esm-scen7-ml`, `scen7-ml-ext`/`esm-scen7-ml-ext`,
+  `scen7-m`/`esm-scen7-m`, `scen7-m-ext`/`esm-scen7-m-ext`,
+  `scen7-hl`/`esm-scen7-hl`, `scen7-hl-ext`/`esm-scen7-hl-ext`,
+  `scen7-h`/`esm-scen7-h`, `scen7-h-ext`/`esm-scen7-h-ext`,
+  ).
+  As above, the experiment set up for each simulation can be found in [experiment set up and forcings](./Experiment_set_up_and_Forcings/index.md)
+  and modelling teams are encouraged to use these pages as the source of truth in case errors have been discovered since publication.
 
 ## 3.  Forcing data sets
 
-Forcing information can be found [here](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/).
+Forcing information can be found at [experiment set up and forcings](./Experiment_set_up_and_Forcings/index.md).
 
 ## 4.  Model output fields
 
