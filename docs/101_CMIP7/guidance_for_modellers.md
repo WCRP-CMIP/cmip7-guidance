@@ -18,8 +18,6 @@ provided as early as possible):
   The EMD registration process is [documented here](https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/) and the list of currently registered institutions can be found at ***link needed***.
   **Output grids for regridded data must also be registered** via an online form described in the [EMD documenation](https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/) (i.e., for any grid used to report data that is not the model's native grid).
 
-* Following, or as part of, the registration of your models you will be able to indicate your
-  intention to participate in community MIPs through the `activity_participation` information
 [//]: # (* Following, or as part of, the registration of your models you will be able to indicate your )
 [//]: # (  intention to participate in community MIPs through the `activity_participation` information )
 [//]: # (  for your models. Information on community MIPs can be found [here](https://wcrp-cmip.org/mips). )
