@@ -17,21 +17,11 @@ This page will be updated with information of interest to modelling groups that 
 Several recent updates have been made  to the [CMIP7 Guidance and Documentation webpages](https://wcrp-cmip.github.io/cmip7-guidance/docs/). These include:
 
 - Section listing updates for modellers so you don’t have to hunt through your emails: [Updates for Modellers](https://wcrp-cmip.github.io/cmip7-guidance/docs/Updates_for_Modellers/)
-- Quality Control (QC) guidance for CMIP7 and for those modelling centres wishing to be REF-ready
 - EMD registration open to beta testers
 - Energy Consumption and Carbon Footprint metrics spreadsheet 
 - Experiment set up and forcing guidance (initial version, further updates expected)
+- Quality Control (QC) guidance for CMIP7 and for those modelling centres wishing to be REF-ready
 - List of key domain names – useful if you need to  whitelist these within your organisation
-
-### Quality Control
-
-Quality Control (QC): the prototype software for checking compliance of CMORized netcdf files with CMIP7 data standards can be found here: <https://esgf.github.io/cc-plugin-wcrp/>. In order to publish CMIP7 model output to ESGF, it will be **mandatory** that netcdf files pass the High-severity checks performed by this tool. Non-compliant data may be removed from ESGF search indices. 
-
-An update to the guidance pages will be made as new versions of this software becomes available. Modelling centres are strongly encouraged to run the QC tool prior to ESGF publication in order to catch and fix potential errors early. 
-
-### Rapid Evaluation Framework
-
-Those modelling centres that wish to be REF- ready should keep an eye on the [**Model Output Requirements** section](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/guidance_for_modellers/#5-model-output-requirements) for the forthcoming quality checklist.
 
 ### Essential Model Documentation
 
@@ -48,6 +38,18 @@ A [Scribehow](https://wcrp-cmip.github.io/cmip7-guidance/docs/How_to_Guides/Ener
 ### Experiment set up and forcing guidance
 
 Information on the forcings to be used for each experiment are being added to the guidance pages [here](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/Experiment_set_up_and_Forcings/). These pages currently contain an initial set of documentation about a subset of the CMIP7 AFT experiments and there are plans to extend this set in the coming weeks.
+
+### Quality Control
+
+Quality Control (QC): the prototype software for checking compliance of CMORized netcdf files with CMIP7 data standards can be found here: <https://esgf.github.io/cc-plugin-wcrp/>. In order to publish CMIP7 model output to ESGF, it will be **mandatory** that netcdf files pass the High-severity checks performed by this tool. Non-compliant data may be removed from ESGF search indices. 
+
+Note that this compliance checker plugin should still be considered beta software and changes may be made to its function as early adopter testing continues. There has been limited testing using sample CMIP7 data. 
+
+An update to the [guidance pages](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/guidance_for_modellers/#7-software-for-checking-output) will be made as new versions of this software becomes available. Modelling centres are strongly encouraged to run the QC tool prior to ESGF publication in order to catch and fix potential errors early. CMOR tool users would expect to produce compliant files.  We encourage all modelling centres to run the  compliance checker plugin for CMIP 7 once it is issued for general release.
+
+### Rapid Evaluation Framework
+
+Those modelling centres that wish to be REF- ready should keep an eye on the [**Model Output Requirements** section](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/guidance_for_modellers/#5-model-output-requirements) for the forthcoming quality checklist.
 
 ### Domains to whitelist
 

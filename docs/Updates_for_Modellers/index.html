@@ -1094,17 +1094,12 @@
 <p>Several recent updates have been made  to the <a href="https://wcrp-cmip.github.io/cmip7-guidance/docs/">CMIP7 Guidance and Documentation webpages</a>. These include:</p>
 <ul>
 <li>Section listing updates for modellers so you don’t have to hunt through your emails: <a href="https://wcrp-cmip.github.io/cmip7-guidance/docs/Updates_for_Modellers/">Updates for Modellers</a></li>
-<li>Quality Control (QC) guidance for CMIP7 and for those modelling centres wishing to be REF-ready</li>
 <li>EMD registration open to beta testers</li>
 <li>Energy Consumption and Carbon Footprint metrics spreadsheet </li>
 <li>Experiment set up and forcing guidance (initial version, further updates expected)</li>
+<li>Quality Control (QC) guidance for CMIP7 and for those modelling centres wishing to be REF-ready</li>
 <li>List of key domain names – useful if you need to  whitelist these within your organisation</li>
 </ul>
-<h3 id="quality-control">Quality Control<a class="headerlink" href="#quality-control" title="Permanent link">&para;</a></h3>
-<p>Quality Control (QC): the prototype software for checking compliance of CMORized netcdf files with CMIP7 data standards can be found here: <a href="https://esgf.github.io/cc-plugin-wcrp/">https://esgf.github.io/cc-plugin-wcrp/</a>. In order to publish CMIP7 model output to ESGF, it will be <strong>mandatory</strong> that netcdf files pass the High-severity checks performed by this tool. Non-compliant data may be removed from ESGF search indices. </p>
-<p>An update to the guidance pages will be made as new versions of this software becomes available. Modelling centres are strongly encouraged to run the QC tool prior to ESGF publication in order to catch and fix potential errors early. </p>
-<h3 id="rapid-evaluation-framework">Rapid Evaluation Framework<a class="headerlink" href="#rapid-evaluation-framework" title="Permanent link">&para;</a></h3>
-<p>Those modelling centres that wish to be REF- ready should keep an eye on the <a href="https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/guidance_for_modellers/#5-model-output-requirements"><strong>Model Output Requirements</strong> section</a> for the forthcoming quality checklist.</p>
 <h3 id="essential-model-documentation">Essential Model Documentation<a class="headerlink" href="#essential-model-documentation" title="Permanent link">&para;</a></h3>
 <p>To register a model for inclusion in CMIP7 the <a href="https://doi.org/10.5281/zenodo.15439551">Essential Model Documentation (EMD)</a> must be provided. The EMD registration forms are now available for beta testers, and documentation is available at <a href="https://emd.mipcvs.dev/docs">https://emd.mipcvs.dev/docs</a>. Model output grids must also be registered using these forms.</p>
 <p>Note that while a spreadsheet was recently circulated (21st December) to help modellers collaboratively gather this information, completion of the EMD github forms will be required. Since the EMD and grid registrations will be reviewed prior to acceptance, modellers are advised to complete these steps at least 2-3 weeks before beginning to write CMORized netcdf files.</p>
@@ -1113,6 +1108,12 @@
 <p>A <a href="https://wcrp-cmip.github.io/cmip7-guidance/docs/How_to_Guides/Energy_Consumption_and_Carbon_Footprint_Spreadsheet/">Scribehow</a> is available to help you navigate and complete the spreadsheet. Tier 1 metrics are strongly recommended to complete, and are the minimum information required by the Task Team to produce estimates of the carbon footprint. A comprehensive <a href="https://doi.org/10.5281/zenodo.17464966">guideline document</a> is also available, and we invite any Modelling Centres to contact us with any questions: <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#101;&#110;&#101;&#114;&#103;&#121;&#45;&#99;&#97;&#114;&#98;&#111;&#110;&#45;&#113;&#117;&#101;&#115;&#116;&#105;&#111;&#110;&#110;&#97;&#105;&#114;&#101;&#64;&#119;&#99;&#114;&#112;&#45;&#99;&#109;&#105;&#112;&#46;&#111;&#114;&#103;">&#101;&#110;&#101;&#114;&#103;&#121;&#45;&#99;&#97;&#114;&#98;&#111;&#110;&#45;&#113;&#117;&#101;&#115;&#116;&#105;&#111;&#110;&#110;&#97;&#105;&#114;&#101;&#64;&#119;&#99;&#114;&#112;&#45;&#99;&#109;&#105;&#112;&#46;&#111;&#114;&#103;</a> </p>
 <h3 id="experiment-set-up-and-forcing-guidance">Experiment set up and forcing guidance<a class="headerlink" href="#experiment-set-up-and-forcing-guidance" title="Permanent link">&para;</a></h3>
 <p>Information on the forcings to be used for each experiment are being added to the guidance pages <a href="https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/Experiment_set_up_and_Forcings/">here</a>. These pages currently contain an initial set of documentation about a subset of the CMIP7 AFT experiments and there are plans to extend this set in the coming weeks.</p>
+<h3 id="quality-control">Quality Control<a class="headerlink" href="#quality-control" title="Permanent link">&para;</a></h3>
+<p>Quality Control (QC): the prototype software for checking compliance of CMORized netcdf files with CMIP7 data standards can be found here: <a href="https://esgf.github.io/cc-plugin-wcrp/">https://esgf.github.io/cc-plugin-wcrp/</a>. In order to publish CMIP7 model output to ESGF, it will be <strong>mandatory</strong> that netcdf files pass the High-severity checks performed by this tool. Non-compliant data may be removed from ESGF search indices. </p>
+<p>Note that this compliance checker plugin should still be considered beta software and changes may be made to its function as early adopter testing continues. There has been limited testing using sample CMIP7 data. </p>
+<p>An update to the <a href="https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/guidance_for_modellers/#7-software-for-checking-output">guidance pages</a> will be made as new versions of this software becomes available. Modelling centres are strongly encouraged to run the QC tool prior to ESGF publication in order to catch and fix potential errors early. CMOR tool users would expect to produce compliant files.  We encourage all modelling centres to run the  compliance checker plugin for CMIP 7 once it is issued for general release.</p>
+<h3 id="rapid-evaluation-framework">Rapid Evaluation Framework<a class="headerlink" href="#rapid-evaluation-framework" title="Permanent link">&para;</a></h3>
+<p>Those modelling centres that wish to be REF- ready should keep an eye on the <a href="https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/guidance_for_modellers/#5-model-output-requirements"><strong>Model Output Requirements</strong> section</a> for the forthcoming quality checklist.</p>
 <h3 id="domains-to-whitelist">Domains to whitelist<a class="headerlink" href="#domains-to-whitelist" title="Permanent link">&para;</a></h3>
 <p>There is a dedicated <a href="https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/domain_names/">page listing domain names</a> relevant to CMIP7 activities that might be useful to review and ensure that individual modelling centre institutional fire walls allow access.  Updates to the list are via issues/pull requests on GitHub.</p>
 <hr />
@@ -2063,18 +2064,6 @@ CMIP IPO (on behalf of the Data Request Task Team)</p>
             Updates to CMIP7 Guidance pages
         </a>
         
-        <a href="#quality-control"
-            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
-            Quality Control
-        </a>
-        
-        <a href="#rapid-evaluation-framework"
-            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
-            Rapid Evaluation Framework
-        </a>
-        
         <a href="#essential-model-documentation"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
             data-active="false" data-depth="3">
@@ -2091,6 +2080,18 @@ CMIP IPO (on behalf of the Data Request Task Team)</p>
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
             data-active="false" data-depth="3">
             Experiment set up and forcing guidance
+        </a>
+        
+        <a href="#quality-control"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3">
+            Quality Control
+        </a>
+        
+        <a href="#rapid-evaluation-framework"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3">
+            Rapid Evaluation Framework
         </a>
         
         <a href="#domains-to-whitelist"
