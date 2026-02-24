@@ -68,7 +68,7 @@ If you find an issue, please [create an issue on GitHub](https://github.com/PCMD
 Thank you to the dataset providers, Louise Chini and George Hurtt, for all their efforts.
 
 
-...
+---
 
 ## 16th February 2026
 
