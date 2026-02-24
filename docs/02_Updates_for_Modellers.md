@@ -55,6 +55,10 @@ There is a dedicated [page listing domain names](https://wcrp-cmip.github.io/cmi
 
 ---
 
+## Forcings update
+
+...
+
 ## 16th February 2026
 
 ### CMIP7 forcings: piControl update
