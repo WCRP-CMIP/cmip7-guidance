@@ -10,6 +10,7 @@ title: CMIP7 Guidance
 - [Global Attributes](global_attributes.md)
 - [Branded Variables information](branded_variables.md)
 - [Guidance for modellers](guidance_for_modellers.md)
+    - [Experiment set up and Forcings](Experiment_set_up_and_Forcings/index.md)
 - [Guidance for users, including Terms of use](guidance_for_users.md)
 - [Guidance for ESGF node operators and publishers](guidance_for_esgf.md)
 - [Guidance for MIPs](guidance_for_mips.md)
