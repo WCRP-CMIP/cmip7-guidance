@@ -16,6 +16,7 @@ title: CMIP7 Guidance and Documentation
 - [Global Attributes](101_CMIP7/global_attributes.md)
 - [Branded Variables information](101_CMIP7/branded_variables.md)
 - [Guidance for modellers](101_CMIP7/guidance_for_modellers.md)
+    - [Experiment set up and Forcings](101_CMIP7/Experimnet_set_up_and_Forcings/index.md)
 - [Guidance for users](101_CMIP7/guidance_for_users.md)
 - [Guidance for ESGF node operators](101_CMIP7/guidance_for_esgf.md)
 - [Terms of use](110_CMIP6/terms_of_use.md)
