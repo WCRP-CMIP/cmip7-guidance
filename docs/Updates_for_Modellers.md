@@ -7,6 +7,52 @@ title: CMIP7 Updates for modelling groups
 
 This page will be updated with information of interest to modelling groups that the CMIP IPO has communicated by email (most recent at top).
 
+
+---
+
+## 24th February 2026
+
+### Updates to CMIP7 Guidance pages
+
+Several recent updates have been made  to the [CMIP7 Guidance and Documentation webpages](https://wcrp-cmip.github.io/cmip7-guidance/docs/). These include:
+
+- Section listing updates for modellers so you don’t have to hunt through your emails: [Updates for Modellers](https://wcrp-cmip.github.io/cmip7-guidance/docs/Updates_for_Modellers/)
+- Quality Control (QC) guidance for CMIP7 and for those modelling centres wishing to be REF-ready
+- EMD registration open to beta testers
+- Energy Consumption and Carbon Footprint metrics spreadsheet 
+- Experiment set up and forcing guidance (initial version, further updates expected)
+- List of key domain names – useful if you need to  whitelist these within your organisation
+
+### Quality Control
+
+Quality Control (QC): the prototype software for checking compliance of CMORized netcdf files with CMIP7 data standards can be found here: <https://esgf.github.io/cc-plugin-wcrp/>. In order to publish CMIP7 model output to ESGF, it will be **mandatory** that netcdf files pass the High-severity checks performed by this tool. Non-compliant data may be removed from ESGF search indices. 
+
+An update to the guidance pages will be made as new versions of this software becomes available. Modelling centres are strongly encouraged to run the QC tool prior to ESGF publication in order to catch and fix potential errors early. 
+
+### Rapid Evaluation Framework
+
+Those modelling centres that wish to be REF- ready should keep an eye on the [**Model Output Requirements** section](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/guidance_for_modellers/#5-model-output-requirements) for the forthcoming quality checklist.
+
+### Essential Model Documentation
+
+To register a model for inclusion in CMIP7 the [Essential Model Documentation (EMD)](https://doi.org/10.5281/zenodo.15439551) must be provided. The EMD registration forms are now available for beta testers, and documentation is available at <https://emd.mipcvs.dev/docs>. Model output grids must also be registered using these forms.
+
+Note that while a spreadsheet was recently circulated (21st December) to help modellers collaboratively gather this information, completion of the EMD github forms will be required. Since the EMD and grid registrations will be reviewed prior to acceptance, modellers are advised to complete these steps at least 2-3 weeks before beginning to write CMORized netcdf files.
+
+### Energy Consumption and Carbon Footprint Metrics Spreadsheet
+
+On the 9th February, the Energy Consumption & Carbon Footprint Task Team circulated a spreadsheet to modelling centres for collection of HPC energy usage metrics from model experiments during CMIP7. This data will be used to estimate the carbon footprint of CMIP7 modelling activities. 
+
+A [Scribehow](https://wcrp-cmip.github.io/cmip7-guidance/docs/How_to_Guides/Energy_Consumption_and_Carbon_Footprint_Spreadsheet/) is available to help you navigate and complete the spreadsheet. Tier 1 metrics are strongly recommended to complete, and are the minimum information required by the Task Team to produce estimates of the carbon footprint. A comprehensive [guideline document](https://doi.org/10.5281/zenodo.17464966) is also available, and we invite any Modelling Centres to contact us with any questions: <energy-carbon-questionnaire@wcrp-cmip.org> 
+
+### Experiment set up and forcing guidance
+
+Information on the forcings to be used for each experiment are being added to the guidance pages [here](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/Experiment_set_up_and_Forcings/). These pages currently contain an initial set of documentation about a subset of the CMIP7 AFT experiments and there are plans to extend this set in the coming weeks.
+
+### Domains to whitelist
+
+There is a dedicated [page listing domain names](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/domain_names/) relevant to CMIP7 activities that might be useful to review and ensure that individual modelling centre institutional fire walls allow access.  Updates to the list are via issues/pull requests on GitHub.
+
 ---
 
 ## 16th February 2026
