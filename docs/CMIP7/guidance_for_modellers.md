@@ -14,13 +14,13 @@ provided as early as possible):
   [CMIP7 Controlled Vocabularies](https://github.com/WCRP-CMIP/CMIP7-CVs) when the registration
   process is available. Publication of your model output (on ESGF) will not be possible
   without first registering your institution and model, which includes providing the
-  *Essential Model Documentation* for your model. The list of currently registered
-  institutions can be found at ***link needed*** and the registration process is 
-  via ***link needed***.
+  **Essential Model Documentation (EMD)** for your model. 
+  The EMD registration process is [documented here](https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/) and the list of currently registered institutions can be found at ***link needed***.
+  **Output grids for regridded data must also be registered** via an online form described in the [EMD documenation](https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/) (i.e., for any grid used to report data that is not the model's native grid).
 
-* Following, or as part of, the registration of your models you will be able to indicate your
-  intention to participate in community MIPs through the `activity_participation` information
-  for your models. Information on community MIPs can be found [here](https://wcrp-cmip.org/mips).
+[//]: # (* Following, or as part of, the registration of your models you will be able to indicate your )
+[//]: # (  intention to participate in community MIPs through the `activity_participation` information )
+[//]: # (  for your models. Information on community MIPs can be found [here](https://wcrp-cmip.org/mips). )
 
 * Ensure that you have joined the modelling group mailing list -- if unsure please 
   contact the [CMIP IPO](mailto:cmip-ipo@esa.int) for further details.
@@ -30,7 +30,7 @@ provided as early as possible):
 
 * Save all requested model output as specified in the 
   [Data Request](https://wcrp-cmip.org/cmip-phases/cmip7/cmip7-data-request/) where possible (see section 4 below).
-  Prioritise the [Baseline Climate Variables](https://gmd.copernicus.org/articles/18/2639/2025/), a group of 135 variables that are requested from all experiments.
+  Prioritise the [Baseline Climate Variables](https://gmd.copernicus.org/articles/18/2639/2025/), a group of 131 variables that are requested from all experiments (the "Core" Data Request).
 
 * Document all simulations including forcing information and a description of ensemble variants
   (details to be clarified later,
@@ -43,10 +43,9 @@ provided as early as possible):
   and [7](#7-software-for-checking-output)
   below).
 
-* Plans for DOI registration and citation facilities are under consideration and 
+* Plans for dataset DOI registration and data citation facilities are under consideration and 
   further information will be provided in due course.
 
-<!-- TODO discuss: Does errata service even exist anymore? -->
 * Correct published data when errors are discovered. Errors should be documented using the
   [ESGF Errata Service](https://errata.ipsl.fr/) before further action is taken, e.g. retraction
   and publication of replacement datasets.  Please note that the Errata Service supports 
@@ -57,7 +56,7 @@ provided as early as possible):
 
 ## 2.  Experiment Design
 
-The CMIP7 protocol and experiments are described in a special issue of Geoscientific Model Development with an overview 
+The CMIP7 protocol and experiments are described in a [special issue of Geoscientific Model Development](https://gmd.copernicus.org/articles/special_issue1315.html) with an overview 
 of the overall design and scientific strategy provided in the lead article of that issue by 
 [Dunne et al. (2025)]( https://doi.org/10.5194/gmd-18-6671-2025).
 
@@ -68,13 +67,12 @@ of the overall design and scientific strategy provided in the lead article of th
   The experiment set up for each simulation can be found in [experiment set up and forcings](./Experiment_set_up_and_Forcings/index.md).
   The simulation protocols were published in [Dunne et al. (2025)](https://doi.org/10.5194/gmd-18-6671-2025)
   (but modelling teams are encouraged to use these pages as the source of truth in case errors have been discovered since publication,
-  if there is any confusion please raise an issue at https://github.com/WCRP-CMIP/cmip7-guidance/issues/new).
+  if there is any confusion please raise an issue at <https://github.com/WCRP-CMIP/cmip7-guidance/issues/new>).
   These experiments are considered to baseline the climate models and are directly overseen by the CMIP panel. 
   With the introduction of emission driven simulations, where relevant,
   the panel now allows models to complete the DECK simulations in emission driven or concentration driven simulations.
 -	In addition to the DECK, each modelling group is encouraged to complete the Assessment Fast Track experiments described in 
-  [Dunne et al. (2025)](https://doi.org/10.5194/gmd-18-6671-2025)
-  <!-- TODO: double check against esgvoc names -->
+  [Dunne et al. (2025)](https://doi.org/10.5194/gmd-18-6671-2025) <!-- TODO: double check against esgvoc names -->
   (`esm-scen7-h-AQ`, `esm-scen7-h-Aer`, `esm-scen7-vl-AQ`, `esm-scen7-vl-Aer`, `hist-piAQ`, `hist-piAer`,
   `piClim-CH4`, `piClim-N2O`, `piClim-NOx`, `piClim-ODS`, `piClim-SO2`,
   `1pctCO2-bgc`, `1pctCO2-rad`, `esm-flat10`, `esm-flat10-cdr`, `esm-flat10-zec`,
@@ -94,7 +92,7 @@ of the overall design and scientific strategy provided in the lead article of th
 
 ## 3.  Forcing data sets
 
-Forcing information can be found at [experiment set up and forcings](./Experiment_set_up_and_Forcings/index.md).
+The forcings to be used for each experiment can be found at [experiment set up and forcings](./Experiment_set_up_and_Forcings/index.md).
 
 ## 4.  Model output fields
 
@@ -202,6 +200,7 @@ CVs are relied on in constructing file names and directory structures, and enabl
 CMIP7 output requirements that are critical for successful ingestion and access via ESGF [will be enforced](#7-software-for-checking-output) when publication of the data is initiated.
 The success of CMIP7 also depends on making sure that even the requirements that cannot be checked by ESGF are met. 
 This is the responsibility of all data producers preparing model output for CMIP7.
+**Non-compliant could potentially be removed from ESGF search indices**.
 
 An additional requirement, that was not present in CMIP6, is the need to ensure that all model output files published to ESGF must have a cloud-optimised internal file structure that allows for efficient remote access to the files (i.e. accessing the data directly from the archive _without_ downloading a local copy).
 The cloud-optimisation of a netCDF file has no impact on the actual values of the file's attributes or data, but relates to data array "chunk" sizes, as well as other internal file structure (sometimes referred to as "B-trees").
@@ -296,33 +295,35 @@ usage: check_cmip7_packing [-h] [-v] [-V] FILE [FILE ...]
 Full man page with -h
 ```
 
+
+
 ## 7.  Software for checking output
 
 The **ESGF Quality Control (QC) solution** is built around a new plugin developed for the [IOOS Compliance Checker](http://ioos.github.io/compliance-checker/), providing a unified and extensible way to validate climate model outputs intended for publication on the Earth System Grid Federation (ESGF). 
-Recent development of [ESGF-QC](https://esgf.github.io/esgf-qc/) has ceased as it will be more efficient to maintain a compliance checker plugin rather than a fork of the entire code base.
-Historically, QC in ESGF has relied on a patchwork of tools (**PrePARE**, **QA-DKRZ**, **nctime**, and others) each covering different aspects of metadata and data checks. While effective, this fragmented approach introduced redundancy, maintenance challenges, and reduced transparency in QC workflows.  
+Documentation for the WCRP plugin is [found here](https://esgf.github.io/cc-plugin-wcrp/).
 
 The goal of this plugin is to provide a cohesive, extensible, and transparent system that consolidates key checks for WCRP projects, covers at least the minimum requirements for ESGF publication, and produces standardized reporting.
 
-> ⚠️ **We’re releasing an **early version** of this ESGF QC IOOS plugin*. This release is the result of ongoing development and while not final, it aims to give *data managers* and *advanced users* an opportunity to explore the tool and adapt their workflows in anticipation of CMIP7. This early release is *not* intended for general use. It is primarily targeted at *data providers* responsible for the **pre-publication QC** of CMIP data on ESGF.
+> ⚠️ We’re releasing an **early version** of this ESGF QC IOOS plugin. This release is the result of ongoing development and while not final, it aims to give *data managers* and *advanced users* an opportunity to explore the tool and adapt their workflows in anticipation of CMIP7. This early release is *not* intended for general use. It is primarily targeted at *data providers* responsible for the **pre-publication QC** of CMIP data on ESGF.
+
 
 ### 🚧 Important Caveats
 
 - **Scope is limited**:  
-  - Support **CMIP6** and **CORDEX-CMIP6** 
-  - **CMIP7** is coming soon
+    - Support **CMIP6** and **CORDEX-CMIP6** 
+    - **CMIP7** is coming soon
 
 - **Development in progress**:  
-  - The framework may still contain **minor bugs**  
-  - For CMIP6 data, tests have been mainly made on variables provided to the **Copernicus Climate Data Store**
-  - **QC results may change** in future releases and **should not be treated as final** .
+    - The framework may still contain **minor bugs**  
+    - For CMIP6 data, tests have been mainly made on variables provided to the **Copernicus Climate Data Store**
+    - **QC results may change** in future releases and **should not be treated as final** .
 
-- **Not yet validated**:  
-  - This version is for experimentation, not for compliance reporting.
 
 ### 🛠 Development Approach
 
-This framework was developed through a **community-driven, iterative process**:
+Historically, QC in ESGF has relied on a patchwork of tools (**PrePARE**, **QA-DKRZ**, **nctime**, and others) each covering different aspects of metadata and data checks. While effective, this fragmented approach introduced redundancy, maintenance challenges, and reduced transparency in QC workflows.  
+
+The framework for the [new WCRP plugin](https://esgf.github.io/cc-plugin-wcrp/) was developed through a **community-driven, iterative process**:
 
 - As a plugin for the **IOOS Compliance Checker** for its modular architecture
 - Feature branches reviewed and merged after unit testing  
@@ -331,19 +332,20 @@ This framework was developed through a **community-driven, iterative process**:
 
 ### 📦 How to Get Started
 
-- Installation instructions and basic usage are available here: 📘 https://github.com/ESGF/cc-plugin-wcrp  
-- GitHub release: 🔗 https://github.com/ESGF/cc-plugin-wcrp/releases/tag/v1.0.1
+- Installation instructions and basic usage are available here: 📘 <https://github.com/ESGF/cc-plugin-wcrp>
+- GitHub release: 🔗 <https://github.com/ESGF/cc-plugin-wcrp/releases>
 
 ### ⚙️ Configuration, Usage & Reporting
 
 The plugin can run specific or full QC suites against your NetCDF files. It was designed with a clear separation between definition and logic, ensuring that QC rules remain modular and easy to maintain.
 
 The **configuration** enables simple versioning and sharing of rule sets, while allowing users to quickly copy and customize configurations—for example, by adjusting the list of checks or their severity levels to match a specific project context through a human-readable **TOML files** that control:
+
 - Which checks are run
 - Their severity
-  - 🚫 **MANDATORY**: Must pass for file/dataset to be valid.
-  - ⚠️ **WARNING**: Does not block ingestion or impact critical downstream processes, but highlights issues that should be corrected from a user perspective to ensure data quality and usability.
-  - ℹ️ **OPTIONAL**: Informational checks with no impact on validity
+    - 🚫 **MANDATORY**: Must pass for file/dataset to be valid.
+    - ⚠️ **WARNING**: Does not block ingestion or impact critical downstream processes, but highlights issues that should be corrected from a user perspective to ensure data quality and usability.
+    - ℹ️ **OPTIONAL**: Informational checks with no impact on validity
 - Expected values or constraints where applicable
 
 > ⚠️ In this beta version, the **variable registry is not yet queried**. Variable information from CV relies on a **manual mapping** defined in the configuration file. To be automated via **esgvoc** in future releases.
@@ -352,7 +354,6 @@ The **configuration** enables simple versioning and sharing of rule sets, while 
   ```bash
   compliance-checker -t wcrp_cmip6:1.0 /path/to/data/file.nc
   ```
-
 The **reporting system** inherits the IOOS logic, combining output filtering, severity-based scoring, and granular reports suitable for both operational monitoring and expert review. Results can be easily mapped to standard logging levels (info, warning, critical), facilitating integration with existing QA dashboards.
 
 In addition, an [`esgf-qa` module](https://github.com/ESGF/esgf-qa) provides a higher-level orchestration layer on top of the IOOS Compliance Checker. It applies the `cc-plugin-wcrp` consistently at the dataset level, automatically parallelizes checker execution across multiple files, and produces user-friendly aggregated reports. This greatly simplifies large-scale QC operations and makes results easier to browse, interpret, and integrate into your workflows. See [`esgf-qa` documentation for the installation procedure](https://esgf.github.io/esgf-qa/).
@@ -372,7 +373,12 @@ This early release aims to:
 ### 🗣️ How to Contribute
 
 If you encounter issues or have suggestions, please **open a GitHub issue** on the project repository:  
-👉 https://github.com/ESGF/cc-plugin-wcrp/issues
+👉 <https://github.com/ESGF/cc-plugin-wcrp/issues>
+
+
+> ⚠️ Please note that recent development of the https://esgf.github.io/esgf-qc/ tool has ceased, and this tool should not be used for compliance checking. It is more efficient for QC developers to maintain a compliance checker plugin rather than a fork of the entire code base. 
+
+
 
 ## 8.  Archiving/publishing output
 
@@ -409,33 +415,36 @@ To guarantee this, providing EMD is a mandatory requirement for CMIP7 participat
 
 #### Creating EMD
 
-The online form that will be used for CMIP7 model registration will include a section for completing the EMD.
+Online forms will be used to complete the EMD, thereby completing CMIP7 model registration.
 The EMD will be automatically validated, reviewed by a human and once accepted the model registration can be completed.
+The registration and review process is [documented here](https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/).
 The online form will also enable those documenting a model to import documentation components from other, already registered models, which can then be edited if required - significantly reducing the time taken to create the content.
 
-The EMD content is stored in GitHub (in JSON files), and may be edited at any time to add further information, or to correct any mistakes. All such changes will go through the usual GitHub-based review process in a  fully transparent and traceable manner.
+The EMD content is stored in GitHub (in JSON files), and may be edited at any time to add further information, or to correct any mistakes. All such changes will go through the usual GitHub-based review process in a fully transparent and traceable manner.
 
 #### EMD structure
 
 The full EMD specification, which contains examples of filled-out EMD entries for model components and grids, may be found at:
 🗣️ [https://doi.org/10.5281/zenodo.15439551](https://doi.org/10.5281/zenodo.15439551)
 
-Each question asked in the online EMD creation form will also be accompanied by the relevant guidance, so reference to the full EMD specification should not generally be necessary during the creation process.
+Each question asked in the online EMD creation form is accompanied by the relevant guidance, so reference to the full EMD specification should not generally be necessary during the creation process.
 
 EMD comprises the following sections:
 
 - Top-level model
-   - A top-level description of the model as whole.
-   - Includes model name, family and an overview description.
+    - A top-level description of the model as whole.
+    - Includes model name, family and an overview description.
 - Model components
-   - A description of each dynamically simulated model component.
-   - Includes the component name and family, an overview description, and the relationship to other components.
+    - A description of each dynamically simulated model component.
+    - Includes the component name and family, an overview description, and the relationship to other components.
 - Horizontal and vertical grids
-   - For each model component, a description of its native grid.
+    - For each model component, a description of its native grid.
 - References
-   - References to published work for the top-level model or one its model components.
+    - References to published work for the top-level model or one its model components.
 
-While not part of the EMD, output grids for regridded data must also be registered via an online form (i.e. for any grid used to report data that is not the model's native grid)."
+While not part of the EMD, output grids for regridded data must also be registered via an online form (i.e. for any grid used to report data that is not the model's native grid) - see the [EMD documenation](https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/) for further details.
+
+
 
 ## 10.  CMIP7 organisation and governance
 
