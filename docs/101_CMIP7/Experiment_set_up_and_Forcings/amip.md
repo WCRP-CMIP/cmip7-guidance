@@ -3,7 +3,7 @@ layout: default
 title: AMIP Experiment Setup and Forcings Guidance
 ---
 
-# AMIP Experiment Setup and Forcings Guidance
+# amip Experiment Setup and Forcings Guidance
 
 <!-- TODO: get this one line description from esgvoc -->
 Atmosphere-only simulation with prescribed sea surface temperatures (SSTs) and sea-ice concentrations.
@@ -11,7 +11,7 @@ Atmosphere-only simulation with prescribed sea surface temperatures (SSTs) and s
 ## Experiment set up
 
 <!-- TODO: decide and then consistently apply some convention about whether experiment names are always surround by backticks `` or not -->
-The AMIP simulation uses a specific set of forcings (see [forcings](#forcings)).
+The amip simulation uses a specific set of forcings (see [forcings](#forcings)).
 These should be applied as transient (i.e. time-changing) forcings over the length of the simulation.
 <!-- TODO: consider whether we can generate these sentences automatically based on esgvoc -->
 The simulation output should start on 1979-01-01 and end on 2021-12-31.
