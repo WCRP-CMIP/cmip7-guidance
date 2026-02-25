@@ -151,7 +151,7 @@ CMIP7 datasets can be identified through a series of facets that represents key 
 
     Current advice from the CVs task team is to only access the CVs via [ESGVOC](https://esgf.github.io/esgf-vocab/). This will be subject to change in the future.
 
-More information about the meaning of these facets is provided in the [global attributes documentation][GlobalAttrs], with further guidance provided on the [Global Attributes page](global_attributes.md). The values associated with each facet are standardized through the [CVs][cmipCvs]. They are used to search the ESGF database and can be found in the global attributes of the data. This section provides helpful links and gives a bit more information on a few key facets. 
+More information about the meaning of these facets is provided in the [global attributes documentation][GlobalAttrs], with further guidance provided on the [Global Attributes page](Global_Attributes.md). The values associated with each facet are standardized through the [CVs][cmipCvs]. They are used to search the ESGF database and can be found in the global attributes of the data. This section provides helpful links and gives a bit more information on a few key facets. 
 
 
 
@@ -189,7 +189,7 @@ The CMIP7 protocol and experiments are described in a [special issue][GMDSpecial
 
 ### 3.3. Variable
 * [List of variables][varlist] (coming soon)
-* [Branded variable documentation](branded_variables.md)
+* [Branded variable documentation](Branded_Variables.md)
 
 The variables produced in CMIP7 were recommended by the [CMIP7 Data Request task team][DataRequestTeam]. In CMIP7, the concept of branded variable identifies the variables. It follows the template: 
 

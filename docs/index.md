@@ -13,15 +13,15 @@ title: CMIP7 Guidance and Documentation
 ## Guidance documents
 ### CMIP7
 - [Updates for modelling groups](02_Updates_for_Modellers.md)
-- [Global Attributes](101_CMIP7/global_attributes.md)
-- [Branded Variables information](101_CMIP7/branded_variables.md)
-- [Guidance for modellers](101_CMIP7/guidance_for_modellers.md)
-    - [Experiment set up and Forcings](101_CMIP7/Experiment_set_up_and_Forcings/index.md)
-- [Guidance for users, including Terms of use](101_CMIP7/guidance_for_users.md)
-- [Guidance for ESGF node operators and publishers](101_CMIP7/guidance_for_esgf.md)
-- [Guidance for MIPs](101_CMIP7/guidance_for_mips.md)
-- [Domains names for CMIP7 services](101_CMIP7/domain_names.md)
-- [Frequently Asked Questions](101_CMIP7/FAQ.md)
+- [Global Attributes](101_CMIP7/Global_Attributes.md)
+- [Branded Variables](101_CMIP7/Branded_Variables.md)
+- [Guidance for modellers](101_CMIP7/Guidance_for_modellers.md)
+    - [Experiment setup and forcings](101_CMIP7/Experiment_set_up_and_Forcings/index.md)
+- [Guidance for users, including Terms of Use](101_CMIP7/Guidance_for_users.md)
+- [Guidance for ESGF node operators and publishers](101_CMIP7/Guidance_for_ESGF.md)
+- [Guidance for MIPs](101_CMIP7/Guidance_for_MIPs.md)
+- [Domain names for CMIP7 services](101_CMIP7/Domain_names.md)
+- [Frequently Asked Questions (FAQ)](101_CMIP7/FAQ.md)
 
 ### CMIP6
 
