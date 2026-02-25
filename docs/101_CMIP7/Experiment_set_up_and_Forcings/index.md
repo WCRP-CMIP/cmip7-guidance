@@ -41,6 +41,10 @@ CMIP core common experiments i.e. the DECK (Diagnostic, Evaluation and Character
 1. [esm-hist](./esm-hist.md)
 1. [1pctCO2](./1pctco2.md)
 1. [abrupt-4xCO2](./abrupt-4xco2.md)
+1. [piClim-control](./piclim-control.md)
+1. [piClim-anthro](./piclim-anthro.md)
+1. [piClim-4xCO2](./piclim-4xco2.md)
+1. [amip](./amip.md)
 
 ## Assessment Fast Track (AFT) experiments
 
