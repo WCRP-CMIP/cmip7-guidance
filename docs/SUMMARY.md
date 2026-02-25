@@ -32,7 +32,5 @@
   - [terms of use](CMIP6/terms_of_use.md)
   - [time and area averaging](CMIP6/time_and_area_averaging.md)
 - [Essential Model Documentation](https://emd.mipcvs.dev/docs/)
-- [CVs Constants](https://constants.mipcvs.dev/docs/)
-- [CVs CMIP7](https://cmip7.mipcvs.dev/docs/)
 - [CMIP Website](https://wcrp-cmip.org/)
 - [WCRP](https://www.wcrp-climate.org/)
