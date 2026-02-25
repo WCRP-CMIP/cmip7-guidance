@@ -38,6 +38,16 @@ plugins:
       implicit_index: true
       tab_length: 2
 
+  - redirects:
+      redirect_maps:
+        '101_CMIP7/global_attributes.md': '101_CMIP7/Global_Attributes.md'
+        '101_CMIP7/branded_variables.md': '101_CMIP7/Branded_Variables.md'
+        '101_CMIP7/domain_names.md': '101_CMIP7/Domain_names.md'
+        '101_CMIP7/guidance_for_esgf.md': '101_CMIP7/Guidance_for_ESGF.md'
+        '101_CMIP7/guidance_for_mips.md': '101_CMIP7/Guidance_for_MIPs.md'
+        '101_CMIP7/guidance_for_modellers.md': '101_CMIP7/Guidance_for_modellers.md'
+        '101_CMIP7/guidance_for_users.md': '101_CMIP7/Guidance_for_users.md'
+
 # Hooks
 hooks:
   - hooks/generate_nav.py
