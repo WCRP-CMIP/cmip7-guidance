@@ -8,11 +8,11 @@ links:
   - title: "Essential Model Documentation"
     url: "https://emd.mipcvs.dev/docs/"
 
-  - title: "CVs Constants"
-    url: "https://constants.mipcvs.dev/docs/"
+  # - title: "CVs Constants"
+  #  url: "https://constants.mipcvs.dev/docs/"
 
-  - title: "CVs CMIP7"
-    url: "https://cmip7.mipcvs.dev/docs/"
+  # - title: "CVs CMIP7"
+  #   url: "https://cmip7.mipcvs.dev/docs/"
 
 
   # Categorized links
