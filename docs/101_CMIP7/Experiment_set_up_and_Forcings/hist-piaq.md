@@ -1,22 +1,22 @@
 ---
 layout: default
-title: hist-piAer Experiment Setup and Forcings Guidance
+title: hist-piAQ Experiment Setup and Forcings Guidance
 ---
 
-# hist-piAer Experiment Setup and Forcings Guidance
+# hist-piAQ Experiment Setup and Forcings Guidance
 
 <!-- TODO: get this one line description from esgvoc -->
 <!-- TODO: check this with someone who knows what they're reading -->
-In combination with `historical`, allows for evaluation of the air quality and climate effect of historical aerosol and tropospheric non-methane ozone precursor emissions in models without interactive chemistry (for models with interactive chemistry, see `hist-piAQ`).
+In combination with `historical`, allows for evaluation of the air quality and climate effect of historical aerosol and tropospheric non-methane ozone precursor emissions in models with interactive chemistry (for models without interactive chemistry, see `hist-piAer`).
 
 ## Experiment set up
 
 <!-- TODO: check this with someone who knows what they're reading -->
 <!-- TODO: decide and then consistently apply some convention about whether experiment names are always surround by backticks `` or not -->
-The `hist-piAer` simulation is a simple variant of the [historical simulation](./historical.md)
+The `hist-piAQ` simulation is a simple variant of the [historical simulation](./historical.md)
 where aerosol and trospheric non-methane ozone precursor emissions are kept at pre-industrial levels.
-`hist-piAer` is for models that do not include interactive chemistry.
-For models with interactive chemistry, please see [hist-piAQ](./hist-piaq.md) instead.
+`hist-piAQ` is for models that include interactive chemistry.
+For models without interactive chemistry, please see [hist-piAer](./hist-piaer.md) instead.
 <!-- TODO: consider whether we can generate these sentences automatically based on esgvoc -->
 The simulation output should start on 1850-01-01 and end on 2021-12-31.
 <!-- TODO: double check, dunne et al. says 6?! -->
@@ -28,7 +28,7 @@ Only one ensemble member is required.
     TODO: use esgvoc to fill out the template
     `<experiment-name>` branches from the `<parent-experiment-name>` simulation (part of `<parent-experiment-activity>`).
 -->
-`hist-piAer` branches from the `piControl` simulation (part of `CMIP`).
+`hist-piAQ` branches from the `piControl` simulation (part of `CMIP`).
 <!-- TODO: get branch information from esgvoc -->
 Branch from `piControl` at a time of your choosing.
 This branch time should match the branch time used for initialising the [historical simulation](./historical.md).
