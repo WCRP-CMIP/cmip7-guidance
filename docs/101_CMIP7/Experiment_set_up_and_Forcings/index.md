@@ -48,6 +48,23 @@ CMIP core common experiments i.e. the DECK (Diagnostic, Evaluation and Character
 
 ## Assessment Fast Track (AFT) experiments
 
+### AerChemMIP
+
+<!-- TODO: get this from esgvoc automatically -->
+Aerosols and chemistry model intercomparison project: exploration of aerosol chemistry.
+
+1. [piClim-CH4](./piclim-ch4.md)
+1. [piClim-N2O](./piclim-n2o.md)
+1. [piClim-NOx](./piclim-nox.md)
+1. [piClim-ODS](./piclim-ods.md)
+1. [piClim-SO2](./piclim-so2.md)
+1. [hist-piAer](./hist-piaer.md)
+1. [hist-piAQ](./hist-piaer.md)
+1. [scen7-vl-Aer](./scen7-vl-aer.md)
+1. [scen7-vl-AQ](./scen7-vl-aq.md)
+1. [scen7-h-Aer](./scen7-h-aer.md)
+1. [scen7-h-AQ](./scen7-h-aq.md)
+
 ### CFMIP
 
 <!-- TODO: get this from esgvoc automatically -->

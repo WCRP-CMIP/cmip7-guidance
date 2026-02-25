@@ -50,5 +50,5 @@ See notes for the [piClim-control simulation](./piclim-control.md).
 ### Getting the data
 
 <!-- TODO: allow for just putting the bash script here again i.e. repeat the information rather than forcing people to go digging -->
-See instructions for the [piControl simulation](./picontrol.md)
+See instructions for the[piClim-control simulation](./piclim-control.md) 
 and [historical simulation](./historical.md).
