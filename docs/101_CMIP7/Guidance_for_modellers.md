@@ -166,8 +166,8 @@ Given a list of Opportunities supported, the software will determine the resulti
 
 CMIP7 model output requirements are similar to those in CMIP6, with notable changes including:
 
-- Updated [Global Attributes and Data Reference Syntax (DRS)](./global_attributes.md)
-- Introduction of [Branded Variable Names](./branded_variables.md) used in output filenames, directory paths, and [CMOR tables](https://github.com/WCRP-CMIP/cmip7-cmor-tables/)
+- Updated [Global Attributes and Data Reference Syntax (DRS)](./Global_Attributes.md)
+- Introduction of [Branded Variable Names](./Branded_Variables.md) used in output filenames, directory paths, and [CMOR tables](https://github.com/WCRP-CMIP/cmip7-cmor-tables/)
 - Information on the [Data Request](#4-model-output-fields) is available via several entry points: [Airtable database](https://bit.ly/CMIP7-DReq-latest), [web viewer](https://cmip-data-request.github.io/cmip7-dreq-webview/latest), and [python API](https://github.com/CMIP-Data-Request/CMIP7_DReq_software)
 
 As in CMIP6, all CMIP7 output will be stored in netCDF files with one variable stored per file.
@@ -178,7 +178,7 @@ This facilitates analysis of the data by users who can read and interpret data f
 
 !!! warning "Quality Control of netCDF files"
 
-    [Publication to ESGF](./guidance_for_esgf.md) requires CMORized netCDF files to pass Quality Control (QC) checks.
+    [Publication to ESGF](./Guidance_for_ESGF.md) requires CMORized netCDF files to pass Quality Control (QC) checks.
     More information on the **ESGF Quality Control (QC) Framework** [is here](#7-software-for-checking-output).
 
 As [described below](#6-software-for-preparing-output) it is recommended, but not required, that the CMOR software library be used to rewrite model output in conformance with the standards.
@@ -395,7 +395,7 @@ Data producers should note several key points:
 - **Replication**: Some data nodes plan to replicate some of the data published by other nodes. This will provide some redundancy protecting against loss of at least some of the data in the event of a catastrophic storage failure at one node. It will also provide a backup source of data when one node is temporarily offline. Not all data will be replicated, so it is recommended that modeling groups retain a backup copy of their model output.
 - **Long-term archival**: A “snapshot” of CMIP7 data as it exists at the time of a deadline imposed by the IPCC’s 7th Assessment Report (IPCC-AR7) will be archived at the [IPCC Data Distribution Centre (IPCC DDC)](https://www.ipcc-data.org/).
 
-Further guidance on publishing data to ESGF is [available here](./guidance_for_esgf.md).
+Further guidance on publishing data to ESGF is [available here](./Guidance_for_ESGF.md).
 
 
 
