@@ -14,7 +14,7 @@ The piClim-anthro simulation uses the same forcings as [piClim-control](./piclim
 except all anthropogenic forcings use 2021 values.
 The 2021 values should be prescribed on repeat throughout the simulation.
 Here, all anthropogenic forcings means all forcings included in the [historical](./historical.md) simulation
-except for solar and stratospheric aerosol forcing forcing
+except for solar and stratospheric aerosol forcing
 (these two forcings should remain as in [piClim-control](./piclim-control.md)).
 <!-- TODO: consider whether we can generate these sentences automatically based on esgvoc -->
 You are free to start the time axis of your outputs at whatever year you like
@@ -37,7 +37,7 @@ Only one ensemble member is required.
 
 ### Versions to use
 
-For natural forcings i.e. solar and stratospheric aerosol forcing forcing,
+For natural forcings i.e. solar and stratospheric aerosol forcing,
 and the prescribed sea-surface temperatures and sea-ice concentrations
 the relevant forcing is the same as for the [piClim-control simulation](./piclim-control.md).
 For all other forcings i.e. anthropogenic forcings,
