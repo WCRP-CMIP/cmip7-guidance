@@ -45,15 +45,15 @@ Quality Control (QC): the prototype software for checking compliance of CMORized
 
 Note that this compliance checker plugin should still be considered beta software and changes may be made to its function as early adopter testing continues. There has been limited testing using sample CMIP7 data. 
 
-An update to the [guidance pages](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/guidance_for_modellers/#7-software-for-checking-output) will be made as new versions of this software becomes available. Modelling centres are strongly encouraged to run the QC tool prior to ESGF publication in order to catch and fix potential errors early. CMOR tool users would expect to produce compliant files.  We encourage all modelling centres to run the  compliance checker plugin for CMIP 7 once it is issued for general release.
+An update to the [guidance pages](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/Guidance_for_modellers/#7-software-for-checking-output) will be made as new versions of this software becomes available. Modelling centres are strongly encouraged to run the QC tool prior to ESGF publication in order to catch and fix potential errors early. CMOR tool users would expect to produce compliant files.  We encourage all modelling centres to run the  compliance checker plugin for CMIP 7 once it is issued for general release.
 
 ### Rapid Evaluation Framework
 
-Those modelling centres that wish to be REF- ready should keep an eye on the [**Model Output Requirements** section](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/guidance_for_modellers/#5-model-output-requirements) for the forthcoming quality checklist.
+Those modelling centres that wish to be REF- ready should keep an eye on the [**Model Output Requirements** section](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/Guidance_for_modellers/#5-model-output-requirements) for the forthcoming quality checklist.
 
 ### Domains to whitelist
 
-There is a dedicated [page listing domain names](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/domain_names/) relevant to CMIP7 activities that might be useful to review and ensure that individual modelling centre institutional fire walls allow access.  Updates to the list are via issues/pull requests on GitHub.
+There is a dedicated [page listing domain names](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/Domain_names/) relevant to CMIP7 activities that might be useful to review and ensure that individual modelling centre institutional fire walls allow access.  Updates to the list are via issues/pull requests on GitHub.
 
 ---
 
@@ -279,12 +279,12 @@ Apologies for any cross-posting of this announcement.
 ### Updates from the WIP
 
 * Following the infrastructure drop-in sessions in November updates have been made to the 
-  [CMIP7 guidance for modellers webpages](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/guidance_for_modellers/). These include:
+  [CMIP7 guidance for modellers webpages](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/Guidance_for_modellers/). These include:
     * Information on repacking netCDF files that are to be published to CMIP7 has been added, and the cmip7repack tool is available for testing. 
       Note that repacking will be **required** for publishing data to ESGF. Questions and queries are welcome via the [cmip7repack github repository](https://github.com/NCAS-CMS/cmip7_repack).
     * There has been a change to the guidance on QC tools, with a IOOS/compliance-checker plugin replacing a fork of the compliance checker code.
 * QA/QC: early testing is possible, see details in the 
-  [guidance for modellers pages](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/guidance_for_modellers/#7-software-for-checking-output). 
+  [guidance for modellers pages](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/Guidance_for_modellers/#7-software-for-checking-output). 
   Users should note that:
     * Checks for CMIP6 and CORDEX-CMIP6 data are implemented, while CMIP7 checks are being finalized.
     * Some checks will be required by the ESGF publisher, but data producers can also choose to run a heavier set of checks, 
