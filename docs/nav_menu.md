@@ -23,7 +23,7 @@
   - [FAQ](CMIP7/FAQ.md)
 - How-to Guides
   - [Energy Consumption and Carbon Footprint Spreadsheet](How_to_Guides/Energy_Consumption_and_Carbon_Footprint_Spreadsheet.md)
-  - [CVs discussion](CVs_discussion.md)
+  - [CVs discussion](How_to_Guides/CVs_discussion.md)
 - [CMIP6 (legacy)](CMIP6/index.md)
   - [Global Attributes](CMIP6/global_attributes.md)
   - [Guidance for ESGF](CMIP6/guidance_for_esgf.md)
