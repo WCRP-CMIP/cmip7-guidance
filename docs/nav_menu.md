@@ -1,5 +1,5 @@
 - [Home](index.md)
-- [Updates for Modellers](02_Updates_for_Modellers.md)
+- [Updates for modellers](Updates_for_Modellers.md)
 - [CMIP7](101_CMIP7/index.md)
   - [Global Attributes](101_CMIP7/Global_Attributes.md)
   - [Branded Variables](101_CMIP7/Branded_Variables.md)
