@@ -34,7 +34,7 @@ plugins:
         - hooks/run_scripts.py
 
   - literate-nav:
-      nav_file: SUMMARY.md
+      nav_file: nav_menu.md
       implicit_index: true
       tab_length: 2
 
