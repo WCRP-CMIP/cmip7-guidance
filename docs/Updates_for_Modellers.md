@@ -6,7 +6,18 @@ title: CMIP7 Updates for modelling groups
 # Updates for Modelling groups
 
 This page will be updated with information of interest to modelling groups that the CMIP IPO has communicated by email (most recent at top).
+---
+## 26th February 2026
 
+A further update on CMIP7 future forcings availability, the simple plumes aerosol data for the scenarios VL and H are now published:
+ 
+Fiedler, S., & Azoulay, A. (2026). CMIP7 Climate Forcings Dataset: Simple plumes for anthropogenic aerosols in H and VL scenarios (SPv2.1) [Data set]. Zenodo. <https://doi.org/10.5281/zenodo.18713154> 
+
+And available through input4MIPs at <https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/aerosol-optical-properties-macv2-sp/#cmip7_1>
+
+If you find an issue, please [create an issue on GitHub](https://github.com/PCMDI/input4MIPs_CVs/issues/new?template=data_issue.md) so that the identification and resolution of this issue is publicly accessible. Emails sent to centres are being archived at <https://input4mips-cvs.readthedocs.io/en/latest/forcings-email-archive/>
+
+Thank you to the dataset providers, Stephanie Fiedler and Alon Azoulay, for all their efforts.
 
 ---
 
