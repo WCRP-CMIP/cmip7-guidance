@@ -15,7 +15,7 @@ Fiedler, S., & Azoulay, A. (2026). CMIP7 Climate Forcings Dataset: Simple plumes
 
 And available through input4MIPs at <https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/aerosol-optical-properties-macv2-sp/#cmip7_1>
 
-If you find an issue, please create an issue on GitHub so that the identification and resolution of this issue is publicly accessible. Emails sent to centres are being archived at <https://input4mips-cvs.readthedocs.io/en/latest/forcings-email-archive/>
+If you find an issue, please [create an issue on GitHub](https://github.com/PCMDI/input4MIPs_CVs/issues/new?template=data_issue.md) so that the identification and resolution of this issue is publicly accessible. Emails sent to centres are being archived at <https://input4mips-cvs.readthedocs.io/en/latest/forcings-email-archive/>
 
 Thank you to the dataset providers, Stephanie Fiedler and Alon Azoulay, for all their efforts.
 
