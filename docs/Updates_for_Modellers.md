@@ -342,7 +342,7 @@ limited content, while access to existing site content will be maintained in an 
 ### Accessing CMIP7 relevant information sources
 
 To ensure that modelling groups are able to access all services relevant to CMIP7 activities a list of domain names is being put together 
-[here](101_CMIP7/Domain_names.md). 
+[here](CMIP7/Domain_names.md). 
 This will initially include domain names for ESGF, the errata service and services relevant to the REF, but others will be added as they are collected.
 
 ----
