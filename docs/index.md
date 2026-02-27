@@ -11,27 +11,28 @@ title: CMIP7 Guidance and Documentation
 
 
 ## Guidance documents
+
 ### CMIP7
-- [Updates for modelling groups](02_Updates_for_Modellers.md)
-- [Global Attributes](101_CMIP7/Global_Attributes.md)
-- [Branded Variables](101_CMIP7/Branded_Variables.md)
-- [Guidance for modellers](101_CMIP7/Guidance_for_modellers.md)
-    - [Experiment setup and forcings](101_CMIP7/Experiment_set_up_and_Forcings/index.md)
-- [Guidance for users, including Terms of Use](101_CMIP7/Guidance_for_users.md)
-- [Guidance for ESGF node operators and publishers](101_CMIP7/Guidance_for_ESGF.md)
-- [Guidance for MIPs](101_CMIP7/Guidance_for_MIPs.md)
-- [Domain names for CMIP7 services](101_CMIP7/Domain_names.md)
-- [Frequently Asked Questions (FAQ)](101_CMIP7/FAQ.md)
+- [Updates for modelling groups](Updates_for_Modellers.md)
+- [Global Attributes](CMIP7/Global_Attributes.md)
+- [Branded Variables](CMIP7/Branded_Variables.md)
+- [Guidance for modellers](CMIP7/Guidance_for_modellers.md)
+    - [Experiment setup and forcings](CMIP7/Experiment_set_up_and_Forcings/index.md)
+- [Guidance for users, including Terms of Use](CMIP7/Guidance_for_users.md)
+- [Guidance for ESGF node operators and publishers](CMIP7/Guidance_for_ESGF.md)
+- [Guidance for MIPs](CMIP7/Guidance_for_MIPs.md)
+- [Domain names for CMIP7 services](CMIP7/Domain_names.md)
+- [Frequently Asked Questions (FAQ)](CMIP7/FAQ.md)
 
 ### CMIP6
 
 The following may be useful for reference:
 
-- [Global Attributes](110_CMIP6/global_attributes.md) (adapted from [https://goo.gl/v1drZl](http://goo.gl/v1drZl) )
-- [Guidance for modellers](110_CMIP6/guidance_for_modellers.md)
-- [Guidance for users](110_CMIP6/guidance_for_users.md)
-- [Guidance for ESGF node operators](110_CMIP6/guidance_for_esgf.md)
-- [Terms of use](110_CMIP6/terms_of_use.md)
+- [Global Attributes](CMIP6/global_attributes.md) (adapted from [https://goo.gl/v1drZl](http://goo.gl/v1drZl) )
+- [Guidance for modellers](CMIP6/guidance_for_modellers.md)
+- [Guidance for users](CMIP6/guidance_for_users.md)
+- [Guidance for ESGF node operators](CMIP6/guidance_for_esgf.md)
+- [Terms of use](CMIP6/terms_of_use.md)
 - [CMIP6 data request snapshots](https://github.com/cmip6dr/data_request_snapshots)
 - [CMIP6 Controlled Vocabularies](https://github.com/WCRP-CMIP/CMIP6_CVs)
 - [CMIP6 CMOR tables](https://github.com/PCMDI/cmip6-cmor-tables/)
