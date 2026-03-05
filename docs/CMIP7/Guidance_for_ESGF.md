@@ -106,7 +106,7 @@ Please refer to the [user documentation](https://esg-publisher.readthedocs.io/en
 ### 2.4 Dataset publication
 Full details of the dataset publication process using _pip install_ to install _esgcet_ can be found [here](https://esg-publisher.readthedocs.io/en/stable/install.html)
 
-In the examples below, the configuration file is installed in a default location of `$HOME/.esg.yaml`.  the `<DRS-dataset-id>` follows the CMIP7 DRS structure and uses dot `.` delimters between each vontrolled-vocabulary property ending with the *Directory Date* as in the form `v20YYMMDD`.
+In the examples below, the configuration file is installed in a default location of `$HOME/.esg.yaml`.  the `<DRS-dataset-id>` follows the CMIP7 DRS structure and uses dot `.` delimters between each controlled-vocabulary property ending with the *Directory Date* as in the form `v20YYMMDD`.
 
 **Example command:**
 ```
