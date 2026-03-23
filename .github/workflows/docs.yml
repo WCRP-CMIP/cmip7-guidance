@@ -40,7 +40,7 @@ jobs:
 
       - name: Build and deploy docs
         id: build
-        uses: WCRP-CMIP/CMIPLD/actions/build-docs@main
+        uses: WCRP-CMIP/CMIPLD/actions/build-docs@copier
         with:
           production-branch: production
           docs-branch: docs
@@ -52,7 +52,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Archive to versions branch
-        uses: WCRP-CMIP/CMIPLD/actions/archive-version@main
+        uses: WCRP-CMIP/CMIPLD/actions/archive-version@copier
         with:
           version: ${{ needs.build.outputs.version }}
           artifact-name: docs-build
