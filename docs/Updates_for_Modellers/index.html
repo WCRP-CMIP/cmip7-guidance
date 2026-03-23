@@ -3,8 +3,7 @@
 
 <head>
     <script>
-        // for search plugin notably
-        const base_url = "";
+        const base_url = ""; /* for search plugin notably */
     </script>
     <script>
     const darkTheme = window.matchMedia("(prefers-color-scheme: dark)");
@@ -36,7 +35,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Updates for modellers - Guidance and Documentation</title>
+
     
 
 
@@ -47,6 +46,8 @@
 
 
 
+
+<meta name="author" content="CMIP-IPO">
 
 
 
@@ -93,6 +94,25 @@
 
     
 
+    
+
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll("a.headerlink").forEach(function (link) {
+            link.addEventListener("click", function (e) {
+                e.preventDefault();
+
+                // Build the full URL with the anchor fragment
+                const url = window.location.origin + window.location.pathname + this.getAttribute("href");
+
+                navigator.clipboard.writeText(url).then(function () {
+                    // Optional: brief visual feedback
+                });
+            });
+        });
+    });
+</script>
     
 
 </head>
@@ -176,6 +196,7 @@
     document.addEventListener("keydown", searchShortcutHandler);
 </script>
                 </div>
+                
                 <div data-orientation="vertical" role="none" data-slot="separator"
                     class="bg-border shrink-0 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-px ml-2 hidden lg:block">
                 </div>
@@ -189,6 +210,7 @@
                     </svg>
                     
                 </a>
+                
                 <div data-orientation="vertical" role="none" data-slot="separator"
                     class="bg-border shrink-0 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-px 3xl:flex hidden">
                 </div>
@@ -228,13 +250,18 @@
 </header>
         <main class="flex flex-1 flex-col">
             <div class="container-wrapper flex flex-1 flex-col px-2">
-                <div data-slot="sidebar-wrapper" style="--sidebar-width:calc(var(--spacing) * 72);--sidebar-width-icon:3rem;"
+                <div data-slot="sidebar-wrapper"
+                    style="--sidebar-width:calc(var(--spacing) * 72);--sidebar-width-icon:3rem;"
                     class="group/sidebar-wrapper has-data-[variant=inset]:bg-sidebar flex w-full 3xl:fixed:container 3xl:fixed:px-3 min-h-min flex-1 items-start px-0 [--sidebar-width:220px] [--top-spacing:0] lg:grid lg:grid-cols-[var(--sidebar-width)_minmax(0,1fr)] lg:[--sidebar-width:240px] lg:[--top-spacing:calc(var(--spacing)*4)]">
                     <div data-slot="sidebar"
                         class="w-(--sidebar-width) flex-col text-sidebar-foreground sticky top-[calc(var(--header-height)+0.6rem)] z-30 hidden h-[calc(100svh-10rem)] overscroll-none bg-transparent [--sidebar-menu-width:--spacing(56)] lg:flex">
                         <div class="h-9"></div>
-                        <div class="absolute top-8 z-10 h-8 w-(--sidebar-menu-width) shrink-0 bg-gradient-to-b from-background via-background/80 to-background/50 blur-xs"></div>
-                        <div class="absolute top-12 right-2 bottom-0 hidden h-full w-px bg-gradient-to-b from-transparent via-border to-transparent lg:flex"></div>
+                        <div
+                            class="absolute top-8 z-10 h-8 w-(--sidebar-menu-width) shrink-0 bg-gradient-to-b from-background via-background/80 to-background/50 blur-xs">
+                        </div>
+                        <div
+                            class="absolute top-12 right-2 bottom-0 hidden h-full w-px bg-gradient-to-b from-transparent via-border to-transparent lg:flex">
+                        </div>
                         <div data-slot="sidebar-content" data-sidebar="content" view-transition-name="sidebar"
                             class="flex min-h-0 flex-1 flex-col gap-2 overflow-auto group-data-[collapsible=icon]:overflow-hidden mx-auto no-scrollbar w-(--sidebar-menu-width) overflow-x-hidden px-2">
                             
@@ -1073,6 +1100,16 @@
   </div>
   <div class="typography w-full flex-1 *:data-[slot=alert]:first:mt-0">
     <h2 id="this-page-will-be-updated-with-information-of-interest-to-modelling-groups-that-the-cmip-ipo-has-communicated-by-email-most-recent-at-top">This page will be updated with information of interest to modelling groups that the CMIP IPO has communicated by email (most recent at top).<a class="headerlink" href="#this-page-will-be-updated-with-information-of-interest-to-modelling-groups-that-the-cmip-ipo-has-communicated-by-email-most-recent-at-top" title="Permanent link">&para;</a></h2>
+<h2 id="20th-march-2026">20th March 2026<a class="headerlink" href="#20th-march-2026" title="Permanent link">&para;</a></h2>
+<p>There is an update to the nitrogen deposition data (new data is published under source ID FZJ-CMIP-nitrogen-2-0). However, if you already have simulations that use the previous version (source ID FZJ-CMIP-nitrogen-1-2`), you do not need to re-run. Further details below and at https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/nitrogen-deposition/</p>
+<p>As a result of an issue being found (<a href="https://github.com/PCMDI/input4MIPs_CVs/issues/425">#425</a>), a new version of the nitrogen deposition forcing has been released.</p>
+<ul>
+<li>Modelling centres who have already run their piControl and/or historical simulations do not need to re-run.</li>
+<li>Modelling centres who have not yet started their piControl and/or historical simulations should use the FZJ-CMIP-nitrogen-2-0 data.
+For further details about the error and recommended action, please see the nitrogen deposition dataset page https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/nitrogen-deposition/.</li>
+</ul>
+<p>If any modelling centres run piControl and/or historical simulations with both the FZJ-CMIP-nitrogen-2-0 and FZJ-CMIP-nitrogen-1-2 forcing,
+these simulations would be of interest to the Forcings Task Team. (<a href="https://github.com/PCMDI/input4MIPs_CVs/pull/427">#427</a>)</p>
 <h2 id="26th-february-2026">26th February 2026<a class="headerlink" href="#26th-february-2026" title="Permanent link">&para;</a></h2>
 <p>A further update on CMIP7 future forcings availability, the simple plumes aerosol data for the scenarios VL and H are now published:</p>
 <p>Fiedler, S., &amp; Azoulay, A. (2026). CMIP7 Climate Forcings Dataset: Simple plumes for anthropogenic aerosols in H and VL scenarios (SPv2.1) [Data set]. Zenodo. <a href="https://doi.org/10.5281/zenodo.18713154">https://doi.org/10.5281/zenodo.18713154</a> </p>
@@ -2035,7 +2072,7 @@ CMIP IPO (on behalf of the Data Request Task Team)</p>
                             <div
                                 class="sticky top-[calc(var(--header-height)+1px)] ml-auto hidden h-[calc(100svh-var(--header-height)-var(--footer-height))] w-72 flex-col gap-4 overflow-hidden overscroll-none pb-8 xl:flex">
                                 <div class="h-(--top-spacing) shrink-0"></div>
-                                <div view-transition-name="toc" class="no-scrollbar overflow-y-auto px-8">
+                                <div id="toc" view-transition-name="toc" class="no-scrollbar overflow-y-auto px-8">
     <div class="flex flex-col gap-2 p-4 pt-0 text-sm">
         <p class="text-muted-foreground bg-background sticky top-0 h-6 text-xs">On This Page</p>
         
@@ -2044,15 +2081,23 @@ CMIP IPO (on behalf of the Data Request Task Team)</p>
         
         <a href="#this-page-will-be-updated-with-information-of-interest-to-modelling-groups-that-the-cmip-ipo-has-communicated-by-email-most-recent-at-top"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="2">
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#this-page-will-be-updated-with-information-of-interest-to-modelling-groups-that-the-cmip-ipo-has-communicated-by-email-most-recent-at-top');">
             This page will be updated with information of interest to modelling groups that the CMIP IPO has communicated by email (most recent at top).
+        </a>
+        
+
+        
+        <a href="#20th-march-2026"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#20th-march-2026');">
+            20th March 2026
         </a>
         
 
         
         <a href="#26th-february-2026"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="2">
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#26th-february-2026');">
             26th February 2026
         </a>
         
@@ -2060,50 +2105,50 @@ CMIP IPO (on behalf of the Data Request Task Team)</p>
         
         <a href="#24th-february-2026"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="2">
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#24th-february-2026');">
             24th February 2026
         </a>
         
         
         <a href="#updates-to-cmip7-guidance-pages"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#updates-to-cmip7-guidance-pages');">
             Updates to CMIP7 Guidance pages
         </a>
         
         <a href="#essential-model-documentation"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#essential-model-documentation');">
             Essential Model Documentation
         </a>
         
         <a href="#energy-consumption-and-carbon-footprint-metrics-spreadsheet"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#energy-consumption-and-carbon-footprint-metrics-spreadsheet');">
             Energy Consumption and Carbon Footprint Metrics Spreadsheet
         </a>
         
         <a href="#experiment-set-up-and-forcing-guidance"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#experiment-set-up-and-forcing-guidance');">
             Experiment set up and forcing guidance
         </a>
         
         <a href="#quality-control"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#quality-control');">
             Quality Control
         </a>
         
         <a href="#rapid-evaluation-framework"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#rapid-evaluation-framework');">
             Rapid Evaluation Framework
         </a>
         
         <a href="#domains-to-whitelist"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#domains-to-whitelist');">
             Domains to whitelist
         </a>
         
@@ -2112,14 +2157,14 @@ CMIP IPO (on behalf of the Data Request Task Team)</p>
         
         <a href="#24th-february-2026_1"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="2">
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#24th-february-2026_1');">
             24th February 2026
         </a>
         
         
         <a href="#cmip7-forcings-land-use-for-hvl-scenarios"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#cmip7-forcings-land-use-for-hvl-scenarios');">
             CMIP7 forcings: land use for H,VL scenarios
         </a>
         
@@ -2128,20 +2173,20 @@ CMIP IPO (on behalf of the Data Request Task Team)</p>
         
         <a href="#16th-february-2026"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="2">
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#16th-february-2026');">
             16th February 2026
         </a>
         
         
         <a href="#cmip7-forcings-picontrol-update"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#cmip7-forcings-picontrol-update');">
             CMIP7 forcings: piControl update
         </a>
         
         <a href="#recommendation-for-pre-industrial-control"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#recommendation-for-pre-industrial-control');">
             Recommendation for pre-industrial control
         </a>
         
@@ -2150,14 +2195,14 @@ CMIP IPO (on behalf of the Data Request Task Team)</p>
         
         <a href="#12th-february-2026"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="2">
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#12th-february-2026');">
             12th February 2026
         </a>
         
         
         <a href="#cmip7-forcings-modelling-centres-update"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#cmip7-forcings-modelling-centres-update');">
             CMIP7 forcings: modelling centres’ update
         </a>
         
@@ -2166,44 +2211,44 @@ CMIP IPO (on behalf of the Data Request Task Team)</p>
         
         <a href="#21st-december-2025"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="2">
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#21st-december-2025');">
             21st December 2025
         </a>
         
         
         <a href="#essential-model-documentation-emd-spreadsheet"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#essential-model-documentation-emd-spreadsheet');">
             Essential Model Documentation (EMD) spreadsheet
         </a>
         
         <a href="#what-is-the-emd-template"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#what-is-the-emd-template');">
             What is the EMD Template?
         </a>
         
         <a href="#how-to-use-this-template"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#how-to-use-this-template');">
             How to Use This Template
         </a>
         
         <a href="#about-this-template-and-model-registration"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#about-this-template-and-model-registration');">
             About This Template and Model Registration
         </a>
         
         <a href="#if-you-are-planning-to-publish-cmip7-assessment-fast-track-data-before-march-2026"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#if-you-are-planning-to-publish-cmip7-assessment-fast-track-data-before-march-2026');">
             If you are planning to publish CMIP7 Assessment Fast Track data before March 2026
         </a>
         
         <a href="#support"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#support');">
             Support
         </a>
         
@@ -2212,14 +2257,14 @@ CMIP IPO (on behalf of the Data Request Task Team)</p>
         
         <a href="#19th-december-2025"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="2">
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#19th-december-2025');">
             19th December 2025
         </a>
         
         
         <a href="#data-request-v1223"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#data-request-v1223');">
             Data Request v1.2.2.3
         </a>
         
@@ -2228,26 +2273,26 @@ CMIP IPO (on behalf of the Data Request Task Team)</p>
         
         <a href="#8th-december-2025"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="2">
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#8th-december-2025');">
             8th December 2025
         </a>
         
         
         <a href="#updates-from-the-wip"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#updates-from-the-wip');">
             Updates from the WIP
         </a>
         
         <a href="#esgf-updates"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#esgf-updates');">
             ESGF updates
         </a>
         
         <a href="#accessing-cmip7-relevant-information-sources"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#accessing-cmip7-relevant-information-sources');">
             Accessing CMIP7 relevant information sources
         </a>
         
@@ -2256,44 +2301,44 @@ CMIP IPO (on behalf of the Data Request Task Team)</p>
         
         <a href="#29th-october-2025"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="2">
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#29th-october-2025');">
             29th October 2025
         </a>
         
         
         <a href="#cmip7-deck-historical-forcings"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#cmip7-deck-historical-forcings');">
             CMIP7 DECK historical forcings
         </a>
         
         <a href="#cmip7-scenarios-update-and-forcings-development"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#cmip7-scenarios-update-and-forcings-development');">
             CMIP7 scenarios update and forcings development
         </a>
         
         <a href="#rapid-evaluation-framework_1"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#rapid-evaluation-framework_1');">
             Rapid Evaluation Framework
         </a>
         
         <a href="#cmip7-infrastructure"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#cmip7-infrastructure');">
             CMIP7 Infrastructure
         </a>
         
         <a href="#wgcm-forum"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#wgcm-forum');">
             WGCM Forum
         </a>
         
         <a href="#publications"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#publications');">
             Publications
         </a>
         
@@ -2302,14 +2347,14 @@ CMIP IPO (on behalf of the Data Request Task Team)</p>
         
         <a href="#29th-september-2025"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="2">
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#29th-september-2025');">
             29th September 2025
         </a>
         
         
         <a href="#data-request-v1221"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#data-request-v1221');">
             Data Request v1.2.2.1
         </a>
         
@@ -2318,14 +2363,14 @@ CMIP IPO (on behalf of the Data Request Task Team)</p>
         
         <a href="#25th-july-2025"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="2">
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#25th-july-2025');">
             25th July 2025
         </a>
         
         
         <a href="#data-request-v122"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#data-request-v122');">
             Data Request v1.2.2
         </a>
         
@@ -2334,14 +2379,14 @@ CMIP IPO (on behalf of the Data Request Task Team)</p>
         
         <a href="#june-2025"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="2">
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#june-2025');">
             June 2025
         </a>
         
         
         <a href="#data-request-update"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#data-request-update');">
             Data Request update
         </a>
         
@@ -2350,20 +2395,20 @@ CMIP IPO (on behalf of the Data Request Task Team)</p>
         
         <a href="#29th-may-2025"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="2">
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#29th-may-2025');">
             29th May 2025
         </a>
         
         
         <a href="#update-to-stratospheric-volcanic-aerosol-forcing-and-resulting-impact-on-ozone-concentration-and-nitrogen-deposition-dataset-delivery"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#update-to-stratospheric-volcanic-aerosol-forcing-and-resulting-impact-on-ozone-concentration-and-nitrogen-deposition-dataset-delivery');">
             Update to stratospheric volcanic aerosol forcing and resulting impact on ozone concentration and nitrogen deposition dataset delivery
         </a>
         
         <a href="#development-of-new-population-dataset-for-cmip7"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#development-of-new-population-dataset-for-cmip7');">
             Development of new population dataset for CMIP7
         </a>
         
@@ -2372,14 +2417,14 @@ CMIP IPO (on behalf of the Data Request Task Team)</p>
         
         <a href="#27th-april-2025"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="2">
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#27th-april-2025');">
             27th April 2025
         </a>
         
         
         <a href="#data-request-v121"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#data-request-v121');">
             Data Request v1.2.1
         </a>
         
@@ -2388,14 +2433,14 @@ CMIP IPO (on behalf of the Data Request Task Team)</p>
         
         <a href="#22nd-april-2025"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="2">
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#22nd-april-2025');">
             22nd April 2025
         </a>
         
         
         <a href="#data-request-v121-in-preparation"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#data-request-v121-in-preparation');">
             Data Request v1.2.1 in preparation
         </a>
         
@@ -2404,14 +2449,14 @@ CMIP IPO (on behalf of the Data Request Task Team)</p>
         
         <a href="#15th-april-2025"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="2">
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#15th-april-2025');">
             15th April 2025
         </a>
         
         
         <a href="#important-errors-in-table-1-of-dunne-et-al-2025"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#important-errors-in-table-1-of-dunne-et-al-2025');">
             IMPORTANT: Errors in Table 1 of Dunne et al, 2025
         </a>
         
@@ -2420,14 +2465,14 @@ CMIP IPO (on behalf of the Data Request Task Team)</p>
         
         <a href="#4th-april-2025"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="2">
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#4th-april-2025');">
             4th April 2025
         </a>
         
         
         <a href="#model-output-technical-updates"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#model-output-technical-updates');">
             Model output technical updates
         </a>
         
@@ -2436,20 +2481,20 @@ CMIP IPO (on behalf of the Data Request Task Team)</p>
         
         <a href="#1st-april-2025"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="2">
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#1st-april-2025');">
             1st April 2025
         </a>
         
         
         <a href="#data-request-v12"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#data-request-v12');">
             Data Request v1.2
         </a>
         
         <a href="#cmip7-data-request-v12-launch-session"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#cmip7-data-request-v12-launch-session');">
             CMIP7 Data Request v1.2 launch session
         </a>
         
@@ -2458,14 +2503,14 @@ CMIP IPO (on behalf of the Data Request Task Team)</p>
         
         <a href="#27th-march-2025"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="2">
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#27th-march-2025');">
             27th March 2025
         </a>
         
         
         <a href="#forcings-update"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#forcings-update');">
             Forcings update
         </a>
         
@@ -2474,20 +2519,20 @@ CMIP IPO (on behalf of the Data Request Task Team)</p>
         
         <a href="#31st-january-2025"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="2">
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#31st-january-2025');">
             31st January 2025
         </a>
         
         
         <a href="#request-for-update-on-your-plans-for-ar7-fast-track"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#request-for-update-on-your-plans-for-ar7-fast-track');">
             Request for update on your plans for AR7 Fast Track
         </a>
         
         <a href="#update-on-cmip6plus-stratospheric-aerosol-optical-property-and-volcanic-sulfur-emission-datasets"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#update-on-cmip6plus-stratospheric-aerosol-optical-property-and-volcanic-sulfur-emission-datasets');">
             Update on CMIP6Plus stratospheric aerosol optical property and volcanic sulfur emission datasets
         </a>
         
@@ -2496,14 +2541,14 @@ CMIP IPO (on behalf of the Data Request Task Team)</p>
         
         <a href="#30th-january-2025"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="2">
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#30th-january-2025');">
             30th January 2025
         </a>
         
         
         <a href="#data-request-v11"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#data-request-v11');">
             Data Request v1.1
         </a>
         
@@ -2512,14 +2557,14 @@ CMIP IPO (on behalf of the Data Request Task Team)</p>
         
         <a href="#17th-january-2025"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="2">
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#17th-january-2025');">
             17th January 2025
         </a>
         
         
         <a href="#aft-updates"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#aft-updates');">
             AFT updates
         </a>
         
@@ -2528,14 +2573,14 @@ CMIP IPO (on behalf of the Data Request Task Team)</p>
         
         <a href="#22nd-november-2024"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="2">
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#22nd-november-2024');">
             22nd November 2024
         </a>
         
         
         <a href="#data-request-v10"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#data-request-v10');">
             Data Request v1.0
         </a>
         
@@ -2544,14 +2589,14 @@ CMIP IPO (on behalf of the Data Request Task Team)</p>
         
         <a href="#13th-november-2024"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="2">
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#13th-november-2024');">
             13th November 2024
         </a>
         
         
         <a href="#cmip6plus-preliminary-forcing-datasets"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#cmip6plus-preliminary-forcing-datasets');">
             CMIP6Plus preliminary forcing datasets
         </a>
         
@@ -2560,14 +2605,14 @@ CMIP IPO (on behalf of the Data Request Task Team)</p>
         
         <a href="#21st-october-2024"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="2">
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#21st-october-2024');">
             21st October 2024
         </a>
         
         
         <a href="#data-request-v10beta"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#data-request-v10beta');">
             Data Request v1.0beta
         </a>
         
@@ -2580,6 +2625,7 @@ CMIP IPO (on behalf of the Data Request Task Team)</p>
 
     </div>
     <div class="h-12"></div>
+
 </div>
                             </div>
                         </div>
@@ -2631,7 +2677,7 @@ CMIP IPO (on behalf of the Data Request Task Team)</p>
   "prerender": [
     {
       "where": {
-          "selector_matches": ["#next-button", "#previous-button"],
+          "selector_matches": ["#next-button", "#previous-button"]
       }
     }
   ]
