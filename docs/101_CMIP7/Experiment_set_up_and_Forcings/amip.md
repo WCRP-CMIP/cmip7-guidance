@@ -5,6 +5,9 @@ title: AMIP Experiment Setup and Forcings Guidance
 
 # amip Experiment Setup and Forcings Guidance
 
+<!-- TODO: get this information from esgvoc (add reference URLs at that point) -->
+Responsible activity: CMIP
+
 <!-- TODO: get this one line description from esgvoc -->
 Atmosphere-only simulation with prescribed sea surface temperatures (SSTs) and sea-ice concentrations.
 
@@ -26,6 +29,10 @@ Only one ensemble member is required.
 `amip` has no parent experiment.
 
 ## Forcings
+
+### General headlines
+
+The `amip` experiment is a time-varying forcings experiment.
 
 ### Versions to use
 
@@ -56,6 +63,10 @@ beyond the ones used in the [historical simulation](./historical.md):
 
 The data is available on ESGF and searchable [via metagrid](https://esgf-node.ornl.gov/search?project=input4MIPs&versionType=all&activeFacets=%7B%22mip_era%22%3A%22CMIP7%22%7D),
 although this method of finding and downloading the data can involve a lot of clicking.
+Having said this, please also note: the aerosol optical properties based on the MACv2-SP parameterisation are not distrubuted via the ESGF.
+<!-- TODO: add CI to check all URLs are live -->
+Please see [their specific guidance section](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/aerosol-optical-properties-macv2-sp/#datasets-for-cmip7-phases)
+for data access information.
 
 If you install [esgpull](https://esgf.github.io/esgf-download/),
 you can download all the data associated with the source IDs above with the script shown below.

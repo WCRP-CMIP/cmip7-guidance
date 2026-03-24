@@ -5,6 +5,9 @@ title: piControl Experiment Setup and Forcings Guidance
 
 # piControl Experiment Setup and Forcings Guidance
 
+<!-- TODO: get this information from esgvoc (add reference URLs at that point) -->
+Responsible activity: CMIP
+
 <!-- TODO: get this one line description from esgvoc -->
 Pre-industrial control simulation with prescribed carbon dioxide concentrations (for prescribed carbon dioxide emissions, see `esm-piControl`). Used to characterise natural variability and unforced behaviour.
 
@@ -29,6 +32,15 @@ Only one ensemble member is required.
 Branch from `piControl-spinup` at a time of your choosing.
 
 ## Forcings
+
+### General headlines
+
+The `piControl` experiment is a fixed forcings experiment.
+However, it can require some care to use the correct forcings for `piControl`.
+This is particularly true for stratospheric aerosol forcing, ozone and solar
+as the `piControl` values for these forcings aren't simply a repeat of 1850 values.
+Please read the guidance pages linked under [notes](#notes)
+to ensure that you use the correct forcing values.
 
 ### Versions to use
 
@@ -68,23 +80,14 @@ The following pages give further information on each forcing:
 - aerosol optical properties: [input4mips-cvs.readthedocs.io/dataset-overviews/aerosol-optical-properties-macv2-sp](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/aerosol-optical-properties-macv2-sp/)
 - population density: [input4mips-cvs.readthedocs.io/dataset-overviews/population](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/population/)
 
-Beyond the information on these pages, please also note the following:
-
-It can require some care to use the correct forcings for `piControl`.
-This is particularly true for stratospheric aerosol forcing, ozone and solar
-as the `piControl` values for these forcings aren't simply a repeat of 1850 values.
-Please read the guidance pages linked above carefully
-to ensure that you use the correct forcing values.
-
-The aerosol optical properties based on the MACv2-SP parameterisation are not distrubuted via the ESGF.
-<!-- TODO: add CI to check all URLs are live -->
-Please see [their specific guidance section](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/aerosol-optical-properties-macv2-sp/#datasets-for-cmip7-phases)
-for data access information.
-
 ### Getting the data
 
 The data is available on ESGF and searchable [via metagrid](https://esgf-node.ornl.gov/search?project=input4MIPs&versionType=all&activeFacets=%7B%22mip_era%22%3A%22CMIP7%22%7D),
 although this method of finding and downloading the data can involve a lot of clicking.
+Having said this, please also note: the aerosol optical properties based on the MACv2-SP parameterisation are not distrubuted via the ESGF.
+<!-- TODO: add CI to check all URLs are live -->
+Please see [their specific guidance section](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/aerosol-optical-properties-macv2-sp/#datasets-for-cmip7-phases)
+for data access information.
 
 If you install [esgpull](https://esgf.github.io/esgf-download/),
 you can download all the data associated with the source IDs above with the script shown below.

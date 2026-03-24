@@ -5,6 +5,9 @@ title: abrupt-4xCO2 Experiment Setup and Forcings Guidance
 
 # abrupt-4xCO2 Experiment Setup and Forcings Guidance
 
+<!-- TODO: get this information from esgvoc (add reference URLs at that point) -->
+Responsible activity: CMIP
+
 <!-- TODO: get this one line description from esgvoc -->
 Abrupt quadrupling of atmospheric carbon dioxide levels. All other conditions are kept the same as piControl.
 
@@ -15,9 +18,9 @@ The abrupt CO<sub>2</sub> quadrupling simulation is a simple branch from the [pi
 After branching, the atmospheric CO<sub>2</sub> concentrations should be set to four times
 the concentrations used in the `piControl` simulation.
 <!-- TODO: consider whether we can generate these sentences automatically based on esgvoc -->
-You are free to start the time axis of your outputs at whatever year you like
-(e.g. starting at year 1, or 1850, or year 500),
-although if you want to make life easy for analysts, start your time axis at the branching time.
+It is recommended that you start the time axis of your outputs at the branching time
+to make life easy for analysts of your output
+(although this is not enforced so you are technically free to start the time axis of your outputs at whatever year you like).
 Simulations should be at least 300 years in length.
 Only one ensemble member is required.
 
@@ -32,6 +35,11 @@ Only one ensemble member is required.
 Branch from `piControl` at a time of your choosing.
 
 ## Forcings
+
+### General headlines
+
+The `abrupt-4xCO2` experiment is a fixed forcings experiment.
+For further general headlines, please see the general headlines for the [piControl simulation](./picontrol.md).
 
 ### Versions to use
 

@@ -5,6 +5,9 @@ title: hist-piAQ Experiment Setup and Forcings Guidance
 
 # hist-piAQ Experiment Setup and Forcings Guidance
 
+<!-- TODO: get this information from esgvoc (add reference URLs at that point) -->
+Responsible activity: AerChemMIP
+
 <!-- TODO: get this one line description from esgvoc -->
 <!-- TODO: check this with someone who knows what they're reading -->
 In combination with `historical`, allows for evaluation of the air quality and climate effect of historical aerosol and tropospheric non-methane ozone precursor emissions in models with interactive chemistry (for models without interactive chemistry, see `hist-piAer`).
@@ -34,6 +37,11 @@ Branch from `piControl` at a time of your choosing.
 This branch time should match the branch time used for initialising the [historical simulation](./historical.md).
 
 ## Forcings
+
+### General headlines
+
+The `hist-piAQ` experiment is a time-varying forcings experiment,
+except for aerosol and tropospheric non-methane ozone precursor emissions which should be fixed.
 
 ### Versions to use
 

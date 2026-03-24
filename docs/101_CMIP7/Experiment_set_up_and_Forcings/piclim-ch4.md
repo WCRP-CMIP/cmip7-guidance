@@ -5,6 +5,9 @@ title: piClim-CH4 Experiment Setup and Forcings Guidance
 
 # piClim-CH4 Experiment Setup and Forcings Guidance
 
+<!-- TODO: get this information from esgvoc (add reference URLs at that point) -->
+Responsible activity: AerChemMIP
+
 <!-- TODO: get this one line description from esgvoc -->
 In combination with `piClim-control`, quantifies present-day methane effective radiative forcing (ERF).
 Same as `piClim-control`, except methane concentrations or emissions (as appropriate for the model) use present-day values
@@ -32,6 +35,10 @@ Only one ensemble member is required.
 `piClim-CH4` does not branch from another simulation.
 
 ## Forcings
+
+### General headlines
+
+See general headlines for the [`piClim-control` simulation](./piclim-control.md).
 
 ### Versions to use
 

@@ -5,6 +5,9 @@ title: piClim-control Experiment Setup and Forcings Guidance
 
 # piClim-control Experiment Setup and Forcings Guidance
 
+<!-- TODO: get this information from esgvoc (add reference URLs at that point) -->
+Responsible activity: CMIP
+
 <!-- TODO: get this one line description from esgvoc -->
 Baseline for effective radiative forcing (ERF) calculations. `piControl` with prescribed sea-surface temperatures and sea-ice concentrations.
 
@@ -32,6 +35,11 @@ Only one ensemble member is required.
 `piClim-control` does not branch from another simulation.
 
 ## Forcings
+
+### General headlines
+
+The `piClim-control` experiment is a fixed forcings experiment.
+For further general headlines, please see the general headlines for the [piControl simulation](./picontrol.md).
 
 ### Versions to use
 

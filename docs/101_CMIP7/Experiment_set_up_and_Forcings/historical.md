@@ -5,6 +5,9 @@ title: historical Experiment Setup and Forcings Guidance
 
 # historical Experiment Setup and Forcings Guidance
 
+<!-- TODO: get this information from esgvoc (add reference URLs at that point) -->
+Responsible activity: CMIP
+
 <!-- TODO: get this one line description from esgvoc -->
 Simulation of the climate of the recent past (typically meaning 1850 to present-day) with prescribed carbon dioxide concentrations (for prescribed carbon dioxide emissions, see `esm-hist`).
 
@@ -27,6 +30,14 @@ Only one ensemble member is required.
 Branch from `piControl` at a time of your choosing.
 
 ## Forcings
+
+### General headlines
+
+The `historical` experiment is a time-varying forcings experiment.
+Please note that the ozone forcing should come from files with the source ID `FZJ-CMIP-ozone-2-0`.
+`FZJ-CMIP-ozone-2-0` was released quite late, so if you have simulations based on `FZJ-CMIP-ozone-1-2`,
+these would also be of interest to the Forcings Task Team so please publish them
+([discussion of how to set the value for the forcing 'f' identifier in such files is ongoing](https://github.com/PCMDI/input4MIPs_CVs/issues/415)).
 
 ### Versions to use
 
@@ -66,22 +77,14 @@ The following pages give further information on each forcing:
 - aerosol optical properties: [input4mips-cvs.readthedocs.io/dataset-overviews/aerosol-optical-properties-macv2-sp](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/aerosol-optical-properties-macv2-sp/)
 - population density: [input4mips-cvs.readthedocs.io/dataset-overviews/population](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/population/)
 
-Beyond the information on these pages, please also note the following:
-
-The ozone forcing should come from files with the source ID `FZJ-CMIP-ozone-2-0`.
-`FZJ-CMIP-ozone-2-0` was released quite late, so if you have simulations based on `FZJ-CMIP-ozone-1-2`,
-these would also be of interest to the Forcings Task Team so please publish them
-([discussion of how to set the value for the forcing 'f' identifier in such files is ongoing](https://github.com/PCMDI/input4MIPs_CVs/issues/415)).
-
-The aerosol optical properties based on the MACv2-SP parameterisation are not distrubuted via the ESGF.
-<!-- TODO: add CI to check all URLs are live -->
-Please see [their specific guidance section](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/aerosol-optical-properties-macv2-sp/#datasets-for-cmip7-phases)
-for data access information.
-
 ### Getting the data
 
 The data is available on ESGF and searchable [via metagrid](https://esgf-node.ornl.gov/search?project=input4MIPs&versionType=all&activeFacets=%7B%22mip_era%22%3A%22CMIP7%22%7D),
 although this method of finding and downloading the data can involve a lot of clicking.
+Having said this, please also note: the aerosol optical properties based on the MACv2-SP parameterisation are not distrubuted via the ESGF.
+<!-- TODO: add CI to check all URLs are live -->
+Please see [their specific guidance section](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/aerosol-optical-properties-macv2-sp/#datasets-for-cmip7-phases)
+for data access information.
 
 If you install [esgpull](https://esgf.github.io/esgf-download/),
 you can download all the data associated with the source IDs above with the script shown below.

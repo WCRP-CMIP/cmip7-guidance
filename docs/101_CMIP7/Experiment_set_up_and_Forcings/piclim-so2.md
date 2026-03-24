@@ -5,6 +5,9 @@ title: piClim-SO2 Experiment Setup and Forcings Guidance
 
 # piClim-SO2 Experiment Setup and Forcings Guidance
 
+<!-- TODO: get this information from esgvoc (add reference URLs at that point) -->
+Responsible activity: AerChemMIP
+
 <!-- TODO: get this one line description from esgvoc -->
 In combination with `piClim-control`, quantifies present-day sulfur (dioxide) effective radiative forcing (ERF).
 Same as `piClim-control`, except sulfur emissions use present-day values
@@ -32,6 +35,10 @@ Only one ensemble member is required.
 `piClim-SO2` does not branch from another simulation.
 
 ## Forcings
+
+### General headlines
+
+See general headlines for the [`piClim-control` simulation](./piclim-control.md).
 
 ### Versions to use
 

@@ -5,6 +5,9 @@ title: piClim-4xCO2 Experiment Setup and Forcings Guidance
 
 # piClim-4xCO2 Experiment Setup and Forcings Guidance
 
+<!-- TODO: get this information from esgvoc (add reference URLs at that point) -->
+Responsible activity: CMIP
+
 <!-- TODO: get this one line description from esgvoc -->
 In combination with `piClim-control`, quantifies a quadrupling of atmospheric carbon dioxide's (4xCO2's) effective radiative forcing (ERF). Same as `piClim-control`, except atmospheric carbon dioxide concentrations are set to four times `piControl` levels.
 
@@ -30,6 +33,10 @@ Only one ensemble member is required.
 `piClim-4xCO2` does not branch from another simulation.
 
 ## Forcings
+
+### General headlines
+
+See general headlines for the [`piClim-control` simulation](./piclim-control.md).
 
 ### Versions to use
 
