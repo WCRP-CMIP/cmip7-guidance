@@ -15,10 +15,9 @@ except emissions of ozone-depleting substances use 2021 values.
 <!-- TODO: check the above, I don't think this is correct... -->
 The 2021 values should be prescribed on repeat throughout the simulation.
 <!-- TODO: consider whether we can generate these sentences automatically based on esgvoc -->
-You are free to start the time axis of your outputs at whatever year you like
-(e.g. starting at year 1, or 1850, or year 500).
-If you want to make life easy for analysts,
-use the same time axis as you use for your [piClim-control](./piclim-control.md) output.
+It is recommended that you use the same time axis as you use for your [piClim-control](./piclim-control.md) output
+to make life easy for analysts of your output
+(although this is not enforced so you are technically free to start the time axis of your outputs at whatever year you like).
 Simulations should be at least 30 years in length.
 Only one ensemble member is required.
 

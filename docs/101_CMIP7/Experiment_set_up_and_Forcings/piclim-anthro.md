@@ -17,10 +17,9 @@ Here, all anthropogenic forcings means all forcings included in the [historical]
 except for solar and stratospheric aerosol forcing
 (these two forcings should remain as in [piClim-control](./piclim-control.md)).
 <!-- TODO: consider whether we can generate these sentences automatically based on esgvoc -->
-You are free to start the time axis of your outputs at whatever year you like
-(e.g. starting at year 1, or 1850, or year 500).
-If you want to make life easy for analysts,
-use the same time axis as you use for your [piClim-control](./piclim-control.md) output.
+It is recommended that you use the same time axis as you use for your [piClim-control](./piclim-control.md) output
+to make life easy for analysts of your output
+(although this is not enforced so you are technically free to start the time axis of your outputs at whatever year you like).
 Simulations should be at least 30 years in length.
 Only one ensemble member is required.
 
