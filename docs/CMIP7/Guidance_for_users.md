@@ -8,6 +8,8 @@ title: CMIP7 Guidance for Data Users
 
 This page is designed to inform users of climate model outputs on key CMIP7 concepts and tools. It is a landing page to redirect them to the proper resources to learn more.
 
+
+
 ## 1.  Accessing CMIP7 data
 
 CMIP7 model output is available through a distributed data archive developed and operated by the Earth System Grid Federation (ESGF). The data are hosted on a collection of nodes located at centres across the world.
@@ -15,7 +17,9 @@ CMIP7 model output is available through a distributed data archive developed and
 
 ??? info "Understanding ESGF Nodes"
 
-    ESGF is a collaboration of groups, agencies and institutions around the world, that are dedicated to the development and operation of a long-term system for the management, access and analysis of climate data. The ESGF architecture is based on a system of autonomous and distributed Nodes. Data is hosted on a collection of nodes located at modelling centres or data centres across the world. Nodes exchange information about their data holdings and services, trust each other for registering users and establishing access control decisions. The net result is that a user can use a web browser or rich desktop client, connect to any Node, and seamlessly find and access data throughout the federation.
+    ESGF is a collaboration of groups, agencies and institutions around the world, that are dedicated to the development and operation of a long-term system for the management, access and analysis of climate data. The ESGF architecture is based on a system of autonomous and distributed Nodes. Data is hosted on a collection of data nodes located at modelling centres or data centres across the world. Nodes exchange information about their data holdings and services, trust each other for registering users and establishing access control decisions. Data can be searched through index nodes that hold catalogues of what is available on the data node. The net result is that a user can use a web browser or rich desktop client, connect to any Node, and seamlessly find and access data throughout the federation. 
+    
+    It is possible for a node to be down, which can lead to data being unavailable for periods of time.
 
     More documentation on CMIP nodes is available [here][nodes].
 
@@ -40,9 +44,14 @@ There are 3 options to access the data:
 
     While all published CMIP7 data is available from ESGF, some of it is additionally hosted in non-ESGF storage facilities. Below are links to some of these replicas. If you know of another place CMIP data is currently being stored, please submit [this form][altaccess] to let us and the community know!
 
-    * COMING SOON
+    * The [Pangeo / ESGF Cloud Data Working Group][pangeo] is working on providing cloud access for CMIP7 ARCO data. Contributions are welcomed [here][virtual].
+    * MORE COMING SOON
+
 
     For all non-ESGF data access routes, we encourage users to verify that the data used is the latest version. 
+
+    !!! Info 
+        Contributions are invited to help virtualizing CMIP7 zarrs.
 
 
 ## 2.  Terms of use and citations requirements
@@ -147,18 +156,20 @@ CMIP7 datasets can be identified through a series of facets that represents key 
 * grid
 * version
 
-!!! tip inline end
+!!! Info
 
     Current advice from the CVs task team is to only access the CVs via [ESGVOC](https://esgf.github.io/esgf-vocab/). This will be subject to change in the future.
 
-More information about the meaning of these facets is provided in the [global attributes documentation][GlobalAttrs], with further guidance provided on the [Global Attributes page](Global_Attributes.md). The values associated with each facet are standardized through the [CVs][cmipCvs]. They are used to search the ESGF database and can be found in the global attributes of the data. This section provides helpful links and gives a bit more information on a few key facets. 
 
+
+More information about the meaning of these facets is provided in the [global attributes documentation][GlobalAttrs], with further guidance provided on the [Global Attributes page](Global_Attributes.md). The values associated with each facet are standardized through the [CVs][cmipCvs]. They are used to search the ESGF database and can be found in the global attributes of the data. This section provides helpful links and gives a bit more information on a few key facets. 
 
 
 
 ### 3.1.  Source and Variant
 * [List of models][sourcelist] (coming soon)
 * [Essential Model Documentation (EMD)][emd] (coming soon)
+
 
 The Essential Model Documentation (EMD) contains a high-level description intended to contain information on model formulation that can be easily compared between different models. EMD pages contain links to more in-depth model documentation for each source.
 
@@ -191,11 +202,21 @@ The CMIP7 protocol and experiments are described in a [special issue][GMDSpecial
 * [List of variables][varlist] (coming soon)
 * [Branded variable documentation](Branded_Variables.md)
 
-The variables produced in CMIP7 were recommended by the [CMIP7 Data Request task team][DataRequestTeam]. In CMIP7, the concept of branded variable identifies the variables. It follows the template: 
+The variables produced in CMIP7 were recommended by the [CMIP7 Data Request task team][DataRequestTeam]. In CMIP7, the concept of branded variable identifies the variables. Branded variables follows the template: 
 
 ```
-<variableRootDD>_<temporalLabelDD>-<verticalLabelDD>-<horizontalLabelDD>-<areaLabelDD>
+<brandedVariable> 
+= <variableRoot>_<brandedSuffix>
+= <variableRoot>_<temporalLabel>-<verticalLabel>-<horizontalLabel>-<areaLabel>
 ```
+
+Branded variables are independant of frequency and region. To fully identify a variable, you need the compound name:
+```
+<compound_name> = <brandedVariable>.<frequency>.<region>
+```
+
+For example, the equivalent of `Amon.tas` in CMIP6 would be  `tas_tavg-h2m-hxy-u.mon.GLB` in CMIP7.
+
 <!--TODO: add more about Data Request. Not super clear to me how it can be useful to users yet.-->
 
 ### 3.4 Frequency
@@ -260,7 +281,7 @@ Essential features of CMORized data are :
     * One variable per file
 * Self-describing (all metadata needed to interpret the data are included in the file)
 * Consistent units and standard names following [CF conventions][cfConventionsPage]
-* [Standard chunking](guidance_for_modellers.md#5-model-output-requirements)
+* [Standard chunking](Guidance_for_modellers.md#5-model-output-requirements)
 
 
 
@@ -269,7 +290,7 @@ Essential features of CMORized data are :
 ## 5.  Reporting suspected errors
 
 
-!!! Warning inline end
+!!! Danger "Warning"
     The CMIP7 archive contains the output of scientific simulations of the past and potential future that are subject to multiple sources of error, ranging from errors in data handling, to errors in the representation of the real world in either the model, or the experimental setup for which the model was used. Different parts of the CMIP7 archive may be subject to differing levels of such errors, and users should be alert to these issues, and their potential consequences.
 
 Information about discovered issues of CMIP7 data is captured by the [Errata Service][ErrataService].
@@ -293,7 +314,6 @@ You have a more specific question ? Ask it on the [Fresh Eyes Platform][platform
 ###### Document version: 2025-10-08
  <!--  abbreviation -->
 *[CMIP7]: Coupled Model Intercomparison Project phase 7
-*[ESGF]: Earth System Grid Federation
 *[LLNL]: Lawrence Livermore National Laboratory
 *[DKRZ]: Deutsches Klimarechenzentrum (German Climate Computation Centre)
 *[ORNL]: Oak Ridge National Laboratory
@@ -306,6 +326,7 @@ You have a more specific question ? Ask it on the [Fresh Eyes Platform][platform
 *[DECK]: Diagnostic, Evaluation and Characterization of Klima
 *[AFT]: Assessment Fast Track
 *[CMOR]: Climate Model Output Rewriter
+*[ARCO]: Analysis-Ready Cloud-Optimized
 
  <!-- valid general links -->
 [metagridllnl]: https://aims2.llnl.gov/search/
@@ -339,6 +360,7 @@ You have a more specific question ? Ask it on the [Fresh Eyes Platform][platform
 [cmcc]: https://esgf-ui.cmcc.it/esgf-dashboard-ui/index.html
 [altaccess]: http://bit.ly/CMIP-data-platform
 [disclaimer]: https://doi.org/10.5281/zenodo.18155119
+[virtual]: https://github.com/carbonplan/cmip7-virtualization
 
  <!-- CMIP7 links -->
 [GMDSpecialIssue]: https://gmd.copernicus.org/articles/special_issue1315.html
@@ -366,7 +388,7 @@ You have a more specific question ? Ask it on the [Fresh Eyes Platform][platform
 [levellist]: https://cmip6dr.github.io/Data_Request_Home/Documents/CMIP6_pressure_levels.pdf?id=88 
 [freqlist]: https://github.com/WCRP-CMIP/CMIP6_CVs/blob/main/CMIP6_frequency.json
 [maskavg]: https://wcrp-cmip.github.io/WGCM_Infrastructure_Panel/CMIP6/time_and_area_averaging.html -->
-
+[pangeo]: https://pangeo-data.github.io/pangeo-cmip6-cloud/
 
  <!-- unknown links -->
 [CMIPpubs]:  ?
@@ -382,3 +404,5 @@ You have a more specific question ? Ask it on the [Fresh Eyes Platform][platform
 [eld]: ?
 [gridreg]: ?
 
+
+ <!-- note: only admonitions that show color with this theme are Info, Success, Warning, Danger -->

@@ -65,6 +65,7 @@ extra_javascript:
   - https://unpkg.com/mermaid@10/dist/mermaid.min.js
 
 markdown_extensions:
+  - abbr #TODO: check that it is okay to add this
   - admonition
   - attr_list
   - def_list
