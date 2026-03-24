@@ -6,7 +6,9 @@ title: piClim-CH4 Experiment Setup and Forcings Guidance
 # piClim-CH4 Experiment Setup and Forcings Guidance
 
 <!-- TODO: get this one line description from esgvoc -->
-In combination with `piClim-control`, quantifies present-day methane effective radiative forcing (ERF). Same as `piClim-control`, except methane concentrations or emissions (as appropriate for the model) use present-day values (typically the last year of the `historical` simulation within the same CMIP era e.g. 2014 values for CMIP6, 2021 values for CMIP7)
+In combination with `piClim-control`, quantifies present-day methane effective radiative forcing (ERF).
+Same as `piClim-control`, except methane concentrations or emissions (as appropriate for the model) use present-day values
+(in CMIP defined as the last year of the `historical` simulation within the same CMIP era i.e. 2021 values for CMIP7).
 
 ## Experiment set up
 
