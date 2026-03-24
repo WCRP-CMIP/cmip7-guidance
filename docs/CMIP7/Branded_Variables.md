@@ -8,7 +8,8 @@ title: Branded Variables for CMIP7
 A new naming system for variables is being introduced in CMIP7, referred to as **branded variables**.
 The new system retains the familiar short variable names used in earlier CMIP phases to denote a physical quantity ("pr" for precipitation, for example). 
 It introduces a new metadata attribute, termed the **branding suffix**, that describes how a variable is sampled temporally and spatially.
-The branding suffix is a [global attribute](https://doi.org/10.5281/zenodo.17250296) that is used in the output filenames and directory path structures of CMIP7 datasets.
+The new naming system is intended to make it **easier to find the variables you want**.
+The branding suffix is a [global metadata attribute](https://doi.org/10.5281/zenodo.17250296), and is used in the output filenames and directory path structures of CMIP7 datasets.
 
 For comparison with the previous CMIP naming scheme for variables, consider the global monthly-mean near-surface air temperature, which in CMIP6 was denoted as "tas" in the "Amon" MIP table (a MIP table is also sometimes referred to as a CMOR table).
 A compound name constructed from these terms, "Amon.tas", uniquely identifies the variable in the collection of all CMIP6 variables.
@@ -34,7 +35,8 @@ For example, "tas_tavg-h2m-hxy-u" reported at daily frequency is denoted "day.ta
 
 !!! note "Viewing branded variables in the Data Request"
 
-    The branded variable name, frequency, and region of every requested variable are specified in the CMIP7 Data Request, and can be viewed using [Airtable](https://bit.ly/CMIP7-DReq-latest), the [github-based web viewer](https://cmip-data-request.github.io/cmip7-dreq-webview/latest/index.html), or the [python API](https://github.com/CMIP-Data-Request/CMIP7_DReq_software).
+    The branded variable name, frequency, and region of every requested variable are specified in the CMIP7 Data Request.
+    The Data Request can be viewed using [Airtable](https://bit.ly/CMIP7-DReq-latest), the [github-based web viewer](https://cmip-data-request.github.io/cmip7-dreq-webview/latest/index.html), or the [python API](https://github.com/CMIP-Data-Request/CMIP7_DReq_software).
 
     For every variable, the Data Request specifies *both* its CMIP7-era branded name and CMIP6-era name.
     This provides a mapping from old to new names, to simplify the transition to branded names.
@@ -44,7 +46,23 @@ For example, "tas_tavg-h2m-hxy-u" reported at daily frequency is denoted "day.ta
 The branded variable approach (Taylor et al., in preparation) aims to be more systematic and scalable to future CMIP phases and wider use across community MIPs and other WCRP projects.
 [CMOR tables](https://github.com/WCRP-CMIP/cmip7-cmor-tables) keyed by branded variable name define the metadata characteristics of variables apart from the frequency, region, or specific grids on which these variables should be reported.
 Guidance on reporting grids for CMIP output is [given here](https://doi.org/10.5281/zenodo.15697024).
-The exact reporting convention for grids and associated CV is being finalised; if you wish to see the full discussion, please see https://github.com/WCRP-CMIP/CMIP7-CVs/issues/202.
+The metadata conventions for describing grids in the CMIP7 CVs are explained in the [Essential Model Documentation guidance pages](https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/).
+<!-- The exact reporting convention for grids and associated CV is being finalised; if you wish to see the full discussion, please see https://github.com/WCRP-CMIP/CMIP7-CVs/issues/202. -->
+
+
+## Variable names
+
+A potentially confusing feature of CMIP metadata is that "variable name" may not always refer to the same type of variable name. 
+To disambiguate the different flavours of variable name used in the CMIP7 Data Request and CVs, we provide a brief glossary here:
+
+- `variable_id` is the "short name" familiar to many users (e.g., "tas", "pr", "sos"). It is a [global attribute](https://doi.org/10.5281/zenodo.17250296).
+- `root name` is the beginning of a branded variable name (e.g., "tas_tavg-h2m-hxy-u"). It is identical to `variable_id`.
+- `out_name` is found in [CMOR tables](https://github.com/WCRP-CMIP/cmip7-cmor-tables) where it specifies the name of the data variable in a CMORized netcdf file. It is identical to `variable_id`.
+- `physical parameter name` is the short name used in the Data Request to identify a physical quantity, and is associated with a CF standard name. It is the "Name" column in the "Physical Parameters" table of the [Airtable view](https://bit.ly/CMIP7-DReq-latest) of the Data Request. It is *usually* equivalent to the `variable_id` used in CMIP7, but there are some exceptions, as [tabulated below](#physical-parameter-name-changes).
+- `branded_variable` is composed of a `root name` followed by a `branding suffix` (e.g., "tas_tavg-h2m-hxy-u"), as [described above](#branded-variables-for-cmip7). It is a [global attribute](https://doi.org/10.5281/zenodo.17250296).
+- `Data Request variable` indicates a requested variable specified by a row in the "Variables" table of the [Airtable view](https://bit.ly/CMIP7-DReq-latest) of the Data Request. A requested variable corresponds to a single `branded variable`, but additionally specifies the frequency, region, and requested grid on which the variable should be provided.
+- `cmip6_compound_name` uniquely identifies a Data Request variable in both the CMIP6 and CMIP7 Data Requests. It is composed of a MIP table name (aka CMOR table name) followed by a `physical parameter name` (e.g. "Amon.tas").
+- `cmip7_compound_name` uniquely identifies a Data Request variable in the CMIP7 Data Request. It is composed of four parts: realm, `branded variable`, frequency, and region (e.g. "atmos.tas.tavg-h2m-hxy-u.mon.glb").
 
 
 ## Branding suffixes
@@ -177,3 +195,6 @@ Set to "u" (unmasked) if no masking is applied.
 | `veg` | `where vegetation` |
 | `wl` | `where wetland` |
 | `u`  | unmasked (no "where" directive included in `cell_methods`) |
+
+## Physical parameter name changes
+
