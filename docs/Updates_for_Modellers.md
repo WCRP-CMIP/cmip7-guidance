@@ -6,7 +6,30 @@ title: CMIP7 Updates for modelling groups
 # Updates for Modelling groups
 
 This page will be updated with information of interest to modelling groups that the CMIP IPO has communicated by email (most recent at top).
+---
+## 20th March 2026
+There is an update to the nitrogen deposition data (new data is published under source ID FZJ-CMIP-nitrogen-2-0). However, if you already have simulations that use the previous version (source ID FZJ-CMIP-nitrogen-1-2`), you do not need to re-run. Further details below and at https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/nitrogen-deposition/
 
+As a result of an issue being found ([#425](https://github.com/PCMDI/input4MIPs_CVs/issues/425)), a new version of the nitrogen deposition forcing has been released.
+
+* Modelling centres who have already run their piControl and/or historical simulations do not need to re-run.
+* Modelling centres who have not yet started their piControl and/or historical simulations should use the FZJ-CMIP-nitrogen-2-0 data.
+For further details about the error and recommended action, please see the nitrogen deposition dataset page https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/nitrogen-deposition/.
+
+If any modelling centres run piControl and/or historical simulations with both the FZJ-CMIP-nitrogen-2-0 and FZJ-CMIP-nitrogen-1-2 forcing,
+these simulations would be of interest to the Forcings Task Team. ([#427](https://github.com/PCMDI/input4MIPs_CVs/pull/427))
+
+## 26th February 2026
+
+A further update on CMIP7 future forcings availability, the simple plumes aerosol data for the scenarios VL and H are now published:
+ 
+Fiedler, S., & Azoulay, A. (2026). CMIP7 Climate Forcings Dataset: Simple plumes for anthropogenic aerosols in H and VL scenarios (SPv2.1) [Data set]. Zenodo. <https://doi.org/10.5281/zenodo.18713154> 
+
+And available through input4MIPs at <https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/aerosol-optical-properties-macv2-sp/#cmip7_1>
+
+If you find an issue, please [create an issue on GitHub](https://github.com/PCMDI/input4MIPs_CVs/issues/new?template=data_issue.md) so that the identification and resolution of this issue is publicly accessible. Emails sent to centres are being archived at <https://input4mips-cvs.readthedocs.io/en/latest/forcings-email-archive/>
+
+Thank you to the dataset providers, Stephanie Fiedler and Alon Azoulay, for all their efforts.
 
 ---
 
@@ -331,7 +354,7 @@ limited content, while access to existing site content will be maintained in an 
 ### Accessing CMIP7 relevant information sources
 
 To ensure that modelling groups are able to access all services relevant to CMIP7 activities a list of domain names is being put together 
-[here](101_CMIP7/domain_names.md). 
+[here](CMIP7/Domain_names.md). 
 This will initially include domain names for ESGF, the errata service and services relevant to the REF, but others will be added as they are collected.
 
 ----

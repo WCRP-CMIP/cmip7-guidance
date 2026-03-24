@@ -34,9 +34,19 @@ plugins:
         - hooks/run_scripts.py
 
   - literate-nav:
-      nav_file: SUMMARY.md
+      nav_file: nav_menu.md
       implicit_index: true
       tab_length: 2
+
+  - redirects:
+      redirect_maps:
+        'CMIP7/global_attributes.md': 'CMIP7/Global_Attributes.md'
+        'CMIP7/branded_variables.md': 'CMIP7/Branded_Variables.md'
+        'CMIP7/domain_names.md': 'CMIP7/Domain_names.md'
+        'CMIP7/guidance_for_esgf.md': 'CMIP7/Guidance_for_ESGF.md'
+        'CMIP7/guidance_for_mips.md': 'CMIP7/Guidance_for_MIPs.md'
+        'CMIP7/guidance_for_modellers.md': 'CMIP7/Guidance_for_modellers.md'
+        'CMIP7/guidance_for_users.md': 'CMIP7/Guidance_for_users.md'
 
 # Hooks
 hooks:

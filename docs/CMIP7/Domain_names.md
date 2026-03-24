@@ -19,7 +19,7 @@ To update this list please raise an issue (pull requests welcome) via [github](h
 | PID / Handle service | `handle-esgf.dkrz.de` |
 | REF activities | `*.climate-ref.org` | 
 | REF documentation | `climate-ref.readthedocs.io` | 
-| LLNL ESGF Metagrid | `aims2.llnl.gov` | 
+| NERSC ESGF Metagrid | `metagrid.esgf-west.org` | 
 | ORNL ESGF Metagrid | `esgf-node.ornl.gov` | 
 | CEDA ESGF Metagrid | `esgf-ui.ceda.ac.uk` | 
 | DKRZ ESGF Metagrid | `esgf-metagrid.cloud.dkrz.de` | 
