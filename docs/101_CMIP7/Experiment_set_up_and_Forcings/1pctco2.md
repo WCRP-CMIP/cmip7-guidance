@@ -39,13 +39,13 @@ Branch from `piControl` at a time of your choosing.
 
 The `1pctCO2` experiment is a fixed forcings experiment, except for CO<sub>2</sub> which is transient.
 
-### Versions to use
-
-The forcings relevant for this simulation are the same as for the [piControl simulation](./picontrol.md).
-
 ### Notes
 
 See notes for the [piControl simulation](./picontrol.md).
+
+### Versions to use
+
+The forcings relevant for this simulation are the same as for the [piControl simulation](./picontrol.md).
 
 ### Getting the data
 

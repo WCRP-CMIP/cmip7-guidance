@@ -38,13 +38,13 @@ Only one ensemble member is required.
 
 See general headlines for the [`piClim-control` simulation](./piclim-control.md).
 
-### Versions to use
-
-The forcings relevant for this simulation are the same as for the [piClim-control simulation](./piclim-control.md).
-
 ### Notes
 
 See notes for the [piClim-control simulation](./piclim-control.md).
+
+### Versions to use
+
+The forcings relevant for this simulation are the same as for the [piClim-control simulation](./piclim-control.md).
 
 ### Getting the data
 

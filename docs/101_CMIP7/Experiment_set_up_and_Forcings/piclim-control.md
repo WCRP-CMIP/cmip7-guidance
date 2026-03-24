@@ -41,6 +41,10 @@ Only one ensemble member is required.
 The `piClim-control` experiment is a fixed forcings experiment.
 For further general headlines, please see the general headlines for the [piControl simulation](./picontrol.md).
 
+### Notes
+
+See notes for the [piControl simulation](./picontrol.md).
+
 ### Versions to use
 
 The forcings relevant for this simulation are the same as for the [piControl simulation](./picontrol.md).
@@ -51,10 +55,6 @@ they are not provided by a forcings provider.
 We recommend including information in your `piClim-control` output
 that identifies the `piControl` simulation and time period used to generate
 the prescribed sea-surface temperatures and sea-ice concentrations.
-
-### Notes
-
-See notes for the [piControl simulation](./picontrol.md).
 
 ### Getting the data
 

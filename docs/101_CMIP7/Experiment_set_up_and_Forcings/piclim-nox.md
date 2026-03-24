@@ -40,16 +40,16 @@ Only one ensemble member is required.
 
 See general headlines for the [`piClim-control` simulation](./piclim-control.md).
 
+### Notes
+
+See notes for the [piClim-control simulation](./piclim-control.md).
+
 ### Versions to use
 
 For the nitrous oxide (NOx) forcing,
 the forcing version relevant for this simulation is the same as for the [historical simulation](./historical.md).
 For all other forcings,
 the forcing versions relevant for this simulation are the same as for the [piClim-control simulation](./piclim-control.md).
-
-### Notes
-
-See notes for the [piClim-control simulation](./piclim-control.md).
 
 ### Getting the data
 

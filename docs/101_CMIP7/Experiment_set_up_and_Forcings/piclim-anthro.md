@@ -43,6 +43,10 @@ Only one ensemble member is required.
 
 See general headlines for the [`piClim-control` simulation](./piclim-control.md).
 
+### Notes
+
+See notes for the [piClim-control simulation](./piclim-control.md).
+
 ### Versions to use
 
 For natural forcings i.e. solar and stratospheric aerosol forcing,
@@ -50,10 +54,6 @@ and the prescribed sea-surface temperatures and sea-ice concentrations
 the relevant forcing is the same as for the [piClim-control simulation](./piclim-control.md).
 For all other forcings i.e. anthropogenic forcings,
 the forcing versions relevant for this simulation are the same as for the [historical simulation](./historical.md).
-
-### Notes
-
-See notes for the [piClim-control simulation](./piclim-control.md).
 
 ### Getting the data
 

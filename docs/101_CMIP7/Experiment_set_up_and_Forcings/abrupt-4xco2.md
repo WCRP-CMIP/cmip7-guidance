@@ -41,13 +41,13 @@ Branch from `piControl` at a time of your choosing.
 The `abrupt-4xCO2` experiment is a fixed forcings experiment.
 For further general headlines, please see the general headlines for the [piControl simulation](./picontrol.md).
 
-### Versions to use
-
-The forcings relevant for this simulation are the same as for the [piControl simulation](./picontrol.md).
-
 ### Notes
 
 See notes for the [piControl simulation](./picontrol.md).
+
+### Versions to use
+
+The forcings relevant for this simulation are the same as for the [piControl simulation](./picontrol.md).
 
 ### Getting the data
 

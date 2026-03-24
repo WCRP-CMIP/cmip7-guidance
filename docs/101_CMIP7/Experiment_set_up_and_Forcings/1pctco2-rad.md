@@ -42,13 +42,13 @@ Branch from `piControl` at a time of your choosing.
 
 See general headlines for the [1pctCO2 simulation](./1pctco2.md).
 
-### Versions to use
-
-The forcings relevant for this simulation are the same as for the [1pctCO2 simulation](./1pctco2.md).
-
 ### Notes
 
 See notes for the [1pctCO2 simulation](./1pctco2.md).
+
+### Versions to use
+
+The forcings relevant for this simulation are the same as for the [1pctCO2 simulation](./1pctco2.md).
 
 ### Getting the data
 

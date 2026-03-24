@@ -40,13 +40,13 @@ Branch from `piControl` at a time of your choosing.
 
 See general headlines for the [abrupt-4xCO2 simulation](./abrupt-4xco2.md).
 
-### Versions to use
-
-The forcings relevant for this simulation are the same as for the [piControl simulation](./picontrol.md).
-
 ### Notes
 
 See notes for the [piControl simulation](./picontrol.md).
+
+### Versions to use
+
+The forcings relevant for this simulation are the same as for the [piControl simulation](./picontrol.md).
 
 ### Getting the data
 

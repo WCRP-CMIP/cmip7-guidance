@@ -34,6 +34,15 @@ Only one ensemble member is required.
 
 The `amip` experiment is a time-varying forcings experiment.
 
+### Notes
+
+See notes for the [piControl simulation](./picontrol.md).
+<!-- TODO: auto-generate -->
+The following pages give further information on each forcing
+beyond the ones used in the [historical simulation](./historical.md):
+
+- AMIP sea-surface temperature and sea-ice boundary forcing: [input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/amip-sst-sea-ice-boundary-forcing](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/amip-sst-sea-ice-boundary-forcing/)
+
 ### Versions to use
 
 The forcings relevant for this simulation are the same as for the [historical simulation](./historical.md)
@@ -49,15 +58,6 @@ For all other forcings, please see the information on the [historical simulation
     "amip-sea-surface-temperature-and-sea-ice-boundary-forcing": ["PCMDI-AMIP-1-1-10"]
 }
 ```
-
-### Notes
-
-See notes for the [piControl simulation](./picontrol.md).
-<!-- TODO: auto-generate -->
-The following pages give further information on each forcing
-beyond the ones used in the [historical simulation](./historical.md):
-
-- AMIP sea-surface temperature and sea-ice boundary forcing: [input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/amip-sst-sea-ice-boundary-forcing](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/amip-sst-sea-ice-boundary-forcing/)
 
 ### Getting the data
 

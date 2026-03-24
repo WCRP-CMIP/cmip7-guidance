@@ -43,16 +43,16 @@ This branch time should match the branch time used for initialising the [histori
 The `hist-piAQ` experiment is a time-varying forcings experiment,
 except for aerosol and tropospheric non-methane ozone precursor emissions which should be fixed.
 
+### Notes
+
+See notes for the [piControl simulation](./picontrol.md) and [historical simulation](./historical.md).
+
 ### Versions to use
 
 For aerosol and trospheric non-methane ozone precursor emissions
 the relevant forcing is the same as for the [piControl simulation](./picontrol.md).
 For all other forcings,
 the forcing versions relevant for this simulation are the same as for the [historical simulation](./historical.md).
-
-### Notes
-
-See notes for the [piControl simulation](./picontrol.md) and [historical simulation](./historical.md).
 
 ### Getting the data
 
