@@ -7,8 +7,8 @@ title: Branded Variables for CMIP7
 
 A new naming system for variables is being introduced in CMIP7, referred to as **branded variables**.
 The new system retains the familiar short variable names used in earlier CMIP phases to denote a physical quantity ("pr" for precipitation, for example). 
-It introduces a new label, termed the **branded suffix** or **branding label**, that describes how a variable is sampled temporally and spatially.
-This label is used in the output filenames and directory path structures of CMIP7 datasets.
+It introduces a new metadata attribute, termed the **branding suffix**, that describes how a variable is sampled temporally and spatially.
+The branding suffix is a [global attribute](https://doi.org/10.5281/zenodo.17250296) that is used in the output filenames and directory path structures of CMIP7 datasets.
 
 For comparison with the previous CMIP naming scheme for variables, consider the global monthly-mean near-surface air temperature, which in CMIP6 was denoted as "tas" in the "Amon" MIP table (a MIP table is also sometimes referred to as a CMOR table).
 A compound name constructed from these terms, "Amon.tas", uniquely identifies the variable in the collection of all CMIP6 variables.
@@ -17,14 +17,14 @@ While familiar to experienced users of CMIP data, this system led to a prolifera
 
 The **branded variable** corresponding to "Amon.tas" is "tas_tavg-h2m-hxy-u".
 Here the short name identifying the physical quantity, "tas", is unchanged.
-The branding label, "tavg-h2m-hxy-u", describes how the variable is temporally and spatially sampled and is composed of four parts:
+The branding suffix, "tavg-h2m-hxy-u", describes how the variable is temporally and spatially sampled and is composed of four parts:
 
 - **temporal label**: "tavg" indicates a time average.
 - **vertical label**: "h2m" indicates near-surface at 2m above ground.
 - **horizontal label**: "hxy" indicates a horizontal field spanning latitude and longitude.
 - **area label**: "u" indicates "unmasked".
 
-Branding labels are always composed of these four components, and their various possible values are [tabulated below](#branding-labels).
+Branding suffixes are always composed of these four components, and their various possible values are [tabulated below](#branding-suffixes).
 
 Importantly, "tas_tavg-h2m-hxy-u" is not *fully* equivalent to "Amon.tas". 
 This is because the branded variable name does not identify a variable's frequency, or its region.
@@ -43,16 +43,16 @@ For example, "tas_tavg-h2m-hxy-u" reported at daily frequency is denoted "day.ta
 
 The branded variable approach (Taylor et al., in preparation) aims to be more systematic and scalable to future CMIP phases and wider use across community MIPs and other WCRP projects.
 [CMOR tables](https://github.com/WCRP-CMIP/cmip7-cmor-tables) keyed by branded variable name define the metadata characteristics of variables apart from the frequency, region, or specific grids on which these variables should be reported.
-Guidance on reporting grids for CMIP output is [given here](https://zenodo.org/records/15697025).
+Guidance on reporting grids for CMIP output is [given here](https://doi.org/10.5281/zenodo.15697024).
 The exact reporting convention for grids and associated CV is being finalised; if you wish to see the full discussion, please see https://github.com/WCRP-CMIP/CMIP7-CVs/issues/202.
 
 
-## Branding labels
+## Branding suffixes
 
-The four components of the branded variables are derived from variable metadata using the 
+The four components of the branding suffix are derived from variable metadata using the 
 [cmip-branded-variable-mapper package](https://cmip-branded-variable-mapper.readthedocs.io/en/latest/).
-The following tables show the meaning of each element of the branding.
-Each of these labels is a global attribute written to output netCDF files (`temporal_label`, `vertical_label`, `horizontal_label`, `area_label`).
+The following tables show the meaning of each element of a branding suffix.
+Each of these labels is a [global attribute](https://doi.org/10.5281/zenodo.17250296) written to output netCDF files (`temporal_label`, `vertical_label`, `horizontal_label`, `area_label`).
 
 ### Temporal labels
 
@@ -133,7 +133,7 @@ Set to "u" (unspecified) if none of the following apply.
 
 Identifies how the variable is sampled horizontally: function of latitude and longitude, only latitude, site data, etc.
 Note that this label does **not** denote a particular choice of reporting grid (e.g., 1° × 1°).
-Guidance on reporting grids can be [found here](https://zenodo.org/records/15697025).
+Guidance on reporting grids can be [found here](https://doi.org/10.5281/zenodo.15697024).
 
 | Label | Notes |
 | --- | --- |
