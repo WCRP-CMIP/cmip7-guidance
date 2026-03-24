@@ -10,7 +10,7 @@ In combination with `piClim-control`, quantifies a quadrupling of atmospheric ca
 
 ## Experiment set up
 
-The piClim-anthro simulation uses the same forcings as [piClim-control](./piclim-control.md),
+The piClim-4xCO2 simulation uses the same forcings as [piClim-control](./piclim-control.md),
 except atmospheric CO<sub>2</sub> concentrations
 are set to four times the concentrations used in the [piclim-control](./piclim-control.md) simulation.
 <!-- TODO: consider whether we can generate these sentences automatically based on esgvoc -->
@@ -28,7 +28,7 @@ Only one ensemble member is required.
     `<experiment-name>` branches from the `<parent-experiment-name>` simulation (part of `<parent-experiment-activity>`).
 -->
 <!-- TODO: check if there is meant to be a spinup -->
-`piClim-anthro` does not branch from another simulation.
+`piClim-4xCO2` does not branch from another simulation.
 
 ## Forcings
 
