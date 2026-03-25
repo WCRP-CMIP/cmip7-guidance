@@ -6,34 +6,35 @@ title: Branded Variables for CMIP7
 # Branded Variables for CMIP7
 
 A new naming system for variables is being introduced in CMIP7, referred to as **branded variables**.
-The new system retains the familiar short variable names used in earlier CMIP phases to denote a physical quantity ("pr" for precipitation, for example). 
+The new system retains the familiar short variable names used in earlier CMIP phases to denote a physical quantity (`pr` for precipitation, for example). 
 It introduces a new metadata attribute, termed the **branding suffix**, that describes how a variable is sampled temporally and spatially.
-The new naming system is intended to make it **easier to find the variables you want**.
+The new naming system is intended to make it *easier to find the variables you want*.
 The branding suffix is a [global metadata attribute](https://doi.org/10.5281/zenodo.17250296), and is used in the output filenames and directory path structures of CMIP7 datasets.
 
-For comparison with the previous CMIP naming scheme for variables, consider the global monthly-mean near-surface air temperature, which in CMIP6 was denoted as "tas" in the "Amon" MIP table (a MIP table is also sometimes referred to as a CMOR table).
-A compound name constructed from these terms, "Amon.tas", uniquely identifies the variable in the collection of all CMIP6 variables.
-The "Amon" table is a collection of atmospheric variables at monthly frequency, and other MIP tables (Omon, SImon, ...) collect together other variables that usually are similar in realm, frequency, and region.
-While familiar to experienced users of CMIP data, this system led to a proliferation of table names in CMIP6 due to the large number of requested variables (~2000), and the rationale for their names was not always clear (for example, table name "Amon" included the realm while "3hr" and "day" used only the frequency).
+For comparison with the previous CMIP naming scheme for variables, consider the global monthly-mean near-surface air temperature, which in CMIP6 was denoted as `tas` in the `Amon` MIP table (a MIP table is also sometimes referred to as a CMOR table).
+A compound name constructed from these terms, `Amon.tas`, uniquely identifies the variable in the collection of all CMIP6 variables.
+The `Amon` table is a collection of atmospheric variables at monthly frequency, and other MIP tables (`Omon`, `SImon`, ...) collect together other variables that usually are similar in realm, frequency, and region.
+While familiar to experienced users of CMIP data, this system led to a proliferation of table names in CMIP6 due to the large number of requested variables (~2000), and the rationale for their names was not always clear (for example, table name `Amon` included the realm while `3hr` and `day` used only the frequency).
 
-The **branded variable** corresponding to "Amon.tas" is "tas_tavg-h2m-hxy-u".
-Here the short name identifying the physical quantity, "tas", is unchanged.
-The branding suffix, "tavg-h2m-hxy-u", describes how the variable is temporally and spatially sampled and is composed of four parts:
+The **branded variable** corresponding to `Amon.tas` is `tas_tavg-h2m-hxy-u`.
+Here the short name identifying the physical quantity, `tas`, is unchanged.
+The **branding suffix**, `tavg-h2m-hxy-u`, describes how the variable is temporally and spatially sampled and is composed of four parts:
 
-- **temporal label**: "tavg" indicates a time average.
-- **vertical label**: "h2m" indicates near-surface at 2m above ground.
-- **horizontal label**: "hxy" indicates a horizontal field spanning latitude and longitude.
-- **area label**: "u" indicates "unmasked".
+- **temporal label**: `tavg` indicates a time average.
+- **vertical label**: `h2m` indicates near-surface at 2m above ground.
+- **horizontal label**: `hxy` indicates a horizontal field spanning latitude and longitude.
+- **area label**: `u` indicates "unmasked".
 
-Branding suffixes are always composed of these four components, and their various possible values are [tabulated below](#branding-suffixes).
+Branding suffixes are always composed of these four labels. The possible values for each type of label are [tabulated below](#branding-suffixes).
 
-Importantly, "tas_tavg-h2m-hxy-u" is not *fully* equivalent to "Amon.tas". 
-This is because the branded variable name does not identify a variable's frequency, or its region.
-By *additionally* specifying the frequency as monthly, and the region as global, "tas_tavg-h2m-hxy-u" then becomes equivalent to "Amon.tas".
+Importantly, `tas_tavg-h2m-hxy-u` is not *fully* equivalent to `Amon.tas`. 
+This is because a branded variable name does not identify a requested variable's frequency, or its region.
+By *additionally* specifying the frequency as monthly, and the region as global, `tas_tavg-h2m-hxy-u` then becomes equivalent to `Amon.tas`.
 The same branded variable could alternately be reported at other frequencies, or for other regions.
-For example, "tas_tavg-h2m-hxy-u" reported at daily frequency is denoted "day.tas" in CMIP6.
+For example, `tas_tavg-h2m-hxy-u` reported at daily frequency is denoted `day.tas` in CMIP6.
 
 !!! note "Viewing branded variables in the Data Request"
+
 
     The branded variable name, frequency, and region of every requested variable are specified in the CMIP7 Data Request.
     The Data Request can be viewed using [Airtable](https://bit.ly/CMIP7-DReq-latest), the [github-based web viewer](https://cmip-data-request.github.io/cmip7-dreq-webview/latest/index.html), or the [python API](https://github.com/CMIP-Data-Request/CMIP7_DReq_software).
@@ -41,7 +42,9 @@ For example, "tas_tavg-h2m-hxy-u" reported at daily frequency is denoted "day.ta
     For every variable, the Data Request specifies *both* its CMIP7-era branded name and CMIP6-era name.
     This provides a mapping from old to new names, to simplify the transition to branded names.
     The ["Variables" table of the Data Request](https://cmip-data-request.github.io/cmip7-dreq-webview/latest/variables.html) provides a unique identifier using both flavours of name, termed "CMIP7 Compound Name" and "CMIP6 Compound Name".
-    For the above example (monthly near-surface air temperature) these are "atmos.tas.tavg-h2m-hxy-u.mon.GLB" and "Amon.tas", respectively.
+    For the above example (monthly near-surface air temperature) these are `atmos.tas.tavg-h2m-hxy-u.mon.glb` and `Amon.tas`, respectively.
+    [See below](#variable-names) for further clarification of the meaning of different types of variable names.
+
 
 The branded variable approach (Taylor et al., in preparation) aims to be more systematic and scalable to future CMIP phases and wider use across community MIPs and other WCRP projects.
 [CMOR tables](https://github.com/WCRP-CMIP/cmip7-cmor-tables) keyed by branded variable name define the metadata characteristics of variables apart from the frequency, region, or specific grids on which these variables should be reported.
@@ -52,31 +55,33 @@ The metadata conventions for describing grids in the CMIP7 CVs are explained in 
 
 ## Variable names
 
-A potentially confusing feature of CMIP metadata is that "variable name" may not always refer to the same type of variable name. 
-To disambiguate the different flavours of variable name used in the CMIP7 Data Request and CVs, we provide a brief glossary here:
+There are several CMIP7 metadata attributes that may be referred to as a "variable name", depending on the context.
+For example, the name of a branded variable does not specify its frequency or region. 
+Similarly, the short name of a physical quantity such as `pr` does not specify how it is spatiotemporally sampled (i.e., it lacks the information conveyed by a branding suffix).
+To disambiguate the different flavours of variable name used in the CMIP7 Data Request and CVs, a brief glossary is provided:
 
-- `variable_id` is the "short name" familiar to many users (e.g., "tas", "pr", "sos"). It is a [global attribute](https://doi.org/10.5281/zenodo.17250296).
-- `root name` is the beginning of a branded variable name (e.g., "tas_tavg-h2m-hxy-u"). It is identical to `variable_id`.
-- `out_name` is found in [CMOR tables](https://github.com/WCRP-CMIP/cmip7-cmor-tables) where it specifies the name of the data variable in a CMORized netcdf file. It is identical to `variable_id`.
-- `physical parameter name` is the short name used in the Data Request to identify a physical quantity, and is associated with a CF standard name. It is the "Name" column in the "Physical Parameters" table of the [Airtable view](https://bit.ly/CMIP7-DReq-latest) of the Data Request. It is *usually* equivalent to the `variable_id` used in CMIP7, but there are some exceptions, as [tabulated below](#physical-parameter-name-changes).
-- `branded_variable` is composed of a `root name` followed by a `branding suffix` (e.g., "tas_tavg-h2m-hxy-u"), as [described above](#branded-variables-for-cmip7). It is a [global attribute](https://doi.org/10.5281/zenodo.17250296).
-- `Data Request variable` indicates a requested variable specified by a row in the "Variables" table of the [Airtable view](https://bit.ly/CMIP7-DReq-latest) of the Data Request. A requested variable corresponds to a single `branded variable`, but additionally specifies the frequency, region, and requested grid on which the variable should be provided.
-- `cmip6_compound_name` uniquely identifies a Data Request variable in both the CMIP6 and CMIP7 Data Requests. It is composed of a MIP table name (aka CMOR table name) followed by a `physical parameter name` (e.g. "Amon.tas").
-- `cmip7_compound_name` uniquely identifies a Data Request variable in the CMIP7 Data Request. It is composed of four parts: realm, `branded variable`, frequency, and region (e.g. "atmos.tas.tavg-h2m-hxy-u.mon.glb").
+- **variable_id** is the short name of a physical quantity that is familiar to many users from previous CMIP phases (e.g., `tas`, `pr`, `sos`). It is a mandatory [global attribute](https://doi.org/10.5281/zenodo.17250296).
+- **root name** refers to the first component of a branded variable name (e.g., `tas_tavg-h2m-hxy-u`), and is always identical to **variable_id**.
+- **out_name** is found in [CMOR tables](https://github.com/WCRP-CMIP/cmip7-cmor-tables) where it specifies the name of the data variable in a CMORized netcdf file, and is always identical to **variable_id**.
+- **physical parameter name** is the short name used in the CMIP7 Data Request to identify a physical quantity, and is associated with a CF standard name. It is the "Name" column in the "Physical Parameters" table of the [Airtable view](https://bit.ly/CMIP7-DReq-latest) of the Data Request. It is *usually* equivalent to the **root name** (i.e., the **variable_id**), which is given by the "variableRootDD" column in the "Physical Parameters" table. However there are a number of exceptions, which are [tabulated below](#physical-parameter-name-changes).
+- **branded_variable** is composed of the **root name** followed by a **branding suffix** (e.g., `tas_tavg-h2m-hxy-u`), as [described above](#branded-variables-for-cmip7). It is a mandatory [global attribute](https://doi.org/10.5281/zenodo.17250296).
+- **Data Request variable** refers to a requested variable specified by a row in the "Variables" table of the [Airtable view](https://bit.ly/CMIP7-DReq-latest) of the Data Request. A requested variable corresponds to a single **branded_variable**, but additionally specifies the frequency, region, and reporting grid (atmosphere, ocean, ...) on which the variable should be provided.
+- **CMIP7 compound name** uniquely identifies a Data Request variable in the CMIP7 Data Request. It is composed of four parts: realm, **root name**, **branding suffix**, frequency, and region (e.g. `atmos.tas.tavg-h2m-hxy-u.mon.glb`). The four latter parts of the **CMIP7 compound name** - essentially the **branded variable** plus frequency and region - are required to uniquely identify a **Data Request variable** in the collection of CMIP7 requested variables. The realm is not strictly required for uniqueness, but is included in the compound name so that users can easily identify requested variables associated with a given realm. The realm used in the **CMIP7 compound name** is the **primary realm** identifed by the "Modelling Realm - Primary" column in the "Variables" table of the [Airtable view](https://bit.ly/CMIP7-DReq-latest) of the Data Request. The primary realm is also used to group variables in the [CMIP7 CMOR tables](https://github.com/WCRP-CMIP/cmip7-cmor-tables).
+- **CMIP6 compound name** is another unique identifier of Data Request variables in the CMIP7 Data Request. It also uniquely identifies a requested variable in the CMIP6 Data Request, if the variable was included in CMIP6, but regardless all CMIP7 requested variables are assigned a **CMIP6 compound name** even if they were not included in CMIP6. This flavour of compound name is composed of a MIP table name (aka CMOR table name) followed by short name that is *usually* identical to the **physical parameter name** (e.g., `Amon.tas`). There are some exceptions, [tabulated below](#physical-parameter-name-changes), in which extra information is appended to the end of the short name (e.g., `Amon.tasSouth30`). However, the short variable name used in the **CMIP6 compound name** always *begins* with the **physical parameter name**. The **CMIP6 compound name** is included in the CMIP7 Data Request because these names are familiar to many users, in order to help them navigate the transition to the new CMIP7 variable naming scheme based on **branded variables**.
 
 
 ## Branding suffixes
 
 The four components of the branding suffix are derived from variable metadata using the 
-[cmip-branded-variable-mapper package](https://cmip-branded-variable-mapper.readthedocs.io/en/latest/).
+[cmip-branded-variable-mapper python package](https://cmip-branded-variable-mapper.readthedocs.io/en/latest/).
 The following tables show the meaning of each element of a branding suffix.
-Each of these labels is a [global attribute](https://doi.org/10.5281/zenodo.17250296) written to output netCDF files (`temporal_label`, `vertical_label`, `horizontal_label`, `area_label`).
+Each of these labels is a mandatory [global attribute](https://doi.org/10.5281/zenodo.17250296) written to output netCDF files (**temporal_label**, **vertical_label**, **horizontal_label**, **area_label**).
 
 ### Temporal labels
 
-Identifies how the variable is sampled in the time domain: time average, instantaneous, etc.
+The **temporal_label** identifies how the variable is sampled in the time domain: time average, instantaneous, etc.
 
-| Label | notes |
+| Label | Notes |
 | --- | --- |
 | `tavg` | Time average (cell_methods include `time: mean`) |
 | `tclm` | Climatology (dimensions use `time2`) |
@@ -91,8 +96,8 @@ Identifies how the variable is sampled in the time domain: time average, instant
 
 ### Vertical labels
 
-Identifies how the variable is sampled in the vertical domain: on pressure levels, model levels, at a single level, etc.
-Set to "u" (unspecified) if none of the following apply.
+The **vertical_label** identifies how the variable is sampled in the vertical domain: on pressure levels, model levels, at a single level, etc.
+It is set to `u` (unspecified) if none of the following apply.
 
 | Label | Data Request Dimension |
 | --- | --- | 
@@ -149,8 +154,8 @@ Set to "u" (unspecified) if none of the following apply.
 
 ### Horizontal labels
 
-Identifies how the variable is sampled horizontally: function of latitude and longitude, only latitude, site data, etc.
-Note that this label does **not** denote a particular choice of reporting grid (e.g., 1° × 1°).
+The **horizontal_label** identifies how the variable is sampled horizontally: function of latitude and longitude, only latitude, site data, etc.
+Note that this label does **not** denote a particular choice of reporting grid (e.g., a 1° × 1° latitude-longitude grid).
 Guidance on reporting grids can be [found here](https://doi.org/10.5281/zenodo.15697024).
 
 | Label | Notes |
@@ -164,8 +169,8 @@ Guidance on reporting grids can be [found here](https://doi.org/10.5281/zenodo.1
 
 ### Area labels
 
-Identifies the unmasked area type for which data are reported: sea ice, land, ice sheet, etc.
-Set to "u" (unmasked) if no masking is applied.
+The **area_label** identifies the unmasked area type for which data are reported: sea ice, land, ice sheet, etc.
+It is set to `u` (unmasked) if no masking is applied.
 
 | Label | Corresponding masking in cell_methods |
 | --- | --- | 
@@ -195,6 +200,7 @@ Set to "u" (unmasked) if no masking is applied.
 | `veg` | `where vegetation` |
 | `wl` | `where wetland` |
 | `u`  | unmasked (no "where" directive included in `cell_methods`) |
+
 
 ## Physical parameter name changes
 
