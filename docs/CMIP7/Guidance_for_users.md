@@ -6,7 +6,7 @@ title: CMIP7 Guidance for Data Users
 # CMIP7 Guidance for Data Users
 
 
-This page is designed to inform users of climate model outputs on key CMIP7 concepts and tools. It is a landing page to redirect them to the proper resources to learn more.
+This page is designed to inform users of climate model outputs on key CMIP7 concepts and tools. It is a landing page to provide context and to redirect them to the proper resources to learn more.
 
 
 
@@ -45,13 +45,9 @@ There are 3 options to access the data:
     While all published CMIP7 data is available from ESGF, some of it is additionally hosted in non-ESGF storage facilities. Below are links to some of these replicas. If you know of another place CMIP data is currently being stored, please submit [this form][altaccess] to let us and the community know!
 
     * The [Pangeo / ESGF Cloud Data Working Group][pangeo] is working on providing cloud access for CMIP7 ARCO data. Contributions are welcomed [here][virtual].
-    * MORE COMING SOON
 
 
     For all non-ESGF data access routes, we encourage users to verify that the data used is the latest version. 
-
-    !!! Info 
-        Contributions are invited to help virtualizing CMIP7 zarrs.
 
 
 ## 2.  Terms of use and citations requirements
@@ -304,9 +300,11 @@ Proposing erratum through the webform requires a contact email address. Once the
 
 ## 6. New to CMIP?
 
-First time using CMIP? Need a bit more help ? Check out the [Entry-Level Documentation][eld] (coming soon), put together by the [Fresh Eyes on CMIP][FeoC] group.
+First time using CMIP? Need a bit more help ? Check these ressources out:
 
-You have a more specific question ? Ask it on the [Fresh Eyes Platform][platform]. (You need to register [here][register] first.)
+* [Entry-Level Documentation][eld] (coming soon), put together by the [Fresh Eyes on CMIP][FeoC] group.
+* [List of tools for using climate data][tools].
+* You have a more specific question ? Ask it on the [Fresh Eyes Platform][platform]. (You need to register [here][register] first.)
 
 
 
@@ -361,6 +359,8 @@ You have a more specific question ? Ask it on the [Fresh Eyes Platform][platform
 [altaccess]: http://bit.ly/CMIP-data-platform
 [disclaimer]: https://doi.org/10.5281/zenodo.18155119
 [virtual]: https://github.com/carbonplan/cmip7-virtualization
+[pangeo]: https://pangeo-data.github.io/pangeo-cmip6-cloud/
+[tools]: https://wcrp-cmip.org/tools/
 
  <!-- CMIP7 links -->
 [GMDSpecialIssue]: https://gmd.copernicus.org/articles/special_issue1315.html
@@ -388,7 +388,7 @@ You have a more specific question ? Ask it on the [Fresh Eyes Platform][platform
 [levellist]: https://cmip6dr.github.io/Data_Request_Home/Documents/CMIP6_pressure_levels.pdf?id=88 
 [freqlist]: https://github.com/WCRP-CMIP/CMIP6_CVs/blob/main/CMIP6_frequency.json
 [maskavg]: https://wcrp-cmip.github.io/WGCM_Infrastructure_Panel/CMIP6/time_and_area_averaging.html -->
-[pangeo]: https://pangeo-data.github.io/pangeo-cmip6-cloud/
+
 
  <!-- unknown links -->
 [CMIPpubs]:  ?
