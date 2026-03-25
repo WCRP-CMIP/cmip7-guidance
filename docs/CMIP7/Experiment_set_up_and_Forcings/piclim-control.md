@@ -16,7 +16,8 @@ Baseline for effective radiative forcing (ERF) calculations. `piControl` with pr
 The piClim-control simulation uses the same forcings as [piControl](./picontrol.md),
 with the extra specification that sea-surface temperatures and sea-ice concentrations are prescribed.
 The prescribed sea-surface temperatures and sea-ice concentrations
-must come from a (monthly varying) climatology taken from 30 years of your [pre-industrial control](./picontrol.md) simulation
+must come from a (monthly varying, annually repeating)
+climatology taken from at least 30 years of your [pre-industrial control](./picontrol.md) simulation
 (i.e. these forcings are derived from your model output from one of your own simulations,
 they are not provided by a forcings provider).
 <!-- TODO: consider whether we can generate these sentences automatically based on esgvoc -->
