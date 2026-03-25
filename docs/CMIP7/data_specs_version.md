@@ -17,7 +17,7 @@ CMIP7 files include three versioning-related global attributes:
 |-----------|---------|-------------|
 | **Conventions** | CF conventions version | `CF-1.12` (or later) |
 | **drs_specs** | Data Reference Syntax identifier | `MIP-DRS7` |
-| **data_specs_version** | Version of CVs and data specifications | `MIP-DS7.0.0.0` |
+| **data_specs_version** | Version of CVs and data specifications | `MIP-DS7.1.0.0` |
 
 ---
 
@@ -44,7 +44,7 @@ Identifies the Data Reference Syntax (DRS) used for file naming and directory st
 
 Identifies the version of data specifications used when creating the file.
 
-**Initial value for CMIP7**: `MIP-DS7.0.0.0`
+**Initial value for CMIP7**: `MIP-DS7.1.0.0`
 
 The detailed versioning scheme (what triggers version increments) is still under discussion.
 
@@ -52,7 +52,7 @@ The detailed versioning scheme (what triggers version increments) is still under
 
 ## 3. Current Version
 
-### MIP-DS7.0.0.0
+### MIP-DS7.1.0.0
 
 **Release date**: February 2026
 
@@ -62,7 +62,7 @@ The detailed versioning scheme (what triggers version increments) is still under
 |-----------|---------|-----------|
 | Global attributes & DRS | v1.0 | [DOI: 10.5281/zenodo.17250297](https://doi.org/10.5281/zenodo.17250297) |
 | Data Request | v1.2.2.3 | [CMIP7 Data Request](https://github.com/CMIP-Data-Request/CMIP7_DReq_Software) |
-| Controlled Vocabularies | v7.0.0.0 | [CMIP7-CVs](https://github.com/WCRP-CMIP/CMIP7_CVs/) |
+| Controlled Vocabularies | v7.1.0.0 | [CMIP7-CVs](https://github.com/WCRP-CMIP/CMIP7_CVs/) |
 
 ---
 
@@ -96,7 +96,7 @@ This is a strict requirement for the CMIP7 Fast Track. Files produced under diff
 
 | Version | Date | Changes |
 |---------|------|---------|
-| `MIP-DS7.0.0.0` | Feb 2026 | Initial release for CMIP7 Fast Track |
+| `MIP-DS7.1.0.0` | Feb 2026 | Initial release for CMIP7 Fast Track |
 
 *Future versions will be documented here with detailed changelogs.*
 
