@@ -21,8 +21,12 @@ climatology taken from at least 30 years of your [pre-industrial control](./pico
 (i.e. these forcings are derived from your model output from one of your own simulations,
 they are not provided by a forcings provider).
 <!-- TODO: consider whether we can generate these sentences automatically based on esgvoc -->
-You are free to start the time axis of your outputs at whatever year you like
-(e.g. starting at year 1, or 1850, or year 500).
+The start-time of the simulation is not tied to a particular year but, rather, can be chosen arbitrarily
+(e.g., year 200 or year 1850 or year 1).
+If you have no other strong feeling, then it may be clearest to set the start-time
+to be equal to the middle of the period over which the climatology was taken from the pre-industrial control experiment.
+For example, if your climatology is taken over the years 120-150 in the pre-industrial control experiment,
+then you could start the time axis of your `piClim-control` at 135.
 Simulations should be at least 30 years in length.
 Only one ensemble member is required.
 
