@@ -103,7 +103,7 @@ Please refer to the [user documentation](https://esg-publisher.readthedocs.io/en
 2. Mountpoint map to data on the same host as the publisher software installation, so the publisher has access to scan data using the integrated XArray package.
 3. Basic dataset information provided via the esg mapfile format. For example using the esgf-prepare/esgmapfile utility.
 
-### 2.4 Dataset publication
+### 2.5 Dataset publication
 Full details of the dataset publication process using _pip install_ to install _esgcet_ can be found [here](https://esg-publisher.readthedocs.io/en/stable/install.html)
 
 In the examples below, the configuration file is installed in a default location of `$HOME/.esg.yaml`.  the `<DRS-dataset-id>` follows the CMIP7 DRS structure and uses dot `.` delimters between each controlled-vocabulary property ending with the *Directory Date* as in the form `v20YYMMDD`.
