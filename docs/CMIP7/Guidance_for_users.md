@@ -42,7 +42,7 @@ There are 3 options to access the data:
 
 3. **Alternative Access Platforms**
 
-    While all published CMIP7 data is available from ESGF, some of it is additionally hosted in non-ESGF storage facilities. Below are links to some of these replicas. If you know of another place CMIP data is currently being stored, please submit [this form][altaccess] to let us and the community know!
+    While all published CMIP7 data is available from ESGF, some of it is additionally hosted in non-ESGF storage facilities. Some of this data is hosted in the cloud, which can allow for streaming of the data instead of downloading.  Below are links to some of these replicas. If you know of another place CMIP data is currently being stored, please submit [this form][altaccess] to let us and the community know!
 
     * The [Pangeo / ESGF Cloud Data Working Group][pangeo] is working on providing cloud access for CMIP7 ARCO data. Contributions are welcomed [here][virtual].
 
