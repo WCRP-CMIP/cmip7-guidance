@@ -42,12 +42,18 @@ There are 3 options to access the data:
 
 3. **Alternative Access Platforms**
 
-    While all published CMIP7 data is available from ESGF, some of it is additionally hosted in non-ESGF storage facilities. Some of this data is hosted in the cloud, which can allow for streaming of the data instead of downloading.  Below are links to some of these replicas. If you know of another place CMIP data is currently being stored, please submit [this form][altaccess] to let us and the community know!
+    While all published CMIP7 data is available from ESGF, some of it is additionally hosted in non-ESGF storage facilities. Below are links to some of these replicas. If you know of another place CMIP data is currently being stored, please submit [this form][altaccess] to let us and the community know!
 
-    * The [Pangeo / ESGF Cloud Data Working Group][pangeo] is working on providing cloud access for CMIP7 ARCO data. Contributions are welcomed [here][virtual].
+    * The [Pangeo / ESGF Cloud Data Working Group][pangeo] is working on providing cloud access for CMIP7 ARCO data. 
 
 
     For all non-ESGF data access routes, we encourage users to verify that the data used is the latest version. 
+
+    ??? info "Analysis-Ready Cloud-Optimized data"
+
+        Data hosted in the cloud can be very useful for users with fewer ressources. Indeed, data can be streamed and the analysis can be done remotely close to the storage, instead of downloading it locally. For efficient analysis in the cloud, the data needs to be in an Analysis-Ready Cloud-Optimized (ARCO) format. The Pangeo / ESGF Cloud Data Working Group are working on tools (e.g., [virtualizarr][virtualizarr]) for this purpose. Contributions are welcomed [here][virtual].
+
+
 
 
 ## 2.  Terms of use and citations requirements
@@ -361,6 +367,7 @@ First time using CMIP? Need a bit more help ? Check these ressources out:
 [virtual]: https://github.com/carbonplan/cmip7-virtualization
 [pangeo]: https://pangeo-data.github.io/pangeo-cmip6-cloud/
 [tools]: https://wcrp-cmip.org/tools/
+[virtualizar]: https://virtualizarr.readthedocs.io/en/stable/
 
  <!-- CMIP7 links -->
 [GMDSpecialIssue]: https://gmd.copernicus.org/articles/special_issue1315.html
