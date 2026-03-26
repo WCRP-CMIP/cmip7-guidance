@@ -18,7 +18,7 @@ This document **summarizes** the definitions of the **global attributes**, **Dat
 
 It is intended as a convenient reference and overview.  
 The **authoritative and complete specification** is available on Zenodo:  
-➡️ [https://doi.org/10.5281/zenodo.17250297](https://doi.org/10.5281/zenodo.17250297)
+➡️ <https://doi.org/10.5281/zenodo.17250296>
 
 Each CMIP7 model output file includes standardized metadata (global attributes) describing:
 
