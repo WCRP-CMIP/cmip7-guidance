@@ -155,7 +155,7 @@ It is set to `u` (unspecified) if none of the following apply.
 ### Horizontal labels
 
 The **horizontal_label** identifies how the variable is sampled horizontally: function of latitude and longitude, only latitude, site data, etc.
-Note that this label does **not** denote a particular choice of reporting grid (e.g., a 1° × 1° latitude-longitude grid).
+Note that this label does *not* denote a particular choice of reporting grid (e.g., a 1° × 1° latitude-longitude grid).
 Guidance on reporting grids can be [found here][grids-guidance-latest].
 
 | Label | Notes |
