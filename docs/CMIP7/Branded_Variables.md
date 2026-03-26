@@ -9,7 +9,7 @@ A new naming system for variables is being introduced in CMIP7, referred to as *
 The new system retains the familiar short variable names used in earlier CMIP phases to denote a physical quantity (`pr` for precipitation, for example). 
 It introduces a new metadata attribute, termed the **branding suffix**, that describes how a variable is sampled temporally and spatially.
 The new naming system is intended to make it *easier to find the variables you want*.
-The branding suffix is a [global metadata attribute](https://doi.org/10.5281/zenodo.17250296), and is used in the output filenames and directory path structures of CMIP7 datasets.
+The branding suffix is a [global metadata attribute][global-attributes-latest], and is used in the output filenames and directory path structures of CMIP7 datasets.
 
 For comparison with the previous CMIP naming scheme for variables, consider the global monthly-mean near-surface air temperature, which in CMIP6 was denoted as `tas` in the `Amon` MIP table (a MIP table is also sometimes referred to as a CMOR table).
 A compound name constructed from these terms, `Amon.tas`, uniquely identifies the variable in the collection of all CMIP6 variables.
@@ -47,8 +47,8 @@ For example, `tas_tavg-h2m-hxy-u` reported at daily frequency is denoted `day.ta
 
 
 The branded variable approach (Taylor et al., in preparation) aims to be more systematic and scalable to future CMIP phases and wider use across community MIPs and other WCRP projects.
-[CMOR tables](https://github.com/WCRP-CMIP/cmip7-cmor-tables) keyed by branded variable name define the metadata characteristics of variables apart from the frequency, region, or specific grids on which these variables should be reported.
-Guidance on reporting grids for CMIP output is [given here](https://doi.org/10.5281/zenodo.15697024).
+[CMOR tables][cmip7-cmor-tables] keyed by branded variable name define the metadata characteristics of variables apart from the frequency, region, or specific grids on which these variables should be reported.
+Guidance on reporting grids for CMIP output is [given here][grids-guidance-latest].
 The metadata conventions for describing grids in the CMIP7 CVs are explained in the [Essential Model Documentation guidance pages](https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/).
 <!-- The exact reporting convention for grids and associated CV is being finalised; if you wish to see the full discussion, please see https://github.com/WCRP-CMIP/CMIP7-CVs/issues/202. -->
 
@@ -60,13 +60,13 @@ For example, the name of a branded variable does not specify its frequency or re
 Similarly, the short name of a physical quantity such as `pr` does not specify how it is spatiotemporally sampled (i.e., it lacks the information conveyed by a branding suffix).
 To disambiguate the different flavours of variable name used in the CMIP7 Data Request and CVs, a brief glossary is provided:
 
-- **variable_id** is the short name of a physical quantity that is familiar to many users from previous CMIP phases (e.g., `tas`, `pr`, `sos`). It is a mandatory [global attribute](https://doi.org/10.5281/zenodo.17250296).
+- **variable_id** is the short name of a physical quantity that is familiar to many users from previous CMIP phases (e.g., `tas`, `pr`, `sos`). It is a mandatory [global attribute][global-attributes-latest].
 - **root name** refers to the first component of a branded variable name (e.g., `tas_tavg-h2m-hxy-u`), and is always identical to **variable_id**.
-- **out_name** is found in [CMOR tables](https://github.com/WCRP-CMIP/cmip7-cmor-tables) where it specifies the name of the data variable in a CMORized netcdf file, and is always identical to **variable_id**.
+- **out_name** is found in [CMOR tables][cmip7-cmor-tables] where it specifies the name of the data variable in a CMORized netcdf file, and is always identical to **variable_id**.
 - **physical parameter name** is the short name used in the CMIP7 Data Request to identify a physical quantity, with an associated CF standard name. It is the "Name" column in the "Physical Parameters" table of the [Airtable view](https://bit.ly/CMIP7-DReq-latest) of the Data Request. It is *usually* equivalent to the **root name** (i.e., the **variable_id**), which is given by the "variableRootDD" column in the "Physical Parameters" table. However there are a number of exceptions, which are [tabulated below](#physical-parameter-name-changes).
-- **branded_variable** is composed of the **root name** followed by a **branding suffix** (e.g., `tas_tavg-h2m-hxy-u`), as [described above](#branded-variables-for-cmip7). It is a mandatory [global attribute](https://doi.org/10.5281/zenodo.17250296).
+- **branded_variable** is composed of the **root name** followed by a **branding suffix** (e.g., `tas_tavg-h2m-hxy-u`), as [described above](#branded-variables-for-cmip7). It is a mandatory [global attribute][global-attributes-latest].
 - **Data Request variable** refers to a requested variable specified by a row in the "Variables" table of the [Airtable view](https://bit.ly/CMIP7-DReq-latest) of the Data Request. A requested variable corresponds to a single **branded_variable**, but additionally specifies the frequency, region, and reporting grid (atmosphere, ocean, ...) on which the variable should be provided.
-- **CMIP7 compound name** uniquely identifies a Data Request variable in the CMIP7 Data Request. It is composed of four parts: realm, **root name**, **branding suffix**, frequency, and region (e.g. `atmos.tas.tavg-h2m-hxy-u.mon.glb`). The four latter parts of the **CMIP7 compound name** - essentially the **branded variable** plus frequency and region - are required to uniquely identify a **Data Request variable** in the collection of CMIP7 requested variables. The realm is not strictly required for uniqueness, but is included in the compound name so that users can easily identify requested variables associated with a given realm. The realm used in the **CMIP7 compound name** is the **primary realm** identifed by the "Modelling Realm - Primary" column in the "Variables" table of the [Airtable view](https://bit.ly/CMIP7-DReq-latest) of the Data Request. The primary realm is also used to group variables in the [CMIP7 CMOR tables](https://github.com/WCRP-CMIP/cmip7-cmor-tables).
+- **CMIP7 compound name** uniquely identifies a Data Request variable in the CMIP7 Data Request. It is composed of four parts: realm, **root name**, **branding suffix**, frequency, and region (e.g. `atmos.tas.tavg-h2m-hxy-u.mon.glb`). The four latter parts of the **CMIP7 compound name** - essentially the **branded variable** plus frequency and region - are required to uniquely identify a **Data Request variable** in the collection of CMIP7 requested variables. The realm is not strictly required for uniqueness, but is included in the compound name so that users can easily identify requested variables associated with a given realm. The realm used in the **CMIP7 compound name** is the **primary realm** identifed by the "Modelling Realm - Primary" column in the "Variables" table of the [Airtable view](https://bit.ly/CMIP7-DReq-latest) of the Data Request. The primary realm is also used to group variables in the [CMIP7 CMOR tables][cmip7-cmor-tables].
 - **CMIP6 compound name** is another unique identifier of Data Request variables in the CMIP7 Data Request. It also uniquely identifies a requested variable in the CMIP6 Data Request, if the variable was included in CMIP6, but regardless all CMIP7 requested variables are assigned a **CMIP6 compound name** even if they were not included in CMIP6. This flavour of compound name is composed of a MIP table name (aka CMOR table name) followed by short name that is *usually* identical to the **physical parameter name** (e.g., `Amon.tas`). There are some exceptions, [tabulated below](#physical-parameter-name-changes), in which extra information is appended to the end of the short name (e.g., `Amon.tasSouth30`). However, the short variable name used in the **CMIP6 compound name** always *begins* with the **physical parameter name**. The **CMIP6 compound name** is included in the CMIP7 Data Request because these names are familiar to many users, in order to help them navigate the transition to the new CMIP7 variable naming scheme based on **branded variables**.
 
 
@@ -75,7 +75,7 @@ To disambiguate the different flavours of variable name used in the CMIP7 Data R
 The four components of the branding suffix are derived from variable metadata using the 
 [cmip-branded-variable-mapper python package](https://cmip-branded-variable-mapper.readthedocs.io/en/latest/).
 The following tables show the meaning of each element of a branding suffix.
-Each of these labels is a mandatory [global attribute](https://doi.org/10.5281/zenodo.17250296) written to output netCDF files (**temporal_label**, **vertical_label**, **horizontal_label**, **area_label**).
+Each of these labels is a mandatory [global attribute][global-attributes-latest] written to output netCDF files (**temporal_label**, **vertical_label**, **horizontal_label**, **area_label**).
 
 ### Temporal labels
 
@@ -156,7 +156,7 @@ It is set to `u` (unspecified) if none of the following apply.
 
 The **horizontal_label** identifies how the variable is sampled horizontally: function of latitude and longitude, only latitude, site data, etc.
 Note that this label does **not** denote a particular choice of reporting grid (e.g., a 1° × 1° latitude-longitude grid).
-Guidance on reporting grids can be [found here](https://doi.org/10.5281/zenodo.15697024).
+Guidance on reporting grids can be [found here][grids-guidance-latest].
 
 | Label | Notes |
 | --- | --- |
@@ -329,3 +329,9 @@ For such each **root name**, the table lists the **physical parameter name(s)** 
 | `zmicro` | `zmicro`, `zmicroos` | `Oday.zmicro`, `Omon.zmicro`, `Omon.zmicroos` |
 | `zmisc` | `zmisc`, `zmiscos` | `Omon.zmisc`, `Omon.zmiscos` |
 | `zooc` | `zooc`, `zoocos` | `Oday.zooc`, `Omon.zooc`, `Omon.zoocos` |
+
+
+<!-- links for referencing -->
+[cmip7-cmor-tables]: https://github.com/WCRP-CMIP/cmip7-cmor-tables
+[global-attributes-latest]: https://doi.org/10.5281/zenodo.17250296
+[grids-guidance-latest]: https://doi.org/10.5281/zenodo.15697024
