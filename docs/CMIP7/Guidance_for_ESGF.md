@@ -58,14 +58,12 @@ _the command-line tools described in this section are not production-ready for C
 
  - Apply for Integration testing group membership here:  (https://app.globus.org/groups/e3329078-b8f6-11f0-9fdd-0e7d9e9fc9e3)
    - You may use your insitution or well-known Social Auth provider to log in to Globus
- - Install `esgprep` and configure.
-   - Follow instructions linked from the *esgf-prepare* docs site on CMIP7 vocabulary installation with `esgvoc`
+ - Install Python packages for publication workflow:
+   ```
+   pip install 'git+https://github.com/sashakames/esg-publisher.git@stac-update' esgvoc esgprep
+   ```
+ - Follow instructions linked from the *esgf-prepare* docs site on CMIP7 vocabulary installation with `esgvoc`
    - https://esgf.github.io/esgf-prepare/
- - Install the esg-publisher `esgcet` package from GitHub:
-
-   ```
-   pip install git+https://github.com/ESGF/esg-publisher.git@esgf-ng-v5.4a#ubdirectory=src/python
-   ```
  - Add the following to your esg.yaml config file for publishing:
 ```
 stac_config:
