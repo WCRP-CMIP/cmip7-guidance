@@ -207,19 +207,21 @@ The CMIP7 protocol and experiments are described in a [special issue][GMDSpecial
 The variables produced in CMIP7 were recommended by the [CMIP7 Data Request task team][DataRequestTeam]. In CMIP7, the concept of branded variable identifies the variables. Branded variables follows the template: 
 
 ```
-<brandedVariable> 
-= <variableRoot>_<brandedSuffix>
-= <variableRoot>_<temporalLabel>-<verticalLabel>-<horizontalLabel>-<areaLabel>
+<branded_variable> 
+= <variable_id>_<branded_suffix>
+= <variable_id>_<temporal_label>-<vertical_label>-<horizontal_label>-<area_label>
 ```
 
-Branded variables are independant of frequency and region. To fully identify a variable, you need the compound name:
+To uniquely identify variables, frequency and region are required together with the branded variable.
+The CMIP7 compound name also includes realm for ease of use:
 ```
-<compound_name> = <brandedVariable>.<frequency>.<region>
+<compound_name> = <realm>.<branded_variable>.<frequency>.<region>
 ```
 
-For example, the equivalent of `Amon.tas` in CMIP6 would be  `tas_tavg-h2m-hxy-u.mon.GLB` in CMIP7.
 
-<!--TODO: add more about Data Request. Not super clear to me how it can be useful to users yet.-->
+For example, the equivalent of `Amon.tas` in CMIP6 would be  `atmos.tas_tavg-h2m-hxy-u.mon.GLB` in CMIP7.
+
+<!--TODO: maybe add more about Data Request. -->
 
 ### 3.4 Frequency
 * [List of frequencies][freqlist] (coming soon)
@@ -306,7 +308,7 @@ Proposing erratum through the webform requires a contact email address. Once the
 
 ## 6. New to CMIP?
 
-First time using CMIP? Need a bit more help ? Check these ressources out:
+First time using CMIP? Need a bit more help ? Check out these ressources:
 
 * [Entry-Level Documentation][eld] (coming soon), put together by the [Fresh Eyes on CMIP][FeoC] group.
 * [List of tools for using climate data][tools].
@@ -367,7 +369,7 @@ First time using CMIP? Need a bit more help ? Check these ressources out:
 [virtual]: https://github.com/carbonplan/cmip7-virtualization
 [pangeo]: https://pangeo-data.github.io/pangeo-cmip6-cloud/
 [tools]: https://wcrp-cmip.org/tools/
-[virtualizar]: https://virtualizarr.readthedocs.io/en/stable/
+[virtualizarr]: https://virtualizarr.readthedocs.io/en/stable/
 
  <!-- CMIP7 links -->
 [GMDSpecialIssue]: https://gmd.copernicus.org/articles/special_issue1315.html
