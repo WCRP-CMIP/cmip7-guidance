@@ -4,10 +4,7 @@ title: scen7-vl-Aer Experiment Setup and Forcings Guidance
 ---
 
 # scen7-vl-Aer Experiment Setup and Forcings Guidance
+Note, the information to put on this page is still being clarified.
+Please see [issue #124](https://github.com/WCRP-CMIP/cmip7-guidance/issues/124)
+to track progress resolving this.
 
-To write: it's completely unclear to me
-(after reading Dunne et al. and Collins et al.)
-how these experiments are meant to be set up.
-Are they prescribed SSTs?
-Do you take forcings from h except for aerosol and non-methane ozone precursors, which come from vl?
-Something else?

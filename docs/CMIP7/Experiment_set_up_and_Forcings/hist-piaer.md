@@ -8,6 +8,10 @@ title: hist-piAer Experiment Setup and Forcings Guidance
 <!-- TODO: get this information from esgvoc (add reference URLs at that point) -->
 Responsible activity: AerChemMIP
 
+Note, the information on this page is likely not correct.
+Please see [issue #124](https://github.com/WCRP-CMIP/cmip7-guidance/issues/124)
+to track progress resolving this.
+
 <!-- TODO: get this one line description from esgvoc -->
 <!-- TODO: check this with someone who knows what they're reading -->
 In combination with `historical`, allows for evaluation of the air quality and climate effect of historical aerosol and tropospheric non-methane ozone precursor emissions in models without interactive chemistry (for models with interactive chemistry, see `hist-piAQ`).
