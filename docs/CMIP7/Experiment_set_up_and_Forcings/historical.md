@@ -60,6 +60,11 @@ The following pages give further information on each forcing:
 The forcings relevant for this simulation are listed below.
 For each forcing, we provide the version(s), in the form of "source ID(s)",
 which should be used when running this simulation.
+Where there is more than one source ID listed,
+this either indicates that you may need data from multiple source IDs
+or that multiple options are acceptable
+(because, e.g., fixes were made but re-running is not required).
+Please see the guidance pages linked above for details.
 
 <!-- TODO: auto-generate this -->
 ```json
@@ -69,8 +74,8 @@ which should be used when running this simulation.
     "land-use": ["UofMD-landState-3-1-1"],
     "greenhouse-gas-concentrations": ["CR-CMIP-1-0-0"],
     "stratospheric-aerosol-forcing ": ["UOEXETER-CMIP-2-2-1"],
-    "ozone": ["FZJ-CMIP-ozone-2-0"],
-    "nitrogen-deposition": ["FZJ-CMIP-nitrogen-1-2"],
+    "ozone": ["FZJ-CMIP-ozone-1-2", "FZJ-CMIP-ozone-2-0"],
+    "nitrogen-deposition": ["FZJ-CMIP-nitrogen-1-2", "FZJ-CMIP-nitrogen-2-0"],
     "solar": ["SOLARIS-HEPPA-CMIP-4-6"],
     "aerosol-optical-properties": null,
     "population-density": ["PIK-CMIP-1-0-1"]
