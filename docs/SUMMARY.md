@@ -33,7 +33,10 @@
   - [CVs discussion](How_to_Guides/CVs_discussion.md)
   - [Energy Consumption and Carbon Footprint Spreadsheet](How_to_Guides/Energy_Consumption_and_Carbon_Footprint_Spreadsheet.md)
 - [nav menu](nav_menu.md)
+- resources:
+  - [GitHub issue helper](resources/GitHub_issue_helper.html)
 - [Updates for Modellers](Updates_for_Modellers.md)
 - [Essential Model Documentation](https://emd.mipcvs.dev/docs/)
 - [CMIP Website](https://wcrp-cmip.org/)
 - [WCRP](https://www.wcrp-climate.org/)
+- [GitHub issue helper](resources/GitHub_issue_helper.html)
