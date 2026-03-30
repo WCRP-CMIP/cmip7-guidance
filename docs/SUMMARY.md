@@ -8,6 +8,8 @@
   - [time and area averaging](CMIP6/time_and_area_averaging.md)
 - [CMIP7](CMIP7/index.md)
   - [Branded Variables](CMIP7/Branded_Variables.md)
+  - [cv registration](CMIP7/cv_registration.md)
+  - [data specs version](CMIP7/data_specs_version.md)
   - [Domain names](CMIP7/Domain_names.md)
   - [Experiment set up and Forcings](CMIP7/Experiment_set_up_and_Forcings/index.md)
     - [1pctco2-bgc](CMIP7/Experiment_set_up_and_Forcings/1pctco2-bgc.md)
