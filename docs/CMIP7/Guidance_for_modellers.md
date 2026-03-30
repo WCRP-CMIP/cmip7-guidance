@@ -184,9 +184,9 @@ This facilitates analysis of the data by users who can read and interpret data f
 As [described below](#6-software-for-preparing-output) it is recommended, but not required, that the CMOR software library be used to rewrite model output in conformance with the standards.
 Data requirements are defined and discussed in the following documents:
 
-- [Definition of CMIP7 netCDF Global Attributes](https://zenodo.org/records/17250297), which includes specifications for file names and directory structures
+- [Definition of CMIP7 netCDF Global Attributes][global-attributes-latest], which includes specifications for file names and directory structures
 - [Reference "controlled vocabularies" (CVs) for CMIP7](https://github.com/WCRP-CMIP/CMIP7-CVs)
-- [Guidance on output grids](https://zenodo.org/records/15697025)
+- [Guidance on output grids][grids-guidance-latest]
 - Requested atmospheric pressure levels are described in [Table 2 / Figure 2 of Dingley et al. 2025](https://egusphere.copernicus.org/preprints/2025/egusphere-2025-3189/)
 - [Guidance on time averaging (with masking)](../CMIP6/time_and_area_averaging.md) (CMIP6 guidance, to be reviewed).
 
@@ -228,7 +228,7 @@ update to this section of the documentation.
 
 CMOR, the `Climate Model Output Rewriter`, is a library written in C with interfaces for both Fortran and Python, with the aim of enforcing correct data and metadata structures for projects such as CMIP, which are now used widely across many projects.
 CMOR is maintained by PCMDI on [github](https://github.com/PCMDI/cmor) and is available for installation via [conda](https://anaconda.org/conda-forge/cmor) and has documentation [here](https://cmor.llnl.gov/).
-For CMIP7, the CMOR library has been updated in line with the changes to the [CMIP7 Global Attributes](https://zenodo.org/records/17250297). 
+For CMIP7, the CMOR library has been updated in line with the changes to the [CMIP7 Global Attributes][global-attributes-latest]. 
 Data producers should update to version [v3.13](https://cmor.llnl.gov/news/2025/10/14/cmor3/) of CMOR to gain access to the necessary changes.
 
 The CMOR PrePARE tool, used for quality checking in CMIP6, has been retired and data producers should refer to section 7 below for guidance on the new quality control tool, `esgf-qc`.
@@ -461,3 +461,8 @@ modelling groups are asked to prepare their model output following a common proc
 The WCRP-ESMO Infrastructure Panel (WIP) has responsibility for most of the technical requirements of CMIP. 
 The mission, rationale and Terms of Reference for the WIP can be found 
 [here](https://wcrp-cmip.org/cmip-governance/wip/).
+
+
+<!-- links for referencing -->
+[global-attributes-latest]: https://doi.org/10.5281/zenodo.17250296
+[grids-guidance-latest]: https://doi.org/10.5281/zenodo.15697024

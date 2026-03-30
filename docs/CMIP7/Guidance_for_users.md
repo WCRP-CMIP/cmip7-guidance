@@ -349,8 +349,8 @@ You have a more specific question ? Ask it on the [Fresh Eyes Platform][platform
 [cmipCvs]: https://github.com/WCRP-CMIP/CMIP7-CVs
 [DataRequestTeam]: https://wcrp-cmip.org/cmip-phases/cmip7/cmip7-data-request/
 [FeoC]: https://wcrp-cmip.org/cmip7-task-teams/fresh-eyes-on-cmip/
-[GlobalAttrs]: https://zenodo.org/records/17250297
-[grid]: https://zenodo.org/records/15697025
+[GlobalAttrs]: https://doi.org/10.5281/zenodo.17250296
+[grid]: https://doi.org/10.5281/zenodo.15697024
 [variableid]: https://airtable.com/apphMYhEwBJfd0bUK/shrYC888Qxf8gkvky/tblpo5L8maBIGlM1B/viwNNzrqK5oPL7zk2
 [dataReq]: https://egusphere.copernicus.org/preprints/2025/egusphere-2025-3189/
 

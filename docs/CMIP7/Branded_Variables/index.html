@@ -1100,52 +1100,73 @@
   </div>
   <div class="typography w-full flex-1 *:data-[slot=alert]:first:mt-0">
     <p>A new naming system for variables is being introduced in CMIP7, referred to as <strong>branded variables</strong>.
-The new system retains the familiar short variable names used in earlier CMIP phases to denote a physical quantity ("pr" for precipitation, for example). 
-It introduces a new label, termed the <strong>branded suffix</strong> or <strong>branding label</strong>, that describes how a variable is sampled temporally and spatially.
-This label is used in the output filenames and directory path structures of CMIP7 datasets.</p>
-<p>For comparison with the previous CMIP naming scheme for variables, consider the global monthly-mean near-surface air temperature, which in CMIP6 was denoted as "tas" in the "Amon" MIP table (a MIP table is also sometimes referred to as a CMOR table).
-A compound name constructed from these terms, "Amon.tas", uniquely identifies the variable in the collection of all CMIP6 variables.
-The "Amon" table is a collection of atmospheric variables at monthly frequency, and other MIP tables (Omon, SImon, ...) collect together other variables that usually are similar in realm, frequency, and region.
-While familiar to experienced users of CMIP data, this system led to a proliferation of table names in CMIP6 due to the large number of requested variables (~2000), and the rationale for their names was not always clear (for example, table name "Amon" included the realm while "3hr" and "day" used only the frequency).</p>
-<p>The <strong>branded variable</strong> corresponding to "Amon.tas" is "tas_tavg-h2m-hxy-u".
-Here the short name identifying the physical quantity, "tas", is unchanged.
-The branding label, "tavg-h2m-hxy-u", describes how the variable is temporally and spatially sampled and is composed of four parts:</p>
+The new system retains the familiar short variable names used in earlier CMIP phases to denote a physical quantity (<code>pr</code> for precipitation, for example). 
+It introduces a new metadata attribute, termed the <strong>branding suffix</strong>, that describes how a variable is sampled temporally and spatially.
+The new naming system is intended to make it <em>easier to find the variables you want</em>.
+The branding suffix is a <a href="https://doi.org/10.5281/zenodo.17250296">global metadata attribute</a>, and is used in the output filenames and directory path structures of CMIP7 datasets.</p>
+<p>For comparison with the previous CMIP naming scheme for variables, consider the global monthly-mean near-surface air temperature, which in CMIP6 was denoted as <code>tas</code> in the <code>Amon</code> MIP table (a MIP table is also sometimes referred to as a CMOR table).
+A compound name constructed from these terms, <code>Amon.tas</code>, uniquely identifies the variable in the collection of all CMIP6 variables.
+The <code>Amon</code> table is a collection of atmospheric variables at monthly frequency, and other MIP tables (<code>Omon</code>, <code>SImon</code>, ...) collect together other variables that usually are similar in realm, frequency, and region.
+While familiar to experienced users of CMIP data, this system led to a proliferation of table names in CMIP6 due to the large number of requested variables (~2000), and the rationale for their names was not always clear (for example, table name <code>Amon</code> included the realm while <code>3hr</code> and <code>day</code> used only the frequency).</p>
+<p>The <strong>branded variable</strong> corresponding to <code>Amon.tas</code> is <code>tas_tavg-h2m-hxy-u</code>.
+The short name, <code>tas</code>, identifies the physical quantity and is in this example unchanged. 
+The short name is also referred to as the "root name" of the branded variable.
+The <strong>branding suffix</strong>, <code>tavg-h2m-hxy-u</code>, describes how the variable is temporally and spatially sampled and is composed of four parts:</p>
 <ul>
-<li><strong>temporal label</strong>: "tavg" indicates a time average.</li>
-<li><strong>vertical label</strong>: "h2m" indicates near-surface at 2m above ground.</li>
-<li><strong>horizontal label</strong>: "hxy" indicates a horizontal field spanning latitude and longitude.</li>
-<li><strong>area label</strong>: "u" indicates "unmasked".</li>
+<li><strong>temporal label</strong>: <code>tavg</code> indicates a time average.</li>
+<li><strong>vertical label</strong>: <code>h2m</code> indicates near-surface at 2m above ground.</li>
+<li><strong>horizontal label</strong>: <code>hxy</code> indicates a horizontal field spanning latitude and longitude.</li>
+<li><strong>area label</strong>: <code>u</code> indicates "unmasked".</li>
 </ul>
-<p>Branding labels are always composed of these four components, and their various possible values are <a href="#branding-labels">tabulated below</a>.</p>
-<p>Importantly, "tas_tavg-h2m-hxy-u" is not <em>fully</em> equivalent to "Amon.tas". 
-This is because the branded variable name does not identify a variable's frequency, or its region.
-By <em>additionally</em> specifying the frequency as monthly, and the region as global, "tas_tavg-h2m-hxy-u" then becomes equivalent to "Amon.tas".
-The same branded variable could alternately be reported at other frequencies, or for other regions.
-For example, "tas_tavg-h2m-hxy-u" reported at daily frequency is denoted "day.tas" in CMIP6.</p>
+<p>Branding suffixes are always composed of these four labels. The possible values for each type of label are <a href="#branding-suffixes">tabulated below</a>.</p>
+<p>Importantly, <code>tas_tavg-h2m-hxy-u</code> is not <em>fully</em> equivalent to <code>Amon.tas</code>. 
+This is because a branded variable name does not identify a requested variable's frequency or its region.
+By <em>additionally</em> specifying the frequency as monthly, and the region as global, <code>tas_tavg-h2m-hxy-u</code> then becomes equivalent to <code>Amon.tas</code>.
+The same branded variable could alternately be reported at other frequencies or for other regions.
+For example, <code>tas_tavg-h2m-hxy-u</code> reported on a global grid and at daily frequency is denoted <code>day.tas</code> in CMIP6.</p>
 <div class="admonition note">
 <p class="admonition-title">Viewing branded variables in the Data Request</p>
-<p>The branded variable name, frequency, and region of every requested variable are specified in the CMIP7 Data Request, and can be viewed using <a href="https://bit.ly/CMIP7-DReq-latest">Airtable</a>, the <a href="https://cmip-data-request.github.io/cmip7-dreq-webview/latest/index.html">github-based web viewer</a>, or the <a href="https://github.com/CMIP-Data-Request/CMIP7_DReq_software">python API</a>.</p>
+<p>The branded variable name, frequency, and region of every requested variable are specified in the CMIP7 Data Request.
+The Data Request can be viewed using <a href="https://bit.ly/CMIP7-DReq-latest">Airtable</a>, the <a href="https://cmip-data-request.github.io/cmip7-dreq-webview/latest/index.html">github-based web viewer</a>, or the <a href="https://github.com/CMIP-Data-Request/CMIP7_DReq_software">python API</a>.</p>
 <p>For every variable, the Data Request specifies <em>both</em> its CMIP7-era branded name and CMIP6-era name.
-This provides a mapping from old to new names, to simplify the transition to branded names.
+This provides a mapping from old to new names in order to simplify the transition to branded names.
 The <a href="https://cmip-data-request.github.io/cmip7-dreq-webview/latest/variables.html">"Variables" table of the Data Request</a> provides a unique identifier using both flavours of name, termed "CMIP7 Compound Name" and "CMIP6 Compound Name".
-For the above example (monthly near-surface air temperature) these are "atmos.tas.tavg-h2m-hxy-u.mon.GLB" and "Amon.tas", respectively.</p>
+For the above example (monthly near-surface air temperature) these are <code>atmos.tas.tavg-h2m-hxy-u.mon.glb</code> and <code>Amon.tas</code>, respectively.
+<a href="#variable-names">See below</a> for further clarification of the meaning of different types of variable names.</p>
 </div>
 <p>The branded variable approach (Taylor et al., in preparation) aims to be more systematic and scalable to future CMIP phases and wider use across community MIPs and other WCRP projects.
 <a href="https://github.com/WCRP-CMIP/cmip7-cmor-tables">CMOR tables</a> keyed by branded variable name define the metadata characteristics of variables apart from the frequency, region, or specific grids on which these variables should be reported.
-Guidance on reporting grids for CMIP output is <a href="https://zenodo.org/records/15697025">given here</a>.
-The exact reporting convention for grids and associated CV is being finalised; if you wish to see the full discussion, please see https://github.com/WCRP-CMIP/CMIP7-CVs/issues/202.</p>
-<h2 id="branding-labels">Branding labels<a class="headerlink" href="#branding-labels" title="Permanent link">&para;</a></h2>
-<p>The four components of the branded variables are derived from variable metadata using the 
-<a href="https://cmip-branded-variable-mapper.readthedocs.io/en/latest/">cmip-branded-variable-mapper package</a>.
-The following tables show the meaning of each element of the branding.
-Each of these labels is a global attribute written to output netCDF files (<code>temporal_label</code>, <code>vertical_label</code>, <code>horizontal_label</code>, <code>area_label</code>).</p>
+Guidance on reporting grids for CMIP output is <a href="https://doi.org/10.5281/zenodo.15697024">given here</a>.
+The metadata conventions for describing grids in the CMIP7 CVs are explained in the <a href="https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/">Essential Model Documentation guidance pages</a>.</p>
+<!-- The exact reporting convention for grids and associated CV is being finalised; if you wish to see the full discussion, please see https://github.com/WCRP-CMIP/CMIP7-CVs/issues/202. -->
+
+<h2 id="variable-names">Variable names<a class="headerlink" href="#variable-names" title="Permanent link">&para;</a></h2>
+<p>There are several CMIP7 metadata attributes that may be referred to as a "variable name", depending on the context.
+For example, the name of a branded variable does not specify its <strong>frequency</strong> or <strong>region</strong>. 
+Similarly, the short name of a physical quantity such as <code>pr</code> does not specify how it is spatiotemporally sampled (i.e., it lacks the information conveyed by a <strong>branding suffix</strong>).
+To disambiguate the different flavours of variable name used in the CMIP7 Data Request and CVs, a brief glossary is provided here:</p>
+<ul>
+<li><strong>variable_id</strong> is the short name of a physical quantity that is familiar to many users from previous CMIP phases (e.g., <code>tas</code>, <code>pr</code>, <code>sos</code>). It is a mandatory <a href="https://doi.org/10.5281/zenodo.17250296">global attribute</a>.</li>
+<li><strong>root name</strong> refers to the first component of a branded variable name (e.g., <code>tas_tavg-h2m-hxy-u</code>), and is always identical to <strong>variable_id</strong>.</li>
+<li><strong>out_name</strong> is found in <a href="https://github.com/WCRP-CMIP/cmip7-cmor-tables">CMOR tables</a> where it specifies the name of the data variable in a CMORized netcdf file, and is always identical to <strong>variable_id</strong>.</li>
+<li><strong>physical parameter name</strong> is the short name used in the CMIP7 Data Request to identify a physical quantity, with an associated CF standard name. It is the "Name" column in the "Physical Parameters" table of the <a href="https://bit.ly/CMIP7-DReq-latest">Airtable view</a> of the Data Request. It is <em>usually</em> equivalent to the <strong>root name</strong> (i.e., the <strong>variable_id</strong>), which is given by the "variableRootDD" column in the "Physical Parameters" table. However there are a number of exceptions, which are <a href="#physical-parameter-name-changes">tabulated below</a>.</li>
+<li><strong>branded_variable</strong> is composed of the <strong>root name</strong> followed by a <strong>branding suffix</strong> (e.g., <code>tas_tavg-h2m-hxy-u</code>), as <a href="#branded-variables-for-cmip7">described above</a>. It is a mandatory <a href="https://doi.org/10.5281/zenodo.17250296">global attribute</a>.</li>
+<li><strong>Data Request variable</strong> refers to a requested variable specified by a row in the "Variables" table of the <a href="https://bit.ly/CMIP7-DReq-latest">Airtable view</a> of the Data Request. A requested variable corresponds to a single <strong>branded_variable</strong>, but additionally specifies the <strong>frequency</strong>, <strong>region</strong>, and reporting grid (atmosphere, ocean, ...) on which the variable should be provided.</li>
+<li><strong>CMIP7 compound name</strong> uniquely identifies a Data Request variable in the CMIP7 Data Request. It is composed of four parts: <strong>realm</strong>, <strong>root name</strong>, <strong>branding suffix</strong>, <strong>frequency</strong>, and <strong>region</strong> (e.g. <code>atmos.tas.tavg-h2m-hxy-u.mon.glb</code>). The four latter parts of the <strong>CMIP7 compound name</strong> - essentially the <strong>branded variable</strong> plus <strong>frequency</strong> and <strong>region</strong> - are required to uniquely identify a <strong>Data Request variable</strong> in the collection of CMIP7 requested variables. The <strong>realm</strong> is not strictly required for uniqueness, but is included in the compound name so that users can easily identify requested variables associated with a given realm. The realm used in the <strong>CMIP7 compound name</strong> is the <strong>primary realm</strong> identifed by the "Modelling Realm - Primary" column in the "Variables" table of the <a href="https://bit.ly/CMIP7-DReq-latest">Airtable view</a> of the Data Request. The <strong>primary realm</strong> is also used to group variables in the <a href="https://github.com/WCRP-CMIP/cmip7-cmor-tables">CMIP7 CMOR tables</a>.</li>
+<li><strong>CMIP6 compound name</strong> is another unique identifier of Data Request variables in the CMIP7 Data Request, and is included because these names are familiar to many users (e.g., <code>Amon.tas</code>, <code>day.pr</code>, <code>Omon.tos</code>) and may help them navigate the transition to the new CMIP7 variable naming scheme based on <strong>branded variables</strong>. If a variable was included in CMIP6 then this name uniquely identifies it in the CMIP6 Data Request, but note that newly introduced variables in CMIP7 are also assigned a <strong>CMIP6 compound name</strong> (hence there is a one-to-one mapping between <strong>CMIP6 compound name</strong> and <strong>CMIP7 compound name</strong>). This flavour of compound name is composed of the name of a CMIP6-era MIP table (also referred to as a CMOR table) followed by short name that is <em>usually</em> identical to the <strong>physical parameter name</strong> (e.g., <code>Amon.tas</code>). There are some exceptions, <a href="#physical-parameter-name-changes">tabulated below</a>, in which extra information is appended to the end of the short name (e.g., <code>Amon.tasSouth30</code>). However, the short variable name used in the <strong>CMIP6 compound name</strong> always <em>begins</em> with the <strong>physical parameter name</strong>.</li>
+</ul>
+<h2 id="branding-suffixes">Branding suffixes<a class="headerlink" href="#branding-suffixes" title="Permanent link">&para;</a></h2>
+<p>The four components of the branding suffix are derived from variable metadata using the 
+<a href="https://cmip-branded-variable-mapper.readthedocs.io/en/latest/">cmip-branded-variable-mapper python package</a>.
+The following tables show the meaning of each element of a branding suffix.
+Each of these labels is a mandatory <a href="https://doi.org/10.5281/zenodo.17250296">global attribute</a> written to output netCDF files (<strong>temporal_label</strong>, <strong>vertical_label</strong>, <strong>horizontal_label</strong>, <strong>area_label</strong>).</p>
 <h3 id="temporal-labels">Temporal labels<a class="headerlink" href="#temporal-labels" title="Permanent link">&para;</a></h3>
-<p>Identifies how the variable is sampled in the time domain: time average, instantaneous, etc.</p>
+<p>The <strong>temporal_label</strong> identifies how the variable is sampled in the time domain: time average, instantaneous, etc.</p>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
 <th>Label</th>
-<th>notes</th>
+<th>Notes</th>
 </tr>
 </thead>
 <tbody>
@@ -1192,13 +1213,13 @@ Each of these labels is a global attribute written to output netCDF files (<code
 </tbody>
 </table></div>
 <h3 id="vertical-labels">Vertical labels<a class="headerlink" href="#vertical-labels" title="Permanent link">&para;</a></h3>
-<p>Identifies how the variable is sampled in the vertical domain: on pressure levels, model levels, at a single level, etc.
-Set to "u" (unspecified) if none of the following apply.</p>
+<p>The <strong>vertical_label</strong> identifies how the variable is sampled in the vertical domain: on pressure levels, model levels, at a single level, etc.
+It is set to <code>u</code> (unspecified) if none of the following apply (e.g. a field reported at the surface or at the top of the atmopsphere).</p>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
 <th>Label</th>
-<th>Data Request Dimension</th>
+<th>Data Request Dimension or Coordinate</th>
 </tr>
 </thead>
 <tbody>
@@ -1378,9 +1399,9 @@ Set to "u" (unspecified) if none of the following apply.</p>
 <!-- | `p27` | `plev27` | -->
 
 <h3 id="horizontal-labels">Horizontal labels<a class="headerlink" href="#horizontal-labels" title="Permanent link">&para;</a></h3>
-<p>Identifies how the variable is sampled horizontally: function of latitude and longitude, only latitude, site data, etc.
-Note that this label does <strong>not</strong> denote a particular choice of reporting grid (e.g., 1° × 1°).
-Guidance on reporting grids can be <a href="https://zenodo.org/records/15697025">found here</a>.</p>
+<p>The <strong>horizontal_label</strong> identifies how the variable is sampled horizontally: function of latitude and longitude, only latitude, site data, etc.
+Note that this label does <em>not</em> denote a particular choice of reporting grid (e.g., a 1° × 1° latitude-longitude grid).
+Guidance on reporting grids can be <a href="https://doi.org/10.5281/zenodo.15697024">found here</a>.</p>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
@@ -1416,8 +1437,8 @@ Guidance on reporting grids can be <a href="https://zenodo.org/records/15697025"
 </tbody>
 </table></div>
 <h3 id="area-labels">Area labels<a class="headerlink" href="#area-labels" title="Permanent link">&para;</a></h3>
-<p>Identifies the unmasked area type for which data are reported: sea ice, land, ice sheet, etc.
-Set to "u" (unmasked) if no masking is applied.</p>
+<p>The <strong>area_label</strong> identifies the unmasked area type for which data are reported: sea ice, land, ice sheet, etc.
+It is set to <code>u</code> (unmasked) if no masking is applied.</p>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
@@ -1532,6 +1553,617 @@ Set to "u" (unmasked) if no masking is applied.</p>
 </tr>
 </tbody>
 </table></div>
+<h2 id="physical-parameter-name-changes">Physical parameter name changes<a class="headerlink" href="#physical-parameter-name-changes" title="Permanent link">&para;</a></h2>
+<p>The following table lists <strong>root names</strong> in the CMIP7 Data Request (v1.2.2.3) that do not match one and only one <strong>physical parameter name</strong> (recall that <strong>root name</strong> is the same as <strong>variable_id</strong> and <strong>out_name</strong>).
+Out of the 987 <strong>root names</strong> in Data Request v1.2.2.3 there are 119 such cases (12%).
+For each such <strong>root name</strong>, the table lists the <strong>physical parameter name(s)</strong> and the <strong>CMIP6 compound name(s)</strong> of the Data Request variable(s) using this <strong>root name</strong>.</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th><strong>Root name</strong></th>
+<th><strong>Physical parameter name(s)</strong></th>
+<th><strong>CMIP6 compound name(s)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>acabf</code></td>
+<td><code>acabf</code>, <code>acabfIs</code></td>
+<td><code>ImonAnt.acabf</code>, <code>ImonGre.acabf</code>, <code>IyrAnt.acabf</code>, <code>IyrGre.acabf</code>, <code>LImon.acabfIs</code></td>
+</tr>
+<tr>
+<td><code>arag</code></td>
+<td><code>arag</code>, <code>aragos</code></td>
+<td><code>Omon.arag</code>, <code>Omon.aragos</code></td>
+</tr>
+<tr>
+<td><code>bacc</code></td>
+<td><code>baccos</code></td>
+<td><code>Omon.baccos</code></td>
+</tr>
+<tr>
+<td><code>bigthetao</code></td>
+<td><code>bigthetao</code>, <code>bigthetaoga</code></td>
+<td><code>Oday.bigthetao200</code>, <code>Odec.bigthetao</code>, <code>Omon.bigthetao</code>, <code>Omon.bigthetaoga</code></td>
+</tr>
+<tr>
+<td><code>bldep</code></td>
+<td><code>bldep</code>, <code>maxpblz</code>, <code>minpblz</code></td>
+<td><code>3hrPt.bldep</code>, <code>AERday.maxpblz</code>, <code>AERday.minpblz</code>, <code>AERmon.bldep</code>, <code>E1hr.bldep</code></td>
+</tr>
+<tr>
+<td><code>cSoil</code></td>
+<td><code>cSoil</code>, <code>cSoilAbove1m</code>, <code>cSoilLevels</code></td>
+<td><code>Emon.cSoil</code>, <code>Emon.cSoilAbove1m</code>, <code>Emon.cSoilLevels</code></td>
+</tr>
+<tr>
+<td><code>cVeg</code></td>
+<td><code>cVeg</code>, <code>cVegGrass</code>, <code>cVegShrub</code>, <code>cVegTree</code></td>
+<td><code>Emon.cVegGrass</code>, <code>Emon.cVegShrub</code>, <code>Emon.cVegTree</code>, <code>Lmon.cVeg</code></td>
+</tr>
+<tr>
+<td><code>calc</code></td>
+<td><code>calc</code>, <code>calcos</code></td>
+<td><code>Omon.calc</code>, <code>Omon.calcos</code>, <code>Omon.calcosSouth30</code></td>
+</tr>
+<tr>
+<td><code>ccnp02</code></td>
+<td><code>ccn02</code></td>
+<td><code>AERmon.ccn02</code>, <code>AERmon.ccn02South30</code></td>
+</tr>
+<tr>
+<td><code>cfc11</code></td>
+<td><code>cfc11global</code></td>
+<td><code>Amon.cfc11global</code></td>
+</tr>
+<tr>
+<td><code>cfc113</code></td>
+<td><code>cfc113global</code></td>
+<td><code>Amon.cfc113global</code></td>
+</tr>
+<tr>
+<td><code>cfc12</code></td>
+<td><code>cfc12global</code></td>
+<td><code>Amon.cfc12global</code></td>
+</tr>
+<tr>
+<td><code>ch4</code></td>
+<td><code>ch4</code>, <code>ch4global</code></td>
+<td><code>AERmon.ch4</code>, <code>AERmonZ.ch4</code>, <code>Amon.ch4</code>, <code>Amon.ch4Clim</code>, <code>Amon.ch4global</code>, <code>Amon.ch4globalClim</code></td>
+</tr>
+<tr>
+<td><code>chl</code></td>
+<td><code>chl</code>, <code>chlos</code></td>
+<td><code>Oday.chl200</code>, <code>Oday.chlos</code>, <code>Omon.chl</code>, <code>Omon.chlos</code>, <code>Omon.chlosSouth30</code></td>
+</tr>
+<tr>
+<td><code>chlcalc</code></td>
+<td><code>chlcalc</code>, <code>chlcalcos</code></td>
+<td><code>Omon.chlcalc</code>, <code>Omon.chlcalcos</code></td>
+</tr>
+<tr>
+<td><code>chldiat</code></td>
+<td><code>chldiat</code>, <code>chldiatos</code></td>
+<td><code>Omon.chldiat</code>, <code>Omon.chldiatos</code></td>
+</tr>
+<tr>
+<td><code>chldiaz</code></td>
+<td><code>chldiaz</code>, <code>chldiazos</code></td>
+<td><code>Omon.chldiaz</code>, <code>Omon.chldiazos</code></td>
+</tr>
+<tr>
+<td><code>chlmisc</code></td>
+<td><code>chlmisc</code>, <code>chlmiscos</code></td>
+<td><code>Omon.chlmisc</code>, <code>Omon.chlmiscos</code></td>
+</tr>
+<tr>
+<td><code>chlpico</code></td>
+<td><code>chlpico</code>, <code>chlpicoos</code></td>
+<td><code>Omon.chlpico</code>, <code>Omon.chlpicoos</code></td>
+</tr>
+<tr>
+<td><code>clcalipso</code></td>
+<td><code>clcalipso</code>, <code>clhcalipso</code>, <code>cllcalipso</code>, <code>clmcalipso</code></td>
+<td><code>CFday.clcalipso</code>, <code>CFday.clhcalipso</code>, <code>CFday.cllcalipso</code>, <code>CFday.clmcalipso</code>, <code>CFmon.clcalipso</code>, <code>CFmon.clcalipsoSouth30</code>, <code>CFmon.clhcalipso</code>, <code>CFmon.clhcalipsoSouth30</code>, <code>CFmon.cllcalipso</code>, <code>CFmon.cllcalipsoSouth30</code>, <code>CFmon.clmcalipso</code>, <code>CFmon.clmcalipsoSouth30</code></td>
+</tr>
+<tr>
+<td><code>co2</code></td>
+<td><code>co2</code>, <code>co2s</code></td>
+<td><code>AERmon.co2</code>, <code>Amon.co2</code>, <code>Amon.co2Clim</code>, <code>Amon.co2massClim</code>, <code>Emon.co2s</code></td>
+</tr>
+<tr>
+<td><code>co3</code></td>
+<td><code>co3</code>, <code>co3os</code></td>
+<td><code>Oday.co3200</code>, <code>Oday.co3os</code></td>
+</tr>
+<tr>
+<td><code>co3satarag</code></td>
+<td><code>co3satarag</code>, <code>co3sataragos</code></td>
+<td><code>Oday.co3satarag200</code>, <code>Oday.co3sataragos</code></td>
+</tr>
+<tr>
+<td><code>dfe</code></td>
+<td><code>dfe</code>, <code>dfeos</code></td>
+<td><code>Omon.dfe</code>, <code>Omon.dfeos</code>, <code>Omon.dfeosSouth30</code></td>
+</tr>
+<tr>
+<td><code>dissi13c</code></td>
+<td><code>dissi13c</code>, <code>dissi13cos</code></td>
+<td><code>Omon.dissi13c</code>, <code>Omon.dissi13cos</code></td>
+</tr>
+<tr>
+<td><code>dissi14cabio</code></td>
+<td><code>dissi14cabio</code>, <code>dissi14cabioos</code></td>
+<td><code>Omon.dissi14cabio</code>, <code>Omon.dissi14cabioos</code></td>
+</tr>
+<tr>
+<td><code>dissic</code></td>
+<td><code>dissic</code>, <code>dissicos</code></td>
+<td><code>Omon.dissic</code>, <code>Omon.dissicos</code></td>
+</tr>
+<tr>
+<td><code>dmso</code></td>
+<td><code>dmso</code>, <code>dmsos</code></td>
+<td><code>Omon.dmso</code>, <code>Omon.dmsos</code>, <code>Omon.dmsosSouth30</code></td>
+</tr>
+<tr>
+<td><code>epn</code></td>
+<td><code>epn100</code></td>
+<td><code>Omon.epn100</code></td>
+</tr>
+<tr>
+<td><code>epp</code></td>
+<td><code>epp100</code></td>
+<td><code>Omon.epp100</code></td>
+</tr>
+<tr>
+<td><code>epsi</code></td>
+<td><code>epsi100</code></td>
+<td><code>Omon.epsi100</code></td>
+</tr>
+<tr>
+<td><code>evspsbl</code></td>
+<td><code>evs</code>, <code>evspsbl</code>, <code>sidmassevapsubl</code></td>
+<td><code>Amon.evspsbl</code>, <code>CFsubhr.evspsbl</code>, <code>Eday.evspsbl</code>, <code>Omon.evs</code>, <code>SImon.sidmassevapsubl</code></td>
+</tr>
+<tr>
+<td><code>expc</code></td>
+<td><code>epc100</code>, <code>epc1000</code>, <code>expc</code></td>
+<td><code>Omon.epc100</code>, <code>Omon.epc1000</code>, <code>Omon.expc</code></td>
+</tr>
+<tr>
+<td><code>expcalc</code></td>
+<td><code>epcalc100</code>, <code>epcalc1000</code>, <code>expcalc</code></td>
+<td><code>Emon.expcalc</code>, <code>Omon.epcalc100</code>, <code>Omon.epcalc1000</code></td>
+</tr>
+<tr>
+<td><code>gpp</code></td>
+<td><code>gpp</code>, <code>gppGrass</code>, <code>gppShrub</code>, <code>gppTree</code></td>
+<td><code>Emon.gppGrass</code>, <code>Emon.gppShrub</code>, <code>Emon.gppTree</code>, <code>Lmon.gpp</code></td>
+</tr>
+<tr>
+<td><code>hcfc22</code></td>
+<td><code>hcfc22</code>, <code>hcfc22global</code></td>
+<td><code>AERmon.hcfc22</code>, <code>Amon.hcfc22global</code></td>
+</tr>
+<tr>
+<td><code>hfls</code></td>
+<td><code>hfls</code>, <code>hflsIs</code></td>
+<td><code>3hr.hfls</code>, <code>Amon.hfls</code>, <code>Amon.hflsSouth30</code>, <code>CFsubhr.hfls</code>, <code>E1hr.hfls</code>, <code>ImonAnt.hfls</code>, <code>ImonGre.hfls</code>, <code>LImon.hflsIs</code>, <code>day.hfls</code></td>
+</tr>
+<tr>
+<td><code>hfss</code></td>
+<td><code>hfss</code>, <code>hfssIs</code></td>
+<td><code>3hr.hfss</code>, <code>Amon.hfss</code>, <code>Amon.hfssSouth30</code>, <code>CFsubhr.hfss</code>, <code>E1hr.hfss</code>, <code>ImonAnt.hfss</code>, <code>ImonGre.hfss</code>, <code>LImon.hfssIs</code>, <code>day.hfss</code></td>
+</tr>
+<tr>
+<td><code>hur</code></td>
+<td><code>hur</code>, <code>hur100</code>, <code>hur500</code>, <code>hur700</code>, <code>hur850</code></td>
+<td><code>6hrPlevPt.hur100</code>, <code>6hrPlevPt.hur500</code>, <code>6hrPlevPt.hur850</code>, <code>Amon.hur</code>, <code>Amon.hurSouth30</code>, <code>CFday.hur</code>, <code>CFday.hur700</code>, <code>CFmon.hur</code>, <code>CFmon.hurSouth30</code>, <code>CFsubhr.hur</code>, <code>day.hur</code></td>
+</tr>
+<tr>
+<td><code>hurs</code></td>
+<td><code>hurs</code>, <code>hursmax</code>, <code>hursmin</code>, <code>hursminCrop</code></td>
+<td><code>6hrPlev.hurs</code>, <code>Amon.hurs</code>, <code>Amon.hursSouth30</code>, <code>CF3hr.hurs</code>, <code>CFsubhr.hurs</code>, <code>E1hr.hurs</code>, <code>E1hr.hursSouth30</code>, <code>Eday.hursminCrop</code>, <code>day.hurs</code>, <code>day.hursmax</code>, <code>day.hursmin</code></td>
+</tr>
+<tr>
+<td><code>hus</code></td>
+<td><code>hus</code>, <code>hus6</code></td>
+<td><code>6hrLev.hus</code>, <code>6hrPlevPt.hus7h</code>, <code>Amon.hus</code>, <code>Amon.husSouth30</code>, <code>CFday.hus</code>, <code>CFmon.hus</code>, <code>CFmon.husSouth30</code>, <code>CFsubhr.hus</code>, <code>E3hrPt.hus</code>, <code>E3hrPt.hus6</code>, <code>day.hus</code></td>
+</tr>
+<tr>
+<td><code>icem</code></td>
+<td><code>icem</code>, <code>icemIs</code></td>
+<td><code>ImonAnt.icem</code>, <code>ImonGre.icem</code>, <code>LImon.icemIs</code></td>
+</tr>
+<tr>
+<td><code>libmassbf</code></td>
+<td><code>libmassbffl</code>, <code>libmassbfgr</code></td>
+<td><code>ImonAnt.libmassbffl</code>, <code>ImonAnt.libmassbfgr</code>, <code>ImonGre.libmassbffl</code>, <code>ImonGre.libmassbfgr</code>, <code>IyrAnt.libmassbffl</code>, <code>IyrAnt.libmassbfgr</code>, <code>IyrGre.libmassbffl</code>, <code>IyrGre.libmassbfgr</code></td>
+</tr>
+<tr>
+<td><code>litempbot</code></td>
+<td><code>litempbotfl</code>, <code>litempbotgr</code></td>
+<td><code>ImonAnt.litempbotfl</code>, <code>ImonAnt.litempbotgr</code>, <code>ImonGre.litempbotfl</code>, <code>ImonGre.litempbotgr</code>, <code>IyrAnt.litempbotfl</code>, <code>IyrAnt.litempbotgr</code>, <code>IyrGre.litempbotfl</code>, <code>IyrGre.litempbotgr</code></td>
+</tr>
+<tr>
+<td><code>litemptop</code></td>
+<td><code>litemptop</code>, <code>litemptopIs</code></td>
+<td><code>ImonAnt.litemptop</code>, <code>ImonGre.litemptop</code>, <code>IyrAnt.litemptop</code>, <code>IyrGre.litemptop</code>, <code>LImon.litemptopIs</code></td>
+</tr>
+<tr>
+<td><code>mlotst</code></td>
+<td><code>mlotst</code>, <code>mlotstmax</code>, <code>mlotstmin</code></td>
+<td><code>Eday.mlotst</code>, <code>Omon.mlotst</code>, <code>Omon.mlotstSouth30</code>, <code>Omon.mlotstmax</code>, <code>Omon.mlotstmin</code></td>
+</tr>
+<tr>
+<td><code>modelcellareai</code></td>
+<td><code>modelCellAreai</code></td>
+<td><code>IyrAnt.modelCellAreai</code>, <code>IyrGre.modelCellAreai</code></td>
+</tr>
+<tr>
+<td><code>mrro</code></td>
+<td><code>mrro</code>, <code>mrroIs</code></td>
+<td><code>3hr.mrro</code>, <code>LImon.mrroIs</code>, <code>Lmon.mrro</code>, <code>day.mrro</code></td>
+</tr>
+<tr>
+<td><code>mrsol</code></td>
+<td><code>mrso100</code>, <code>mrsol</code>, <code>mrsos</code></td>
+<td><code>3hr.mrso100</code>, <code>3hr.mrsos</code>, <code>Eday.mrsol</code>, <code>Emon.mrsol</code>, <code>Lmon.mrsos</code>, <code>day.mrsos</code></td>
+</tr>
+<tr>
+<td><code>mrsolLut</code></td>
+<td><code>mrsosLut</code></td>
+<td><code>Emon.mrsosLut</code></td>
+</tr>
+<tr>
+<td><code>msftm</code></td>
+<td><code>msftmrho</code>, <code>msftmz</code></td>
+<td><code>Omon.msftmrho</code>, <code>Omon.msftmz</code></td>
+</tr>
+<tr>
+<td><code>msftmmpa</code></td>
+<td><code>msftmrhompa</code>, <code>msftmzmpa</code></td>
+<td><code>Omon.msftmrhompa</code>, <code>Omon.msftmzmpa</code></td>
+</tr>
+<tr>
+<td><code>msftmsmpa</code></td>
+<td><code>msftmzsmpa</code></td>
+<td><code>Omon.msftmzsmpa</code></td>
+</tr>
+<tr>
+<td><code>msfty</code></td>
+<td><code>msftyrho</code>, <code>msftyz</code></td>
+<td><code>Omon.msftyrho</code>, <code>Omon.msftyz</code></td>
+</tr>
+<tr>
+<td><code>msftypa</code></td>
+<td><code>msftyrhompa</code>, <code>msftyzmpa</code></td>
+<td><code>Omon.msftyrhompa</code>, <code>Omon.msftyzmpa</code></td>
+</tr>
+<tr>
+<td><code>n2o</code></td>
+<td><code>n2o</code>, <code>n2oglobal</code></td>
+<td><code>AERmon.n2o</code>, <code>AERmonZ.n2o</code>, <code>Amon.n2o</code>, <code>Amon.n2oClim</code>, <code>Amon.n2oglobal</code>, <code>Amon.n2oglobalClim</code></td>
+</tr>
+<tr>
+<td><code>nh4</code></td>
+<td><code>nh4</code>, <code>nh4os</code></td>
+<td><code>Omon.nh4</code>, <code>Omon.nh4os</code></td>
+</tr>
+<tr>
+<td><code>no2</code></td>
+<td><code>no2</code>, <code>sfno2</code></td>
+<td><code>AERhr.sfno2</code>, <code>AERmon.no2</code></td>
+</tr>
+<tr>
+<td><code>no3</code></td>
+<td><code>no3</code>, <code>no3os</code></td>
+<td><code>Omon.no3</code>, <code>Omon.no3os</code>, <code>Omon.no3osSouth30</code></td>
+</tr>
+<tr>
+<td><code>noaahi2m</code></td>
+<td><code>noaahi2m</code>, <code>noaahi2mmax</code></td>
+<td><code>day.noaahi2m</code>, <code>day.noaahi2mmax</code></td>
+</tr>
+<tr>
+<td><code>npp</code></td>
+<td><code>npp</code>, <code>nppGrass</code>, <code>nppShrub</code>, <code>nppTree</code></td>
+<td><code>Emon.nppGrass</code>, <code>Emon.nppShrub</code>, <code>Emon.nppTree</code>, <code>Lmon.npp</code></td>
+</tr>
+<tr>
+<td><code>o2</code></td>
+<td><code>o2</code>, <code>o2os</code></td>
+<td><code>Oday.o2200</code>, <code>Oday.o2os</code>, <code>Omon.o2</code>, <code>Omon.o2os</code></td>
+</tr>
+<tr>
+<td><code>o3</code></td>
+<td><code>o3</code>, <code>o3inst</code>, <code>sfo3</code>, <code>sfo3max</code></td>
+<td><code>AERday.sfo3max</code>, <code>AERhr.sfo3</code>, <code>AERmon.o3</code>, <code>AERmon.o3inst</code>, <code>AERmonZ.o3</code>, <code>Amon.o3</code>, <code>Amon.o3Clim</code></td>
+</tr>
+<tr>
+<td><code>orog</code></td>
+<td><code>orog</code>, <code>orogIs</code></td>
+<td><code>ImonAnt.orog</code>, <code>ImonGre.orog</code>, <code>IyrAnt.orog</code>, <code>IyrGre.orog</code>, <code>LImon.orogIs</code>, <code>fx.orog</code>, <code>fx.orogSouth30</code></td>
+</tr>
+<tr>
+<td><code>ph</code></td>
+<td><code>ph</code>, <code>phos</code></td>
+<td><code>Oday.ph200</code>, <code>Oday.phos</code>, <code>Omon.ph</code>, <code>Omon.phosSouth30</code></td>
+</tr>
+<tr>
+<td><code>phyc</code></td>
+<td><code>phyc</code>, <code>phycos</code></td>
+<td><code>Oday.phyc200</code>, <code>Oday.phycos</code>, <code>Omon.phyc</code>, <code>Omon.phycos</code>, <code>Omon.phycosSouth30</code></td>
+</tr>
+<tr>
+<td><code>phycalc</code></td>
+<td><code>phycalc</code>, <code>phycalcos</code></td>
+<td><code>Oday.phycalc</code>, <code>Omon.phycalc</code>, <code>Omon.phycalcos</code></td>
+</tr>
+<tr>
+<td><code>phydiat</code></td>
+<td><code>phydiat</code>, <code>phydiatos</code></td>
+<td><code>Oday.phydiatos</code>, <code>Omon.phydiat</code>, <code>Omon.phydiatos</code></td>
+</tr>
+<tr>
+<td><code>phydiaz</code></td>
+<td><code>phydiaz</code>, <code>phydiazos</code></td>
+<td><code>Oday.phydiazos</code>, <code>Omon.phydiaz</code>, <code>Omon.phydiazos</code></td>
+</tr>
+<tr>
+<td><code>phymisc</code></td>
+<td><code>phymisc</code>, <code>phymiscos</code></td>
+<td><code>Oday.phymiscos</code>, <code>Omon.phymisc</code>, <code>Omon.phymiscos</code></td>
+</tr>
+<tr>
+<td><code>phypico</code></td>
+<td><code>phypico</code>, <code>phypicoos</code></td>
+<td><code>Oday.phypico</code>, <code>Omon.phypico</code>, <code>Omon.phypicoos</code></td>
+</tr>
+<tr>
+<td><code>pp</code></td>
+<td><code>pp</code>, <code>ppos</code></td>
+<td><code>Omon.pp</code>, <code>Omon.ppos</code>, <code>Omon.pposSouth30</code></td>
+</tr>
+<tr>
+<td><code>pr</code></td>
+<td><code>pr</code>, <code>prCrop</code>, <code>prhmax</code></td>
+<td><code>3hr.pr</code>, <code>6hrPlev.pr</code>, <code>6hrPlev.prhmax</code>, <code>6hrPlevPt.pr</code>, <code>Amon.pr</code>, <code>Amon.prSouth30</code>, <code>CF3hr.pr</code>, <code>CFsubhr.pr</code>, <code>E1hr.pr</code>, <code>E1hr.prSouth30</code>, <code>Eday.prCrop</code>, <code>Eday.prhmax</code>, <code>Emon.prhmax</code>, <code>day.pr</code></td>
+</tr>
+<tr>
+<td><code>prra</code></td>
+<td><code>prra</code>, <code>prraIs</code>, <code>sipr</code></td>
+<td><code>6hrPlev.prra</code>, <code>Amon.prra</code>, <code>Amon.prraSouth30</code>, <code>Eday.prra</code>, <code>ImonAnt.prra</code>, <code>ImonGre.prra</code>, <code>LImon.prraIs</code>, <code>SImon.sipr</code></td>
+</tr>
+<tr>
+<td><code>prsn</code></td>
+<td><code>prsn</code>, <code>prsnIs</code>, <code>sisndmasssnf</code></td>
+<td><code>3hr.prsn</code>, <code>6hrPlev.prsn</code>, <code>Amon.prsn</code>, <code>Amon.prsnSouth30</code>, <code>CFsubhr.prsn</code>, <code>ImonAnt.prsn</code>, <code>ImonGre.prsn</code>, <code>LImon.prsnIs</code>, <code>SImon.sisndmasssnf</code>, <code>day.prsn</code></td>
+</tr>
+<tr>
+<td><code>ra</code></td>
+<td><code>ra</code>, <code>raGrass</code>, <code>raShrub</code>, <code>raTree</code></td>
+<td><code>Emon.raGrass</code>, <code>Emon.raShrub</code>, <code>Emon.raTree</code>, <code>Lmon.ra</code></td>
+</tr>
+<tr>
+<td><code>rh</code></td>
+<td><code>rh</code>, <code>rhGrass</code>, <code>rhShrub</code>, <code>rhTree</code></td>
+<td><code>Emon.rhGrass</code>, <code>Emon.rhShrub</code>, <code>Emon.rhTree</code>, <code>Lmon.rh</code></td>
+</tr>
+<tr>
+<td><code>rlds</code></td>
+<td><code>rlds</code>, <code>rldsIs</code>, <code>sifllwdtop</code></td>
+<td><code>3hr.rlds</code>, <code>6hrPlev.rlds</code>, <code>Amon.rlds</code>, <code>Amon.rldsSouth30</code>, <code>CF3hr.rlds</code>, <code>CFsubhr.rlds</code>, <code>E1hr.rlds</code>, <code>E1hr.rldsSouth30</code>, <code>ImonAnt.rlds</code>, <code>ImonGre.rlds</code>, <code>LImon.rldsIs</code>, <code>SIday.sifllwdtop</code>, <code>SImon.sifllwdtop</code>, <code>day.rlds</code></td>
+</tr>
+<tr>
+<td><code>rlus</code></td>
+<td><code>rlus</code>, <code>rlusIs</code>, <code>sifllwutop</code></td>
+<td><code>3hr.rlus</code>, <code>Amon.rlus</code>, <code>Amon.rlusSouth30</code>, <code>CFsubhr.rlus</code>, <code>E1hr.rlus</code>, <code>ImonAnt.rlus</code>, <code>ImonGre.rlus</code>, <code>LImon.rlusIs</code>, <code>SIday.sifllwutop</code>, <code>SImon.sifllwutop</code>, <code>day.rlus</code></td>
+</tr>
+<tr>
+<td><code>rsds</code></td>
+<td><code>rsds</code>, <code>rsdsIs</code>, <code>rsdsoni</code>, <code>rsdss</code>, <code>siflswdtop</code></td>
+<td><code>3hr.rsds</code>, <code>6hrPlev.rsds</code>, <code>Amon.rsds</code>, <code>Amon.rsdsSouth30</code>, <code>CF3hr.rsds</code>, <code>CFsubhr.rsds</code>, <code>E1hr.rsds</code>, <code>E1hr.rsdsSouth30</code>, <code>Emon.rsds</code>, <code>Emon.rsdsoni</code>, <code>Emon.rsdss</code>, <code>ImonAnt.rsds</code>, <code>ImonGre.rsds</code>, <code>LImon.rsdsIs</code>, <code>SIday.siflswdtop</code>, <code>SImon.siflswdtop</code>, <code>day.rsds</code></td>
+</tr>
+<tr>
+<td><code>rsus</code></td>
+<td><code>rsus</code>, <code>rsusIs</code>, <code>rsusoni</code>, <code>rsuss</code>, <code>siflswutop</code></td>
+<td><code>3hr.rsus</code>, <code>Amon.rsus</code>, <code>Amon.rsusSouth30</code>, <code>CFsubhr.rsus</code>, <code>E1hr.rsus</code>, <code>Emon.rsus</code>, <code>Emon.rsusoni</code>, <code>Emon.rsuss</code>, <code>ImonAnt.rsus</code>, <code>ImonGre.rsus</code>, <code>LImon.rsusIs</code>, <code>SIday.siflswutop</code>, <code>SImon.siflswutop</code>, <code>day.rsus</code></td>
+</tr>
+<tr>
+<td><code>sbl</code></td>
+<td><code>sbl</code>, <code>sblIs</code>, <code>sisndmasssubl</code></td>
+<td><code>Amon.sbl</code>, <code>CFsubhr.sbl</code>, <code>Eday.sbl</code>, <code>ImonAnt.sbl</code>, <code>ImonGre.sbl</code>, <code>LImon.sbl</code>, <code>LImon.sblIs</code>, <code>SImon.sisndmasssubl</code></td>
+</tr>
+<tr>
+<td><code>sfcWind</code></td>
+<td><code>sfcWind</code>, <code>sfcWindmax</code></td>
+<td><code>6hrPlev.sfcWind</code>, <code>Amon.sfcWind</code>, <code>Amon.sfcWindSouth30</code>, <code>CFsubhr.sfcWind</code>, <code>E1hr.sfcWind</code>, <code>E1hr.sfcWindSouth30</code>, <code>E3hr.sfcWind</code>, <code>Emon.sfcWindmax</code>, <code>day.sfcWind</code>, <code>day.sfcWindmax</code></td>
+</tr>
+<tr>
+<td><code>sfdsi</code></td>
+<td><code>sfdsi</code>, <code>siflsaltbot</code></td>
+<td><code>3hr.sfdsi</code>, <code>Omon.sfdsi</code>, <code>SImon.siflsaltbot</code></td>
+</tr>
+<tr>
+<td><code>sfpm10</code></td>
+<td><code>mmrpm10</code>, <code>sfpm10</code></td>
+<td><code>AERday.sfpm10</code>, <code>AERhr.sfpm10</code>, <code>AERmon.mmrpm10</code>, <code>AERmon.mmrpm10South30</code></td>
+</tr>
+<tr>
+<td><code>si</code></td>
+<td><code>si</code>, <code>sios</code></td>
+<td><code>Omon.si</code>, <code>Omon.sios</code></td>
+</tr>
+<tr>
+<td><code>siarea</code></td>
+<td><code>siarean</code>, <code>siareas</code></td>
+<td><code>SIday.siarean</code>, <code>SIday.siareas</code>, <code>SImon.siarean</code>, <code>SImon.siareas</code></td>
+</tr>
+<tr>
+<td><code>sieqthick</code></td>
+<td><code>sivol</code></td>
+<td><code>SImon.sivol</code></td>
+</tr>
+<tr>
+<td><code>siextent</code></td>
+<td><code>siextentn</code>, <code>siextents</code></td>
+<td><code>SIday.siextentn</code>, <code>SIday.siextents</code>, <code>SImon.siextentn</code>, <code>SImon.siextents</code></td>
+</tr>
+<tr>
+<td><code>siflfwbot</code></td>
+<td><code>fsitherm</code>, <code>siflfwbot</code></td>
+<td><code>Omon.fsitherm</code>, <code>SImon.siflfwbot</code></td>
+</tr>
+<tr>
+<td><code>sisnmass</code></td>
+<td><code>sisnmassn</code>, <code>sisnmasss</code></td>
+<td><code>SIday.sisnmassn</code>, <code>SIday.sisnmasss</code>, <code>SImon.sisnmassn</code>, <code>SImon.sisnmasss</code></td>
+</tr>
+<tr>
+<td><code>sithick</code></td>
+<td><code>sirdgthick</code>, <code>sithick</code></td>
+<td><code>SIday.sirdgthick</code>, <code>SIday.sithick</code>, <code>SImon.sirdgthick</code>, <code>SImon.sithick</code>, <code>SImon.sithickSouth30</code></td>
+</tr>
+<tr>
+<td><code>sivol</code></td>
+<td><code>sivoln</code>, <code>sivols</code></td>
+<td><code>SIday.sivoln</code>, <code>SIday.sivols</code>, <code>SImon.sivoln</code>, <code>SImon.sivols</code></td>
+</tr>
+<tr>
+<td><code>snc</code></td>
+<td><code>sisnconc</code>, <code>snc</code>, <code>sncIs</code></td>
+<td><code>ImonAnt.snc</code>, <code>ImonGre.snc</code>, <code>IyrAnt.snc</code>, <code>IyrGre.snc</code>, <code>LImon.snc</code>, <code>LImon.sncIs</code>, <code>SImon.sisnconc</code>, <code>day.snc</code></td>
+</tr>
+<tr>
+<td><code>snd</code></td>
+<td><code>sisnthick</code>, <code>snd</code></td>
+<td><code>Eday.snd</code>, <code>LImon.snd</code>, <code>SIday.sisnthick</code>, <code>SImon.sisnthick</code>, <code>SImon.sisnthickSouth30</code></td>
+</tr>
+<tr>
+<td><code>snicem</code></td>
+<td><code>snicem</code>, <code>snicemIs</code></td>
+<td><code>ImonAnt.snicem</code>, <code>ImonGre.snicem</code>, <code>LImon.snicemIs</code></td>
+</tr>
+<tr>
+<td><code>snm</code></td>
+<td><code>sisndmassmelt</code>, <code>snm</code>, <code>snmIs</code></td>
+<td><code>Eday.snm</code>, <code>ImonAnt.snm</code>, <code>ImonGre.snm</code>, <code>LImon.snm</code>, <code>LImon.snmIs</code>, <code>SImon.sisndmassmelt</code></td>
+</tr>
+<tr>
+<td><code>snrefr</code></td>
+<td><code>snicefreez</code>, <code>snicefreezIs</code>, <code>snrefr</code></td>
+<td><code>Eday.snrefr</code>, <code>ImonAnt.snicefreez</code>, <code>ImonGre.snicefreez</code>, <code>LImon.snicefreezIs</code></td>
+</tr>
+<tr>
+<td><code>snw</code></td>
+<td><code>sisnmass</code>, <code>snw</code></td>
+<td><code>LImon.snw</code>, <code>SImon.sisnmass</code>, <code>day.snw</code></td>
+</tr>
+<tr>
+<td><code>so</code></td>
+<td><code>so</code>, <code>soga</code></td>
+<td><code>Oday.so</code>, <code>Odec.so</code>, <code>Omon.so</code>, <code>Omon.soSouth30</code>, <code>Omon.soga</code></td>
+</tr>
+<tr>
+<td><code>sos</code></td>
+<td><code>sos</code>, <code>sosga</code></td>
+<td><code>Oday.sos</code>, <code>Omon.sos</code>, <code>Omon.sosga</code>, <code>Omon.sosgaSouth30</code></td>
+</tr>
+<tr>
+<td><code>ta</code></td>
+<td><code>ta</code>, <code>ta6</code>, <code>ta700</code>, <code>ta850</code>, <code>taUTLS</code></td>
+<td><code>6hrLev.ta</code>, <code>6hrPlevPt.ta</code>, <code>6hrPlevPt.ta7h</code>, <code>6hrPlevPt.taUTLS</code>, <code>AERmonZ.ta</code>, <code>Amon.ta</code>, <code>Amon.taSouth30</code>, <code>CF3hr.ta</code>, <code>CFday.ta</code>, <code>CFday.ta700</code>, <code>CFmon.ta</code>, <code>CFmon.taSouth30</code>, <code>CFsubhr.ta</code>, <code>E3hrPt.ta6</code>, <code>Eday.ta850</code>, <code>EdayZ.ta</code>, <code>day.ta</code></td>
+</tr>
+<tr>
+<td><code>tas</code></td>
+<td><code>tas</code>, <code>tasIs</code>, <code>tasmax</code>, <code>tasmaxCrop</code>, <code>tasmin</code>, <code>tasminCrop</code></td>
+<td><code>3hr.tas</code>, <code>6hrPlev.tas</code>, <code>AERhr.tas</code>, <code>Amon.tas</code>, <code>Amon.tasSouth30</code>, <code>Amon.tasmax</code>, <code>Amon.tasmaxSouth30</code>, <code>Amon.tasmin</code>, <code>Amon.tasminSouth30</code>, <code>CFsubhr.tas</code>, <code>E1hr.tas</code>, <code>E1hr.tasSouth30</code>, <code>Eday.tasmaxCrop</code>, <code>Eday.tasminCrop</code>, <code>ImonAnt.tas</code>, <code>ImonGre.tas</code>, <code>LImon.tasIs</code>, <code>day.tas</code>, <code>day.tasmax</code>, <code>day.tasmin</code></td>
+</tr>
+<tr>
+<td><code>thetao</code></td>
+<td><code>thetao</code>, <code>thetaoga</code>, <code>thetaot2000</code>, <code>thetaot300</code>, <code>thetaot700</code></td>
+<td><code>Emon.thetaot2000</code>, <code>Emon.thetaot300</code>, <code>Emon.thetaot700</code>, <code>Oday.thetao200</code>, <code>Odec.thetao</code>, <code>Omon.thetao</code>, <code>Omon.thetaoSouth30</code>, <code>Omon.thetaoga</code></td>
+</tr>
+<tr>
+<td><code>tos</code></td>
+<td><code>tos</code>, <code>tosga</code></td>
+<td><code>3hr.tos</code>, <code>Oday.tos</code>, <code>Omon.tos</code>, <code>Omon.tosSouth30</code>, <code>Omon.tosga</code></td>
+</tr>
+<tr>
+<td><code>ts</code></td>
+<td><code>sitemptop</code>, <code>ts</code>, <code>tsIs</code>, <code>tsns</code></td>
+<td><code>6hrPlev.ts</code>, <code>6hrPlevPt.ts</code>, <code>Amon.ts</code>, <code>Amon.tsSouth30</code>, <code>CF3hr.ts</code>, <code>CFsubhr.ts</code>, <code>E1hr.ts</code>, <code>Eday.ts</code>, <code>Eday.tsns</code>, <code>ImonAnt.ts</code>, <code>ImonGre.ts</code>, <code>LImon.tsIs</code>, <code>SIday.sitemptop</code>, <code>SImon.sitemptop</code>, <code>SImon.sitemptopSouth30</code></td>
+</tr>
+<tr>
+<td><code>tsLut</code></td>
+<td><code>tslsiLut</code></td>
+<td><code>Emon.tslsiLut</code></td>
+</tr>
+<tr>
+<td><code>tsn</code></td>
+<td><code>tsn</code>, <code>tsnIs</code></td>
+<td><code>Eday.tsn</code>, <code>ImonAnt.tsn</code>, <code>ImonGre.tsn</code>, <code>LImon.tsn</code>, <code>LImon.tsnIs</code></td>
+</tr>
+<tr>
+<td><code>ua</code></td>
+<td><code>ua</code>, <code>ua10</code>, <code>ua100m</code>, <code>ua200</code>, <code>ua6</code>, <code>uaUTLS</code></td>
+<td><code>3hr.ua100m</code>, <code>6hrLev.ua</code>, <code>6hrPlevPt.ua</code>, <code>6hrPlevPt.ua200</code>, <code>6hrPlevPt.ua7h</code>, <code>6hrPlevPt.uaUTLS</code>, <code>AERday.ua10</code>, <code>AERmon.ua</code>, <code>AERmonZ.ua</code>, <code>Amon.ua</code>, <code>Amon.uaSouth30</code>, <code>CFday.ua</code>, <code>CFsubhr.ua</code>, <code>E1hr.ua100m</code>, <code>E3hrPt.ua6</code>, <code>EdayZ.ua</code>, <code>day.ua</code></td>
+</tr>
+<tr>
+<td><code>va</code></td>
+<td><code>va</code>, <code>va100m</code>, <code>va200</code>, <code>va6</code>, <code>vaUTLS</code></td>
+<td><code>3hr.va100m</code>, <code>6hrLev.va</code>, <code>6hrPlevPt.va</code>, <code>6hrPlevPt.va200</code>, <code>6hrPlevPt.va7h</code>, <code>6hrPlevPt.vaUTLS</code>, <code>AERmon.va</code>, <code>AERmonZ.va</code>, <code>Amon.va</code>, <code>Amon.vaSouth30</code>, <code>CFday.va</code>, <code>CFsubhr.va</code>, <code>E1hr.va100m</code>, <code>E3hrPt.va6</code>, <code>day.va</code></td>
+</tr>
+<tr>
+<td><code>vegHeight</code></td>
+<td><code>vegHeight</code>, <code>vegHeightGrass</code>, <code>vegHeightShrub</code>, <code>vegHeightTree</code></td>
+<td><code>Emon.vegHeight</code>, <code>Emon.vegHeightGrass</code>, <code>Emon.vegHeightShrub</code>, <code>Emon.vegHeightTree</code></td>
+</tr>
+<tr>
+<td><code>wap</code></td>
+<td><code>wap</code>, <code>wap500</code>, <code>wap6</code></td>
+<td><code>Amon.wap</code>, <code>Amon.wapSouth30</code>, <code>CFday.wap</code>, <code>CFday.wap500</code>, <code>CFsubhr.wap</code>, <code>E3hrPt.wap6</code>, <code>day.wap</code></td>
+</tr>
+<tr>
+<td><code>wbgt</code></td>
+<td><code>wbgt2m</code>, <code>wbgt2mmax</code></td>
+<td><code>day.wbgt2m</code>, <code>day.wbgt2mmax</code></td>
+</tr>
+<tr>
+<td><code>wsg</code></td>
+<td><code>wsgmax100m</code>, <code>wsgmax10m</code></td>
+<td><code>E1hr.wsgmax100m</code>, <code>E1hr.wsgmax10m</code>, <code>Emon.wsgmax100m</code>, <code>Emon.wsgmax10m</code></td>
+</tr>
+<tr>
+<td><code>zg</code></td>
+<td><code>zg</code>, <code>zg10</code>, <code>zg1000</code>, <code>zg500</code>, <code>zg700</code>, <code>zg925</code></td>
+<td><code>6hrLev.zg</code>, <code>6hrPlev.zg1000</code>, <code>6hrPlevPt.zg</code>, <code>6hrPlevPt.zg500</code>, <code>6hrPlevPt.zg700</code>, <code>6hrPlevPt.zg7h</code>, <code>6hrPlevPt.zg925</code>, <code>AERday.zg10</code>, <code>AERday.zg1000</code>, <code>AERday.zg500</code>, <code>AERmon.zg</code>, <code>AERmonZ.zg</code>, <code>Amon.zg</code>, <code>Amon.zgSouth30</code>, <code>CFday.zg</code>, <code>CFsubhr.zg</code>, <code>EdayZ.zg</code>, <code>day.zg</code></td>
+</tr>
+<tr>
+<td><code>zmeso</code></td>
+<td><code>zmeso</code>, <code>zmesoos</code></td>
+<td><code>Oday.zmeso</code>, <code>Omon.zmeso</code>, <code>Omon.zmesoos</code></td>
+</tr>
+<tr>
+<td><code>zmicro</code></td>
+<td><code>zmicro</code>, <code>zmicroos</code></td>
+<td><code>Oday.zmicro</code>, <code>Omon.zmicro</code>, <code>Omon.zmicroos</code></td>
+</tr>
+<tr>
+<td><code>zmisc</code></td>
+<td><code>zmisc</code>, <code>zmiscos</code></td>
+<td><code>Omon.zmisc</code>, <code>Omon.zmiscos</code></td>
+</tr>
+<tr>
+<td><code>zooc</code></td>
+<td><code>zooc</code>, <code>zoocos</code></td>
+<td><code>Oday.zooc</code>, <code>Omon.zooc</code>, <code>Omon.zoocos</code></td>
+</tr>
+</tbody>
+</table></div>
+<!-- links for referencing -->
   </div>
 </article>
                                 <div class="mx-auto flex flex-wrap h-16 w-full max-w-2xl items-center gap-2 px-4 md:px-0">
@@ -1752,34 +2384,52 @@ Set to "u" (unmasked) if no masking is applied.</p>
         
         
         
+        <a href="#variable-names"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#variable-names');">
+            Variable names
+        </a>
+        
+
+        
+        <a href="#branding-suffixes"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#branding-suffixes');">
+            Branding suffixes
+        </a>
+        
+        
         <a href="#temporal-labels"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#temporal-labels');">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#temporal-labels');">
             Temporal labels
         </a>
         
-
-        
         <a href="#vertical-labels"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#vertical-labels');">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#vertical-labels');">
             Vertical labels
         </a>
         
-
-        
         <a href="#horizontal-labels"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#horizontal-labels');">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#horizontal-labels');">
             Horizontal labels
         </a>
         
-
-        
         <a href="#area-labels"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#area-labels');">
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#area-labels');">
             Area labels
+        </a>
+        
+        
+
+        
+        <a href="#physical-parameter-name-changes"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#physical-parameter-name-changes');">
+            Physical parameter name changes
         </a>
         
 
