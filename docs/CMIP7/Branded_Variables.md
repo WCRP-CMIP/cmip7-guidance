@@ -17,7 +17,8 @@ The `Amon` table is a collection of atmospheric variables at monthly frequency, 
 While familiar to experienced users of CMIP data, this system led to a proliferation of table names in CMIP6 due to the large number of requested variables (~2000), and the rationale for their names was not always clear (for example, table name `Amon` included the realm while `3hr` and `day` used only the frequency).
 
 The **branded variable** corresponding to `Amon.tas` is `tas_tavg-h2m-hxy-u`.
-Here the short name identifying the physical quantity, `tas`, is unchanged.
+The short name, `tas`, identifies the physical quantity and is in this example unchanged. 
+The short name is also referred to as the "root name" of the branded variable.
 The **branding suffix**, `tavg-h2m-hxy-u`, describes how the variable is temporally and spatially sampled and is composed of four parts:
 
 - **temporal label**: `tavg` indicates a time average.
@@ -28,10 +29,10 @@ The **branding suffix**, `tavg-h2m-hxy-u`, describes how the variable is tempora
 Branding suffixes are always composed of these four labels. The possible values for each type of label are [tabulated below](#branding-suffixes).
 
 Importantly, `tas_tavg-h2m-hxy-u` is not *fully* equivalent to `Amon.tas`. 
-This is because a branded variable name does not identify a requested variable's frequency, or its region.
+This is because a branded variable name does not identify a requested variable's frequency or its region.
 By *additionally* specifying the frequency as monthly, and the region as global, `tas_tavg-h2m-hxy-u` then becomes equivalent to `Amon.tas`.
-The same branded variable could alternately be reported at other frequencies, or for other regions.
-For example, `tas_tavg-h2m-hxy-u` reported at daily frequency is denoted `day.tas` in CMIP6.
+The same branded variable could alternately be reported at other frequencies or for other regions.
+For example, `tas_tavg-h2m-hxy-u` reported on a global grid and at daily frequency is denoted `day.tas` in CMIP6.
 
 !!! note "Viewing branded variables in the Data Request"
 
@@ -40,7 +41,7 @@ For example, `tas_tavg-h2m-hxy-u` reported at daily frequency is denoted `day.ta
     The Data Request can be viewed using [Airtable](https://bit.ly/CMIP7-DReq-latest), the [github-based web viewer](https://cmip-data-request.github.io/cmip7-dreq-webview/latest/index.html), or the [python API](https://github.com/CMIP-Data-Request/CMIP7_DReq_software).
 
     For every variable, the Data Request specifies *both* its CMIP7-era branded name and CMIP6-era name.
-    This provides a mapping from old to new names, to simplify the transition to branded names.
+    This provides a mapping from old to new names in order to simplify the transition to branded names.
     The ["Variables" table of the Data Request](https://cmip-data-request.github.io/cmip7-dreq-webview/latest/variables.html) provides a unique identifier using both flavours of name, termed "CMIP7 Compound Name" and "CMIP6 Compound Name".
     For the above example (monthly near-surface air temperature) these are `atmos.tas.tavg-h2m-hxy-u.mon.glb` and `Amon.tas`, respectively.
     [See below](#variable-names) for further clarification of the meaning of different types of variable names.
@@ -67,7 +68,7 @@ To disambiguate the different flavours of variable name used in the CMIP7 Data R
 - **branded_variable** is composed of the **root name** followed by a **branding suffix** (e.g., `tas_tavg-h2m-hxy-u`), as [described above](#branded-variables-for-cmip7). It is a mandatory [global attribute][global-attributes-latest].
 - **Data Request variable** refers to a requested variable specified by a row in the "Variables" table of the [Airtable view](https://bit.ly/CMIP7-DReq-latest) of the Data Request. A requested variable corresponds to a single **branded_variable**, but additionally specifies the **frequency**, **region**, and reporting grid (atmosphere, ocean, ...) on which the variable should be provided.
 - **CMIP7 compound name** uniquely identifies a Data Request variable in the CMIP7 Data Request. It is composed of four parts: **realm**, **root name**, **branding suffix**, **frequency**, and **region** (e.g. `atmos.tas.tavg-h2m-hxy-u.mon.glb`). The four latter parts of the **CMIP7 compound name** - essentially the **branded variable** plus **frequency** and **region** - are required to uniquely identify a **Data Request variable** in the collection of CMIP7 requested variables. The **realm** is not strictly required for uniqueness, but is included in the compound name so that users can easily identify requested variables associated with a given realm. The realm used in the **CMIP7 compound name** is the **primary realm** identifed by the "Modelling Realm - Primary" column in the "Variables" table of the [Airtable view](https://bit.ly/CMIP7-DReq-latest) of the Data Request. The **primary realm** is also used to group variables in the [CMIP7 CMOR tables][cmip7-cmor-tables].
-- **CMIP6 compound name** is another unique identifier of Data Request variables in the CMIP7 Data Request. It also uniquely identifies a requested variable in the CMIP6 Data Request, if the variable was included in CMIP6, but regardless all CMIP7 requested variables are assigned a **CMIP6 compound name** even if they were not included in CMIP6. This flavour of compound name is composed of a MIP table name (aka CMOR table name) followed by short name that is *usually* identical to the **physical parameter name** (e.g., `Amon.tas`). There are some exceptions, [tabulated below](#physical-parameter-name-changes), in which extra information is appended to the end of the short name (e.g., `Amon.tasSouth30`). However, the short variable name used in the **CMIP6 compound name** always *begins* with the **physical parameter name**. The **CMIP6 compound name** is included in the CMIP7 Data Request because these names are familiar to many users, in order to help them navigate the transition to the new CMIP7 variable naming scheme based on **branded variables**.
+- **CMIP6 compound name** is another unique identifier of Data Request variables in the CMIP7 Data Request, which is included in the CMIP7 Data Request because these names are familiar to many users and may help them navigate the transition to the new CMIP7 variable naming scheme based on **branded variables**. If a variable was included in CMIP6 then this name uniquely identifies it in the CMIP6 Data Request, but note that newly introduced variables in CMIP7 are also assigned a **CMIP6 compound name**. This flavour of compound name is composed of the name of a CMIP6-era MIP table (also referred to as a CMOR table) followed by short name that is *usually* identical to the **physical parameter name** (e.g., `Amon.tas`). There are some exceptions, [tabulated below](#physical-parameter-name-changes), in which extra information is appended to the end of the short name (e.g., `Amon.tasSouth30`). However, the short variable name used in the **CMIP6 compound name** always *begins* with the **physical parameter name**. 
 
 
 ## Branding suffixes
@@ -97,9 +98,9 @@ The **temporal_label** identifies how the variable is sampled in the time domain
 ### Vertical labels
 
 The **vertical_label** identifies how the variable is sampled in the vertical domain: on pressure levels, model levels, at a single level, etc.
-It is set to `u` (unspecified) if none of the following apply.
+It is set to `u` (unspecified) if none of the following apply (e.g. a field reported at the surface or at the top of the atmopsphere).
 
-| Label | Data Request Dimension |
+| Label | Data Request Dimension or Coordinate |
 | --- | --- | 
 | `10hPa` | `p10` |
 | `100hPa` | `p100` |
@@ -206,7 +207,7 @@ It is set to `u` (unmasked) if no masking is applied.
 
 The following table lists **root names** in the CMIP7 Data Request (v1.2.2.3) that do not match one and only one **physical parameter name** (recall that **root name** is the same as **variable_id** and **out_name**).
 Out of the 987 **root names** in Data Request v1.2.2.3 there are 119 such cases (12%).
-For such each **root name**, the table lists the **physical parameter name(s)** and the **CMIP6 compound name(s)** of the Data Request variable(s) using this **root name**.
+For each such **root name**, the table lists the **physical parameter name(s)** and the **CMIP6 compound name(s)** of the Data Request variable(s) using this **root name**.
 
 | **Root name** | **Physical parameter name(s)** | **CMIP6 compound name(s)** |
 | --- | --- | --- |
