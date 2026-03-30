@@ -1099,7 +1099,9 @@
     </div>
   </div>
   <div class="typography w-full flex-1 *:data-[slot=alert]:first:mt-0">
-    <!-- TODO: get this one line description from esgvoc -->
+    <!-- TODO: get this information from esgvoc (add reference URLs at that point) -->
+<p>Responsible activity: CMIP</p>
+<!-- TODO: get this one line description from esgvoc -->
 <p>Simulation of the climate of the recent past (typically meaning 1850 to present-day) with prescribed carbon dioxide emissions (for prescribed carbon dioxide concentrations, see <code>historical</code>).</p>
 <h2 id="experiment-set-up">Experiment set up<a class="headerlink" href="#experiment-set-up" title="Permanent link">&para;</a></h2>
 <p>The emissions driven historical simulation uses a specific set of forcings (see <a href="#forcings">forcings</a>).
@@ -1116,24 +1118,12 @@ Only one ensemble member is required.</p>
 <!-- TODO: get branch information from esgvoc -->
 <p>Branch from <code>esm-piControl</code> at a time of your choosing.</p>
 <h2 id="forcings">Forcings<a class="headerlink" href="#forcings" title="Permanent link">&para;</a></h2>
-<h3 id="versions-to-use">Versions to use<a class="headerlink" href="#versions-to-use" title="Permanent link">&para;</a></h3>
-<p>The forcings relevant for this simulation are listed below.
-For each forcing, we provide the version(s), in the form of "source ID(s)",
-which should be used when running this simulation.</p>
-<!-- TODO: auto-generate this -->
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">&quot;anthropogenic-emissions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;CEDS-CMIP-2025-04-18&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;CEDS-CMIP-2025-04-18-supplemental&quot;</span><span class="p">],</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&quot;biomass-burning-emissions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;DRES-CMIP-BB4CMIP7-2-0&quot;</span><span class="p">],</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">&quot;land-use&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;UofMD-landState-3-1-1&quot;</span><span class="p">],</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">&quot;greenhouse-gas-concentrations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;CR-CMIP-1-0-0&quot;</span><span class="p">],</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nt">&quot;stratospheric-aerosol-forcing &quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;UOEXETER-CMIP-2-2-1&quot;</span><span class="p">],</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="nt">&quot;ozone&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;FZJ-CMIP-ozone-2-0&quot;</span><span class="p">],</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nt">&quot;nitrogen-deposition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;FZJ-CMIP-nitrogen-1-2&quot;</span><span class="p">],</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nt">&quot;solar&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;SOLARIS-HEPPA-CMIP-4-6&quot;</span><span class="p">],</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nt">&quot;aerosol-optical-properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nt">&quot;population-density&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;PIK-CMIP-1-0-1&quot;</span><span class="p">]</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">}</span>
-</code></pre></div>
+<h3 id="general-headlines">General headlines<a class="headerlink" href="#general-headlines" title="Permanent link">&para;</a></h3>
+<p>The <code>esm-hist</code> experiment is a time-varying forcings experiment.
+Please note that the ozone forcing should come from files with the source ID <code>FZJ-CMIP-ozone-2-0</code>.
+<code>FZJ-CMIP-ozone-2-0</code> was released quite late, so if you have simulations based on <code>FZJ-CMIP-ozone-1-2</code>,
+these would also be of interest to the Forcings Task Team so please publish them
+(<a href="https://github.com/PCMDI/input4MIPs_CVs/issues/415">discussion of how to set the value for the forcing 'f' identifier in such files is ongoing</a>).</p>
 <h3 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h3>
 <!-- TODO: auto-generate -->
 <p>The following pages give further information on each forcing:</p>
@@ -1149,18 +1139,36 @@ which should be used when running this simulation.</p>
 <li>aerosol optical properties: <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/aerosol-optical-properties-macv2-sp/">input4mips-cvs.readthedocs.io/dataset-overviews/aerosol-optical-properties-macv2-sp</a></li>
 <li>population density: <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/population/">input4mips-cvs.readthedocs.io/dataset-overviews/population</a></li>
 </ul>
-<p>Beyond the information on these pages, please also note the following:</p>
-<p>The ozone forcing should come from files with the source ID <code>FZJ-CMIP-ozone-2-0</code>.
-<code>FZJ-CMIP-ozone-2-0</code> was released quite late, so if you have simulations based on <code>FZJ-CMIP-ozone-1-2</code>,
-these would also be of interest to the Forcings Task Team so please publish them
-(<a href="https://github.com/PCMDI/input4MIPs_CVs/issues/415">discussion of how to set the value for the forcing 'f' identifier in such files is ongoing</a>).</p>
-<p>The aerosol optical properties based on the MACv2-SP parameterisation are not distrubuted via the ESGF.</p>
+<h3 id="versions-to-use">Versions to use<a class="headerlink" href="#versions-to-use" title="Permanent link">&para;</a></h3>
+<p>The forcings relevant for this simulation are listed below.
+For each forcing, we provide the version(s), in the form of "source ID(s)",
+which should be used when running this simulation.
+Where there is more than one source ID listed,
+this either indicates that you may need data from multiple source IDs
+or that multiple options are acceptable
+(because, e.g., fixes were made but re-running is not required).
+Please see the guidance pages linked above for details.</p>
+<!-- TODO: auto-generate this -->
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">&quot;anthropogenic-emissions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;CEDS-CMIP-2025-04-18&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;CEDS-CMIP-2025-04-18-supplemental&quot;</span><span class="p">],</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&quot;biomass-burning-emissions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;DRES-CMIP-BB4CMIP7-2-0&quot;</span><span class="p">],</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">&quot;land-use&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;UofMD-landState-3-1-1&quot;</span><span class="p">],</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">&quot;greenhouse-gas-concentrations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;CR-CMIP-1-0-0&quot;</span><span class="p">],</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nt">&quot;stratospheric-aerosol-forcing &quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;UOEXETER-CMIP-2-2-1&quot;</span><span class="p">],</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="nt">&quot;ozone&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;FZJ-CMIP-ozone-1-2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;FZJ-CMIP-ozone-2-0&quot;</span><span class="p">],</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nt">&quot;nitrogen-deposition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;FZJ-CMIP-nitrogen-1-2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;FZJ-CMIP-nitrogen-2-0&quot;</span><span class="p">],</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nt">&quot;solar&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;SOLARIS-HEPPA-CMIP-4-6&quot;</span><span class="p">],</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nt">&quot;aerosol-optical-properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nt">&quot;population-density&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;PIK-CMIP-1-0-1&quot;</span><span class="p">]</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="getting-the-data">Getting the data<a class="headerlink" href="#getting-the-data" title="Permanent link">&para;</a></h3>
+<p>The data is available on ESGF and searchable <a href="https://esgf-node.ornl.gov/search?project=input4MIPs&amp;versionType=all&amp;activeFacets=%7B%22mip_era%22%3A%22CMIP7%22%7D">via metagrid</a>,
+although this method of finding and downloading the data can involve a lot of clicking.
+Having said this, please also note: the aerosol optical properties based on the MACv2-SP parameterisation are not distrubuted via the ESGF.</p>
 <!-- TODO: add CI to check all URLs are live -->
 <p>Please see <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/aerosol-optical-properties-macv2-sp/#datasets-for-cmip7-phases">their specific guidance section</a>
 for data access information.</p>
-<h3 id="getting-the-data">Getting the data<a class="headerlink" href="#getting-the-data" title="Permanent link">&para;</a></h3>
-<p>The data is available on ESGF and searchable <a href="https://esgf-node.ornl.gov/search?project=input4MIPs&amp;versionType=all&amp;activeFacets=%7B%22mip_era%22%3A%22CMIP7%22%7D">via metagrid</a>,
-although this method of finding and downloading the data can involve a lot of clicking.</p>
 <p>If you install <a href="https://esgf.github.io/esgf-download/">esgpull</a>,
 you can download all the data associated with the source IDs above with the script shown below.
 Note that this will download all the data associated with these source IDs,
@@ -1417,16 +1425,22 @@ which is likely to be much more data than you actually need to run your model.</
         </a>
         
         
-        <a href="#versions-to-use"
+        <a href="#general-headlines"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#versions-to-use');">
-            Versions to use
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#general-headlines');">
+            General headlines
         </a>
         
         <a href="#notes"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
             data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#notes');">
             Notes
+        </a>
+        
+        <a href="#versions-to-use"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#versions-to-use');">
+            Versions to use
         </a>
         
         <a href="#getting-the-data"

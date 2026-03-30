@@ -5,6 +5,9 @@ title: 1pctCO2-bgc Experiment Setup and Forcings Guidance
 
 # 1pctCO2-bgc Experiment Setup and Forcings Guidance
 
+<!-- TODO: get this information from esgvoc (add reference URLs at that point) -->
+Responsible activity: C4MIP
+
 <!-- TODO: get this one line description from esgvoc -->
 Biogeochemically coupled simulation (i.e. the carbon cycle only 'sees' the increase in atmospheric carbon dioxide, not any change in temperature) of a 1% per year increase in atmospheric carbon dioxide levels. All other conditions are kept the same as piControl.
 
@@ -17,9 +20,11 @@ only sees the change in atmospheric CO<sub>2</sub> concentrations
 and does not see any other changes (e.g. changes in atmospheric temperatures).
 
 <!-- TODO: consider whether we can generate these sentences automatically based on esgvoc -->
-You are free to start the time axis of your outputs at whatever year you like
-(e.g. starting at year 1, or 1850, or year 500),
-although if you want to make life easy for analysts, start your time axis at the branching time.
+The start-time of the simulation is not tied to a particular year but, rather, can be chosen arbitrarily
+(e.g., year 200 or year 1850 or year 1).
+However, it is easier for analysts if the start-time is consistent with the branching time in the parent experiment
+(e.g., if the the simulation branches from year 200 in the parent experiment,
+then the start time in the child experiment would be set to year 200).
 Simulations should be at least 150 years in length.
 Only one ensemble member is required.
 
@@ -35,13 +40,17 @@ Branch from `piControl` at a time of your choosing.
 
 ## Forcings
 
-### Versions to use
+### General headlines
 
-The forcings relevant for this simulation are the same as for the [1pctCO2 simulation](./1pctco2.md).
+See general headlines for the [1pctCO2 simulation](./1pctco2.md).
 
 ### Notes
 
 See notes for the [1pctCO2 simulation](./1pctco2.md).
+
+### Versions to use
+
+The forcings relevant for this simulation are the same as for the [1pctCO2 simulation](./1pctco2.md).
 
 ### Getting the data
 

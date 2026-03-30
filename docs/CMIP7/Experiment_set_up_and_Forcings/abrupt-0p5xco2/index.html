@@ -1099,7 +1099,9 @@
     </div>
   </div>
   <div class="typography w-full flex-1 *:data-[slot=alert]:first:mt-0">
-    <!-- TODO: get this one line description from esgvoc -->
+    <!-- TODO: get this information from esgvoc (add reference URLs at that point) -->
+<p>Responsible activity: CFMIP</p>
+<!-- TODO: get this one line description from esgvoc -->
 <p>Abrupt halving of atmospheric carbon dioxide levels. All other conditions are kept the same as piControl.</p>
 <h2 id="experiment-set-up">Experiment set up<a class="headerlink" href="#experiment-set-up" title="Permanent link">&para;</a></h2>
 <!-- TODO: decide and then consistently apply some convention about whether experiment names are always surround by backticks `` or not -->
@@ -1107,9 +1109,11 @@
 After branching, the atmospheric CO<sub>2</sub> concentrations should be set to half
 the concentrations used in the <code>piControl</code> simulation.</p>
 <!-- TODO: consider whether we can generate these sentences automatically based on esgvoc -->
-<p>You are free to start the time axis of your outputs at whatever year you like
-(e.g. starting at year 1, or 1850, or year 500),
-although if you want to make life easy for analysts, start your time axis at the branching time.
+<p>The start-time of the simulation is not tied to a particular year but, rather, can be chosen arbitrarily
+(e.g., year 200 or year 1850 or year 1).
+However, it is easier for analysts if the start-time is consistent with the branching time in the parent experiment
+(e.g., if the the simulation branches from year 200 in the parent experiment,
+then the start time in the child experiment would be set to year 200).
 Simulations should be at least 300 years in length.
 Only one ensemble member is required.</p>
 <h3 id="parent-experiment">Parent experiment<a class="headerlink" href="#parent-experiment" title="Permanent link">&para;</a></h3>
@@ -1121,10 +1125,12 @@ Only one ensemble member is required.</p>
 <!-- TODO: get branch information from esgvoc -->
 <p>Branch from <code>piControl</code> at a time of your choosing.</p>
 <h2 id="forcings">Forcings<a class="headerlink" href="#forcings" title="Permanent link">&para;</a></h2>
-<h3 id="versions-to-use">Versions to use<a class="headerlink" href="#versions-to-use" title="Permanent link">&para;</a></h3>
-<p>The forcings relevant for this simulation are the same as for the <a href="../picontrol/">piControl simulation</a>.</p>
+<h3 id="general-headlines">General headlines<a class="headerlink" href="#general-headlines" title="Permanent link">&para;</a></h3>
+<p>See general headlines for the <a href="../abrupt-4xco2/">abrupt-4xCO2 simulation</a>.</p>
 <h3 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h3>
 <p>See notes for the <a href="../picontrol/">piControl simulation</a>.</p>
+<h3 id="versions-to-use">Versions to use<a class="headerlink" href="#versions-to-use" title="Permanent link">&para;</a></h3>
+<p>The forcings relevant for this simulation are the same as for the <a href="../picontrol/">piControl simulation</a>.</p>
 <h3 id="getting-the-data">Getting the data<a class="headerlink" href="#getting-the-data" title="Permanent link">&para;</a></h3>
 <p>See instructions for the <a href="../picontrol/">piControl simulation</a>.
 You have to halve the atmospheric CO<sub>2</sub> concentrations yourself.</p>
@@ -1371,16 +1377,22 @@ You have to halve the atmospheric CO<sub>2</sub> concentrations yourself.</p>
         </a>
         
         
-        <a href="#versions-to-use"
+        <a href="#general-headlines"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#versions-to-use');">
-            Versions to use
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#general-headlines');">
+            General headlines
         </a>
         
         <a href="#notes"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
             data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#notes');">
             Notes
+        </a>
+        
+        <a href="#versions-to-use"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#versions-to-use');">
+            Versions to use
         </a>
         
         <a href="#getting-the-data"
