@@ -25,7 +25,7 @@
     - [piclim-NOx](CMIP7/Experiment_set_up_and_Forcings/piclim-nox.md)
     - [piclim-ODS](CMIP7/Experiment_set_up_and_Forcings/piclim-ods.md)
     - [piclim-SO2](CMIP7/Experiment_set_up_and_Forcings/piclim-so2.md)
-    - [picontrol](CMIP7/Experiment_set_up_and_Forcings/picontrol.md)
+    - [piControl](CMIP7/Experiment_set_up_and_Forcings/picontrol.md)
     - [scen7-h-Aer](CMIP7/Experiment_set_up_and_Forcings/scen7-h-aer.md)
     - [scen7-h-AQ](CMIP7/Experiment_set_up_and_Forcings/scen7-h-aq.md)
     - [scen7-vl-Aer](CMIP7/Experiment_set_up_and_Forcings/scen7-vl-aer.md)
