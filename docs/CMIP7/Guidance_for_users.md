@@ -46,7 +46,6 @@ There are 3 options to access the data:
 
 
 
-    For all non-ESGF data access routes, we encourage users to verify that the data used is the latest version. 
 
     ??? info "Analysis-Ready Cloud-Optimized data"
 
