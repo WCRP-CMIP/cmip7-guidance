@@ -126,8 +126,9 @@ To enable modelling groups and others who support CMIP7 to demonstrate its impac
         <!--Maybe use experiment CV to get the right citation, once they have that information. -->
     * Model documentation papers associated the model(s) used
 
-In general, the [CMIP7 GMD special issue][GMDSpecialIssue] is a good place to look for relevant literature.
+    In general, the [CMIP7 GMD special issue][GMDSpecialIssue] is a good place to look for relevant literature.
  
+
 2. **Register your work.**
 
     Register your work on the [CMIP7 Publication Hub][CMIPpubs] (coming soon). 
