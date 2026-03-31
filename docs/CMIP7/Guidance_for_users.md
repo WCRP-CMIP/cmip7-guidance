@@ -44,14 +44,15 @@ There are 3 options to access the data:
 
     While all published CMIP7 data is available from ESGF, some of it is additionally hosted in non-ESGF storage facilities. Below are links to some of these replicas. If you know of another place CMIP data is currently being stored, please submit [this form][altaccess] to let us and the community know!
 
-
+    * links coming soon
 
 
     ??? info "Analysis-Ready Cloud-Optimized data"
 
-        Data hosted in the cloud can be very useful for users with fewer resources. Indeed, data can be streamed and the analysis can be done remotely close to the storage, instead of downloading it locally. For efficient analysis in the cloud, the data needs to be in an Analysis-Ready Cloud-Optimized (ARCO) format. Following the Pangeo / ESGF Cloud Data Working Group efforts for CMIP6,  there are community efforts underway to streamline ARCO access (e.g., [virtualizarr][[virtualizarr](https://virtualizarr.readthedocs.io/en/stable/)]) to lowering barriers to producing cloud-optimized data formats without having to rewrite the original data. Contributions are welcomed [here][virtual].
+        Data hosted in the cloud can be very useful for users with fewer resources. Indeed, data can be streamed and the analysis can be done remotely close to the storage, instead of downloading it locally. For efficient analysis in the cloud, the data needs to be in an Analysis-Ready Cloud-Optimized (ARCO) format. Following the Pangeo / ESGF Cloud Data Working Group efforts for CMIP6,  there are community efforts underway to streamline ARCO access (e.g., [virtualizarr][virtualizarr]), which will lower barriers to producing cloud-optimized data formats without having to rewrite the original data. Contributions are welcomed [here][virtual].
+
       
-For data access routes that do not involve official ESGF nodes, we encourage users to verify that the data used is the latest version, and cite the original sources appropriately. 
+For data access routes that do not involve official ESGF nodes, we encourage users to verify that the data used is the latest version, and cite the original sources appropriately (see below). 
 
 
 
@@ -115,7 +116,7 @@ To enable modelling groups and others who support CMIP7 to demonstrate its impac
 
 ###  Recommended
 
- 1. **Cite the CMIP literature**
+1. **Cite the CMIP literature**
 
     To provide more context, we recommend citing relevant articles. For example:
 
@@ -127,12 +128,12 @@ To enable modelling groups and others who support CMIP7 to demonstrate its impac
 
 In general, the [CMIP7 GMD special issue][GMDSpecialIssue] is a good place to look for relevant literature.
  
- 2. **Register your work.**
+2. **Register your work.**
 
     Register your work on the [CMIP7 Publication Hub][CMIPpubs] (coming soon). 
 
 
- 3. **Use the standard vocabularies**
+3. **Use the standard vocabularies**
 
     Where possible, we recommend using the CMIP7 standardized names as defined by the [controlled vocabularies (CVs)][cmipCvs] (see [Section 3](#3-cmip7-facets-and-their-documentation)) for terms such as the source (model) or experiment, in order to make references as clear and unambiguous as possible. However, if your audience requires different terms, then you should use those but we recommend keeping a mapping from the term your audience uses to the standardized name, again to ensure that references can be unambiguously resolved where needed. Refer to the collection of CMIP7 models as the “CMIP7 multi-model ensemble”.
     
