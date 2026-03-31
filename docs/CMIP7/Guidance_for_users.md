@@ -44,14 +44,16 @@ There are 3 options to access the data:
 
     While all published CMIP7 data is available from ESGF, some of it is additionally hosted in non-ESGF storage facilities. Below are links to some of these replicas. If you know of another place CMIP data is currently being stored, please submit [this form][altaccess] to let us and the community know!
 
-    * The [Pangeo / ESGF Cloud Data Working Group][pangeo] is working on providing cloud access for CMIP7 ARCO data. 
 
 
     For all non-ESGF data access routes, we encourage users to verify that the data used is the latest version. 
 
     ??? info "Analysis-Ready Cloud-Optimized data"
 
-        Data hosted in the cloud can be very useful for users with fewer ressources. Indeed, data can be streamed and the analysis can be done remotely close to the storage, instead of downloading it locally. For efficient analysis in the cloud, the data needs to be in an Analysis-Ready Cloud-Optimized (ARCO) format. The Pangeo / ESGF Cloud Data Working Group are working on tools (e.g., [virtualizarr][virtualizarr]) for this purpose. Contributions are welcomed [here][virtual].
+        Data hosted in the cloud can be very useful for users with fewer resources. Indeed, data can be streamed and the analysis can be done remotely close to the storage, instead of downloading it locally. For efficient analysis in the cloud, the data needs to be in an Analysis-Ready Cloud-Optimized (ARCO) format. Following the Pangeo / ESGF Cloud Data Working Group efforts for CMIP6,  there are community efforts underway to streamline ARCO access (e.g., [virtualizarr][[virtualizarr](https://virtualizarr.readthedocs.io/en/stable/)]) to lowering barriers to producing cloud-optimized data formats without having to rewrite the original data. Contributions are welcomed [here][virtual].
+      
+For data access routes that do not involve official ESGF nodes, we encourage users to verify that the data used is the latest version, and cite the original sources appropriately. 
+
 
 
 
