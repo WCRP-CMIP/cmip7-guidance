@@ -56,7 +56,7 @@ _Coming soon...._
 
 _the command-line tools described in this section are not production-ready for CMIP7 publication, however we welcome test users who have successfully produced CMORized data to test out the tools/workflows. Follow the steps below specific to testing_
 
- - Apply for Integration testing group membership here:  (https://app.globus.org/groups/e3329078-b8f6-11f0-9fdd-0e7d9e9fc9e3)
+ - Apply for Integration testing group membership [*here*](https://app.globus.org/groups/e3329078-b8f6-11f0-9fdd-0e7d9e9fc9e3)
    - You may use your insitution or well-known Social Auth provider to log in to Globus
  - Install Python packages for publication workflow:
    ```
