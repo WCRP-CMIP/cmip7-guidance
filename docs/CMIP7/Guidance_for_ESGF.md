@@ -63,7 +63,7 @@ _the command-line tools described in this section are not production-ready for C
    pip install 'git+https://github.com/sashakames/esg-publisher.git@stac-update' esgvoc esgprep
    ```
  - Follow instructions linked from the [*esgf-prepare* docs site](https://esgf.github.io/esgf-prepare/) on CMIP7 vocabulary installation with `esgvoc`
- - Add the following to your esg.yaml config file for publishing:
+ - Add the following to your `esg.yaml` config file for publishing:
 ```
 stac_config:
   stac_client:
