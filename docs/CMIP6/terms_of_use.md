@@ -25,7 +25,7 @@ The licensing agreements governing CMIP6 data depend on the model but generally 
 
 Previously, some groups restricted use of their data under Creative Commons Attribution-NonCommercial-ShareAlike (CC BY-NC-SA 4.0) or a Creative Commons Attribution-ShareAlike (CC BY-SA 4.0) licenses, but these more restrictive licenses were relaxed in October 2022 - with the latest license information available per model on the [CMIP6 Climate Model Data license page].
 
-### General Warning:
+### General Warning
 
 The CMIP6 archive contains the output of scientific simulations of the past and potential future that are subject to multiple sources of error, ranging from errors in data handling, to errors in the representation of the real world in either the model, or the experimental setup for which the model was used. Different parts of the CMIP6 archive may be subject to differing levels of such errors, and users should be alert to these issues, and their potential consequences (and to the limitations of liability expressed in the data license).
 

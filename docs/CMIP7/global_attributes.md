@@ -51,7 +51,7 @@ Guidance documents: [https://wcrp-cmip.github.io/cmip7-guidance/](https://wcrp-c
 
 The **DRS** defines how datasets are uniquely identified and organized. It uses a subset of global attributes to construct:
   
- - **Filenames**
+- **Filenames**
 - **Directory paths**
 - **URLs and search facets**
 
@@ -86,16 +86,17 @@ Provide additional context (e.g., `experiment`, `institution`, `license`, `sourc
 ## 4. File Name Template
 
 Each CMIP7 file follows a standardized pattern derived from global attributes:
+
 ```
 <variable_id>_<branding_suffix>_<frequency>_<region>_<grid_label>_<source_id>_<experiment_id>_<variant_label>[_<timeRangeDD>].nc
 ```
-### Example:
+
+### Example
 
 tas_tavg-h2m-hxy-u_mon_glb_g13s_CanESM6-MR_historical_r2i1p1f1_190001-190912.nc  
 
+### Notes
 
-
-### Notes:
 - `timeRangeDD` is omitted for fixed (time-independent) variables.
 - Filenames directly encode key experiment and model metadata.
 
@@ -109,9 +110,7 @@ The CMIP7 archive organizes files hierarchically using the following DRS pattern
 <drs_specs>/<mip_era>/<activity_id>/<institution_id>/<source_id>/<experiment_id>/<variant_label>/<region>/<frequency>/variable_d>/<branding_suffix>/<grid_label>/<directoryDateDD>
 ```
 
-
-
-### Example:
+### Example
 
 MIP-DRS7/CMIP7/CMIP/CCCma/CanESM6-MR/historical/r2i1p1f1/glb/mon/tas/tavg-h2m-hxy-u/g13s/v20250622
 
@@ -123,9 +122,9 @@ MIP-DRS7/CMIP7/CMIP/CCCma/CanESM6-MR/historical/r2i1p1f1/glb/mon/tas/tavg-h2m-hx
 
 - **Branching Attributes:**  
   Required when a simulation derives from a parent run:
-  - `branch_time_in_child`
-  - `branch_time_in_parent`
-  - `parent_time_units`
+    - `branch_time_in_child`
+    - `branch_time_in_parent`
+    - `parent_time_units`
 
 - **Parent Identifiers:**  
   `parent_activity_id`, `parent_experiment_id`, `parent_source_id`, `parent_variant_label`, etc.
@@ -138,4 +137,3 @@ These ensure reproducibility and traceability between related simulations.
 
 The `nominal_resolution` describes approximate horizontal grid spacing (e.g., `"1 km"`, `"250 km"`).  
 It is computed using a standard algorithm (updated from CMIP6 Appendix 2) that ensures consistent comparison of model resolutions across CMIP7 datasets.
-

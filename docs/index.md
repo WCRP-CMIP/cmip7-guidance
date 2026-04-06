@@ -9,20 +9,20 @@ title: CMIP7 Guidance and Documentation
 
     The contents of the pages are currently in development and will change. 
 
-
 ## Guidance documents
 
 ### CMIP7
-- [Updates for modelling groups](Updates_for_Modellers.md)
-- [Global Attributes](CMIP7/Global_Attributes.md)
-- [Branded Variables](CMIP7/Branded_Variables.md)
-- [Guidance for modellers](CMIP7/Guidance_for_modellers.md)
+
+- [Updates for modelling groups](updates_for_modellers.md)
+- [Global Attributes](CMIP7/global_attributes.md)
+- [Branded Variables](CMIP7/branded_variables.md)
+- [Guidance for modellers](CMIP7/guidance_for_modellers.md)
     - [Experiment setup and forcings](CMIP7/Experiment_set_up_and_Forcings/index.md)
-- [Guidance for users, including Terms of Use](CMIP7/Guidance_for_users.md)
-- [Guidance for ESGF node operators and publishers](CMIP7/Guidance_for_ESGF.md)
-- [Guidance for MIPs](CMIP7/Guidance_for_MIPs.md)
-- [Domain names for CMIP7 services](CMIP7/Domain_names.md)
-- [Frequently Asked Questions (FAQ)](CMIP7/FAQ.md)
+- [Guidance for users, including Terms of Use](CMIP7/guidance_for_users.md)
+- [Guidance for ESGF node operators and publishers](CMIP7/guidance_for_esgf.md)
+- [Guidance for MIPs](CMIP7/guidance_for_mips.md)
+- [Domain names for CMIP7 services](CMIP7/domain_names.md)
+- [Frequently Asked Questions (FAQ)](CMIP7/faq.md)
 
 ### CMIP6
 
@@ -39,8 +39,8 @@ The following may be useful for reference:
 
 ## Other links and documentation
 
-- CMOR: 
-    - [Documentation](https://cmor.llnl.gov/) 
+- CMOR:
+    - [Documentation](https://cmor.llnl.gov/)
     - [Github](https://github.com/PCMDI/CMOR)
 - [CF conventions](https://cfconventions.org/)
 - [CMIP6Plus Controlled Vocabularies](https://github.com/WCRP-CMIP/CMIP6Plus_CVs)

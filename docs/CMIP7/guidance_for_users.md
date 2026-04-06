@@ -5,13 +5,11 @@ title: CMIP7 Guidance for Data Users
 
 # CMIP7 Guidance for Data Users
 
-
 This page is designed to inform users of climate model outputs on key CMIP7 concepts and tools. It is a landing page to redirect them to the proper resources to learn more.
 
 ## 1.  Accessing CMIP7 data
 
 CMIP7 model output is available through a distributed data archive developed and operated by the Earth System Grid Federation (ESGF). The data are hosted on a collection of nodes located at centres across the world.
-
 
 ??? info "Understanding ESGF Nodes"
 
@@ -20,7 +18,6 @@ CMIP7 model output is available through a distributed data archive developed and
     More documentation on CMIP nodes is available [here][nodes].
 
     ESGF data usage and publication metrics can be found on the [CMCC dashboard][cmcc].
-
 
 There are 3 options to access the data:
 
@@ -36,14 +33,13 @@ There are 3 options to access the data:
     * [ESMValTool][esmvaltool]
     * [intake-esgf][intakeesgf]
 
-3. **Alternative Access Platforms**
+ 3. **Alternative Access Platforms**
 
     While all published CMIP7 data is available from ESGF, some of it is additionally hosted in non-ESGF storage facilities. Below are links to some of these replicas. If you know of another place CMIP data is currently being stored, please submit [this form][altaccess] to let us and the community know!
 
     * COMING SOON
 
-    For all non-ESGF data access routes, we encourage users to verify that the data used is the latest version. 
-
+    For all non-ESGF data access routes, we encourage users to verify that the data used is the latest version.
 
 ## 2.  Terms of use and citations requirements
 <!--TODO: Make sure we have a link (with persistent URL) to this in the license global attrs-->
@@ -57,10 +53,9 @@ To enable modelling groups and others who support CMIP7 to demonstrate its impac
 
         Authors/Data Creators (publication year): Title. Version YYYYMMDD. Earth System Grid Federation. DOI.
         
-    e.g. 
+    e.g.
 
         Swart et al. (2019): CCCma CanESM5 model output prepared for CMIP6 ScenarioMIP. Version 20190429. Earth System Grid Federation. https://doi.org/10.22033/ESGF/CMIP6.1317. 
-
 
     Please include a table with at minimum the models ("sources"), institutions, and data citations as above, as well as a data availability statement pointing to the table and acknowledging ESGF. If the journal has a citation limit, putting the table in the Supporting Information is acceptable.
 
@@ -74,7 +69,6 @@ To enable modelling groups and others who support CMIP7 to demonstrate its impac
         Note that there are two citation granularities (MIP-model-experiment data and MIP-model data) and that the version has to be added separately as it is not included in the DOI.
 
         Further information on the data citation concept is described in [Stockhause and Lautenschlager (2017)][Stockhause2017].
-
 
     ??? Question "Do I cite the model based on activity or experiment?"
 
@@ -98,10 +92,10 @@ To enable modelling groups and others who support CMIP7 to demonstrate its impac
     >We acknowledge the World Climate Research Programme's Coupled Model Intercomparison Project contributors who coordinated and promoted CMIP7. We thank the climate modelling groups for producing and making available their model output, the Earth System Grid Federation (ESGF) for archiving the data and providing access, and the multiple funding agencies who support CMIP7 and ESGF.
 
 3. **Adhere to the license**
-        
+
     Adhere to the license conditions listed in the global attribute of each dataset.
 
-###  Recommended
+### Recommended
 
  1. **Cite the CMIP literature**
 
@@ -114,23 +108,18 @@ To enable modelling groups and others who support CMIP7 to demonstrate its impac
     * Model documentation papers associated the model(s) used
 
 In general, the [CMIP7 GMD special issue][GMDSpecialIssue] is a good place to look for relevant literature.
- 
+
  2. **Register your work.**
 
-    Register your work on the [CMIP7 Publication Hub][CMIPpubs] (coming soon). 
-
+    Register your work on the [CMIP7 Publication Hub][CMIPpubs] (coming soon).
 
  3. **Use the standard vocabularies**
 
     Where possible, we recommend using the CMIP7 standardized names as defined by the [controlled vocabularies (CVs)][cmipCvs] (see [Section 3](#3-cmip7-facets-and-their-documentation)) for terms such as the source (model) or experiment, in order to make references as clear and unambiguous as possible. However, if your audience requires different terms, then you should use those but we recommend keeping a mapping from the term your audience uses to the standardized name, again to ensure that references can be unambiguously resolved where needed. Refer to the collection of CMIP7 models as the “CMIP7 multi-model ensemble”.
-    
-
 
 !!! warning "Disclaimer"
 
     The data disclaimer for CMIP is available [here][disclaimer].
-
-
 
 ## 3. CMIP7 facets and their documentation
 
@@ -151,12 +140,10 @@ CMIP7 datasets can be identified through a series of facets that represents key 
 
     Current advice from the CVs task team is to only access the CVs via [ESGVOC](https://esgf.github.io/esgf-vocab/). This will be subject to change in the future.
 
-More information about the meaning of these facets is provided in the [global attributes documentation][GlobalAttrs], with further guidance provided on the [Global Attributes page](Global_Attributes.md). The values associated with each facet are standardized through the [CVs][cmipCvs]. They are used to search the ESGF database and can be found in the global attributes of the data. This section provides helpful links and gives a bit more information on a few key facets. 
-
-
-
+More information about the meaning of these facets is provided in the [global attributes documentation][GlobalAttrs], with further guidance provided on the [Global Attributes page](global_attributes.md). The values associated with each facet are standardized through the [CVs][cmipCvs]. They are used to search the ESGF database and can be found in the global attributes of the data. This section provides helpful links and gives a bit more information on a few key facets.
 
 ### 3.1.  Source and Variant
+
 * [List of models][sourcelist] (coming soon)
 * [Essential Model Documentation (EMD)][emd] (coming soon)
 
@@ -167,17 +154,13 @@ The Essential Model Documentation (EMD) contains a high-level description intend
 
 A useful tool to evaluate the models is the [Rapid Evaluation Framework (REF)][ref]. It is an evaluation of the models participating in CMIP6 and the CMIP7 Assessment Fast Track (AFT).
 
-
 ### 3.2.  Experiment and Activity
+
 * [List of experiments][experimentlist] (coming soon)
 * [List of activities][activitylist] (coming soon)
 
- 
 The CMIP7 protocol and experiments are described in a [special issue][GMDSpecialIssue] of Geoscientific Model Development with an overview of the design and scientific strategy provided in the lead article of that issue by [Dunne et al. (2025)][dunne2025].
 
-
-
- 
 ??? info "Basic Concepts to Understand Experiments"
 
     Each model participating in CMIP7 will contribute results from the eight DECK experiments. These experiments are the only ones directly overseen by the [CMIP Panel][CMIPPanel], and together these constitute the ongoing (slowly evolving) “CMIP” activity. In addition to the DECK, each modeling group may choose to contribute to any of the [CMIP7 Community MIPs][CMIPMips]. The CMIP panel identifies key experiments to be prioritized on different timelines through fast tracks. The first one is the AFT, which includes a set of Community MIP experiments chosen by the CMIP panel to address specific needs.
@@ -186,12 +169,12 @@ The CMIP7 protocol and experiments are described in a [special issue][GMDSpecial
 
 <!--TODO: https://github.com/WCRP-CMIP/cmip7-guidance/issues/46-->
 
-
 ### 3.3. Variable
-* [List of variables][varlist] (coming soon)
-* [Branded variable documentation](Branded_Variables.md)
 
-The variables produced in CMIP7 were recommended by the [CMIP7 Data Request task team][DataRequestTeam]. In CMIP7, the concept of branded variable identifies the variables. It follows the template: 
+* [List of variables][varlist] (coming soon)
+* [Branded variable documentation](branded_variables.md)
+
+The variables produced in CMIP7 were recommended by the [CMIP7 Data Request task team][DataRequestTeam]. In CMIP7, the concept of branded variable identifies the variables. It follows the template:
 
 ```
 <variableRootDD>_<temporalLabelDD>-<verticalLabelDD>-<horizontalLabelDD>-<areaLabelDD>
@@ -199,12 +182,12 @@ The variables produced in CMIP7 were recommended by the [CMIP7 Data Request task
 <!--TODO: add more about Data Request. Not super clear to me how it can be useful to users yet.-->
 
 ### 3.4 Frequency
+
 * [List of frequencies][freqlist] (coming soon)
 
 Models report data on a variety of time steps. The [MIP table][varlist] defines the frequency with which requested variables in an experiment should be reported.
 
 ??? info "Calendars and Time Handling"
-
 
     Climate models often use simplified or idealized calendars for numerical and computational reasons.  
     CMIP7 data include a `calendar` attribute associated with the `time` coordinate, which determines how dates are represented.  
@@ -228,9 +211,8 @@ Models report data on a variety of time steps. The [MIP table][varlist] defines 
 
     It is recommended that users use the [cftime][cftime] library to handle time.
 
-
-
 ### 3.5 Grid
+
 * [List of grids][gridlist] (coming soon)
 * List of pressure levels: [Table 2 of Dingley et al. 2025][dataReq]
 * [CMIP7 Guidance on Grids][grid]
@@ -242,7 +224,6 @@ Different MIPs also have different requirements for vertical grid reporting. Out
 ??? info "Masked Averaging"
 
     Many variables in CMIP7 are defined as masked means, defined as the mean of a quantity over a portion of the grid cell defined by an area type. For more information on this, see this [webpage][maskavg] (coming soon).
-
 
 ## 4. CMIP7 data format
 
@@ -262,12 +243,7 @@ Essential features of CMORized data are :
 * Consistent units and standard names following [CF conventions][cfConventionsPage]
 * [Standard chunking](guidance_for_modellers.md#5-model-output-requirements)
 
-
-
-
-
 ## 5.  Reporting suspected errors
-
 
 !!! Warning inline end
     The CMIP7 archive contains the output of scientific simulations of the past and potential future that are subject to multiple sources of error, ranging from errors in data handling, to errors in the representation of the real world in either the model, or the experimental setup for which the model was used. Different parts of the CMIP7 archive may be subject to differing levels of such errors, and users should be alert to these issues, and their potential consequences.
@@ -279,16 +255,11 @@ Proposing erratum through the webform requires a contact email address. Once the
 
 <!--TODO: Add info on contact when decided https://github.com/WCRP-CMIP/cmip7-guidance/issues/45 -->
 
-
-
 ## 6. New to CMIP?
 
 First time using CMIP? Need a bit more help ? Check out the [Entry-Level Documentation][eld] (coming soon), put together by the [Fresh Eyes on CMIP][FeoC] group.
 
 You have a more specific question ? Ask it on the [Fresh Eyes Platform][platform]. (You need to register [here][register] first.)
-
-
-
 
 ###### Document version: 2025-10-08
  <!--  abbreviation -->
@@ -313,32 +284,17 @@ You have a more specific question ? Ask it on the [Fresh Eyes Platform][platform
 [metagridornl]: https://esgf-node.ornl.gov/search
 [metagridceda]: https://esgf-ui.ceda.ac.uk/search
 [esgpull]: https://esgf.github.io/esgf-download/
-[citemaws]: https://doi.org/10.5281/zenodo.2621084
-[Stockhause2017]: https://doi.org/10.5334/dsj-2017-030
-[gdatasetsearch]: https://toolbox.google.com/datasetsearch/
-[datacitecat]: https://search.datacite.org/works?query=prefix:10.22033
-[CMIPPanel]: https://www.wcrp-climate.org/wgcm-cmip/cmip-panel
 [cfConventionsPage]: http://cfconventions.org/
-[gov]: https://wcrp-cmip.org/cmip-governance/
-[wgcmSite]: https://www.wcrp-climate.org/wgcm-overview
-[wip]: https://wcrp-cmip.github.io/WGCM_Infrastructure_Panel
-[CMIPMips]: https://wcrp-cmip.org/mips/
 [platform]: https://github.com/orgs/Fresh-Eyes-on-CMIP/discussions
 [register]: https://github.com/Fresh-Eyes-on-CMIP/member-requests/issues/new?template=new_user.yml
 [ErrataService]: https://errata.ipsl.fr/static/index.html
-[CC BY 4.0]: https://creativecommons.org/licenses/by/4.0/
 [esmvaltool]: https://esmvaltool.org/
 [intakeesgf]: https://github.com/esgf2-us/intake-esgf
 [cmor]:https://cmor.llnl.gov/
-[cftime]: https://unidata.github.io/cftime/
 [ref]: https://dashboard.climate-ref.org
 [cmipcite]: https://cmipcite.readthedocs.io/en/latest/
-[citesearch]: https://www.wdc-climate.de/ords/f?p=127:2 
-[esgfqc]: https://github.com/ESGF/esgf-qc 
-[nodes]: https://wcrp-cmip.org/map/
-[cmcc]: https://esgf-ui.cmcc.it/esgf-dashboard-ui/index.html
+[esgfqc]: https://github.com/ESGF/esgf-qc
 [altaccess]: http://bit.ly/CMIP-data-platform
-[disclaimer]: https://doi.org/10.5281/zenodo.18155119
 
  <!-- CMIP7 links -->
 [GMDSpecialIssue]: https://gmd.copernicus.org/articles/special_issue1315.html
@@ -351,9 +307,7 @@ You have a more specific question ? Ask it on the [Fresh Eyes Platform][platform
 [FeoC]: https://wcrp-cmip.org/cmip7-task-teams/fresh-eyes-on-cmip/
 [GlobalAttrs]: https://doi.org/10.5281/zenodo.17250296
 [grid]: https://doi.org/10.5281/zenodo.15697024
-[variableid]: https://airtable.com/apphMYhEwBJfd0bUK/shrYC888Qxf8gkvky/tblpo5L8maBIGlM1B/viwNNzrqK5oPL7zk2
 [dataReq]: https://egusphere.copernicus.org/preprints/2025/egusphere-2025-3189/
-
 
  <!-- TODO: all the links below need to be changed when the new version arrives. airtable ? -->
  <!-- CMIP6 links -->
@@ -367,7 +321,6 @@ You have a more specific question ? Ask it on the [Fresh Eyes Platform][platform
 [freqlist]: https://github.com/WCRP-CMIP/CMIP6_CVs/blob/main/CMIP6_frequency.json
 [maskavg]: https://wcrp-cmip.github.io/WGCM_Infrastructure_Panel/CMIP6/time_and_area_averaging.html -->
 
-
  <!-- unknown links -->
 [CMIPpubs]:  ?
 [varlist]:  ?
@@ -375,10 +328,7 @@ You have a more specific question ? Ask it on the [Fresh Eyes Platform][platform
 [activitylist]:  ?
 [sourcelist]:  ?
 [gridlist]: ?
-[levellist]:  ?
 [freqlist]:  ?
-[maskavg]:  ?
 [emd]:  ?
 [eld]: ?
 [gridreg]: ?
-

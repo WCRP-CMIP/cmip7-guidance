@@ -12,7 +12,7 @@ title: CMIP6 Global Attributes
 
 10 September 2018 (v6.2.7) ported to mkdocs 30th May 2025
 
-Google doc Document short URL: [https://goo.gl/v1drZl](http://goo.gl/v1drZl) 
+Google doc Document short URL: [https://goo.gl/v1drZl](http://goo.gl/v1drZl)
 
 Karl E. Taylor, Martin Juckes, V. Balaji, Luca Cinquini, Sébastien Denvil, Paul J. Durack, Mark Elkington, Eric Guilyardi, Slava Kharin, Michael Lautenschlager, Bryan Lawrence, Denis Nadeau, and Martina Stockhause
 
@@ -20,15 +20,11 @@ Karl E. Taylor, Martin Juckes, V. Balaji, Luca Cinquini, Sébastien Denvil, Paul
 
 In files containing CMIP model-simulation output, global attributes are used to describe the source of the data, the imposed experiment conditions, the contents of the file, licensing restrictions, and other information useful to those analyzing the data.  Here we define the global attributes that should appear in CMIP6 files (some are required, others optional), along with the so-called CMIP6 “data reference syntax” (DRS).   The subset of global attributes that defines the DRS is used in constructing the directory structure and file names found in the CMIP6 archive, and also to construct URL’s leading to further information about the simulations and in populating search facets.
 
-## Introduction 
+## Introduction
 
-As in earlier phases of CMIP, a well-defined set of global attributes will be recorded in each CMIP6 model output file, providing information necessary for interpreting the data.  Table 1 contains the list of CMIP6 global attributes and indicates which ones are required and which are optional.  The values for many of the global attributes must be drawn from special CMIP6 “controlled vocabularies” (CVs).  A CV, in simplest form, is a list of the permitted values that can be assigned to a given global attribute.  Some of these lists of permitted values appear in this document, but they should not be relied on to be 100% correct.  Rather, consult the reference CVs for CMIP6, which are available at <https://github.com/WCRP-CMIP/CMIP6_CVs/> 
-
- 
+As in earlier phases of CMIP, a well-defined set of global attributes will be recorded in each CMIP6 model output file, providing information necessary for interpreting the data.  Table 1 contains the list of CMIP6 global attributes and indicates which ones are required and which are optional.  The values for many of the global attributes must be drawn from special CMIP6 “controlled vocabularies” (CVs).  A CV, in simplest form, is a list of the permitted values that can be assigned to a given global attribute.  Some of these lists of permitted values appear in this document, but they should not be relied on to be 100% correct.  Rather, consult the reference CVs for CMIP6, which are available at <https://github.com/WCRP-CMIP/CMIP6_CVs/>
 
 A subset of the global attributes, which comprise the data reference syntax (DRS) for CMIP6, are described following the Table 1 notes, and templates for the CMIP6 filenames and directory structures are also defined.  Table 3 provides a summary of the quality assurance checks that should be performed on CMIP6 files.
-
- 
 
 Appendix 1 describes the rationale underlying the global attributes used to label CMIP6 experiments, and provides additional details.  Appendix 2 defines the algorithm used to define the “nominal_resolution” attribute.  Appendix 3 contains a revision history of this document.
 
@@ -89,7 +85,6 @@ Documents of related interest may be found at: <https://www.earthsystemcog.org/p
 | variant_label | “variant” label(part of DRS “member_id”) | “r1i1p1f1”, “f1i2p223f3” | - | see Appendix 1 | always | used in faceted searches |
 | - | see note 17 | - | forcing | - | not used in CMIP6 | no longer needed because this information is now recorded in variant_info |
 
-
 Table Notes:
 
 1. If CMOR is used to write output files, an additional global attribute will be included: cmor_version.
@@ -98,7 +93,7 @@ Table Notes:
 
 3. The project_id used in CMIP5 is being replaced in CMIP6 with two global attributes: 1) a [mip_era](https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/mip_era.json) (a label indicating the CMIP cycle responsible for the experiment and data request), which for CMIP6 must invariably be set to “CMIP6”, and 2) an [activity_id](https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_activity_id.json) identifying the responsible “MIP”.  In a few cases multiple activities in the activity_id must be included (separated by single spaces).  An example of this is “LUMIP AerChemMIP” for one of the CMIP6 land-use change experiments.  For a given experiment, the activity_id must include all the associated activities in the order they are listed in the [experiment_id CV.](https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_experiment_id.json)
 
-4. branch_method examples: “perturbations to atmospheric fields were applied at the branch time, followed by a 50 year spin-up period under control conditions”; “fixed historical forcing from year 1850 was applied for a 20 year spin-up period, after which the historically-evolving forcing was imposed.”  For a run that had not been spawned from a parent, this attribute should be omitted or set to “no parent”.    If external documentation describing the branch method can be retrieved using the url recorded in the further_info_url global attribute, then branch_method may be set to “see further_info_url”, but it is better to provide a brief description as in the examples above.  For runs simply restarted from some point in the parent (without special procedures applied), branch_method should be set to “standard”. 
+4. branch_method examples: “perturbations to atmospheric fields were applied at the branch time, followed by a 50 year spin-up period under control conditions”; “fixed historical forcing from year 1850 was applied for a 20 year spin-up period, after which the historically-evolving forcing was imposed.”  For a run that had not been spawned from a parent, this attribute should be omitted or set to “no parent”.    If external documentation describing the branch method can be retrieved using the url recorded in the further_info_url global attribute, then branch_method may be set to “see further_info_url”, but it is better to provide a brief description as in the examples above.  For runs simply restarted from some point in the parent (without special procedures applied), branch_method should be set to “standard”.
 
 5. The three attributes related to branching time (branch_time_in_child, branch_time_in_parent, parent_time_units) must be included if branch time is needed  to correctly interpret the data (e.g., in simulations spawned from a pre-industrial control run that has not reached equilibrium).  Suppose a model with a “noleap” calendar carries out a control run with the time coordinate reported in units of “days since 1000-1-1”.  Now suppose a historical simulation branches from that control run at day 3650 (i.e., on the date: 1010-1-1), and suppose the units of the time coordinate for the historical run are “days since 1850-01-01”.  Then in the historical run, the following global attributes should appear:
 
@@ -106,7 +101,7 @@ Table Notes:
         branch_time_in_parent = 3650.0D0; # double precision float
         parent_time_units = “days since 1000-1-1”; # character string
 
-    If the calendar used in the parent is different from the child, then the parent’s calendar should be recorded in “parent_time_units”.  The CV for the calendar is the same as that for the CF calendar attribute. For example in the above case, if the child’s calendar is “gregorian”, but the parent’s is “noleap”, then parent_time_units=”days since 1000-1-1 (noleap)”. 
+    If the calendar used in the parent is different from the child, then the parent’s calendar should be recorded in “parent_time_units”.  The CV for the calendar is the same as that for the CF calendar attribute. For example in the above case, if the child’s calendar is “gregorian”, but the parent’s is “noleap”, then parent_time_units=”days since 1000-1-1 (noleap)”.
 
     As another example, suppose a ScenarioMIP simulation “branches” from a historical run at the date 2015-1-1.  Suppose a noleap calendar is used in each and both have units of “days since 1850-1-1”.  (Note that ScenarioMIP simulations should always adopt the same units as the historical parent.)  In this case the following global attributes should appear in the ScenarioMIP output file:
 
@@ -116,24 +111,23 @@ Table Notes:
 
     As a third example, consider a decadal prediction experiment initialized from observations (e.g., from an “analysis”).  In this case there is no parent so none of these attributes should be included.  (Note that the initialization time of the decadal prediction experiments will be recorded as a scalar coordinate dimension, pointed to by the “coordinates” attribute, which is attached to each variable.)
 
-6. A description and examples of this global attribute may be found in the document: CMIP5_output_metadata_requirements (<http://cmip-pcmdi.llnl.gov/cmip5/docs/CMIP5_output_metadata_requirements.pdf>).   
+6. A description and examples of this global attribute may be found in the document: CMIP5_output_metadata_requirements (<http://cmip-pcmdi.llnl.gov/cmip5/docs/CMIP5_output_metadata_requirements.pdf>).
 
 7. creation_date form: `YYYY-MM-DDTHH:MM:SSZ`  (e.g., “2010-03-23T05:56:23Z”)
 
 8. For a given experiment, the realization_index, initialization_index, physics_index, and forcing_index are used to uniquely identify each simulation of an ensemble of runs contributed by a single model.  These indices are defined as follows:\
-    
 
-    - realization_index = an integer (≥1) distinguishing among members of an ensemble of simulations that differ only in their initial conditions (e.g., initialized from different points in a control run).  Note that if two different simulations were started from the same initial conditions, the same realization number should be used for both simulations.  For example if a historical run with “natural forcing” only and another historical run that includes anthropogenic forcing were both spawned at the same point in a control run, both should be assigned the same realization.  Also, each so-called RCP (future scenario) simulation should normally be assigned the same realization integer as the historical run from which it was initiated.  This will allow users to easily splice together the appropriate historical and future runs. 
+    - realization_index = an integer (≥1) distinguishing among members of an ensemble of simulations that differ only in their initial conditions (e.g., initialized from different points in a control run).  Note that if two different simulations were started from the same initial conditions, the same realization number should be used for both simulations.  For example if a historical run with “natural forcing” only and another historical run that includes anthropogenic forcing were both spawned at the same point in a control run, both should be assigned the same realization.  Also, each so-called RCP (future scenario) simulation should normally be assigned the same realization integer as the historical run from which it was initiated.  This will allow users to easily splice together the appropriate historical and future runs.
 
     - initialization_index = an integer (≥1), which should be assigned a value of 1 except to distinguish simulations performed under the same conditions but with different initialization _procedures_.  In CMIP6 this index should invariably be assigned the value “1” except for some hindcast and forecast experiments called for by the DCPP activity.  The initialization_index can be used either to distinguish between different algorithms used to impose initial conditions on a forecast or to distinguish between different observational datasets used to initialize a forecast.
 
-    - physics_index = an integer (≥1) identifying the physics version used by the model.  In the usual case of a single physics version of a model, this argument should normally be assigned the value 1, but it is essential that a consistent assignment of physics_index be used across all simulations performed by a particular model.  Use of  “physics_index” is reserved for closely-related model versions (e.g., as in a “perturbed physics” ensemble) or for the same model run with slightly different parameterizations (e.g., of cloud physics).  Model versions that are substantially different from one another should be given a different source_id” (rather than simply assigning a different value of the physics_index). 
+    - physics_index = an integer (≥1) identifying the physics version used by the model.  In the usual case of a single physics version of a model, this argument should normally be assigned the value 1, but it is essential that a consistent assignment of physics_index be used across all simulations performed by a particular model.  Use of  “physics_index” is reserved for closely-related model versions (e.g., as in a “perturbed physics” ensemble) or for the same model run with slightly different parameterizations (e.g., of cloud physics).  Model versions that are substantially different from one another should be given a different source_id” (rather than simply assigning a different value of the physics_index).
 
     - forcing_index = an integer (≥1) used to distinguish runs conforming to the protocol of a single CMIP6 experiment, but with different variants of forcing applied.  One can, for example, distinguish between two historical simulations, one forced with the CMIP6-recommended forcing data sets and another forced by a different dataset, which might yield information about how forcing uncertainty affects the simulation.  
 
     Each data provider can assign whatever positive integers they like  for the realization_index, intialization_index, physics_index, and forcing index.  For each source/experiment pair, however, consistency (in these indices) should be maintained across each parent/child pair whenever sensible (so that, for example, both the ScenarioMIP child and its “historical” parent simulation would be assigned the same set of index values for realization, initialization, and physics); the integer 1 should normally be chosen for each of these in the case of a single variant or for the primary variant (if there is one).  This is only a suggestion, however; there should be no expectation on the part of users that every model will have a value of 1 assigned to any of the r, i, p, f indices, and even if a 1 is assigned it does not imply that it is the primary variant.  Note also that a child spawned by a _control_ run will not  necessarily have the same “ripf” value as the control,  since, for example, multiple realizations of an experiment will  branch from the same control.  
 
-    Note that none of the “ripf” indices can be omitted.    
+    Note that none of the “ripf” indices can be omitted.
 
     Example of a variant_label:  if realization_index=2, initialization_index=1, physics_index=3, and forcing_index=233, then variant_label = “r2i1p3f233”.
 
@@ -146,7 +140,7 @@ Table Notes:
         grid = “data regridded via  bilinear interpolation to a 3x3 deg lonxlat grid from the native atmosphere T63 gaussian grid (128x64 lonxlat)”
         grid = “native ocean tri-polar grid with 43200 ocean cells”
 
-11. Modeling groups may choose to report their output on the model’s native grid and/or regrid it to one or more target grids.  To distinguish between output reported on different grids,  a “[grid_label](https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_grid_label.json)” attribute is defined.        
+11. Modeling groups may choose to report their output on the model’s native grid and/or regrid it to one or more target grids.  To distinguish between output reported on different grids,  a “[grid_label](https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_grid_label.json)” attribute is defined.
 
     The rules for assigning grid labels  should make it easy for users to select (using the ESGF search tools) CMIP output that is on a grid considered by each modeling group to best represent its model -- the so-called “primary” grid.  If output is reported on the native grid, this is always deemed the “primary” grid.  If output is _not_ reported on the native grid, then modeling groups should regrid the data to some primary grid of its choosing   For the “primary” grid the following labels apply:
 
@@ -154,7 +148,7 @@ Table Notes:
         grid_label = "gr"   (output is _not_ reported on the native grid, but instead is regridded by the modeling group to a “primary grid” of its choosing) 
         grid_label = “gm” (global mean output is reported, so data are not gridded)
 
-    As noted below sometimes a “z” or “a” or “g” is appended to the labels to indicate “zonal means” or grids limited to Antarctica or Greenland. 
+    As noted below sometimes a “z” or “a” or “g” is appended to the labels to indicate “zonal means” or grids limited to Antarctica or Greenland.
 
     If besides the “primary” grid, output is regridded to an additional grid, then for this output `grid_label = "gr[i]"`  (a “secondary” grid), where `[i]` should be replaced by a positive  integer less than 10, which distinguishes this output from other  regridded output.  
 
@@ -162,7 +156,7 @@ Table Notes:
 
     - If model output is reported on a native grid, then if regridded output is also reported, it must not be labeled “gr”, but instead should be of the form gr\[i] (e.g,, gr1, gr2, ….).  
 
-    - The grid label provides no information about the grid other than to indicate whether or not the data have been regridded (from the native grid) and whether or not the grid is considered to be a “primary” grid by the data provider. 
+    - The grid label provides no information about the grid other than to indicate whether or not the data have been regridded (from the native grid) and whether or not the grid is considered to be a “primary” grid by the data provider.
 
     - Output for different variables may be reported on different grids, so “gn” and “gr” may not uniquely define a grid even within a single model.
 
@@ -176,7 +170,7 @@ Table Notes:
 
     - For zonal mean output, a “z” should be appended to the grid label that would apply before performing the zonal mean (e.g., "gnz", "grz", "gr2z").  The "gnz" label would likely only be appropriate when zonally-averaging data on a native cartesian latxlon grid.
 
-    - For “site” data the label "gn" should be used presuming data are obtained from the single native grid cell located nearest each site.   
+    - For “site” data the label "gn" should be used presuming data are obtained from the single native grid cell located nearest each site.
 
     - For “transport through a straight” (and the like), the grid label should reflect the grid relied on in calculating the transport (presumably the native grid would be best for this purpose, so “gn”).
 
@@ -186,7 +180,7 @@ Table Notes:
 
     - The \[\*] indicates that institutions may choose to use the Non-commercial version of this license by inserting the words “NonCommercial-” at this point, but this will significantly limit the use of the data in downstream climate mitigation and adaptation applications.  Please do not simply copy the statement above when writing data; Some text must be entered, some text is optional and the symbols “\[\*]” should not appear in the licensing text.
 
-13. The “source” is used to fully identify the model and version.  The first portion of the “source” attribute is used in constructing “[source_id](https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_source_id.json)”.  \[The “source_id”, which must not exceed 16 characters in length,  is the same as the “modified source_id” (which appears as  the first part of “source”-- see below)  but with forbidden characters removed or replaced by a hyphen (“-”).  All characters are forbidden in source_id except a-z, A-Z, 0-9 and the hyphen (“-”).]  Additionally, the “source” attribute must include the year (i.e., model vintage) when this model version was first used in a scientific application.  It should also include information concerning the component models.  The following template should be followed in constructing “source”: 
+13. The “source” is used to fully identify the model and version.  The first portion of the “source” attribute is used in constructing “[source_id](https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_source_id.json)”.  \[The “source_id”, which must not exceed 16 characters in length,  is the same as the “modified source_id” (which appears as  the first part of “source”-- see below)  but with forbidden characters removed or replaced by a hyphen (“-”).  All characters are forbidden in source_id except a-z, A-Z, 0-9 and the hyphen (“-”).]  Additionally, the “source” attribute must include the year (i.e., model vintage) when this model version was first used in a scientific application.  It should also include information concerning the component models.  The following template should be followed in constructing “source”:
 
         <modified source_id> (<year>): 
         atmos: <model_name> (<technical_name>, <resolution_and_levels>); 
@@ -198,29 +192,29 @@ Table Notes:
         ocnBgchem: <model_name> (<technical_name>); 
         landIce: <model_name> (<technical_name>)
 
-    For some models, it may not make sense to include all these components, and none of the text following `<year>` is absolutely mandatory. As an example, "source" might contain the string: 
+    For some models, it may not make sense to include all these components, and none of the text following `<year>` is absolutely mandatory. As an example, "source" might contain the string:
 
         CCSM2 (2002): atmos: CAM2 (cam2_0_brnchT_itea_2, T42L26); ocean: POP (pop2_0_ver_1.4.3, 3x2L15); seaIce: CSIM4; land: CLM2.0
 
-    The source and source_id should not change even when some of the component models are inactive in some of the CMIP experiments.  For example, if an AOGCM is named `“SomeAOGCM 1.0 (2016): atmosphere: SomeAGCM; ocean: SomeOGCM; sea ice: SomeSeaIce”`, then source_id would be `SomeAOGCM-1-0` and this same name would be used whether or not the model were run in coupled mode or AMIP mode (with prescribed SST and sea ice). 
+    The source and source_id should not change even when some of the component models are inactive in some of the CMIP experiments.  For example, if an AOGCM is named `“SomeAOGCM 1.0 (2016): atmosphere: SomeAGCM; ocean: SomeOGCM; sea ice: SomeSeaIce”`, then source_id would be `SomeAOGCM-1-0` and this same name would be used whether or not the model were run in coupled mode or AMIP mode (with prescribed SST and sea ice).
 
-14. The [source_type](https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_source_type.json) will depend on which experiment is being performed.  Options in the CV include: 
+14. The [source_type](https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_source_type.json) will depend on which experiment is being performed.  Options in the CV include:
 
-    - AGCM (atmospheric general circulation model, including a land model), 
+    - AGCM (atmospheric general circulation model, including a land model),
 
-    - OGCM (ocean general circulation model, including a sea-ice model), 
+    - OGCM (ocean general circulation model, including a sea-ice model),
 
-    - AOGCM (atmosphere-ocean global climate model), 
+    - AOGCM (atmosphere-ocean global climate model),
 
-    - LAND (land model but only if run “offline”), 
+    - LAND (land model but only if run “offline”),
 
-    - ISM (ice-sheet model, which may be run “offline” or coupled to an AOGCM), 
+    - ISM (ice-sheet model, which may be run “offline” or coupled to an AOGCM),
 
-    - RAD (radiation code but only if run “offline”), 
+    - RAD (radiation code but only if run “offline”),
 
     - BGC (for a model component that includes a biogeochemical treatment which  at the very least can account for carbon reservoirs and fluxes in the atmosphere, terrestrial biosphere, and ocean; for some model configurations, only part of the BGC component will be active.  For example, in a BGC model coupled to an AGCM, the ocean component of the BGC might be inactive, but the source_type would be “AGCM BGC”.   For a BGC model run coupled to an AOGCM, the source_type should include “AOGCM BGC”  both when atmospheric concentrations are calculated and when they are  prescribed),
 
-    - CHEM (appears with either AOGCM or AGCM in models that calculate, rather than rely on prescribed concentrations of atmospheric oxidants including at least ozone), 
+    - CHEM (appears with either AOGCM or AGCM in models that calculate, rather than rely on prescribed concentrations of atmospheric oxidants including at least ozone),
 
     - AER (appears with AOGCM or AGCM in models that calculate tropospheric aerosols driven by emission fluxes, rather than relying on prescribed concentrations),
 
@@ -228,7 +222,7 @@ Table Notes:
 
     All types that apply to the model (i.e., are active in a given experiment) should appear in a list with each type separated by a single space.  
 
-    Sometimes source_type for CMIP6 simulations will be described by a single label, as in “AOGCM” or “AGCM” or “OGCM”, but when additional interactive components are included, then multiple labels should be found in source_type (e..g., “AOGCM BGC”, “AGCM CHEM AER”, “AOGCM AER”, “AOGCM ISM”, “AGCM SLAB”, “OGCM BGC”).  Single labels will be used for “offline” models such as “ISM” and “RAD”. 
+    Sometimes source_type for CMIP6 simulations will be described by a single label, as in “AOGCM” or “AGCM” or “OGCM”, but when additional interactive components are included, then multiple labels should be found in source_type (e..g., “AOGCM BGC”, “AGCM CHEM AER”, “AOGCM AER”, “AOGCM ISM”, “AGCM SLAB”, “OGCM BGC”).  Single labels will be used for “offline” models such as “ISM” and “RAD”.
 
     For each of the CMIP6 experiments, the list of components that are required and the ones that are allowed but optional can be found [here](http://rawgit.com/WCRP-CMIP/CMIP6_CVs/master/src/CMIP6_experiment_id.html). The following combinations for source_type can be found there:
 
@@ -285,12 +279,11 @@ As in CMIP5, we also define additional DRS elements because they can be helpful 
 
 - product         (CMIP5: "product") set to “model-output” in CMIP6
 
-- nominal_resolution see [CMIP6_nominal_resolution.json ](https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_nominal_resolution.json) and Appendix 2
+- nominal_resolution see [CMIP6_nominal_resolution.json](https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_nominal_resolution.json) and Appendix 2
 
 - source_type\* see [CMIP6_source_type.json](https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_source_type.json)
 
-The DRS elements marked with an asterisk (\*) are associated with global attributes that may be space-separated lists of values.  Only the first item in a list is recognized by the DRS, but in faceted searches all listed items will be recognized. 
-
+The DRS elements marked with an asterisk (\*) are associated with global attributes that may be space-separated lists of values.  Only the first item in a list is recognized by the DRS, but in faceted searches all listed items will be recognized.
 
 ## File name template
 
@@ -361,6 +354,7 @@ Directory structure =
                                     <grid_label>/
                                         <version>
 ```
+
 Note:
 
 - `<version>` has the form “vYYYYMMDD” (e.g., “v20160314”), indicating a representative date for the version.   Note that files contained in a single `<version>`  subdirectory at the end of the directory path should represent all the available time-samples reported from the simulation; a time-series can be split across several files, but all the files must be found in the same subdirectory.  This implies that `<version>` will not generally be the actual date that all files in the subdirectory were written or published.
@@ -425,17 +419,15 @@ The above directory structure is not the same as CMIP5’s directory structure.
 | variant_info | user input | no | string | no | no |
 | variant_label | CMOR-generated, based on 4 user-provided indices (“ripf”) | yes | string | defined structure/format constructed from indices | yes |
 
-
-
 ## Appendix 1: Global Attributes for Labeling Experiments
 
 Global attributes that label experiments are needed to construct filenames and directories and can generally be used as search facets.  Together, they should have the following characteristics:
 
-- Uniquely label each experiment within CMIP6 and distinguish experiments with specified conditions that differ in any way 
+- Uniquely label each experiment within CMIP6 and distinguish experiments with specified conditions that differ in any way
 
 - Easily be interpreted and remembered
 
-- Facilitate representations of groups of experiments that are closely related (e.g., same forecast conditions but different start dates, or experiment with an “offline” model driven by output from various models) 
+- Facilitate representations of groups of experiments that are closely related (e.g., same forecast conditions but different start dates, or experiment with an “offline” model driven by output from various models)
 
 Often several simulations will be performed that satisfy the conditions specified for an experiment.  For example, simulations of the historical period can branch from various points in a control run, and each of these will satisfy the conditions defining the experiment.  Together, such simulations constitute a “conforming ensemble” with members all satisfying the same experiment specifications.  There are also occasional cases where the experiment designers (MIP leaders) define a family of related simulations and choose to label these with a common “root” experiment name, followed by a “sub-experiment” name.  An example of this is the set of decadal prediction hindcasts that are all run similarly but started from different start dates (with each simulation identified by a different sub-experiment label).   Such “defined ensembles” of experiments will be labeled with a “root” experiment name, and a “sub-experiment_id” will be used to distinguish among members in the ensemble.  
 
@@ -468,20 +460,21 @@ For the group of experiments included in CMIP6, the following structure will usu
 
 - The first segment indicates that an experiment should be run with a model other than an AOGCM or a concentration-driven ESM.  (This segment is omitted in experiments for AOGCMs and concentration-driven ESMs.)  CMIP6 examples of the first segment (shown in parentheses) include:
 
-  - Offline radiation code experiments (“rad”)
-  - Uncoupled ice-sheet models forced by AOGCM output (“ism”)
-  - Atmosphere (and land surface) models forced by prescribed SSTs and sea ice (e.g., “amip”, “piSST”, “piClim”, “histSST”, “ssp370SST”, “aqua”, “futureSST”, “G6SST1”, “G6SST2”, “G7SST1”, “G7SST2”, “highresSST”, “a4SST”, “a4SSTice”)
-  - Offline land-surface model (“land”)
-  - Ocean and sea ice model forced by prescribed atmospheric conditions (“omip1” or “omip2”)
-  - Earth system model forced by emissions (rather than concentrations) of CO2 (“esm”)
-  - The next segment is the first indication of experiment conditions
-  - Any additional segments indicate some relatively small variation on experiment conditions defined by the previous segment.   
+    - Offline radiation code experiments (“rad”)
+    - Uncoupled ice-sheet models forced by AOGCM output (“ism”)
+    - Atmosphere (and land surface) models forced by prescribed SSTs and sea ice (e.g., “amip”, “piSST”, “piClim”, “histSST”, “ssp370SST”, “aqua”, “futureSST”, “G6SST1”, “G6SST2”, “G7SST1”, “G7SST2”, “highresSST”, “a4SST”, “a4SSTice”)
+    - Offline land-surface model (“land”)
+    - Ocean and sea ice model forced by prescribed atmospheric conditions (“omip1” or “omip2”)
+    - Earth system model forced by emissions (rather than concentrations) of CO2 (“esm”)
+    - The next segment is the first indication of experiment conditions
+    - Any additional segments indicate some relatively small variation on experiment conditions defined by the previous segment.
 
-We now provide two examples of the global attributes relevant to identifying a CMIP6 experiment, and the filenames and directory structures that make use of these global attributes. 
+We now provide two examples of the global attributes relevant to identifying a CMIP6 experiment, and the filenames and directory structures that make use of these global attributes.
 
 Example 1: The common case when there are no sub-experiments:
 
 Global attributes (relevant to experiment definition):\
+
 ```
 experiment_id = “1pctCO2”
 experiment = “1 percent per year increase in CO2 concentration”
@@ -494,6 +487,7 @@ forcing_index = 1
 variant_label = “r1i1p1f1”
 variant_info =  “realization 1” 
 ```
+
 file name:  `tas_Amon_CCSM2-1_1pctCO2_r1i1p1f1_gn_202001-202912.nc`
 
 directory structure:   `CMIP6/CMIP/NCAR/CCSM2-1/1pctCO2/r1i1p1f1/Amon/tas/gn/v20150320/`
@@ -501,6 +495,7 @@ directory structure:   `CMIP6/CMIP/NCAR/CCSM2-1/1pctCO2/r1i1p1f1/Amon/tas/gn/v2
 Example 2: The uncommon case (in  CMIP6) when there are sub-experiments defined:
 
 Global attributes (relevant to experiment definition):
+
 ```
 experiment_id = “dcppA-hindcast”
 experiment =  “year 1-5 hindcast initialized based on observations and using historical forcing”
@@ -522,7 +517,8 @@ directory structure: `CMIP6/DCPP/NCAR/CCSM2-1/dcppA-hindcast/s1960-r1i2p1f1/Amo
 
 There are various ways grid resolution might be defined, but in CMIP6 this should be done in the same way by all models.  If the following procedure seems inappropriate for a model, the modeling group may request an exception from the WGCM Infrastructure Panel (WIP).  In general, the nominal resolution characterizes the resolution of _the grid used to report model output fields_, which may differ from the native grid on which the fields are calculated by the model.
 
-### Algorithm for defining the nominal_resolution global attribute:
+### Algorithm for defining the nominal_resolution global attribute
+
 **TODO: algebra in this section needs converting**
 
 1. For each grid cell, calculate the distance (in km) between each pair of cell vertices and select the maximum distance (“_d_<sup>max</sup>”).  For lonxlat grid cells, for example, _d_<sup>max</sup> would be the diagonal distance.
@@ -545,7 +541,7 @@ There are various ways grid resolution might be defined, but in CMIP6 this shoul
 
     - For data reported at individual sites, calculate as if every grid cell contained one site (i.e., include all grid cells).
 
-    - For zonal means, global means, sector or basin means, and similar area-means, the data provider may either report the nominal resolution of the native grid or the resolution of the primary grid on which data are reported. 
+    - For zonal means, global means, sector or basin means, and similar area-means, the data provider may either report the nominal resolution of the native grid or the resolution of the primary grid on which data are reported.
 
 3. Except in the case of a CMIP6 “standard grid” (see item 4 below), define the global attribute “nominal_resolution” according to:
 
@@ -566,7 +562,7 @@ There are various ways grid resolution might be defined, but in CMIP6 this shoul
 
     The different nominal_resolution values are approximately spaced logarithmically and the bounds on each are logarithmically approximately half-way between the values.
 
-    For a regular latxlon global grid it is possible to calculate the approximate mean resolution analytically: 
+    For a regular latxlon global grid it is possible to calculate the approximate mean resolution analytically:
 
     dmax=rearthΔφ2\[1+Δφ2+Δλ2Δφ Δλtan-1(ΔλΔφ)]
 
@@ -580,18 +576,17 @@ There are various ways grid resolution might be defined, but in CMIP6 this shoul
 
 5. When the above formula for a regular lonxlat global grid is inapplicable, one can rely on a python code to calculate nominal_resolution for _any_ grid.  The following links lead to the code and its documentation:
 
-    - Code documentation:[ https://pcmdi.github.io/nominal_resolution/html/index.html](https://pcmdi.github.io/nominal_resolution/html/index.html).
+    - Code documentation:[https://pcmdi.github.io/nominal_resolution/html/index.html](https://pcmdi.github.io/nominal_resolution/html/index.html).
 
     - The code can be obtained via a conda package:
 
         conda install -c pcmdi nominal_resolution
 
-    - The package repository is hosted on Github at:[ https://github.com/pcmdi/nominal_resolution](https://github.com/pcmdi/nominal_resolution)
+    - The package repository is hosted on Github at:[https://github.com/pcmdi/nominal_resolution](https://github.com/pcmdi/nominal_resolution)
 
-    - The library source (api.py) is in the[ lib](https://github.com/pcmdi/nominal_resolution/blob/master/lib) directory.
+    - The library source (api.py) is in the[lib](https://github.com/pcmdi/nominal_resolution/blob/master/lib) directory.
 
-    - The test codes reside in the[ tests](https://github.com/pcmdi/nominal_resolution/blob/master/tests) directory.
-
+    - The test codes reside in the[tests](https://github.com/pcmdi/nominal_resolution/blob/master/tests) directory.
 
 ## Appendix 3: Document version information
 
@@ -603,7 +598,7 @@ The document version number consists of 3 integers separated by “.”  The fi
 
 - Replaced source_type option “BCM” with “BGCM”  (biogeochemical model).
 
-- Eliminated source_type options: “RCM (regional climate model)”, “ESD (empirical statistical downscaling model)”, and “EMIC (earth-system model of intermediate complexity)”.  This was done 
+- Eliminated source_type options: “RCM (regional climate model)”, “ESD (empirical statistical downscaling model)”, and “EMIC (earth-system model of intermediate complexity)”.  This was done
 
 - Modified algorithm for determining grid_resolution so that the label value will now nearly always be logarithmically the closest one to d-max.  This is consistent with the labels being logarithmically approximately evenly spaced.
 
@@ -653,7 +648,7 @@ The document version number consists of 3 integers separated by “.”  The fi
 
 - Added specific details on defining the time labels that appear in file names, which required addition of a new table and required Table 2 to be renumbered Table 3.
 
-- Adjusted (by less than 3%) the values used to determine nominal resolution in Appendix 2, so that models with latxlon resolution of 0.25, 0.5, 2.5 and 5.0 are now classified with nominal resolution of “25 km”, “50 km”, “250 km” and “500” km, respectively (instead of 50, 100, 500, and 1000 km). 
+- Adjusted (by less than 3%) the values used to determine nominal resolution in Appendix 2, so that models with latxlon resolution of 0.25, 0.5, 2.5 and 5.0 are now classified with nominal resolution of “25 km”, “50 km”, “250 km” and “500” km, respectively (instead of 50, 100, 500, and 1000 km).
 
 6.2.3 (4 April 2017):
 
