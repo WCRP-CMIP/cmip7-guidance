@@ -35,6 +35,7 @@ Register your institution before registering a model.
 | Organisation | [Register Institution](https://github.com/WCRP-CMIP/WCRP-constants/issues/new?template=organisation.yml) | Acronym, Full name, ROR |
 
 **Notes**:
+
 - The **acronym** must be unique and cannot be changed once data is published
 - A **ROR** (Research Organisation Registry) identifier is required for traceability. Find yours at [ror.org](https://ror.org)
 - Consortia are also registered as organisations
@@ -46,6 +47,7 @@ Register your institution before registering a model.
 **Important**: Before registering a `source_id`, you **must** complete the EMD (Essential Model Documentation) registration process first. The `source_id` registration requires a reference to your registered EMD Model entry.
 
 **Prerequisites**:
+
 1. Institution registered (see 2.1)
 2. EMD registration completed (see 2.4) - including grids, components, and top-level Model
 
@@ -166,8 +168,8 @@ Once your CVs are registered:
 
 The `esgvoc` Python library provides programmatic access to all CVs:
 
-- GitHub: https://github.com/WCRP-CMIP/esgf-vocab
-- Documentation: https://esgf.github.io/esgf-vocab/
+- GitHub: <https://github.com/WCRP-CMIP/esgf-vocab>
+- Documentation: <https://esgf.github.io/esgf-vocab/>
 
 ### CV Repositories
 
@@ -183,5 +185,5 @@ The `esgvoc` Python library provides programmatic access to all CVs:
 ## 6. Getting Help
 
 - **General questions**: Open a [General Issue](https://github.com/WCRP-CMIP/CMIP7-CVs/issues/new) in the relevant repository
-- **CV discussions**: See [CVs_discussion.md](CVs_discussion.md)
+- **CV discussions**: See [../How_to_Guides/cvs_discussion.md](../How_to_Guides/cvs_discussion.md)
 - **Contact IPO**: For complex cases, contact the CMIP International Project Office

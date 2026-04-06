@@ -20,6 +20,7 @@ Document overview:
 1. [CMIP6 organization and governance](#9-cmip6-organization-and-governance)
 
 ## 1. Requirements and expectations
+
 Those groups who plan to participate in CMIP6 should (in roughly this order, although
 model documentation should be provided as early as possible):
 
@@ -41,9 +42,9 @@ model documentation should be provided as early as possible):
  (*further_info_url*) in each netCDF file, or 2) by following links to each dataset
  displayed by the ESGF search service.
 
-   To request an account, provide the following to Martina Stockhause (stockhause@dkrz.de):
-   * Person: name, email, ORCID (if available), affiliation and
-   * Specification of the data, for which this person is responsible, using the *source_id*
+   To request an account, provide the following to Martina Stockhause (<stockhause@dkrz.de>):
+    * Person: name, email, ORCID (if available), affiliation and
+    * Specification of the data, for which this person is responsible, using the *source_id*
    and *institution_id* that you have registered at the [WCRP-CMIP github site][cmip6CvsRegistrationGuidance]
    (see first bullet above). The *source_id* registration (see first bulleted item
    above) is a prerequisite for citation service registration.
@@ -53,7 +54,7 @@ model documentation should be provided as early as possible):
    at [https://doi.org/10.22033/ESGF/input4MIPs.2204][PCMDIAmipCitation].
 
 * If you are not yet included in the CMIP6-MODELGROUPS-SCI mail list, register your
- scientific contact with CMIP Panel Chair, Veronika Eyring (veronika.eyring@dlr.de)
+ scientific contact with CMIP Panel Chair, Veronika Eyring (<veronika.eyring@dlr.de>)
 
 * Indicate your intention to participate in “endorsed MIPs” by signing up for the
  [endorsed-MIP mailing lists][EndorsedMipMailingList] of interest (click on each
@@ -83,6 +84,7 @@ if they wish to do so.
 Further information about the service is available in the **[Errata Service Documentation][errataDocumentation]**.
 
 ## 2. Experiment design
+
 The CMIP6 protocol and experiments are described in a [special issue][GMDSpecialIssue]
 of Geoscientific Model Development with an overview of the overall design and scientific
 strategy provided in the lead article of that issue by [Eyring et al. (2016)][EyringEtAl16]
@@ -113,6 +115,7 @@ strategy provided in the lead article of that issue by [Eyring et al. (2016)][Ey
  are available in a [“json” file][experimentIdJson] and can be displayed in [table form][experimentIdhtml]
 
 ## 3. Forcing data sets
+
 In CMIP6 all models should adopt the same forcing datasets (and boundary conditions).
 Experts contacted by the CMIP Panel have prepared the forcing datasets, and a new
 “input4MIPs” activity has been initiated by PCMDI to encourage adherence to many
@@ -138,15 +141,17 @@ be available soon. Any changes made to a released dataset will be documented in
 the [summary][input4mipsGoogleDoc].
 
 ## 4. Model output fields
+
 The [CMIP6 Data Request][cmip6DataRequest] defines the variables that should
 be archived for each experiment and specifies the time intervals for which they
 should be reported. It provides much of the variable-specific metadata that should
 be stored along with the data. It also provides tools for estimating the data storage
 requirements for CMIP6.
 
-Additional information about the data request is available at https://cmip6dr.github.io/Data_Request_Home
+Additional information about the data request is available at <https://cmip6dr.github.io/Data_Request_Home>
 
 ## 5. Model output requirements
+
 CMIP6 model output requirements are similar to those in CMIP5, but changes have
 been made to accommodate the more complex structure of CMIP6 and its data request.
 Some changes will make it easier for users to find the data they need and will
@@ -211,6 +216,7 @@ if a dataset passes the checks performed by the PrePARE software package describ
 in the next section.
 
 ## 6. Software for preparing/checking output
+
 To facilitate the production of model output files that meet the CMIP6 technical
 standards, a software library called “CMOR” (Climate Model Output Rewriter) has
 been developed and version 3 (CMOR3) is now available [at this site][cmorGithub],
@@ -251,13 +257,14 @@ Additional codes useful in preparing model output for CMIP6 include:
 given in Appendix 2 of the [CMIP6 netCDF global attributes document][cmip6GlobalAttGoogleDoc].
 For other grids, the nominal_resolution can be calculated with the following code:
 
-  * Code documentation: [https://pcmdi.github.io/nominal_resolution/html/index.html][nominal_resol_doc].
-  * The code can be obtained via a conda package: ``conda install -c pcmdi nominal_resolution``
-  * The package repository is hosted on Github at: [https://github.com/pcmdi/nominal_resolution][nominal_resol_git]
-    * The library source (api.py) is in the [lib directory][nominal_resol_lib].
-    * The test codes reside in the [tests directory][nominal_resol_tests].
+    * Code documentation: [https://pcmdi.github.io/nominal_resolution/html/index.html][nominal_resol_doc].
+    * The code can be obtained via a conda package: ``conda install -c pcmdi nominal_resolution``
+    * The package repository is hosted on Github at: [https://github.com/pcmdi/nominal_resolution][nominal_resol_git]
+        * The library source (api.py) is in the [lib directory][nominal_resol_lib].
+        * The test codes reside in the [tests directory][nominal_resol_tests].
 
 ## 7. Archiving/publishing output
+
 The Earth System Grid Federation ([ESGF][ESGFLlnlHome]) will facilitate the global
 distribution of CMIP6 output.
 
@@ -305,6 +312,7 @@ node site. Here is a summary of the main steps and requirements in the procedure
  at the IPCC Data Distribution Centre (IPCC DDC, [http://ipcc-data.org](http://ipcc-data.org))
 
 ## 8. Documentation process
+
 Given the wide variety of users and the need for traceability, the CMIP6 results
 will be fully documented and made accessible via the ES-DOC viewer and comparator
 interface ([https://search.es-doc.org](https://search.es-doc.org)). Each CMIP6
@@ -350,6 +358,7 @@ Specifically, ES-DOC will include documentation of:
  on its machine (e.g. the number of simulated years per real day, etc.)
 
 ## 9. CMIP6 organization and governance
+
 The [CMIP Panel][CMIPPanel], which is a standing subcommittee of the WCRP’s [Working Group on Climate Modeling][wgcmSite]
 provides overall guidance and oversight of CMIP activities. Notably it determines
 which MIPs will participate in each phase of CMIP using the established selection
@@ -385,10 +394,8 @@ Information is under preparation describing the governance of the following:
 * [input4MIPs][input4mipsCog]
 * [obs4MIPs][obs4mips]
 
-
 ###### Document version: 19 October 2022
 
-[guide]: index.html
 [cmip6CvsRegistrationGuidance]: https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/.github/ISSUE_TEMPLATE.md
 [ESGFLlnlHome]: https://esgf-node.llnl.gov/projects/esgf-llnl/
 [institutionIdJson]: https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_institution_id.json
@@ -398,7 +405,6 @@ Information is under preparation describing the governance of the following:
 [dkrzCitationGUI]: http://cera-www.dkrz.de/citeXA
 [dkrzCitationGUIDoc]: http://cera-www.dkrz.de/docs/pdf/CMIP6_Citation_Userguide.pdf
 [PCMDIAmipCitation]: https://doi.org/10.22033/ESGF/input4MIPs.2204
-[DKRZ]: https://www.dkrz.de/
 [cmip6Cvs]: https://github.com/WCRP-CMIP/CMIP6_CVs
 [EndorsedMipMailingList]: https://www.wcrp-climate.org/modelling-wgcm-mip-catalogue/modelling-wgcm-cmip6-endorsed-mips
 [GMDSpecialIssue]: http://www.geosci-model-dev.net/special_issue590.html

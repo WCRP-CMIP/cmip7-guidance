@@ -5,8 +5,6 @@ title: CMIP6 Guidance
 
 # CMIP6 Guidance and Documentation
 
-
-
 - [Global Attributes](global_attributes.md) (adapted from [https://goo.gl/v1drZl](http://goo.gl/v1drZl) )
 - [Guidance for modellers](guidance_for_modellers.md)
 - [Guidance for users](guidance_for_users.md)

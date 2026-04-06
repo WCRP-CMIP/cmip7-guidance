@@ -1,0 +1,21 @@
+default: true
+
+# Content rules
+MD007:
+  indent: 4   # Python-Markdown requires 4-space indent for nested lists
+MD013: false  # line length - too noisy for prose docs
+MD024: false  # duplicate headings - legitimate in docs (e.g. repeated "Example")
+MD025: false  # multiple H1 - frontmatter title: counts as H1, causing false positives
+MD033: false  # inline HTML - intentionally used (<sub>, <details>, <figure> etc.)
+MD046: false  # code block style - false positives on MkDocs admonition content (4-space indent)
+
+# Additional checks to consider (need reformatting and manual review)
+MD001: false  # heading-increment - legacy content skips heading levels
+MD036: false  # no-emphasis-as-heading - bold used as pseudo-headings in several files
+MD040: false  # fenced-code-language - many code blocks missing language specifier
+MD041: false  # first-line-h1 - frontmatter pages don't start with a heading
+MD042: false  # no-empty-links - [//] comment hack and [here]() empty links need fixing
+MD045: false  # no-alt-text - <img> tags missing alt= throughout How_to_Guides
+MD051: false  # link-fragments - numbered anchors (#5-model-output-requirements) don't match actual heading IDs
+MD056: false  # table-column-count - malformed tables in legacy CMIP6 content
+MD029: false  # ol-prefix - non-sequential ordered lists in several files

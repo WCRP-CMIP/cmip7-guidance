@@ -10,7 +10,7 @@ Its purpose is to collect HPC performance information that enables the Task Team
 - Calculate the **carbon footprint**
 - Compare efficiency across platforms and experiments
 
-## Please refer to the Guidance notes available on [Zenodo](https://doi.org/10.5281/zenodo.17464966). 
+## Please refer to the Guidance notes available on [Zenodo](https://doi.org/10.5281/zenodo.17464966)
 
 ---
 
@@ -30,7 +30,7 @@ If you already understand how to collect HPC performance metrics:
     - Add **Tier 2 (Recommended)**
     - Add **Tier 3 (Optional)**
 
-4. Add any comments if needed, for example where metrics cannot be provided due to institution regulations. 
+4. Add any comments if needed, for example where metrics cannot be provided due to institution regulations.
 5. Use **Metrics short descriptions** tab as glossary
 
 For definitions or formulas → open the **[Guidelines](https://doi.org/10.5281/zenodo.17464966)** at top of the spreadsheet.
@@ -252,4 +252,3 @@ Open **Metrics short descriptions** for definitions of all fields.
 For detailed explanations or formulas, please refer to the **Guidelines document** in the General Information tab.
 
 ---
-
