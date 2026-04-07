@@ -304,20 +304,16 @@ Documentation for the WCRP plugin is [found here](https://esgf.github.io/cc-plug
 
 The goal of this plugin is to provide a cohesive, extensible, and transparent system that consolidates key checks for WCRP projects, covers at least the minimum requirements for ESGF publication, and produces standardized reporting.
 
-> ⚠️ We’re releasing an **early version** of this ESGF QC IOOS plugin. This release is the result of ongoing development and while not final, it aims to give *data managers* and *advanced users* an opportunity to explore the tool and adapt their workflows in anticipation of CMIP7. This early release is *not* intended for general use. It is primarily targeted at *data providers* responsible for the **pre-publication QC** of CMIP data on ESGF.
-
-
 ### 🚧 Important Caveats
 
-- **Scope is limited**:  
-    - Support **CMIP6** and **CORDEX-CMIP6** 
-    - **CMIP7** is coming soon
+- **Scope is limited**
+    - Support **CMIP6**, **CMIP7** and **CORDEX-CMIP6**
+    - Additional projets will come in the future depending on the resources.
 
 - **Development in progress**:  
     - The framework may still contain **minor bugs**  
     - For CMIP6 data, tests have been mainly made on variables provided to the **Copernicus Climate Data Store**
-    - **QC results may change** in future releases and **should not be treated as final** .
-
+    - **QC results may change** in future releases and **should not be treated as compliance indicator** .
 
 ### 🛠 Development Approach
 
@@ -348,7 +344,7 @@ The **configuration** enables simple versioning and sharing of rule sets, while 
     - ℹ️ **OPTIONAL**: Informational checks with no impact on validity
 - Expected values or constraints where applicable
 
-> ⚠️ In this beta version, the **variable registry is not yet queried**. Variable information from CV relies on a **manual mapping** defined in the configuration file. To be automated via **esgvoc** in future releases.
+> ⚠️ The **variable registry is not yet queried**. Variable information from CVs is provided by **esgvoc**.
 
 **Usage** is built on the IOOS Compliance Checker, maintaining workflow flexibility for modeling groups that already operate their own QA/QC pipelines. It generates atomic log files per run (at both file and dataset levels) and supports seamless parallel execution, enabling straightforward integration with batch schedulers and large-scale production workflows. 
   ```bash
@@ -362,23 +358,10 @@ In addition, an [`esgf-qa` module](https://github.com/ESGF/esgf-qa) provides a h
 $ esgqa -t wcrp_cmip6:latest -t cf:1.11 -o /path/to/results/output /path/to/dataset
 ```
 
-### 💡 Why Now?
-
-This early release aims to:
-
-- Help **data centres** and **modeling groups** prepare for CMIP7 data workflows.
-- Gather **feedback** on tool design, performance, and usability.
-- Build alignment with emerging **vocabulary and metadata conventions**.
-
 ### 🗣️ How to Contribute
 
 If you encounter issues or have suggestions, please **open a GitHub issue** on the project repository:  
 👉 <https://github.com/ESGF/cc-plugin-wcrp/issues>
-
-
-> ⚠️ Please note that recent development of the https://esgf.github.io/esgf-qc/ tool has ceased, and this tool should not be used for compliance checking. It is more efficient for QC developers to maintain a compliance checker plugin rather than a fork of the entire code base. 
-
-
 
 ## 8.  Archiving/publishing output
 

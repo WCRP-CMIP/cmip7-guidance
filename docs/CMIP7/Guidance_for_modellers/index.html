@@ -115,6 +115,8 @@
 </script>
     
 
+    
+    
 </head>
 
 <body
@@ -1395,13 +1397,17 @@
 
         <div class="flex items-center gap-2 pt-1.5">
           
-<button onclick="fetch(`/CMIP7/Guidance_for_modellers.md`).then((r) => r.blob()).then((blob) => navigator.clipboard.write([new ClipboardItem({ 'text/plain': blob })]))" 
-        data-slot="button" 
-        class="cursor-pointer inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-md gap-1.5 px-3 has-[&>svg]:px-2.5 h-8 shadow-none md:h-7 md:text-[0.8rem]">
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-copy ">
-    <path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z"></path><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1"></path>
-</svg>
-<span class="max-md:hidden">Copy Page</span>
+<button
+    onclick="fetch(`/CMIP7/Guidance_for_modellers.md`).then((r) => r.blob()).then((blob) => navigator.clipboard.write([new ClipboardItem({ 'text/plain': blob })]))"
+    data-slot="button" class="secondary cursor-pointer">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-copy ">
+        <path
+            d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z">
+        </path>
+        <path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1"></path>
+    </svg>
+    <span class="max-md:hidden">Copy Page</span>
 </button> 
            
           
@@ -1676,16 +1682,13 @@ For testing purposes sample CV JSON files are available via the <a href="https:/
 <p>The <strong>ESGF Quality Control (QC) solution</strong> is built around a new plugin developed for the <a href="http://ioos.github.io/compliance-checker/">IOOS Compliance Checker</a>, providing a unified and extensible way to validate climate model outputs intended for publication on the Earth System Grid Federation (ESGF). 
 Documentation for the WCRP plugin is <a href="https://esgf.github.io/cc-plugin-wcrp/">found here</a>.</p>
 <p>The goal of this plugin is to provide a cohesive, extensible, and transparent system that consolidates key checks for WCRP projects, covers at least the minimum requirements for ESGF publication, and produces standardized reporting.</p>
-<blockquote>
-<p>⚠️ We’re releasing an <strong>early version</strong> of this ESGF QC IOOS plugin. This release is the result of ongoing development and while not final, it aims to give <em>data managers</em> and <em>advanced users</em> an opportunity to explore the tool and adapt their workflows in anticipation of CMIP7. This early release is <em>not</em> intended for general use. It is primarily targeted at <em>data providers</em> responsible for the <strong>pre-publication QC</strong> of CMIP data on ESGF.</p>
-</blockquote>
 <h3 id="important-caveats">🚧 Important Caveats<a class="headerlink" href="#important-caveats" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
-<p><strong>Scope is limited</strong>:  </p>
+<p><strong>Scope is limited</strong></p>
 <ul>
-<li>Support <strong>CMIP6</strong> and <strong>CORDEX-CMIP6</strong> </li>
-<li><strong>CMIP7</strong> is coming soon</li>
+<li>Support <strong>CMIP6</strong>, <strong>CMIP7</strong> and <strong>CORDEX-CMIP6</strong></li>
+<li>Additional projets will come in the future depending on the resources.</li>
 </ul>
 </li>
 <li>
@@ -1693,7 +1696,7 @@ Documentation for the WCRP plugin is <a href="https://esgf.github.io/cc-plugin-w
 <ul>
 <li>The framework may still contain <strong>minor bugs</strong>  </li>
 <li>For CMIP6 data, tests have been mainly made on variables provided to the <strong>Copernicus Climate Data Store</strong></li>
-<li><strong>QC results may change</strong> in future releases and <strong>should not be treated as final</strong> .</li>
+<li><strong>QC results may change</strong> in future releases and <strong>should not be treated as compliance indicator</strong> .</li>
 </ul>
 </li>
 </ul>
@@ -1725,7 +1728,7 @@ Documentation for the WCRP plugin is <a href="https://esgf.github.io/cc-plugin-w
 <li>Expected values or constraints where applicable</li>
 </ul>
 <blockquote>
-<p>⚠️ In this beta version, the <strong>variable registry is not yet queried</strong>. Variable information from CV relies on a <strong>manual mapping</strong> defined in the configuration file. To be automated via <strong>esgvoc</strong> in future releases.</p>
+<p>⚠️ The <strong>variable registry is not yet queried</strong>. Variable information from CVs is provided by <strong>esgvoc</strong>.</p>
 </blockquote>
 <p><strong>Usage</strong> is built on the IOOS Compliance Checker, maintaining workflow flexibility for modeling groups that already operate their own QA/QC pipelines. It generates atomic log files per run (at both file and dataset levels) and supports seamless parallel execution, enabling straightforward integration with batch schedulers and large-scale production workflows. 
   <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>compliance-checker<span class="w"> </span>-t<span class="w"> </span>wcrp_cmip6:1.0<span class="w"> </span>/path/to/data/file.nc
@@ -1734,19 +1737,9 @@ The <strong>reporting system</strong> inherits the IOOS logic, combining output 
 <p>In addition, an <a href="https://github.com/ESGF/esgf-qa"><code>esgf-qa</code> module</a> provides a higher-level orchestration layer on top of the IOOS Compliance Checker. It applies the <code>cc-plugin-wcrp</code> consistently at the dataset level, automatically parallelizes checker execution across multiple files, and produces user-friendly aggregated reports. This greatly simplifies large-scale QC operations and makes results easier to browse, interpret, and integrate into your workflows. See <a href="https://esgf.github.io/esgf-qa/"><code>esgf-qa</code> documentation for the installation procedure</a>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$<span class="w"> </span>esgqa<span class="w"> </span>-t<span class="w"> </span>wcrp_cmip6:latest<span class="w"> </span>-t<span class="w"> </span>cf:1.11<span class="w"> </span>-o<span class="w"> </span>/path/to/results/output<span class="w"> </span>/path/to/dataset
 </code></pre></div>
-<h3 id="why-now">💡 Why Now?<a class="headerlink" href="#why-now" title="Permanent link">&para;</a></h3>
-<p>This early release aims to:</p>
-<ul>
-<li>Help <strong>data centres</strong> and <strong>modeling groups</strong> prepare for CMIP7 data workflows.</li>
-<li>Gather <strong>feedback</strong> on tool design, performance, and usability.</li>
-<li>Build alignment with emerging <strong>vocabulary and metadata conventions</strong>.</li>
-</ul>
 <h3 id="how-to-contribute">🗣️ How to Contribute<a class="headerlink" href="#how-to-contribute" title="Permanent link">&para;</a></h3>
 <p>If you encounter issues or have suggestions, please <strong>open a GitHub issue</strong> on the project repository:<br />
 👉 <a href="https://github.com/ESGF/cc-plugin-wcrp/issues">https://github.com/ESGF/cc-plugin-wcrp/issues</a></p>
-<blockquote>
-<p>⚠️ Please note that recent development of the https://esgf.github.io/esgf-qc/ tool has ceased, and this tool should not be used for compliance checking. It is more efficient for QC developers to maintain a compliance checker plugin rather than a fork of the entire code base. </p>
-</blockquote>
 <h2 id="8-archivingpublishing-output">8.  Archiving/publishing output<a class="headerlink" href="#8-archivingpublishing-output" title="Permanent link">&para;</a></h2>
 <p>The <a href="https://esgf.github.io/">Earth System Grid Federation (ESGF)</a> will facilitate the global distribution of CMIP7 output.</p>
 <div class="admonition tip">
@@ -2154,12 +2147,6 @@ The mission, rationale and Terms of Reference for the WIP can be found
             ⚙️ Configuration, Usage &amp; Reporting
         </a>
         
-        <a href="#why-now"
-            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#why-now');">
-            💡 Why Now?
-        </a>
-        
         <a href="#how-to-contribute"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
             data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#how-to-contribute');">
@@ -2250,6 +2237,8 @@ The mission, rationale and Terms of Reference for the WIP can be found
     
 
     <script src="../../js/copy-button.js"></script>
+    <script src="../../js/sidebar.js"></script>
+    <script src="../../js/slider.js"></script>
     <script>updatePygmentsStylesheet();</script>
     
     
