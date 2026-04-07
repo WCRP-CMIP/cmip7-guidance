@@ -6,7 +6,7 @@ title: CMIP7 Guidance for Data Users
 # CMIP7 Guidance for Data Users
 
 
-This page is designed to inform users of climate model outputs on key CMIP7 concepts and tools. It is a landing page to provide context and to redirect them to more detailed resources to learn more.
+This page is designed to inform users of climate model outputs on key CMIP7 concepts and tools. It is a landing page to provide context and to redirect them to more detailed resources.
 
 
 
@@ -17,7 +17,7 @@ CMIP7 model output is available through a distributed data archive developed and
 
 ??? info "Understanding ESGF Nodes"
 
-    ESGF is a collaboration of groups, agencies and institutions around the world, that are dedicated to the development and operation of a long-term system for the management, access and analysis of climate data.  The ESGF architecture is based on a system of distributed Nodes.  Data is hosted on a collection of data nodes located at modelling centres or data centres across the world.  Data can be searched through index nodes that hold catalogues of what is available on the data node. The net result is that a user can use a web browser or rich desktop client, connect to any Node, and seamlessly find and access data throughout the federation. 
+    ESGF is a collaboration of groups, agencies and institutions around the world, that are dedicated to the development and operation of a long-term system for the management, access and analysis of climate data.  The ESGF architecture is based on a system of distributed Nodes.  Data is hosted on a collection of data nodes located at modelling centres or data centres across the world.  Data can be searched through index nodes that hold catalogues of what is available on the data nodes. The net result is that a user can use a web browser or rich desktop client, connect to any Node, and seamlessly find and access data throughout the federation. 
     
     It is possible for a node to be down, which can lead to data being unavailable for periods of time.
 
@@ -207,7 +207,7 @@ The CMIP7 protocol and experiments are described in a [special issue][GMDSpecial
 * [List of variables][varlist]
 * [Branded variable documentation](Branded_Variables.md)
 
-The variables produced in CMIP7 were recommended by the [CMIP7 Data Request task team][DataRequestTeam]. The latest version of the Data Request can be [viewed here](https://bit.ly/CMIP7-DReq-latest), and further guidance can be [found here](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/Guidance_for_modellers/#4-model-output-fields). In CMIP7, the concept of branded variables has been introduced to make it easier to find the variables you want. Branded variables follow the template: 
+In CMIP7, the concept of branded variables has been introduced to make it easier to find the variables you want. Branded variables follow the template: 
 
 ```
 <branded_variable> 
@@ -224,12 +224,16 @@ The CMIP7 compound name used in the Data Request also includes each requested va
 
 For example, the equivalent of `Amon.tas` in CMIP6 would be  `atmos.tas_tavg-h2m-hxy-u.mon.GLB` in CMIP7.
 
-<!--TODO: maybe add more about Data Request. -->
+??? info "Understanding Data Request"
+    The variables produced in CMIP7 were recommended by the [CMIP7 Data Request task team][DataRequestTeam]. The latest version of the Data Request can be [viewed here][datarequest], and further guidance can be [found here](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/Guidance_for_modellers/#4-model-output-fields). 
+
 
 ### 3.4 Frequency
 * [List of frequencies][freqlist]
 
-Models report data on a variety of time steps. In CMIP6, MIP tables (aka CMOR tables) defined the frequency at which requested variables in an experiment should be reported (e.g., "Amon", "day"). In CMIP7 the frequency is specified in the Data Request for every requested variable and reported in netCDF files as a global attribute. The [CMOR tables for CMIP7](https://github.com/WCRP-CMIP/cmip7-cmor-tables) contain branded variables, are organized by realm, and no longer specify frequency.
+Models report data on a variety of time steps. 
+
+In CMIP6, the definition of requested variables included the frequency in which it should be reported, through the table id (e.g., "Amon", "day"). In CMIP7, the  definition of the variables are independent of the frequency, which is specified separately for every requested variable.
 
 ??? info "Calendars and Time Handling"
 
@@ -260,7 +264,7 @@ Models report data on a variety of time steps. In CMIP6, MIP tables (aka CMOR ta
 
 ### 3.5 Grid
 * [List of grids][gridlist] (coming soon)
-* List of pressure levels: [Table 2 of Dingley et al. 2025][dataReq]
+* List of pressure levels: [Table 2 of Dingley et al. 2025][datareqpaperatm]
 * [CMIP7 Guidance on Grids][grid]
 
 Different climate models use a variety of different horizontal grids that are documented in the [grid registry][gridreg] (coming soon).
@@ -386,7 +390,9 @@ First time using CMIP? Need a bit more help ? Check out these ressources:
 [GlobalAttrs]: https://doi.org/10.5281/zenodo.17250296
 [grid]: https://doi.org/10.5281/zenodo.15697024
 [variableid]: https://airtable.com/apphMYhEwBJfd0bUK/shrYC888Qxf8gkvky/tblpo5L8maBIGlM1B/viwNNzrqK5oPL7zk2
-[dataReq]: https://egusphere.copernicus.org/preprints/2025/egusphere-2025-3189/
+[datareqpaperatm]: https://egusphere.copernicus.org/preprints/2025/egusphere-2025-3189/
+[datarequest]: https://bit.ly/CMIP7-DReq-latest
+[cmortablecmip7]: https://github.com/WCRP-CMIP/cmip7-cmor-tables
 
 
  <!-- TODO: all the links below need to be changed when the new version arrives. airtable ? -->
