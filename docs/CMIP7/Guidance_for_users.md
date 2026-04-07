@@ -6,7 +6,7 @@ title: CMIP7 Guidance for Data Users
 # CMIP7 Guidance for Data Users
 
 
-This page is designed to inform users of climate model outputs on key CMIP7 concepts and tools. It is a landing page to provide context and to redirect them to the proper resources to learn more.
+This page is designed to inform users of climate model outputs on key CMIP7 concepts and tools. It is a landing page to provide context and to redirect them to more detailed resources to learn more.
 
 
 
@@ -17,7 +17,7 @@ CMIP7 model output is available through a distributed data archive developed and
 
 ??? info "Understanding ESGF Nodes"
 
-    ESGF is a collaboration of groups, agencies and institutions around the world, that are dedicated to the development and operation of a long-term system for the management, access and analysis of climate data. The ESGF architecture is based on a system of autonomous and distributed Nodes. Data is hosted on a collection of data nodes located at modelling centres or data centres across the world. Nodes exchange information about their data holdings and services, trust each other for registering users and establishing access control decisions. Data can be searched through index nodes that hold catalogues of what is available on the data node. The net result is that a user can use a web browser or rich desktop client, connect to any Node, and seamlessly find and access data throughout the federation. 
+    ESGF is a collaboration of groups, agencies and institutions around the world, that are dedicated to the development and operation of a long-term system for the management, access and analysis of climate data.  The ESGF architecture is based on a system of distributed Nodes.  Data is hosted on a collection of data nodes located at modelling centres or data centres across the world.  Data can be searched through index nodes that hold catalogues of what is available on the data node. The net result is that a user can use a web browser or rich desktop client, connect to any Node, and seamlessly find and access data throughout the federation. 
     
     It is possible for a node to be down, which can lead to data being unavailable for periods of time.
 
@@ -176,7 +176,7 @@ More information about the meaning of these facets is provided in the [global at
 * [Essential Model Documentation (EMD)][emd] (coming soon)
 
 
-The Essential Model Documentation (EMD) contains a high-level description intended to contain information on model formulation that can be easily compared between different models. EMD pages contain links to more in-depth model documentation for each source.
+The Essential Model Documentation (EMD) contains a high-level description intended to contain information on model formulation that can be easily compared between different models. The [EMD guidance pages][emd] contain links to more in-depth model documentation for each source.
 
 ??? info "Basic Concepts to Understand Variants"
     The source facet gives the name of the model and the variant facet represents each member of an ensemble for a given source. It can also be called the “ripf” identifier (“r” for realization, “i” for initialization, “p” for physics, and “f” for forcing).
@@ -204,19 +204,19 @@ The CMIP7 protocol and experiments are described in a [special issue][GMDSpecial
 
 
 ### 3.3. Variable
-* [List of variables][varlist] (coming soon)
+* [List of variables][varlist]
 * [Branded variable documentation](Branded_Variables.md)
 
-The variables produced in CMIP7 were recommended by the [CMIP7 Data Request task team][DataRequestTeam]. In CMIP7, the concept of branded variable identifies the variables. Branded variables follows the template: 
+The variables produced in CMIP7 were recommended by the [CMIP7 Data Request task team][DataRequestTeam]. The latest version of the Data Request can be [viewed here](https://bit.ly/CMIP7-DReq-latest), and further guidance can be [found here](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/Guidance_for_modellers/#4-model-output-fields). In CMIP7, the concept of branded variables has been introduced to make it easier to find the variables you want. Branded variables follow the template: 
 
 ```
 <branded_variable> 
-= <variable_id>_<branded_suffix>
+= <variable_id>_<branding_suffix>
 = <variable_id>_<temporal_label>-<vertical_label>-<horizontal_label>-<area_label>
 ```
 
-To uniquely identify variables, frequency and region are required together with the branded variable.
-The CMIP7 compound name also includes realm for ease of use:
+To uniquely identify requested variables, frequency and region are required together with the branded variable.
+The CMIP7 compound name used in the Data Request also includes each requested variable's primary realm, for ease of identifying variables associated with a realm:
 ```
 <compound_name> = <realm>.<branded_variable>.<frequency>.<region>
 ```
@@ -227,9 +227,9 @@ For example, the equivalent of `Amon.tas` in CMIP6 would be  `atmos.tas_tavg-h2m
 <!--TODO: maybe add more about Data Request. -->
 
 ### 3.4 Frequency
-* [List of frequencies][freqlist] (coming soon)
+* [List of frequencies][freqlist]
 
-Models report data on a variety of time steps. The [MIP table][varlist] defines the frequency with which requested variables in an experiment should be reported.
+Models report data on a variety of time steps. In CMIP6, MIP tables (aka CMOR tables) defined the frequency at which requested variables in an experiment should be reported (e.g., "Amon", "day"). In CMIP7 the frequency is specified in the Data Request for every requested variable and reported in netCDF files as a global attribute. The [CMOR tables for CMIP7](https://github.com/WCRP-CMIP/cmip7-cmor-tables) contain branded variables, are organized by realm, and no longer specify frequency.
 
 ??? info "Calendars and Time Handling"
 
@@ -383,8 +383,8 @@ First time using CMIP? Need a bit more help ? Check out these ressources:
 [cmipCvs]: https://github.com/WCRP-CMIP/CMIP7-CVs
 [DataRequestTeam]: https://wcrp-cmip.org/cmip-phases/cmip7/cmip7-data-request/
 [FeoC]: https://wcrp-cmip.org/cmip7-task-teams/fresh-eyes-on-cmip/
-[GlobalAttrs]: https://zenodo.org/records/17250297
-[grid]: https://zenodo.org/records/15697025
+[GlobalAttrs]: https://doi.org/10.5281/zenodo.17250296
+[grid]: https://doi.org/10.5281/zenodo.15697024
 [variableid]: https://airtable.com/apphMYhEwBJfd0bUK/shrYC888Qxf8gkvky/tblpo5L8maBIGlM1B/viwNNzrqK5oPL7zk2
 [dataReq]: https://egusphere.copernicus.org/preprints/2025/egusphere-2025-3189/
 
@@ -404,15 +404,15 @@ First time using CMIP? Need a bit more help ? Check out these ressources:
 
  <!-- unknown links -->
 [CMIPpubs]:  ?
-[varlist]:  ?
+[varlist]: https://cmip-data-request.github.io/cmip7-dreq-webview/latest/variables.html
 [experimentlist]:  ?
 [activitylist]:  ?
 [sourcelist]:  ?
 [gridlist]: ?
 [levellist]:  ?
-[freqlist]:  ?
+[freqlist]: https://cmip-data-request.github.io/cmip7-dreq-webview/latest/cmip7_frequency.html
 [maskavg]:  ?
-[emd]:  ?
+[emd]:  https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/
 [eld]: ?
 [gridreg]: ?
 
