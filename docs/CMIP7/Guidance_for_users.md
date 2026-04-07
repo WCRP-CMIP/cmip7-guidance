@@ -347,20 +347,13 @@ First time using CMIP? Need a bit more help ? Check out these ressources:
 [metagridornl]: https://esgf-node.ornl.gov/search
 [metagridceda]: https://esgf-ui.ceda.ac.uk/search
 [esgpull]: https://esgf.github.io/esgf-download/
-[citemaws]: https://doi.org/10.5281/zenodo.2621084
 [Stockhause2017]: https://doi.org/10.5334/dsj-2017-030
-[gdatasetsearch]: https://toolbox.google.com/datasetsearch/
-[datacitecat]: https://search.datacite.org/works?query=prefix:10.22033
 [CMIPPanel]: https://www.wcrp-climate.org/wgcm-cmip/cmip-panel
 [cfConventionsPage]: http://cfconventions.org/
-[gov]: https://wcrp-cmip.org/cmip-governance/
-[wgcmSite]: https://www.wcrp-climate.org/wgcm-overview
-[wip]: https://wcrp-cmip.github.io/WGCM_Infrastructure_Panel
 [CMIPMips]: https://wcrp-cmip.org/mips/
 [platform]: https://github.com/orgs/Fresh-Eyes-on-CMIP/discussions
 [register]: https://github.com/Fresh-Eyes-on-CMIP/member-requests/issues/new?template=new_user.yml
 [ErrataService]: https://errata.ipsl.fr/static/index.html
-[CC BY 4.0]: https://creativecommons.org/licenses/by/4.0/
 [esmvaltool]: https://esmvaltool.org/
 [intakeesgf]: https://github.com/esgf2-us/intake-esgf
 [cmor]:https://cmor.llnl.gov/
@@ -393,6 +386,9 @@ First time using CMIP? Need a bit more help ? Check out these ressources:
 [datareqpaperatm]: https://egusphere.copernicus.org/preprints/2025/egusphere-2025-3189/
 [datarequest]: https://bit.ly/CMIP7-DReq-latest
 [cmortablecmip7]: https://github.com/WCRP-CMIP/cmip7-cmor-tables
+[varlist]: https://cmip-data-request.github.io/cmip7-dreq-webview/latest/variables.html
+[freqlist]: https://cmip-data-request.github.io/cmip7-dreq-webview/latest/cmip7_frequency.html
+[emd]:  https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/
 
 
  <!-- TODO: all the links below need to be changed when the new version arrives. airtable ? -->
@@ -410,17 +406,15 @@ First time using CMIP? Need a bit more help ? Check out these ressources:
 
  <!-- unknown links -->
 [CMIPpubs]:  ?
-[varlist]: https://cmip-data-request.github.io/cmip7-dreq-webview/latest/variables.html
 [experimentlist]:  ?
 [activitylist]:  ?
 [sourcelist]:  ?
 [gridlist]: ?
 [levellist]:  ?
-[freqlist]: https://cmip-data-request.github.io/cmip7-dreq-webview/latest/cmip7_frequency.html
 [maskavg]:  ?
-[emd]:  https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/
 [eld]: ?
 [gridreg]: ?
+
 
 
  <!-- note: only admonitions that show color with this theme are Info, Success, Warning, Danger -->
