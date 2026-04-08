@@ -1461,14 +1461,13 @@ To install the Metagrid UI for end-users to search and download data, read the d
 <h2 id="2-dataset-publication-preliminary-testing-for-cmip7">2. Dataset publication - Preliminary testing for CMIP7<a class="headerlink" href="#2-dataset-publication-preliminary-testing-for-cmip7" title="Permanent link">&para;</a></h2>
 <p><em>the command-line tools described in this section are not production-ready for CMIP7 publication, however we welcome test users who have successfully produced CMORized data to test out the tools/workflows. Follow the steps below specific to testing</em></p>
 <ul>
-<li>Apply for Integration testing group membership here:  (https://app.globus.org/groups/e3329078-b8f6-11f0-9fdd-0e7d9e9fc9e3)</li>
+<li>Apply for Integration testing group membership <a href="https://app.globus.org/groups/e3329078-b8f6-11f0-9fdd-0e7d9e9fc9e3"><em>here</em></a></li>
 <li>You may use your insitution or well-known Social Auth provider to log in to Globus</li>
 <li>Install Python packages for publication workflow:
    <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip install &#39;git+https://github.com/sashakames/esg-publisher.git@stac-update&#39; esgvoc esgprep
 </code></pre></div></li>
-<li>Follow instructions linked from the <em>esgf-prepare</em> docs site on CMIP7 vocabulary installation with <code>esgvoc</code></li>
-<li>https://esgf.github.io/esgf-prepare/</li>
-<li>Add the following to your esg.yaml config file for publishing:
+<li>Follow instructions linked from the <a href="https://esgf.github.io/esgf-prepare/"><em>esgf-prepare</em> docs site</a> on CMIP7 vocabulary installation with <code>esgvoc</code></li>
+<li>Add the following to your <code>esg.yaml</code> config file for publishing:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>stac_config:
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  stac_client:
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    client_id:  ec5f07c0-7ed8-4f2b-94f2-ddb6f8fc91a3

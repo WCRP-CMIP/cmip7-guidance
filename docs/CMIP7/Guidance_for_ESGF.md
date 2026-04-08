@@ -56,15 +56,14 @@ _Coming soon...._
 
 _the command-line tools described in this section are not production-ready for CMIP7 publication, however we welcome test users who have successfully produced CMORized data to test out the tools/workflows. Follow the steps below specific to testing_
 
- - Apply for Integration testing group membership here:  (https://app.globus.org/groups/e3329078-b8f6-11f0-9fdd-0e7d9e9fc9e3)
+ - Apply for Integration testing group membership [*here*](https://app.globus.org/groups/e3329078-b8f6-11f0-9fdd-0e7d9e9fc9e3)
    - You may use your insitution or well-known Social Auth provider to log in to Globus
  - Install Python packages for publication workflow:
    ```
    pip install 'git+https://github.com/sashakames/esg-publisher.git@stac-update' esgvoc esgprep
    ```
- - Follow instructions linked from the *esgf-prepare* docs site on CMIP7 vocabulary installation with `esgvoc`
-   - https://esgf.github.io/esgf-prepare/
- - Add the following to your esg.yaml config file for publishing:
+ - Follow instructions linked from the [*esgf-prepare* docs site](https://esgf.github.io/esgf-prepare/) on CMIP7 vocabulary installation with `esgvoc`
+ - Add the following to your `esg.yaml` config file for publishing:
 ```
 stac_config:
   stac_client:
