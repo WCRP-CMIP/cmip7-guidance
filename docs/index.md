@@ -16,6 +16,8 @@ title: CMIP7 Guidance and Documentation
 - [Updates for modelling groups](Updates_for_Modellers.md)
 - [Global Attributes](CMIP7/Global_Attributes.md)
 - [Branded Variables](CMIP7/Branded_Variables.md)
+- [CV Registration](CMIP7/cv_registration.md)
+- [Data Specs Version](CMIP7/data_specs_version.md)
 - [Guidance for modellers](CMIP7/Guidance_for_modellers.md)
     - [Experiment setup and forcings](CMIP7/Experiment_set_up_and_Forcings/index.md)
 - [Guidance for users, including Terms of Use](CMIP7/Guidance_for_users.md)
@@ -23,6 +25,7 @@ title: CMIP7 Guidance and Documentation
 - [Guidance for MIPs](CMIP7/Guidance_for_MIPs.md)
 - [Domain names for CMIP7 services](CMIP7/Domain_names.md)
 - [Frequently Asked Questions (FAQ)](CMIP7/FAQ.md)
+- [Annex 1: Checks performed prior to publication](CMIP7/QC_checks.md)
 
 ### CMIP6
 

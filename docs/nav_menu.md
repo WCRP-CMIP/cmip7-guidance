@@ -3,6 +3,8 @@
 - [CMIP7](CMIP7/index.md)
   - [Global Attributes](CMIP7/Global_Attributes.md)
   - [Branded Variables](CMIP7/Branded_Variables.md)
+  - [CV Registration](CMIP7/cv_registration.md)
+  - [Data Specs Version](CMIP7/data_specs_version.md)
   - [Guidance for modellers](CMIP7/Guidance_for_modellers.md)
   - [Experiment setup and forcings](CMIP7/Experiment_set_up_and_Forcings/index.md)
     - [1pctCO2-bgc](CMIP7/Experiment_set_up_and_Forcings/1pctco2-bgc.md)
@@ -36,6 +38,7 @@
   - [Guidance for MIPs](CMIP7/Guidance_for_MIPs.md)
   - [Domain names](CMIP7/Domain_names.md)
   - [FAQ](CMIP7/FAQ.md)
+  - [Annex 1: Checks performed prior to publication](CMIP7/QC_checks.md)
 - How-to Guides
   - [Energy Consumption and Carbon Footprint Spreadsheet](How_to_Guides/Energy_Consumption_and_Carbon_Footprint_Spreadsheet.md)
   - [CVs discussion](How_to_Guides/CVs_discussion.md)
