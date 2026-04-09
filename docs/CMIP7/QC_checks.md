@@ -145,7 +145,7 @@ Each table relates to one of the files within the plugin and has three columns:
 | global.attributes.parent_source_id | value_type | str |
 | global.attributes.parent_source_id | is_required | False |
 | global.attributes.parent_source_id | cv_source_collection | source |
-| global.attributes.parent_time_units | pattern | ^days since [0-9]{4}-[0-9]{1,2}-[0-9]{1,2}( [0-9]{2}:[0-9]{2}:[0-9]{2})?( \((gregorian|standard|proleptic_gregorian|julian|noleap|365_day|all_leap|366_day|360_day|utc|tai)\))?$ |
+| global.attributes.parent_time_units | pattern | ^days since [0-9]{4}-[0-9]{1,2}-[0-9]{1,2}( [0-9]{2}:[0-9]{2}:[0-9]{2})?( \((gregorian\|standard\|proleptic_gregorian\|julian\|noleap\|365_day\|all_leap\|366_day\|360_day\|utc\|tai)\))?$ |
 | global.attributes.parent_time_units | severity | H |
 | global.attributes.parent_time_units | value_type | str |
 | global.attributes.parent_time_units | is_required | False |
