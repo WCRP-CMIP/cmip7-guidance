@@ -1483,20 +1483,21 @@
     </div>
   </div>
   <div class="typography w-full flex-1 *:data-[slot=alert]:first:mt-0">
-    <p>This page is designed to inform users of climate model outputs on key CMIP7 concepts and tools. It is a landing page to redirect them to the proper resources to learn more.</p>
-<h2 id="1-accessing-cmip7-data">1.  Accessing CMIP7 data<a class="headerlink" href="#1-accessing-cmip7-data" title="Permanent link">&para;</a></h2>
-<p>CMIP7 model output is available through a distributed data archive developed and operated by the Earth System Grid Federation (ESGF). The data are hosted on a collection of nodes located at centres across the world.</p>
+    <p>This page is designed to inform users of climate model outputs on key <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> concepts and tools. It is a landing page to provide context and to redirect them to more detailed resources.</p>
+<h2 id="1-accessing-cmip7-data">1.  Accessing <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> data<a class="headerlink" href="#1-accessing-cmip7-data" title="Permanent link">&para;</a></h2>
+<p><abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> model output is available through a distributed data archive developed and operated by the Earth System Grid Federation (ESGF). The data are hosted on a collection of nodes located at centres across the world.</p>
 <details class="info">
 <summary>Understanding ESGF Nodes</summary>
-<p>ESGF is a collaboration of groups, agencies and institutions around the world, that are dedicated to the development and operation of a long-term system for the management, access and analysis of climate data. The ESGF architecture is based on a system of autonomous and distributed Nodes. Data is hosted on a collection of nodes located at modelling centres or data centres across the world. Nodes exchange information about their data holdings and services, trust each other for registering users and establishing access control decisions. The net result is that a user can use a web browser or rich desktop client, connect to any Node, and seamlessly find and access data throughout the federation.</p>
+<p>ESGF is a collaboration of groups, agencies and institutions around the world, that are dedicated to the development and operation of a long-term system for the management, access and analysis of climate data.  The ESGF architecture is based on a system of distributed Nodes.  Data is hosted on a collection of data nodes located at modelling centres or data centres across the world.  Data can be searched through index nodes that hold catalogues of what is available on the data nodes. The net result is that a user can use a web browser or rich desktop client, connect to any Node, and seamlessly find and access data throughout the federation. </p>
+<p>It is possible for a node to be down, which can lead to data being unavailable for periods of time.</p>
 <p>More documentation on CMIP nodes is available <a href="https://wcrp-cmip.org/map/">here</a>.</p>
 <p>ESGF data usage and publication metrics can be found on the <a href="https://esgf-ui.cmcc.it/esgf-dashboard-ui/index.html">CMCC dashboard</a>.</p>
 </details>
 <p>There are 3 options to access the data:</p>
 <ol>
 <li>
-<p><strong>MetaGrid</strong> (<a href="https://aims2.llnl.gov/search/">LLNL</a>, <a href="https://esgf-metagrid.cloud.dkrz.de/search">DKRZ</a>, <a href="https://esgf-node.ornl.gov/search">ORNL</a>, <a href="https://esgf-ui.ceda.ac.uk/search">CEDA</a>)</p>
-<p>Web interface to search and download ESGF data. It provides access through http downloads, wget scripts, OPeNDAP URLs and Globus transfers. It is most useful for browsing and downloading a small number of files. The data can be accessed through any of the CMIP7 web interfaces linked above, which enable users to search across the entire distributed archive as if it were all centrally located.</p>
+<p><strong>MetaGrid</strong> (<a href="https://aims2.llnl.gov/search/"><abbr title="Lawrence Livermore National Laboratory">LLNL</abbr></a>, <a href="https://esgf-metagrid.cloud.dkrz.de/search"><abbr title="Deutsches Klimarechenzentrum (German Climate Computation Centre)">DKRZ</abbr></a>, <a href="https://esgf-node.ornl.gov/search"><abbr title="Oak Ridge National Laboratory">ORNL</abbr></a>, <a href="https://esgf-ui.ceda.ac.uk/search"><abbr title="Centre for Environmental Data Analysis (at the National Centre for Atmospheric Science in the UK)">CEDA</abbr></a>)</p>
+<p>Web interface to search and download ESGF data. It provides access through http downloads, wget scripts, OPeNDAP URLs and Globus transfers. It is most useful for browsing and downloading a small number of files. The data can be accessed through any of the <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> web interfaces linked above, which enable users to search across the entire distributed archive as if it were all centrally located.</p>
 </li>
 <li>
 <p><strong>Using a python package</strong></p>
@@ -1509,16 +1510,20 @@
 </li>
 <li>
 <p><strong>Alternative Access Platforms</strong></p>
-<p>While all published CMIP7 data is available from ESGF, some of it is additionally hosted in non-ESGF storage facilities. Below are links to some of these replicas. If you know of another place CMIP data is currently being stored, please submit <a href="http://bit.ly/CMIP-data-platform">this form</a> to let us and the community know!</p>
+<p>While all published <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> data is available from ESGF, some of it is additionally hosted in non-ESGF storage facilities. Below are links to some of these replicas. If you know of another place CMIP data is currently being stored, please submit <a href="http://bit.ly/CMIP-data-platform">this form</a> to let us and the community know!</p>
 <ul>
-<li>COMING SOON</li>
+<li>links coming soon</li>
 </ul>
-<p>For all non-ESGF data access routes, we encourage users to verify that the data used is the latest version. </p>
+<details class="info">
+<summary>Analysis-Ready Cloud-Optimized data</summary>
+<p>Data hosted in the cloud can be very useful for users with fewer resources. Indeed, data can be streamed and the analysis can be done remotely close to the storage, instead of downloading it locally. For efficient analysis in the cloud, the data needs to be in an Analysis-Ready Cloud-Optimized (<abbr title="Analysis-Ready Cloud-Optimized">ARCO</abbr>) format. Following the Pangeo / ESGF Cloud Data Working Group efforts for CMIP6,  there are community efforts underway to streamline <abbr title="Analysis-Ready Cloud-Optimized">ARCO</abbr> access (e.g., <a href="https://virtualizarr.readthedocs.io/en/stable/">virtualizarr</a>), which will lower barriers to producing cloud-optimized data formats without having to rewrite the original data. Contributions are welcomed <a href="https://github.com/carbonplan/cmip7-virtualization">here</a>.</p>
+</details>
 </li>
 </ol>
+<p>For data access routes that do not involve official ESGF nodes, we encourage users to verify that the data used is the latest version, and cite the original sources appropriately (see below). </p>
 <h2 id="2-terms-of-use-and-citations-requirements">2.  Terms of use and citations requirements<a class="headerlink" href="#2-terms-of-use-and-citations-requirements" title="Permanent link">&para;</a></h2>
 <!--TODO: Make sure we have a link (with persistent URL) to this in the license global attrs-->
-<p>To enable modelling groups and others who support CMIP7 to demonstrate its impact (and secure ongoing funding), you are required to cite and acknowledge those who have made CMIP7 possible. Some best practices are also recommended.</p>
+<p>To enable modelling groups and others who support <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> to demonstrate its impact (and secure ongoing funding), you are required to cite and acknowledge those who have made <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> possible. Some best practices are also recommended.</p>
 <h3 id="mandatory">Mandatory<a class="headerlink" href="#mandatory" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
@@ -1548,16 +1553,16 @@ It is recommended that:</p>
 <li>Wherever possible cite the experiments used (e.g., historical), using the experiment-level data citations.</li>
 <li>If this isn't feasible (e.g. limitations of the number of data citations imposed by a journal), use the activity-level data citation.</li>
 </ul>
-<p>Experiment-specific data citations are useful for tracking the impact of specific CMIP7 experiments, which is valuable information for modelling centres and planning of future CMIP phases. 
+<p>Experiment-specific data citations are useful for tracking the impact of specific <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> experiments, which is valuable information for modelling centres and planning of future CMIP phases. 
 However it is recognized that their finer granularity could result in an unmanageable number of references for data users, journals may limit the number of references, and a balance between the number of data and literature citations is desirable in scholarly publications.</p>
 </details>
 <!--TODO: Is #2 acknoledgmet necessary for funding ? or could it be replaced by a data availability statement.-->
 </li>
 <li>
-<p><strong>Acknowledge CMIP7.</strong></p>
+<p><strong>Acknowledge <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr>.</strong></p>
 <p>In the Acknowledgment section, insert the following text:</p>
 <blockquote>
-<p>We acknowledge the World Climate Research Programme's Coupled Model Intercomparison Project contributors who coordinated and promoted CMIP7. We thank the climate modelling groups for producing and making available their model output, the Earth System Grid Federation (ESGF) for archiving the data and providing access, and the multiple funding agencies who support CMIP7 and ESGF.</p>
+<p>We acknowledge the World Climate Research Programme's Coupled Model Intercomparison Project contributors who coordinated and promoted <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr>. We thank the climate modelling groups for producing and making available their model output, the Earth System Grid Federation (ESGF) for archiving the data and providing access, and the multiple funding agencies who support <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> and ESGF.</p>
 </blockquote>
 </li>
 <li>
@@ -1571,31 +1576,29 @@ However it is recognized that their finer granularity could result in an unmanag
 <p><strong>Cite the CMIP literature</strong></p>
 <p>To provide more context, we recommend citing relevant articles. For example:</p>
 <ul>
-<li>Overview of the CMIP7 experiment design: <a href="https://gmd.copernicus.org/articles/18/6671/2025/">Dunne et al. (2025)</a></li>
+<li>Overview of the <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> experiment design: <a href="https://gmd.copernicus.org/articles/18/6671/2025/">Dunne et al. (2025)</a></li>
 <li>CMIP standard and infrastructure: <a href="https://journals.ametsoc.org/view/journals/bams/106/8/BAMS-D-25-0119.1.xml">Durack et al. (2025)</a></li>
-<li>Papers describing MIPs associated with experiment(s) used
+<li>Papers describing <abbr title="Model Intercomparison Projects">MIPs</abbr> associated with experiment(s) used
     <!--Maybe use experiment CV to get the right citation, once they have that information. --></li>
 <li>Model documentation papers associated the model(s) used</li>
 </ul>
+<p>In general, the <a href="https://gmd.copernicus.org/articles/special_issue1315.html"><abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> <abbr title="Geoscientific Model Development">GMD</abbr> special issue</a> is a good place to look for relevant literature.</p>
 </li>
-</ol>
-<p>In general, the <a href="https://gmd.copernicus.org/articles/special_issue1315.html">CMIP7 GMD special issue</a> is a good place to look for relevant literature.</p>
-<ol>
 <li>
 <p><strong>Register your work.</strong></p>
-<p>Register your work on the <a href="?">CMIP7 Publication Hub</a> (coming soon). </p>
+<p>Register your work on the <a href="?"><abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> Publication Hub</a> (coming soon). </p>
 </li>
 <li>
 <p><strong>Use the standard vocabularies</strong></p>
-<p>Where possible, we recommend using the CMIP7 standardized names as defined by the <a href="https://github.com/WCRP-CMIP/CMIP7-CVs">controlled vocabularies (CVs)</a> (see <a href="#3-cmip7-facets-and-their-documentation">Section 3</a>) for terms such as the source (model) or experiment, in order to make references as clear and unambiguous as possible. However, if your audience requires different terms, then you should use those but we recommend keeping a mapping from the term your audience uses to the standardized name, again to ensure that references can be unambiguously resolved where needed. Refer to the collection of CMIP7 models as the “CMIP7 multi-model ensemble”.</p>
+<p>Where possible, we recommend using the <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> standardized names as defined by the <a href="https://github.com/WCRP-CMIP/CMIP7-CVs">controlled vocabularies (<abbr title="Controlled Vocabularies">CVs</abbr>)</a> (see <a href="#3-cmip7-facets-and-their-documentation">Section 3</a>) for terms such as the source (model) or experiment, in order to make references as clear and unambiguous as possible. However, if your audience requires different terms, then you should use those but we recommend keeping a mapping from the term your audience uses to the standardized name, again to ensure that references can be unambiguously resolved where needed. Refer to the collection of <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> models as the “<abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> multi-model ensemble”.</p>
 </li>
 </ol>
 <div class="admonition warning">
 <p class="admonition-title">Disclaimer</p>
 <p>The data disclaimer for CMIP is available <a href="https://doi.org/10.5281/zenodo.18155119">here</a>.</p>
 </div>
-<h2 id="3-cmip7-facets-and-their-documentation">3. CMIP7 facets and their documentation<a class="headerlink" href="#3-cmip7-facets-and-their-documentation" title="Permanent link">&para;</a></h2>
-<p>CMIP7 datasets can be identified through a series of facets that represents key attributes of the data. The main facets are</p>
+<h2 id="3-cmip7-facets-and-their-documentation">3. <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> facets and their documentation<a class="headerlink" href="#3-cmip7-facets-and-their-documentation" title="Permanent link">&para;</a></h2>
+<p><abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> datasets can be identified through a series of facets that represents key attributes of the data. The main facets are</p>
 <ul>
 <li>activity</li>
 <li>institution</li>
@@ -1608,54 +1611,64 @@ However it is recognized that their finer granularity could result in an unmanag
 <li>grid</li>
 <li>version</li>
 </ul>
-<div class="admonition tip inline end">
-<p class="admonition-title">Tip</p>
-<p>Current advice from the CVs task team is to only access the CVs via <a href="https://esgf.github.io/esgf-vocab/">ESGVOC</a>. This will be subject to change in the future.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Current advice from the <abbr title="Controlled Vocabularies">CVs</abbr> task team is to only access the <abbr title="Controlled Vocabularies">CVs</abbr> via <a href="https://esgf.github.io/esgf-vocab/">ESGVOC</a>. This will be subject to change in the future.</p>
 </div>
-<p>More information about the meaning of these facets is provided in the <a href="https://doi.org/10.5281/zenodo.17250296">global attributes documentation</a>, with further guidance provided on the <a href="../Global_Attributes/">Global Attributes page</a>. The values associated with each facet are standardized through the <a href="https://github.com/WCRP-CMIP/CMIP7-CVs">CVs</a>. They are used to search the ESGF database and can be found in the global attributes of the data. This section provides helpful links and gives a bit more information on a few key facets. </p>
+<p>More information about the meaning of these facets is provided in the <a href="https://doi.org/10.5281/zenodo.17250296">global attributes documentation</a>, with further guidance provided on the <a href="../Global_Attributes/">Global Attributes page</a>. The values associated with each facet are standardized through the <a href="https://github.com/WCRP-CMIP/CMIP7-CVs"><abbr title="Controlled Vocabularies">CVs</abbr></a>. They are used to search the ESGF database and can be found in the global attributes of the data. This section provides helpful links and gives a bit more information on a few key facets. </p>
 <h3 id="31-source-and-variant">3.1.  Source and Variant<a class="headerlink" href="#31-source-and-variant" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="?">List of models</a> (coming soon)</li>
-<li><a href="?">Essential Model Documentation (EMD)</a> (coming soon)</li>
+<li><a href="https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/">Essential Model Documentation (<abbr title="Essential Model Documentation">EMD</abbr>)</a> (coming soon)</li>
 </ul>
-<p>The Essential Model Documentation (EMD) contains a high-level description intended to contain information on model formulation that can be easily compared between different models. EMD pages contain links to more in-depth model documentation for each source.</p>
+<p>The Essential Model Documentation (<abbr title="Essential Model Documentation">EMD</abbr>) contains a high-level description intended to contain information on model formulation that can be easily compared between different models. The <a href="https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/"><abbr title="Essential Model Documentation">EMD</abbr> guidance pages</a> contain links to more in-depth model documentation for each source.</p>
 <details class="info">
 <summary>Basic Concepts to Understand Variants</summary>
 <p>The source facet gives the name of the model and the variant facet represents each member of an ensemble for a given source. It can also be called the “ripf” identifier (“r” for realization, “i” for initialization, “p” for physics, and “f” for forcing).</p>
 </details>
-<p>A useful tool to evaluate the models is the <a href="https://dashboard.climate-ref.org">Rapid Evaluation Framework (REF)</a>. It is an evaluation of the models participating in CMIP6 and the CMIP7 Assessment Fast Track (AFT).</p>
+<p>A useful tool to evaluate the models is the <a href="https://dashboard.climate-ref.org">Rapid Evaluation Framework (<abbr title="Rapid Evaluation Framework">REF</abbr>)</a>. It is an evaluation of the models participating in CMIP6 and the <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> Assessment Fast Track (<abbr title="Assessment Fast Track">AFT</abbr>).</p>
 <h3 id="32-experiment-and-activity">3.2.  Experiment and Activity<a class="headerlink" href="#32-experiment-and-activity" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="?">List of experiments</a> (coming soon)</li>
 <li><a href="?">List of activities</a> (coming soon)</li>
 </ul>
-<p>The CMIP7 protocol and experiments are described in a <a href="https://gmd.copernicus.org/articles/special_issue1315.html">special issue</a> of Geoscientific Model Development with an overview of the design and scientific strategy provided in the lead article of that issue by <a href="https://gmd.copernicus.org/articles/18/6671/2025/">Dunne et al. (2025)</a>.</p>
+<p>The <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> protocol and experiments are described in a <a href="https://gmd.copernicus.org/articles/special_issue1315.html">special issue</a> of Geoscientific Model Development with an overview of the design and scientific strategy provided in the lead article of that issue by <a href="https://gmd.copernicus.org/articles/18/6671/2025/">Dunne et al. (2025)</a>.</p>
 <details class="info">
 <summary>Basic Concepts to Understand Experiments</summary>
-<p>Each model participating in CMIP7 will contribute results from the eight DECK experiments. These experiments are the only ones directly overseen by the <a href="https://www.wcrp-climate.org/wgcm-cmip/cmip-panel">CMIP Panel</a>, and together these constitute the ongoing (slowly evolving) “CMIP” activity. In addition to the DECK, each modeling group may choose to contribute to any of the <a href="https://wcrp-cmip.org/mips/">CMIP7 Community MIPs</a>. The CMIP panel identifies key experiments to be prioritized on different timelines through fast tracks. The first one is the AFT, which includes a set of Community MIP experiments chosen by the CMIP panel to address specific needs.</p>
+<p>Each model participating in <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> will contribute results from the eight <abbr title="Diagnostic, Evaluation and Characterization of Klima">DECK</abbr> experiments. These experiments are the only ones directly overseen by the <a href="https://www.wcrp-climate.org/wgcm-cmip/cmip-panel">CMIP Panel</a>, and together these constitute the ongoing (slowly evolving) “CMIP” activity. In addition to the <abbr title="Diagnostic, Evaluation and Characterization of Klima">DECK</abbr>, each modeling group may choose to contribute to any of the <a href="https://wcrp-cmip.org/mips/"><abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> Community <abbr title="Model Intercomparison Projects">MIPs</abbr></a>. The CMIP panel identifies key experiments to be prioritized on different timelines through fast tracks. The first one is the <abbr title="Assessment Fast Track">AFT</abbr>, which includes a set of Community MIP experiments chosen by the CMIP panel to address specific needs.</p>
 <p>MORE COMING SOON</p>
 </details>
 <!--TODO: https://github.com/WCRP-CMIP/cmip7-guidance/issues/46-->
 
 <h3 id="33-variable">3.3. Variable<a class="headerlink" href="#33-variable" title="Permanent link">&para;</a></h3>
 <ul>
-<li><a href="?">List of variables</a> (coming soon)</li>
+<li><a href="https://cmip-data-request.github.io/cmip7-dreq-webview/latest/variables.html">List of variables</a></li>
 <li><a href="../Branded_Variables/">Branded variable documentation</a></li>
 </ul>
-<p>The variables produced in CMIP7 were recommended by the <a href="https://wcrp-cmip.org/cmip-phases/cmip7/cmip7-data-request/">CMIP7 Data Request task team</a>. In CMIP7, the concept of branded variable identifies the variables. It follows the template: </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&lt;variableRootDD&gt;_&lt;temporalLabelDD&gt;-&lt;verticalLabelDD&gt;-&lt;horizontalLabelDD&gt;-&lt;areaLabelDD&gt;
+<p>In <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr>, the concept of branded variables has been introduced to make it easier to find the variables you want. Branded variables follow the template: </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&lt;branded_variable&gt; 
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>= &lt;variable_id&gt;_&lt;branding_suffix&gt;
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>= &lt;variable_id&gt;_&lt;temporal_label&gt;-&lt;vertical_label&gt;-&lt;horizontal_label&gt;-&lt;area_label&gt;
 </code></pre></div>
-<!--TODO: add more about Data Request. Not super clear to me how it can be useful to users yet.-->
-
+<p>To uniquely identify requested variables, frequency and region are required together with the branded variable.
+The <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> compound name used in the Data Request also includes each requested variable's primary realm, for ease of identifying variables associated with a realm:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>&lt;compound_name&gt; = &lt;realm&gt;.&lt;branded_variable&gt;.&lt;frequency&gt;.&lt;region&gt;
+</code></pre></div></p>
+<p>For example, the equivalent of <code>Amon.tas</code> in CMIP6 would be  <code>atmos.tas_tavg-h2m-hxy-u.mon.GLB</code> in <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr>.</p>
+<details class="info">
+<summary>Understanding the Data Request</summary>
+<p>The variables produced in <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> were recommended by the <a href="https://wcrp-cmip.org/cmip-phases/cmip7/cmip7-data-request/"><abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> Data Request task team</a>. The latest version of the Data Request can be <a href="https://bit.ly/CMIP7-DReq-latest">viewed here</a>, and further guidance can be <a href="https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/Guidance_for_modellers/#4-model-output-fields">found here</a>. </p>
+</details>
 <h3 id="34-frequency">3.4 Frequency<a class="headerlink" href="#34-frequency" title="Permanent link">&para;</a></h3>
 <ul>
-<li><a href="?">List of frequencies</a> (coming soon)</li>
+<li><a href="https://cmip-data-request.github.io/cmip7-dreq-webview/latest/cmip7_frequency.html">List of frequencies</a></li>
 </ul>
-<p>Models report data on a variety of time steps. The <a href="?">MIP table</a> defines the frequency with which requested variables in an experiment should be reported.</p>
+<p>Models report data on a variety of time steps. </p>
+<p>In CMIP6, the definition of requested variables included the frequency in which it should be reported, through the table id (e.g., "Amon", "day"). In <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr>, the  definition of the variables are independent of the frequency, which is specified separately for every requested variable.</p>
 <details class="info">
 <summary>Calendars and Time Handling</summary>
 <p>Climate models often use simplified or idealized calendars for numerical and computational reasons.<br />
-CMIP7 data include a <code>calendar</code> attribute associated with the <code>time</code> coordinate, which determines how dates are represented.<br />
+<abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> data include a <code>calendar</code> attribute associated with the <code>time</code> coordinate, which determines how dates are represented.<br />
 Before working with any CMIP dataset, users should <strong>check the calendar type</strong> and handle it appropriately.</p>
 <p>Common calendars found in CMIP data include:</p>
 <ul>
@@ -1666,7 +1679,7 @@ Before working with any CMIP dataset, users should <strong>check the calendar ty
 <li><strong>all_leap</strong> — every year has 366 days (all years include a leap day).</li>
 </ul>
 <p>These calendars are stored in the <code>calendar</code> attribute of the <code>time</code> variable, for example:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ncdump<span class="w"> </span>-h<span class="w"> </span>tas_day_ACCESS-ESM1-5_ssp585.nc<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>calendar
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ncdump<span class="w"> </span>-h<span class="w"> </span>tas_day_ACCESS-ESM1-5_ssp585.nc<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>calendar
 </code></pre></div>
 <p>Further reading in CF conventions for time coordinate: <a href="https://cfconventions.org/Data/cf-conventions/cf-conventions-1.12/cf-conventions.html#time-coordinate">https://cfconventions.org/Data/cf-conventions/cf-conventions-1.12/cf-conventions.html#time-coordinate</a></p>
 <p>It is recommended that users use the <a href="https://unidata.github.io/cftime/">cftime</a> library to handle time.</p>
@@ -1675,21 +1688,21 @@ Before working with any CMIP dataset, users should <strong>check the calendar ty
 <ul>
 <li><a href="?">List of grids</a> (coming soon)</li>
 <li>List of pressure levels: <a href="https://egusphere.copernicus.org/preprints/2025/egusphere-2025-3189/">Table 2 of Dingley et al. 2025</a></li>
-<li><a href="https://doi.org/10.5281/zenodo.15697024">CMIP7 Guidance on Grids</a></li>
+<li><a href="https://doi.org/10.5281/zenodo.15697024"><abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> Guidance on Grids</a></li>
 </ul>
 <p>Different climate models use a variety of different horizontal grids that are documented in the <a href="?">grid registry</a> (coming soon).</p>
-<p>Different MIPs also have different requirements for vertical grid reporting. Output can be defined either on the native model levels, or it can be remapped to pressure levels.</p>
+<p>Different <abbr title="Model Intercomparison Projects">MIPs</abbr> also have different requirements for vertical grid reporting. Output can be defined either on the native model levels, or it can be remapped to pressure levels.</p>
 <details class="info">
 <summary>Masked Averaging</summary>
-<p>Many variables in CMIP7 are defined as masked means, defined as the mean of a quantity over a portion of the grid cell defined by an area type. For more information on this, see this <a href="?">webpage</a> (coming soon).</p>
+<p>Many variables in <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> are defined as masked means, defined as the mean of a quantity over a portion of the grid cell defined by an area type. For more information on this, see this <a href="?">webpage</a> (coming soon).</p>
 </details>
-<h2 id="4-cmip7-data-format">4. CMIP7 data format<a class="headerlink" href="#4-cmip7-data-format" title="Permanent link">&para;</a></h2>
-<p>As in previous phases, all CMIP7 output has been written to netCDF files.
+<h2 id="4-cmip7-data-format">4. <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> data format<a class="headerlink" href="#4-cmip7-data-format" title="Permanent link">&para;</a></h2>
+<p>As in previous phases, all <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> output has been written to netCDF files.
 Before being published, these files must pass the <a href="https://github.com/ESGF/esgf-qc">ESGF Quality Control (ESGF-QC)</a>.
-Many modelling centres use the <a href="https://cmor.llnl.gov/">CMOR</a> software to standardize their files. They are then said to have been “CMORized”.</p>
+Many modelling centres use the <a href="https://cmor.llnl.gov/"><abbr title="Climate Model Output Rewriter">CMOR</abbr></a> software to standardize their files. They are then said to have been “CMORized”.</p>
 <p>Essential features of CMORized data are :</p>
 <ul>
-<li>Standardized naming from CMIP <a href="https://github.com/WCRP-CMIP/CMIP7-CVs">CVs</a></li>
+<li>Standardized naming from CMIP <a href="https://github.com/WCRP-CMIP/CMIP7-CVs"><abbr title="Controlled Vocabularies">CVs</abbr></a></li>
 <li>Consistent <a href="https://doi.org/10.5281/zenodo.17250296">file naming convention</a></li>
 <li>Uniform metadata structure:<ul>
 <li><a href="https://doi.org/10.5281/zenodo.17250296">Global attributes</a></li>
@@ -1699,37 +1712,27 @@ Many modelling centres use the <a href="https://cmor.llnl.gov/">CMOR</a> softwar
 </li>
 <li>Self-describing (all metadata needed to interpret the data are included in the file)</li>
 <li>Consistent units and standard names following <a href="http://cfconventions.org/">CF conventions</a></li>
-<li><a href="guidance_for_modellers.md#5-model-output-requirements">Standard chunking</a></li>
+<li><a href="../Guidance_for_modellers/#5-model-output-requirements">Standard chunking</a></li>
 </ul>
 <h2 id="5-reporting-suspected-errors">5.  Reporting suspected errors<a class="headerlink" href="#5-reporting-suspected-errors" title="Permanent link">&para;</a></h2>
-<div class="admonition warning inline end">
+<div class="admonition danger">
 <p class="admonition-title">Warning</p>
-<p>The CMIP7 archive contains the output of scientific simulations of the past and potential future that are subject to multiple sources of error, ranging from errors in data handling, to errors in the representation of the real world in either the model, or the experimental setup for which the model was used. Different parts of the CMIP7 archive may be subject to differing levels of such errors, and users should be alert to these issues, and their potential consequences.</p>
+<p>The <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> archive contains the output of scientific simulations of the past and potential future that are subject to multiple sources of error, ranging from errors in data handling, to errors in the representation of the real world in either the model, or the experimental setup for which the model was used. Different parts of the <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> archive may be subject to differing levels of such errors, and users should be alert to these issues, and their potential consequences.</p>
 </div>
-<p>Information about discovered issues of CMIP7 data is captured by the <a href="https://errata.ipsl.fr/static/index.html">Errata Service</a>.</p>
+<p>Information about discovered issues of <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> data is captured by the <a href="https://errata.ipsl.fr/static/index.html">Errata Service</a>.</p>
 <p>Any CMIP data user can report an error by submitting an issue through the Propose button on the Errata Service website.
 Proposing erratum through the webform requires a contact email address. Once the webform is validated and created, a special link is created and can be shared but the issue won’t appear on the index page. A moderator (from the relevant modelling centre providing data) will validate, update or reject the entry. When data errors are discovered, data providers are expected to retract the affected datasets from ESGF and, if possible, republish corrected data using updated dataset version identifiers. If no moderation action is taken after the 14-day validation period, the issue will be publicly indexed, albeit with a special flag.</p>
 <!--TODO: Add info on contact when decided https://github.com/WCRP-CMIP/cmip7-guidance/issues/45 -->
 
 <h2 id="6-new-to-cmip">6. New to CMIP?<a class="headerlink" href="#6-new-to-cmip" title="Permanent link">&para;</a></h2>
-<p>First time using CMIP? Need a bit more help ? Check out the <a href="?">Entry-Level Documentation</a> (coming soon), put together by the <a href="https://wcrp-cmip.org/cmip7-task-teams/fresh-eyes-on-cmip/">Fresh Eyes on CMIP</a> group.</p>
-<p>You have a more specific question ? Ask it on the <a href="https://github.com/orgs/Fresh-Eyes-on-CMIP/discussions">Fresh Eyes Platform</a>. (You need to register <a href="https://github.com/Fresh-Eyes-on-CMIP/member-requests/issues/new?template=new_user.yml">here</a> first.)</p>
-<h6 id="document-version-2025-10-08">Document version: 2025-10-08<a class="headerlink" href="#document-version-2025-10-08" title="Permanent link">&para;</a></h6>
+<p>First time using CMIP? Need a bit more help ? Check out these resources:</p>
+<ul>
+<li><a href="?">Entry-Level Documentation</a> (coming soon), put together by the <a href="https://wcrp-cmip.org/cmip7-task-teams/fresh-eyes-on-cmip/">Fresh Eyes on CMIP</a> group.</li>
+<li><a href="https://wcrp-cmip.org/tools/">List of tools for using climate data</a>.</li>
+<li>You have a more specific question ? Ask it on the <a href="https://github.com/orgs/Fresh-Eyes-on-CMIP/discussions">Fresh Eyes Platform</a>. (You need to register <a href="https://github.com/Fresh-Eyes-on-CMIP/member-requests/issues/new?template=new_user.yml">here</a> first.)</li>
+</ul>
+<h6 id="document-version-2026-04-08">Document version: 2026-04-08<a class="headerlink" href="#document-version-2026-04-08" title="Permanent link">&para;</a></h6>
 <!--  abbreviation -->
-<p><em>[CMIP7]: Coupled Model Intercomparison Project phase 7
-</em>[ESGF]: Earth System Grid Federation
-<em>[LLNL]: Lawrence Livermore National Laboratory
-</em>[DKRZ]: Deutsches Klimarechenzentrum (German Climate Computation Centre)
-<em>[ORNL]: Oak Ridge National Laboratory
-</em>[CEDA]: Centre for Environmental Data Analysis (at the National Centre for Atmospheric Science in the UK)
-<em>[GMD]: Geoscientific Model Development
-</em>[MIPs]: Model Intercomparison Projects
-<em>[CVs]: Controlled Vocabularies
-</em><a href="?">EMD</a>: Essential Model Documentation
-<em><a href="https://dashboard.climate-ref.org">REF</a>: Rapid Evaluation Framework
-</em>[DECK]: Diagnostic, Evaluation and Characterization of Klima
-<em><a href="https://wcrp-cmip.org/cmip-phases/cmip7/fast-track/">AFT</a>: Assessment Fast Track
-</em><a href="https://cmor.llnl.gov/">CMOR</a>: Climate Model Output Rewriter</p>
 <!-- valid general links -->
 <!-- CMIP7 links -->
 <!-- TODO: all the links below need to be changed when the new version arrives. airtable ? -->
@@ -1745,6 +1748,7 @@ Proposing erratum through the webform requires a contact email address. Once the
 [maskavg]: https://wcrp-cmip.github.io/WGCM_Infrastructure_Panel/CMIP6/time_and_area_averaging.html -->
 
 <!-- unknown links -->
+<!-- note: only admonitions that show color with this theme are Info, Success, Warning, Danger -->
   </div>
 </article>
                                 <div class="mx-auto flex flex-wrap h-16 w-full max-w-2xl items-center gap-2 px-4 md:px-0">
