@@ -304,6 +304,8 @@ Documentation for the WCRP plugin is [found here](https://esgf.github.io/cc-plug
 
 The goal of this plugin is to provide a cohesive, extensible, and transparent system that consolidates key checks for WCRP projects, covers at least the minimum requirements for ESGF publication, and produces standardized reporting.
 
+A list of the checks included in the plugin for CMIP7 can be found [here](QC_checks.md).
+
 ### 🚧 Important Caveats
 
 - **Scope is limited**
