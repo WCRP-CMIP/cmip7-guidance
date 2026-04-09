@@ -90,3 +90,11 @@ Future scenario experiments.
 Exploration of the future climate under a (selected) range of possible boundary conditions.
 
 1. [scen7-vl](./scen7-vl.md)
+
+
+The priority of ScenarioMIP experiments (expressed as Tier 1 and 2), depending on whether your model is running in emissions-driven or concentration-driven mode, is summarized in the flowchart below.
+For further details see Table 1 of [Van Vuuren et al. 2026](https://gmd.copernicus.org/articles/19/2627/2026/).
+
+<figure>
+  <img src="figures/ScenarioMIP-tiers.svg">
+</figure>
