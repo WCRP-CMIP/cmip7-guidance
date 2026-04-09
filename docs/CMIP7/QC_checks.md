@@ -22,7 +22,7 @@ See [this gist](https://gist.github.com/matthew-mizielinski/c88618e26f40126118ae
 
 ## File ([file.toml](https://raw.githubusercontent.com/ESGF/cc-plugin-wcrp/refs/tags/v2.0.0/plugins/cmip7/config/wcrp/file.toml))
 
-| Section | Property | Value |
+| Check | Property | Value |
 | --- | --- | ---|
 | file.format | severity | H |
 | file.format | expected_format | HDF5 |
@@ -30,7 +30,7 @@ See [this gist](https://gist.github.com/matthew-mizielinski/c88618e26f40126118ae
 
 ## Global attributes ([global_attributes.toml](https://raw.githubusercontent.com/ESGF/cc-plugin-wcrp/refs/tags/v2.0.0/plugins/cmip7/config/wcrp/global_attributes.toml))
 
-| Section | Property | Value |
+| Check | Property | Value |
 | --- | --- | ---|
 | global.attributes.activity_id | severity | H |
 | global.attributes.activity_id | value_type | str |
@@ -221,7 +221,7 @@ See [this gist](https://gist.github.com/matthew-mizielinski/c88618e26f40126118ae
 
 ## Drs ([drs.toml](https://raw.githubusercontent.com/ESGF/cc-plugin-wcrp/refs/tags/v2.0.0/plugins/cmip7/config/wcrp/drs.toml))
 
-| Section | Property | Value |
+| Check | Property | Value |
 | --- | --- | ---|
 | drs.filename | severity | H |
 | drs.directory | severity | H |
@@ -230,7 +230,7 @@ See [this gist](https://gist.github.com/matthew-mizielinski/c88618e26f40126118ae
 
 ## Geophysical variable ([geophysical_variable.toml](https://raw.githubusercontent.com/ESGF/cc-plugin-wcrp/refs/tags/v2.0.0/plugins/cmip7/config/wcrp/geophysical_variable.toml))
 
-| Section | Property | Value |
+| Check | Property | Value |
 | --- | --- | ---|
 | variable.existence | severity | H |
 | variable.type | severity | H |
@@ -295,7 +295,7 @@ See [this gist](https://gist.github.com/matthew-mizielinski/c88618e26f40126118ae
 
 ## Coordinate variables ([coordinate_variables.toml](https://raw.githubusercontent.com/ESGF/cc-plugin-wcrp/refs/tags/v2.0.0/plugins/cmip7/config/wcrp/coordinate_variables.toml))
 
-| Section | Property | Value |
+| Check | Property | Value |
 | --- | --- | ---|
 | coordinates.bounds | severity | H |
 | coordinates.dimensions | severity | H |
@@ -839,7 +839,7 @@ See [this gist](https://gist.github.com/matthew-mizielinski/c88618e26f40126118ae
 
 ## Project ([project.toml](https://raw.githubusercontent.com/ESGF/cc-plugin-wcrp/refs/tags/v2.0.0/plugins/cmip7/config/wcrp/project.toml))
 
-| Section | Property | Value |
+| Check | Property | Value |
 | --- | --- | ---|
 |  | project_name | cmip7 |
 |  | project_version | 1.0 |
