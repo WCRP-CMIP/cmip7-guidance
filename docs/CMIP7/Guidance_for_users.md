@@ -315,7 +315,7 @@ Proposing erratum through the webform requires a contact email address. Once the
 
 ## 6. New to CMIP?
 
-First time using CMIP? Need a bit more help ? Check out these ressources:
+First time using CMIP? Need a bit more help ? Check out these resources:
 
 * [Entry-Level Documentation][eld] (coming soon), put together by the [Fresh Eyes on CMIP][FeoC] group.
 * [List of tools for using climate data][tools].
