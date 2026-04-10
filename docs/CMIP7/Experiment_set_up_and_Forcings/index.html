@@ -1561,6 +1561,17 @@ Exploration of the future climate under a (selected) range of possible boundary 
 <ol>
 <li><a href="scen7-vl/">scen7-vl</a></li>
 </ol>
+<p>The priority of ScenarioMIP experiments (expressed as Tier 1 and 2) is summarized in the flowchart below, which is based on Table 1 of <a href="https://gmd.copernicus.org/articles/19/2627/2026/">Van Vuuren et al. 2026</a>.
+Emissions-driven experiments, indicated in yellow, have names beginning with <code>esm-</code>.</p>
+<ul>
+<li>If your model is capable of running in emissions-driven mode, ScenarioMIP request emissions-driven scenarios, and additionally the concentration-driven experiment <code>scen7-m</code>, at Tier-1 (highest priority).</li>
+<li>If your model will run only the concentration-driven experiments, ScenarioMIP request all concentration-driven scenarios at Tier-1. </li>
+</ul>
+<p>If you are running in emissions-driven mode, you are welcome to run other scenarios in concentration-driven mode, but they have not been assigned a specific tier (i.e., are lowest priority).</p>
+<figure>
+  <img src="figures/ScenarioMIP-tiers_v3.svg">
+  <figcaption>ScenarioMIP experiments, with emissions-driven experiments indicated in yellow.</figcaption>
+</figure>
   </div>
 </article>
                                 <div class="mx-auto flex flex-wrap h-16 w-full max-w-2xl items-center gap-2 px-4 md:px-0">
