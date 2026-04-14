@@ -1484,6 +1484,45 @@
   </div>
   <div class="typography w-full flex-1 *:data-[slot=alert]:first:mt-0">
     <h2 id="this-page-will-be-updated-with-information-of-interest-to-modelling-groups-that-the-cmip-ipo-has-communicated-by-email-most-recent-at-top">This page will be updated with information of interest to modelling groups that the CMIP IPO has communicated by email (most recent at top).<a class="headerlink" href="#this-page-will-be-updated-with-information-of-interest-to-modelling-groups-that-the-cmip-ipo-has-communicated-by-email-most-recent-at-top" title="Permanent link">&para;</a></h2>
+<h2 id="14th-april-2026">14th April 2026<a class="headerlink" href="#14th-april-2026" title="Permanent link">&para;</a></h2>
+<p>This update contains information on:
+1.  Scenario forcings update (H and VL ozone and nitrogen deposition now available!)
+2.  Publishing CMIP7 data to ESGF
+3.  New CMOR version availability
+4.  Rapid Evaluation Framework (REF) – Quality checklist
+5.  Request from ISIMIP</p>
+<h3 id="scenario-forcings-update">Scenario forcings update<a class="headerlink" href="#scenario-forcings-update" title="Permanent link">&para;</a></h3>
+<h4 id="ozone-and-nitrogen-deposition-scenario-forcing-data-vl-and-h-now-available">Ozone and nitrogen deposition scenario forcing data (VL and H) now available<a class="headerlink" href="#ozone-and-nitrogen-deposition-scenario-forcing-data-vl-and-h-now-available" title="Permanent link">&para;</a></h4>
+<p><a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/ozone/#cmip7_1">Ozone</a> and <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/nitrogen-deposition/#cmip7_1">nitrogen deposition</a> forcing is now available for the VL and H ScenarioMIP simulations. There are also zmta (temperature) files available for ozone. These provide the temperature output that is consistent with the provided ozone files. This may be useful for those wishing to post-process the ozone forcings into other forms.</p>
+<p><strong>As a result, all forcings required to run the VL and H ScenarioMIP simulations are now available.</strong></p>
+<h4 id="gridded-emissions-update">Gridded emissions update<a class="headerlink" href="#gridded-emissions-update" title="Permanent link">&para;</a></h4>
+<p>Updated versions of the emissions forcing for the VL and H ScenarioMIP scenarios have been released (see source IDs: <a href="https://esgf-node.ornl.gov/search?project=input4MIPs&amp;versionType=all&amp;activeFacets=%7B%22source_id%22%3A%22IIASA-IAMC-vl-1-1-1%22%7D">IIASA-IAMC-vl-1-1-1</a> and <a href="https://esgf-node.ornl.gov/search?project=input4MIPs&amp;versionType=all&amp;activeFacets=%7B%22source_id%22%3A%22IIASA-IAMC-h-1-1-1%22%7D">IIASA-IAMC-h-1-1-1</a>). This update fixes an issue with the biomass burning emissions (which are all zero in IIASA-IAMC-vl-1-1-0 and IIASA-IAMC-h-1-1-0). If you do not use biomass burning emissions, you do not need to re-run. Otherwise, please re-run to use the correct values (#432).</p>
+<p>Emissions (both anthropogenic and biomass burning) forcing for all ScenarioMIP scenarios is now available (see source IDs of the form IIASA-IAMC-*-1-1-1)</p>
+<h4 id="further-scenario-availability">Further scenario availability<a class="headerlink" href="#further-scenario-availability" title="Permanent link">&para;</a></h4>
+<p>Complete datasets are available for:
+ - <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/greenhouse-gas-concentrations/#scenariomip">Greenhouse gas concentrations</a>
+ - <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/stratospheric-volcanic-so2-emissions-aod/#scenariomip">Stratospheric volcanic SO2 emissions and aerosol optical properties</a>
+ - <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/solar/#scenariomip">Solar</a>
+ - <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/population/#scenariomip">Population density</a></p>
+<p>The latest dataset information can be found <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/">here</a> and issues/questions can be raised on the <a href="https://github.com/PCMDI/input4MIPs_CVs/discussions">input4MIPs Github</a>.</p>
+<h3 id="publishing-cmip7-data-to-esgf">Publishing CMIP7 data to ESGF<a class="headerlink" href="#publishing-cmip7-data-to-esgf" title="Permanent link">&para;</a></h3>
+<p>The ESGF-NG is planned to be open for CMIP7 data publishing on Monday 11 May 2026. To publish CMIP7 model output, modelling groups will need to ensure they:
+ - <a href="https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/">Complete EMD and output grid(s) registration</a> before writing CMORized netCDF files.
+ - Ensure their CMORized netCDF files pass the mandatory CMIP7 QA/QC checks (non-compliant datasets risk removal from ESGF).
+ - Update their data node to use the latest ESGF publishing software.</p>
+<p>Full details of these steps are available from the <a href="https://wcrp-cmip.github.io/cmip7-guidance/docs/">CMIP7 Guidance webpages</a>, specifically in the <a href="https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/Guidance_for_modellers/">Guidance for modellers</a> and <a href="https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/Guidance_for_ESGF/">Guidance for data managers</a> sections. Key steps for data preparation and publication readiness are also outlined in the slides from <a href="https://zenodo.org/records/18934629">CMIP 2026 workshop WIP session</a> (slides 30-36). Published data will become discoverable online via the ESGF Metagrid search interface and other tools.</p>
+<h3 id="new-cmor-version">New CMOR version<a class="headerlink" href="#new-cmor-version" title="Permanent link">&para;</a></h3>
+<p>v3.14.2 CMOR (the minimum version needed for CMIP7 publication) will be available very soon, likely within the next week.</p>
+<h3 id="rapid-evaluation-framework-ref-quality-checklist">Rapid Evaluation Framework (REF) – Quality checklist<a class="headerlink" href="#rapid-evaluation-framework-ref-quality-checklist" title="Permanent link">&para;</a></h3>
+<p>Those modelling centres who wish to be REF-ready can now access the Climate-REF Quality checklist, which is <a href="https://zenodo.org/records/18915234">available here</a>.</p>
+<h3 id="request-from-isimip">Request from ISIMIP<a class="headerlink" href="#request-from-isimip" title="Permanent link">&para;</a></h3>
+<p>[Note: Centres who indication intention to deliver H and VL scenarios for downstream activities by 1 July in the November 2025 survey have already received this request directly]</p>
+<p>Dear modelling teams,</p>
+<p>From the <a href="https://www.isimip.org/">ISIMIP</a> project we are very much interested in your ESM simulations for CMIP7-ScenarioMIP! We have not yet given up the hope to enable cross-sectorally consistent CMIP7-based impact model simulations and associated assessment as input for the AR7. However, as time is running and the forcing data for the VL and H scenario we will consider in the ISIMIP4-Fast Track will only become available now, we are wondering whether we can save some time by already bias-adjusting the potentially already finished pre-industrial and historical simulations. Could you maybe let us know whether you have already finalized these runs and could give us access to them? Then we could already get used to handle these simulations and estimate the transfer functions required for the bias adjustment. It would be extremely helpful for us!</p>
+<p>For us it would be also very important to learn whether you have started from emission or concentration driven runs. Emission driven runs may need a slightly different procedure for the bias-adjustment on our side (potentially matching the simulated and observed climate data in the same historical global warming window instead of time window). We would be very happy if you could give us the opportunity to test that by providing access to the pre-industrial and historical runs even before the future projections will become available.</p>
+<p>Thank you so much for support and willingness to enable the impact model simulations within the ISIMIP4-FT hopefully in time for the AR7!</p>
+<p>Kind regards
+Katja from the ISIMIP coordination team (katja.frieler@pik-potsdam.de)      </p>
 <h2 id="20th-march-2026">20th March 2026<a class="headerlink" href="#20th-march-2026" title="Permanent link">&para;</a></h2>
 <p>There is an update to the nitrogen deposition data (new data is published under source ID FZJ-CMIP-nitrogen-2-0). However, if you already have simulations that use the previous version (source ID FZJ-CMIP-nitrogen-1-2`), you do not need to re-run. Further details below and at https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/nitrogen-deposition/</p>
 <p>As a result of an issue being found (<a href="https://github.com/PCMDI/input4MIPs_CVs/issues/425">#425</a>), a new version of the nitrogen deposition forcing has been released.</p>
@@ -2486,6 +2525,46 @@ CMIP IPO (on behalf of the Data Request Task Team)</p>
             data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#this-page-will-be-updated-with-information-of-interest-to-modelling-groups-that-the-cmip-ipo-has-communicated-by-email-most-recent-at-top');">
             This page will be updated with information of interest to modelling groups that the CMIP IPO has communicated by email (most recent at top).
         </a>
+        
+
+        
+        <a href="#14th-april-2026"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#14th-april-2026');">
+            14th April 2026
+        </a>
+        
+        
+        <a href="#scenario-forcings-update"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#scenario-forcings-update');">
+            Scenario forcings update
+        </a>
+        
+        <a href="#publishing-cmip7-data-to-esgf"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#publishing-cmip7-data-to-esgf');">
+            Publishing CMIP7 data to ESGF
+        </a>
+        
+        <a href="#new-cmor-version"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#new-cmor-version');">
+            New CMOR version
+        </a>
+        
+        <a href="#rapid-evaluation-framework-ref-quality-checklist"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#rapid-evaluation-framework-ref-quality-checklist');">
+            Rapid Evaluation Framework (REF) – Quality checklist
+        </a>
+        
+        <a href="#request-from-isimip"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#request-from-isimip');">
+            Request from ISIMIP
+        </a>
+        
         
 
         

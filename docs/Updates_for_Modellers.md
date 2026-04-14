@@ -7,6 +7,68 @@ title: CMIP7 Updates for modelling groups
 
 This page will be updated with information of interest to modelling groups that the CMIP IPO has communicated by email (most recent at top).
 ---
+## 14th April 2026
+
+This update contains information on:
+1.	Scenario forcings update (H and VL ozone and nitrogen deposition now available!)
+2.	Publishing CMIP7 data to ESGF
+3.	New CMOR version availability
+4.	Rapid Evaluation Framework (REF) – Quality checklist
+5.	Request from ISIMIP
+    
+### Scenario forcings update
+#### Ozone and nitrogen deposition scenario forcing data (VL and H) now available
+[Ozone](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/ozone/#cmip7_1) and [nitrogen deposition](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/nitrogen-deposition/#cmip7_1) forcing is now available for the VL and H ScenarioMIP simulations. There are also zmta (temperature) files available for ozone. These provide the temperature output that is consistent with the provided ozone files. This may be useful for those wishing to post-process the ozone forcings into other forms.
+
+**As a result, all forcings required to run the VL and H ScenarioMIP simulations are now available.**
+
+#### Gridded emissions update
+Updated versions of the emissions forcing for the VL and H ScenarioMIP scenarios have been released (see source IDs: [IIASA-IAMC-vl-1-1-1](https://esgf-node.ornl.gov/search?project=input4MIPs&versionType=all&activeFacets=%7B%22source_id%22%3A%22IIASA-IAMC-vl-1-1-1%22%7D) and [IIASA-IAMC-h-1-1-1](https://esgf-node.ornl.gov/search?project=input4MIPs&versionType=all&activeFacets=%7B%22source_id%22%3A%22IIASA-IAMC-h-1-1-1%22%7D)). This update fixes an issue with the biomass burning emissions (which are all zero in IIASA-IAMC-vl-1-1-0 and IIASA-IAMC-h-1-1-0). If you do not use biomass burning emissions, you do not need to re-run. Otherwise, please re-run to use the correct values (#432).
+
+Emissions (both anthropogenic and biomass burning) forcing for all ScenarioMIP scenarios is now available (see source IDs of the form IIASA-IAMC-*-1-1-1)
+
+#### Further scenario availability
+Complete datasets are available for:
+ - [Greenhouse gas concentrations](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/greenhouse-gas-concentrations/#scenariomip)
+ - [Stratospheric volcanic SO2 emissions and aerosol optical properties](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/stratospheric-volcanic-so2-emissions-aod/#scenariomip)
+ - [Solar](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/solar/#scenariomip)
+ - [Population density](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/population/#scenariomip)
+
+The latest dataset information can be found [here](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/) and issues/questions can be raised on the [input4MIPs Github](https://github.com/PCMDI/input4MIPs_CVs/discussions).
+
+### Publishing CMIP7 data to ESGF
+
+The ESGF-NG is planned to be open for CMIP7 data publishing on Monday 11 May 2026. To publish CMIP7 model output, modelling groups will need to ensure they:
+ - [Complete EMD and output grid(s) registration](https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/) before writing CMORized netCDF files.
+ - Ensure their CMORized netCDF files pass the mandatory CMIP7 QA/QC checks (non-compliant datasets risk removal from ESGF).
+ - Update their data node to use the latest ESGF publishing software.
+
+Full details of these steps are available from the [CMIP7 Guidance webpages](https://wcrp-cmip.github.io/cmip7-guidance/docs/), specifically in the [Guidance for modellers](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/Guidance_for_modellers/) and [Guidance for data managers](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/Guidance_for_ESGF/) sections. Key steps for data preparation and publication readiness are also outlined in the slides from [CMIP 2026 workshop WIP session](https://zenodo.org/records/18934629) (slides 30-36). Published data will become discoverable online via the ESGF Metagrid search interface and other tools.
+
+### New CMOR version
+
+v3.14.2 CMOR (the minimum version needed for CMIP7 publication) will be available very soon, likely within the next week.
+
+### Rapid Evaluation Framework (REF) – Quality checklist
+
+Those modelling centres who wish to be REF-ready can now access the Climate-REF Quality checklist, which is [available here](https://zenodo.org/records/18915234).
+
+### Request from ISIMIP
+
+[Note: Centres who indication intention to deliver H and VL scenarios for downstream activities by 1 July in the November 2025 survey have already received this request directly]
+
+Dear modelling teams,
+
+From the [ISIMIP](https://www.isimip.org/) project we are very much interested in your ESM simulations for CMIP7-ScenarioMIP! We have not yet given up the hope to enable cross-sectorally consistent CMIP7-based impact model simulations and associated assessment as input for the AR7. However, as time is running and the forcing data for the VL and H scenario we will consider in the ISIMIP4-Fast Track will only become available now, we are wondering whether we can save some time by already bias-adjusting the potentially already finished pre-industrial and historical simulations. Could you maybe let us know whether you have already finalized these runs and could give us access to them? Then we could already get used to handle these simulations and estimate the transfer functions required for the bias adjustment. It would be extremely helpful for us!
+
+ For us it would be also very important to learn whether you have started from emission or concentration driven runs. Emission driven runs may need a slightly different procedure for the bias-adjustment on our side (potentially matching the simulated and observed climate data in the same historical global warming window instead of time window). We would be very happy if you could give us the opportunity to test that by providing access to the pre-industrial and historical runs even before the future projections will become available.
+
+Thank you so much for support and willingness to enable the impact model simulations within the ISIMIP4-FT hopefully in time for the AR7!
+
+Kind regards
+Katja from the ISIMIP coordination team (katja.frieler@pik-potsdam.de)      
+
+
 ## 20th March 2026
 There is an update to the nitrogen deposition data (new data is published under source ID FZJ-CMIP-nitrogen-2-0). However, if you already have simulations that use the previous version (source ID FZJ-CMIP-nitrogen-1-2`), you do not need to re-run. Further details below and at https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/nitrogen-deposition/
 
