@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Contributors Viewer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #f5f5f5;
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            padding: 32px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #222;
+            margin-bottom: 8px;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 24px;
+            font-size: 14px;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        input {
+            flex: 1;
+            padding: 10px 14px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 13px;
+            transition: border-color 0.2s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #222;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #222;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background: #000;
+        }
+
+        .loading {
+            text-align: center;
+            color: #222;
+            display: none;
+            margin: 20px 0;
+            font-size: 13px;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border: 2px solid #e0e0e0;
+            border-top-color: #222;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .error {
+            background: #fef2f2;
+            border-left: 3px solid #dc2626;
+            padding: 12px 15px;
+            border-radius: 4px;
+            color: #991b1b;
+            margin-bottom: 20px;
+            display: none;
+            font-size: 13px;
+        }
+
+        .results {
+            display: none;
+        }
+
+        .results-header {
+            color: #222;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 18px;
+        }
+
+        .count {
+            color: #222;
+            font-weight: 600;
+        }
+
+        .contributors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 10px;
+        }
+
+        .contributor {
+            background: #f9f9f9;
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: 1px solid #ddd;
+        }
+
+        .contributor:hover {
+            background: #222;
+            color: white;
+            border-color: #222;
+        }
+
+        .contributor a {
+            color: inherit;
+            text-decoration: none;
+            display: block;
+        }
+
+        .contributor-name {
+            font-weight: 500;
+            font-size: 14px;
+            word-break: break-word;
+        }
+
+        .example {
+            font-size: 12px;
+            color: #999;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .code-output {
+            background: #fafafa;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 12px;
+            margin-top: 24px;
+            display: none;
+        }
+
+        .code-output.show {
+            display: block;
+        }
+
+        .code-label {
+            font-size: 11px;
+            font-weight: 600;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .code-block {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            padding: 10px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 12px;
+            line-height: 1.5;
+            color: #222;
+            word-break: break-word;
+            white-space: pre-wrap;
+            max-height: 200px;
+            overflow-y: auto;
+            margin-bottom: 8px;
+        }
+
+        .copy-btn {
+            background: #222;
+            padding: 8px 16px;
+            font-size: 12px;
+            width: 100%;
+        }
+
+        .copy-btn:hover {
+            background: #000;
+        }
+
+        .copy-btn.copied {
+            background: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Find File Contributors</h1>
+        <p class="subtitle">Generate an issue string to contact all contributors to a CV or file in GitHub</p>
+
+        <div class="input-group">
+            <input 
+                type="text" 
+                id="urlInput" 
+                placeholder="Paste GitHub file URL (e.g., https://github.com/owner/repo/blob/branch/path/to/file.md)"
+            >
+            <button onclick="fetchContributors()">Fetch</button>
+        </div>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p style="margin-top: 10px;">Loading contributors...</p>
+        </div>
+
+        <div class="error" id="error"></div>
+
+        <div class="results" id="results">
+            <div class="results-header">
+                Found <span class="count" id="count">0</span> contributor(s)
+            </div>
+            <div class="contributors-grid" id="contributorsGrid"></div>
+
+            <div class="code-output" id="codeOutput">
+                <div class="code-label">For GitHub Issue:</div>
+                <div class="code-block" id="codeBlock"></div>
+                <button class="copy-btn" onclick="copyToClipboard()">Copy to Clipboard</button>
+            </div>
+        </div>
+
+        <div class="example">
+            Example:
+            
+            https://github.com/WCRP-CMIP/cmip7-guidance/blob/docs/docs/02_Updates_for_Modellers.md
+        </div>
+    </div>
+
+    <script>
+        function parseGithubUrl(url) {
+            // Parse GitHub URL: https://github.com/owner/repo/blob/branch/path/to/file
+            const regex = /github\.com\/([^\/]+)\/([^\/]+)\/blob\/([^\/]+)\/(.*)/;
+            const match = url.match(regex);
+            
+            if (!match) {
+                throw new Error('Invalid GitHub URL format');
+            }
+
+            return {
+                owner: match[1],
+                repo: match[2],
+                branch: match[3],
+                filepath: match[4]
+            };
+        }
+
+        async function fetchContributors() {
+            const url = document.getElementById('urlInput').value.trim();
+            const errorEl = document.getElementById('error');
+            const loadingEl = document.getElementById('loading');
+            const resultsEl = document.getElementById('results');
+
+            errorEl.style.display = 'none';
+            resultsEl.style.display = 'none';
+
+            if (!url) {
+                errorEl.textContent = 'Please paste a GitHub URL';
+                errorEl.style.display = 'block';
+                return;
+            }
+
+            try {
+                loadingEl.style.display = 'block';
+                const { owner, repo, filepath } = parseGithubUrl(url);
+
+                // Fetch commits for this file
+                const apiUrl = `https://api.github.com/repos/${owner}/${repo}/commits?path=${encodeURIComponent(filepath)}&per_page=100`;
+                
+                const response = await fetch(apiUrl);
+                
+                if (!response.ok) {
+                    if (response.status === 404) {
+                        throw new Error('File not found in repository');
+                    }
+                    throw new Error(`GitHub API error: ${response.status}`);
+                }
+
+                const commits = await response.json();
+
+                if (!Array.isArray(commits) || commits.length === 0) {
+                    throw new Error('No commits found for this file');
+                }
+
+                // Extract unique usernames
+                const contributors = new Set();
+                commits.forEach(commit => {
+                    if (commit.author && commit.author.login) {
+                        contributors.add(commit.author.login);
+                    }
+                });
+
+                const contributorsList = Array.from(contributors).sort();
+
+                // Display results
+                displayContributors(contributorsList, filepath);
+                loadingEl.style.display = 'none';
+                resultsEl.style.display = 'block';
+
+            } catch (error) {
+                loadingEl.style.display = 'none';
+                errorEl.textContent = error.message;
+                errorEl.style.display = 'block';
+            }
+        }
+
+        function displayContributors(contributors, filepath) {
+            const grid = document.getElementById('contributorsGrid');
+            const count = document.getElementById('count');
+            const codeBlock = document.getElementById('codeBlock');
+            const codeOutput = document.getElementById('codeOutput');
+
+            grid.innerHTML = '';
+            count.textContent = contributors.length;
+
+            contributors.forEach(handle => {
+                const div = document.createElement('div');
+                div.className = 'contributor';
+                div.innerHTML = `
+                    <a href="https://github.com/${handle}" target="_blank" rel="noopener noreferrer">
+                        <div class="contributor-name">@${handle}</div>
+                    </a>
+                `;
+                grid.appendChild(div);
+            });
+
+            // Generate code block for GitHub issue
+            const mentions = contributors.map(h => `@${h}`).join(' ');
+            const filename = filepath.split('/').pop();
+            const codeText = `**${filename}**\n\n${mentions} are the users located from this GitHub Contributors tool page as they have updated this file in the past.`;
+            
+            codeBlock.textContent = codeText;
+            codeOutput.classList.add('show');
+        }
+
+        function copyToClipboard() {
+            const codeBlock = document.getElementById('codeBlock');
+            const copyBtn = event.target;
+            
+            navigator.clipboard.writeText(codeBlock.textContent).then(() => {
+                const original = copyBtn.textContent;
+                copyBtn.textContent = 'Copied';
+                copyBtn.classList.add('copied');
+                setTimeout(() => {
+                    copyBtn.textContent = original;
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+
+        // Allow Enter key to fetch
+        document.getElementById('urlInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                fetchContributors();
+            }
+        });
+    </script>
+</body>
+</html>

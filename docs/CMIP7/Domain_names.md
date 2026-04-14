@@ -11,19 +11,19 @@ institutional fire walls allow access.
 To update this list please raise an issue (pull requests welcome) via [github](https://github.com/WCRP-CMIP/cmip7-guidance/).
 
 
-| Service | Domains | 
-| --- | --- | 
-| Errata | `errata.ipsl.fr` | 
-| Errata Documentation | `ipsl.gitbook.io` | 
-| CMIP6 Citation service | `www.wdc-climate.de` | 
+| Service | Domains |
+| --- | --- |
+| Errata | `errata.ipsl.fr` |
+| Errata Documentation | `ipsl.gitbook.io` |
+| CMIP6 Citation service | `www.wdc-climate.de` |
 | PID / Handle service | `handle-esgf.dkrz.de` |
-| REF activities | `*.climate-ref.org` | 
-| REF documentation | `climate-ref.readthedocs.io` | 
-| NERSC ESGF Metagrid | `metagrid.esgf-west.org` | 
-| ORNL ESGF Metagrid | `esgf-node.ornl.gov` | 
-| CEDA ESGF Metagrid | `esgf-ui.ceda.ac.uk` | 
-| DKRZ ESGF Metagrid | `esgf-metagrid.cloud.dkrz.de` | 
+| REF activities | `*.climate-ref.org` |
+| REF documentation | `climate-ref.readthedocs.io` |
+| NERSC ESGF Metagrid | `metagrid.esgf-west.org` |
+| ORNL ESGF Metagrid | `esgf-node.ornl.gov` |
+| CEDA ESGF Metagrid | `esgf-ui.ceda.ac.uk` |
+| DKRZ ESGF Metagrid | `esgf-metagrid.cloud.dkrz.de` |
+| ESGF webpages | `*.esgf.io` |
 
-
-Last update Dec 2025
+Last update Apr 2026
 

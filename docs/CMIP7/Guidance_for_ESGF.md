@@ -56,17 +56,14 @@ _Coming soon...._
 
 _the command-line tools described in this section are not production-ready for CMIP7 publication, however we welcome test users who have successfully produced CMORized data to test out the tools/workflows. Follow the steps below specific to testing_
 
- - Apply for Integration testing group membership here:  (https://app.globus.org/groups/e3329078-b8f6-11f0-9fdd-0e7d9e9fc9e3)
+ - Apply for Integration testing group membership [*here*](https://app.globus.org/groups/e3329078-b8f6-11f0-9fdd-0e7d9e9fc9e3)
    - You may use your insitution or well-known Social Auth provider to log in to Globus
- - Install `esgprep` and configure.
-   - Follow instructions linked from the *esgf-prepare* docs site on CMIP7 vocabulary installation with `esgvoc`
-   - https://esgf.github.io/esgf-prepare/
- - Install the esg-publisher `esgcet` package from GitHub:
-
+ - Install Python packages for publication workflow:
    ```
-   pip install git+https://github.com/ESGF/esg-publisher.git@esgf-ng-v5.4a#ubdirectory=src/python
+   pip install 'git+https://github.com/sashakames/esg-publisher.git@stac-update' esgvoc esgprep
    ```
- - Add the following to your esg.yaml config file for publishing:
+ - Follow instructions linked from the [*esgf-prepare* docs site](https://esgf.github.io/esgf-prepare/) on CMIP7 vocabulary installation with `esgvoc`
+ - Add the following to your `esg.yaml` config file for publishing:
 ```
 stac_config:
   stac_client:
@@ -103,7 +100,7 @@ Please refer to the [user documentation](https://esg-publisher.readthedocs.io/en
 2. Mountpoint map to data on the same host as the publisher software installation, so the publisher has access to scan data using the integrated XArray package.
 3. Basic dataset information provided via the esg mapfile format. For example using the esgf-prepare/esgmapfile utility.
 
-### 2.4 Dataset publication
+### 2.5 Dataset publication
 Full details of the dataset publication process using _pip install_ to install _esgcet_ can be found [here](https://esg-publisher.readthedocs.io/en/stable/install.html)
 
 In the examples below, the configuration file is installed in a default location of `$HOME/.esg.yaml`.  the `<DRS-dataset-id>` follows the CMIP7 DRS structure and uses dot `.` delimters between each controlled-vocabulary property ending with the *Directory Date* as in the form `v20YYMMDD`.

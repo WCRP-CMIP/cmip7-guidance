@@ -5,6 +5,9 @@ title: 1pctCO2 Experiment Setup and Forcings Guidance
 
 # 1pctCO2 Experiment Setup and Forcings Guidance
 
+<!-- TODO: get this information from esgvoc (add reference URLs at that point) -->
+Responsible activity: CMIP
+
 <!-- TODO: get this one line description from esgvoc -->
 1% per year increase in atmospheric carbon dioxide levels. All other conditions are kept the same as piControl.
 
@@ -14,9 +17,11 @@ title: 1pctCO2 Experiment Setup and Forcings Guidance
 The 1pctCO2 simulation is a simple branch from the [piControl simulation](./picontrol.md).
 After branching, the atmospheric CO<sub>2</sub> concentrations should increase at one percent per year throughout the simulation.
 <!-- TODO: consider whether we can generate these sentences automatically based on esgvoc -->
-You are free to start the time axis of your outputs at whatever year you like
-(e.g. starting at year 1, or 1850, or year 500),
-although if you want to make life easy for analysts, start your time axis at the branching time.
+The start-time of the simulation is not tied to a particular year but, rather, can be chosen arbitrarily
+(e.g., year 200 or year 1850 or year 1).
+However, it is easier for analysts if the start-time is consistent with the branching time in the parent experiment
+(e.g., if the the simulation branches from year 200 in the parent experiment,
+then the start time in the child experiment would be set to year 200).
 Simulations should be at least 150 years in length.
 Only one ensemble member is required.
 
@@ -32,13 +37,17 @@ Branch from `piControl` at a time of your choosing.
 
 ## Forcings
 
-### Versions to use
+### General headlines
 
-The forcings relevant for this simulation are the same as for the [piControl simulation](./picontrol.md).
+The `1pctCO2` experiment is a fixed forcings experiment, except for CO<sub>2</sub> which is transient.
 
 ### Notes
 
 See notes for the [piControl simulation](./picontrol.md).
+
+### Versions to use
+
+The forcings relevant for this simulation are the same as for the [piControl simulation](./picontrol.md).
 
 ### Getting the data
 
@@ -49,6 +58,7 @@ You have to increase the atmospheric CO<sub>2</sub> concentrations at one percen
     Set concentrations in first year to be higher than piControl
     (because, if you don't do this and you have a linear increase,
     then you'd have to drop concentrations in January of the first year in order to get the average correct)
+    TODO: check formula rendering
 -->
 The annual-average concentrations should increase following the formula c(y) = c_0 * 1.01 ** (y - y_0 - 1),
 where c is the annual-average concentration in year y and y_0 is the first year of the `1pctCO2` simulation

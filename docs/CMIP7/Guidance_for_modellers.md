@@ -184,9 +184,9 @@ This facilitates analysis of the data by users who can read and interpret data f
 As [described below](#6-software-for-preparing-output) it is recommended, but not required, that the CMOR software library be used to rewrite model output in conformance with the standards.
 Data requirements are defined and discussed in the following documents:
 
-- [Definition of CMIP7 netCDF Global Attributes](https://zenodo.org/records/17250297), which includes specifications for file names and directory structures
+- [Definition of CMIP7 netCDF Global Attributes][global-attributes-latest], which includes specifications for file names and directory structures
 - [Reference "controlled vocabularies" (CVs) for CMIP7](https://github.com/WCRP-CMIP/CMIP7-CVs)
-- [Guidance on output grids](https://zenodo.org/records/15697025)
+- [Guidance on output grids][grids-guidance-latest]
 - Requested atmospheric pressure levels are described in [Table 2 / Figure 2 of Dingley et al. 2025](https://egusphere.copernicus.org/preprints/2025/egusphere-2025-3189/)
 - [Guidance on time averaging (with masking)](../CMIP6/time_and_area_averaging.md) (CMIP6 guidance, to be reviewed).
 
@@ -228,8 +228,8 @@ update to this section of the documentation.
 
 CMOR, the `Climate Model Output Rewriter`, is a library written in C with interfaces for both Fortran and Python, with the aim of enforcing correct data and metadata structures for projects such as CMIP, which are now used widely across many projects.
 CMOR is maintained by PCMDI on [github](https://github.com/PCMDI/cmor) and is available for installation via [conda](https://anaconda.org/conda-forge/cmor) and has documentation [here](https://cmor.llnl.gov/).
-For CMIP7, the CMOR library has been updated in line with the changes to the [CMIP7 Global Attributes](https://zenodo.org/records/17250297). 
-Data producers should update to version [v3.13](https://cmor.llnl.gov/news/2025/10/14/cmor3/) of CMOR to gain access to the necessary changes.
+For CMIP7, the CMOR library has been updated in line with the changes to the [CMIP7 Global Attributes][global-attributes-latest]. 
+Data producers should update to the [latest version of CMOR](https://github.com/PCMDI/cmor/releases) to gain access to the necessary changes.
 
 The CMOR PrePARE tool, used for quality checking in CMIP6, has been retired and data producers should refer to section 7 below for guidance on the new quality control tool, `esgf-qc`.
 
@@ -304,20 +304,18 @@ Documentation for the WCRP plugin is [found here](https://esgf.github.io/cc-plug
 
 The goal of this plugin is to provide a cohesive, extensible, and transparent system that consolidates key checks for WCRP projects, covers at least the minimum requirements for ESGF publication, and produces standardized reporting.
 
-> ⚠️ We’re releasing an **early version** of this ESGF QC IOOS plugin. This release is the result of ongoing development and while not final, it aims to give *data managers* and *advanced users* an opportunity to explore the tool and adapt their workflows in anticipation of CMIP7. This early release is *not* intended for general use. It is primarily targeted at *data providers* responsible for the **pre-publication QC** of CMIP data on ESGF.
-
+A list of the checks included in the plugin for CMIP7 can be found [here](QC_checks.md).
 
 ### 🚧 Important Caveats
 
-- **Scope is limited**:  
-    - Support **CMIP6** and **CORDEX-CMIP6** 
-    - **CMIP7** is coming soon
+- **Scope is limited**
+    - Support **CMIP6**, **CMIP7** and **CORDEX-CMIP6**
+    - Additional projets will come in the future depending on the resources.
 
 - **Development in progress**:  
     - The framework may still contain **minor bugs**  
     - For CMIP6 data, tests have been mainly made on variables provided to the **Copernicus Climate Data Store**
-    - **QC results may change** in future releases and **should not be treated as final** .
-
+    - **QC results may change** in future releases and **should not be treated as compliance indicator** .
 
 ### 🛠 Development Approach
 
@@ -348,7 +346,7 @@ The **configuration** enables simple versioning and sharing of rule sets, while 
     - ℹ️ **OPTIONAL**: Informational checks with no impact on validity
 - Expected values or constraints where applicable
 
-> ⚠️ In this beta version, the **variable registry is not yet queried**. Variable information from CV relies on a **manual mapping** defined in the configuration file. To be automated via **esgvoc** in future releases.
+> ⚠️ The **variable registry is not yet queried**. Variable information from CVs is provided by **esgvoc**.
 
 **Usage** is built on the IOOS Compliance Checker, maintaining workflow flexibility for modeling groups that already operate their own QA/QC pipelines. It generates atomic log files per run (at both file and dataset levels) and supports seamless parallel execution, enabling straightforward integration with batch schedulers and large-scale production workflows. 
   ```bash
@@ -362,23 +360,10 @@ In addition, an [`esgf-qa` module](https://github.com/ESGF/esgf-qa) provides a h
 $ esgqa -t wcrp_cmip6:latest -t cf:1.11 -o /path/to/results/output /path/to/dataset
 ```
 
-### 💡 Why Now?
-
-This early release aims to:
-
-- Help **data centres** and **modeling groups** prepare for CMIP7 data workflows.
-- Gather **feedback** on tool design, performance, and usability.
-- Build alignment with emerging **vocabulary and metadata conventions**.
-
 ### 🗣️ How to Contribute
 
 If you encounter issues or have suggestions, please **open a GitHub issue** on the project repository:  
 👉 <https://github.com/ESGF/cc-plugin-wcrp/issues>
-
-
-> ⚠️ Please note that recent development of the https://esgf.github.io/esgf-qc/ tool has ceased, and this tool should not be used for compliance checking. It is more efficient for QC developers to maintain a compliance checker plugin rather than a fork of the entire code base. 
-
-
 
 ## 8.  Archiving/publishing output
 
@@ -461,3 +446,8 @@ modelling groups are asked to prepare their model output following a common proc
 The WCRP-ESMO Infrastructure Panel (WIP) has responsibility for most of the technical requirements of CMIP. 
 The mission, rationale and Terms of Reference for the WIP can be found 
 [here](https://wcrp-cmip.org/cmip-governance/wip/).
+
+
+<!-- links for referencing -->
+[global-attributes-latest]: https://doi.org/10.5281/zenodo.17250296
+[grids-guidance-latest]: https://doi.org/10.5281/zenodo.15697024
