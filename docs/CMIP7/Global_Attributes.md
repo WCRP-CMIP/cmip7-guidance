@@ -35,7 +35,7 @@ Each CMIP7 filename is constructed from the metadata recorded in each file (see 
 `\<variable\_id\>\_\<branding\_suffix\>\_\<frequency\>\_\<region\>\_\<grid\_label\>\_\<source\_id\>\_\<experiment\_id\>\_\<variant\_label\>\[\_\<timeRangeDD\>\].nc`
 
 **Example:**  
-`tas\_tavg-h2m-hxy-u\_mon\_glb\_g121\_CanESM6-0-MR\_historical\_r2i1p1f1\_190001`[\-190912.nc](http://-190912.nc)
+`tas\_tavg-h2m-hxy-u\_mon\_glb\_g121\_CanESM6-0-MR\_historical\_r2i1p1f1\_190001\-190912.nc`
 
 ### Each global attribute within the template's angle brackets is replaced with the value assigned to it in the file.  A DRS global attribute must be drawn from its CV which includes all terms recognized by CMIP7. Together the DRS attributes uniquely identify the contents of the file and ensure that within the CMIP7 archive all filenames are unique. 
 
