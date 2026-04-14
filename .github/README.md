@@ -2,7 +2,8 @@
 
 [![DOI](https://zenodo.org/badge/988959818.svg)](https://zenodo.org/badge/latestdoi/988959818)
 
-[![MkDocs Build + Deploy](https://github.com/WCRP-CMIP/cmip7-guidance/actions/workflows/deploy.yml/badge.svg?branch=main)](https://github.com/WCRP-CMIP/cmip7-guidance/workflows/deploy.yml) [![Deploy static content to Pages](https://github.com/WCRP-CMIP/cmip7-guidance/actions/workflows/staticpublish.yml/badge.svg)](https://github.com/WCRP-CMIP/cmip7-guidance/actions/workflows/staticpublish.yml)
+<!-- [![MkDocs Build + Deploy](https://github.com/WCRP-CMIP/cmip7-guidance/actions/workflows/deploy.yml/badge.svg?branch=main)](https://github.com/WCRP-CMIP/cmip7-guidance/workflows/deploy.yml) 
+[![Deploy static content to Pages](https://github.com/WCRP-CMIP/cmip7-guidance/actions/workflows/staticpublish.yml/badge.svg)](https://github.com/WCRP-CMIP/cmip7-guidance/actions/workflows/staticpublish.yml) -->
 
 
 -------
