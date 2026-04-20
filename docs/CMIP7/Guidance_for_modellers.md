@@ -94,7 +94,7 @@ of the overall design and scientific strategy provided in the lead article of th
 
 The forcings to be used for each experiment can be found at [experiment set up and forcings](./Experiment_set_up_and_Forcings/index.md).
 
-## 4.  Model output fields
+## 4.  Model output fields (data request)
 
 The [CMIP7 Data Request](https://wcrp-cmip.org/cmip-phases/cmip7/cmip7-data-request/) specifies the list of model output variables that should be saved from each of the CMIP7 experiments. 
 Find the [latest Data Request release here](https://wcrp-cmip.org/cmip7-data-request-latest).
@@ -106,9 +106,9 @@ These Opportunities were developed through a wide community consultation, leadin
 
     Key new features of the CMIP7 Data Request include:
 
-    - Use of **Opportunities** to document scientific objectives
+    - Use of **Opportunities** to document scientific objectives linked to variables and experiments
     - The three-part structure, with **Core** denoting a relatively small number of highest-priority variables
-    - Access via the online **Airtable** [web browser interface](https://bit.ly/CMIP7-DReq-latest) as well as a [python API](https://github.com/CMIP-Data-Request/CMIP7_DReq_software) for programmatic use
+    - Access via the online [Airtable interface](https://bit.ly/CMIP7-DReq-latest), [web viewer](https://cmip-data-request.github.io/cmip7-dreq-webview/latest), and a [python API](https://github.com/CMIP-Data-Request/CMIP7_DReq_software) for programmatic use
 
     These features are explained in more detail below.
 
