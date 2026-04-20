@@ -353,7 +353,7 @@ First time using CMIP? Need a bit more help ? Check out these resources:
 [CMIPMips]: https://wcrp-cmip.org/mips/
 [platform]: https://github.com/orgs/Fresh-Eyes-on-CMIP/discussions
 [register]: https://github.com/Fresh-Eyes-on-CMIP/member-requests/issues/new?template=new_user.yml
-[ErrataService]: https://errata.ipsl.fr/static/index.html
+[ErrataService]: https://errata.esgf.io/
 [esmvaltool]: https://esmvaltool.org/
 [intakeesgf]: https://github.com/esgf2-us/intake-esgf
 [cmor]:https://cmor.llnl.gov/
