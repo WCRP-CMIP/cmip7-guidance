@@ -10,6 +10,7 @@ title: CMIP7 Participation Guidance for Data Managers
     The contents of the pages are currently in development.
     They will updated when ESGF-NG (Next Generation ESGF) is available for CMIP7 data publication.
     [See here](https://wcrp-cmip.org/esgf-information/) for previous announcements about ESGF changes.
+    A brief overview of ESGF-NG is given in the slides from [CMIP 2026 workshop WIP session](https://zenodo.org/records/18934629) (slides 22-27).
 
 
 ## 1. Installation and configuration

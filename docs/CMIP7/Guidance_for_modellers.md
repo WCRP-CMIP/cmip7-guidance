@@ -54,6 +54,11 @@ provided as early as possible):
   service is available in the 
   [Errata Service Documentation](https://ipsl.gitbook.io/esgf-errata-service).
 
+
+!!! info "Data production overview:"
+    Key steps for data preparation and publication readiness are outlined in the slides from [CMIP 2026 workshop WIP session](https://zenodo.org/records/18934629) (slides 30-36).
+
+
 ## 2.  Experiment Design
 
 The CMIP7 protocol and experiments are described in a [special issue of Geoscientific Model Development](https://gmd.copernicus.org/articles/special_issue1315.html) with an overview 
