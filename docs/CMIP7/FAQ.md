@@ -11,10 +11,18 @@ If the answer isn't there either, please create a new discussion and we will res
 <!-- ## CMOR tables -->
 ## Standardizing (CMORizing) data
 
+### Has CMOR been updated to accommodate CMIP7's metadata requirements?
+
+**Yes.**
+The minimum CMOR version required for CMIP7 production is [CMOR 3.14.2](https://github.com/PCMDI/cmor/releases/3.14.2) in order to output the global attributes correctly and to read the MIP tables (CMOR tables) correctly.
+The [CMOR usage examples](https://github.com/WCRP-CMIP/cmip7-cmor-tables/blob/main/cmor_demo.ipynb) show how to use CMOR with the new tables and branded variables.
+See also the [CMOR guidance](Guidance_for_modellers.md/#6a-cmor) section of these pages.
+
+
 ### Does cmip7repack duplicate the amount of data?
 
 **No.**
-Although each file is duplicated as it is being repacked, the default behaviour of the `cmip7repack` tool is to overwrite the original file. 
+Although each file is duplicated as it is being repacked, the default behaviour of the [`cmip7repack` tool](Guidance_for_modellers.md/#6b-cmip7repack) is to overwrite the original file. 
 You can choose to also keep the original file. 
 Repacking doesn’t change the information in the file; it is an internal technical restructuring to allow the file to be accessed remotely. 
 There should be no need to keep the un-repacked versions.
@@ -23,8 +31,12 @@ The purpose of this change is to support the paradigm, which is increasingly pre
 Repacking the data greatly improves the efficiency of these operations. 
 Not repacking the data can lead to prohibitively slow access, which may in turn degrade access for other users who are accessing data from the same node (server).
 
-Further guidance on `cmip7repack` can be [found here](Guidance_for_modellers.md/#6b-cmip7repack).
 
+### Why are we not integrating repacking into CMOR?
+
+Improved chunking to support CMIP7's repacking requirement has been introduced in [CMOR 3.14.0](https://github.com/PCMDI/cmor/releases/3.14.0).
+However if netCDF files written by CMOR are subsequently concatenated (e.g., if one-year files are concatenated to a single file covering an experiment's whole time period) then it is still necessary to run `cmip7repack` on the concatenated file.
+The [`check_cmip7_packing` tool](Guidance_for_modellers.md/#6b-cmip7repack) can be used to confirm compliance with the repacking requirement.
 
 
 ## ESGF
@@ -34,10 +46,6 @@ Further guidance on `cmip7repack` can be [found here](Guidance_for_modellers.md/
 **Not necessarily.**
 ESGF currently lacks the resources to reorganize the CMIP5 data into the new structure required by ESGF-NG.
 However there are sites that will continue to provide access to CMIP5 data, although they will not be part of ESGF-NG. 
-
-
-### Question
-Answer
 
 
 
