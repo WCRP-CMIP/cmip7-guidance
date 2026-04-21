@@ -41,11 +41,27 @@ The [`check_cmip7_packing` tool](Guidance_for_modellers.md/#6b-cmip7repack) can 
 
 ## ESGF
 
-### Will CMIP5 data no longer be accessible if it is not being migrated to the ESGF Next Generation (ESGF-NG) infrastructure?
+### Is the new generation ESGF only for CMIP7 data?
+
+**No**. 
+ESGF-NG is for all data, although there is a legacy issue for older data. 
+Given the resources available, CMIP5 data will not be migrated. 
+However, in addition to CMIP7, CORDEX-CMIP6 and obs4MIPs are planned. 
+The ESGF-NG system is designed to be more modular, allowing data beyond CMIP7 to be added.
+
+
+### Will CMIP5 data no longer be accessible if it is not being migrated to the ESGF Next Generation infrastructure?
 
 **Not necessarily.**
 ESGF currently lacks the resources to reorganize the CMIP5 data into the new structure required by ESGF-NG.
 However there are sites that will continue to provide access to CMIP5 data, although they will not be part of ESGF-NG. 
 
 
+### Will the current ESGF system be maintained or will everything migrate to the new ESGF-NG system, meaning we need to change our workflows?
 
+Unfortunately we are having to migrate everything, but there is good reason for that. 
+There is significant legacy in what we have. 
+The current ESGF system we have was put together in 2009, over 15 years ago, which is a very long time for a software system. 
+We have had to make changes but are mindful of client tooling. 
+For instance, ESG publish is still the same interface - it appears the same but the re-engineering is behind the the interface. 
+ESG Pull is another example where the existing facility is being re-engineered for the new system.
