@@ -5,7 +5,7 @@ title: CMIP7 Frequently Asked Questions (FAQ)
 
 
 !!! info ""
-    If you cannot find the answer you need on this page, please see the [Discussions section](https://github.com/WCRP-CMIP/cmip7-guidance/discussions/categories/q-a) of this repository.
+    If you cannot find the answer you need on this page, please see the [Discussions section](https://github.com/WCRP-CMIP/cmip7-guidance/discussions/categories/q-a) of the guidance repository.
     If the answer isn't there either, please create a new discussion and we will respond to you as soon as possible. 
 
 
@@ -110,6 +110,10 @@ With this modular architecture the idea is you can use the same publishing softw
 There is a plugin for each set of CVs, each DRS. 
 There is one for CMIP6, one for CMIP7, one for CORDEX-CMIP6, etc.
 
+
+### How does my institute become an ESGF node?
+
+If you are part of a modelling centre that would like to become an ESGF node, including contributing compute/storage and/or replication capacity to the community infrastructure, please contact <cmip-ipo@esa.int>.
 
 
 ## Energy consumption and carbon footprint
