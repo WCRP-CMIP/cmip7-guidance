@@ -279,7 +279,7 @@ Full man page with -h
 
 `check_cmip7_packing`, for checking whether or not CMIP7 datasets have an acceptable cloud-optimized internal structure, is a command-line tool maintained by NCAS on [github](https://github.com/NCAS-CMS/cmip7repack), will be available for installation via [conda](https://anaconda.org/conda-forge/cmip7repack), and has documentation [here](https://github.com/NCAS-CMS/cmip7repack).
 
-`check_cmip7repack` is easy to use, taking a list of CMIP7 datasets as inputs and checking each one for compliance, reporting on the reasons of non-compliance for any files which fail the checks.
+`check_cmip7_packing` is easy to use, taking a list of CMIP7 datasets as inputs and checking each one for compliance, reporting on the reasons of non-compliance for any files which fail the checks.
 
 For example, to check a number of netCDF datasets:
 
