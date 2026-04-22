@@ -47,12 +47,17 @@ provided as early as possible):
   further information will be provided in due course.
 
 * Correct published data when errors are discovered. Errors should be documented using the
-  [ESGF Errata Service](https://errata.ipsl.fr/) before further action is taken, e.g. retraction
+  [ESGF Errata Service][errata-service] before further action is taken, e.g. retraction
   and publication of replacement datasets.  Please note that the Errata Service supports 
   [user proposed issues](https://ipsl.gitbook.io/esgf-errata-service/errata-service-web-pages/propose-an-issue-through-webforms),
   which are moderated and passed to modelling groups as required. Further information about the
   service is available in the 
   [Errata Service Documentation](https://ipsl.gitbook.io/esgf-errata-service).
+
+
+!!! info "Data production overview:"
+    Key steps for data preparation and publication readiness are outlined in the slides from [CMIP 2026 workshop WIP session](https://zenodo.org/records/18934629) (slides 30-36).
+
 
 ## 2.  Experiment Design
 
@@ -94,7 +99,7 @@ of the overall design and scientific strategy provided in the lead article of th
 
 The forcings to be used for each experiment can be found at [experiment set up and forcings](./Experiment_set_up_and_Forcings/index.md).
 
-## 4.  Model output fields
+## 4.  Model output fields (data request)
 
 The [CMIP7 Data Request](https://wcrp-cmip.org/cmip-phases/cmip7/cmip7-data-request/) specifies the list of model output variables that should be saved from each of the CMIP7 experiments. 
 Find the [latest Data Request release here](https://wcrp-cmip.org/cmip7-data-request-latest).
@@ -106,9 +111,9 @@ These Opportunities were developed through a wide community consultation, leadin
 
     Key new features of the CMIP7 Data Request include:
 
-    - Use of **Opportunities** to document scientific objectives
+    - Use of **Opportunities** to document scientific objectives linked to variables and experiments
     - The three-part structure, with **Core** denoting a relatively small number of highest-priority variables
-    - Access via the online **Airtable** [web browser interface](https://bit.ly/CMIP7-DReq-latest) as well as a [python API](https://github.com/CMIP-Data-Request/CMIP7_DReq_software) for programmatic use
+    - Access via the online [Airtable interface](https://bit.ly/CMIP7-DReq-latest), [web viewer](https://cmip-data-request.github.io/cmip7-dreq-webview/latest), and a [python API](https://github.com/CMIP-Data-Request/CMIP7_DReq_software) for programmatic use
 
     These features are explained in more detail below.
 
@@ -376,7 +381,7 @@ The [Earth System Grid Federation (ESGF)](https://esgf.github.io/) will facilita
 Data producers should note several key points:
 
 - **Data compliance checking**: [Quality Control (QC) checks](#7-software-for-checking-output) will be required to check that data is in conformance with output requirements outlined in the sections above.
-- **Correcting errors**: when errors in published data are discovered, they should be documented using the [ESGF Errata Service](https://errata.ipsl.fr/), and the erroneous datasets retracted. Corrected datasets should be published using an updated dataset version identifier.
+- **Correcting errors**: when errors in published data are discovered, they should be documented using the [ESGF Errata Service][errata-service], and the erroneous datasets retracted. Corrected datasets should be published using an updated dataset version identifier.
 - **Replication**: Some data nodes plan to replicate some of the data published by other nodes. This will provide some redundancy protecting against loss of at least some of the data in the event of a catastrophic storage failure at one node. It will also provide a backup source of data when one node is temporarily offline. Not all data will be replicated, so it is recommended that modeling groups retain a backup copy of their model output.
 - **Long-term archival**: A “snapshot” of CMIP7 data as it exists at the time of a deadline imposed by the IPCC’s 7th Assessment Report (IPCC-AR7) will be archived at the [IPCC Data Distribution Centre (IPCC DDC)](https://www.ipcc-data.org/).
 
@@ -410,7 +415,8 @@ The EMD content is stored in GitHub (in JSON files), and may be edited at any ti
 #### EMD structure
 
 The full EMD specification, which contains examples of filled-out EMD entries for model components and grids, may be found at:
-🗣️ [https://doi.org/10.5281/zenodo.15439551](https://doi.org/10.5281/zenodo.15439551)
+<!-- 🗣️ [https://doi.org/10.5281/zenodo.15439551](https://doi.org/10.5281/zenodo.15439551) -->
+🗣️ <https://doi.org/10.5281/zenodo.15439551>
 
 Each question asked in the online EMD creation form is accompanied by the relevant guidance, so reference to the full EMD specification should not generally be necessary during the creation process.
 
@@ -451,3 +457,4 @@ The mission, rationale and Terms of Reference for the WIP can be found
 <!-- links for referencing -->
 [global-attributes-latest]: https://doi.org/10.5281/zenodo.17250296
 [grids-guidance-latest]: https://doi.org/10.5281/zenodo.15697024
+[errata-service]: https://errata.esgf.io/

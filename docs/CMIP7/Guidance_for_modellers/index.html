@@ -1528,7 +1528,7 @@ provided as early as possible):</p>
 </li>
 <li>
 <p>Correct published data when errors are discovered. Errors should be documented using the
-  <a href="https://errata.ipsl.fr/">ESGF Errata Service</a> before further action is taken, e.g. retraction
+  <a href="https://errata.esgf.io/">ESGF Errata Service</a> before further action is taken, e.g. retraction
   and publication of replacement datasets.  Please note that the Errata Service supports 
   <a href="https://ipsl.gitbook.io/esgf-errata-service/errata-service-web-pages/propose-an-issue-through-webforms">user proposed issues</a>,
   which are moderated and passed to modelling groups as required. Further information about the
@@ -1536,6 +1536,10 @@ provided as early as possible):</p>
   <a href="https://ipsl.gitbook.io/esgf-errata-service">Errata Service Documentation</a>.</p>
 </li>
 </ul>
+<div class="admonition info">
+<p class="admonition-title">Data production overview:</p>
+<p>Key steps for data preparation and publication readiness are outlined in the slides from <a href="https://zenodo.org/records/18934629">CMIP 2026 workshop WIP session</a> (slides 30-36).</p>
+</div>
 <h2 id="2-experiment-design">2.  Experiment Design<a class="headerlink" href="#2-experiment-design" title="Permanent link">&para;</a></h2>
 <p>The CMIP7 protocol and experiments are described in a <a href="https://gmd.copernicus.org/articles/special_issue1315.html">special issue of Geoscientific Model Development</a> with an overview 
 of the overall design and scientific strategy provided in the lead article of that issue by 
@@ -1573,7 +1577,7 @@ of the overall design and scientific strategy provided in the lead article of th
 </ul>
 <h2 id="3-forcing-data-sets">3.  Forcing data sets<a class="headerlink" href="#3-forcing-data-sets" title="Permanent link">&para;</a></h2>
 <p>The forcings to be used for each experiment can be found at <a href="../Experiment_set_up_and_Forcings/">experiment set up and forcings</a>.</p>
-<h2 id="4-model-output-fields">4.  Model output fields<a class="headerlink" href="#4-model-output-fields" title="Permanent link">&para;</a></h2>
+<h2 id="4-model-output-fields-data-request">4.  Model output fields (data request)<a class="headerlink" href="#4-model-output-fields-data-request" title="Permanent link">&para;</a></h2>
 <p>The <a href="https://wcrp-cmip.org/cmip-phases/cmip7/cmip7-data-request/">CMIP7 Data Request</a> specifies the list of model output variables that should be saved from each of the CMIP7 experiments. 
 Find the <a href="https://wcrp-cmip.org/cmip7-data-request-latest">latest Data Request release here</a>.</p>
 <p>The Data Request is organized into <strong>Opportunities</strong> describing scientific goals and the model output needed to achieve them. 
@@ -1582,9 +1586,9 @@ These Opportunities were developed through a wide community consultation, leadin
 <p class="admonition-title">Changes since CMIP6</p>
 <p>Key new features of the CMIP7 Data Request include:</p>
 <ul>
-<li>Use of <strong>Opportunities</strong> to document scientific objectives</li>
+<li>Use of <strong>Opportunities</strong> to document scientific objectives linked to variables and experiments</li>
 <li>The three-part structure, with <strong>Core</strong> denoting a relatively small number of highest-priority variables</li>
-<li>Access via the online <strong>Airtable</strong> <a href="https://bit.ly/CMIP7-DReq-latest">web browser interface</a> as well as a <a href="https://github.com/CMIP-Data-Request/CMIP7_DReq_software">python API</a> for programmatic use</li>
+<li>Access via the online <a href="https://bit.ly/CMIP7-DReq-latest">Airtable interface</a>, <a href="https://cmip-data-request.github.io/cmip7-dreq-webview/latest">web viewer</a>, and a <a href="https://github.com/CMIP-Data-Request/CMIP7_DReq_software">python API</a> for programmatic use</li>
 </ul>
 <p>These features are explained in more detail below.</p>
 </div>
@@ -1813,7 +1817,7 @@ The <strong>reporting system</strong> inherits the IOOS logic, combining output 
 <p>Data producers should note several key points:</p>
 <ul>
 <li><strong>Data compliance checking</strong>: <a href="#7-software-for-checking-output">Quality Control (QC) checks</a> will be required to check that data is in conformance with output requirements outlined in the sections above.</li>
-<li><strong>Correcting errors</strong>: when errors in published data are discovered, they should be documented using the <a href="https://errata.ipsl.fr/">ESGF Errata Service</a>, and the erroneous datasets retracted. Corrected datasets should be published using an updated dataset version identifier.</li>
+<li><strong>Correcting errors</strong>: when errors in published data are discovered, they should be documented using the <a href="https://errata.esgf.io/">ESGF Errata Service</a>, and the erroneous datasets retracted. Corrected datasets should be published using an updated dataset version identifier.</li>
 <li><strong>Replication</strong>: Some data nodes plan to replicate some of the data published by other nodes. This will provide some redundancy protecting against loss of at least some of the data in the event of a catastrophic storage failure at one node. It will also provide a backup source of data when one node is temporarily offline. Not all data will be replicated, so it is recommended that modeling groups retain a backup copy of their model output.</li>
 <li><strong>Long-term archival</strong>: A “snapshot” of CMIP7 data as it exists at the time of a deadline imposed by the IPCC’s 7th Assessment Report (IPCC-AR7) will be archived at the <a href="https://www.ipcc-data.org/">IPCC Data Distribution Centre (IPCC DDC)</a>.</li>
 </ul>
@@ -1833,8 +1837,9 @@ The registration and review process is <a href="https://wcrp-cmip.github.io/Esse
 The online form will also enable those documenting a model to import documentation components from other, already registered models, which can then be edited if required - significantly reducing the time taken to create the content.</p>
 <p>The EMD content is stored in GitHub (in JSON files), and may be edited at any time to add further information, or to correct any mistakes. All such changes will go through the usual GitHub-based review process in a fully transparent and traceable manner.</p>
 <h4 id="emd-structure">EMD structure<a class="headerlink" href="#emd-structure" title="Permanent link">&para;</a></h4>
-<p>The full EMD specification, which contains examples of filled-out EMD entries for model components and grids, may be found at:
-🗣️ <a href="https://doi.org/10.5281/zenodo.15439551">https://doi.org/10.5281/zenodo.15439551</a></p>
+<p>The full EMD specification, which contains examples of filled-out EMD entries for model components and grids, may be found at:</p>
+<!-- 🗣️ [https://doi.org/10.5281/zenodo.15439551](https://doi.org/10.5281/zenodo.15439551) -->
+<p>🗣️ <a href="https://doi.org/10.5281/zenodo.15439551">https://doi.org/10.5281/zenodo.15439551</a></p>
 <p>Each question asked in the online EMD creation form is accompanied by the relevant guidance, so reference to the full EMD specification should not generally be necessary during the creation process.</p>
 <p>EMD comprises the following sections:</p>
 <ul>
@@ -2134,10 +2139,10 @@ The mission, rationale and Terms of Reference for the WIP can be found
         
 
         
-        <a href="#4-model-output-fields"
+        <a href="#4-model-output-fields-data-request"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#4-model-output-fields');">
-            4. Model output fields
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#4-model-output-fields-data-request');">
+            4. Model output fields (data request)
         </a>
         
         

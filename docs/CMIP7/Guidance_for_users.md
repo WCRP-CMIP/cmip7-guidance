@@ -8,6 +8,8 @@ title: CMIP7 Guidance for Data Users
 
 This page is designed to inform users of climate model outputs on key CMIP7 concepts and tools. It is a landing page to provide context and to redirect them to more detailed resources.
 
+!!! info ""
+    An overview of **how to access and use CMIP data** is given in the slides from [CMIP 2026 workshop WIP session](https://zenodo.org/records/18934629) (slides 3-20).
 
 
 ## 1.  Accessing CMIP7 data
@@ -353,7 +355,7 @@ First time using CMIP? Need a bit more help ? Check out these resources:
 [CMIPMips]: https://wcrp-cmip.org/mips/
 [platform]: https://github.com/orgs/Fresh-Eyes-on-CMIP/discussions
 [register]: https://github.com/Fresh-Eyes-on-CMIP/member-requests/issues/new?template=new_user.yml
-[ErrataService]: https://errata.ipsl.fr/static/index.html
+[ErrataService]: https://errata.esgf.io/
 [esmvaltool]: https://esmvaltool.org/
 [intakeesgf]: https://github.com/esgf2-us/intake-esgf
 [cmor]:https://cmor.llnl.gov/
@@ -382,7 +384,6 @@ First time using CMIP? Need a bit more help ? Check out these resources:
 [FeoC]: https://wcrp-cmip.org/cmip7-task-teams/fresh-eyes-on-cmip/
 [GlobalAttrs]: https://doi.org/10.5281/zenodo.17250296
 [grid]: https://doi.org/10.5281/zenodo.15697024
-[variableid]: https://airtable.com/apphMYhEwBJfd0bUK/shrYC888Qxf8gkvky/tblpo5L8maBIGlM1B/viwNNzrqK5oPL7zk2
 [datareqpaperatm]: https://egusphere.copernicus.org/preprints/2025/egusphere-2025-3189/
 [datarequest]: https://bit.ly/CMIP7-DReq-latest
 [cmortablecmip7]: https://github.com/WCRP-CMIP/cmip7-cmor-tables
@@ -392,10 +393,9 @@ First time using CMIP? Need a bit more help ? Check out these resources:
 [CMIPpubs]: https://cmip-publications.llnl.gov
 
 
- <!-- TODO: all the links below need to be changed when the new version arrives. airtable ? -->
+ <!-- TODO: all the links below need to be changed when the new version arrives. -->
  <!-- CMIP6 links -->
  <!--[CMIPpubs]: https://cmip-publications.llnl.gov/view/CMIP6/  
-[varlist]: https://airtable.com/apphXCUgASIeT6jCz/shrFnB7BtupFo1Y1e/tblqMgEiHxBJbwm2x
 [experimentlist]: https://wcrp-cmip.github.io/CMIP6_CVs/docs/CMIP6_experiment_id.html
 [activitylist]: https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_activity_id.json
 [sourcelist]: https://wcrp-cmip.github.io/CMIP6_CVs/docs/CMIP6_source_id.html 
