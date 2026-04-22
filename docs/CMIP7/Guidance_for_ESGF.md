@@ -126,5 +126,5 @@ esgunpublish --dset-id <DRS-dataset-id>
 
 ### 3.2 Hosting of retracted data
 We strongly recommend that once data has been retracted that the affected files are removed from public storage and are not available for download by any means.  
-Reasons for retraction are likely to include scientific or technical faults in the data and the risk of this data being retrieved and used without the user being
-aware of corresponding errata is significant.  We recommend that modelling groups retain copies of the retracted data where possible in case of subsequent queries.
+Reasons for retraction are likely to include scientific or technical faults in the data and there is a significant risk of this data being retrieved and used without the user being aware of corresponding errata. 
+We recommend that modelling groups retain copies of the retracted data where possible in case of subsequent queries.
