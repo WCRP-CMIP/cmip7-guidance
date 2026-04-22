@@ -68,12 +68,11 @@ To enable modelling groups and others who support CMIP7 to demonstrate its impac
 
     For each model whose data is used, please include a citation in the form of:
 
-        Authors/Data Creators (publication year): Title. Version YYYYMMDD. Earth System Grid Federation. DOI.
+    > Authors/Data Creators (publication year): Title. Version YYYYMMDD. Earth System Grid Federation. DOI.
         
     e.g. 
 
-        Swart et al. (2019): CCCma CanESM5 model output prepared for CMIP6 ScenarioMIP. Version 20190429. Earth System Grid Federation. https://doi.org/10.22033/ESGF/CMIP6.1317. 
-
+    > Swart et al. (2019): CCCma CanESM5 model output prepared for CMIP6 ScenarioMIP. Version 20190429. Earth System Grid Federation. https://doi.org/10.22033/ESGF/CMIP6.1317.
 
     Please include a table with at minimum the models ("sources"), institutions, and data citations as above, as well as a data availability statement pointing to the table and acknowledging ESGF. If the journal has a citation limit, putting the table in the Supporting Information is acceptable.
 
@@ -131,8 +130,9 @@ To enable modelling groups and others who support CMIP7 to demonstrate its impac
 
 2. **Register your work.**
 
-    Register your work on the [CMIP7 Publication Hub][CMIPpubs] (coming soon). 
-
+    Register your work on the [CMIP Publication Hub][CMIPpubs].
+    
+    ⚠️ The Publication Hub will be updated to allow registration of CMIP7 publications. Currently it provides a searchable database of publications from previous CMIP phases.
 
 3. **Use the standard vocabularies**
 
@@ -389,6 +389,7 @@ First time using CMIP? Need a bit more help ? Check out these resources:
 [varlist]: https://cmip-data-request.github.io/cmip7-dreq-webview/latest/variables.html
 [freqlist]: https://cmip-data-request.github.io/cmip7-dreq-webview/latest/cmip7_frequency.html
 [emd]:  https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/
+[CMIPpubs]: https://cmip-publications.llnl.gov
 
 
  <!-- TODO: all the links below need to be changed when the new version arrives. airtable ? -->
@@ -403,9 +404,7 @@ First time using CMIP? Need a bit more help ? Check out these resources:
 [freqlist]: https://github.com/WCRP-CMIP/CMIP6_CVs/blob/main/CMIP6_frequency.json
 [maskavg]: https://wcrp-cmip.github.io/WGCM_Infrastructure_Panel/CMIP6/time_and_area_averaging.html -->
 
-
  <!-- unknown links -->
-[CMIPpubs]:  ?
 [experimentlist]:  ?
 [activitylist]:  ?
 [sourcelist]:  ?
