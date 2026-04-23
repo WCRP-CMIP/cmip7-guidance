@@ -133,3 +133,21 @@ esgunpublish --dset-id <DRS-dataset-id>
 We strongly recommend that once data has been retracted that the affected files are removed from public storage and are not available for download by any means.  
 Reasons for retraction are likely to include scientific or technical faults in the data and there is a significant risk of this data being retrieved and used without the user being aware of corresponding errata. 
 We recommend that modelling groups retain copies of the retracted data where possible in case of subsequent queries.
+
+## 4. Versioning and Errata
+
+### 4.1 Versioning datasets
+
+Anytime there is any change to a published dataset, an new dataset version must be created. 
+The version identifier is the last component of a CMIP7 dataset's directory path.
+Sites **must ensure** that an updated dataset is never erroneously published using the same version identifier as its previous version.
+
+CMOR by default will write the version identifier in the output directory path as the current date (example: `v20260511`).
+However the version can also be user-specified as an input to CMOR.
+Sites that use CMOR should ensure that version identifiers are correctly specified for updated datasets (i.e., that a previous user-specified version is not mistakenly applied to updated version of a dataset).
+
+Alternatively, and in cases where CMOR is not used, the [ESGDRS Tool](https://esgf.github.io/esgf-prepare/drs.html) can be used to set the version identifier.
+
+### 4.2 Errata Service
+
+When a site creates an updated version of a dataset, or retracts a dataset, an Errata must be opened using the [Errata service](https://errata.esgf.io/).  Please see the [Errata documentation](https://ipsl.gitbook.io/esgf-errata-service) on the procedures.  Users can also create Errata, and it is the responsibility of the data managers or modelers to review user-created Errata issues to confirm or challenge the input.
