@@ -71,61 +71,45 @@ For new experiments not already in the CV.
 
 ### 2.4 Essential Model Documentation (EMD)
 
-EMD provides detailed technical documentation of your model. Registration follows a **hierarchical process** - you must register components in order.
+EMD provides detailed technical documentation of your model. Registration follows a **hierarchical process** - you must register components in order. This should take a maximum of 4 hours wall time (although not all at once, as **each step has a separate review process**). 
 
-**Repository**: [Essential-Model-Documentation](https://github.com/WCRP-CMIP/Essential-Model-Documentation/issues)
+For information on the EMD **please read the [DOCUMENTATION](https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/Information_for_Submitters/Submission-Guide/)**
+
+Other links: [GitHub Repository](https://github.com/WCRP-CMIP/Essential-Model-Documentation/issues)
+
 
 #### Registration Order
 
+```mermaid
+flowchart LR
+    A["1. Grid Cells"] --> B["2. Computational Grids (Horizontal + Vertical)"]
+    B --> C["3. Model Components (atmosphere, ocean, etc.)"]
+    C --> D["4. Top-level Model"]
 ```
-1. Grid Cells (Horizontal + Vertical)
-        |
-        v
-2. Computational Grids (Horizontal + Vertical)
-        |
-        v
-3. Model Components (atmosphere, ocean, etc.)
-        |
-        v
-4. Top-level Model
-```
-
 #### Available Forms
 
-| Step | Form | Link |
-|------|------|------|
-| 1a | Horizontal Grid Cells | [Register](https://github.com/WCRP-CMIP/Essential-Model-Documentation/issues/new?template=horizontal_grid_cells.yml) |
-| 1b | Vertical Computational Grid | [Register](https://github.com/WCRP-CMIP/Essential-Model-Documentation/issues/new?template=vertical_computational_grid.yml) |
-| 2a | Horizontal Computational Grid | [Register](https://github.com/WCRP-CMIP/Essential-Model-Documentation/issues/new?template=horizontal_computational_grid.yml) |
-| 2b | Horizontal Subgrid | [Register](https://github.com/WCRP-CMIP/Essential-Model-Documentation/issues/new?template=horizontal_subgrid.yml) |
-| 3 | Model Component | [Register](https://github.com/WCRP-CMIP/Essential-Model-Documentation/issues/new?template=model_component.yml) |
-| 4a | Model Family | [Register](https://github.com/WCRP-CMIP/Essential-Model-Documentation/issues/new?template=model_family.yml) |
-| 4b | Model (top-level) | [Register](https://github.com/WCRP-CMIP/Essential-Model-Documentation/issues/new?template=model.yml) |
-| - | Reference | [Register](https://github.com/WCRP-CMIP/Essential-Model-Documentation/issues/new?template=reference.yml) |
+
+| Stage | Form | You provide | You receive |
+|-------|------|-------------|-------------|
+| 1 | [Grid cells](https://github.com/WCRP-CMIP/Essential-Model-Documentation/issues/new?template=horizontal_grid_cell.yml) | Geometry, coordinates | `g###` |
+| 1b | [Vertical grid](https://github.com/WCRP-CMIP/Essential-Model-Documentation/issues/new?template=vertical_computational_grid.yml) | Coordinate type, levels | `v###` |
+| 2a | [Horizontal computational grid](https://github.com/WCRP-CMIP/Essential-Model-Documentation/issues/new?template=horizontal_computational_grid.yml) | Grid cell IDs, staggering | `h###` |
+| — | [Model family](https://github.com/WCRP-CMIP/Essential-Model-Documentation/issues/new?template=model_family.yml) | Institution, domains | Family ID |
+| 3a | [New model component](https://github.com/WCRP-CMIP/Essential-Model-Documentation/issues/new?template=model_component.yml) | Component details, grid IDs | Component ID + Config ID |
+| 3b | [(or) Link existing component](https://github.com/WCRP-CMIP/Essential-Model-Documentation/issues/new?template=link_existing_component.yml) | Component ID, grid IDs | Config ID |
+| 4 | [Model](https://github.com/WCRP-CMIP/Essential-Model-Documentation/issues/new?template=model.yml) | Config IDs, coupling | `source_id` |
 
 ---
 
 ## 3. Registration Workflow
 
 ### Overall Registration Order
-
+```mermaid
+flowchart LR
+    A["1. Institution (WCRP-constants)"] --> B["2. EMD Registration (Essential-Model-Documentation)"]
+    B --> C["3. source_id (CMIP7-CVs)"]
+    C --> D["4. Experiments (if needed)"]
 ```
-1. Institution (WCRP-constants)
-        |
-        v
-2. EMD Registration (Essential-Model-Documentation)
-   2a. Grid Cells (Horizontal + Vertical)
-   2b. Computational Grids
-   2c. Model Components
-   2d. Top-level Model
-        |
-        v
-3. source_id (CMIP7-CVs) <-- requires EMD Model
-        |
-        v
-4. Experiments (if needed)
-```
-
 ### Step-by-Step Process
 
 1. **Check if already registered**: Before creating a new entry, verify it doesn't already exist in the CV
@@ -138,15 +122,15 @@ EMD provides detailed technical documentation of your model. Registration follow
 
 ### Typical Timeline
 
-- Simple registrations (institution): 1-3 days
-- Complex registrations (full EMD): May take longer due to dependencies
+- Simple registrations ( institution, component configuration ): 1-3 days
+- Complex registrations ( grid-cells, source-id): May take longer due to dependencies
 
 ### Tips
 
 - **Don't wait**: Start EMD registration early - dependencies mean sequential steps
-- **Check dependencies**: A Model Component cannot reference a grid that isn't registered yet
+- **Check dependencies**: A Model Component cannot reference a grid that isn't registered yet, a source cannot refer to components that don't exist. 
 - **Be precise**: Acronyms and identifiers cannot be changed after data publication
-- **Ask for help**: Use the "General Issue" form if you have questions
+- **Ask for help**: Consult the documentation first, and if needed try the "General Issue" form for  questions.
 
 ---
 
@@ -174,8 +158,8 @@ The `esgvoc` Python library provides programmatic access to all CVs:
 | Repository | Content |
 |------------|---------|
 | [CMIP7-CVs](https://github.com/WCRP-CMIP/CMIP7_CVs/) | CMIP7-specific CVs (source_id, experiment) |
-| [WCRP-Universe](https://github.com/WCRP-CMIP/WCRP-Universe/) | Cross-project CVs (frequency, realm, etc.) |
-| [WCRP-constants](https://github.com/WCRP-CMIP/WCRP-constants/) | Organisations/institutions |
+| [WCRP-Universe](https://github.com/WCRP-CMIP/WCRP-Universe/) | ESGVOC collection for all projects |
+| [WCRP-constants](https://github.com/WCRP-CMIP/WCRP-constants/) | Organisations/institutions, and universal constants e.g. frequency,realm etc.|
 | [Essential-Model-Documentation](https://github.com/WCRP-CMIP/Essential-Model-Documentation/) | EMD components |
 
 ---
