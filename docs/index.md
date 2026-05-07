@@ -19,6 +19,7 @@ title: CMIP7 Guidance and Documentation
 - [Branded Variables](CMIP7/Branded_Variables.md)
 - [CV Registration](CMIP7/cv_registration.md)
 - [Data Specs Version](CMIP7/data_specs_version.md)
+- [General Guidance](CMIP7/General_Guidance.md)
 - [Guidance for modellers](CMIP7/Guidance_for_modellers.md)
     - [Experiment setup and forcings](CMIP7/Experiment_set_up_and_Forcings/index.md)
 - [Guidance for users, including Terms of Use](CMIP7/Guidance_for_users.md)
