@@ -14,12 +14,13 @@ title: CMIP7 Guidance and Documentation
 ## Guidance documents
 
 ### CMIP7
+
+- [General Guidance](CMIP7/General_Guidance.md)
 - [Updates for modelling groups](Updates_for_Modellers.md)
 - [Global Attributes](CMIP7/Global_Attributes.md)
 - [Branded Variables](CMIP7/Branded_Variables.md)
 - [CV Registration](CMIP7/cv_registration.md)
 - [Data Specs Version](CMIP7/data_specs_version.md)
-- [General Guidance](CMIP7/General_Guidance.md)
 - [Guidance for modellers](CMIP7/Guidance_for_modellers.md)
     - [Experiment setup and forcings](CMIP7/Experiment_set_up_and_Forcings/index.md)
 - [Guidance for users, including Terms of Use](CMIP7/Guidance_for_users.md)
