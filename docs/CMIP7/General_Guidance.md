@@ -8,7 +8,7 @@ title: CMIP7 General Guidance
 
 ## CMIP7 GMD special issues
 
-As in previous CMIP phases, a Geoscientific Model Development (GMD) Special Issue has been established for CMIP7 [“CMIP7 scientific objectives, experimental design, and organization”](https://gmd.copernicus.org/articles/18/6671/2025/). The CMIP and WIP leadership encourage the community to submit papers addressing the following topics to the CMIP7 Special Issue:
+As in previous CMIP phases, a Geoscientific Model Development (GMD) Special Issue has been established for CMIP7 [“CMIP7 scientific objectives, experimental design, and organization”](https://gmd.copernicus.org/articles/special_issue1315.html). The CMIP and WIP leadership encourage the community to submit papers addressing the following topics to the CMIP7 Special Issue:
 - CMIP design and organisation
 - The suite of experiments of its seventh phase (CMIP7) including the new CMIP7 Assessment Fast Track component
 - Registered Model Intercomparison Projects (MIPs) adhering to CMIP data standards and best-practice experimental - protocol and data requests
