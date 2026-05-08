@@ -5,32 +5,7 @@
     <script>
         const base_url = ""; /* for search plugin notably */
     </script>
-    <script>
-    const darkTheme = window.matchMedia("(prefers-color-scheme: dark)");
-    darkTheme.onchange = (e) => {
-        if (e.matches) {
-            document.documentElement.classList.add("dark")
-            localStorage.theme = 'dark';
-        } else {
-            document.documentElement.classList.remove("dark")
-            localStorage.removeItem("theme")
-        }
-    };
-
-    // On page load. Priotiry to lcaolStorage
-    if (localStorage.theme === "dark") {
-        document.documentElement.classList.add("dark")
-    } else if (localStorage.theme === "light") {
-        document.documentElement.classList.remove("dark")
-    } else if (darkTheme.matches) {
-        document.documentElement.classList.add("dark")
-    } else {
-        document.documentElement.classList.remove("dark")
-    }
-
-    // set the layout based on localStorage
-    document.documentElement.classList.add(localStorage.getItem("html-layout") || "layout-fixed");
-</script>
+    <script integrity="sha384-m6cZ+Whl1ci89lidlu8DH4C+sZLNOYBvImtjUIhUK+iaNffXhqtbYgBVuuPfRsa0" src="../../js/dark.js"></script>
 
 
     <meta charset="UTF-8">
@@ -84,6 +59,11 @@
     <link href="../../css/geist.css" rel="stylesheet">
 
     
+    <style>
+        :root {
+            --theme-accent: oklch(62.3% 0.214 259.815);
+        }
+    </style>
     <link href="../../stylesheets/custom.css" rel="stylesheet">
 
     
@@ -1459,8 +1439,7 @@
         </h1>
 
         <div class="flex items-center gap-2 pt-1.5">
-          
-<button
+          <button
     onclick="fetch(`/CMIP7/Guidance_for_MIPs.md`).then((r) => r.blob()).then((blob) => navigator.clipboard.write([new ClipboardItem({ 'text/plain': blob })]))"
     data-slot="button" class="secondary cursor-pointer">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -1490,6 +1469,7 @@
 <p>The <a href="https://wcrp-cmip.org/cmip-phases/cmip7/">WCRP CMIP7 webpage</a> provides an overview of CMIP7, including community MIPs (Model Intercomparison Projects) and a MIP registration form.</p>
 <p>General guidance on setting up a MIP is provided in <a href="https://gmd.copernicus.org/articles/18/6671/2025/#section7">Appendix B of Dunne et al. (2025)</a>.</p>
 <p>Guidance on naming MIP experiments is <a href="https://zenodo.org/records/14929769">available here</a>.</p>
+<p>General guidance is also available via the <a href="../General_Guidance/">General Guidance</a> page.</p>
   </div>
 </article>
                                 <div class="mx-auto flex flex-wrap h-16 w-full max-w-2xl items-center gap-2 px-4 md:px-0">

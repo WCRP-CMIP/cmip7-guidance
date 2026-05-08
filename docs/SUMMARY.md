@@ -39,6 +39,7 @@
     - [scen7-vl-aq](CMIP7/Experiment_set_up_and_Forcings/scen7-vl-aq.md)
     - [scen7-vl](CMIP7/Experiment_set_up_and_Forcings/scen7-vl.md)
   - [FAQ](CMIP7/FAQ.md)
+  - [General Guidance](CMIP7/General_Guidance.md)
   - [Global Attributes](CMIP7/Global_Attributes.md)
   - [Guidance for ESGF](CMIP7/Guidance_for_ESGF.md)
   - [Guidance for MIPs](CMIP7/Guidance_for_MIPs.md)

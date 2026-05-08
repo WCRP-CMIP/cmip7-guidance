@@ -5,32 +5,7 @@
     <script>
         const base_url = ""; /* for search plugin notably */
     </script>
-    <script>
-    const darkTheme = window.matchMedia("(prefers-color-scheme: dark)");
-    darkTheme.onchange = (e) => {
-        if (e.matches) {
-            document.documentElement.classList.add("dark")
-            localStorage.theme = 'dark';
-        } else {
-            document.documentElement.classList.remove("dark")
-            localStorage.removeItem("theme")
-        }
-    };
-
-    // On page load. Priotiry to lcaolStorage
-    if (localStorage.theme === "dark") {
-        document.documentElement.classList.add("dark")
-    } else if (localStorage.theme === "light") {
-        document.documentElement.classList.remove("dark")
-    } else if (darkTheme.matches) {
-        document.documentElement.classList.add("dark")
-    } else {
-        document.documentElement.classList.remove("dark")
-    }
-
-    // set the layout based on localStorage
-    document.documentElement.classList.add(localStorage.getItem("html-layout") || "layout-fixed");
-</script>
+    <script integrity="sha384-m6cZ+Whl1ci89lidlu8DH4C+sZLNOYBvImtjUIhUK+iaNffXhqtbYgBVuuPfRsa0" src="../../js/dark.js"></script>
 
 
     <meta charset="UTF-8">
@@ -84,6 +59,11 @@
     <link href="../../css/geist.css" rel="stylesheet">
 
     
+    <style>
+        :root {
+            --theme-accent: oklch(62.3% 0.214 259.815);
+        }
+    </style>
     <link href="../../stylesheets/custom.css" rel="stylesheet">
 
     
@@ -1459,8 +1439,7 @@
         </h1>
 
         <div class="flex items-center gap-2 pt-1.5">
-          
-<button
+          <button
     onclick="fetch(`/CMIP7/data_specs_version.md`).then((r) => r.blob()).then((blob) => navigator.clipboard.write([new ClipboardItem({ 'text/plain': blob })]))"
     data-slot="button" class="secondary cursor-pointer">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"

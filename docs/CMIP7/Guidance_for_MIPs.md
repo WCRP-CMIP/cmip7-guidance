@@ -15,3 +15,5 @@ The [WCRP CMIP7 webpage](https://wcrp-cmip.org/cmip-phases/cmip7/) provides an o
 General guidance on setting up a MIP is provided in [Appendix B of Dunne et al. (2025)](https://gmd.copernicus.org/articles/18/6671/2025/#section7).
 
 Guidance on naming MIP experiments is [available here](https://zenodo.org/records/14929769).
+
+General guidance is also available via the [General Guidance](General_Guidance.md) page.
