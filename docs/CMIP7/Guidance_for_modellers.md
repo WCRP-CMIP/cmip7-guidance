@@ -5,6 +5,8 @@ title: CMIP7 Participation Guidance for Modellers
 
 # CMIP7 Participation Guidance for Modellers
 
+General guidance is also available via the [General Guidance](General_Guidance.md) page.
+
 ## 1. Requirements & Expectations
 
 Groups who plan to participate in CMIP7 should (in roughly this order, although model documentation should be 

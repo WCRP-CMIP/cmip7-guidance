@@ -6,6 +6,7 @@ title: CMIP7 Guidance
 
 # CMIP7 Guidance and Documentation
 
+- [General Guidance](General_Guidance.md)
 - [Updates for modelling groups](../Updates_for_Modellers.md)
 - [Global Attributes](Global_Attributes.md)
 - [Data Specifications Versioning](data_specs_version.md)
