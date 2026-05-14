@@ -28,7 +28,7 @@ These should be applied as transient (i.e. time-changing) forcings over the leng
 
 The simulation output should start on 1979-01-01 and end on 2021-12-31.
 
-Simulations should be at least 43 years in length.
+Simulations should be 43 years in length.
 
 Only one ensemble member is required.
 
