@@ -49,8 +49,8 @@ Only one ensemble member is required.
 
 The `piControl-spinup` experiment is a fixed forcings experiment.
 
-However, it can require some care to use the correct forcings for `esm-piControl`.
-This is particularly true for stratospheric aerosol forcing, ozone and solar as the `esm-piControl` values for these
+However, it can require some care to use the correct forcings for `piControl`.
+This is particularly true for stratospheric aerosol forcing, ozone and solar as the `piControl` values for these
 forcings aren't simply a repeat of 1850 values.
 
 Please note that the ozone forcing should come from files with the source ID `FZJ-CMIP-ozone-1-2`, no `piControl` data
