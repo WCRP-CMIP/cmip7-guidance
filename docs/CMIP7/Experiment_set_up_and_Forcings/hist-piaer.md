@@ -54,7 +54,7 @@ Only one ensemble member is required.
 
 ### Parent experiment
 
-`hist-piAer` branches from the [piControl](./picontrol.md) simulation (part of CMIP).
+`hist-piAer` branches from the [piControl](./picontrol.md) simulation (part of [CMIP](./index.md#cmip)).
 
 Branch from `piControl` at a time of your choosing.
 

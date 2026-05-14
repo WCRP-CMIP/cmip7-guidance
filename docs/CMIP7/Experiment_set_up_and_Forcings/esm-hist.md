@@ -37,7 +37,7 @@ Only one ensemble member is required.
 
 ### Parent experiment
 
-`esm-hist` branches from the [esm-piControl](./esm-picontrol.md) simulation (part of CMIP).
+`esm-hist` branches from the [esm-piControl](./esm-picontrol.md) simulation (part of [CMIP](./index.md#cmip)).
 
 Branch from esm-piControl at a time of your choosing.
 

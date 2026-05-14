@@ -41,7 +41,8 @@ Only one ensemble member is required.
 
 ### Parent experiment
 
-`esm-piControl` branches from the [esm-piControl-spinup](./esm-picontrol-spinup.md) simulation (part of CMIP).
+`esm-piControl` branches from the [esm-piControl-spinup](./esm-picontrol-spinup.md) simulation (part of
+[CMIP](./index.md#cmip)).
 
 Branch from `esm-piControl-spinup` at a time of your choosing.
 

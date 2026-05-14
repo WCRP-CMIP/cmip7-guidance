@@ -56,7 +56,7 @@ Only one ensemble member is required.
 
 ### Parent experiment
 
-`hist-piAQ` branches from the [piControl](./picontrol.md) simulation (part of CMIP).
+`hist-piAQ` branches from the [piControl](./picontrol.md) simulation (part of [CMIP](./index.md#cmip)).
 
 Branch from `piControl` at a time of your choosing.
 

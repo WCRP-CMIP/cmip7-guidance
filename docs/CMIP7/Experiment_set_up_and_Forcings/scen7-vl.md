@@ -34,7 +34,7 @@ Only one ensemble member is required.
 
 ### Parent experiment
 
-`scen7-vl` branches from the [historical](./historical.md) simulation (part of CMIP).
+`scen7-vl` branches from the [historical](./historical.md) simulation (part of [CMIP](./index.md#cmip)).
 
 Branch from `historical` at 2022-01-01.
 

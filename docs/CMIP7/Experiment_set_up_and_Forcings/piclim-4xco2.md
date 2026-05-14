@@ -38,7 +38,7 @@ Only one ensemble member is required.
 
 ### Parent experiment
 
-`piClim-4xCO2` branches from the [piControl](./picontrol.md) simulation (part of CMIP).
+`piClim-4xCO2` branches from the [piControl](./picontrol.md) simulation (part of [CMIP](./index.md#cmip)).
 
 Same as `piClim-control`.
 

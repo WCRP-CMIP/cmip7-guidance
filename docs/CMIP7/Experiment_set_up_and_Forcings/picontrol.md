@@ -42,7 +42,7 @@ Only one ensemble member is required.
 
 ### Parent experiment
 
-`piControl` branches from the [piControl-spinup](./picontrol-spinup.md) simulation (part of CMIP).
+`piControl` branches from the [piControl-spinup](./picontrol-spinup.md) simulation (part of [CMIP](./index.md#cmip)).
 
 Branch from `piControl-spinup` at a time of your choosing.
 

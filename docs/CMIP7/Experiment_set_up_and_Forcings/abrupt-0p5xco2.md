@@ -44,7 +44,7 @@ Only one ensemble member is required.
 
 ### Parent experiment
 
-`abrupt-0p5xCO2` branches from the [piControl](./picontrol.md) simulation (part of CMIP).
+`abrupt-0p5xCO2` branches from the [piControl](./picontrol.md) simulation (part of [CMIP](./index.md#cmip)).
 
 Branch from `piControl` at a time of your choosing.
 

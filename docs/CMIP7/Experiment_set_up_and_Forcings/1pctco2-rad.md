@@ -47,7 +47,7 @@ Only one ensemble member is required.
 
 ### Parent experiment
 
-`1pctCO2-rad` branches from the [piControl](./picontrol.md) simulation (part of CMIP).
+`1pctCO2-rad` branches from the [piControl](./picontrol.md) simulation (part of [CMIP](./index.md#cmip)).
 
 Branch from `piControl` at a time of your choosing.
 

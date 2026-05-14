@@ -42,7 +42,7 @@ Only one ensemble member is required.
 
 ### Parent experiment
 
-`piClim-NOx` branches from the [piControl](./picontrol.md) simulation (part of CMIP).
+`piClim-NOx` branches from the [piControl](./picontrol.md) simulation (part of [CMIP](./index.md#cmip)).
 
 Same as `piClim-control`.
 

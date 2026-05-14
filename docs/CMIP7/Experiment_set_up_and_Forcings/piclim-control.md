@@ -44,7 +44,7 @@ Only one ensemble member is required.
 
 ### Parent experiment
 
-`piClim-control` branches from the [piControl](./picontrol.md) simulation (part of CMIP).
+`piClim-control` branches from the [piControl](./picontrol.md) simulation (part of [CMIP](./index.md#cmip)).
 
 Branch from `piControl` at a time of your choosing.
 Given that you are using a climatology from your own model as boundary conditions, we recommended branching from the
