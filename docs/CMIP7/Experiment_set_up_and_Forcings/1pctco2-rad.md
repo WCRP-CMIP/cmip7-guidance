@@ -5,6 +5,10 @@ title: "Experiment Setup and Forcings Guidance: 1pctCO2-rad"
 
 # Experiment Setup and Forcings Guidance: 1pctCO2-rad
 
+Radiatively coupled simulation (i.e. the carbon cycle only 'sees' the increase in temperature, not any change in
+atmospheric carbon dioxide) of a 1% per year increase in atmospheric carbon dioxide levels.
+All other conditions are kept the same as piControl.
+
 Responsible activity: [C4MIP](./index.md#c4mip). Tier: 1
 
 These pages are intended to help with implementation of these experiments.
@@ -15,10 +19,6 @@ For the full background of the experiments, please see the following URLs:
 - [https://doi.org/10.5194/egusphere-2024-3356](https://doi.org/10.5194/egusphere-2024-3356)
 - [https://doi.org/10.5194/gmd-17-8141-2024](https://doi.org/10.5194/gmd-17-8141-2024)
 - [https://doi.org/10.5194/gmd-9-2853-2016](https://doi.org/10.5194/gmd-9-2853-2016)
-
-Radiatively coupled simulation (i.e. the carbon cycle only 'sees' the increase in temperature, not any change in
-atmospheric carbon dioxide) of a 1% per year increase in atmospheric carbon dioxide levels.
-All other conditions are kept the same as piControl.
 
 ## Experiment set up
 

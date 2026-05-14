@@ -5,6 +5,10 @@ title: "Experiment Setup and Forcings Guidance: scen7-vl"
 
 # Experiment Setup and Forcings Guidance: scen7-vl
 
+PLACEHOLDER TBC.
+CMIP7 ScenarioMIP very low emissions future.
+Run with prescribed carbon dioxide concentrations (for prescribed carbon dioxide emissions, see `esm-scen7-vl`).
+
 Responsible activity: [ScenarioMIP](./index.md#scenariomip). Tier: 1
 
 These pages are intended to help with implementation of these experiments.
@@ -13,10 +17,6 @@ If you notice something that is unclear, please
 For the full background of the experiments, please see the following URLs:
 
 - [https://doi.org/10.5194/egusphere-2024-3765](https://doi.org/10.5194/egusphere-2024-3765)
-
-PLACEHOLDER TBC.
-CMIP7 ScenarioMIP very low emissions future.
-Run with prescribed carbon dioxide concentrations (for prescribed carbon dioxide emissions, see `esm-scen7-vl`).
 
 ## Experiment set up
 

@@ -5,6 +5,10 @@ title: "Experiment Setup and Forcings Guidance: piClim-4xCO2"
 
 # Experiment Setup and Forcings Guidance: piClim-4xCO2
 
+In combination with `piClim-control`, quantifies a quadrupling of atmospheric carbon dioxide's (4xCO2's) effective
+radiative forcing (ERF).
+Same as `piClim-control`, except atmospheric carbon dioxide concentrations are set to four times `piControl` levels.
+
 Responsible activity: [CMIP](./index.md#cmip). Tier: 1
 
 These pages are intended to help with implementation of these experiments.
@@ -13,10 +17,6 @@ If you notice something that is unclear, please
 For the full background of the experiments, please see the following URLs:
 
 - [https://doi.org/10.5194/gmd-18-6671-2025](https://doi.org/10.5194/gmd-18-6671-2025)
-
-In combination with `piClim-control`, quantifies a quadrupling of atmospheric carbon dioxide's (4xCO2's) effective
-radiative forcing (ERF).
-Same as `piClim-control`, except atmospheric carbon dioxide concentrations are set to four times `piControl` levels.
 
 ## Experiment set up
 

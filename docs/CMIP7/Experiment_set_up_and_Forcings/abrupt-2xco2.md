@@ -5,6 +5,9 @@ title: "Experiment Setup and Forcings Guidance: abrupt-2xCO2"
 
 # Experiment Setup and Forcings Guidance: abrupt-2xCO2
 
+Abrupt doubling of atmospheric carbon dioxide levels.
+All other conditions are kept the same as piControl.
+
 Responsible activity: [CFMIP](./index.md#cfmip). Tier: 1
 
 These pages are intended to help with implementation of these experiments.
@@ -13,9 +16,6 @@ If you notice something that is unclear, please
 For the full background of the experiments, please see the following URLs:
 
 - [https://doi.org/10.5194/gmd-10-359-2017](https://doi.org/10.5194/gmd-10-359-2017)
-
-Abrupt doubling of atmospheric carbon dioxide levels.
-All other conditions are kept the same as piControl.
 
 ## Experiment set up
 

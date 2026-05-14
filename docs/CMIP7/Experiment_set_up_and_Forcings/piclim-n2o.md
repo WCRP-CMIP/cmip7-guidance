@@ -5,6 +5,11 @@ title: "Experiment Setup and Forcings Guidance: piClim-N2O"
 
 # Experiment Setup and Forcings Guidance: piClim-N2O
 
+In combination with `piClim-control`, quantifies present-day nitrous oxide effective radiative forcing (ERF).
+Same as `piClim-control`, except nitrous oxide concentrations or emissions (as appropriate for the model) use
+present-day values (typically the last year of the `historical` simulation within the same CMIP era e.g. 2014 values for
+CMIP6, 2021 values for CMIP7).
+
 Responsible activity: [AerChemMIP](./index.md#aerchemmip). Tier: 1
 
 These pages are intended to help with implementation of these experiments.
@@ -13,11 +18,6 @@ If you notice something that is unclear, please
 For the full background of the experiments, please see the following URLs:
 
 - [https://doi.org/10.5194/gmd-10-585-2017](https://doi.org/10.5194/gmd-10-585-2017)
-
-In combination with `piClim-control`, quantifies present-day nitrous oxide effective radiative forcing (ERF).
-Same as `piClim-control`, except nitrous oxide concentrations or emissions (as appropriate for the model) use
-present-day values (typically the last year of the `historical` simulation within the same CMIP era e.g. 2014 values for
-CMIP6, 2021 values for CMIP7).
 
 ## Experiment set up
 

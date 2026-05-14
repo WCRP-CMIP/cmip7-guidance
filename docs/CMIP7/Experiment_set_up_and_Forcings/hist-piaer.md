@@ -5,15 +5,6 @@ title: "Experiment Setup and Forcings Guidance: hist-piAer"
 
 # Experiment Setup and Forcings Guidance: hist-piAer
 
-Responsible activity: [AerChemMIP](./index.md#aerchemmip). Tier: 1
-
-These pages are intended to help with implementation of these experiments.
-If you notice something that is unclear, please
-[raise an issue](https://github.com/WCRP-CMIP/cmip7-guidance/issues/new).
-For the full background of the experiments, please see the following URLs:
-
-- [https://doi.org/10.5194/gmd-10-585-2017](https://doi.org/10.5194/gmd-10-585-2017)
-
 Note, the information on this page is likely not correct.
 We are awaiting documentation of the forcings for the AerChemMIP CMIP7 AFT experiments.
 Some details may be available in [Fiedler et al](https://doi.org/10.5194/egusphere-2025-5669) (preprint) and information
@@ -26,6 +17,15 @@ All other forcings evolve as in `historical`.
 Intended for models without interactive chemistry.
 Models with interactive chemistry should run `hist-piAQ` instead.
 (Identical to `hist-piAer` in AerChemMIP phase 1.)
+
+Responsible activity: [AerChemMIP](./index.md#aerchemmip). Tier: 1
+
+These pages are intended to help with implementation of these experiments.
+If you notice something that is unclear, please
+[raise an issue](https://github.com/WCRP-CMIP/cmip7-guidance/issues/new).
+For the full background of the experiments, please see the following URLs:
+
+- [https://doi.org/10.5194/gmd-10-585-2017](https://doi.org/10.5194/gmd-10-585-2017)
 
 ## Related experiments
 

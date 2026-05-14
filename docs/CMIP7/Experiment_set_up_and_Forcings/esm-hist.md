@@ -5,6 +5,9 @@ title: "Experiment Setup and Forcings Guidance: esm-hist"
 
 # Experiment Setup and Forcings Guidance: esm-hist
 
+Simulation of the climate of the recent past (typically meaning 1850 to present-day) with prescribed carbon dioxide
+emissions (for prescribed carbon dioxide concentrations, see `historical`).
+
 Responsible activity: [CMIP](./index.md#cmip). Tier: 1
 
 These pages are intended to help with implementation of these experiments.
@@ -13,9 +16,6 @@ If you notice something that is unclear, please
 For the full background of the experiments, please see the following URLs:
 
 - [https://doi.org/10.5194/gmd-18-6671-2025](https://doi.org/10.5194/gmd-18-6671-2025)
-
-Simulation of the climate of the recent past (typically meaning 1850 to present-day) with prescribed carbon dioxide
-emissions (for prescribed carbon dioxide concentrations, see `historical`).
 
 ## Related experiments
 
