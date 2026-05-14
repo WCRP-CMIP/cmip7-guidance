@@ -27,8 +27,6 @@ The 1pctCO2-bgc simulation has the same forcing setup as the [1pctCO2 simulation
 The difference is that your model should be configured such that the carbon cycle only sees the change in atmospheric
 CO<sub>2</sub> concentrations and does not see any other changes (e.g. changes in atmospheric temperatures).
 
-<!-- TODO: consider whether we can generate these sentences automatically based on esgvoc -->
-
 The start-time of the simulation is not tied to a particular year but, rather, can be chosen arbitrarily (e.g., year 200
 or year 1850 or year 1).
 However, it is easier for analysts if the start-time is consistent with the branching time in the parent experiment

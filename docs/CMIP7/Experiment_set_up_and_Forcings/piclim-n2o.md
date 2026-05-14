@@ -29,8 +29,6 @@ The following forcing should use 2021 values from the [historical simulation](./
 
 The 2021 values should be prescribed on repeat throughout the simulation.
 
-<!-- TODO: consider whether we can generate these sentences automatically based on esgvoc -->
-
 It is recommended that you use the same time axis as you use for your [piClim-control](./piclim-control.md) output to
 make life easy for analysts of your output (although this is not enforced so you are technically free to start the time
 axis of your outputs at whatever year you like).

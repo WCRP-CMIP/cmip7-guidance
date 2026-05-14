@@ -28,8 +28,6 @@ The pre-industrial control simulation uses a specific set of forcings (see [forc
 
 These should be applied on repeat for the entirety of the simulation.
 
-<!-- TODO: consider whether we can generate these sentences automatically based on esgvoc -->
-
 You are free to start the time axis of your outputs at whatever year you like (e.g. starting at year 1, or 1850, or year
 500).
 

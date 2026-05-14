@@ -24,8 +24,6 @@ The CMIP7 very low scenario simulation uses a specific set of forcings (see [for
 
 These should be applied as transient (i.e. time-changing) forcings over the length of the simulation.
 
-<!-- TODO: consider whether we can generate these sentences automatically based on esgvoc -->
-
 ### Timing, length and ensemble size
 
 The simulation output should start on 2022-01-01 and end on 2100-12-31.

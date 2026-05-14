@@ -27,8 +27,6 @@ The historical simulation uses a specific set of forcings (see [forcings](#forci
 
 These should be applied as transient (i.e. time-changing) forcings over the length of the simulation.
 
-<!-- TODO: consider whether we can generate these sentences automatically based on esgvoc -->
-
 ### Timing, length and ensemble size
 
 The simulation output should start on 1850-01-01 and end on 2021-12-31.

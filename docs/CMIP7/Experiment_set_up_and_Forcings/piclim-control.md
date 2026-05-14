@@ -27,8 +27,6 @@ repeating) climatology taken from at least 30 years of your [pre-industrial cont
 these forcings are derived from your model output from one of your own simulations, they are not provided by a forcings
 provider).
 
-<!-- TODO: consider whether we can generate these sentences automatically based on esgvoc -->
-
 The start-time of the simulation is not tied to a particular year but, rather, can be chosen arbitrarily (e.g., year 200
 or year 1850 or year 1).
 If you have no other strong feeling, then it may be clearest to set the start-time to be equal to the middle of the

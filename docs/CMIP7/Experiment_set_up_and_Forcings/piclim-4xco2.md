@@ -24,8 +24,6 @@ The piClim-4xCO2 simulation uses the same forcings as [piClim-control](./piclim-
 CO<sub>2</sub> concentrations are set to four times the concentrations used in the [piClim-control](./piclim-control.md)
 simulation.
 
-<!-- TODO: consider whether we can generate these sentences automatically based on esgvoc -->
-
 It is recommended that you use the same time axis as you use for your [piClim-control](./piclim-control.md) output to
 make life easy for analysts of your output (although this is not enforced so you are technically free to start the time
 axis of your outputs at whatever year you like).
@@ -59,6 +57,7 @@ See notes for the [piClim-control simulation](./piclim-control.md).
 ### Versions to use
 
 The forcings relevant for this simulation are the same as for the [piClim-control simulation](./piclim-control.md).
+You have to quadruple the CO2 concentrations yourself.
 
 ### Getting the data
 

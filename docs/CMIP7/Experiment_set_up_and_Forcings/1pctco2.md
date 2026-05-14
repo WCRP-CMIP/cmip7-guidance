@@ -24,8 +24,6 @@ The 1pctCO2 simulation is a simple branch from the [piControl simulation](./pico
 After branching, the atmospheric CO<sub>2</sub> concentrations should increase at one percent per year throughout the
 simulation.
 
-<!-- TODO: consider whether we can generate these sentences automatically based on esgvoc -->
-
 The start-time of the simulation is not tied to a particular year but, rather, can be chosen arbitrarily (e.g., year 200
 or year 1850 or year 1).
 However, it is easier for analysts if the start-time is consistent with the branching time in the parent experiment

@@ -78,6 +78,10 @@ The following experiments are included in `AerChemMIP`:
 1. [piClim-NOx](./piclim-nox.md)
 1. [piClim-ODS](./piclim-ods.md)
 1. [piClim-SO2](./piclim-so2.md)
+1. [scen7-h-Aer](./scen7-h-aer.md)
+1. [scen7-h-AQ](./scen7-h-aq.md)
+1. [scen7-vl-Aer](./scen7-vl-aer.md)
+1. [scen7-vl-AQ](./scen7-vl-aq.md)
 
 ### CFMIP
 

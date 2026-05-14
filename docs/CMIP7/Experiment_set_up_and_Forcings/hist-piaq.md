@@ -36,8 +36,6 @@ The `hist-piAQ` simulation is a simple variant of the [historical simulation](./
 tropospheric non-methane ozone precursor emissions are kept at pre-industrial levels. `hist-piAQ` is for models that
 include interactive chemistry.
 
-<!-- TODO: consider whether we can generate these sentences automatically based on esgvoc -->
-
 ### Timing, length and ensemble size
 
 The simulation output should start on 1850-01-01 and end on 2021-12-31.
