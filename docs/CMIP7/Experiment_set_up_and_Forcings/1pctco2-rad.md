@@ -1,42 +1,57 @@
 ---
 layout: default
-title: 1pctCO2-rad Experiment Setup and Forcings Guidance
+title: "Experiment Setup and Forcings Guidance: 1pctCO2-rad"
 ---
 
-# 1pctCO2-rad Experiment Setup and Forcings Guidance
+# Experiment Setup and Forcings Guidance: 1pctCO2-rad
 
-<!-- TODO: get this information from esgvoc (add reference URLs at that point) -->
 Responsible activity: C4MIP
 
-<!-- TODO: get this one line description from esgvoc -->
-Radiatively coupled simulation (i.e. the carbon cycle only 'sees' the increase in temperature, not any change in atmospheric carbon dioxide) of a 1% per year increase in atmospheric carbon dioxide levels. All other conditions are kept the same as piControl.
+These pages are intended as a summary guide only.
+For full details of experiments, please see the following URLs:
+
+- [https://doi.org/10.5194/egusphere-2024-3356](https://doi.org/10.5194/egusphere-2024-3356)
+- [https://doi.org/10.5194/gmd-17-8141-2024](https://doi.org/10.5194/gmd-17-8141-2024)
+- [https://doi.org/10.5194/gmd-9-2853-2016](https://doi.org/10.5194/gmd-9-2853-2016)
+
+Radiatively coupled simulation (i.e. the carbon cycle only 'sees' the increase in temperature, not any change in
+atmospheric carbon dioxide) of a 1% per year increase in atmospheric carbon dioxide levels.
+All other conditions are kept the same as piControl.
 
 ## Experiment set up
 
-<!-- TODO: decide and then consistently apply some convention about whether experiment names are always surround by backticks `` or not -->
+<!--
+TODO: decide and then consistently apply some convention about whether experiment names are always surrounded by
+backticks `` or not. -->
+
 The 1pctCO2-rad simulation has the same forcing setup as the [1pctCO2 simulation](./1pctco2.md).
-The difference is that your model should be configured such that the carbon cycle
-only sees the change in radiation
-and does not see any other changes (e.g. changes in atmospheric CO<sub>2</sub> concentrations).
+
+The difference is that your model should be configured such that the carbon cycle only sees the change in radiation and
+does not see any other changes (e.g. changes in atmospheric CO<sub>2</sub> concentrations).
 
 <!-- TODO: consider whether we can generate these sentences automatically based on esgvoc -->
-The start-time of the simulation is not tied to a particular year but, rather, can be chosen arbitrarily
-(e.g., year 200 or year 1850 or year 1).
+
+The start-time of the simulation is not tied to a particular year but, rather, can be chosen arbitrarily (e.g., year 200
+or year 1850 or year 1).
 However, it is easier for analysts if the start-time is consistent with the branching time in the parent experiment
-(e.g., if the the simulation branches from year 200 in the parent experiment,
-then the start time in the child experiment would be set to year 200).
+(e.g., if the the simulation branches from year 200 in the parent experiment, then the start time in the child
+experiment would be set to year 200).
+
+### Timing, length and ensemble size
+
+The CMIP7 CVs do not define fixed start or end dates for this simulation.
+
 Simulations should be at least 150 years in length.
+
 Only one ensemble member is required.
 
 ### Parent experiment
 
-<!--
-    TODO: use esgvoc to fill out the template
-    `<experiment-name>` branches from the `<parent-experiment-name>` simulation (part of `<parent-experiment-activity>`).
--->
-`1pctCO2` branches from the `piControl` simulation (part of `CMIP`).
-<!-- TODO: get branch information from esgvoc -->
+`1pctCO2-rad` branches from the [piControl](./picontrol.md) simulation (part of CMIP).
+
 Branch from `piControl` at a time of your choosing.
+
+Parent MIP era: [CMIP7](https://wcrp-cmip.org/CMIP7).
 
 ## Forcings
 
@@ -54,4 +69,27 @@ The forcings relevant for this simulation are the same as for the [1pctCO2 simul
 
 ### Getting the data
 
-See instructions for the [1pctCO2 simulation](./1pctco2.md).
+The data is available on ESGF and searchable
+[via metagrid](https://esgf-node.ornl.gov/search?project=input4MIPs&versionType=all&activeFacets=%7B%22mip_era%22%3A%22CMIP7%22%7D),
+although this method of finding and downloading the data can involve a lot of clicking.
+Having said this, please also note: the aerosol optical properties based on the MACv2-SP parameterisation are not
+distributed via the ESGF.
+<!-- TODO: add CI to check all URLs are live -->
+Please see
+[their specific guidance section](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/aerosol-optical-properties-macv2-sp/#datasets-for-cmip7-phases)
+for data access information.
+
+If you install [esgpull](https://esgf.github.io/esgf-download/), you can download all the data associated with the
+source IDs above with the script shown below.
+Note that this will download all the data associated with these source IDs, which is likely to be much more data than
+you actually need to run your model.
+
+```bash
+#!/bin/bash
+
+EXPERIMENT_NAME="1pctCO2-rad"
+
+esgpull add --track --tag ${EXPERIMENT_NAME} source_id:CEDS-CMIP-2025-04-18,CEDS-CMIP-2025-04-18-supplemental,DRES-CMIP-BB4CMIP7-2-0,UofMD-landState-3-1-1,CR-CMIP-1-0-0,UOEXETER-CMIP-2-2-1,FZJ-CMIP-ozone-1-2,FZJ-CMIP-nitrogen-1-2,SOLARIS-HEPPA-CMIP-4-6,PIK-CMIP-1-0-1
+esgpull update --tag ${EXPERIMENT_NAME} --yes
+esgpull download --tag ${EXPERIMENT_NAME}
+```

@@ -1,50 +1,57 @@
 ---
 layout: default
-title: "Experiment Setup and Forcings Guidance: scen7-vl"
+title: "Experiment Setup and Forcings Guidance: esm-piControl-spinup"
 ---
 
-# Experiment Setup and Forcings Guidance: scen7-vl
+# Experiment Setup and Forcings Guidance: esm-piControl-spinup
 
-Responsible activity: ScenarioMIP
+Responsible activity: CMIP
 
 These pages are intended as a summary guide only.
 For full details of experiments, please see the following URLs:
 
-- [https://doi.org/10.5194/egusphere-2024-3765](https://doi.org/10.5194/egusphere-2024-3765)
+- [https://doi.org/10.5194/gmd-18-6671-2025](https://doi.org/10.5194/gmd-18-6671-2025)
 
-PLACEHOLDER TBC.
-CMIP7 ScenarioMIP very low emissions future.
-Run with prescribed carbon dioxide concentrations (for prescribed carbon dioxide emissions, see `esm-scen7-vl`).
+Spin-up simulation.
+Used to get the model into a state of approximate radiative equilibrium before starting the `esm-piControl` simulation.
+
+## Related experiments
+
+- [piControl-spinup](./picontrol-spinup.md) is the concentration-driven counterpart to this emissions-driven spin-up
+  experiment.
 
 ## Experiment set up
 
-The CMIP7 very low scenario simulation uses a specific set of forcings (see [forcings](#forcings)).
+The emissions-driven pre-industrial control spin-up simulation uses fixed pre-industrial forcings (see
+[forcings](#forcings)).
 
-These should be applied as transient (i.e. time-changing) forcings over the length of the simulation.
+These should be applied on repeat for the entirety of the simulation.
 
 <!-- TODO: consider whether we can generate these sentences automatically based on esgvoc -->
 
+You are free to start the time axis of your outputs at whatever year you like (e.g. starting at year 1, or 1850, or year
+500).
+
 ### Timing, length and ensemble size
 
-The simulation output should start on 2022-01-01 and end on 2100-12-31.
+The CMIP7 CVs do not define fixed start or end dates for this simulation.
 
-Simulations should be at least 79 years in length.
+The CMIP7 CVs do not define a minimum simulation length for this experiment.
 
 Only one ensemble member is required.
 
 ### Parent experiment
 
-`scen7-vl` branches from the [historical](./historical.md) simulation (part of CMIP).
-
-Branch from `historical` at 2022-01-01.
-
-Parent MIP era: [CMIP7](https://wcrp-cmip.org/CMIP7).
+`esm-piControl-spinup` has no parent experiment in the CMIP7 CVs.
 
 ## Forcings
 
 ### General headlines
 
-The `scen7-vl` experiment is a time-varying forcings experiment.
+The `esm-piControl-spinup` experiment is a fixed forcings experiment.
+As with the control experiments, care is needed to use the correct pre-industrial values for stratospheric aerosol
+forcing, ozone and solar forcing.
+Please read the guidance pages linked under [notes](#notes) to ensure that you use the correct forcing values.
 
 ### Notes
 
@@ -77,18 +84,22 @@ The forcings relevant for this simulation are listed below.
 For each forcing, we provide the version(s), in the form of "source ID(s)", which should be used when running this
 simulation.
 
+Where there is more than one source ID listed, this either indicates that you may need data from multiple source IDs or
+that multiple options are acceptable (because, e.g., fixes were made but re-running is not required).
+Please see the guidance pages linked above for details.
+
 ```json
 {
-    "anthropogenic-emissions": ["IIASA-IAMC-vl-1-0-0"],
-    "biomass-burning-emissions": ["IIASA-IAMC-vl-1-0-0"],
-    "land-use": "not-available-yet",
-    "greenhouse-gas-concentrations": ["CR-vl-1-0-0"],
-    "stratospheric-aerosol-forcing": ["UOEXETER-ScenarioMIP-2-2-2"],
-    "ozone": "not-available-yet",
-    "nitrogen-deposition": "not-available-yet",
-    "solar": ["SOLARIS-HEPPA-ScenarioMIP-4-6"],
+    "anthropogenic-emissions": ["CEDS-CMIP-2025-04-18", "CEDS-CMIP-2025-04-18-supplemental"],
+    "biomass-burning-emissions": ["DRES-CMIP-BB4CMIP7-2-0"],
+    "land-use": ["UofMD-landState-3-1-1"],
+    "greenhouse-gas-concentrations": ["CR-CMIP-1-0-0"],
+    "stratospheric-aerosol-forcing": ["UOEXETER-CMIP-2-2-1"],
+    "ozone": ["FZJ-CMIP-ozone-1-2", "FZJ-CMIP-ozone-2-0"],
+    "nitrogen-deposition": ["FZJ-CMIP-nitrogen-1-2", "FZJ-CMIP-nitrogen-2-0"],
+    "solar": ["SOLARIS-HEPPA-CMIP-4-6"],
     "aerosol-optical-properties": null,
-    "population-density": ["PIK-vl-1-0-0"]
+    "population-density": ["PIK-CMIP-1-0-1"]
 }
 ```
 
@@ -112,9 +123,9 @@ you actually need to run your model.
 ```bash
 #!/bin/bash
 
-EXPERIMENT_NAME="scen7-vl"
+EXPERIMENT_NAME="esm-piControl-spinup"
 
-esgpull add --track --tag ${EXPERIMENT_NAME} source_id:IIASA-IAMC-vl-1-0-0,CR-vl-1-0-0,UOEXETER-ScenarioMIP-2-2-2,SOLARIS-HEPPA-ScenarioMIP-4-6,PIK-vl-1-0-0
+esgpull add --track --tag ${EXPERIMENT_NAME} source_id:CEDS-CMIP-2025-04-18,CEDS-CMIP-2025-04-18-supplemental,DRES-CMIP-BB4CMIP7-2-0,UofMD-landState-3-1-1,CR-CMIP-1-0-0,UOEXETER-CMIP-2-2-1,FZJ-CMIP-ozone-1-2,FZJ-CMIP-nitrogen-1-2,SOLARIS-HEPPA-CMIP-4-6,PIK-CMIP-1-0-1
 esgpull update --tag ${EXPERIMENT_NAME} --yes
 esgpull download --tag ${EXPERIMENT_NAME}
 ```
