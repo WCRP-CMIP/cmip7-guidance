@@ -54,7 +54,7 @@ Only one ensemble member is required.
 
 `piClim-anthro` branches from the [piControl](./picontrol.md) simulation (part of [CMIP](./index.md#cmip)).
 
-Same as `piClim-control`.
+Branch from piControl at the same time as piClim-control.
 
 The parent experiment comes from [CMIP7](https://wcrp-cmip.org/CMIP7).
 
