@@ -36,7 +36,7 @@ Only one ensemble member is required.
 
 `amip` has no parent experiment in the CMIP7 CVs.
 
-Parent MIP era: [CMIP7](https://wcrp-cmip.org/CMIP7).
+The parent experiment comes from [CMIP7](https://wcrp-cmip.org/CMIP7).
 
 ## Forcings
 

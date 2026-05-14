@@ -56,7 +56,7 @@ Only one ensemble member is required.
 
 Same as `piClim-control`.
 
-Parent MIP era: [CMIP7](https://wcrp-cmip.org/CMIP7).
+The parent experiment comes from [CMIP7](https://wcrp-cmip.org/CMIP7).
 
 ## Forcings
 

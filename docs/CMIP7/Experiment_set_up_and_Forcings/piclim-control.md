@@ -53,7 +53,7 @@ Given that you are using a climatology from your own model as boundary condition
 mid-point of the period over which you calculated the climatology (but this recommendation may not be appropriate for
 all models, so ultimately it is up to you to decide what introduces the smallest 'shock'/'jump' at the branch time).
 
-Parent MIP era: [CMIP7](https://wcrp-cmip.org/CMIP7).
+The parent experiment comes from [CMIP7](https://wcrp-cmip.org/CMIP7).
 
 ## Forcings
 

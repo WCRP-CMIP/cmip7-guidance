@@ -56,7 +56,7 @@ Only one ensemble member is required.
 
 Branch from `piControl` at a time of your choosing.
 
-Parent MIP era: [CMIP7](https://wcrp-cmip.org/CMIP7).
+The parent experiment comes from [CMIP7](https://wcrp-cmip.org/CMIP7).
 
 This branch time should match the branch time used for initialising the [historical simulation](./historical.md).
 
