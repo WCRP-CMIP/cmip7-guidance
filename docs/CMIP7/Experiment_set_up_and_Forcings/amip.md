@@ -60,8 +60,6 @@ For this additional forcing, we provide the version(s), in the form of "source I
 this simulation.
 For all other forcings, please see the information on the [historical simulation](./historical.md) page.
 
-<!-- TODO: auto-generate and just duplicate the information rather than forcing people to other pages -->
-
 ```json
 {
     "amip-sea-surface-temperature-and-sea-ice-boundary-forcing": ["PCMDI-AMIP-1-1-10"]
@@ -89,7 +87,7 @@ you actually need to run your model.
 
 EXPERIMENT_NAME="amip"
 
-esgpull add --track --tag ${EXPERIMENT_NAME} source_id:PCMDI-AMIP-1-1-10,CEDS-CMIP-2025-04-18,CEDS-CMIP-2025-04-18-supplemental,DRES-CMIP-BB4CMIP7-2-0,UofMD-landState-3-1-1,CR-CMIP-1-0-0,UOEXETER-CMIP-2-2-1,FZJ-CMIP-ozone-2-0,FZJ-CMIP-nitrogen-1-2,SOLARIS-HEPPA-CMIP-4-6,PIK-CMIP-1-0-1
+esgpull add --track --tag ${EXPERIMENT_NAME} source_id:PCMDI-AMIP-1-1-10,CEDS-CMIP-2025-04-18,CEDS-CMIP-2025-04-18-supplemental,DRES-CMIP-BB4CMIP7-2-0,UofMD-landState-3-1-1,UofMD-landState-3-1-2,CR-CMIP-1-0-0,UOEXETER-CMIP-2-2-1,FZJ-CMIP-ozone-2-0,FZJ-CMIP-nitrogen-1-2,SOLARIS-HEPPA-CMIP-4-6,PIK-CMIP-1-0-1
 esgpull update --tag ${EXPERIMENT_NAME} --yes
 esgpull download --tag ${EXPERIMENT_NAME}
 ```

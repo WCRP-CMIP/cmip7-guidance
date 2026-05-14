@@ -81,11 +81,11 @@ simulation.
 {
     "anthropogenic-emissions": ["IIASA-IAMC-vl-1-0-0"],
     "biomass-burning-emissions": ["IIASA-IAMC-vl-1-0-0"],
-    "land-use": "not-available-yet",
+    "land-use": ["UofMD-landState-vl-3-1", "UofMD-landState-vl-3-1-1"],
     "greenhouse-gas-concentrations": ["CR-vl-1-0-0"],
     "stratospheric-aerosol-forcing": ["UOEXETER-ScenarioMIP-2-2-2"],
-    "ozone": "not-available-yet",
-    "nitrogen-deposition": "not-available-yet",
+    "ozone": "FZJ-CMIP-ozone-h-1-0",
+    "nitrogen-deposition": "FZJ-CMIP-nitrogen-h-1-0",
     "solar": ["SOLARIS-HEPPA-ScenarioMIP-4-6"],
     "aerosol-optical-properties": null,
     "population-density": ["PIK-vl-1-0-0"]
@@ -113,7 +113,7 @@ you actually need to run your model.
 
 EXPERIMENT_NAME="scen7-vl"
 
-esgpull add --track --tag ${EXPERIMENT_NAME} source_id:IIASA-IAMC-vl-1-0-0,CR-vl-1-0-0,UOEXETER-ScenarioMIP-2-2-2,SOLARIS-HEPPA-ScenarioMIP-4-6,PIK-vl-1-0-0
+esgpull add --track --tag ${EXPERIMENT_NAME} source_id:IIASA-IAMC-vl-1-0-0,UofMD-landState-vl-3-1,UofMD-landState-vl-3-1-1,CR-vl-1-0-0,UOEXETER-ScenarioMIP-2-2-2,FZJ-CMIP-ozone-h-1-0,FZJ-CMIP-nitrogen-h-1-0,SOLARIS-HEPPA-ScenarioMIP-4-6,PIK-vl-1-0-0
 esgpull update --tag ${EXPERIMENT_NAME} --yes
 esgpull download --tag ${EXPERIMENT_NAME}
 ```

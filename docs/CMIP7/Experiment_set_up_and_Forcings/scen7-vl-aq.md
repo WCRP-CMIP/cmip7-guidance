@@ -115,7 +115,7 @@ you actually need to run your model.
 
 EXPERIMENT_NAME="scen7-vl-AQ"
 
-esgpull add --track --tag ${EXPERIMENT_NAME} source_id:IIASA-IAMC-h-1-0-0,IIASA-IAMC-vl-1-0-0,CR-vl-1-0-0,UOEXETER-ScenarioMIP-2-2-2,SOLARIS-HEPPA-ScenarioMIP-4-6,PIK-vl-1-0-0
+esgpull add --track --tag ${EXPERIMENT_NAME} source_id:IIASA-IAMC-h-1-0-0,IIASA-IAMC-vl-1-0-0,UofMD-landState-vl-3-1,UofMD-landState-vl-3-1-1,CR-vl-1-0-0,UOEXETER-ScenarioMIP-2-2-2,FZJ-CMIP-ozone-h-1-0,FZJ-CMIP-nitrogen-h-1-0,SOLARIS-HEPPA-ScenarioMIP-4-6,PIK-vl-1-0-0
 esgpull update --tag ${EXPERIMENT_NAME} --yes
 esgpull download --tag ${EXPERIMENT_NAME}
 ```

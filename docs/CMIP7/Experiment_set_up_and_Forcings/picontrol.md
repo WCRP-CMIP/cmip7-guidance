@@ -52,9 +52,18 @@ The parent experiment comes from [CMIP7](https://wcrp-cmip.org/CMIP7).
 ### General headlines
 
 The `piControl` experiment is a fixed forcings experiment.
+
 However, it can require some care to use the correct forcings for `piControl`.
 This is particularly true for stratospheric aerosol forcing, ozone and solar as the `piControl` values for these
 forcings aren't simply a repeat of 1850 values.
+
+Please note that the ozone forcing should come from files with the source ID `FZJ-CMIP-ozone-1-2`, no `piControl` data
+is included in `FZJ-CMIP-ozone-2-0` (which only updates `historical` values).
+
+Please also note that the nitrogen deposition forcing should come from files with the source ID `FZJ-CMIP-nitrogen-2-0`.
+`FZJ-CMIP-nitrogen-2-0` was released quite late and the impact of the change is likely to be small, so if you have
+simulations based on `FZJ-CMIP-nitrogen-1-2`, you do not need to re-run them.
+
 Please read the guidance pages linked under [notes](#notes) to ensure that you use the correct forcing values.
 
 ### Notes
@@ -96,7 +105,7 @@ Please see the guidance pages linked above for details.
 {
     "anthropogenic-emissions": ["CEDS-CMIP-2025-04-18", "CEDS-CMIP-2025-04-18-supplemental"],
     "biomass-burning-emissions": ["DRES-CMIP-BB4CMIP7-2-0"],
-    "land-use": ["UofMD-landState-3-1-1"],
+    "land-use": ["UofMD-landState-3-1-1", "UofMD-landState-3-1-2"],
     "greenhouse-gas-concentrations": ["CR-CMIP-1-0-0"],
     "stratospheric-aerosol-forcing": ["UOEXETER-CMIP-2-2-1"],
     "ozone": ["FZJ-CMIP-ozone-1-2", "FZJ-CMIP-ozone-2-0"],
@@ -128,7 +137,7 @@ you actually need to run your model.
 
 EXPERIMENT_NAME="piControl"
 
-esgpull add --track --tag ${EXPERIMENT_NAME} source_id:CEDS-CMIP-2025-04-18,CEDS-CMIP-2025-04-18-supplemental,DRES-CMIP-BB4CMIP7-2-0,UofMD-landState-3-1-1,CR-CMIP-1-0-0,UOEXETER-CMIP-2-2-1,FZJ-CMIP-ozone-1-2,FZJ-CMIP-nitrogen-1-2,SOLARIS-HEPPA-CMIP-4-6,PIK-CMIP-1-0-1
+esgpull add --track --tag ${EXPERIMENT_NAME} source_id:CEDS-CMIP-2025-04-18,CEDS-CMIP-2025-04-18-supplemental,DRES-CMIP-BB4CMIP7-2-0,UofMD-landState-3-1-1,UofMD-landState-3-1-2,CR-CMIP-1-0-0,UOEXETER-CMIP-2-2-1,FZJ-CMIP-ozone-1-2,FZJ-CMIP-nitrogen-1-2,SOLARIS-HEPPA-CMIP-4-6,PIK-CMIP-1-0-1
 esgpull update --tag ${EXPERIMENT_NAME} --yes
 esgpull download --tag ${EXPERIMENT_NAME}
 ```

@@ -102,7 +102,7 @@ you actually need to run your model.
 
 EXPERIMENT_NAME="piClim-anthro"
 
-esgpull add --track --tag ${EXPERIMENT_NAME} source_id:UOEXETER-CMIP-2-2-1,SOLARIS-HEPPA-CMIP-4-6,CEDS-CMIP-2025-04-18,CEDS-CMIP-2025-04-18-supplemental,DRES-CMIP-BB4CMIP7-2-0,UofMD-landState-3-1-1,CR-CMIP-1-0-0,FZJ-CMIP-ozone-2-0,FZJ-CMIP-nitrogen-1-2,PIK-CMIP-1-0-1
+esgpull add --track --tag ${EXPERIMENT_NAME} source_id:UOEXETER-CMIP-2-2-1,SOLARIS-HEPPA-CMIP-4-6,CEDS-CMIP-2025-04-18,CEDS-CMIP-2025-04-18-supplemental,DRES-CMIP-BB4CMIP7-2-0,UofMD-landState-3-1-1,UofMD-landState-3-1-2,CR-CMIP-1-0-0,FZJ-CMIP-ozone-2-0,FZJ-CMIP-nitrogen-1-2,PIK-CMIP-1-0-1
 esgpull update --tag ${EXPERIMENT_NAME} --yes
 esgpull download --tag ${EXPERIMENT_NAME}
 ```
