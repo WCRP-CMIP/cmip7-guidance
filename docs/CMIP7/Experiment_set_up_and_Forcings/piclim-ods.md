@@ -7,8 +7,7 @@ title: "Experiment Setup and Forcings Guidance: piClim-ODS"
 
 In combination with `piClim-control`, quantifies present-day ozone-depleting substances' effective radiative forcing
 (ERF).
-Same as `piClim-control`, except ozone-depleting substances concentrations use present-day values (typically the last
-year of the `historical` simulation within the same CMIP era e.g. 2014 values for CMIP6, 2021 values for CMIP7).
+Same as `piClim-control`, except ozone-depleting substances concentrations use present-day values (2021 in CMIP7).
 
 Responsible activity: [AerChemMIP](./index.md#aerchemmip). Tier: 1
 
