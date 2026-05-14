@@ -20,7 +20,7 @@ For the full background of the experiments, please see the following URLs:
 
 ## Related experiments
 
-- [piControl](./picontrol.md) is the concentration-driven counterpart to this emissions-driven control experiment.
+- [piControl](./picontrol.md) is the concentration-driven counterpart to this emissions-driven experiment.
 
 ## Experiment set up
 

@@ -19,7 +19,7 @@ For the full background of the experiments, please see the following URLs:
 
 ## Related experiments
 
-- [historical](./historical.md) is the concentration-driven counterpart to this emissions-driven historical experiment.
+- [historical](./historical.md) is the concentration-driven counterpart to this emissions-driven experiment.
 
 ## Experiment set up
 

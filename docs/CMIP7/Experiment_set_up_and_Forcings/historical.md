@@ -19,7 +19,7 @@ For the full background of the experiments, please see the following URLs:
 
 ## Related experiments
 
-- [esm-hist](./esm-hist.md) is the emissions-driven counterpart to this concentration-driven historical experiment.
+- [esm-hist](./esm-hist.md) is the emissions-driven counterpart to this concentration-driven experiment.
 
 ## Experiment set up
 

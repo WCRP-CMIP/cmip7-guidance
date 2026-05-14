@@ -19,8 +19,7 @@ For the full background of the experiments, please see the following URLs:
 
 ## Related experiments
 
-- [piControl-spinup](./picontrol-spinup.md) is the concentration-driven counterpart to this emissions-driven spin-up
-  experiment.
+- [piControl-spinup](./picontrol-spinup.md) is the concentration-driven counterpart to this emissions-driven experiment.
 
 ## Experiment set up
 
@@ -51,8 +50,8 @@ Only one ensemble member is required.
 ### General headlines
 
 The `esm-piControl-spinup` experiment is a fixed forcings experiment.
-As with the control experiments, care is needed to use the correct pre-industrial values for stratospheric aerosol
-forcing, ozone and solar forcing.
+As with the pre-industrial control experiments, care is needed to use the correct pre-industrial values for
+stratospheric aerosol forcing, ozone and solar forcing.
 Please read the guidance pages linked under [notes](#notes) to ensure that you use the correct forcing values.
 
 ### Notes
