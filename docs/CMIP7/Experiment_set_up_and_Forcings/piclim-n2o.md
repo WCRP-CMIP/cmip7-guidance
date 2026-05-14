@@ -5,10 +5,12 @@ title: "Experiment Setup and Forcings Guidance: piClim-N2O"
 
 # Experiment Setup and Forcings Guidance: piClim-N2O
 
-Responsible activity: AerChemMIP
+Responsible activity: [AerChemMIP](./index.md#aerchemmip). Tier: 1
 
-These pages are intended as a summary guide only.
-For full details of experiments, please see the following URLs:
+These pages are intended to help with implementation of these experiments.
+If you notice something that is unclear, please
+[raise an issue](https://github.com/WCRP-CMIP/cmip7-guidance/issues/new).
+For the full background of the experiments, please see the following URLs:
 
 - [https://doi.org/10.5194/gmd-10-585-2017](https://doi.org/10.5194/gmd-10-585-2017)
 
