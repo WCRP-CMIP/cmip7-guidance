@@ -19,10 +19,6 @@ All other conditions are kept the same as piControl.
 
 ## Experiment set up
 
-<!--
-TODO: decide and then consistently apply some convention about whether experiment names are always surrounded by
-backticks `` or not. -->
-
 The 1pctCO2 simulation is a simple branch from the [piControl simulation](./picontrol.md).
 
 After branching, the atmospheric CO<sub>2</sub> concentrations should increase at one percent per year throughout the
@@ -62,6 +58,23 @@ The `1pctCO2` experiment is a fixed forcings experiment, except for CO<sub>2</su
 
 See notes for the [piControl simulation](./picontrol.md).
 
+You have to increase the atmospheric CO<sub>2</sub> concentrations at one percent per year yourself.
+
+<!---
+    TODO: discuss with Matt/someone else the specific implementation instructions.
+    Set concentrations in first year to be higher than piControl
+    (because, if you don't do this and you have a linear increase,
+    then you'd have to drop concentrations in January of the first year in order to get the average correct)
+    TODO: check formula rendering
+-->
+The annual-average concentrations should increase following the formula c(y) = c_0 * 1.01 ** (y - y_0 - 1), where c is
+the annual-average concentration in year y and y_0 is the first year of the `1pctCO2` simulation (i.e. average
+atmospheric CO<sub>2</sub> concentrations in the first year of the `1pctCO2` simulation should be higher than in
+`piControl`).
+It is up to you to decide whether you apply your concentrations as a series of step changes (constant over each year) or
+as a steady linear increase (such that e.g. concentrations in December are higher than those in January) that results in
+the correct annual average being applied.
+
 ### Versions to use
 
 The forcings relevant for this simulation are the same as for the [piControl simulation](./picontrol.md).
@@ -92,17 +105,3 @@ esgpull add --track --tag ${EXPERIMENT_NAME} source_id:CEDS-CMIP-2025-04-18,CEDS
 esgpull update --tag ${EXPERIMENT_NAME} --yes
 esgpull download --tag ${EXPERIMENT_NAME}
 ```
-
-You have to increase the atmospheric CO<sub>2</sub> concentrations at one percent per year yourself.
-
-<!---
-    TODO: discuss with Matt/someone else the specific implementation instructions.
-    Set concentrations in first year to be higher than piControl (because, if you don't do this and you have a linear
-    increase, then you'd have to drop concentrations in January of the first year in order to get the average correct)
-    TODO: check formula rendering --> The annual-average concentrations should increase following the formula c(y) = c_0
-    * 1.01 ** (y - y_0 - 1), where c is the annual-average concentration in year y and y_0 is the first year of the
-    `1pctCO2` simulation (i.e. average atmospheric CO<sub>2</sub> concentrations in the first year of the `1pctCO2`
-    simulation should be higher than in `piControl`).
-    It is up to you to decide whether you apply your concentrations as a series of step changes (constant over each
-    year) or as a steady linear increase (such that e.g. concentrations in December are higher than those in January)
-    that results in the correct annual average being applied.

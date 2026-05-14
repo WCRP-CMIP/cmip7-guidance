@@ -19,10 +19,6 @@ All other conditions are kept the same as piControl.
 
 ## Experiment set up
 
-<!--
-TODO: decide and then consistently apply some convention about whether experiment names are always surrounded by
-backticks `` or not. -->
-
 The abrupt CO<sub>2</sub> halving simulation is a simple branch from the [piControl simulation](./picontrol.md).
 
 After branching, the atmospheric CO<sub>2</sub> concentrations should be set to half the concentrations used in the
@@ -62,6 +58,8 @@ See general headlines for the [abrupt-4xCO2 simulation](./abrupt-4xco2.md).
 
 See notes for the [piControl simulation](./picontrol.md).
 
+You have to halve the atmospheric CO<sub>2</sub> concentrations yourself.
+
 ### Versions to use
 
 The forcings relevant for this simulation are the same as for the [piControl simulation](./picontrol.md).
@@ -92,5 +90,3 @@ esgpull add --track --tag ${EXPERIMENT_NAME} source_id:CEDS-CMIP-2025-04-18,CEDS
 esgpull update --tag ${EXPERIMENT_NAME} --yes
 esgpull download --tag ${EXPERIMENT_NAME}
 ```
-
-You have to halve the atmospheric CO<sub>2</sub> concentrations yourself.

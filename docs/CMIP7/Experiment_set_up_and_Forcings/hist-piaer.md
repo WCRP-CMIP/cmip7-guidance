@@ -36,10 +36,6 @@ Models with interactive chemistry should run `hist-piAQ` instead.
 
 <!-- TODO: check this with someone who knows what they're reading -->
 
-<!--
-TODO: decide and then consistently apply some convention about whether experiment names are always surrounded by
-backticks `` or not. -->
-
 The `hist-piAer` simulation is a simple variant of the [historical simulation](./historical.md) where aerosol and
 tropospheric non-methane ozone precursor emissions are kept at pre-industrial levels. `hist-piAer` is for models that do
 not include interactive chemistry.

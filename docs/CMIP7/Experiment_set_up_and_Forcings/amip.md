@@ -18,10 +18,6 @@ Simulation of the climate of the recent past with prescribed sea surface tempera
 
 ## Experiment set up
 
-<!--
-TODO: decide and then consistently apply some convention about whether experiment names are always surrounded by
-backticks `` or not. -->
-
 The amip simulation uses a specific set of forcings (see [forcings](#forcings)).
 
 These should be applied as transient (i.e. time-changing) forcings over the length of the simulation.

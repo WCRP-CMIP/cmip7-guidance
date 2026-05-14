@@ -22,10 +22,6 @@ All other conditions are kept the same as piControl.
 
 ## Experiment set up
 
-<!--
-TODO: decide and then consistently apply some convention about whether experiment names are always surrounded by
-backticks `` or not. -->
-
 The 1pctCO2-rad simulation has the same forcing setup as the [1pctCO2 simulation](./1pctco2.md).
 
 The difference is that your model should be configured such that the carbon cycle only sees the change in radiation and
