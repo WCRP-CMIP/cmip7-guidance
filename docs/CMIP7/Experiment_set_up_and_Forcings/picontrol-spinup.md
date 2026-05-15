@@ -24,7 +24,7 @@ For the full background of the experiments, please see the following URLs:
 
 ## Experiment set up
 
-The pre-industrial control spin-up simulation uses fixed pre-industrial forcings (see [forcings](#forcings)).
+The pre-industrial control spin-up simulation uses piControl forcings (see [forcings](#forcings)).
 
 These should be applied on repeat for the entirety of the simulation.
 
@@ -92,23 +92,50 @@ The following pages give further information on each forcing:
 The forcings relevant for this simulation are listed below.
 For each forcing, we provide the version(s), in the form of "source ID(s)", which should be used when running this
 simulation.
-
-Where there is more than one source ID listed, this either indicates that you may need data from multiple source IDs or
-that multiple options are acceptable (because, e.g., fixes were made but re-running is not required).
-Please see the guidance pages linked above for details.
+The recommended version(s) are the version(s) we recommend using.
+Any acceptable versions can be used (you are not obliged to re-run simulations that used them).
+Please see the guidance pages linked above for details and note that the data-retrieval script below only includes
+recommended versions.
 
 ```json
 {
-    "anthropogenic-emissions": ["CEDS-CMIP-2025-04-18", "CEDS-CMIP-2025-04-18-supplemental"],
-    "biomass-burning-emissions": ["DRES-CMIP-BB4CMIP7-2-0"],
-    "land-use": ["UofMD-landState-3-1-1", "UofMD-landState-3-1-2"],
-    "greenhouse-gas-concentrations": ["CR-CMIP-1-0-0"],
-    "stratospheric-aerosol-forcing": ["UOEXETER-CMIP-2-2-1"],
-    "ozone": ["FZJ-CMIP-ozone-1-2", "FZJ-CMIP-ozone-2-0"],
-    "nitrogen-deposition": ["FZJ-CMIP-nitrogen-1-2", "FZJ-CMIP-nitrogen-2-0"],
-    "solar": ["SOLARIS-HEPPA-CMIP-4-6"],
+    "anthropogenic-emissions": {
+        "recommended": [
+            "CEDS-CMIP-2025-04-18",
+            "CEDS-CMIP-2025-04-18-supplemental"
+        ]
+    },
+    "biomass-burning-emissions": {
+        "recommended": "DRES-CMIP-BB4CMIP7-2-0"
+    },
+    "land-use": {
+        "recommended": "UofMD-landState-3-1-2",
+        "acceptable": [
+            "UofMD-landState-3-1-1"
+        ]
+    },
+    "greenhouse-gas-concentrations": {
+        "recommended": "CR-CMIP-1-0-0"
+    },
+    "stratospheric-aerosol-forcing": {
+        "recommended": "UOEXETER-CMIP-2-2-1"
+    },
+    "ozone": {
+        "recommended": "FZJ-CMIP-ozone-1-2"
+    },
+    "nitrogen-deposition": {
+        "recommended": "FZJ-CMIP-nitrogen-2-0",
+        "acceptable": [
+            "FZJ-CMIP-nitrogen-1-2"
+        ]
+    },
+    "solar": {
+        "recommended": "SOLARIS-HEPPA-CMIP-4-6"
+    },
     "aerosol-optical-properties": null,
-    "population-density": ["PIK-CMIP-1-0-1"]
+    "population-density": {
+        "recommended": "PIK-CMIP-1-0-1"
+    }
 }
 ```
 
@@ -133,7 +160,7 @@ you actually need to run your model.
 
 EXPERIMENT_NAME="piControl-spinup"
 
-esgpull add --track --tag ${EXPERIMENT_NAME} source_id:CEDS-CMIP-2025-04-18,CEDS-CMIP-2025-04-18-supplemental,DRES-CMIP-BB4CMIP7-2-0,UofMD-landState-3-1-1,UofMD-landState-3-1-2,CR-CMIP-1-0-0,UOEXETER-CMIP-2-2-1,FZJ-CMIP-ozone-1-2,FZJ-CMIP-nitrogen-1-2,SOLARIS-HEPPA-CMIP-4-6,PIK-CMIP-1-0-1
+esgpull add --track --tag ${EXPERIMENT_NAME} source_id:CEDS-CMIP-2025-04-18,CEDS-CMIP-2025-04-18-supplemental,DRES-CMIP-BB4CMIP7-2-0,UofMD-landState-3-1-2,CR-CMIP-1-0-0,UOEXETER-CMIP-2-2-1,FZJ-CMIP-ozone-1-2,FZJ-CMIP-nitrogen-2-0,SOLARIS-HEPPA-CMIP-4-6,PIK-CMIP-1-0-1
 esgpull update --tag ${EXPERIMENT_NAME} --yes
 esgpull download --tag ${EXPERIMENT_NAME}
 ```

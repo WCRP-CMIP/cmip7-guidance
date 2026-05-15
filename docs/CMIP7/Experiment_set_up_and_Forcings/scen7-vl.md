@@ -76,19 +76,50 @@ The following pages give further information on each forcing:
 The forcings relevant for this simulation are listed below.
 For each forcing, we provide the version(s), in the form of "source ID(s)", which should be used when running this
 simulation.
+The recommended version(s) are the version(s) we recommend using.
+Any acceptable versions can be used (you are not obliged to re-run simulations that used them).
+Please see the guidance pages linked above for details and note that the data-retrieval script below only includes
+recommended versions.
 
 ```json
 {
-    "anthropogenic-emissions": ["IIASA-IAMC-vl-1-0-0"],
-    "biomass-burning-emissions": ["IIASA-IAMC-vl-1-0-0"],
-    "land-use": ["UofMD-landState-vl-3-1", "UofMD-landState-vl-3-1-1"],
-    "greenhouse-gas-concentrations": ["CR-vl-1-0-0"],
-    "stratospheric-aerosol-forcing": ["UOEXETER-ScenarioMIP-2-2-2"],
-    "ozone": "FZJ-CMIP-ozone-h-1-0",
-    "nitrogen-deposition": "FZJ-CMIP-nitrogen-h-1-0",
-    "solar": ["SOLARIS-HEPPA-ScenarioMIP-4-6"],
+    "anthropogenic-emissions": {
+        "recommended": [
+            "IIASA-IAMC-vl-1-0-0",
+            "IIASA-IAMC-1-0-0"
+        ]
+    },
+    "biomass-burning-emissions": {
+        "recommended": [
+            "IIASA-IAMC-vl-1-0-0",
+            "IIASA-IAMC-1-0-0"
+        ]
+    },
+    "land-use": {
+        "recommended": "UofMD-landState-vl-3-1-1",
+        "acceptable": [
+            "UofMD-landState-vl-3-1"
+        ]
+    },
+    "greenhouse-gas-concentrations": {
+        "recommended": "CR-vl-1-0-0"
+    },
+    "stratospheric-aerosol-forcing": {
+        "recommended": "UOEXETER-ScenarioMIP-2-2-2"
+    },
+    "ozone": {
+        "recommended": "FZJ-CMIP-ozone-h-1-0"
+    },
+    "nitrogen-deposition": {
+        "recommended": "FZJ-CMIP-nitrogen-h-1-0"
+    },
+    "solar": {
+        "recommended": "SOLARIS-HEPPA-ScenarioMIP-4-6"
+    },
     "aerosol-optical-properties": null,
-    "population-density": ["PIK-vl-1-0-0"]
+    "population-density": {
+        "recommended": "PIK-vl-1-0-0"
+    }
 }
 ```
 
@@ -113,7 +144,7 @@ you actually need to run your model.
 
 EXPERIMENT_NAME="scen7-vl"
 
-esgpull add --track --tag ${EXPERIMENT_NAME} source_id:IIASA-IAMC-vl-1-0-0,UofMD-landState-vl-3-1,UofMD-landState-vl-3-1-1,CR-vl-1-0-0,UOEXETER-ScenarioMIP-2-2-2,FZJ-CMIP-ozone-h-1-0,FZJ-CMIP-nitrogen-h-1-0,SOLARIS-HEPPA-ScenarioMIP-4-6,PIK-vl-1-0-0
+esgpull add --track --tag ${EXPERIMENT_NAME} source_id:IIASA-IAMC-vl-1-0-0,IIASA-IAMC-1-0-0,UofMD-landState-vl-3-1-1,CR-vl-1-0-0,UOEXETER-ScenarioMIP-2-2-2,FZJ-CMIP-ozone-h-1-0,FZJ-CMIP-nitrogen-h-1-0,SOLARIS-HEPPA-ScenarioMIP-4-6,PIK-vl-1-0-0
 esgpull update --tag ${EXPERIMENT_NAME} --yes
 esgpull download --tag ${EXPERIMENT_NAME}
 ```
