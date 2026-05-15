@@ -144,6 +144,10 @@ you actually need to run your model.
 
 EXPERIMENT_NAME="scen7-vl"
 
+## You may need to run the below if you haven't already done it once with esgpull
+# esgpull self install
+## You may also need to run this step to get the data to download
+# esgpull config api.index_node esgf-node.ornl.gov/esgf-1-5-bridge
 esgpull add --track --tag ${EXPERIMENT_NAME} source_id:IIASA-IAMC-vl-1-0-0,IIASA-IAMC-1-0-0,UofMD-landState-vl-3-1-1,CR-vl-1-0-0,UOEXETER-ScenarioMIP-2-2-2,FZJ-CMIP-ozone-h-1-0,FZJ-CMIP-nitrogen-h-1-0,SOLARIS-HEPPA-ScenarioMIP-4-6,PIK-vl-1-0-0
 esgpull update --tag ${EXPERIMENT_NAME} --yes
 esgpull download --tag ${EXPERIMENT_NAME}

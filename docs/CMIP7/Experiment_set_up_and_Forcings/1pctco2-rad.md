@@ -84,6 +84,10 @@ you actually need to run your model.
 
 EXPERIMENT_NAME="1pctCO2-rad"
 
+## You may need to run the below if you haven't already done it once with esgpull
+# esgpull self install
+## You may also need to run this step to get the data to download
+# esgpull config api.index_node esgf-node.ornl.gov/esgf-1-5-bridge
 esgpull add --track --tag ${EXPERIMENT_NAME} source_id:CEDS-CMIP-2025-04-18,CEDS-CMIP-2025-04-18-supplemental,DRES-CMIP-BB4CMIP7-2-0,UofMD-landState-3-1-2,CR-CMIP-1-0-0,UOEXETER-CMIP-2-2-1,FZJ-CMIP-ozone-1-2,FZJ-CMIP-nitrogen-2-0,SOLARIS-HEPPA-CMIP-4-6,PIK-CMIP-1-0-1
 esgpull update --tag ${EXPERIMENT_NAME} --yes
 esgpull download --tag ${EXPERIMENT_NAME}

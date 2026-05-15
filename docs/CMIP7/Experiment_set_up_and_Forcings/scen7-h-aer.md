@@ -114,6 +114,10 @@ you actually need to run your model.
 
 EXPERIMENT_NAME="scen7-h-Aer"
 
+## You may need to run the below if you haven't already done it once with esgpull
+# esgpull self install
+## You may also need to run this step to get the data to download
+# esgpull config api.index_node esgf-node.ornl.gov/esgf-1-5-bridge
 esgpull add --track --tag ${EXPERIMENT_NAME} source_id:CEDS-CMIP-2025-04-18,CEDS-CMIP-2025-04-18-supplemental,IIASA-IAMC-h-1-0-0,IIASA-IAMC-1-0-0,UofMD-landState-h-3-1-1,CR-h-1-0-0,UOEXETER-ScenarioMIP-2-2-2,FZJ-CMIP-ozone-vl-1-0,FZJ-CMIP-nitrogen-vl-1-0,SOLARIS-HEPPA-ScenarioMIP-4-6,PIK-h-1-0-0
 esgpull update --tag ${EXPERIMENT_NAME} --yes
 esgpull download --tag ${EXPERIMENT_NAME}
