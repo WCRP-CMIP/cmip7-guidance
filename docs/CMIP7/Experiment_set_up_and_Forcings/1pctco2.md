@@ -65,7 +65,7 @@ If you are prescribing step changes, please prescribe them so that the average o
 
 $$
 \begin{aligned}
-c(t \rightarrow t + \Delta t)
+\overline{c(t \rightarrow t + \Delta t)}
 &= \frac{1}{\Delta t} \int_t^{t + \Delta t} c(t)\,dt \\
 &= \frac{1}{\Delta t} \int_t^{t + \Delta t} c_0 \cdot 1.01^{\frac{t - t_0}{\tau}}\,dt \\
 &= \frac{1}{\Delta t} \left[ \frac{c_0 \cdot \tau}{\ln(1.01)} 1.01^{\frac{t - t_0}{\tau}} \right]_t^{t + \Delta t} \\
@@ -78,7 +78,7 @@ $$
 For annual steps $(\Delta t = 1\ \mathrm{year})$, this simplifies to
 
 $$
-c(y) = \frac{c_0 \cdot 1.01^{y - 1850}}{\ln(1.01)} \cdot 0.01,
+\overline{c(y)} = \frac{c_0 \cdot 1.01^{y - 1850}}{\ln(1.01)} \cdot 0.01,
 $$
 
 where $y$ is the year of interest.
@@ -86,12 +86,21 @@ where $y$ is the year of interest.
 For monthly steps of a constant size, $(\Delta t = 1\ \mathrm{month})$, this simplifies to
 
 $$
-c(y, m) = c_0 \cdot 1.01^{y + \frac{m - 1}{12} - 1850} \cdot \frac{12}{\ln(1.01)} \left( 1.01^{\frac{1}{12}} - 1 \right),
+\overline{c(y, m)} = c_0 \cdot 1.01^{y + \frac{m - 1}{12} - 1850} \cdot \frac{12}{\ln(1.01)} \left( 1.01^{\frac{1}{12}} - 1 \right),
 $$
 
 where $y$ is the year of interest and $m$ is the month of interest (indexed such that January is 1, February is 2 etc. etc.).
 
 If you have months of different lengths, you can adjust the formula above to suit your model's calendar.
+It also turns out that,
+for the parameter values used in this experiment and typical earth system model setups,
+the error that comes from simply using 
+the average of the concentration at the start and end of each timestep 
+is much less than second-order, so the following equation is also acceptable, arguably simpler, route.
+
+$$
+\overline{c(t \rightarrow t + \Delta t)} = \frac{c(t) + c(t + \Delta t)}{2}
+$$
 
 <!--- 
     TODO: discuss with Matt/someone else the specific implementation instructions.
