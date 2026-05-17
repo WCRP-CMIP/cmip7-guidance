@@ -53,6 +53,46 @@ The forcings relevant for this simulation are the same as for the [piControl sim
 
 See instructions for the [piControl simulation](./picontrol.md).
 You have to increase the atmospheric CO<sub>2</sub> concentrations at one percent per year yourself.
+CO2 concentrations should increase as
+
+$$
+c(t) = c_0 \cdot 1.01^{\frac{t - t_0}{\tau}},
+$$
+
+where $t_0$ is 1850 and $\tau$ is one year in this case.
+
+If you are prescribing step changes, please prescribe them so that the average over each step matches the average over the continuous function, i.e.
+
+$$
+\begin{aligned}
+c(t \rightarrow t + \Delta t)
+&= \frac{1}{\Delta t} \int_t^{t + \Delta t} c(t)\,dt \\
+&= \frac{1}{\Delta t} \int_t^{t + \Delta t} c_0 \cdot 1.01^{\frac{t - t_0}{\tau}}\,dt \\
+&= \frac{1}{\Delta t} \left[ \frac{c_0 \cdot \tau}{\ln(1.01)} 1.01^{\frac{t - t_0}{\tau}} \right]_t^{t + \Delta t} \\
+&= \frac{1}{\Delta t \ln(1.01)} \left( c_0 \cdot \tau \cdot 1.01^{\frac{t + \Delta t - t_0}{\tau}} - c_0 \cdot \tau \cdot 1.01^{\frac{t - t_0}{\tau}} \right) \\
+&= \frac{\tau}{\Delta t \ln(1.01)} c_0 \cdot 1.01^{\frac{t - t_0}{\tau}} \left( 1.01^{\frac{\Delta t}{\tau}} - 1 \right) \\
+&= c(t) \frac{\tau}{\Delta t \ln(1.01)} \left( 1.01^{\frac{\Delta t}{\tau}} - 1 \right)
+\end{aligned}
+$$
+
+For annual steps $(\Delta t = 1\ \mathrm{year})$, this simplifies to
+
+$$
+c(y) = \frac{c_0 \cdot 1.01^{y - 1850}}{\ln(1.01)} \cdot 0.01,
+$$
+
+where $y$ is the year of interest.
+
+For monthly steps of a constant size, $(\Delta t = 1\ \mathrm{month})$, this simplifies to
+
+$$
+c(y, m) = c_0 \cdot 1.01^{y + \frac{m - 1}{12} - 1850} \cdot \frac{12}{\ln(1.01)} \left( 1.01^{\frac{1}{12}} - 1 \right),
+$$
+
+where $y$ is the year of interest and $m$ is the month of interest (indexed such that January is 1, February is 2 etc. etc.).
+
+If you have months of different lengths, you can adjust the formula above to suit your model's calendar.
+
 <!--- 
     TODO: discuss with Matt/someone else the specific implementation instructions.
     Set concentrations in first year to be higher than piControl
