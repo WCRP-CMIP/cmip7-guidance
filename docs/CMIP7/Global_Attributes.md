@@ -5,7 +5,7 @@
 
 **Version:** 1.1  
 **Published:** 18 May 2026
-**DOI:** [10.5281/zenodo.17250297](https://doi.org/10.5281/zenodo.17250297)  
+**DOI:** [10.5281/zenodo.19366138](https://doi.org/10.5281/zenodo.19366138)  
 **Authors:** Karl E. Taylor, Laurent Troussellier, Sasha Ames, David Hassell, Maria Molina, Zebedee Nicholls, Martin Schupfner, James Anstey, Daniel Ellis, Elisabeth Dingley, Paul J. Durack, Guillaume Levavasseur, Matthew Mizielinski, and Marie-Pierre Moine  
 
 
