@@ -53,55 +53,47 @@ To install the Metagrid UI for end-users to search and download data, read the d
 
 _Coming soon...._
 
-## 2. Dataset publication - Preliminary testing for CMIP7
 
-_the command-line tools described in this section are not production-ready for CMIP7 publication, however we welcome test users who have successfully produced CMORized data to test out the tools/workflows. Follow the steps below specific to testing_
+## 2. Dataset publication 
 
- - Apply for Integration testing group membership [*here*](https://app.globus.org/groups/e3329078-b8f6-11f0-9fdd-0e7d9e9fc9e3)
-   - You may use your insitution or well-known Social Auth provider to log in to Globus
- - Install Python packages for publication workflow:
-   ```
-   pip install 'git+https://github.com/sashakames/esg-publisher.git@stac-update' esgvoc esgprep
-   ```
- - Follow instructions linked from the [*esgf-prepare* docs site](https://esgf.github.io/esgf-prepare/) on CMIP7 vocabulary installation with `esgvoc`
- - Add the following to your `esg.yaml` config file for publishing:
-```
-stac_config:
-  stac_client:
-    client_id:  ec5f07c0-7ed8-4f2b-94f2-ddb6f8fc91a3
-    redirect_uri:  https://auth.globus.org/v2/web/auth-code
-  token_storage_file: ~/.esgf2-publisher.json 
-  stac_transaction_api:
-    client_id: 6fa3b827-5484-42b9-84db-f00c7a183a6a
-    access_control_policy: https://esgf2.s3.amazonaws.com/access_control_policy.json
-    scope_string: https://auth.globus.org/scopes/6fa3b827-5484-42b9-84db-f00c7a183a6a/ingest    
-    base_url: https://client-integration-transaction.api.stac.esgf-west.org
-  stac_api: https://integration-testing.api.stac.esgf-west.org
-```
- - When you run `esgpublish`, and provided that your data scans for extraction without error, you will be prompted to fetch a token by *copy/pasting* a link to your browser.  Follow instructions with the authorization code.  This process will establish your access token to publish.
 
 ### 2.1 Requirements
 
 Publishers to ESGF **must** have an existing Data Node installed at their site. Although the publisher software (from v5.x onwards) does not need to run on the Data Node it does require a _Data mount_ for the software to access data files. 
 
-### 2.2 Dataset preparation 
+### 2.2 Introduction to ESGF-NG and Authorization for Publishing
+
+Please read the following [ESGF-NG Onboarding](https://github.com/ESGF/esgf-ng-onboarding/tree/main) pages hosted at GitHub.  These introduce the STAC Transaction API endpoint options and the two ESGF authentication domains: Globus and EGI Auth.  Each domain/system has separare policies for account and authorization management.  You cannot publish until you have established an authorized account to publish.
+
+### 2.3 Dataset preparation 
 The ESGF publication process requires robust and effective data management, which can also be a burden for data managers. However, the [ESGF esgprep toolbox](https://esgf.github.io/esgf-prepare/) is a piece of software that enables data preparation according to ESGF best practices. Esgprep allows the data providers and data node managers to easily prepare their data for publishing to an ESGF node - it is a standalone toolbox. It can be used to fetch required configuration files, apply the Data Reference Syntax on local filesystems and/or generate mapfiles for ESGF publication.
 
-Full details of _esgprep_ and instructions for use provided by the team at Institut Pierre-Simon Laplace (IPSL) can be [found here](https://esgf.github.io/esgf-prepare/).  
+Full details of _esgprep_ and instructions for use provided by the team at Institut Pierre-Simon Laplace (IPSL) can be [found here](https://esgf.github.io/esgf-prepare/).  Note that the package requires an `esgvoc` installation
+- `esgvoc use cmip7@latest` will fetch your CVs needed for esgprep and `compliance-checker` with the WCRP plugin.
 
-### 2.3 Publisher introduction 
+
+### 2.4 Publisher introduction 
 The esg-publisher or _esgcet_ Python package contains a collection of command-line utilities to scan, manipulate and push dataset metadata to an ESGF index node. 
 The basic publication process takes several steps with some optional steps. Publisher functionality is available via several submodles/classes in the package.
 Please refer to the [user documentation](https://esg-publisher.readthedocs.io/en/stable/intro.html) and [Github issues page](https://github.com/ESGF/esg-publisher/issues)
 
-### 2.4 ESG-Publisher software installation 
+The publisher installation includes the IOOS checker and WCRP plugins. 
+
+### 2.5 ESG-Publisher software installation 
 **Requirements** 
 
 1. A python environment, using venv, conda, miniforge/mamba etc. 
 2. Mountpoint map to data on the same host as the publisher software installation, so the publisher has access to scan data using the integrated XArray package.
 3. Basic dataset information provided via the esg mapfile format. For example using the esgf-prepare/esgmapfile utility.
+4.  `pip install esgcet` will install the most recent version of the package.
 
-### 2.5 Dataset publication
+### 2.6. Authorizarion to Publish  
+
+- In order to publish, `esgpublish` will need to establish your publishing credential when run for the first time.
+- Alternatively run `esglogin [--config </path/to/your/esg.yaml>]` as that can be run without invoking `esgpublish`
+- You will be prompted to fetch a token by *copy/pasting* a link to your browser.  Follow instructions with the authorization code.  This process will establish your access token to publish.
+
+### 2.7 Dataset publication
 Full details of the dataset publication process using _pip install_ to install _esgcet_ can be found [here](https://esg-publisher.readthedocs.io/en/stable/install.html)
 
 In the examples below, the configuration file is installed in a default location of `$HOME/.esg.yaml`.  the `<DRS-dataset-id>` follows the CMIP7 DRS structure and uses dot `.` delimters between each controlled-vocabulary property ending with the *Directory Date* as in the form `v20YYMMDD`.
@@ -113,6 +105,8 @@ esgpublish --map <DRS-dataset-id>.map
 Where a `.map` file has been generated by the `esgmapfile` command from the `esgf-prepare` toolbox.
 
 *Please note* that publication will automatically run the per-file QAQC process as stipulated in the CMIP7 toml, and this process is a requirement for publication to the CMIP7 collection in the ESGF catalog.  Data that fails a QC check yet was published by means of tampering with the publisher will be subject to removal from the catalog at a later date.
+
+ - When you run `esgpublish`, and provided that your data scans for extraction without error, and you skip the _esglogin_ step, you will be prompted to fetch a token by *copy/pasting* a link to your browser.  Follow instructions with the authorization code.  This process will establish your access token to publish.
 
 ## 3. Dataset retraction
 
@@ -148,6 +142,8 @@ However the version can also be user-specified as an input to CMOR.
 Sites that use CMOR should ensure that version identifiers are correctly specified for updated datasets (i.e., that a previous user-specified version is not mistakenly applied to updated version of a dataset).
 
 Alternatively, and in cases where CMOR is not used, the [ESGDRS Tool](https://esgf.github.io/esgf-prepare/drs.html) can be used to set the version identifier.
+
+Once a new version is added follow the same publication procedures to publish the updated data.  The new dataset will supersede the prior version in ESGF data discovery.
 
 ### 4.2 Errata Service
 

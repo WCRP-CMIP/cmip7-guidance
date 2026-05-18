@@ -1501,54 +1501,45 @@ Instructions and links to any issuses can be <a href="https://github.com/ESGF/es
 To install the Metagrid UI for end-users to search and download data, read the documentation <a href="https://metagrid.readthedocs.io/en/latest/">here</a> and see the Github repo <a href="https://github.com/esgf2-us/metagrid">here</a>. </p>
 <h3 id="13-compute-node-services">1.3 Compute Node services<a class="headerlink" href="#13-compute-node-services" title="Permanent link">&para;</a></h3>
 <p><em>Coming soon....</em></p>
-<h2 id="2-dataset-publication-preliminary-testing-for-cmip7">2. Dataset publication - Preliminary testing for CMIP7<a class="headerlink" href="#2-dataset-publication-preliminary-testing-for-cmip7" title="Permanent link">&para;</a></h2>
-<p><em>the command-line tools described in this section are not production-ready for CMIP7 publication, however we welcome test users who have successfully produced CMORized data to test out the tools/workflows. Follow the steps below specific to testing</em></p>
-<ul>
-<li>Apply for Integration testing group membership <a href="https://app.globus.org/groups/e3329078-b8f6-11f0-9fdd-0e7d9e9fc9e3"><em>here</em></a></li>
-<li>You may use your insitution or well-known Social Auth provider to log in to Globus</li>
-<li>Install Python packages for publication workflow:
-   <div class="codehilite"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip install &#39;git+https://github.com/sashakames/esg-publisher.git@stac-update&#39; esgvoc esgprep
-</code></pre></div></li>
-<li>Follow instructions linked from the <a href="https://esgf.github.io/esgf-prepare/"><em>esgf-prepare</em> docs site</a> on CMIP7 vocabulary installation with <code>esgvoc</code></li>
-<li>Add the following to your <code>esg.yaml</code> config file for publishing:
-<div class="codehilite"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>stac_config:
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  stac_client:
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    client_id:  ec5f07c0-7ed8-4f2b-94f2-ddb6f8fc91a3
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    redirect_uri:  https://auth.globus.org/v2/web/auth-code
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>  token_storage_file: ~/.esgf2-publisher.json 
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>  stac_transaction_api:
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    client_id: 6fa3b827-5484-42b9-84db-f00c7a183a6a
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    access_control_policy: https://esgf2.s3.amazonaws.com/access_control_policy.json
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    scope_string: https://auth.globus.org/scopes/6fa3b827-5484-42b9-84db-f00c7a183a6a/ingest    
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    base_url: https://client-integration-transaction.api.stac.esgf-west.org
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>  stac_api: https://integration-testing.api.stac.esgf-west.org
-</code></pre></div></li>
-<li>When you run <code>esgpublish</code>, and provided that your data scans for extraction without error, you will be prompted to fetch a token by <em>copy/pasting</em> a link to your browser.  Follow instructions with the authorization code.  This process will establish your access token to publish.</li>
-</ul>
+<h2 id="2-dataset-publication">2. Dataset publication<a class="headerlink" href="#2-dataset-publication" title="Permanent link">&para;</a></h2>
 <h3 id="21-requirements">2.1 Requirements<a class="headerlink" href="#21-requirements" title="Permanent link">&para;</a></h3>
 <p>Publishers to ESGF <strong>must</strong> have an existing Data Node installed at their site. Although the publisher software (from v5.x onwards) does not need to run on the Data Node it does require a <em>Data mount</em> for the software to access data files. </p>
-<h3 id="22-dataset-preparation">2.2 Dataset preparation<a class="headerlink" href="#22-dataset-preparation" title="Permanent link">&para;</a></h3>
+<h3 id="22-introduction-to-esgf-ng-and-authorization-for-publishing">2.2 Introduction to ESGF-NG and Authorization for Publishing<a class="headerlink" href="#22-introduction-to-esgf-ng-and-authorization-for-publishing" title="Permanent link">&para;</a></h3>
+<p>Please read the following <a href="https://github.com/ESGF/esgf-ng-onboarding/tree/main">ESGF-NG Onboarding</a> pages hosted at GitHub.  These introduce the STAC Transaction API endpoint options and the two ESGF authentication domains: Globus and EGI Auth.  Each domain/system has separare policies for account and authorization management.  You cannot publish until you have established an authorized account to publish.</p>
+<h3 id="23-dataset-preparation">2.3 Dataset preparation<a class="headerlink" href="#23-dataset-preparation" title="Permanent link">&para;</a></h3>
 <p>The ESGF publication process requires robust and effective data management, which can also be a burden for data managers. However, the <a href="https://esgf.github.io/esgf-prepare/">ESGF esgprep toolbox</a> is a piece of software that enables data preparation according to ESGF best practices. Esgprep allows the data providers and data node managers to easily prepare their data for publishing to an ESGF node - it is a standalone toolbox. It can be used to fetch required configuration files, apply the Data Reference Syntax on local filesystems and/or generate mapfiles for ESGF publication.</p>
-<p>Full details of <em>esgprep</em> and instructions for use provided by the team at Institut Pierre-Simon Laplace (IPSL) can be <a href="https://esgf.github.io/esgf-prepare/">found here</a>.  </p>
-<h3 id="23-publisher-introduction">2.3 Publisher introduction<a class="headerlink" href="#23-publisher-introduction" title="Permanent link">&para;</a></h3>
+<p>Full details of <em>esgprep</em> and instructions for use provided by the team at Institut Pierre-Simon Laplace (IPSL) can be <a href="https://esgf.github.io/esgf-prepare/">found here</a>.  Note that the package requires an <code>esgvoc</code> installation
+- <code>esgvoc use cmip7@latest</code> will fetch your CVs needed for esgprep and <code>compliance-checker</code> with the WCRP plugin.</p>
+<h3 id="24-publisher-introduction">2.4 Publisher introduction<a class="headerlink" href="#24-publisher-introduction" title="Permanent link">&para;</a></h3>
 <p>The esg-publisher or <em>esgcet</em> Python package contains a collection of command-line utilities to scan, manipulate and push dataset metadata to an ESGF index node. 
 The basic publication process takes several steps with some optional steps. Publisher functionality is available via several submodles/classes in the package.
 Please refer to the <a href="https://esg-publisher.readthedocs.io/en/stable/intro.html">user documentation</a> and <a href="https://github.com/ESGF/esg-publisher/issues">Github issues page</a></p>
-<h3 id="24-esg-publisher-software-installation">2.4 ESG-Publisher software installation<a class="headerlink" href="#24-esg-publisher-software-installation" title="Permanent link">&para;</a></h3>
+<p>The publisher installation includes the IOOS checker and WCRP plugins. </p>
+<h3 id="25-esg-publisher-software-installation">2.5 ESG-Publisher software installation<a class="headerlink" href="#25-esg-publisher-software-installation" title="Permanent link">&para;</a></h3>
 <p><strong>Requirements</strong> </p>
 <ol>
 <li>A python environment, using venv, conda, miniforge/mamba etc. </li>
 <li>Mountpoint map to data on the same host as the publisher software installation, so the publisher has access to scan data using the integrated XArray package.</li>
 <li>Basic dataset information provided via the esg mapfile format. For example using the esgf-prepare/esgmapfile utility.</li>
+<li><code>pip install esgcet</code> will install the most recent version of the package.</li>
 </ol>
-<h3 id="25-dataset-publication">2.5 Dataset publication<a class="headerlink" href="#25-dataset-publication" title="Permanent link">&para;</a></h3>
+<h3 id="26-authorizarion-to-publish">2.6. Authorizarion to Publish<a class="headerlink" href="#26-authorizarion-to-publish" title="Permanent link">&para;</a></h3>
+<ul>
+<li>In order to publish, <code>esgpublish</code> will need to establish your publishing credential when run for the first time.</li>
+<li>Alternatively run <code>esglogin [--config &lt;/path/to/your/esg.yaml&gt;]</code> as that can be run without invoking <code>esgpublish</code></li>
+<li>You will be prompted to fetch a token by <em>copy/pasting</em> a link to your browser.  Follow instructions with the authorization code.  This process will establish your access token to publish.</li>
+</ul>
+<h3 id="27-dataset-publication">2.7 Dataset publication<a class="headerlink" href="#27-dataset-publication" title="Permanent link">&para;</a></h3>
 <p>Full details of the dataset publication process using <em>pip install</em> to install <em>esgcet</em> can be found <a href="https://esg-publisher.readthedocs.io/en/stable/install.html">here</a></p>
 <p>In the examples below, the configuration file is installed in a default location of <code>$HOME/.esg.yaml</code>.  the <code>&lt;DRS-dataset-id&gt;</code> follows the CMIP7 DRS structure and uses dot <code>.</code> delimters between each controlled-vocabulary property ending with the <em>Directory Date</em> as in the form <code>v20YYMMDD</code>.</p>
 <p><strong>Example command:</strong>
-<div class="codehilite"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>esgpublish --map &lt;DRS-dataset-id&gt;.map
+<div class="codehilite"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>esgpublish --map &lt;DRS-dataset-id&gt;.map
 </code></pre></div>
 Where a <code>.map</code> file has been generated by the <code>esgmapfile</code> command from the <code>esgf-prepare</code> toolbox.</p>
 <p><em>Please note</em> that publication will automatically run the per-file QAQC process as stipulated in the CMIP7 toml, and this process is a requirement for publication to the CMIP7 collection in the ESGF catalog.  Data that fails a QC check yet was published by means of tampering with the publisher will be subject to removal from the catalog at a later date.</p>
+<ul>
+<li>When you run <code>esgpublish</code>, and provided that your data scans for extraction without error, and you skip the <em>esglogin</em> step, you will be prompted to fetch a token by <em>copy/pasting</em> a link to your browser.  Follow instructions with the authorization code.  This process will establish your access token to publish.</li>
+</ul>
 <h2 id="3-dataset-retraction">3. Dataset retraction<a class="headerlink" href="#3-dataset-retraction" title="Permanent link">&para;</a></h2>
 <h3 id="31-retraction-process">3.1 Retraction process<a class="headerlink" href="#31-retraction-process" title="Permanent link">&para;</a></h3>
 <p>Datasets that are found to be scientifically or technically incorrect must be retracted and the reasons for retraction explained using the <a href="https://errata.esgf.io/">Errata service</a>.</p>
@@ -1557,7 +1548,7 @@ Follow the <a href="https://esg-publisher.readthedocs.io/en/stable/esgunpublish.
 If you need to <em>outright delete</em> a dataset, please reach out to ESGF index administrators.
 Note that retracting is necessary to register the status of retracted data with the ESGF network so that users searching the index will see the retracted status and any nodes that have replicated the data can take appropriate action.</p>
 <p><strong>Example command:</strong>
-<div class="codehilite"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>esgunpublish --dset-id &lt;DRS-dataset-id&gt;
+<div class="codehilite"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>esgunpublish --dset-id &lt;DRS-dataset-id&gt;
 </code></pre></div></p>
 <h3 id="32-hosting-of-retracted-data">3.2 Hosting of retracted data<a class="headerlink" href="#32-hosting-of-retracted-data" title="Permanent link">&para;</a></h3>
 <p>We strongly recommend that once data has been retracted that the affected files are removed from public storage and are not available for 
@@ -1573,6 +1564,7 @@ Sites <strong>must ensure</strong> that an updated dataset is never erroneously 
 However the version can also be user-specified as an input to CMOR.
 Sites that use CMOR should ensure that version identifiers are correctly specified for updated datasets (i.e., that a previous user-specified version is not mistakenly applied to updated version of a dataset).</p>
 <p>Alternatively, and in cases where CMOR is not used, the <a href="https://esgf.github.io/esgf-prepare/drs.html">ESGDRS Tool</a> can be used to set the version identifier.</p>
+<p>Once a new version is added follow the same publication procedures to publish the updated data.  The new dataset will supersede the prior version in ESGF data discovery.</p>
 <h3 id="42-errata-service">4.2 Errata Service<a class="headerlink" href="#42-errata-service" title="Permanent link">&para;</a></h3>
 <p>When a site creates an updated version of a dataset, or retracts a dataset, an Errata must be opened using the <a href="https://errata.esgf.io/">Errata service</a>.  Please see the <a href="https://ipsl.gitbook.io/esgf-errata-service">Errata documentation</a> on the procedures.  Users can also create Errata, and it is the responsibility of the data managers or modelers to review user-created Errata issues to confirm or challenge the input.</p>
   </div>
@@ -1841,10 +1833,10 @@ Sites that use CMOR should ensure that version identifiers are correctly specifi
         
 
         
-        <a href="#2-dataset-publication-preliminary-testing-for-cmip7"
+        <a href="#2-dataset-publication"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#2-dataset-publication-preliminary-testing-for-cmip7');">
-            2. Dataset publication - Preliminary testing for CMIP7
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#2-dataset-publication');">
+            2. Dataset publication
         </a>
         
         
@@ -1854,28 +1846,40 @@ Sites that use CMOR should ensure that version identifiers are correctly specifi
             2.1 Requirements
         </a>
         
-        <a href="#22-dataset-preparation"
+        <a href="#22-introduction-to-esgf-ng-and-authorization-for-publishing"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#22-dataset-preparation');">
-            2.2 Dataset preparation
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#22-introduction-to-esgf-ng-and-authorization-for-publishing');">
+            2.2 Introduction to ESGF-NG and Authorization for Publishing
         </a>
         
-        <a href="#23-publisher-introduction"
+        <a href="#23-dataset-preparation"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#23-publisher-introduction');">
-            2.3 Publisher introduction
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#23-dataset-preparation');">
+            2.3 Dataset preparation
         </a>
         
-        <a href="#24-esg-publisher-software-installation"
+        <a href="#24-publisher-introduction"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#24-esg-publisher-software-installation');">
-            2.4 ESG-Publisher software installation
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#24-publisher-introduction');">
+            2.4 Publisher introduction
         </a>
         
-        <a href="#25-dataset-publication"
+        <a href="#25-esg-publisher-software-installation"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#25-dataset-publication');">
-            2.5 Dataset publication
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#25-esg-publisher-software-installation');">
+            2.5 ESG-Publisher software installation
+        </a>
+        
+        <a href="#26-authorizarion-to-publish"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#26-authorizarion-to-publish');">
+            2.6. Authorizarion to Publish
+        </a>
+        
+        <a href="#27-dataset-publication"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#27-dataset-publication');">
+            2.7 Dataset publication
         </a>
         
         
