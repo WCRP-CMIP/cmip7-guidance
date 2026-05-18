@@ -122,8 +122,8 @@ flowchart LR
 
 ### Typical Timeline
 
-- Simple registrations ( institution, component configuration ): 1-3 days
-- Complex registrations ( grid-cells, source-id): May take longer due to dependencies
+- Simple registrations (institution, component configuration): 1-3 days
+- Complex registrations (grid-cells, source-id): May take longer due to dependencies
 
 ### Tips
 
