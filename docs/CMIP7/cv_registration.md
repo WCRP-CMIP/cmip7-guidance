@@ -15,7 +15,7 @@ CMIP7 uses **Controlled Vocabularies (CVs)** to ensure consistency across all pa
 
 - Your **institution** (organisation)
 - Your **model** (source_id)
-- Any new **experiments** (if applicable)
+- Any new **experiments** (if applicable) 🛑 *Process suspended temporarily, should return end May 2026* 🛑
 - **Model documentation** (EMD) components
 
 Registration is done through **GitHub issue forms** - no Git expertise required.
@@ -61,12 +61,14 @@ Register your institution before registering a model.
 
 For new experiments not already in the CV.
 
-**Repository**: [CMIP7-CVs](https://github.com/WCRP-CMIP/CMIP7-CVs/issues)
+🛑 *Process suspended temporarily, should return end May 2026* 🛑
 
+**Repository**: [CMIP7-CVs](https://github.com/WCRP-CMIP/CMIP7-CVs/issues)
+<!--
 | Form | Link |
 |------|------|
 | Experiment | [Register experiment](https://github.com/WCRP-CMIP/CMIP7-CVs/issues/new?template=experiment.yml) |
-
+--!>
 ---
 
 ### 2.4 Essential Model Documentation (EMD)
