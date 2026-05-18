@@ -14,7 +14,7 @@
     
 
 
-<title>CMIP7 Global Attributes</title>
+<title>Global Attributes</title>
 
 
 
@@ -29,7 +29,7 @@
 
 <!-- Open Graph (Facebook, LinkedIn) -->
 
-<meta property="og:title" content="CMIP7 Global Attributes">
+<meta property="og:title" content="Global Attributes">
 
 
 
@@ -42,7 +42,7 @@
 
 <!-- Twitter Card -->
 
-<meta name="twitter:title" content="CMIP7 Global Attributes">
+<meta name="twitter:title" content="Global Attributes">
 
 
 
@@ -1435,7 +1435,7 @@
         <h1
           class="scroll-m-20 text-4xl font-semibold tracking-tight sm:text-3xl xl:text-4xl"
         >
-          CMIP7 Global Attributes
+          Global Attributes
         </h1>
 
         <div class="flex items-center gap-2 pt-1.5">
@@ -1462,192 +1462,551 @@
     </div>
   </div>
   <div class="typography w-full flex-1 *:data-[slot=alert]:first:mt-0">
-    <p><strong>Version:</strong> 1.0<br />
-<strong>Published:</strong> 6 October 2025<br />
-<strong>DOI:</strong> <a href="https://doi.org/10.5281/zenodo.17250297">10.5281/zenodo.17250297</a><br />
+    <hr />
+<h1 id="cmip7-global-attributes-filenames-directory-path-and-cvs">CMIP7 Global Attributes, Filenames, Directory Path, and CVs<a class="headerlink" href="#cmip7-global-attributes-filenames-directory-path-and-cvs" title="Permanent link">&para;</a></h1>
+<hr />
+<p><strong>Version:</strong> 1.1<br />
+<strong>Published:</strong> 18 May 2026
+<strong>DOI:</strong> <a href="https://doi.org/10.5281/zenodo.19366138">10.5281/zenodo.19366138</a><br />
 <strong>Authors:</strong> Karl E. Taylor, Laurent Troussellier, Sasha Ames, David Hassell, Maria Molina, Zebedee Nicholls, Martin Schupfner, James Anstey, Daniel Ellis, Elisabeth Dingley, Paul J. Durack, Guillaume Levavasseur, Matthew Mizielinski, and Marie-Pierre Moine  </p>
-<hr />
-<h2 id="1-executive-summary">1. Executive Summary<a class="headerlink" href="#1-executive-summary" title="Permanent link">&para;</a></h2>
-<p>This document <strong>summarizes</strong> the definitions of the <strong>global attributes</strong>, <strong>Data Reference Syntax (DRS)</strong>, <strong>file naming conventions</strong>, and <strong>directory structure</strong> for <strong>CMIP7</strong> (Coupled Model Intercomparison Project Phase 7).  </p>
-<p>It is intended as a convenient reference and overview.<br />
-The <strong>authoritative and complete specification</strong> is available on Zenodo:<br />
-➡️ <a href="https://doi.org/10.5281/zenodo.17250296">https://doi.org/10.5281/zenodo.17250296</a></p>
-<p>Each CMIP7 model output file includes standardized metadata (global attributes) describing:</p>
+<h2 id="1-introduction">1. Introduction<a class="headerlink" href="#1-introduction" title="Permanent link">&para;</a></h2>
+<p>This guidance document provides a summary of the CMIP7 Global attributes and of the Data Reference Syntax (DRS) which uniquely identifies datasets and is used to construct filenames and directory paths. Most of what is documented here can also be found in a <a href="https://zenodo.org/records/19366138">citable reference document</a> archived by Zenodo, but some information provided here is new.</p>
+<p>Each CMIP7 model output file includes standardized metadata, often included as file global attributes, which name or describe the characteristics of each dataset, including, for example:</p>
 <ul>
-<li>The <strong>source model</strong> and <strong>experiment conditions</strong></li>
-<li><strong>Data content</strong> and <strong>licensing</strong></li>
-<li><strong>Controlled vocabulary (CV)</strong> values ensuring consistency across models</li>
+<li>The source (model) and institution responsible for producing the data </li>
+<li>The experiment and the activity responsible for the data </li>
+<li>The terms used to construct the Data Reference Syntax (DRS)</li>
+<li>Various dataset characteristics (e.g., reporting frequency, "parent experiment", region spanned)</li>
 </ul>
-<p>These attributes ensure interoperability, facilitate search and retrieval, and provide traceable metadata for analysis.<br />
-The DRS system connects file naming, directory organization, and dataset metadata.</p>
+<p>Some of the global attributes are mandatory (e.g., the attributes comprising the DRS), while others are conditionally required or optional. Most attributes must be assigned a value found in a particular list of terms referred to as its controlled vocabulary (CV). Most CVs are revised versions of those relied on in previous CMIP phases. Controlled vocabularies ensure metadata consistency across datasets, which facilitates interpretation of the data and development of software tools for search and retrieval of data.</p>
+<p>The CMIP7 Controlled Vocabularies (CVs) for the attributes described in this document are available in human-readable form in the <a href="https://github.com/WCRP-CMIP/cmip7-cmor-tables/blob/main/tables-cvs/cmor-cvs.json">cmor-cvs.json file</a> found in the CMOR github repository as described in <a href="#appendix-3-cmip7-controlled-vocabularies-cvs-for-global-attributes">Appendix 3</a> below.</p>
 <hr />
-<h2 id="2-introduction">2. Introduction<a class="headerlink" href="#2-introduction" title="Permanent link">&para;</a></h2>
-<p>CMIP7 continues the CMIP framework with updated and expanded metadata definitions.<br />
-Each file records a well-defined set of <strong>global attributes</strong> — some mandatory, some optional — required to:</p>
-<ul>
-<li>Identify the model and experiment</li>
-<li>Ensure reproducibility and data discovery</li>
-<li>Enable automated validation and search</li>
-</ul>
-<p>Values for many attributes are governed by <strong>CMIP7 Controlled Vocabularies (CVs)</strong> available at:<br />
-➡️ <a href="https://github.com/WCRP-CMIP/CMIP7_CVs/">https://github.com/WCRP-CMIP/CMIP7_CVs/</a><br />
-<a href="https://github.com/WCRP-CMIP/WCRP-Universe/">https://github.com/WCRP-CMIP/WCRP-Universe/</a><br />
-Guidance documents: <a href="https://wcrp-cmip.github.io/cmip7-guidance/">https://wcrp-cmip.github.io/cmip7-guidance/</a></p>
+<h2 id="2-filenames">2. Filenames<a class="headerlink" href="#2-filenames" title="Permanent link">&para;</a></h2>
+<p>Each CMIP7 filename is constructed from the metadata recorded in each file (see <a href="#table-1-list-of-cmip7-drs-elements">Table 1</a> below). The metadata elements, mostly stored as global attribute, are inserted into the following template:</p>
+<p><strong>Filename template:</strong></p>
+<div class="codehilite"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&lt;variable_id&gt;_&lt;branding_suffix&gt;_&lt;frequency&gt;_&lt;region&gt;_&lt;grid_label&gt;_&lt;source_id&gt;_&lt;experiment_id&gt;_&lt;variant_label&gt;[_&lt;timeRangeDD&gt;].nc
+</code></pre></div>
+<p><strong>Example:</strong></p>
+<div class="codehilite"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>tas_tavg-h2m-hxy-u_mon_glb_g121_CanESM6-0-MR_historical_r2i1p1f1_190001-190912.nc
+</code></pre></div>
+<p>Each global attribute within the template's angle brackets is replaced with the value assigned to it in the file. A DRS global attribute must be drawn from its CV which includes all terms recognized by CMIP7. Together the DRS attributes uniquely identify the contents of the file and ensure that within the CMIP7 archive all filenames are unique.</p>
+<p>Note that the "variant label" must conform to a pattern-constrained CV. Note also that the last element in the filename template (timeRangeDD) is not a global attribute; rather it provides the date/time of the first and last time-sample found in the file as described in <a href="#appendix-1-time-labels-appearing-in-filenames">Appendix 1</a>.</p>
+<p>The CMIP6 filenames differed from the CMIP7 construction defined above in several ways, so codes meant to extract the information from them and interpret it will need to be modified. In CMIP7 variables are uniquely identified by attaching to the variable_id a branding_suffix (see <a href="https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/Branded_Variables/">the guidance notes</a>), whereas in CMIP6 a "table name" was attached. In CMIP7 a region attribute has been included for the first time and the variant_label is interpreted in a different way for decadal prediction forecasts and hindcasts. The CMIP6-defined timeRangeDD has for CMIP7 been slightly simplified as given in <a href="#appendix-1-time-labels-appearing-in-filenames">Appendix 1</a>. The ending suffix <code>-clim</code> found in CMIP6 climatological dataset filenames has been eliminated.</p>
+<p>Any code built to parse and interpret CMIP6 filenames will break when applied to CMIP7 files. We understand that this may be disruptive, but the information available from the old filenames is equally available from the new ones. The changes made for CMIP7 result in a more robust, versatile, and long-term method for uniquely identifying files, so we are making this breaking change now and appreciate any effort it may take to update scripts to adjust to it.</p>
 <hr />
-<h2 id="3-data-reference-syntax-drs-components">3. Data Reference Syntax (DRS) Components<a class="headerlink" href="#3-data-reference-syntax-drs-components" title="Permanent link">&para;</a></h2>
-<p>The <strong>DRS</strong> defines how datasets are uniquely identified and organized. It uses a subset of global attributes to construct:</p>
-<ul>
-<li><strong>Filenames</strong></li>
-<li><strong>Directory paths</strong></li>
-<li><strong>URLs and search facets</strong></li>
-</ul>
-<h3 id="key-global-attributes">Key Global Attributes<a class="headerlink" href="#key-global-attributes" title="Permanent link">&para;</a></h3>
-<div class="table-wrapper"><table>
+<h2 id="3-directory-structure-template">3. Directory Structure Template<a class="headerlink" href="#3-directory-structure-template" title="Permanent link">&para;</a></h2>
+<p>The CMIP7 data archive organizes files hierarchically, and like the filenames, the directory paths are constructed from the DRS elements recorded in the file (see <a href="#table-1-list-of-cmip7-drs-elements">Table 1</a> below). The attribute values are inserted into the following template:</p>
+<p><strong>Directory path template:</strong></p>
+<div class="codehilite"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>&lt;drs_specs&gt;/&lt;mip_era&gt;/&lt;activity_id&gt;/&lt;institution_id&gt;/&lt;source_id&gt;/&lt;experiment_id&gt;/&lt;variant_label&gt;/&lt;region&gt;/&lt;frequency&gt;/&lt;variable_id&gt;/&lt;branding_suffix&gt;/&lt;grid_label&gt;/&lt;directoryDateDD&gt;
+</code></pre></div>
+<p><strong>Example:</strong></p>
+<div class="codehilite"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>MIP-DRS7/CMIP7/CMIP/CCCma/CanESM6-0-MR/historical/r2i1p1f1/glb/mon/tas/tavg-h2m-hxy-u/g121/v20250622
+</code></pre></div>
+<p>Again, there are minor changes from CMIP6 and each DRS global attribute used in constructing the path must be drawn from its CMIP7 CV. Note that the directoryDateDD data descriptor at the end of the directory path indicates the dataset "version" and unlike the other metadata elements, it is not stored as a global attribute. The version roughly indicates the date a dataset was created; the only essential rule constraining this date is that a newer version must invariably be assigned a more recent date than the older version.</p>
+<hr />
+<h2 id="3-data-reference-syntax-drs-elements">3. Data Reference Syntax (DRS) Elements<a class="headerlink" href="#3-data-reference-syntax-drs-elements" title="Permanent link">&para;</a></h2>
+<p>The CMIP7 data descriptors used in constructing filenames and directory paths comprise the DRS. Except for two exceptions, this metadata is drawn from controlled vocabularies and stored as global attributes in files. Table 1 summarizes the DRS elements, duplicating a subset of the information found in the <a href="https://zenodo.org/records/19366138">reference document</a> but adding a column indicating any difference in how the terms were defined in CMIP6.</p>
+<h3 id="table-1-list-of-cmip7-drs-elements">Table 1. List of CMIP7 DRS elements<a class="headerlink" href="#table-1-list-of-cmip7-drs-elements" title="Permanent link">&para;</a></h3>
+<p>All elements are drawn from CMIP7 controlled vocabularies (CVs) or constructed using simple templates. <strong>All DRS global attributes must appear in every file</strong>; they are a subset of the required attributes. The timeRangeDD and directoryDateDD (indicating "version") are not global attributes but are DRS elements used in constructing filenames or directory paths. <strong>Highlighted in yellow</strong> is the subset of global attributes proposed to serve as search facets (displayed with somewhat different labels) for filtering and retrieving data on the ESGF data servers.</p>
+<div class="table-wrapper"><table style="width: 100%; border-collapse: collapse;">
 <thead>
-<tr>
-<th>Category</th>
-<th>Attribute</th>
-<th>Example</th>
-<th>Description</th>
+<tr style="background-color: #f3f3f3;">
+<th style="border: 1px solid #cccccc; padding: 8px; text-align: left; word-wrap: break-word;">DRS element</th>
+<th style="border: 1px solid #cccccc; padding: 8px; text-align: left; word-wrap: break-word;">Description</th>
+<th style="border: 1px solid #cccccc; padding: 8px; text-align: left; word-wrap: break-word;">Sample values</th>
+<th style="border: 1px solid #cccccc; padding: 8px; text-align: left; word-wrap: break-word;">In filename</th>
+<th style="border: 1px solid #cccccc; padding: 8px; text-align: left; word-wrap: break-word;">In directory path</th>
+<th style="border: 1px solid #cccccc; padding: 8px; text-align: left; word-wrap: break-word;">Change from CMIP6</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Identification</strong></td>
-<td><code>activity_id</code></td>
-<td><code>CMIP</code>, <code>ScenarioMIP</code></td>
-<td>Activity responsible for experiment</td>
+<td style="border: 1px solid #cccccc; padding: 8px; background-color: #ffff00; word-wrap: break-word;"><strong>activity_id</strong></td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">name of activity (acronym)</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">CMIP, PMIP, CFMIP</td>
+<td style="border: 1px solid #cccccc; padding: 8px; text-align: center; word-wrap: break-word;">no</td>
+<td style="border: 1px solid #cccccc; padding: 8px; text-align: center; word-wrap: break-word;">yes</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">limited to a single activity; a list of activities is no longer allowed.</td>
+</tr>
+<tr style="background-color: #f9f9f9;">
+<td style="border: 1px solid #cccccc; padding: 8px; background-color: #ffff00; word-wrap: break-word;"><strong>branding_suffix</strong></td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">suffix in the branded variable name</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">tavg-h2m-hxy-u, tpt-u-hxy-u, tavg-p19-hxy-air (constructed from elements in Table 2)</td>
+<td style="border: 1px solid #cccccc; padding: 8px; text-align: center; word-wrap: break-word;">yes</td>
+<td style="border: 1px solid #cccccc; padding: 8px; text-align: center; word-wrap: break-word;">yes</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">new CMIP7 attribute (eliminating "table_id" as an attribute)</td>
 </tr>
 <tr>
-<td></td>
-<td><code>experiment_id</code></td>
-<td><code>historical</code>, <code>piControl</code></td>
-<td>Short label for experiment</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">directoryDateDD</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">approximate date files were written to the hosting directory, which serves as a dataset version label (recorded as a folder name in the directory path, not as a global attribute)</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">v20260522, v20260807, consistent with the template "v"&lt;YYYYMMDD&gt;</td>
+<td style="border: 1px solid #cccccc; padding: 8px; text-align: center; word-wrap: break-word;">no</td>
+<td style="border: 1px solid #cccccc; padding: 8px; text-align: center; word-wrap: break-word;">yes</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">No change</td>
+</tr>
+<tr style="background-color: #f9f9f9;">
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">drs_specs</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">label identifying the data reference syntax used to uniquely identify datasets, name files, and define directory trees</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">only option: MIP-DRS7</td>
+<td style="border: 1px solid #cccccc; padding: 8px; text-align: center; word-wrap: break-word;">no</td>
+<td style="border: 1px solid #cccccc; padding: 8px; text-align: center; word-wrap: break-word;">yes</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">New CMIP7 attribute</td>
 </tr>
 <tr>
-<td></td>
-<td><code>mip_era</code></td>
-<td><code>CMIP7</code></td>
-<td>CMIP phase</td>
+<td style="border: 1px solid #cccccc; padding: 8px; background-color: #ffff00; word-wrap: break-word;"><strong>experiment_id</strong></td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">short label identifying the experiment</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">historical, piControl, abrupt-4xCO2</td>
+<td style="border: 1px solid #cccccc; padding: 8px; text-align: center; word-wrap: break-word;">yes</td>
+<td style="border: 1px solid #cccccc; padding: 8px; text-align: center; word-wrap: break-word;">yes</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">No change</td>
+</tr>
+<tr style="background-color: #f9f9f9;">
+<td style="border: 1px solid #cccccc; padding: 8px; background-color: #ffff00; word-wrap: break-word;"><strong>frequency</strong></td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">time interval between each reported time-slice</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">mon, day, 3hr</td>
+<td style="border: 1px solid #cccccc; padding: 8px; text-align: center; word-wrap: break-word;">yes</td>
+<td style="border: 1px solid #cccccc; padding: 8px; text-align: center; word-wrap: break-word;">yes</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">No change</td>
 </tr>
 <tr>
-<td></td>
-<td><code>source_id</code></td>
-<td><code>CanESM6-MR</code></td>
-<td>Model identifier</td>
+<td style="border: 1px solid #cccccc; padding: 8px; background-color: #ffff00; word-wrap: break-word;"><strong>grid_label</strong></td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">unique label identifying the grid on which data is reported.</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">g104, g132, g382 (assigned when a grid is registered)</td>
+<td style="border: 1px solid #cccccc; padding: 8px; text-align: center; word-wrap: break-word;">yes</td>
+<td style="border: 1px solid #cccccc; padding: 8px; text-align: center; word-wrap: break-word;">yes</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">template modified: g&lt;N&gt;, where N is a 3 digit integer greater than or equal to 100</td>
+</tr>
+<tr style="background-color: #f9f9f9;">
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">institution_id</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">name of institution (an acronym)</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">IPSL, CCCma, MOHC (assigned when an institution is registered)</td>
+<td style="border: 1px solid #cccccc; padding: 8px; text-align: center; word-wrap: break-word;">no</td>
+<td style="border: 1px solid #cccccc; padding: 8px; text-align: center; word-wrap: break-word;">yes</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">No change</td>
 </tr>
 <tr>
-<td><strong>Versioning</strong></td>
-<td><code>data_specs_version</code></td>
-<td><code>MIP-DS7.1.0.0</code></td>
-<td>Version of data specifications</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">mip_era</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">label indicating the CMIP phase for which an experiment was designed</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">CMIP7</td>
+<td style="border: 1px solid #cccccc; padding: 8px; text-align: center; word-wrap: break-word;">no</td>
+<td style="border: 1px solid #cccccc; padding: 8px; text-align: center; word-wrap: break-word;">yes</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">No change</td>
+</tr>
+<tr style="background-color: #f9f9f9;">
+<td style="border: 1px solid #cccccc; padding: 8px; background-color: #ffff00; word-wrap: break-word;"><strong>region</strong></td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">the domain over which data are reported</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">"glb" (global), "ata" (Antarctica), "grl" (Greenland)</td>
+<td style="border: 1px solid #cccccc; padding: 8px; text-align: center; word-wrap: break-word;">yes</td>
+<td style="border: 1px solid #cccccc; padding: 8px; text-align: center; word-wrap: break-word;">yes</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">New CMIP7 attribute</td>
 </tr>
 <tr>
-<td></td>
-<td><code>drs_specs</code></td>
-<td><code>MIP-DRS7</code></td>
-<td>Label for DRS version</td>
+<td style="border: 1px solid #cccccc; padding: 8px; background-color: #ffff00; word-wrap: break-word;"><strong>source_id</strong></td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">short label identifying the source (model)</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">CanESM6-0-MR, UKESM1-0-LL (assigned when model is registered)</td>
+<td style="border: 1px solid #cccccc; padding: 8px; text-align: center; word-wrap: break-word;">yes</td>
+<td style="border: 1px solid #cccccc; padding: 8px; text-align: center; word-wrap: break-word;">yes</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">No change</td>
+</tr>
+<tr style="background-color: #f9f9f9;">
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">timeRangeDD</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">the time period spanned by the data in the file. The format of this attribute is described in Appendix 1 below.</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">"1880-2020" (for annual means), "196001-199912" (for monthly means), "20030101-20031231" (for daily means)</td>
+<td style="border: 1px solid #cccccc; padding: 8px; text-align: center; word-wrap: break-word;">yes</td>
+<td style="border: 1px solid #cccccc; padding: 8px; text-align: center; word-wrap: break-word;">no</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">No change</td>
 </tr>
 <tr>
-<td><strong>Simulation Variants</strong></td>
-<td><code>realization_index</code></td>
-<td><code>r1</code></td>
-<td>Ensemble members differing only by initial conditions</td>
+<td style="border: 1px solid #cccccc; padding: 8px; background-color: #ffff00; word-wrap: break-word;"><strong>variable_id</strong></td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">short variable name, also referred to as "root name"</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">tas, pr, ua</td>
+<td style="border: 1px solid #cccccc; padding: 8px; text-align: center; word-wrap: break-word;">yes</td>
+<td style="border: 1px solid #cccccc; padding: 8px; text-align: center; word-wrap: break-word;">yes</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">No change</td>
 </tr>
-<tr>
-<td></td>
-<td><code>initialization_index</code></td>
-<td><code>i1</code></td>
-<td>Initialization method/date</td>
-</tr>
-<tr>
-<td></td>
-<td><code>physics_index</code></td>
-<td><code>p1</code></td>
-<td>Physics configuration</td>
-</tr>
-<tr>
-<td></td>
-<td><code>forcing_index</code></td>
-<td><code>f1</code></td>
-<td>Forcing variant</td>
-</tr>
-<tr>
-<td><strong>Structure &amp; Sampling</strong></td>
-<td><code>temporal_label</code></td>
-<td><code>tavg</code>, <code>tpt</code></td>
-<td>Time sampling type</td>
-</tr>
-<tr>
-<td></td>
-<td><code>vertical_label</code></td>
-<td><code>h2m</code>, <code>200hPa</code></td>
-<td>Vertical level sampling</td>
-</tr>
-<tr>
-<td></td>
-<td><code>horizontal_label</code></td>
-<td><code>hxy</code>, <code>hs</code></td>
-<td>Horizontal sampling</td>
-</tr>
-<tr>
-<td></td>
-<td><code>area_label</code></td>
-<td><code>u</code>, <code>lnd</code>, <code>sea</code></td>
-<td>Area mask</td>
-</tr>
-<tr>
-<td><strong>Other Required Fields</strong></td>
-<td><code>frequency</code>, <code>grid_label</code>, <code>region</code>, <code>realm</code>, <code>variable_id</code>, <code>tracking_id</code></td>
-<td></td>
-<td>Define data frequency, grid, domain, and unique file IDs</td>
+<tr style="background-color: #f9f9f9;">
+<td style="border: 1px solid #cccccc; padding: 8px; background-color: #ffff00; word-wrap: break-word;"><strong>variant_label</strong></td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">a label distinguishing datasets produced under only slight variants of experiment conditions or source configurations. See section 4 below.</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">r1i1p1f1, r2i2p2f1, r1i198001p1f1, r1i198001ap1f1, r1i199001bp1f1 (constructed from elements in Table 2)</td>
+<td style="border: 1px solid #cccccc; padding: 8px; text-align: center; word-wrap: break-word;">yes</td>
+<td style="border: 1px solid #cccccc; padding: 8px; text-align: center; word-wrap: break-word;">yes</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">As in CMIP6 but for decadal experiments, the start date is now indicated by the "initialization index" ("i" value).</td>
 </tr>
 </tbody>
 </table></div>
-<p><strong>Conditionally Required Attributes:</strong><br />
-Used mainly when datasets branch from parent simulations (e.g., <code>branch_time_in_parent</code>, <code>parent_activity_id</code>).</p>
-<p><strong>Optional Attributes:</strong><br />
-Provide additional context (e.g., <code>experiment</code>, <code>institution</code>, <code>license</code>, <code>source</code>, <code>title</code>, <code>variant_info</code>).</p>
+
 <hr />
-<h2 id="4-file-name-template">4. File Name Template<a class="headerlink" href="#4-file-name-template" title="Permanent link">&para;</a></h2>
-<p>Each CMIP7 file follows a standardized pattern derived from global attributes:
-<div class="codehilite"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&lt;variable_id&gt;_&lt;branding_suffix&gt;_&lt;frequency&gt;_&lt;region&gt;_&lt;grid_label&gt;_&lt;source_id&gt;_&lt;experiment_id&gt;_&lt;variant_label&gt;[_&lt;timeRangeDD&gt;].nc
-</code></pre></div></p>
-<h3 id="example">Example:<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
-<p>tas_tavg-h2m-hxy-u_mon_glb_g13s_CanESM6-MR_historical_r2i1p1f1_190001-190912.nc  </p>
-<h3 id="notes">Notes:<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h3>
+<h2 id="4-notes-on-variant_label">4. Notes on "variant_label"<a class="headerlink" href="#4-notes-on-variant_label" title="Permanent link">&para;</a></h2>
+<p>When two datasets differ due to slight differences in experiment conditions (e.g., initial conditions or forcing) or slight differences in the model formulation (e.g., a small treatment in one of the parameterizations), they must be distinguished by assigning them different variant "labels". The variant_label is constructed from four indexes, "realization", "initialization", "physics", and "forcing", and these are combined into a single text string of the form "r2i1p1f3" recording the "r", "i", "p", "f" values identifying the variant.</p>
 <ul>
-<li><code>timeRangeDD</code> is omitted for fixed (time-independent) variables.</li>
-<li>Filenames directly encode key experiment and model metadata.</li>
+<li>
+<p><strong>realization</strong>: The "r" index distinguishes among members of an ensemble of simulations that differ only in their initial conditions (e.g., spawned from different points in a control run). Note that if two different experiments were started from the same initial conditions, the same realization number should be used for both simulations. For example if a historical run with "natural forcing" only and another historical run that includes anthropogenic forcing were both spawned at the same point in a control run, both should be assigned the same realization. Also, each of the different future scenario simulations should be assigned the same realization integer as the historical run from which it was initiated. This will allow users to easily splice together the appropriate historical and future runs.</p>
+</li>
+<li>
+<p><strong>initialization</strong>: The "i" index is normally set to "i1" except in CMIP prediction (or hindcast) experiments initialized from observations. For prediction experiments the "i" value should be the year and month of initialization. For example, a hindcast initialized in January of 1960 would have an initialization index "i196001". If two simulations are initialized in the same month and day but, for example, using different reanalyses or different initialization procedures, they are labeled differently by appending a single lower case alphabetic character (e.g., "i196001a" and "i196001b").</p>
+</li>
+<li>
+<p><strong>physics</strong>: The "p" index distinguishes among slight variants in a model's formulation. In the usual case of a single physics version of a model, this argument should normally be assigned the value 1. It is essential that the same physics_index be assigned to all model output produced by a given model version. Use of "physics_index" is reserved for model versions that differ in minor ways (e.g., as in a "perturbed physics" ensemble or minor changes in a model parameterization). Model versions that are substantially different from one another must be assigned different source_ids. In particular, for a model run at two different resolutions, separate source_id's must be registered, rather than simply assigning them different "p" values.</p>
+</li>
+<li>
+<p><strong>forcing</strong>: the "f" index is used to distinguish runs conforming to the protocol of a single CMIP6 experiment but with different variants of forcing applied. One can, for example, distinguish between two historical simulations, one forced with the CMIP6-recommended forcing data sets and another forced by a different dataset, which might yield information about how forcing uncertainty affects the simulation.</p>
+</li>
 </ul>
+<p>The assignment of the "ripf" values is not coordinated across models, but for each source, the physics index should be consistently assigned. Also, for each source/experiment pair, consistency in each index should be maintained across each parent/child pair whenever sensible. For example, both the ScenarioMIP child and its "historical" parent simulation would be assigned the same set of index values for realization, initialization, and physics. The integer 1 should normally be chosen for each index in the case of a single variant or for the primary variant (if there is one). This, however, is only a suggestion; there should be no expectation on the part of users that every model will have a value of 1 assigned to any of the r, i, p, f indices, and even if a 1 is assigned it does not invariably imply that it is the primary variant. Note also that a child spawned by a control run will not necessarily have the same "ripf" value as the control, since, for example, multiple realizations of an experiment will branch from different points of a single control.</p>
+<p>When more than one variant is assigned to the files produced by a model, the differences among variants should be described in the variant_info global attribute. This attribute, listed in Table 4, is formally optional, but to enable analysts to interpret model results it should always be included when different variants have been generated by a model. This may not be necessary, however, if the only difference is in "realization" because the branch_time_in_parent attribute defined in Table 3 indicates the only difference.</p>
 <hr />
-<h2 id="5-directory-structure-template">5. Directory Structure Template<a class="headerlink" href="#5-directory-structure-template" title="Permanent link">&para;</a></h2>
-<p>The CMIP7 archive organizes files hierarchically using the following DRS pattern:</p>
-<div class="codehilite"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>&lt;drs_specs&gt;/&lt;mip_era&gt;/&lt;activity_id&gt;/&lt;institution_id&gt;/&lt;source_id&gt;/&lt;experiment_id&gt;/&lt;variant_label&gt;/&lt;region&gt;/&lt;frequency&gt;/variable_d&gt;/&lt;branding_suffix&gt;/&lt;grid_label&gt;/&lt;directoryDateDD&gt;
+<h2 id="5-additional-required-global-attributes">5. Additional Required Global Attributes<a class="headerlink" href="#5-additional-required-global-attributes" title="Permanent link">&para;</a></h2>
+<p>Additional attributes that are not included in the DRS are nevertheless required. They are listed in Table 2 along with an indication of how they might differ from their CMIP6 counterparts.</p>
+<h3 id="table-2-required-global-attributes">Table 2. Required global attributes<a class="headerlink" href="#table-2-required-global-attributes" title="Permanent link">&para;</a></h3>
+<p>Additional required global attributes in addition to those found in Table 1. <strong>Highlighted in yellow</strong> is the subset of global attributes proposed to serve as search facets (usually with somewhat different labels) for filtering and retrieving data on the ESGF data servers.</p>
+<div class="table-wrapper"><table style="width: 100%; border-collapse: collapse;">
+<thead>
+<tr style="background-color: #f3f3f3;">
+<th style="border: 1px solid #b7b7b7; padding: 8px; text-align: left; word-wrap: break-word; width: 15%;">Group</th>
+<th style="border: 1px solid #b7b7b7; padding: 8px; text-align: left; word-wrap: break-word; width: 15%;">Global Attribute</th>
+<th style="border: 1px solid #b7b7b7; padding: 8px; text-align: left; word-wrap: break-word; width: 35%;">Description</th>
+<th style="border: 1px solid #b7b7b7; padding: 8px; text-align: left; word-wrap: break-word; width: 20%;">Sample Values</th>
+<th style="border: 1px solid #b7b7b7; padding: 8px; text-align: left; word-wrap: break-word; width: 15%;">Change from CMIP6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;" rowspan="4">Elements of the variant_label attribute</td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;"><strong>realization_index</strong></td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">index distinguishing the members of an ensemble initialized from different points in a parent run. See section 4.</td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">"r1", "r3", "r224", following the template: "r"&lt;n&gt;</td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">Now a text string (not an integer) that includes the "r" prefix</td>
+</tr>
+<tr>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;"><strong>initialization_index</strong></td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">index indicating initialization method and/or, for decadal predictions, initialization date. See section 4.</td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">"i1", "i2", "i196001", "i201001", "i201001a", "i201001b", following the template: "i"&lt;n&gt;[a]</td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">Now a text string (not an integer) that includes the "i" prefix</td>
+</tr>
+<tr>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;"><strong>physics_index</strong></td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">index distinguishing among simulations generated by the same "source", but with minor differences in physics. See section 4.</td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">"p1", "p3", "p45", following the template: "p"&lt;n&gt;</td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">Now a text string (not an integer) that includes the "p" prefix</td>
+</tr>
+<tr>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;"><strong>forcing_index</strong></td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">index identifying variant of forcing. See section 4.</td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">"f1", "f6", "f13", following the template: "f"&lt;n&gt;</td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">Now a text string (not an integer) that includes the "f" prefix</td>
+</tr>
+<tr>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;" rowspan="5">Elements of the branded variable name</td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;"><strong>branded_variable</strong></td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">full name of branded variable constructed with the following template: &lt;branded_variable&gt; = &lt;variable_id&gt;_&lt;branding_suffix&gt;</td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">"tas_tavg-h2m-hxy-u", "pr_tpt-uhxy-u", "ua_tavg-p19-hxy-air"</td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">New CMIP7 attribute</td>
+</tr>
+<tr>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;"><strong>temporal_label</strong></td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">identifier of method of sampling data in time</td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">"tavg", "tpt", "tclm"</td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">New CMIP7 attribute</td>
+</tr>
+<tr>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;"><strong>vertical_label</strong></td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">identifier of method of sampling data in the vertical</td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">"h2m", "200hPa", "p19", "ol", "u"</td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">New CMIP7 attribute</td>
+</tr>
+<tr>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;"><strong>horizontal_label</strong></td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">identifier of method of sampling data in the horizontal</td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">"hxy", "hs", "hm"</td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">New CMIP7 attribute</td>
+</tr>
+<tr>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;"><strong>area_label</strong></td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">identifier of areas where data have not been masked</td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">"lnd", "air", "sea", "u"</td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">New CMIP7 attribute</td>
+</tr>
+<tr>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;" rowspan="2">Version of standards applied</td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;"><strong>Conventions</strong></td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">Latest version of CF conventions followed in reporting data</td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">only options: "CF-1.11", "CF-1.12" or "CF-1.13"</td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">Additional convention names can also be listed, but must first be added to the list of terms found in the "Conventions" CV.</td>
+</tr>
+<tr>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;"><strong>data_specs_version</strong></td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">version of MIP requirements governing a dataset</td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">"MIP-DS7.1.0.0"</td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">This now is the version of the set of requirements and CVs followed in creating a file and has the value: "MIP-DS7.1.0.0"</td>
+</tr>
+<tr>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;" rowspan="2">Elements useful for identifying file versions</td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;"><strong>creation_date</strong></td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">date/time that file was generated</td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">2025-08-21T04:23:12Z, following the template &lt;YYYY-MM-DD&gt;"T"&lt;HH:MM:SS&gt;"Z"</td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">No change</td>
+</tr>
+<tr>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;"><strong>tracking_id</strong></td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">unique file identifier generated by attaching to a prefix a UUID generated by the OSSP utility with the DCE 1.1 option applying version 4 (which is random number based)</td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">hdl:21.14107/f6635404-8a1a-4aa9-918d-3792e8321f04, following the template "hdl:21.14107/"&lt;uuid&gt;</td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">No change in format, but now beginning with "hdl:21.14107"</td>
+</tr>
+<tr>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;" rowspan="4">Other</td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;"><strong>realm</strong></td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">realms most closely associated with a variable</td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">"atmos", "atmos aerosol", "ocean", "land"</td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">No change</td>
+</tr>
+<tr>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;"><strong>nominal_resolution</strong></td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">approximate horizontal resolution (computed following the CMIP6 global attributes document Appendix 2)</td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">"1 km", "250 km", "500 km"</td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">No change</td>
+</tr>
+<tr>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;"><strong>product</strong></td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">identifier of category of data</td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">only option: "model-output"</td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">No change</td>
+</tr>
+<tr>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;"><strong>license_id</strong></td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">creative commons license identifier</td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">"CC-BY-4.0" or "CC0-1.0"</td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">New CMIP7 attribute</td>
+</tr>
+</tbody>
+</table></div>
+
+<hr />
+<h2 id="6-conditionally-required-global-attributes">6. Conditionally Required Global Attributes<a class="headerlink" href="#6-conditionally-required-global-attributes" title="Permanent link">&para;</a></h2>
+<h3 id="table-3-conditionally-required-global-attributes">Table 3. Conditionally required global attributes<a class="headerlink" href="#table-3-conditionally-required-global-attributes" title="Permanent link">&para;</a></h3>
+<p>These attributes are defined as they were in CMIP6.</p>
+<div class="table-wrapper"><table style="width: 100%; border-collapse: collapse;">
+<thead>
+<tr style="background-color: #f3f3f3;">
+<th style="border: 1px solid #cccccc; padding: 8px; text-align: left; word-wrap: break-word; width: 15%;">Required When</th>
+<th style="border: 1px solid #cccccc; padding: 8px; text-align: left; word-wrap: break-word; width: 18%;">Global Attribute</th>
+<th style="border: 1px solid #cccccc; padding: 8px; text-align: left; word-wrap: break-word; width: 40%;">Description</th>
+<th style="border: 1px solid #cccccc; padding: 8px; text-align: left; word-wrap: break-word; width: 27%;">Sample Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;" rowspan="8">Parent experiment exists</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;"><strong>branch_time_in_child</strong></td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">time when this simulation (the "child") was initiated, expressed in the time units and time model of the child.</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">0.0D0, 365.0D0</td>
+</tr>
+<tr>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;"><strong>branch_time_in_parent</strong></td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">time when this experiment was spawned by the parent, expressed in the parent's time units and time model</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">3650.0D0, 18250.0D0</td>
+</tr>
+<tr>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;"><strong>parent_activity_id</strong></td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">name of activity responsible for the parent experiment</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">"CMIP"</td>
+</tr>
+<tr>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;"><strong>parent_experiment_id</strong></td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">label (experiment_id) identifying the parent experiment</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">"piControl", "historical"</td>
+</tr>
+<tr>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;"><strong>parent_mip_era</strong></td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">parent experiment's mip_era</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">"CMIP7" or "CMIP6" (rarely)</td>
+</tr>
+<tr>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;"><strong>parent_source_id</strong></td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">short name identifying the model that produced the parent simulation</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">"CanESM6-0-MR"</td>
+</tr>
+<tr>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;"><strong>parent_time_units</strong></td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">time units as recorded in the parent run</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">"days since 1850-1-1", "days since 1000-1-1"</td>
+</tr>
+<tr>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;"><strong>parent_variant_label</strong></td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">label identifying the parent experiment variant (i.e., its variant_label)</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">"r1i1p1f1", "r1i2p223f3"</td>
+</tr>
+<tr>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">cell_measures attribute is attached to a variable</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;"><strong>external_variables</strong></td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">a list of blank-separated variable names recorded by the cell_measures attribute attached to a variable</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">"areacella", "areacello volcello", "areacello"</td>
+</tr>
+</tbody>
+</table></div>
+
+<hr />
+<h2 id="7-optional-global-attributes">7. Optional Global Attributes<a class="headerlink" href="#7-optional-global-attributes" title="Permanent link">&para;</a></h2>
+<h3 id="table-4-optional-attributes">Table 4. Optional attributes<a class="headerlink" href="#table-4-optional-attributes" title="Permanent link">&para;</a></h3>
+<p>These attributes are optional, and some modeling groups might elect to provide them. The content of these attributes is uncontrolled.</p>
+<div class="table-wrapper"><table style="width: 100%; border-collapse: collapse;">
+<thead>
+<tr style="background-color: #f3f3f3;">
+<th style="border: 1px solid #cccccc; padding: 8px; text-align: left; word-wrap: break-word; width: 18%;">Global Attribute</th>
+<th style="border: 1px solid #cccccc; padding: 8px; text-align: left; word-wrap: break-word; width: 55%;">Description</th>
+<th style="border: 1px solid #cccccc; padding: 8px; text-align: left; word-wrap: break-word; width: 27%;">Change from CMIP6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;"><strong>cmip6_compound_name</strong></td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">legacy unique identifiers of variables in previous CMIP phases. The compound name was constructed from the CMIP6 variable name and a CMOR table name. For example: "Amon.ta", "Emon.hus", "3hr.pr"</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">Optional attribute recognized by CMIP7</td>
+</tr>
+<tr>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;"><strong>experiment</strong></td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">short description of the experiment registered in the source_id CV</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">Required in CMIP6, but optional in CMIP7</td>
+</tr>
+<tr>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;"><strong>institution</strong></td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">Name of the institution: expansion of the acronym recorded as institution_id and registered in the source_id CV</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">Required in CMIP6, but optional in CMIP7</td>
+</tr>
+<tr>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;"><strong>source</strong></td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">full model name and version</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">Required in CMIP6, but optional in CMIP7</td>
+</tr>
+<tr>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;"><strong>history</strong></td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">processing history (recognized by the CF Conventions)</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">No change</td>
+</tr>
+<tr>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;"><strong>license</strong></td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">description of license recorded as license_id and recorded in the license CV.</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">No change</td>
+</tr>
+<tr>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;"><strong>reference</strong></td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">references relevant to the data reported (recognized by the CF Conventions)</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">No change</td>
+</tr>
+<tr>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;"><strong>title</strong></td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">short description of the dataset (recognized by the CF Conventions)</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">No change</td>
+</tr>
+<tr>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;"><strong>variant_info</strong></td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">description of the simulation variant and how it differs from other variants. See section 4 above.</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">No change</td>
+</tr>
+</tbody>
+</table></div>
+
+<hr />
+<h2 id="appendix-1-time-labels-appearing-in-filenames">Appendix 1. Time Labels Appearing in Filenames<a class="headerlink" href="#appendix-1-time-labels-appearing-in-filenames" title="Permanent link">&para;</a></h2>
+<p>The last segment of a filename (referred to as the timeRangeDD) indicates the time-interval spanned by all the time samples in the file. With one minor change, it is defined as in CMIP5 and CMIP6.</p>
+<div class="codehilite"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>If frequency = &quot;fx&quot; then 
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>  &lt;timeRangeDD&gt; = &quot;&quot;
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>else 
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>  &lt;time_range&gt; = N1-N2 where N1 and N2 are integers of the form &#39;yyyy[MM[dd[hh[mm[ss]]]]]&#39;
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>  (expressed as a string, where &#39;yyyy&#39;, &#39;MM&#39;, &#39;dd&#39;, &#39;hh&#39;, &#39;mm&#39; and &#39;ss&#39; are 
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>   integer year, month, day, hour, minute, and second, respectively)
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>endif
 </code></pre></div>
-<h3 id="example_1">Example:<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h3>
-<p>MIP-DRS7/CMIP7/CMIP/CCCma/CanESM6-MR/historical/r2i1p1f1/glb/mon/tas/tavg-h2m-hxy-u/g13s/v20250622</p>
-<p><strong><code>datasetEditionDD</code></strong> (e.g., <code>v20250622</code>) marks the dataset creation or revision date.</p>
+<p>The precision of the time label depends on whether a climatology has been requested, and if the dataset is not a climatology, the precision is determined by the frequency as given in Table 8.</p>
+<h3 id="table-8-precision-of-time-labels-in-filenames">Table 8. Precision of Time Labels in Filenames<a class="headerlink" href="#table-8-precision-of-time-labels-in-filenames" title="Permanent link">&para;</a></h3>
+<div class="table-wrapper"><table style="width: 100%; border-collapse: collapse;">
+<thead>
+<tr style="background-color: #f3f3f3;">
+<th style="border: 1px solid #cccccc; padding: 8px; text-align: left; word-wrap: break-word; width: 20%;">Condition</th>
+<th style="border: 1px solid #cccccc; padding: 8px; text-align: left; word-wrap: break-word; width: 20%;">Precision of Time Label</th>
+<th style="border: 1px solid #cccccc; padding: 8px; text-align: left; word-wrap: break-word; width: 60%;">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">Climatology requested</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">"yyyyMM"</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">If the time coordinate variable ("time") has a "climatology" attribute identifying the climatological bounds variable ("climatology_bounds"), then the first label is set to the first time recorded by the time bounds variable array, rounded to the nearest beginning of a month, and the second label is the last time recorded by the time bounds variable array, rounded to the nearest end of a month.</td>
+</tr>
+<tr>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">frequency = fx</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">Omit time label</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">This frequency applies to variables that are independent of time ("fixed").</td>
+</tr>
+<tr>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">frequency = yr or dec</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">"yyyy"</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">Label with the year obtained from the first and last time coordinate values in the file.</td>
+</tr>
+<tr>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">frequency = mon</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">"yyyyMM"</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">Label with the year and month obtained from the first and last time coordinate values in the file.</td>
+</tr>
+<tr>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">frequency = day</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">"yyyyMMdd"</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">Label with the year, month, and day obtained from the first and last time coordinate values in the file.</td>
+</tr>
+<tr>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">frequency = 6hr, 3hr or 1hr</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">"yyyyMMddhhmm"</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">Label with the year, month, day, hour, and minute (rounded to the nearest whole minute) obtained from the first and last time coordinate values in the file.</td>
+</tr>
+<tr>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">frequency = subhr</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">"yyyyMMddhhmmss"</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">Label with the year, month, day, hour, minute, and second (rounded to the nearest whole second) obtained from the first and last time coordinate values in the file.</td>
+</tr>
+</tbody>
+</table></div>
+
 <hr />
-<h2 id="6-appendix-1-global-attributes-for-labeling-experiments">6. Appendix 1: Global Attributes for Labeling Experiments<a class="headerlink" href="#6-appendix-1-global-attributes-for-labeling-experiments" title="Permanent link">&para;</a></h2>
+<h2 id="appendix-2-cmip6-global-attributes-eliminated-from-cmip7">Appendix 2. CMIP6 Global Attributes Eliminated from CMIP7<a class="headerlink" href="#appendix-2-cmip6-global-attributes-eliminated-from-cmip7" title="Permanent link">&para;</a></h2>
+<p>The following CMIP6 global attributes are no longer officially recognized by CMIP7, but like other non-standard attributes, they are not forbidden:</p>
 <ul>
-<li><strong>Branching Attributes:</strong><br />
-  Required when a simulation derives from a parent run:</li>
-<li><code>branch_time_in_child</code></li>
-<li><code>branch_time_in_parent</code></li>
-<li>
-<p><code>parent_time_units</code></p>
-</li>
-<li>
-<p><strong>Parent Identifiers:</strong><br />
-<code>parent_activity_id</code>, <code>parent_experiment_id</code>, <code>parent_source_id</code>, <code>parent_variant_label</code>, etc.</p>
-</li>
+<li>branch_method</li>
+<li>comment</li>
+<li>contact</li>
+<li>further_info_url</li>
+<li>grid</li>
+<li>source_type</li>
+<li>sub_experiment</li>
+<li>sub_experiment_id</li>
+<li>table_id</li>
 </ul>
-<p>These ensure reproducibility and traceability between related simulations.</p>
 <hr />
-<h2 id="7-appendix-2-algorithms-for-defining-the-nominal_resolution-attribute">7. Appendix 2: Algorithms for Defining the “nominal_resolution” Attribute<a class="headerlink" href="#7-appendix-2-algorithms-for-defining-the-nominal_resolution-attribute" title="Permanent link">&para;</a></h2>
-<p>The <code>nominal_resolution</code> describes approximate horizontal grid spacing (e.g., <code>"1 km"</code>, <code>"250 km"</code>).<br />
-It is computed using a standard algorithm (updated from CMIP6 Appendix 2) that ensures consistent comparison of model resolutions across CMIP7 datasets.</p>
+<h2 id="appendix-3-cmip7-controlled-vocabularies-cvs-for-global-attributes">Appendix 3. CMIP7 Controlled Vocabularies (CVs) for Global Attributes<a class="headerlink" href="#appendix-3-cmip7-controlled-vocabularies-cvs-for-global-attributes" title="Permanent link">&para;</a></h2>
+<p>The controlled vocabularies (CVs) from which values assigned to many of the global attributes can be viewed in human readable lists in the CMIP7 CMOR tables github repository in the <a href="https://github.com/WCRP-CMIP/cmip7-cmor-tables/blob/main/tables-cvs/cmor-cvs.json">cmor-cvs.json file</a>. The following CVs in this file are not expected to be amended for the duration of CMIP7:</p>
+<h3 id="static-cvs">Static CVs<a class="headerlink" href="#static-cvs" title="Permanent link">&para;</a></h3>
+<ul>
+<li>area_label</li>
+<li>Conventions</li>
+<li>drs_specs</li>
+<li>frequency</li>
+<li>horizontal_label</li>
+<li>license_id</li>
+<li>nominal_resolution</li>
+<li>realm</li>
+<li>region</li>
+<li>temporal_label</li>
+<li>vertical_label</li>
+</ul>
+<h3 id="cvs-in-place-but-with-ongoing-addition-of-new-values">CVs in Place but with Ongoing Addition of New Values<a class="headerlink" href="#cvs-in-place-but-with-ongoing-addition-of-new-values" title="Permanent link">&para;</a></h3>
+<p>Some of the currently existing CVs have only been partially populated. The following attribute lists (again available in the <a href="https://github.com/WCRP-CMIP/cmip7-cmor-tables/blob/main/tables-cvs/cmor-cvs.json">cmor-cvs.json file</a>) will be supplemented as additional values are registered:</p>
+<ul>
+<li>activity_id</li>
+<li>experiment_id</li>
+<li>grid_label</li>
+<li>institution_id</li>
+<li>source_id</li>
+</ul>
+<h3 id="variable-identifiers">Variable Identifiers<a class="headerlink" href="#variable-identifiers" title="Permanent link">&para;</a></h3>
+<p>The variable_id global attribute records the "root name" of a branded variable. The recognized root names can be found either in the <a href="https://cmip-data-request.github.io/cmip7-dreq-webview/variable_search.html">CMIP7 Data Request</a> or the <a href="https://github.com/WCRP-CMIP/cmip7-cmor-tables/tree/main/tables">CMOR variable tables</a>. Further guidance on the branded variables naming scheme, which is new in CMIP7, is <a href="https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/Branded_Variables/">available here</a>.</p>
   </div>
 </article>
                                 <div class="mx-auto flex flex-wrap h-16 w-full max-w-2xl items-center gap-2 px-4 md:px-0">
@@ -1886,89 +2245,151 @@ It is computed using a standard algorithm (updated from CMIP6 Appendix 2) that e
         
         
         
-        <a href="#1-executive-summary"
+        <a href="#1-introduction"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#1-executive-summary');">
-            1. Executive Summary
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#1-introduction');">
+            1. Introduction
         </a>
         
 
         
-        <a href="#2-introduction"
+        <a href="#2-filenames"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#2-introduction');">
-            2. Introduction
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#2-filenames');">
+            2. Filenames
         </a>
         
 
         
-        <a href="#3-data-reference-syntax-drs-components"
+        <a href="#3-directory-structure-template"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#3-data-reference-syntax-drs-components');">
-            3. Data Reference Syntax (DRS) Components
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#3-directory-structure-template');">
+            3. Directory Structure Template
         </a>
-        
-        
-        <a href="#key-global-attributes"
-            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#key-global-attributes');">
-            Key Global Attributes
-        </a>
-        
         
 
         
-        <a href="#4-file-name-template"
+        <a href="#3-data-reference-syntax-drs-elements"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#4-file-name-template');">
-            4. File Name Template
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#3-data-reference-syntax-drs-elements');">
+            3. Data Reference Syntax (DRS) Elements
         </a>
         
         
-        <a href="#example"
+        <a href="#table-1-list-of-cmip7-drs-elements"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#example');">
-            Example:
-        </a>
-        
-        <a href="#notes"
-            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#notes');">
-            Notes:
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#table-1-list-of-cmip7-drs-elements');">
+            Table 1. List of CMIP7 DRS elements
         </a>
         
         
 
         
-        <a href="#5-directory-structure-template"
+        <a href="#4-notes-on-variant_label"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#5-directory-structure-template');">
-            5. Directory Structure Template
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#4-notes-on-variant_label');">
+            4. Notes on "variant_label"
+        </a>
+        
+
+        
+        <a href="#5-additional-required-global-attributes"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#5-additional-required-global-attributes');">
+            5. Additional Required Global Attributes
         </a>
         
         
-        <a href="#example_1"
+        <a href="#table-2-required-global-attributes"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#example_1');">
-            Example:
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#table-2-required-global-attributes');">
+            Table 2. Required global attributes
         </a>
         
         
 
         
-        <a href="#6-appendix-1-global-attributes-for-labeling-experiments"
+        <a href="#6-conditionally-required-global-attributes"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#6-appendix-1-global-attributes-for-labeling-experiments');">
-            6. Appendix 1: Global Attributes for Labeling Experiments
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#6-conditionally-required-global-attributes');">
+            6. Conditionally Required Global Attributes
+        </a>
+        
+        
+        <a href="#table-3-conditionally-required-global-attributes"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#table-3-conditionally-required-global-attributes');">
+            Table 3. Conditionally required global attributes
+        </a>
+        
+        
+
+        
+        <a href="#7-optional-global-attributes"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#7-optional-global-attributes');">
+            7. Optional Global Attributes
+        </a>
+        
+        
+        <a href="#table-4-optional-attributes"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#table-4-optional-attributes');">
+            Table 4. Optional attributes
+        </a>
+        
+        
+
+        
+        <a href="#appendix-1-time-labels-appearing-in-filenames"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#appendix-1-time-labels-appearing-in-filenames');">
+            Appendix 1. Time Labels Appearing in Filenames
+        </a>
+        
+        
+        <a href="#table-8-precision-of-time-labels-in-filenames"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#table-8-precision-of-time-labels-in-filenames');">
+            Table 8. Precision of Time Labels in Filenames
+        </a>
+        
+        
+
+        
+        <a href="#appendix-2-cmip6-global-attributes-eliminated-from-cmip7"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#appendix-2-cmip6-global-attributes-eliminated-from-cmip7');">
+            Appendix 2. CMIP6 Global Attributes Eliminated from CMIP7
         </a>
         
 
         
-        <a href="#7-appendix-2-algorithms-for-defining-the-nominal_resolution-attribute"
+        <a href="#appendix-3-cmip7-controlled-vocabularies-cvs-for-global-attributes"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#7-appendix-2-algorithms-for-defining-the-nominal_resolution-attribute');">
-            7. Appendix 2: Algorithms for Defining the “nominal_resolution” Attribute
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#appendix-3-cmip7-controlled-vocabularies-cvs-for-global-attributes');">
+            Appendix 3. CMIP7 Controlled Vocabularies (CVs) for Global Attributes
         </a>
+        
+        
+        <a href="#static-cvs"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#static-cvs');">
+            Static CVs
+        </a>
+        
+        <a href="#cvs-in-place-but-with-ongoing-addition-of-new-values"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#cvs-in-place-but-with-ongoing-addition-of-new-values');">
+            CVs in Place but with Ongoing Addition of New Values
+        </a>
+        
+        <a href="#variable-identifiers"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#variable-identifiers');">
+            Variable Identifiers
+        </a>
+        
         
 
         
