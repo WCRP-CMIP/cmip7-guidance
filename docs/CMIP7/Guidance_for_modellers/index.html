@@ -1705,23 +1705,23 @@ For testing purposes sample CV JSON files are available via the <a href="https:/
 <p><code>cmip7repack</code>, for repacking CMIP7 datasets to have a cloud-optimized internal structure, is a command-line tool maintained by NCAS on <a href="https://github.com/NCAS-CMS/cmip7repack">github</a>, will be available for installation via <a href="https://anaconda.org/conda-forge/cmip7repack">conda</a>, and has documentation <a href="https://github.com/NCAS-CMS/cmip7repack">here</a>.</p>
 <p><code>cmip7repack</code> is easy to use, taking a list of CMIP7 datasets as inputs and writing out new cloud-optimised files, <em>for which all attributes and data values are unchanged</em>. This should be the last file-processing step prior to publication to ESGF, because further processing steps, such as CMORization, could change the internal file structure in a non-optimal manner.</p>
 <p>For example, to repack a number of netCDF datasets, creating new files with the file name suffix "_cmip7repack":</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$ cmip7repack *.nc
+<div class="codehilite"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$ cmip7repack *.nc
 </code></pre></div>
 <p>It can also be configured to overwrite the original files:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$ cmip7repack -o *.nc
+<div class="codehilite"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$ cmip7repack -o *.nc
 </code></pre></div>
 <p>There are also other configuration options that may be useful in adapting this tool to your workflow:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$ cmip7repack
+<div class="codehilite"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$ cmip7repack
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>USAGE: cmip7repack [-d size] [-h] [-o] [-v] [-V] [-x] [-z n] FILE [FILE ...]
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Full man page with -h
 </code></pre></div>
 <p><code>check_cmip7_packing</code>, for checking whether or not CMIP7 datasets have an acceptable cloud-optimized internal structure, is a command-line tool maintained by NCAS on <a href="https://github.com/NCAS-CMS/cmip7repack">github</a>, will be available for installation via <a href="https://anaconda.org/conda-forge/cmip7repack">conda</a>, and has documentation <a href="https://github.com/NCAS-CMS/cmip7repack">here</a>.</p>
 <p><code>check_cmip7repack</code> is easy to use, taking a list of CMIP7 datasets as inputs and checking each one for compliance, reporting on the reasons of non-compliance for any files which fail the checks.</p>
 <p>For example, to check a number of netCDF datasets:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$ check_cmip7_packing *.nc
+<div class="codehilite"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$ check_cmip7_packing *.nc
 </code></pre></div>
 <p>There are also configuration options that may be useful in adapting this tool to your workflow:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$ check_cmip7_packing
+<div class="codehilite"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$ check_cmip7_packing
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>usage: check_cmip7_packing [-h] [-v] [-V] FILE [FILE ...]
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>Full man page with -h
 </code></pre></div>
@@ -1779,11 +1779,11 @@ Documentation for the WCRP plugin is <a href="https://esgf.github.io/cc-plugin-w
 <p>⚠️ The <strong>variable registry is not yet queried</strong>. Variable information from CVs is provided by <strong>esgvoc</strong>.</p>
 </blockquote>
 <p><strong>Usage</strong> is built on the IOOS Compliance Checker, maintaining workflow flexibility for modeling groups that already operate their own QA/QC pipelines. It generates atomic log files per run (at both file and dataset levels) and supports seamless parallel execution, enabling straightforward integration with batch schedulers and large-scale production workflows. 
-  <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>compliance-checker<span class="w"> </span>-t<span class="w"> </span>wcrp_cmip6:1.0<span class="w"> </span>/path/to/data/file.nc
+  <div class="codehilite"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>compliance-checker<span class="w"> </span>-t<span class="w"> </span>wcrp_cmip6:1.0<span class="w"> </span>/path/to/data/file.nc
 </code></pre></div>
 The <strong>reporting system</strong> inherits the IOOS logic, combining output filtering, severity-based scoring, and granular reports suitable for both operational monitoring and expert review. Results can be easily mapped to standard logging levels (info, warning, critical), facilitating integration with existing QA dashboards.</p>
 <p>In addition, an <a href="https://github.com/ESGF/esgf-qa"><code>esgf-qa</code> module</a> provides a higher-level orchestration layer on top of the IOOS Compliance Checker. It applies the <code>cc-plugin-wcrp</code> consistently at the dataset level, automatically parallelizes checker execution across multiple files, and produces user-friendly aggregated reports. This greatly simplifies large-scale QC operations and makes results easier to browse, interpret, and integrate into your workflows. See <a href="https://esgf.github.io/esgf-qa/"><code>esgf-qa</code> documentation for the installation procedure</a>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$<span class="w"> </span>esgqa<span class="w"> </span>-t<span class="w"> </span>wcrp_cmip6:latest<span class="w"> </span>-t<span class="w"> </span>cf:1.11<span class="w"> </span>-o<span class="w"> </span>/path/to/results/output<span class="w"> </span>/path/to/dataset
+<div class="codehilite"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$<span class="w"> </span>esgqa<span class="w"> </span>-t<span class="w"> </span>wcrp_cmip6:latest<span class="w"> </span>-t<span class="w"> </span>cf:1.11<span class="w"> </span>-o<span class="w"> </span>/path/to/results/output<span class="w"> </span>/path/to/dataset
 </code></pre></div>
 <h3 id="how-to-contribute">🗣️ How to Contribute<a class="headerlink" href="#how-to-contribute" title="Permanent link">&para;</a></h3>
 <p>If you encounter issues or have suggestions, please <strong>open a GitHub issue</strong> on the project repository:<br />

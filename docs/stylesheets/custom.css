@@ -723,6 +723,11 @@ article pre {
   border-radius: 8px !important;
 }
 
+article .highlight pre {
+  overflow: auto !important;
+  max-width: 100% !important;
+}
+
 article pre code {
   background: transparent !important;
   border: none !important;

@@ -14,7 +14,7 @@
     
 
 
-<title>Experiment Setup and Forcings Guidance: piClim-CH4</title>
+<title>Experiment Setup and Forcings Guidance: esm-piControl-spinup</title>
 
 
 
@@ -29,7 +29,7 @@
 
 <!-- Open Graph (Facebook, LinkedIn) -->
 
-<meta property="og:title" content="Experiment Setup and Forcings Guidance: piClim-CH4">
+<meta property="og:title" content="Experiment Setup and Forcings Guidance: esm-piControl-spinup">
 
 
 
@@ -42,7 +42,7 @@
 
 <!-- Twitter Card -->
 
-<meta name="twitter:title" content="Experiment Setup and Forcings Guidance: piClim-CH4">
+<meta name="twitter:title" content="Experiment Setup and Forcings Guidance: esm-piControl-spinup">
 
 
 
@@ -784,8 +784,8 @@
                             
                                 
                                 <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
-    <a data-slot="sidebar-menu-button" data-active="true" data-sidebar="menu-button"
-        data-size="default" href="./"
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="../piclim-ch4/"
         class="hover:bg-sidebar-accent hover:text-sidebar-accent-foreground peer/menu-button flex items-center gap-2 rounded-md p-2 text-left outline-hidden ring-sidebar-ring transition-[width,height,padding] focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 data-[active=true]:bg-accent data-[active=true]:border-accent 3xl:fixed:w-full 3xl:fixed:max-w-48 relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md">
 
         
@@ -1435,12 +1435,12 @@
         <h1
           class="scroll-m-20 text-4xl font-semibold tracking-tight sm:text-3xl xl:text-4xl"
         >
-          Experiment Setup and Forcings Guidance: piClim-CH4
+          Experiment Setup and Forcings Guidance: esm-piControl-spinup
         </h1>
 
         <div class="flex items-center gap-2 pt-1.5">
           <button
-    onclick="fetch(`/CMIP7/Experiment_set_up_and_Forcings/piclim-ch4.md`).then((r) => r.blob()).then((blob) => navigator.clipboard.write([new ClipboardItem({ 'text/plain': blob })]))"
+    onclick="fetch(`/CMIP7/Experiment_set_up_and_Forcings/esm-picontrol-spinup.md`).then((r) => r.blob()).then((blob) => navigator.clipboard.write([new ClipboardItem({ 'text/plain': blob })]))"
     data-slot="button" class="secondary cursor-pointer">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-copy ">
@@ -1462,48 +1462,115 @@
     </div>
   </div>
   <div class="typography w-full flex-1 *:data-[slot=alert]:first:mt-0">
-    <p>In combination with <code>piClim-control</code>, quantifies present-day methane effective radiative forcing (ERF).
-Same as <code>piClim-control</code>, except methane concentrations or emissions (as appropriate for the model) use present-day
-values (2021 in CMIP7).</p>
-<p>Responsible activity: <a href="../#aerchemmip">AerChemMIP</a>. Tier: 1</p>
+    <p>Spin-up simulation.
+Used to get the model into a state of approximate radiative equilibrium before starting the <code>esm-piControl</code> simulation.</p>
+<p>Responsible activity: <a href="../#cmip">CMIP</a>. Tier: 3</p>
 <p>These pages are intended to help with implementation of these experiments.
 If you notice something that is unclear, please
 <a href="https://github.com/WCRP-CMIP/cmip7-guidance/issues/new">raise an issue</a>.
 For the full background of the experiments, please see the following URLs:</p>
 <ul>
-<li><a href="https://doi.org/10.5194/gmd-10-585-2017">https://doi.org/10.5194/gmd-10-585-2017</a></li>
+<li><a href="https://doi.org/10.5194/gmd-18-6671-2025">https://doi.org/10.5194/gmd-18-6671-2025</a></li>
+</ul>
+<h2 id="related-experiments">Related experiments<a class="headerlink" href="#related-experiments" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../picontrol-spinup/">piControl-spinup</a> is the concentration-driven counterpart to this emissions-driven experiment.</li>
 </ul>
 <h2 id="experiment-set-up">Experiment set up<a class="headerlink" href="#experiment-set-up" title="Permanent link">&para;</a></h2>
-<p>This simulation uses the same forcings as <a href="../piclim-control/">piClim-control</a>, except for the forcing listed below.</p>
-<p>The following forcing should use 2021 values from the <a href="../historical/">historical simulation</a>:</p>
-<ul>
-<li>methane concentrations or emissions (as appropriate for the model)</li>
-</ul>
-<p>The 2021 values should be prescribed on repeat throughout the simulation.</p>
-<p>It is recommended that you use the same time axis as you use for your <a href="../piclim-control/">piClim-control</a> output to
-make life easy for analysts of your output (although this is not enforced so you are technically free to start the time
-axis of your outputs at whatever year you like).</p>
+<p>The emissions-driven pre-industrial control spin-up simulation uses piControl forcings (see <a href="#forcings">forcings</a>).</p>
+<p>These should be applied on repeat for the entirety of the simulation.</p>
+<p>You are free to start the time axis of your outputs at whatever year you like (e.g. starting at year 1, or 1850, or year
+500).</p>
 <h3 id="timing-length-and-ensemble-size">Timing, length and ensemble size<a class="headerlink" href="#timing-length-and-ensemble-size" title="Permanent link">&para;</a></h3>
 <p>The CMIP7 CVs do not define fixed start or end dates for this simulation.</p>
-<p>Simulations should be at least 30 years in length.</p>
+<p>The CMIP7 CVs do not define a minimum simulation length for this experiment.</p>
 <p>Only one ensemble member is required.</p>
 <h3 id="parent-experiment">Parent experiment<a class="headerlink" href="#parent-experiment" title="Permanent link">&para;</a></h3>
-<p><code>piClim-CH4</code> branches from the <a href="../picontrol/">piControl</a> simulation (part of <a href="../#cmip">CMIP</a>).</p>
-<p>Branch from piControl at the same time as piClim-control.</p>
-<p>The parent experiment comes from <a href="https://wcrp-cmip.org/CMIP7">CMIP7</a>.</p>
+<p><code>esm-piControl-spinup</code> has no parent experiment in the CMIP7 CVs.</p>
 <h2 id="forcings">Forcings<a class="headerlink" href="#forcings" title="Permanent link">&para;</a></h2>
 <h3 id="general-headlines">General headlines<a class="headerlink" href="#general-headlines" title="Permanent link">&para;</a></h3>
-<p>See general headlines for the <a href="../piclim-control/"><code>piClim-control</code> simulation</a>.</p>
+<p>The <code>esm-piControl-spinup</code> experiment is a fixed forcings experiment.</p>
+<p>However, it can require some care to use the correct forcings for <code>esm-piControl</code>.
+This is particularly true for stratospheric aerosol forcing, ozone and solar as the <code>esm-piControl</code> values for these
+forcings aren't simply a repeat of 1850 values.</p>
+<p>Please note that the ozone forcing should come from files with the source ID <code>FZJ-CMIP-ozone-1-2</code>, no <code>piControl</code> data
+is included in <code>FZJ-CMIP-ozone-2-0</code> (which only updates <code>historical</code> values).</p>
+<p>Please also note that the nitrogen deposition forcing should come from files with the source ID <code>FZJ-CMIP-nitrogen-2-0</code>.
+<code>FZJ-CMIP-nitrogen-2-0</code> was released quite late and the impact of the change is likely to be small, so if you have
+simulations based on <code>FZJ-CMIP-nitrogen-1-2</code>, you do not need to re-run them.</p>
+<p>Please read the guidance pages linked under <a href="#notes">notes</a> to ensure that you use the correct forcing values.</p>
 <h3 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h3>
-<p>See notes for the <a href="../piclim-control/">piClim-control simulation</a>.</p>
-<h3 id="versions-to-use">Versions to use<a class="headerlink" href="#versions-to-use" title="Permanent link">&para;</a></h3>
-<p>For the forcing listed below, the forcing version relevant for this simulation is the same as for the
-<a href="../historical/">historical simulation</a>:</p>
+<p>The following pages give further information on each forcing:</p>
 <ul>
-<li>methane concentrations or emissions (as appropriate for the model)</li>
+<li>anthropogenic emissions:
+  <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/anthropogenic-slcf-co2-emissions/">input4mips-cvs.readthedocs.io/dataset-overviews/anthropogenic-slcf-co2-emissions</a></li>
+<li>biomass burning emissions:
+  <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/open-biomass-burning-emissions/">input4mips-cvs.readthedocs.io/dataset-overviews/open-biomass-burning-emissions</a></li>
+<li>land use:
+  <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/land-use/">input4mips-cvs.readthedocs.io/dataset-overviews/land-use</a></li>
+<li>greenhouse gas concentrations:
+  <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/greenhouse-gas-concentrations/">input4mips-cvs.readthedocs.io/dataset-overviews/greenhouse-gas-concentrations</a></li>
+<li>stratospheric aerosol forcing:
+  <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/stratospheric-volcanic-so2-emissions-aod/">input4mips-cvs.readthedocs.io/dataset-overviews/stratospheric-volcanic-so2-emissions-aod</a></li>
+<li>ozone:
+  <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/ozone/">input4mips-cvs.readthedocs.io/dataset-overviews/ozone</a></li>
+<li>nitrogen deposition:
+  <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/nitrogen-deposition/">input4mips-cvs.readthedocs.io/dataset-overviews/nitrogen-deposition</a></li>
+<li>solar:
+  <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/solar/">input4mips-cvs.readthedocs.io/dataset-overviews/solar</a></li>
+<li>aerosol optical properties:
+  <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/aerosol-optical-properties-macv2-sp/">input4mips-cvs.readthedocs.io/dataset-overviews/aerosol-optical-properties-macv2-sp</a></li>
+<li>population density:
+  <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/population/">input4mips-cvs.readthedocs.io/dataset-overviews/population</a></li>
 </ul>
-<p>For all other forcings, the forcing versions relevant for this simulation are the same as for the
-<a href="../piclim-control/">piClim-control simulation</a>.</p>
+<h3 id="versions-to-use">Versions to use<a class="headerlink" href="#versions-to-use" title="Permanent link">&para;</a></h3>
+<p>The forcings relevant for this simulation are listed below.
+For each forcing, we provide the version(s), in the form of "source ID(s)", which should be used when running this
+simulation.
+The recommended version(s) are the version(s) we recommend using.
+Any acceptable versions can be used (you are not obliged to re-run simulations that used them).
+Please see the guidance pages linked above for details and note that the data-retrieval script below only includes
+recommended versions.</p>
+<div class="codehilite"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">&quot;anthropogenic-emissions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">        </span><span class="nt">&quot;recommended&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">            </span><span class="s2">&quot;CEDS-CMIP-2025-04-18&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">            </span><span class="s2">&quot;CEDS-CMIP-2025-04-18-supplemental&quot;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="p">]</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nt">&quot;biomass-burning-emissions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">        </span><span class="nt">&quot;recommended&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DRES-CMIP-BB4CMIP7-2-0&quot;</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nt">&quot;land-use&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">        </span><span class="nt">&quot;recommended&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;UofMD-landState-3-1-2&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">        </span><span class="nt">&quot;acceptable&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">            </span><span class="s2">&quot;UofMD-landState-3-1-1&quot;</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">        </span><span class="p">]</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="nt">&quot;greenhouse-gas-concentrations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">        </span><span class="nt">&quot;recommended&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CR-CMIP-1-0-0&quot;</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">    </span><span class="nt">&quot;stratospheric-aerosol-forcing&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">        </span><span class="nt">&quot;recommended&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;UOEXETER-CMIP-2-2-1&quot;</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">    </span><span class="nt">&quot;ozone&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">        </span><span class="nt">&quot;recommended&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FZJ-CMIP-ozone-1-2&quot;</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">    </span><span class="nt">&quot;nitrogen-deposition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">        </span><span class="nt">&quot;recommended&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FZJ-CMIP-nitrogen-2-0&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">        </span><span class="nt">&quot;acceptable&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">            </span><span class="s2">&quot;FZJ-CMIP-nitrogen-1-2&quot;</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">        </span><span class="p">]</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">    </span><span class="nt">&quot;solar&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">        </span><span class="nt">&quot;recommended&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SOLARIS-HEPPA-CMIP-4-6&quot;</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">    </span><span class="nt">&quot;aerosol-optical-properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">    </span><span class="nt">&quot;population-density&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="w">        </span><span class="nt">&quot;recommended&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PIK-CMIP-1-0-1&quot;</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="p">}</span>
+</code></pre></div>
 <h3 id="getting-the-data">Getting the data<a class="headerlink" href="#getting-the-data" title="Permanent link">&para;</a></h3>
 <p>The data is available on ESGF and searchable
 <a href="https://esgf-node.ornl.gov/search?project=input4MIPs&amp;versionType=all&amp;activeFacets=%7B%22mip_era%22%3A%22CMIP7%22%7D">via metagrid</a>,
@@ -1516,17 +1583,17 @@ for data access information.</p>
 source IDs above with the script shown below.
 Note that this will download all the data associated with these source IDs, which is likely to be much more data than
 you actually need to run your model.</p>
-<div class="codehilite"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="ch">#!/bin/bash</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nv">EXPERIMENT_NAME</span><span class="o">=</span><span class="s2">&quot;piClim-CH4&quot;</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1">## You may need to run the below if you haven&#39;t already done it once with esgpull</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># esgpull self install</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1">## You may also need to run this step to get the data to download</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># esgpull config api.index_node esgf-node.ornl.gov/esgf-1-5-bridge</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>esgpull<span class="w"> </span>add<span class="w"> </span>--track<span class="w"> </span>--tag<span class="w"> </span><span class="si">${</span><span class="nv">EXPERIMENT_NAME</span><span class="si">}</span><span class="w"> </span>source_id:CEDS-CMIP-2025-04-18,CEDS-CMIP-2025-04-18-supplemental,DRES-CMIP-BB4CMIP7-2-0,UofMD-landState-3-1-2,UOEXETER-CMIP-2-2-1,FZJ-CMIP-ozone-1-2,FZJ-CMIP-nitrogen-2-0,SOLARIS-HEPPA-CMIP-4-6,PIK-CMIP-1-0-1,CR-CMIP-1-0-0
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>esgpull<span class="w"> </span>update<span class="w"> </span>--tag<span class="w"> </span><span class="si">${</span><span class="nv">EXPERIMENT_NAME</span><span class="si">}</span><span class="w"> </span>--yes
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>esgpull<span class="w"> </span>download<span class="w"> </span>--tag<span class="w"> </span><span class="si">${</span><span class="nv">EXPERIMENT_NAME</span><span class="si">}</span>
+<div class="codehilite"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="ch">#!/bin/bash</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nv">EXPERIMENT_NAME</span><span class="o">=</span><span class="s2">&quot;esm-piControl-spinup&quot;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1">## You may need to run the below if you haven&#39;t already done it once with esgpull</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1"># esgpull self install</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1">## You may also need to run this step to get the data to download</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1"># esgpull config api.index_node esgf-node.ornl.gov/esgf-1-5-bridge</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>esgpull<span class="w"> </span>add<span class="w"> </span>--track<span class="w"> </span>--tag<span class="w"> </span><span class="si">${</span><span class="nv">EXPERIMENT_NAME</span><span class="si">}</span><span class="w"> </span>source_id:CEDS-CMIP-2025-04-18,CEDS-CMIP-2025-04-18-supplemental,DRES-CMIP-BB4CMIP7-2-0,UofMD-landState-3-1-2,CR-CMIP-1-0-0,UOEXETER-CMIP-2-2-1,FZJ-CMIP-ozone-1-2,FZJ-CMIP-nitrogen-2-0,SOLARIS-HEPPA-CMIP-4-6,PIK-CMIP-1-0-1
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>esgpull<span class="w"> </span>update<span class="w"> </span>--tag<span class="w"> </span><span class="si">${</span><span class="nv">EXPERIMENT_NAME</span><span class="si">}</span><span class="w"> </span>--yes
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>esgpull<span class="w"> </span>download<span class="w"> </span>--tag<span class="w"> </span><span class="si">${</span><span class="nv">EXPERIMENT_NAME</span><span class="si">}</span>
 </code></pre></div>
   </div>
 </article>
@@ -1765,6 +1832,14 @@ you actually need to run your model.</p>
         
         
         
+        
+        <a href="#related-experiments"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#related-experiments');">
+            Related experiments
+        </a>
+        
+
         
         <a href="#experiment-set-up"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"

@@ -14,7 +14,7 @@
     
 
 
-<title>AMIP Experiment Setup and Forcings Guidance</title>
+<title>Experiment Setup and Forcings Guidance: amip</title>
 
 
 
@@ -29,7 +29,7 @@
 
 <!-- Open Graph (Facebook, LinkedIn) -->
 
-<meta property="og:title" content="AMIP Experiment Setup and Forcings Guidance">
+<meta property="og:title" content="Experiment Setup and Forcings Guidance: amip">
 
 
 
@@ -42,7 +42,7 @@
 
 <!-- Twitter Card -->
 
-<meta name="twitter:title" content="AMIP Experiment Setup and Forcings Guidance">
+<meta name="twitter:title" content="Experiment Setup and Forcings Guidance: amip">
 
 
 
@@ -1435,7 +1435,7 @@
         <h1
           class="scroll-m-20 text-4xl font-semibold tracking-tight sm:text-3xl xl:text-4xl"
         >
-          AMIP Experiment Setup and Forcings Guidance
+          Experiment Setup and Forcings Guidance: amip
         </h1>
 
         <div class="flex items-center gap-2 pt-1.5">
@@ -1462,66 +1462,71 @@
     </div>
   </div>
   <div class="typography w-full flex-1 *:data-[slot=alert]:first:mt-0">
-    <!-- TODO: get this information from esgvoc (add reference URLs at that point) -->
-<p>Responsible activity: CMIP</p>
-<!-- TODO: get this one line description from esgvoc -->
-<p>Atmosphere-only simulation with prescribed sea surface temperatures (SSTs) and sea-ice concentrations.</p>
+    <p>Simulation of the climate of the recent past with prescribed sea surface temperatures and sea ice concentrations.</p>
+<p>Responsible activity: <a href="../#cmip">CMIP</a>. Tier: 1</p>
+<p>These pages are intended to help with implementation of these experiments.
+If you notice something that is unclear, please
+<a href="https://github.com/WCRP-CMIP/cmip7-guidance/issues/new">raise an issue</a>.
+For the full background of the experiments, please see the following URLs:</p>
+<ul>
+<li><a href="https://doi.org/10.5194/gmd-18-6671-2025">https://doi.org/10.5194/gmd-18-6671-2025</a></li>
+</ul>
 <h2 id="experiment-set-up">Experiment set up<a class="headerlink" href="#experiment-set-up" title="Permanent link">&para;</a></h2>
-<!-- TODO: decide and then consistently apply some convention about whether experiment names are always surround by backticks `` or not -->
-<p>The amip simulation uses a specific set of forcings (see <a href="#forcings">forcings</a>).
-These should be applied as transient (i.e. time-changing) forcings over the length of the simulation.</p>
-<!-- TODO: consider whether we can generate these sentences automatically based on esgvoc -->
-<p>The simulation output should start on 1979-01-01 and end on 2021-12-31.
-Only one ensemble member is required.</p>
+<p>The amip simulation uses a specific set of forcings (see <a href="#forcings">forcings</a>).</p>
+<p>These should be applied as transient (i.e. time-changing) forcings over the length of the simulation.</p>
+<h3 id="timing-length-and-ensemble-size">Timing, length and ensemble size<a class="headerlink" href="#timing-length-and-ensemble-size" title="Permanent link">&para;</a></h3>
+<p>The simulation output should start on 1979-01-01 and end on 2021-12-31.</p>
+<p>Simulations should be 43 years in length.</p>
+<p>Only one ensemble member is required.</p>
 <h3 id="parent-experiment">Parent experiment<a class="headerlink" href="#parent-experiment" title="Permanent link">&para;</a></h3>
-<!--
-    TODO: use esgvoc to fill out the template
-    `<experiment-name>` branches from the `<parent-experiment-name>` simulation (part of `<parent-experiment-activity>`).
--->
-<p><code>amip</code> has no parent experiment.</p>
+<p><code>amip</code> has no parent experiment in the CMIP7 CVs.</p>
+<p>The parent experiment comes from <a href="https://wcrp-cmip.org/CMIP7">CMIP7</a>.</p>
 <h2 id="forcings">Forcings<a class="headerlink" href="#forcings" title="Permanent link">&para;</a></h2>
 <h3 id="general-headlines">General headlines<a class="headerlink" href="#general-headlines" title="Permanent link">&para;</a></h3>
 <p>The <code>amip</code> experiment is a time-varying forcings experiment.</p>
 <h3 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h3>
 <p>See notes for the <a href="../picontrol/">piControl simulation</a>.</p>
-<!-- TODO: auto-generate -->
-<p>The following pages give further information on each forcing
-beyond the ones used in the <a href="../historical/">historical simulation</a>:</p>
+<p>The following pages give further information on each forcing beyond the ones used in the
+<a href="../historical/">historical simulation</a>:</p>
 <ul>
-<li>AMIP sea-surface temperature and sea-ice boundary forcing: <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/amip-sst-sea-ice-boundary-forcing/">input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/amip-sst-sea-ice-boundary-forcing</a></li>
+<li>AMIP sea-surface temperature and sea-ice boundary forcing:
+  <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/amip-sst-sea-ice-boundary-forcing/">input4mips-cvs.readthedocs.io/dataset-overviews/amip-sst-sea-ice-boundary-forcing</a></li>
 </ul>
 <h3 id="versions-to-use">Versions to use<a class="headerlink" href="#versions-to-use" title="Permanent link">&para;</a></h3>
-<p>The forcings relevant for this simulation are the same as for the <a href="../historical/">historical simulation</a>
-with the addition of the SST and sea-ice forcing.
-For this additional forcing, we provide the version(s), in the form of "source ID(s)",
-which should be used when running this simulation.
-For all other forcings, please see the information on the <a href="../historical/">historical simulation page</a>.</p>
-<!-- TODO: auto-generate and just duplicate the information rather than forcing people to other pages -->
-
-<!-- TODO: auto-generate this -->
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">&quot;amip-sea-surface-temperature-and-sea-ice-boundary-forcing&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;PCMDI-AMIP-1-1-10&quot;</span><span class="p">]</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">}</span>
+<p>The forcings relevant for this simulation are the same as for the <a href="../historical/">historical simulation</a> with the
+addition of the SST and sea-ice forcing.
+For this additional forcing, we provide the version(s), in the form of "source ID(s)", which should be used when running
+this simulation.
+For all other forcings, please see the information on the <a href="../historical/">historical simulation</a> page.</p>
+<div class="codehilite"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">&quot;amip-sea-surface-temperature-and-sea-ice-boundary-forcing&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">        </span><span class="nt">&quot;recommended&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PCMDI-AMIP-1-1-10&quot;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">}</span>
 </code></pre></div>
 <h3 id="getting-the-data">Getting the data<a class="headerlink" href="#getting-the-data" title="Permanent link">&para;</a></h3>
-<p>The data is available on ESGF and searchable <a href="https://esgf-node.ornl.gov/search?project=input4MIPs&amp;versionType=all&amp;activeFacets=%7B%22mip_era%22%3A%22CMIP7%22%7D">via metagrid</a>,
-although this method of finding and downloading the data can involve a lot of clicking.
-Having said this, please also note: the aerosol optical properties based on the MACv2-SP parameterisation are not distrubuted via the ESGF.</p>
-<!-- TODO: add CI to check all URLs are live -->
-<p>Please see <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/aerosol-optical-properties-macv2-sp/#datasets-for-cmip7-phases">their specific guidance section</a>
+<p>The data is available on ESGF and searchable
+<a href="https://esgf-node.ornl.gov/search?project=input4MIPs&amp;versionType=all&amp;activeFacets=%7B%22mip_era%22%3A%22CMIP7%22%7D">via metagrid</a>,
+although this method of finding and downloading the data can involve a lot of clicking.</p>
+<p>Having said this, please also note: the aerosol optical properties based on the MACv2-SP parameterisation are not
+distributed via the ESGF; please see their
+<a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/aerosol-optical-properties-macv2-sp/#datasets-for-cmip7-phases">specific guidance section</a>
 for data access information.</p>
-<p>If you install <a href="https://esgf.github.io/esgf-download/">esgpull</a>,
-you can download all the data associated with the source IDs above with the script shown below.
-Note that this will download all the data associated with these source IDs,
-which is likely to be much more data than you actually need to run your model.</p>
-<!-- TODO: auto-generate this -->
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="ch">#!/bin/bash</span>
+<p>If you install <a href="https://esgf.github.io/esgf-download/">esgpull</a>, you can download all the data associated with the
+source IDs above with the script shown below.
+Note that this will download all the data associated with these source IDs, which is likely to be much more data than
+you actually need to run your model.</p>
+<div class="codehilite"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="ch">#!/bin/bash</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nv">EXPERIMENT_NAME</span><span class="o">=</span><span class="s2">&quot;historical&quot;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nv">EXPERIMENT_NAME</span><span class="o">=</span><span class="s2">&quot;amip&quot;</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>esgpull<span class="w"> </span>add<span class="w"> </span>--track<span class="w"> </span>--tag<span class="w"> </span><span class="si">${</span><span class="nv">EXPERIMENT_NAME</span><span class="si">}</span><span class="w"> </span>source_id:PCMDI-AMIP-1-1-10,CEDS-CMIP-2025-04-18,CEDS-CMIP-2025-04-18-supplemental,DRES-CMIP-BB4CMIP7-2-0,UofMD-landState-3-1-1,CR-CMIP-1-0-0,UOEXETER-CMIP-2-2-1,FZJ-CMIP-ozone-2-0,FZJ-CMIP-nitrogen-1-2,SOLARIS-HEPPA-CMIP-4-6,PIK-CMIP-1-0-1
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>esgpull<span class="w"> </span>update<span class="w"> </span>--tag<span class="w"> </span><span class="si">${</span><span class="nv">EXPERIMENT_NAME</span><span class="si">}</span><span class="w"> </span>--yes
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>esgpull<span class="w"> </span>download<span class="w"> </span>--tag<span class="w"> </span><span class="si">${</span><span class="nv">EXPERIMENT_NAME</span><span class="si">}</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1">## You may need to run the below if you haven&#39;t already done it once with esgpull</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1"># esgpull self install</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1">## You may also need to run this step to get the data to download</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1"># esgpull config api.index_node esgf-node.ornl.gov/esgf-1-5-bridge</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>esgpull<span class="w"> </span>add<span class="w"> </span>--track<span class="w"> </span>--tag<span class="w"> </span><span class="si">${</span><span class="nv">EXPERIMENT_NAME</span><span class="si">}</span><span class="w"> </span>source_id:PCMDI-AMIP-1-1-10,CEDS-CMIP-2025-04-18,CEDS-CMIP-2025-04-18-supplemental,DRES-CMIP-BB4CMIP7-2-0,UofMD-landState-3-1-2,CR-CMIP-1-0-0,UOEXETER-CMIP-2-2-1,FZJ-CMIP-ozone-2-0,FZJ-CMIP-nitrogen-2-0,SOLARIS-HEPPA-CMIP-4-6,PIK-CMIP-1-0-1
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>esgpull<span class="w"> </span>update<span class="w"> </span>--tag<span class="w"> </span><span class="si">${</span><span class="nv">EXPERIMENT_NAME</span><span class="si">}</span><span class="w"> </span>--yes
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>esgpull<span class="w"> </span>download<span class="w"> </span>--tag<span class="w"> </span><span class="si">${</span><span class="nv">EXPERIMENT_NAME</span><span class="si">}</span>
 </code></pre></div>
   </div>
 </article>
@@ -1767,6 +1772,12 @@ which is likely to be much more data than you actually need to run your model.</
             Experiment set up
         </a>
         
+        
+        <a href="#timing-length-and-ensemble-size"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#timing-length-and-ensemble-size');">
+            Timing, length and ensemble size
+        </a>
         
         <a href="#parent-experiment"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"

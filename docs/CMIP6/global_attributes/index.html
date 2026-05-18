@@ -1945,13 +1945,13 @@
 </li>
 <li>
 <p>The three attributes related to branching time (branch_time_in_child, branch_time_in_parent, parent_time_units) must be included if branch time is needed  to correctly interpret the data (e.g., in simulations spawned from a pre-industrial control run that has not reached equilibrium).  Suppose a model with a “noleap” calendar carries out a control run with the time coordinate reported in units of “days since 1000-1-1”.  Now suppose a historical simulation branches from that control run at day 3650 (i.e., on the date: 1010-1-1), and suppose the units of the time coordinate for the historical run are “days since 1850-01-01”.  Then in the historical run, the following global attributes should appear:</p>
-<div class="highlight"><pre><span></span><code>branch_time_in_child = 0.0D0; # double precision float
+<div class="codehilite"><pre><span></span><code>branch_time_in_child = 0.0D0; # double precision float
 branch_time_in_parent = 3650.0D0; # double precision float
 parent_time_units = “days since 1000-1-1”; # character string
 </code></pre></div>
 <p>If the calendar used in the parent is different from the child, then the parent’s calendar should be recorded in “parent_time_units”.  The CV for the calendar is the same as that for the CF calendar attribute. For example in the above case, if the child’s calendar is “gregorian”, but the parent’s is “noleap”, then parent_time_units=”days since 1000-1-1 (noleap)”. </p>
 <p>As another example, suppose a ScenarioMIP simulation “branches” from a historical run at the date 2015-1-1.  Suppose a noleap calendar is used in each and both have units of “days since 1850-1-1”.  (Note that ScenarioMIP simulations should always adopt the same units as the historical parent.)  In this case the following global attributes should appear in the ScenarioMIP output file:</p>
-<div class="highlight"><pre><span></span><code>branch_time_in_child = 60225.0D0
+<div class="codehilite"><pre><span></span><code>branch_time_in_child = 60225.0D0
 branch_time_in_parent = 60225.0D0
 parent_time_units = “days since 1850-1-1”.
 </code></pre></div>
@@ -1989,7 +1989,7 @@ parent_time_units = “days since 1850-1-1”.
 </li>
 <li>
 <p>The “grid” global attribute can be used to describe the horizontal grid and regridding procedure.   There is no standard form used to record this information, but it is suggested that when appropriate the following be indicated:  brief description of native grid and resolution, and if data have been regridded, regridding procedure and description of target grid.  Here are some examples:</p>
-<div class="highlight"><pre><span></span><code>grid = “native atmosphere T63 gaussian grid (128x64 lonxlat)”
+<div class="codehilite"><pre><span></span><code>grid = “native atmosphere T63 gaussian grid (128x64 lonxlat)”
 grid = “data regridded to a CMIP6 standard 1x1 degree lonxlat grid from the native T63 grid using an area-average preserving method.”
 grid = “data regridded via  bilinear interpolation to a 3x3 deg lonxlat grid from the native atmosphere T63 gaussian grid (128x64 lonxlat)”
 grid = “native ocean tri-polar grid with 43200 ocean cells”
@@ -1998,7 +1998,7 @@ grid = “native ocean tri-polar grid with 43200 ocean cells”
 <li>
 <p>Modeling groups may choose to report their output on the model’s native grid and/or regrid it to one or more target grids.  To distinguish between output reported on different grids,  a “<a href="https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_grid_label.json">grid_label</a>” attribute is defined.        </p>
 <p>The rules for assigning grid labels  should make it easy for users to select (using the ESGF search tools) CMIP output that is on a grid considered by each modeling group to best represent its model -- the so-called “primary” grid.  If output is reported on the native grid, this is always deemed the “primary” grid.  If output is <em>not</em> reported on the native grid, then modeling groups should regrid the data to some primary grid of its choosing   For the “primary” grid the following labels apply:</p>
-<div class="highlight"><pre><span></span><code>grid_label = &quot;gn&quot;  (output is reported on the native grid, usually but not invariably at grid cell centers)
+<div class="codehilite"><pre><span></span><code>grid_label = &quot;gn&quot;  (output is reported on the native grid, usually but not invariably at grid cell centers)
 grid_label = &quot;gr&quot;   (output is _not_ reported on the native grid, but instead is regridded by the modeling group to a “primary grid” of its choosing) 
 grid_label = “gm” (global mean output is reported, so data are not gridded)
 </code></pre></div>
@@ -2049,7 +2049,7 @@ grid_label = “gm” (global mean output is reported, so data are not gridded)
 </li>
 <li>
 <p>The “source” is used to fully identify the model and version.  The first portion of the “source” attribute is used in constructing “<a href="https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_source_id.json">source_id</a>”.  [The “source_id”, which must not exceed 16 characters in length,  is the same as the “modified source_id” (which appears as  the first part of “source”-- see below)  but with forbidden characters removed or replaced by a hyphen (“-”).  All characters are forbidden in source_id except a-z, A-Z, 0-9 and the hyphen (“-”).]  Additionally, the “source” attribute must include the year (i.e., model vintage) when this model version was first used in a scientific application.  It should also include information concerning the component models.  The following template should be followed in constructing “source”: </p>
-<div class="highlight"><pre><span></span><code>&lt;modified source_id&gt; (&lt;year&gt;): 
+<div class="codehilite"><pre><span></span><code>&lt;modified source_id&gt; (&lt;year&gt;): 
 atmos: &lt;model_name&gt; (&lt;technical_name&gt;, &lt;resolution_and_levels&gt;); 
 ocean: &lt;model_name&gt; (&lt;technical_name&gt;, &lt;native_resolution_and_levels&gt;); 
 seaIce: &lt;model_name&gt; (&lt;technical_name&gt;); 
@@ -2060,7 +2060,7 @@ ocnBgchem: &lt;model_name&gt; (&lt;technical_name&gt;);
 landIce: &lt;model_name&gt; (&lt;technical_name&gt;)
 </code></pre></div>
 <p>For some models, it may not make sense to include all these components, and none of the text following <code>&lt;year&gt;</code> is absolutely mandatory. As an example, "source" might contain the string: </p>
-<div class="highlight"><pre><span></span><code>CCSM2 (2002): atmos: CAM2 (cam2_0_brnchT_itea_2, T42L26); ocean: POP (pop2_0_ver_1.4.3, 3x2L15); seaIce: CSIM4; land: CLM2.0
+<div class="codehilite"><pre><span></span><code>CCSM2 (2002): atmos: CAM2 (cam2_0_brnchT_itea_2, T42L26); ocean: POP (pop2_0_ver_1.4.3, 3x2L15); seaIce: CSIM4; land: CLM2.0
 </code></pre></div>
 <p>The source and source_id should not change even when some of the component models are inactive in some of the CMIP experiments.  For example, if an AOGCM is named <code>“SomeAOGCM 1.0 (2016): atmosphere: SomeAGCM; ocean: SomeOGCM; sea ice: SomeSeaIce”</code>, then source_id would be <code>SomeAOGCM-1-0</code> and this same name would be used whether or not the model were run in coupled mode or AMIP mode (with prescribed SST and sea ice). </p>
 </li>
@@ -2101,7 +2101,7 @@ landIce: &lt;model_name&gt; (&lt;technical_name&gt;)
 <p>All types that apply to the model (i.e., are active in a given experiment) should appear in a list with each type separated by a single space.  </p>
 <p>Sometimes source_type for CMIP6 simulations will be described by a single label, as in “AOGCM” or “AGCM” or “OGCM”, but when additional interactive components are included, then multiple labels should be found in source_type (e..g., “AOGCM BGC”, “AGCM CHEM AER”, “AOGCM AER”, “AOGCM ISM”, “AGCM SLAB”, “OGCM BGC”).  Single labels will be used for “offline” models such as “ISM” and “RAD”. </p>
 <p>For each of the CMIP6 experiments, the list of components that are required and the ones that are allowed but optional can be found <a href="http://rawgit.com/WCRP-CMIP/CMIP6_CVs/master/src/CMIP6_experiment_id.html">here</a>. The following combinations for source_type can be found there:</p>
-<div class="highlight"><pre><span></span><code>AGCM  [BGC]  [AER]  [CHEM] [SLAB]
+<div class="codehilite"><pre><span></span><code>AGCM  [BGC]  [AER]  [CHEM] [SLAB]
 AOGCM  [BGC]  [AER]  [CHEM] [ISM]
 OGCM
 LAND
@@ -2184,14 +2184,14 @@ RAD
 <p>The DRS elements marked with an asterisk (*) are associated with global attributes that may be space-separated lists of values.  Only the first item in a list is recognized by the DRS, but in faceted searches all listed items will be recognized. </p>
 <h2 id="file-name-template">File name template<a class="headerlink" href="#file-name-template" title="Permanent link">&para;</a></h2>
 <p>Before constructing file names and directory structures, it is useful to define a member_id, which can be used to distinguish among different simulations belonging to a root experiment.  The member_id is constructed from the sub_experiment_id and variant_label  using the following algorithm:</p>
-<div class="highlight"><pre><span></span><code>if sub_experiment_id = “none”
+<div class="codehilite"><pre><span></span><code>if sub_experiment_id = “none”
     member_id = &lt;variant_label&gt;
 else
     member_id = &lt;sub_experiment_id&gt;-&lt;variant_label&gt;
 endif
 </code></pre></div>
 <p>With this segment defined, the file name can be constructed consistent with the following template:</p>
-<div class="highlight"><pre><span></span><code>&lt;variable_id&gt;_&lt;table_id&gt;_&lt;source_id&gt;_&lt;experiment_id &gt;_&lt;member_id&gt;_&lt;grid_label&gt;[_&lt;time_range&gt;].nc
+<div class="codehilite"><pre><span></span><code>&lt;variable_id&gt;_&lt;table_id&gt;_&lt;source_id&gt;_&lt;experiment_id &gt;_&lt;member_id&gt;_&lt;grid_label&gt;[_&lt;time_range&gt;].nc
 </code></pre></div>
 <p>For time-invariant fields, the last segment (<code>time_range</code>) above is omitted.</p>
 <p>Example when there is no sub-experiment: <code>tas_Amon_GFDL-CM4_historical_r1i1p1f1_gn_196001-199912.nc</code></p>
@@ -2199,14 +2199,14 @@ endif
 <p>All strings appearing in the file name are constructed using only the following characters:  a-z, A-Z, 0-9, and the hyphen ("-"), except the hyphen must not appear in variable_id.  Underscores are prohibited throughout except as shown in the template.</p>
 <p>Note that the last segment of the file name indicates the time-range spanned by the data in the file, and is omitted when inappropriate (e.g., if a variable is “fixed” for all time).  The format for this segment is as in CMIP5 (see <a href="http://cmip-pcmdi.llnl.gov/cmip5/docs/cmip5_data_reference_syntax.pdf">http://cmip-pcmdi.llnl.gov/cmip5/docs/cmip5_data_reference_syntax.pdf</a>):</p>
 <p>The \<time_range> is a string generated consistent with the following:</p>
-<div class="highlight"><pre><span></span><code>If frequency = “fx” then
+<div class="codehilite"><pre><span></span><code>If frequency = “fx” then
     &lt;time_range&gt;=””
 else
     &lt;time_range&gt; = M-N 
 endif
 </code></pre></div>
 <p>where M and N are integers of the form <code>yyyy[MM[dd[hh[mm[ss]]]]][&lt;suffix&gt;]</code> (expressed as a string, where where ‘yyyy’, ‘MM’, ‘dd’, ‘hh’ ‘mm’ and ‘ss’ are integer year, month, day, hour, minute, and second, respectively) and <code>&lt;suffix&gt;</code> is defined as follows:</p>
-<div class="highlight"><pre><span></span><code>if the variable identified by variable_id has a time dimension with a “climatology” attribute then
+<div class="codehilite"><pre><span></span><code>if the variable identified by variable_id has a time dimension with a “climatology” attribute then
     suffix = “-clim”
 else
     suffix = “”
@@ -2261,7 +2261,7 @@ endif
 </tbody>
 </table></div>
 <h2 id="directory-structure-template">Directory structure template<a class="headerlink" href="#directory-structure-template" title="Permanent link">&para;</a></h2>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Directory structure = 
+<p><div class="codehilite"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Directory structure = 
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    &lt;mip_era&gt;/
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        &lt;activity_id&gt;
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>            &lt;institution_id&gt;/
@@ -2742,7 +2742,7 @@ Note:</p>
 <p>We now provide two examples of the global attributes relevant to identifying a CMIP6 experiment, and the filenames and directory structures that make use of these global attributes. </p>
 <p>Example 1: The common case when there are no sub-experiments:</p>
 <p>Global attributes (relevant to experiment definition):\
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>experiment_id = “1pctCO2”
+<div class="codehilite"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>experiment_id = “1pctCO2”
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>experiment = “1 percent per year increase in CO2 concentration”
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>sub_experiment_id = “none”
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>sub_experiment =  “none”
@@ -2757,7 +2757,7 @@ file name:  <code>tas_Amon_CCSM2-1_1pctCO2_r1i1p1f1_gn_202001-202912.nc</code><
 <p>directory structure:   <code>CMIP6/CMIP/NCAR/CCSM2-1/1pctCO2/r1i1p1f1/Amon/tas/gn/v20150320/</code></p>
 <p>Example 2: The uncommon case (in  CMIP6) when there are sub-experiments defined:</p>
 <p>Global attributes (relevant to experiment definition):
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>experiment_id = “dcppA-hindcast”
+<div class="codehilite"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>experiment_id = “dcppA-hindcast”
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>experiment =  “year 1-5 hindcast initialized based on observations and using historical forcing”
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>sub_experiment_id = “s1960”
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>sub_experiment =  “initialized near end of year 1960”
@@ -2808,7 +2808,7 @@ file name:  <code>tas_Amon_CCSM2-1_1pctCO2_r1i1p1f1_gn_202001-202912.nc</code><
 </li>
 <li>
 <p>Except in the case of a CMIP6 “standard grid” (see item 4 below), define the global attribute “nominal_resolution” according to:</p>
-<div class="highlight"><pre><span></span><code>if       dmax &lt; 0.72 km,  nominal_resolution = “0.5 km”
+<div class="codehilite"><pre><span></span><code>if       dmax &lt; 0.72 km,  nominal_resolution = “0.5 km”
 else if  dmax &lt; 1.6 km,   nominal_resolution = “1 km”
 else if  dmax &lt;  3.6 km,  nominal_resolution = “2.5 km”
 else if  dmax &lt;  7.2 km,  nominal_resolution = “5 km” 

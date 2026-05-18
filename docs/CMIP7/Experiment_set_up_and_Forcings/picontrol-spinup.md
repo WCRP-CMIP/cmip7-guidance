@@ -1,50 +1,66 @@
 ---
 layout: default
-title: "Experiment Setup and Forcings Guidance: scen7-vl"
+title: "Experiment Setup and Forcings Guidance: piControl-spinup"
 ---
 
-# Experiment Setup and Forcings Guidance: scen7-vl
+# Experiment Setup and Forcings Guidance: piControl-spinup
 
-PLACEHOLDER TBC.
-CMIP7 ScenarioMIP very low emissions future.
-Run with prescribed carbon dioxide concentrations (for prescribed carbon dioxide emissions, see `esm-scen7-vl`).
+Spin-up simulation.
+Used to get the model into a state of approximate radiative equilibrium before starting the `piControl` simulation.
 
-Responsible activity: [ScenarioMIP](./index.md#scenariomip). Tier: See [ScenarioMIP](./index.md#scenariomip) information
+Responsible activity: [CMIP](./index.md#cmip). Tier: 3
 
 These pages are intended to help with implementation of these experiments.
 If you notice something that is unclear, please
 [raise an issue](https://github.com/WCRP-CMIP/cmip7-guidance/issues/new).
 For the full background of the experiments, please see the following URLs:
 
-- [https://doi.org/10.5194/egusphere-2024-3765](https://doi.org/10.5194/egusphere-2024-3765)
+- [https://doi.org/10.5194/gmd-18-6671-2025](https://doi.org/10.5194/gmd-18-6671-2025)
+
+## Related experiments
+
+- [esm-piControl-spinup](./esm-picontrol-spinup.md) is the emissions-driven counterpart to this concentration-driven
+  experiment.
 
 ## Experiment set up
 
-The CMIP7 very low scenario simulation uses a specific set of forcings (see [forcings](#forcings)).
+The pre-industrial control spin-up simulation uses piControl forcings (see [forcings](#forcings)).
 
-These should be applied as transient (i.e. time-changing) forcings over the length of the simulation.
+These should be applied on repeat for the entirety of the simulation.
+
+You are free to start the time axis of your outputs at whatever year you like (e.g. starting at year 1, or 1850, or year
+500).
 
 ### Timing, length and ensemble size
 
-The simulation output should start on 2022-01-01 and end on 2100-12-31.
+The CMIP7 CVs do not define fixed start or end dates for this simulation.
 
-Simulations should be 79 years in length.
+The CMIP7 CVs do not define a minimum simulation length for this experiment.
 
 Only one ensemble member is required.
 
 ### Parent experiment
 
-`scen7-vl` branches from the [historical](./historical.md) simulation (part of [CMIP](./index.md#cmip)).
-
-Branch from `historical` at 2022-01-01.
-
-The parent experiment comes from [CMIP7](https://wcrp-cmip.org/CMIP7).
+`piControl-spinup` has no parent experiment in the CMIP7 CVs.
 
 ## Forcings
 
 ### General headlines
 
-The `scen7-vl` experiment is a time-varying forcings experiment.
+The `piControl-spinup` experiment is a fixed forcings experiment.
+
+However, it can require some care to use the correct forcings for `piControl`.
+This is particularly true for stratospheric aerosol forcing, ozone and solar as the `piControl` values for these
+forcings aren't simply a repeat of 1850 values.
+
+Please note that the ozone forcing should come from files with the source ID `FZJ-CMIP-ozone-1-2`, no `piControl` data
+is included in `FZJ-CMIP-ozone-2-0` (which only updates `historical` values).
+
+Please also note that the nitrogen deposition forcing should come from files with the source ID `FZJ-CMIP-nitrogen-2-0`.
+`FZJ-CMIP-nitrogen-2-0` was released quite late and the impact of the change is likely to be small, so if you have
+simulations based on `FZJ-CMIP-nitrogen-1-2`, you do not need to re-run them.
+
+Please read the guidance pages linked under [notes](#notes) to ensure that you use the correct forcing values.
 
 ### Notes
 
@@ -85,40 +101,40 @@ recommended versions.
 {
     "anthropogenic-emissions": {
         "recommended": [
-            "IIASA-IAMC-vl-1-0-0",
-            "IIASA-IAMC-1-0-0"
+            "CEDS-CMIP-2025-04-18",
+            "CEDS-CMIP-2025-04-18-supplemental"
         ]
     },
     "biomass-burning-emissions": {
-        "recommended": [
-            "IIASA-IAMC-vl-1-0-0",
-            "IIASA-IAMC-1-0-0"
-        ]
+        "recommended": "DRES-CMIP-BB4CMIP7-2-0"
     },
     "land-use": {
-        "recommended": "UofMD-landState-vl-3-1-1",
+        "recommended": "UofMD-landState-3-1-2",
         "acceptable": [
-            "UofMD-landState-vl-3-1"
+            "UofMD-landState-3-1-1"
         ]
     },
     "greenhouse-gas-concentrations": {
-        "recommended": "CR-vl-1-0-0"
+        "recommended": "CR-CMIP-1-0-0"
     },
     "stratospheric-aerosol-forcing": {
-        "recommended": "UOEXETER-ScenarioMIP-2-2-2"
+        "recommended": "UOEXETER-CMIP-2-2-1"
     },
     "ozone": {
-        "recommended": "FZJ-CMIP-ozone-h-1-0"
+        "recommended": "FZJ-CMIP-ozone-1-2"
     },
     "nitrogen-deposition": {
-        "recommended": "FZJ-CMIP-nitrogen-h-1-0"
+        "recommended": "FZJ-CMIP-nitrogen-2-0",
+        "acceptable": [
+            "FZJ-CMIP-nitrogen-1-2"
+        ]
     },
     "solar": {
-        "recommended": "SOLARIS-HEPPA-ScenarioMIP-4-6"
+        "recommended": "SOLARIS-HEPPA-CMIP-4-6"
     },
     "aerosol-optical-properties": null,
     "population-density": {
-        "recommended": "PIK-vl-1-0-0"
+        "recommended": "PIK-CMIP-1-0-1"
     }
 }
 ```
@@ -142,13 +158,13 @@ you actually need to run your model.
 ```bash
 #!/bin/bash
 
-EXPERIMENT_NAME="scen7-vl"
+EXPERIMENT_NAME="piControl-spinup"
 
 ## You may need to run the below if you haven't already done it once with esgpull
 # esgpull self install
 ## You may also need to run this step to get the data to download
 # esgpull config api.index_node esgf-node.ornl.gov/esgf-1-5-bridge
-esgpull add --track --tag ${EXPERIMENT_NAME} source_id:IIASA-IAMC-vl-1-0-0,IIASA-IAMC-1-0-0,UofMD-landState-vl-3-1-1,CR-vl-1-0-0,UOEXETER-ScenarioMIP-2-2-2,FZJ-CMIP-ozone-h-1-0,FZJ-CMIP-nitrogen-h-1-0,SOLARIS-HEPPA-ScenarioMIP-4-6,PIK-vl-1-0-0
+esgpull add --track --tag ${EXPERIMENT_NAME} source_id:CEDS-CMIP-2025-04-18,CEDS-CMIP-2025-04-18-supplemental,DRES-CMIP-BB4CMIP7-2-0,UofMD-landState-3-1-2,CR-CMIP-1-0-0,UOEXETER-CMIP-2-2-1,FZJ-CMIP-ozone-1-2,FZJ-CMIP-nitrogen-2-0,SOLARIS-HEPPA-CMIP-4-6,PIK-CMIP-1-0-1
 esgpull update --tag ${EXPERIMENT_NAME} --yes
 esgpull download --tag ${EXPERIMENT_NAME}
 ```

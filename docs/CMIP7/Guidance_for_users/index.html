@@ -1632,13 +1632,13 @@ However it is recognized that their finer granularity could result in an unmanag
 <li><a href="../Branded_Variables/">Branded variable documentation</a></li>
 </ul>
 <p>In <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr>, the concept of branded variables has been introduced to make it easier to find the variables you want. Branded variables follow the template: </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&lt;branded_variable&gt; 
+<div class="codehilite"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&lt;branded_variable&gt; 
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>= &lt;variable_id&gt;_&lt;branding_suffix&gt;
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>= &lt;variable_id&gt;_&lt;temporal_label&gt;-&lt;vertical_label&gt;-&lt;horizontal_label&gt;-&lt;area_label&gt;
 </code></pre></div>
 <p>To uniquely identify requested variables, frequency and region are required together with the branded variable.
 The <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> compound name used in the Data Request also includes each requested variable's primary realm, for ease of identifying variables associated with a realm:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>&lt;compound_name&gt; = &lt;realm&gt;.&lt;branded_variable&gt;.&lt;frequency&gt;.&lt;region&gt;
+<div class="codehilite"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>&lt;compound_name&gt; = &lt;realm&gt;.&lt;branded_variable&gt;.&lt;frequency&gt;.&lt;region&gt;
 </code></pre></div></p>
 <p>For example, the equivalent of <code>Amon.tas</code> in CMIP6 would be  <code>atmos.tas_tavg-h2m-hxy-u.mon.GLB</code> in <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr>.</p>
 <details class="info">
@@ -1665,7 +1665,7 @@ Before working with any CMIP dataset, users should <strong>check the calendar ty
 <li><strong>all_leap</strong> — every year has 366 days (all years include a leap day).</li>
 </ul>
 <p>These calendars are stored in the <code>calendar</code> attribute of the <code>time</code> variable, for example:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ncdump<span class="w"> </span>-h<span class="w"> </span>tas_day_ACCESS-ESM1-5_ssp585.nc<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>calendar
+<div class="codehilite"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ncdump<span class="w"> </span>-h<span class="w"> </span>tas_day_ACCESS-ESM1-5_ssp585.nc<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>calendar
 </code></pre></div>
 <p>Further reading in CF conventions for time coordinate: <a href="https://cfconventions.org/Data/cf-conventions/cf-conventions-1.12/cf-conventions.html#time-coordinate">https://cfconventions.org/Data/cf-conventions/cf-conventions-1.12/cf-conventions.html#time-coordinate</a></p>
 <p>It is recommended that users use the <a href="https://unidata.github.io/cftime/">cftime</a> library to handle time.</p>

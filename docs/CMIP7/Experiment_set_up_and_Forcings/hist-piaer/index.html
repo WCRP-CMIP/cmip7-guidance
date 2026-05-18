@@ -14,7 +14,7 @@
     
 
 
-<title>hist-piAer Experiment Setup and Forcings Guidance</title>
+<title>Experiment Setup and Forcings Guidance: hist-piAer</title>
 
 
 
@@ -29,7 +29,7 @@
 
 <!-- Open Graph (Facebook, LinkedIn) -->
 
-<meta property="og:title" content="hist-piAer Experiment Setup and Forcings Guidance">
+<meta property="og:title" content="Experiment Setup and Forcings Guidance: hist-piAer">
 
 
 
@@ -42,7 +42,7 @@
 
 <!-- Twitter Card -->
 
-<meta name="twitter:title" content="hist-piAer Experiment Setup and Forcings Guidance">
+<meta name="twitter:title" content="Experiment Setup and Forcings Guidance: hist-piAer">
 
 
 
@@ -1435,7 +1435,7 @@
         <h1
           class="scroll-m-20 text-4xl font-semibold tracking-tight sm:text-3xl xl:text-4xl"
         >
-          hist-piAer Experiment Setup and Forcings Guidance
+          Experiment Setup and Forcings Guidance: hist-piAer
         </h1>
 
         <div class="flex items-center gap-2 pt-1.5">
@@ -1462,50 +1462,75 @@
     </div>
   </div>
   <div class="typography w-full flex-1 *:data-[slot=alert]:first:mt-0">
-    <!-- TODO: get this information from esgvoc (add reference URLs at that point) -->
-<p>Responsible activity: AerChemMIP</p>
-<p>Note, the information on this page is likely not correct.
-We are awaiting documentation of the forcings for the AerChemMIP CMIP7 AFT experiments.
-Some details may be available in <a href="https://doi.org/10.5194/egusphere-2025-5669">Fiedler et al</a> (preprint)
-and information on AerChemMIP can be found via the <a href="https://wcrp-cmip.org/mips/aerchemmip2/">CMIP IPO website</a>.
-Please see <a href="https://github.com/WCRP-CMIP/cmip7-guidance/issues/124">issue #124</a>
-to track progress resolving this.</p>
-<!-- TODO: get this one line description from esgvoc -->
-<!-- TODO: check this with someone who knows what they're reading -->
-<p>In combination with <code>historical</code>, allows for evaluation of the air quality and climate effect of historical aerosol and tropospheric non-methane ozone precursor emissions in models without interactive chemistry (for models with interactive chemistry, see <code>hist-piAQ</code>).</p>
+    <p>Used to diagnose climate responses to the regionally heterogeneous evolution of anthropogenic aerosol emissions.
+Anthropogenic aerosols and aerosol precursor emissions (BC, OC, NH3, SO2) evolve as in <code>piControl</code>.
+All other forcings evolve as in <code>historical</code>.
+Intended for models without interactive chemistry.
+Models with interactive chemistry should run <code>hist-piAQ</code> instead.
+(Identical to <code>hist-piAer</code> in AerChemMIP phase 1.)</p>
+<p>Responsible activity: <a href="../#aerchemmip">AerChemMIP</a>. Tier: 1</p>
+<p>These pages are intended to help with implementation of these experiments.
+If you notice something that is unclear, please
+<a href="https://github.com/WCRP-CMIP/cmip7-guidance/issues/new">raise an issue</a>.
+For the full background of the experiments, please see the following URLs:</p>
+<ul>
+<li><a href="https://doi.org/10.5194/gmd-10-585-2017">https://doi.org/10.5194/gmd-10-585-2017</a></li>
+</ul>
+<h2 id="related-experiments">Related experiments<a class="headerlink" href="#related-experiments" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../hist-piaq/">hist-piAQ</a> is the corresponding interactive-chemistry experiment for models that include interactive
+  chemistry.</li>
+</ul>
 <h2 id="experiment-set-up">Experiment set up<a class="headerlink" href="#experiment-set-up" title="Permanent link">&para;</a></h2>
 <!-- TODO: check this with someone who knows what they're reading -->
-<!-- TODO: decide and then consistently apply some convention about whether experiment names are always surround by backticks `` or not -->
-<p>The <code>hist-piAer</code> simulation is a simple variant of the <a href="../historical/">historical simulation</a>
-where aerosol and trospheric non-methane ozone precursor emissions are kept at pre-industrial levels.
-<code>hist-piAer</code> is for models that do not include interactive chemistry.
-For models with interactive chemistry, please see <a href="../hist-piaq/">hist-piAQ</a> instead.</p>
-<!-- TODO: consider whether we can generate these sentences automatically based on esgvoc -->
+
+<p>The <code>hist-piAer</code> simulation is a simple variant of the <a href="../historical/">historical simulation</a> where aerosol and
+tropospheric non-methane ozone precursor emissions are kept at pre-industrial levels. <code>hist-piAer</code> is for models that do
+not include interactive chemistry.</p>
+<h3 id="timing-length-and-ensemble-size">Timing, length and ensemble size<a class="headerlink" href="#timing-length-and-ensemble-size" title="Permanent link">&para;</a></h3>
 <p>The simulation output should start on 1850-01-01 and end on 2021-12-31.</p>
-<!-- TODO: double check, dunne et al. says 6?! -->
+<p>Simulations should be 172 years in length.</p>
 <p>Only one ensemble member is required.</p>
 <h3 id="parent-experiment">Parent experiment<a class="headerlink" href="#parent-experiment" title="Permanent link">&para;</a></h3>
-<!--
-    TODO: use esgvoc to fill out the template
-    `<experiment-name>` branches from the `<parent-experiment-name>` simulation (part of `<parent-experiment-activity>`).
--->
-<p><code>hist-piAer</code> branches from the <code>piControl</code> simulation (part of <code>CMIP</code>).</p>
-<!-- TODO: get branch information from esgvoc -->
-<p>Branch from <code>piControl</code> at a time of your choosing.
-This branch time should match the branch time used for initialising the <a href="../historical/">historical simulation</a>.</p>
+<p><code>hist-piAer</code> branches from the <a href="../picontrol/">piControl</a> simulation (part of <a href="../#cmip">CMIP</a>).</p>
+<p>Branch from <code>piControl</code> at a time of your choosing.</p>
+<p>The parent experiment comes from <a href="https://wcrp-cmip.org/CMIP7">CMIP7</a>.</p>
+<p>This branch time should match the branch time used for initialising the <a href="../historical/">historical simulation</a>.</p>
 <h2 id="forcings">Forcings<a class="headerlink" href="#forcings" title="Permanent link">&para;</a></h2>
 <h3 id="general-headlines">General headlines<a class="headerlink" href="#general-headlines" title="Permanent link">&para;</a></h3>
-<p>The <code>hist-piAer</code> experiment is a time-varying forcings experiment,
-except for aerosol and tropospheric non-methane ozone precursor emissions which should be fixed.</p>
+<p>The <code>hist-piAer</code> experiment is a time-varying forcings experiment, except for aerosol and tropospheric non-methane ozone
+precursor emissions which should be fixed.</p>
 <h3 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h3>
 <p>See notes for the <a href="../picontrol/">piControl simulation</a> and <a href="../historical/">historical simulation</a>.</p>
 <h3 id="versions-to-use">Versions to use<a class="headerlink" href="#versions-to-use" title="Permanent link">&para;</a></h3>
-<p>For aerosol and trospheric non-methane ozone precursor emissions
-the relevant forcing is the same as for the <a href="../picontrol/">piControl simulation</a>.
-For all other forcings,
-the forcing versions relevant for this simulation are the same as for the <a href="../historical/">historical simulation</a>.</p>
+<p>For aerosol and tropospheric non-methane ozone precursor emissions the relevant forcing is the same as for the
+<a href="../picontrol/">piControl simulation</a>.</p>
+<p>For all other forcings, the forcing versions relevant for this simulation are the same as for the
+<a href="../historical/">historical simulation</a>.</p>
 <h3 id="getting-the-data">Getting the data<a class="headerlink" href="#getting-the-data" title="Permanent link">&para;</a></h3>
-<p>See instructions for the <a href="../picontrol/">piControl simulation</a> and <a href="../historical/">historical simulation</a>.</p>
+<p>The data is available on ESGF and searchable
+<a href="https://esgf-node.ornl.gov/search?project=input4MIPs&amp;versionType=all&amp;activeFacets=%7B%22mip_era%22%3A%22CMIP7%22%7D">via metagrid</a>,
+although this method of finding and downloading the data can involve a lot of clicking.</p>
+<p>Having said this, please also note: the aerosol optical properties based on the MACv2-SP parameterisation are not
+distributed via the ESGF; please see their
+<a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/aerosol-optical-properties-macv2-sp/#datasets-for-cmip7-phases">specific guidance section</a>
+for data access information.</p>
+<p>If you install <a href="https://esgf.github.io/esgf-download/">esgpull</a>, you can download all the data associated with the
+source IDs above with the script shown below.
+Note that this will download all the data associated with these source IDs, which is likely to be much more data than
+you actually need to run your model.</p>
+<div class="codehilite"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="ch">#!/bin/bash</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nv">EXPERIMENT_NAME</span><span class="o">=</span><span class="s2">&quot;hist-piAer&quot;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1">## You may need to run the below if you haven&#39;t already done it once with esgpull</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># esgpull self install</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1">## You may also need to run this step to get the data to download</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># esgpull config api.index_node esgf-node.ornl.gov/esgf-1-5-bridge</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>esgpull<span class="w"> </span>add<span class="w"> </span>--track<span class="w"> </span>--tag<span class="w"> </span><span class="si">${</span><span class="nv">EXPERIMENT_NAME</span><span class="si">}</span><span class="w"> </span>source_id:CEDS-CMIP-2025-04-18,CEDS-CMIP-2025-04-18-supplemental,DRES-CMIP-BB4CMIP7-2-0,UofMD-landState-3-1-2,CR-CMIP-1-0-0,UOEXETER-CMIP-2-2-1,FZJ-CMIP-ozone-2-0,FZJ-CMIP-nitrogen-2-0,SOLARIS-HEPPA-CMIP-4-6,PIK-CMIP-1-0-1
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>esgpull<span class="w"> </span>update<span class="w"> </span>--tag<span class="w"> </span><span class="si">${</span><span class="nv">EXPERIMENT_NAME</span><span class="si">}</span><span class="w"> </span>--yes
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>esgpull<span class="w"> </span>download<span class="w"> </span>--tag<span class="w"> </span><span class="si">${</span><span class="nv">EXPERIMENT_NAME</span><span class="si">}</span>
+</code></pre></div>
   </div>
 </article>
                                 <div class="mx-auto flex flex-wrap h-16 w-full max-w-2xl items-center gap-2 px-4 md:px-0">
@@ -1744,12 +1769,26 @@ the forcing versions relevant for this simulation are the same as for the <a hre
         
         
         
+        <a href="#related-experiments"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#related-experiments');">
+            Related experiments
+        </a>
+        
+
+        
         <a href="#experiment-set-up"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
             data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#experiment-set-up');">
             Experiment set up
         </a>
         
+        
+        <a href="#timing-length-and-ensemble-size"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#timing-length-and-ensemble-size');">
+            Timing, length and ensemble size
+        </a>
         
         <a href="#parent-experiment"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"

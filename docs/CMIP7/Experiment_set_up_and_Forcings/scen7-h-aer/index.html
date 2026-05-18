@@ -14,7 +14,7 @@
     
 
 
-<title>scen7-h-Aer Experiment Setup and Forcings Guidance</title>
+<title>Experiment Setup and Forcings Guidance: scen7-h-Aer</title>
 
 
 
@@ -29,7 +29,7 @@
 
 <!-- Open Graph (Facebook, LinkedIn) -->
 
-<meta property="og:title" content="scen7-h-Aer Experiment Setup and Forcings Guidance">
+<meta property="og:title" content="Experiment Setup and Forcings Guidance: scen7-h-Aer">
 
 
 
@@ -42,7 +42,7 @@
 
 <!-- Twitter Card -->
 
-<meta name="twitter:title" content="scen7-h-Aer Experiment Setup and Forcings Guidance">
+<meta name="twitter:title" content="Experiment Setup and Forcings Guidance: scen7-h-Aer">
 
 
 
@@ -1435,7 +1435,7 @@
         <h1
           class="scroll-m-20 text-4xl font-semibold tracking-tight sm:text-3xl xl:text-4xl"
         >
-          scen7-h-Aer Experiment Setup and Forcings Guidance
+          Experiment Setup and Forcings Guidance: scen7-h-Aer
         </h1>
 
         <div class="flex items-center gap-2 pt-1.5">
@@ -1462,12 +1462,96 @@
     </div>
   </div>
   <div class="typography w-full flex-1 *:data-[slot=alert]:first:mt-0">
-    <p>Note, the information to put on this page is still being clarified.
-We are awaiting documentation of the forcings for the AerChemMIP CMIP7 AFT experiments.
-Some details may be available in <a href="https://doi.org/10.5194/egusphere-2025-5669">Fiedler et al</a> (preprint)
-and information on AerChemMIP can be found via the <a href="https://wcrp-cmip.org/mips/aerchemmip2/">CMIP IPO website</a>.
-Please see <a href="https://github.com/WCRP-CMIP/cmip7-guidance/issues/124">issue #124</a>
-to track progress resolving this.</p>
+    <p>Used to diagnose climate responses to the regionally heterogeneous evolution of anthropogenic aerosol emissions.
+Anthropogenic aerosols and aerosol precursor emissions (BC, OC, NH3, SO2) are held constant at present-day (2021)
+levels.
+All other forcings evolve as in <code>scen7-h</code>.
+Intended for models without interactive chemistry.
+Models with interactive chemistry should run <code>scen7-h-AQ</code> instead.</p>
+<p>Responsible activity: <a href="../#aerchemmip">AerChemMIP</a>. Tier: 1</p>
+<p>These pages are intended to help with implementation of these experiments.
+If you notice something that is unclear, please
+<a href="https://github.com/WCRP-CMIP/cmip7-guidance/issues/new">raise an issue</a>.
+For the full background of the experiments, please see the following URLs:</p>
+<ul>
+<li><a href="https://doi.org/10.5194/gmd-10-585-2017">https://doi.org/10.5194/gmd-10-585-2017</a></li>
+</ul>
+<h2 id="related-experiments">Related experiments<a class="headerlink" href="#related-experiments" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../scen7-h-aq/">scen7-h-AQ</a> is the corresponding interactive-chemistry experiment for models that include
+  interactive chemistry.</li>
+</ul>
+<h2 id="experiment-set-up">Experiment set up<a class="headerlink" href="#experiment-set-up" title="Permanent link">&para;</a></h2>
+<p>The <code>scen7-h-Aer</code> simulation is a variant of the <code>scen7-h</code> simulation.</p>
+<p>The aerosol and tropospheric non-methane ozone precursor emissions should be held fixed at 2021 values from the
+historical simulation.</p>
+<p>All other forcings should evolve as in <code>scen7-h</code>.</p>
+<p><code>scen7-h-Aer</code> is for models that do not include interactive chemistry.</p>
+<h3 id="timing-length-and-ensemble-size">Timing, length and ensemble size<a class="headerlink" href="#timing-length-and-ensemble-size" title="Permanent link">&para;</a></h3>
+<p>The simulation output should start on 2022-01-01 and end on 2100-12-31.</p>
+<p>Simulations should be 79 years in length.</p>
+<p>Only one ensemble member is required.</p>
+<h3 id="parent-experiment">Parent experiment<a class="headerlink" href="#parent-experiment" title="Permanent link">&para;</a></h3>
+<p><code>scen7-h-Aer</code> branches from the <a href="../historical/">historical</a> simulation (part of <a href="../#cmip">CMIP</a>).</p>
+<p>Branch from <code>historical</code> at 2022-01-01.</p>
+<p>The parent experiment comes from <a href="https://wcrp-cmip.org/CMIP7">CMIP7</a>.</p>
+<h2 id="forcings">Forcings<a class="headerlink" href="#forcings" title="Permanent link">&para;</a></h2>
+<h3 id="general-headlines">General headlines<a class="headerlink" href="#general-headlines" title="Permanent link">&para;</a></h3>
+<p>The <code>scen7-h-Aer</code> experiment is a time-varying forcings experiment, combining aerosol and tropospheric non-methane ozone
+precursor emissions from the 2021 values in the <a href="../historical/">historical simulation</a> with all other forcings from
+the <code>scen7-h</code> simulation.</p>
+<h3 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h3>
+<p>The following pages give further information on each forcing:</p>
+<ul>
+<li>anthropogenic emissions:
+  <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/anthropogenic-slcf-co2-emissions/">input4mips-cvs.readthedocs.io/dataset-overviews/anthropogenic-slcf-co2-emissions</a></li>
+<li>biomass burning emissions:
+  <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/open-biomass-burning-emissions/">input4mips-cvs.readthedocs.io/dataset-overviews/open-biomass-burning-emissions</a></li>
+<li>land use:
+  <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/land-use/">input4mips-cvs.readthedocs.io/dataset-overviews/land-use</a></li>
+<li>greenhouse gas concentrations:
+  <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/greenhouse-gas-concentrations/">input4mips-cvs.readthedocs.io/dataset-overviews/greenhouse-gas-concentrations</a></li>
+<li>stratospheric aerosol forcing:
+  <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/stratospheric-volcanic-so2-emissions-aod/">input4mips-cvs.readthedocs.io/dataset-overviews/stratospheric-volcanic-so2-emissions-aod</a></li>
+<li>ozone:
+  <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/ozone/">input4mips-cvs.readthedocs.io/dataset-overviews/ozone</a></li>
+<li>nitrogen deposition:
+  <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/nitrogen-deposition/">input4mips-cvs.readthedocs.io/dataset-overviews/nitrogen-deposition</a></li>
+<li>solar:
+  <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/solar/">input4mips-cvs.readthedocs.io/dataset-overviews/solar</a></li>
+<li>aerosol optical properties:
+  <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/aerosol-optical-properties-macv2-sp/">input4mips-cvs.readthedocs.io/dataset-overviews/aerosol-optical-properties-macv2-sp</a></li>
+<li>population density:
+  <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/population/">input4mips-cvs.readthedocs.io/dataset-overviews/population</a></li>
+</ul>
+<h3 id="versions-to-use">Versions to use<a class="headerlink" href="#versions-to-use" title="Permanent link">&para;</a></h3>
+<p>For aerosol and tropospheric non-methane ozone precursor emissions, the relevant forcing is the same as for the 2021
+values in the <a href="../historical/">historical simulation</a>.</p>
+<p>For all other forcings, the forcing versions relevant for this simulation are the same as for the <code>scen7-h</code> simulation.</p>
+<h3 id="getting-the-data">Getting the data<a class="headerlink" href="#getting-the-data" title="Permanent link">&para;</a></h3>
+<p>The data is available on ESGF and searchable
+<a href="https://esgf-node.ornl.gov/search?project=input4MIPs&amp;versionType=all&amp;activeFacets=%7B%22mip_era%22%3A%22CMIP7%22%7D">via metagrid</a>,
+although this method of finding and downloading the data can involve a lot of clicking.</p>
+<p>Having said this, please also note: the aerosol optical properties based on the MACv2-SP parameterisation are not
+distributed via the ESGF; please see their
+<a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/aerosol-optical-properties-macv2-sp/#datasets-for-cmip7-phases">specific guidance section</a>
+for data access information.</p>
+<p>If you install <a href="https://esgf.github.io/esgf-download/">esgpull</a>, you can download all the data associated with the
+source IDs above with the script shown below.
+Note that this will download all the data associated with these source IDs, which is likely to be much more data than
+you actually need to run your model.</p>
+<div class="codehilite"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="ch">#!/bin/bash</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nv">EXPERIMENT_NAME</span><span class="o">=</span><span class="s2">&quot;scen7-h-Aer&quot;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1">## You may need to run the below if you haven&#39;t already done it once with esgpull</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># esgpull self install</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1">## You may also need to run this step to get the data to download</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># esgpull config api.index_node esgf-node.ornl.gov/esgf-1-5-bridge</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>esgpull<span class="w"> </span>add<span class="w"> </span>--track<span class="w"> </span>--tag<span class="w"> </span><span class="si">${</span><span class="nv">EXPERIMENT_NAME</span><span class="si">}</span><span class="w"> </span>source_id:CEDS-CMIP-2025-04-18,CEDS-CMIP-2025-04-18-supplemental,IIASA-IAMC-h-1-0-0,IIASA-IAMC-1-0-0,UofMD-landState-h-3-1-1,CR-h-1-0-0,UOEXETER-ScenarioMIP-2-2-2,FZJ-CMIP-ozone-vl-1-0,FZJ-CMIP-nitrogen-vl-1-0,SOLARIS-HEPPA-ScenarioMIP-4-6,PIK-h-1-0-0
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>esgpull<span class="w"> </span>update<span class="w"> </span>--tag<span class="w"> </span><span class="si">${</span><span class="nv">EXPERIMENT_NAME</span><span class="si">}</span><span class="w"> </span>--yes
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>esgpull<span class="w"> </span>download<span class="w"> </span>--tag<span class="w"> </span><span class="si">${</span><span class="nv">EXPERIMENT_NAME</span><span class="si">}</span>
+</code></pre></div>
   </div>
 </article>
                                 <div class="mx-auto flex flex-wrap h-16 w-full max-w-2xl items-center gap-2 px-4 md:px-0">
@@ -1702,6 +1786,76 @@ to track progress resolving this.</p>
                                 <div id="toc" view-transition-name="toc" class="no-scrollbar overflow-y-auto px-8">
     <div class="flex flex-col gap-2 p-4 pt-0 text-sm">
         <p class="text-muted-foreground bg-background sticky top-0 h-6 text-xs">On This Page</p>
+        
+        
+        
+        
+        <a href="#related-experiments"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#related-experiments');">
+            Related experiments
+        </a>
+        
+
+        
+        <a href="#experiment-set-up"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#experiment-set-up');">
+            Experiment set up
+        </a>
+        
+        
+        <a href="#timing-length-and-ensemble-size"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#timing-length-and-ensemble-size');">
+            Timing, length and ensemble size
+        </a>
+        
+        <a href="#parent-experiment"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#parent-experiment');">
+            Parent experiment
+        </a>
+        
+        
+
+        
+        <a href="#forcings"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#forcings');">
+            Forcings
+        </a>
+        
+        
+        <a href="#general-headlines"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#general-headlines');">
+            General headlines
+        </a>
+        
+        <a href="#notes"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#notes');">
+            Notes
+        </a>
+        
+        <a href="#versions-to-use"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#versions-to-use');">
+            Versions to use
+        </a>
+        
+        <a href="#getting-the-data"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#getting-the-data');">
+            Getting the data
+        </a>
+        
+        
+
+        
+        
+        
         
 
     </div>

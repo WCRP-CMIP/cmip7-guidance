@@ -14,7 +14,7 @@
     
 
 
-<title>scen7-vl Experiment Setup and Forcings Guidance</title>
+<title>Experiment Setup and Forcings Guidance: scen7-vl</title>
 
 
 
@@ -29,7 +29,7 @@
 
 <!-- Open Graph (Facebook, LinkedIn) -->
 
-<meta property="og:title" content="scen7-vl Experiment Setup and Forcings Guidance">
+<meta property="og:title" content="Experiment Setup and Forcings Guidance: scen7-vl">
 
 
 
@@ -42,7 +42,7 @@
 
 <!-- Twitter Card -->
 
-<meta name="twitter:title" content="scen7-vl Experiment Setup and Forcings Guidance">
+<meta name="twitter:title" content="Experiment Setup and Forcings Guidance: scen7-vl">
 
 
 
@@ -1435,7 +1435,7 @@
         <h1
           class="scroll-m-20 text-4xl font-semibold tracking-tight sm:text-3xl xl:text-4xl"
         >
-          scen7-vl Experiment Setup and Forcings Guidance
+          Experiment Setup and Forcings Guidance: scen7-vl
         </h1>
 
         <div class="flex items-center gap-2 pt-1.5">
@@ -1462,79 +1462,126 @@
     </div>
   </div>
   <div class="typography w-full flex-1 *:data-[slot=alert]:first:mt-0">
-    <!-- TODO: get this information from esgvoc (add reference URLs at that point) -->
-<p>Responsible activity: ScenarioMIP</p>
-<!-- TODO: get this one line description from esgvoc -->
-<p>PLACEHOLDER TBC. CMIP7 ScenarioMIP very low emissions future. Run with prescribed carbon dioxide concentrations (for prescribed carbon dioxide emissions, see <code>esm-scen7-vl</code>).</p>
+    <p>PLACEHOLDER TBC.
+CMIP7 ScenarioMIP very low emissions future.
+Run with prescribed carbon dioxide concentrations (for prescribed carbon dioxide emissions, see <code>esm-scen7-vl</code>).</p>
+<p>Responsible activity: <a href="../#scenariomip">ScenarioMIP</a>. Tier: See <a href="../#scenariomip">ScenarioMIP</a> information</p>
+<p>These pages are intended to help with implementation of these experiments.
+If you notice something that is unclear, please
+<a href="https://github.com/WCRP-CMIP/cmip7-guidance/issues/new">raise an issue</a>.
+For the full background of the experiments, please see the following URLs:</p>
+<ul>
+<li><a href="https://doi.org/10.5194/egusphere-2024-3765">https://doi.org/10.5194/egusphere-2024-3765</a></li>
+</ul>
 <h2 id="experiment-set-up">Experiment set up<a class="headerlink" href="#experiment-set-up" title="Permanent link">&para;</a></h2>
-<p>The CMIP7 very low scenario simulation uses a specific set of forcings (see <a href="#forcings">forcings</a>).
-These should be applied as transient (i.e. time-changing) forcings over the length of the simulation.</p>
-<!-- TODO: consider whether we can generate these sentences automatically based on esgvoc -->
-<p>The simulation output should start on 2022-01-01 and end on 2100-12-31.
-Only one ensemble member is required.</p>
+<p>The CMIP7 very low scenario simulation uses a specific set of forcings (see <a href="#forcings">forcings</a>).</p>
+<p>These should be applied as transient (i.e. time-changing) forcings over the length of the simulation.</p>
+<h3 id="timing-length-and-ensemble-size">Timing, length and ensemble size<a class="headerlink" href="#timing-length-and-ensemble-size" title="Permanent link">&para;</a></h3>
+<p>The simulation output should start on 2022-01-01 and end on 2100-12-31.</p>
+<p>Simulations should be 79 years in length.</p>
+<p>Only one ensemble member is required.</p>
 <h3 id="parent-experiment">Parent experiment<a class="headerlink" href="#parent-experiment" title="Permanent link">&para;</a></h3>
-<!--
-    TODO: use esgvoc to fill out the template
-    `<experiment-name>` branches from the `<parent-experiment-name>` simulation (part of `<parent-experiment-activity>`).
--->
-<p><code>scen7-vl</code> branches from the <code>historical</code> simulation (part of <code>CMIP</code>).</p>
-<!-- TODO: get branch information from esgvoc -->
+<p><code>scen7-vl</code> branches from the <a href="../historical/">historical</a> simulation (part of <a href="../#cmip">CMIP</a>).</p>
 <p>Branch from <code>historical</code> at 2022-01-01.</p>
+<p>The parent experiment comes from <a href="https://wcrp-cmip.org/CMIP7">CMIP7</a>.</p>
 <h2 id="forcings">Forcings<a class="headerlink" href="#forcings" title="Permanent link">&para;</a></h2>
 <h3 id="general-headlines">General headlines<a class="headerlink" href="#general-headlines" title="Permanent link">&para;</a></h3>
 <p>The <code>scen7-vl</code> experiment is a time-varying forcings experiment.</p>
 <h3 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h3>
-<!-- TODO: auto-generate -->
 <p>The following pages give further information on each forcing:</p>
 <ul>
-<li>anthropogenic emissions: <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/anthropogenic-slcf-co2-emissions/">input4mips-cvs.readthedocs.io/dataset-overviews/anthropogenic-slcf-co2-emissions</a></li>
-<li>biomass burning emissions: <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/open-biomass-burning-emissions/">input4mips-cvs.readthedocs.io/dataset-overviews/open-biomass-burning-emissions</a></li>
-<li>land use: <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/land-use/">input4mips-cvs.readthedocs.io/dataset-overviews/land-use</a></li>
-<li>greenhouse gas concentrations: <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/greenhouse-gas-concentrations/">input4mips-cvs.readthedocs.io/dataset-overviews/greenhouse-gas-concentrations</a></li>
-<li>stratospheric aerosol forcing: <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/stratospheric-volcanic-so2-emissions-aod/">input4mips-cvs.readthedocs.io/dataset-overviews/stratospheric-volcanic-so2-emissions-aod</a></li>
-<li>ozone: <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/ozone/">input4mips-cvs.readthedocs.io/dataset-overviews/ozone</a></li>
-<li>nitrogen deposition: <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/nitrogen-deposition/">input4mips-cvs.readthedocs.io/dataset-overviews/nitrogen-deposition</a></li>
-<li>solar: <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/solar/">input4mips-cvs.readthedocs.io/dataset-overviews/solar</a></li>
-<li>aerosol optical properties: <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/aerosol-optical-properties-macv2-sp/">input4mips-cvs.readthedocs.io/dataset-overviews/aerosol-optical-properties-macv2-sp</a></li>
-<li>population density: <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/population/">input4mips-cvs.readthedocs.io/dataset-overviews/population</a></li>
+<li>anthropogenic emissions:
+  <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/anthropogenic-slcf-co2-emissions/">input4mips-cvs.readthedocs.io/dataset-overviews/anthropogenic-slcf-co2-emissions</a></li>
+<li>biomass burning emissions:
+  <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/open-biomass-burning-emissions/">input4mips-cvs.readthedocs.io/dataset-overviews/open-biomass-burning-emissions</a></li>
+<li>land use:
+  <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/land-use/">input4mips-cvs.readthedocs.io/dataset-overviews/land-use</a></li>
+<li>greenhouse gas concentrations:
+  <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/greenhouse-gas-concentrations/">input4mips-cvs.readthedocs.io/dataset-overviews/greenhouse-gas-concentrations</a></li>
+<li>stratospheric aerosol forcing:
+  <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/stratospheric-volcanic-so2-emissions-aod/">input4mips-cvs.readthedocs.io/dataset-overviews/stratospheric-volcanic-so2-emissions-aod</a></li>
+<li>ozone:
+  <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/ozone/">input4mips-cvs.readthedocs.io/dataset-overviews/ozone</a></li>
+<li>nitrogen deposition:
+  <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/nitrogen-deposition/">input4mips-cvs.readthedocs.io/dataset-overviews/nitrogen-deposition</a></li>
+<li>solar:
+  <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/solar/">input4mips-cvs.readthedocs.io/dataset-overviews/solar</a></li>
+<li>aerosol optical properties:
+  <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/aerosol-optical-properties-macv2-sp/">input4mips-cvs.readthedocs.io/dataset-overviews/aerosol-optical-properties-macv2-sp</a></li>
+<li>population density:
+  <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/population/">input4mips-cvs.readthedocs.io/dataset-overviews/population</a></li>
 </ul>
 <h3 id="versions-to-use">Versions to use<a class="headerlink" href="#versions-to-use" title="Permanent link">&para;</a></h3>
 <p>The forcings relevant for this simulation are listed below.
-For each forcing, we provide the version(s), in the form of "source ID(s)",
-which should be used when running this simulation.</p>
-<!-- TODO: auto-generate this -->
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">&quot;anthropogenic-emissions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;IIASA-IAMC-vl-1-0-0&quot;</span><span class="p">],</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&quot;biomass-burning-emissions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;IIASA-IAMC-vl-1-0-0&quot;</span><span class="p">],</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">&quot;land-use&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;not-available-yet&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">&quot;greenhouse-gas-concentrations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;CR-vl-1-0-0&quot;</span><span class="p">],</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nt">&quot;stratospheric-aerosol-forcing &quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;UOEXETER-ScenarioMIP-2-2-2&quot;</span><span class="p">],</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="nt">&quot;ozone&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;not-available-yet&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nt">&quot;nitrogen-deposition&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;not-available-yet&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nt">&quot;solar&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;SOLARIS-HEPPA-ScenarioMIP-4-6&quot;</span><span class="p">],</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nt">&quot;aerosol-optical-properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nt">&quot;population-density&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;PIK-vl-1-0-0&quot;</span><span class="p">]</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">}</span>
+For each forcing, we provide the version(s), in the form of "source ID(s)", which should be used when running this
+simulation.
+The recommended version(s) are the version(s) we recommend using.
+Any acceptable versions can be used (you are not obliged to re-run simulations that used them).
+Please see the guidance pages linked above for details and note that the data-retrieval script below only includes
+recommended versions.</p>
+<div class="codehilite"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">&quot;anthropogenic-emissions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">        </span><span class="nt">&quot;recommended&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">            </span><span class="s2">&quot;IIASA-IAMC-vl-1-0-0&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">            </span><span class="s2">&quot;IIASA-IAMC-1-0-0&quot;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="p">]</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nt">&quot;biomass-burning-emissions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">        </span><span class="nt">&quot;recommended&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">            </span><span class="s2">&quot;IIASA-IAMC-vl-1-0-0&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">            </span><span class="s2">&quot;IIASA-IAMC-1-0-0&quot;</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">        </span><span class="p">]</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="nt">&quot;land-use&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">        </span><span class="nt">&quot;recommended&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;UofMD-landState-vl-3-1-1&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">        </span><span class="nt">&quot;acceptable&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">            </span><span class="s2">&quot;UofMD-landState-vl-3-1&quot;</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">        </span><span class="p">]</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">    </span><span class="nt">&quot;greenhouse-gas-concentrations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">        </span><span class="nt">&quot;recommended&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CR-vl-1-0-0&quot;</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">    </span><span class="nt">&quot;stratospheric-aerosol-forcing&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">        </span><span class="nt">&quot;recommended&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;UOEXETER-ScenarioMIP-2-2-2&quot;</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">    </span><span class="nt">&quot;ozone&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">        </span><span class="nt">&quot;recommended&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FZJ-CMIP-ozone-h-1-0&quot;</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">    </span><span class="nt">&quot;nitrogen-deposition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">        </span><span class="nt">&quot;recommended&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FZJ-CMIP-nitrogen-h-1-0&quot;</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">    </span><span class="nt">&quot;solar&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">        </span><span class="nt">&quot;recommended&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SOLARIS-HEPPA-ScenarioMIP-4-6&quot;</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">    </span><span class="nt">&quot;aerosol-optical-properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">    </span><span class="nt">&quot;population-density&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="w">        </span><span class="nt">&quot;recommended&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PIK-vl-1-0-0&quot;</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="p">}</span>
 </code></pre></div>
 <h3 id="getting-the-data">Getting the data<a class="headerlink" href="#getting-the-data" title="Permanent link">&para;</a></h3>
-<p>The data is available on ESGF and searchable <a href="https://esgf-node.ornl.gov/search?project=input4MIPs&amp;versionType=all&amp;activeFacets=%7B%22mip_era%22%3A%22CMIP7%22%7D">via metagrid</a>,
-although this method of finding and downloading the data can involve a lot of clicking.
-Having said this, please also note: the aerosol optical properties based on the MACv2-SP parameterisation are not distrubuted via the ESGF.</p>
-<!-- TODO: add CI to check all URLs are live -->
-<p>Please see <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/aerosol-optical-properties-macv2-sp/#datasets-for-cmip7-phases">their specific guidance section</a>
+<p>The data is available on ESGF and searchable
+<a href="https://esgf-node.ornl.gov/search?project=input4MIPs&amp;versionType=all&amp;activeFacets=%7B%22mip_era%22%3A%22CMIP7%22%7D">via metagrid</a>,
+although this method of finding and downloading the data can involve a lot of clicking.</p>
+<p>Having said this, please also note: the aerosol optical properties based on the MACv2-SP parameterisation are not
+distributed via the ESGF; please see their
+<a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/aerosol-optical-properties-macv2-sp/#datasets-for-cmip7-phases">specific guidance section</a>
 for data access information.</p>
-<p>If you install <a href="https://esgf.github.io/esgf-download/">esgpull</a>,
-you can download all the data associated with the source IDs above with the script shown below.
-Note that this will download all the data associated with these source IDs,
-which is likely to be much more data than you actually need to run your model.</p>
-<!-- TODO: auto-generate this -->
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="ch">#!/bin/bash</span>
+<p>If you install <a href="https://esgf.github.io/esgf-download/">esgpull</a>, you can download all the data associated with the
+source IDs above with the script shown below.
+Note that this will download all the data associated with these source IDs, which is likely to be much more data than
+you actually need to run your model.</p>
+<div class="codehilite"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="ch">#!/bin/bash</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nv">EXPERIMENT_NAME</span><span class="o">=</span><span class="s2">&quot;scen7-vl&quot;</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>esgpull<span class="w"> </span>add<span class="w"> </span>--track<span class="w"> </span>--tag<span class="w"> </span><span class="si">${</span><span class="nv">EXPERIMENT_NAME</span><span class="si">}</span><span class="w"> </span>source_id:IIASA-IAMC-vl-1-0-0,IIASA-IAMC-vl-1-0-0,CR-vl-1-0-0,UOEXETER-ScenarioMIP-2-2-2,SOLARIS-HEPPA-ScenarioMIP-4-6,PIK-vl-1-0-0
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>esgpull<span class="w"> </span>update<span class="w"> </span>--tag<span class="w"> </span><span class="si">${</span><span class="nv">EXPERIMENT_NAME</span><span class="si">}</span><span class="w"> </span>--yes
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>esgpull<span class="w"> </span>download<span class="w"> </span>--tag<span class="w"> </span><span class="si">${</span><span class="nv">EXPERIMENT_NAME</span><span class="si">}</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1">## You may need to run the below if you haven&#39;t already done it once with esgpull</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1"># esgpull self install</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1">## You may also need to run this step to get the data to download</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1"># esgpull config api.index_node esgf-node.ornl.gov/esgf-1-5-bridge</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>esgpull<span class="w"> </span>add<span class="w"> </span>--track<span class="w"> </span>--tag<span class="w"> </span><span class="si">${</span><span class="nv">EXPERIMENT_NAME</span><span class="si">}</span><span class="w"> </span>source_id:IIASA-IAMC-vl-1-0-0,IIASA-IAMC-1-0-0,UofMD-landState-vl-3-1-1,CR-vl-1-0-0,UOEXETER-ScenarioMIP-2-2-2,FZJ-CMIP-ozone-h-1-0,FZJ-CMIP-nitrogen-h-1-0,SOLARIS-HEPPA-ScenarioMIP-4-6,PIK-vl-1-0-0
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>esgpull<span class="w"> </span>update<span class="w"> </span>--tag<span class="w"> </span><span class="si">${</span><span class="nv">EXPERIMENT_NAME</span><span class="si">}</span><span class="w"> </span>--yes
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>esgpull<span class="w"> </span>download<span class="w"> </span>--tag<span class="w"> </span><span class="si">${</span><span class="nv">EXPERIMENT_NAME</span><span class="si">}</span>
 </code></pre></div>
   </div>
 </article>
@@ -1780,6 +1827,12 @@ which is likely to be much more data than you actually need to run your model.</
             Experiment set up
         </a>
         
+        
+        <a href="#timing-length-and-ensemble-size"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#timing-length-and-ensemble-size');">
+            Timing, length and ensemble size
+        </a>
         
         <a href="#parent-experiment"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"

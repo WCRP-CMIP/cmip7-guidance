@@ -1472,85 +1472,132 @@ https://github.com/WCRP-CMIP/cmip7-guidance/issues/new and tag @znichollscr.</p>
 </div>
 <p>These pages provide guidance on the experimental setup and forcings to be used in CMIP7.
 They are updated regularly, hence should be considered the current source of guidance.
-The papers which describe the experiments in the scientific literature are the original source and key reference,
-but they may still contain errors which cannot be fixed after publication so should not be relied upon in isolation.
-<a href="https://gmd.copernicus.org/articles/special_issue1315.html">The papers</a> also provide further information about each simulation than what is provided here,
-such as the motivation, history and results from previous CMIP phases.</p>
+The papers which describe the experiments in the scientific literature are the original source and key reference, but
+they may still contain errors which cannot be fixed after publication so should not be relied upon in isolation.
+The papers also provide further information about each simulation than what is provided here, such as the motivation,
+history and results from previous CMIP phases.</p>
 <p>These pages specify the intended way to run each simulation.
 However, we understand that modelling groups sometimes need to make changes for a variety of reasons.
-We are currently discussing a mechanism for modeling centers to document these alterations in a central, publicly accessible location
-(for example, <a href="https://github.com/PCMDI/input4MIPs_CVs/issues/415">discussion of how to choose values for the forcing 'f' identifier is ongoing</a>).
+We are currently discussing a mechanism for modeling centers to document these alterations in a central, publicly
+accessible location (for example,
+<a href="https://github.com/PCMDI/input4MIPs_CVs/issues/415">discussion of how to choose values for the forcing 'f' identifier is ongoing</a>).
 When these discussions are finalised, these guidance pages will be updated.</p>
 <!-- TODO: do we have a section to cross-link to? -->
 
-<!--- TODO: alter this page so that the MIP headings are auto-generated and inject the MIP descriptions from esgvoc. -->
 <h2 id="deck-experiments">DECK experiments<a class="headerlink" href="#deck-experiments" title="Permanent link">&para;</a></h2>
 <h3 id="cmip">CMIP<a class="headerlink" href="#cmip" title="Permanent link">&para;</a></h3>
-<!-- TODO: get this from esgvoc automatically -->
 <p>CMIP core common experiments i.e. the DECK (Diagnostic, Evaluation and Characterization of Klima).</p>
+<p>These pages are intended to help with implementation of these experiments.
+If you notice something that is unclear, please
+<a href="https://github.com/WCRP-CMIP/cmip7-guidance/issues/new">raise an issue</a>.
+For the full background of the experiments, please see the following URLs:</p>
+<ul>
+<li><a href="https://doi.org/10.5194/gmd-18-6671-2025">https://doi.org/10.5194/gmd-18-6671-2025</a></li>
+</ul>
+<p>The following experiments are included in <code>CMIP</code>:</p>
 <ol>
-<li><a href="picontrol/">piControl</a></li>
-<li><a href="esm-picontrol/">esm-piControl</a></li>
-<li><a href="historical/">historical</a></li>
-<li><a href="esm-hist/">esm-hist</a></li>
 <li><a href="1pctco2/">1pctCO2</a></li>
 <li><a href="abrupt-4xco2/">abrupt-4xCO2</a></li>
-<li><a href="piclim-control/">piClim-control</a></li>
-<li><a href="piclim-anthro/">piClim-anthro</a></li>
-<li><a href="piclim-4xco2/">piClim-4xCO2</a></li>
 <li><a href="amip/">amip</a></li>
+<li><a href="historical/">historical</a></li>
+<li><a href="esm-hist/">esm-hist</a></li>
+<li><a href="piclim-4xco2/">piClim-4xCO2</a></li>
+<li><a href="piclim-anthro/">piClim-anthro</a></li>
+<li><a href="piclim-control/">piClim-control</a></li>
+<li><a href="picontrol/">piControl</a></li>
+<li><a href="esm-picontrol/">esm-piControl</a></li>
+<li><a href="picontrol-spinup/">piControl-spinup</a></li>
+<li><a href="esm-picontrol-spinup/">esm-piControl-spinup</a></li>
 </ol>
 <h2 id="assessment-fast-track-aft-experiments">Assessment Fast Track (AFT) experiments<a class="headerlink" href="#assessment-fast-track-aft-experiments" title="Permanent link">&para;</a></h2>
 <h3 id="aerchemmip">AerChemMIP<a class="headerlink" href="#aerchemmip" title="Permanent link">&para;</a></h3>
-<!-- TODO: get this from esgvoc automatically -->
 <p>Aerosols and chemistry model intercomparison project: exploration of aerosol chemistry.</p>
+<p>These pages are intended to help with implementation of these experiments.
+If you notice something that is unclear, please
+<a href="https://github.com/WCRP-CMIP/cmip7-guidance/issues/new">raise an issue</a>.
+For the full background of the experiments, please see the following URLs:</p>
+<ul>
+<li><a href="https://doi.org/10.5194/gmd-10-585-2017">https://doi.org/10.5194/gmd-10-585-2017</a></li>
+</ul>
+<p>The following experiments are included in <code>AerChemMIP</code>:</p>
 <ol>
+<li><a href="hist-piaer/">hist-piAer</a></li>
+<li><a href="hist-piaq/">hist-piAQ</a></li>
 <li><a href="piclim-ch4/">piClim-CH4</a></li>
 <li><a href="piclim-n2o/">piClim-N2O</a></li>
 <li><a href="piclim-nox/">piClim-NOx</a></li>
 <li><a href="piclim-ods/">piClim-ODS</a></li>
 <li><a href="piclim-so2/">piClim-SO2</a></li>
-<li><a href="hist-piaer/">hist-piAer</a></li>
-<li><a href="hist-piaer/">hist-piAQ</a></li>
-<li><a href="scen7-vl-aer/">scen7-vl-Aer</a></li>
-<li><a href="scen7-vl-aq/">scen7-vl-AQ</a></li>
 <li><a href="scen7-h-aer/">scen7-h-Aer</a></li>
 <li><a href="scen7-h-aq/">scen7-h-AQ</a></li>
+<li><a href="scen7-vl-aer/">scen7-vl-Aer</a></li>
+<li><a href="scen7-vl-aq/">scen7-vl-AQ</a></li>
 </ol>
 <h3 id="cfmip">CFMIP<a class="headerlink" href="#cfmip" title="Permanent link">&para;</a></h3>
-<!-- TODO: get this from esgvoc automatically -->
 <p>Cloud feedback model intercomparison project.
-Focussed primarily on cloud feedbacks with a secondary focus on understanding of response to
-forcing, model biases, circulation, regional-scale precipitation, and non-linear changes.</p>
+Focussed primarily on cloud feedbacks with a secondary focus on understanding of response to forcing, model biases,
+circulation, regional-scale precipitation, and non-linear changes.</p>
+<p>These pages are intended to help with implementation of these experiments.
+If you notice something that is unclear, please
+<a href="https://github.com/WCRP-CMIP/cmip7-guidance/issues/new">raise an issue</a>.
+For the full background of the experiments, please see the following URLs:</p>
+<ul>
+<li><a href="https://doi.org/10.5194/gmd-10-359-2017">https://doi.org/10.5194/gmd-10-359-2017</a></li>
+</ul>
+<p>The following experiments are included in <code>CFMIP</code>:</p>
 <ol>
-<li><a href="abrupt-2xco2/">abrupt-2xCO2</a></li>
 <li><a href="abrupt-0p5xco2/">abrupt-0p5xCO2</a></li>
+<li><a href="abrupt-2xco2/">abrupt-2xCO2</a></li>
 </ol>
 <h3 id="c4mip">C4MIP<a class="headerlink" href="#c4mip" title="Permanent link">&para;</a></h3>
-<!-- TODO: get this from esgvoc automatically -->
-<p>Coupled climate carbon cycle model intercomparison project: exploration of the response of the coupled carbon-climate system.</p>
+<p>Coupled climate carbon cycle model intercomparison project: exploration of the response of the coupled carbon-climate
+system.</p>
+<p>These pages are intended to help with implementation of these experiments.
+If you notice something that is unclear, please
+<a href="https://github.com/WCRP-CMIP/cmip7-guidance/issues/new">raise an issue</a>.
+For the full background of the experiments, please see the following URLs:</p>
+<ul>
+<li><a href="https://doi.org/10.5194/gmd-18-5699-2025">https://doi.org/10.5194/gmd-18-5699-2025</a></li>
+<li><a href="https://doi.org/10.5194/gmd-17-8141-2024">https://doi.org/10.5194/gmd-17-8141-2024</a></li>
+<li><a href="https://doi.org/10.5194/gmd-9-2853-2016">https://doi.org/10.5194/gmd-9-2853-2016</a></li>
+</ul>
+<p>The following experiments are included in <code>C4MIP</code>:</p>
 <ol>
-<li><a href="1pctco2-bgc/">1pctco2-bgc</a></li>
-<li><a href="1pctco2-rad/">1pctco2-rad</a></li>
+<li><a href="1pctco2-bgc/">1pctCO2-bgc</a></li>
+<li><a href="1pctco2-rad/">1pctCO2-rad</a></li>
 </ol>
 <h3 id="scenariomip">ScenarioMIP<a class="headerlink" href="#scenariomip" title="Permanent link">&para;</a></h3>
-<!-- TODO: get this from esgvoc automatically -->
 <p>Future scenario experiments.
 Exploration of the future climate under a (selected) range of possible boundary conditions.</p>
+<p>The priority of ScenarioMIP experiments (expressed as Tier 1 and 2) is summarized in the flowchart below, which is based
+on Table 1 of <a href="https://gmd.copernicus.org/articles/19/2627/2026/">Van Vuuren et al. 2026</a>.
+Emissions-driven experiments, indicated in yellow, have names beginning with <code>esm-</code>.</p>
+<ul>
+<li>If your model is capable of running in emissions-driven mode, ScenarioMIP request emissions-driven scenarios, and
+  additionally the concentration-driven experiment <code>scen7-m</code>, at Tier-1 (highest priority).</li>
+<li>If your model will run only the concentration-driven experiments, ScenarioMIP request all concentration-driven
+  scenarios at Tier-1.</li>
+</ul>
+<p>If you are running in emissions-driven mode, you are welcome to run other scenarios in concentration-driven mode, but
+they have not been assigned a specific tier (i.e., are lowest priority).</p>
+<figure>
+  <img src="figures/ScenarioMIP-tiers_v3.svg">
+  <figcaption>
+    ScenarioMIP experiments, with emissions-driven experiments indicated in yellow.
+  </figcaption>
+</figure>
+
+<p>These pages are intended to help with implementation of these experiments.
+If you notice something that is unclear, please
+<a href="https://github.com/WCRP-CMIP/cmip7-guidance/issues/new">raise an issue</a>.
+For the full background of the experiments, please see the following URLs:</p>
+<ul>
+<li><a href="https://doi.org/10.5194/egusphere-2024-3765">https://doi.org/10.5194/egusphere-2024-3765</a></li>
+</ul>
+<p>The following experiments are included in <code>ScenarioMIP</code>:</p>
 <ol>
 <li><a href="scen7-vl/">scen7-vl</a></li>
 </ol>
-<p>The priority of ScenarioMIP experiments (expressed as Tier 1 and 2) is summarized in the flowchart below, which is based on Table 1 of <a href="https://gmd.copernicus.org/articles/19/2627/2026/">Van Vuuren et al. 2026</a>.
-Emissions-driven experiments, indicated in yellow, have names beginning with <code>esm-</code>.</p>
-<ul>
-<li>If your model is capable of running in emissions-driven mode, ScenarioMIP request emissions-driven scenarios, and additionally the concentration-driven experiment <code>scen7-m</code>, at Tier-1 (highest priority).</li>
-<li>If your model will run only the concentration-driven experiments, ScenarioMIP request all concentration-driven scenarios at Tier-1. </li>
-</ul>
-<p>If you are running in emissions-driven mode, you are welcome to run other scenarios in concentration-driven mode, but they have not been assigned a specific tier (i.e., are lowest priority).</p>
-<figure>
-  <img src="figures/ScenarioMIP-tiers_v3.svg">
-  <figcaption>ScenarioMIP experiments, with emissions-driven experiments indicated in yellow.</figcaption>
-</figure>
   </div>
 </article>
                                 <div class="mx-auto flex flex-wrap h-16 w-full max-w-2xl items-center gap-2 px-4 md:px-0">

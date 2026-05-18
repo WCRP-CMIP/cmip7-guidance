@@ -14,7 +14,7 @@
     
 
 
-<title>piClim-N2O Experiment Setup and Forcings Guidance</title>
+<title>Experiment Setup and Forcings Guidance: piClim-N2O</title>
 
 
 
@@ -29,7 +29,7 @@
 
 <!-- Open Graph (Facebook, LinkedIn) -->
 
-<meta property="og:title" content="piClim-N2O Experiment Setup and Forcings Guidance">
+<meta property="og:title" content="Experiment Setup and Forcings Guidance: piClim-N2O">
 
 
 
@@ -42,7 +42,7 @@
 
 <!-- Twitter Card -->
 
-<meta name="twitter:title" content="piClim-N2O Experiment Setup and Forcings Guidance">
+<meta name="twitter:title" content="Experiment Setup and Forcings Guidance: piClim-N2O">
 
 
 
@@ -1435,7 +1435,7 @@
         <h1
           class="scroll-m-20 text-4xl font-semibold tracking-tight sm:text-3xl xl:text-4xl"
         >
-          piClim-N2O Experiment Setup and Forcings Guidance
+          Experiment Setup and Forcings Guidance: piClim-N2O
         </h1>
 
         <div class="flex items-center gap-2 pt-1.5">
@@ -1462,43 +1462,72 @@
     </div>
   </div>
   <div class="typography w-full flex-1 *:data-[slot=alert]:first:mt-0">
-    <!-- TODO: get this information from esgvoc (add reference URLs at that point) -->
-<p>Responsible activity: AerChemMIP</p>
-<!-- TODO: get this one line description from esgvoc -->
-<p>In combination with <code>piClim-control</code>, quantifies present-day nitrous oxide effective radiative forcing (ERF).
-Same as <code>piClim-control</code>, except nitrous oxide concentrations or emissions (as appropriate for the model) use present-day values
-(in CMIP defined as the last year of the <code>historical</code> simulation within the same CMIP era i.e. 2021 values for CMIP7).</p>
+    <p>In combination with <code>piClim-control</code>, quantifies present-day nitrous oxide effective radiative forcing (ERF).
+Same as <code>piClim-control</code>, except nitrous oxide concentrations or emissions (as appropriate for the model) use
+present-day values (2021 in CMIP7).</p>
+<p>Responsible activity: <a href="../#aerchemmip">AerChemMIP</a>. Tier: 1</p>
+<p>These pages are intended to help with implementation of these experiments.
+If you notice something that is unclear, please
+<a href="https://github.com/WCRP-CMIP/cmip7-guidance/issues/new">raise an issue</a>.
+For the full background of the experiments, please see the following URLs:</p>
+<ul>
+<li><a href="https://doi.org/10.5194/gmd-10-585-2017">https://doi.org/10.5194/gmd-10-585-2017</a></li>
+</ul>
 <h2 id="experiment-set-up">Experiment set up<a class="headerlink" href="#experiment-set-up" title="Permanent link">&para;</a></h2>
-<p>The piClim-N2O simulation uses the same forcings as <a href="../piclim-control/">piClim-control</a>,
-except the atmospheric nitrous oxide concentration forcing uses 2021 values.
-The 2021 values should be prescribed on repeat throughout the simulation.</p>
-<!-- TODO: consider whether we can generate these sentences automatically based on esgvoc -->
-<p>It is recommended that you use the same time axis as you use for your <a href="../piclim-control/">piClim-control</a> output
-to make life easy for analysts of your output
-(although this is not enforced so you are technically free to start the time axis of your outputs at whatever year you like).
-Simulations should be at least 30 years in length.
-Only one ensemble member is required.</p>
+<p>This simulation uses the same forcings as <a href="../piclim-control/">piClim-control</a>, except for the forcing listed below.</p>
+<p>The following forcing should use 2021 values from the <a href="../historical/">historical simulation</a>:</p>
+<ul>
+<li>nitrous oxide concentrations or emissions (as appropriate for the model)</li>
+</ul>
+<p>The 2021 values should be prescribed on repeat throughout the simulation.</p>
+<p>It is recommended that you use the same time axis as you use for your <a href="../piclim-control/">piClim-control</a> output to
+make life easy for analysts of your output (although this is not enforced so you are technically free to start the time
+axis of your outputs at whatever year you like).</p>
+<h3 id="timing-length-and-ensemble-size">Timing, length and ensemble size<a class="headerlink" href="#timing-length-and-ensemble-size" title="Permanent link">&para;</a></h3>
+<p>The CMIP7 CVs do not define fixed start or end dates for this simulation.</p>
+<p>Simulations should be at least 30 years in length.</p>
+<p>Only one ensemble member is required.</p>
 <h3 id="parent-experiment">Parent experiment<a class="headerlink" href="#parent-experiment" title="Permanent link">&para;</a></h3>
-<!--
-    TODO: use esgvoc to fill out the template
-    `<experiment-name>` branches from the `<parent-experiment-name>` simulation (part of `<parent-experiment-activity>`).
--->
-<!-- TODO: check if there is meant to be a spinup -->
-<p><code>piClim-N2O</code> does not branch from another simulation.</p>
+<p><code>piClim-N2O</code> branches from the <a href="../picontrol/">piControl</a> simulation (part of <a href="../#cmip">CMIP</a>).</p>
+<p>Branch from piControl at the same time as piClim-control.</p>
+<p>The parent experiment comes from <a href="https://wcrp-cmip.org/CMIP7">CMIP7</a>.</p>
 <h2 id="forcings">Forcings<a class="headerlink" href="#forcings" title="Permanent link">&para;</a></h2>
 <h3 id="general-headlines">General headlines<a class="headerlink" href="#general-headlines" title="Permanent link">&para;</a></h3>
 <p>See general headlines for the <a href="../piclim-control/"><code>piClim-control</code> simulation</a>.</p>
 <h3 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h3>
 <p>See notes for the <a href="../piclim-control/">piClim-control simulation</a>.</p>
 <h3 id="versions-to-use">Versions to use<a class="headerlink" href="#versions-to-use" title="Permanent link">&para;</a></h3>
-<p>For the nitrous oxide forcing,
-the forcing version relevant for this simulation is the same as for the <a href="../historical/">historical simulation</a>.
-For all other forcings,
-the forcing versions relevant for this simulation are the same as for the <a href="../piclim-control/">piClim-control simulation</a>.</p>
+<p>For the forcing listed below, the forcing version relevant for this simulation is the same as for the
+<a href="../historical/">historical simulation</a>:</p>
+<ul>
+<li>nitrous oxide concentrations or emissions (as appropriate for the model)</li>
+</ul>
+<p>For all other forcings, the forcing versions relevant for this simulation are the same as for the
+<a href="../piclim-control/">piClim-control simulation</a>.</p>
 <h3 id="getting-the-data">Getting the data<a class="headerlink" href="#getting-the-data" title="Permanent link">&para;</a></h3>
-<!-- TODO: allow for just putting the bash script here again i.e. repeat the information rather than forcing people to go digging -->
-<p>See instructions for the<a href="../piclim-control/">piClim-control simulation</a> 
-and <a href="../historical/">historical simulation</a>.</p>
+<p>The data is available on ESGF and searchable
+<a href="https://esgf-node.ornl.gov/search?project=input4MIPs&amp;versionType=all&amp;activeFacets=%7B%22mip_era%22%3A%22CMIP7%22%7D">via metagrid</a>,
+although this method of finding and downloading the data can involve a lot of clicking.</p>
+<p>Having said this, please also note: the aerosol optical properties based on the MACv2-SP parameterisation are not
+distributed via the ESGF; please see their
+<a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/aerosol-optical-properties-macv2-sp/#datasets-for-cmip7-phases">specific guidance section</a>
+for data access information.</p>
+<p>If you install <a href="https://esgf.github.io/esgf-download/">esgpull</a>, you can download all the data associated with the
+source IDs above with the script shown below.
+Note that this will download all the data associated with these source IDs, which is likely to be much more data than
+you actually need to run your model.</p>
+<div class="codehilite"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="ch">#!/bin/bash</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nv">EXPERIMENT_NAME</span><span class="o">=</span><span class="s2">&quot;piClim-N2O&quot;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1">## You may need to run the below if you haven&#39;t already done it once with esgpull</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># esgpull self install</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1">## You may also need to run this step to get the data to download</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># esgpull config api.index_node esgf-node.ornl.gov/esgf-1-5-bridge</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>esgpull<span class="w"> </span>add<span class="w"> </span>--track<span class="w"> </span>--tag<span class="w"> </span><span class="si">${</span><span class="nv">EXPERIMENT_NAME</span><span class="si">}</span><span class="w"> </span>source_id:CEDS-CMIP-2025-04-18,CEDS-CMIP-2025-04-18-supplemental,DRES-CMIP-BB4CMIP7-2-0,UofMD-landState-3-1-2,UOEXETER-CMIP-2-2-1,FZJ-CMIP-ozone-1-2,FZJ-CMIP-nitrogen-2-0,SOLARIS-HEPPA-CMIP-4-6,PIK-CMIP-1-0-1,CR-CMIP-1-0-0
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>esgpull<span class="w"> </span>update<span class="w"> </span>--tag<span class="w"> </span><span class="si">${</span><span class="nv">EXPERIMENT_NAME</span><span class="si">}</span><span class="w"> </span>--yes
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>esgpull<span class="w"> </span>download<span class="w"> </span>--tag<span class="w"> </span><span class="si">${</span><span class="nv">EXPERIMENT_NAME</span><span class="si">}</span>
+</code></pre></div>
   </div>
 </article>
                                 <div class="mx-auto flex flex-wrap h-16 w-full max-w-2xl items-center gap-2 px-4 md:px-0">
@@ -1743,6 +1772,12 @@ and <a href="../historical/">historical simulation</a>.</p>
             Experiment set up
         </a>
         
+        
+        <a href="#timing-length-and-ensemble-size"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#timing-length-and-ensemble-size');">
+            Timing, length and ensemble size
+        </a>
         
         <a href="#parent-experiment"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
