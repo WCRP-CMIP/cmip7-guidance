@@ -170,8 +170,7 @@ CMIP7 datasets can be identified through a series of facets that represents key 
 
 
 
-More information about the meaning of these facets is provided in the [global attributes documentation][GlobalAttrs], with further guidance provided on the [Global Attributes page](Global_Attributes.md). The values associated with each facet are standardized through the [CVs][cmipCvs]. They are used to search the ESGF database and can be found in the global attributes of the data. This section provides helpful links and gives a bit more information on a few key facets. 
-
+More information about the meaning of these facets is provided in the [global attributes documentation][GlobalAttrs], with further guidance provided on the [Global Attributes page](Global_Attributes.md). The values associated with each facet are standardized through the [CVs][CVviewer]. They are used to search the ESGF database and can be found in the global attributes of the data. This section provides helpful links and gives a bit more information on a few key facets. 
 
 
 ### 3.1.  Source and Variant
@@ -363,7 +362,6 @@ First time using CMIP? Need a bit more help ? Check out these resources:
 [cftime]: https://unidata.github.io/cftime/
 [ref]: https://dashboard.climate-ref.org
 [cmipcite]: https://cmipcite.readthedocs.io/en/latest/
-[citesearch]: https://www.wdc-climate.de/ords/f?p=127:2 
 [esgfqc]: https://github.com/ESGF/esgf-qc 
 [nodes]: https://wcrp-cmip.org/map/
 [cmcc]: https://esgf-ui.cmcc.it/esgf-dashboard-ui/index.html
@@ -373,6 +371,7 @@ First time using CMIP? Need a bit more help ? Check out these resources:
 [pangeo]: https://pangeo-data.github.io/pangeo-cmip6-cloud/
 [tools]: https://wcrp-cmip.org/tools/
 [virtualizarr]: https://virtualizarr.readthedocs.io/en/stable/
+[CVviewer]: https://esgvoc.ipsl.fr/
 
  <!-- CMIP7 links -->
 [GMDSpecialIssue]: https://gmd.copernicus.org/articles/special_issue1315.html
@@ -392,6 +391,7 @@ First time using CMIP? Need a bit more help ? Check out these resources:
 [freqlist]: https://cmip-data-request.github.io/cmip7-dreq-webview/latest/cmip7_frequency.html
 [emd]:  https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/
 [CMIPpubs]: https://cmip-publications.llnl.gov
+[citesearch]: https://cmip7-citations.ceda.ac.uk/citations/ 
 
 
  <!-- TODO: all the links below need to be changed when the new version arrives. -->
