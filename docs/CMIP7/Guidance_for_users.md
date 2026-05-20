@@ -174,7 +174,7 @@ More information about the meaning of these facets is provided in the [Global At
 
 
 ### 3.1.  Source and Variant
-* [List of models][sourcelist] (coming soon)
+* [List of models][sourcelist]
 * [Essential Model Documentation (EMD)][emd] (coming soon)
 
 
@@ -187,8 +187,8 @@ A useful tool to evaluate the models is the [Rapid Evaluation Framework (REF)][r
 
 
 ### 3.2.  Experiment and Activity
-* [List of experiments][experimentlist] (coming soon)
-* [List of activities][activitylist] (coming soon)
+* [List of experiments][experimentlist]
+* [List of activities][activitylist]
 
  
 The CMIP7 protocol and experiments are described in a [special issue][GMDSpecialIssue] of Geoscientific Model Development with an overview of the design and scientific strategy provided in the lead article of that issue by [Dunne et al. (2025)][dunne2025].
@@ -388,10 +388,14 @@ First time using CMIP? Need a bit more help ? Check out these resources:
 [datarequest]: https://bit.ly/CMIP7-DReq-latest
 [cmortablecmip7]: https://github.com/WCRP-CMIP/cmip7-cmor-tables
 [varlist]: https://cmip-data-request.github.io/cmip7-dreq-webview/latest/variables.html
-[freqlist]: https://cmip-data-request.github.io/cmip7-dreq-webview/latest/cmip7_frequency.html
+[freqlist]: https://esgvoc.ipsl.fr/concept/frequency?projects=cmip7
 [emd]:  https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/
 [CMIPpubs]: https://cmip-publications.llnl.gov
 [citesearch]: https://cmip7-citations.ceda.ac.uk/citations/ 
+[sourcelist]:  https://esgvoc.ipsl.fr/concept/model?projects=cmip7
+[experimentlist]:  https://esgvoc.ipsl.fr/concept/experiment?projects=cmip7
+[activitylist]:  https://esgvoc.ipsl.fr/concept/activity?projects=cmip7
+
 
 
  <!-- TODO: all the links below need to be changed when the new version arrives. -->
@@ -406,9 +410,6 @@ First time using CMIP? Need a bit more help ? Check out these resources:
 [maskavg]: https://wcrp-cmip.github.io/WGCM_Infrastructure_Panel/CMIP6/time_and_area_averaging.html -->
 
  <!-- unknown links -->
-[experimentlist]:  ?
-[activitylist]:  ?
-[sourcelist]:  ?
 [gridlist]: ?
 [levellist]:  ?
 [maskavg]:  ?
