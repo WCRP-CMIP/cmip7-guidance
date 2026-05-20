@@ -170,7 +170,7 @@ CMIP7 datasets can be identified through a series of facets that represents key 
 
 
 
-More information about the meaning of these facets is provided in the [global attributes documentation][GlobalAttrs], with further guidance provided on the [Global Attributes page](Global_Attributes.md). The values associated with each facet are standardized through the [CVs][CVviewer]. They are used to search the ESGF database and can be found in the global attributes of the data. This section provides helpful links and gives a bit more information on a few key facets. 
+More information about the meaning of these facets is provided in the [Global Attributes page](Global_Attributes.md). The values associated with each facet are standardized through the [CVs][CVviewer]. They are used to search the ESGF database and can be found in the global attributes of the data. This section provides helpful links and gives a bit more information on a few key facets. 
 
 
 ### 3.1.  Source and Variant
