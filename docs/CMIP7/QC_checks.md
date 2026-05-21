@@ -5,7 +5,7 @@ title: CMIP7 QC checks by cc-plugin-wcrp
 
 # CMIP7 QC checks by [cc-plugin-wcrp](https://github.com/ESGF/cc-plugin-wcrp)
 
-The following sections show the checks performed by the compliance checker plugin being used for CMIP7 publication verification.
+The following sections show the quality control (QC) checks performed by the compliance checker plugin being used for CMIP7 publication verification.
 Each table relates to one of the files within the plugin and has three columns:
 
   - Check : the unique identifier of the check, which should be descriptive (e.g. `global.attributes.activity_id`)
