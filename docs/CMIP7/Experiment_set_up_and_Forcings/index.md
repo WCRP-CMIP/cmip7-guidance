@@ -227,6 +227,9 @@ The following experiments are included in `GeoMIP`:
 
 ### LMIP
 
+Land (offline) Model Intercomparison Project: advancing understanding of the impacts of land-use and land-cover change
+(LULCC) on climate
+
 These pages are intended to help with implementation of these experiments.
 If you notice something that is unclear, please
 [raise an issue](https://github.com/WCRP-CMIP/cmip7-guidance/issues/new).
