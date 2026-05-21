@@ -19,4 +19,4 @@ title: CMIP7 Guidance
 - [Guidance for MIPs](Guidance_for_MIPs.md)
 - [Domain names for CMIP7 services](Domain_names.md)
 - [Frequently Asked Questions (FAQ)](FAQ.md)
-- [Annex 1: Checks performed prior to publication](QC_checks.md)
+- [Annex 1: QC checks performed prior to publication](QC_checks.md)
