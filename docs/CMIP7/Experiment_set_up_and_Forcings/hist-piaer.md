@@ -12,91 +12,80 @@ Intended for models without interactive chemistry.
 Models with interactive chemistry should run `hist-piAQ` instead.
 (Identical to `hist-piAer` in AerChemMIP phase 1.)
 
-Responsible activity: [AerChemMIP](./index.md#aerchemmip). Tier: 1
+- Responsible activity: [AerChemMIP](./index.md#aerchemmip)
+- Tier: 1
+- MIP co-chair review: No review initiated yet
 
-These pages are intended to help with implementation of these experiments.
+This page is intended to help with implementation.
 If you notice something that is unclear, please
 [raise an issue](https://github.com/WCRP-CMIP/cmip7-guidance/issues/new).
-For the full background of the experiments, please see the following URLs:
+
+For the full background of the experiment, please see the following URLs:
 
 - [https://doi.org/10.5194/gmd-10-585-2017](https://doi.org/10.5194/gmd-10-585-2017)
 
-## Related experiments
+## Paired experiments
 
 - [hist-piAQ](./hist-piaq.md) is the corresponding interactive-chemistry experiment for models that include interactive
   chemistry.
 
 ## Experiment set up
 
-<!-- TODO: check this with someone who knows what they're reading -->
+### Parent experiment and branching
 
-The `hist-piAer` simulation is a simple variant of the [historical simulation](./historical.md) where aerosol and
-tropospheric non-methane ozone precursor emissions are kept at pre-industrial levels. `hist-piAer` is for models that do
-not include interactive chemistry.
+The hist-piAer experiment branches from the [piControl](./picontrol.md) experiment (part of [CMIP](./index.md#cmip)).
+The parent experiment's MIP era is [CMIP7](https://wcrp-cmip.org/CMIP7).
 
-### Timing, length and ensemble size
+Branch from [piControl](./picontrol.md) at the same time as [historical](./historical.md).
 
-The simulation output should start on 1850-01-01 and end on 2021-12-31.
+### Output time axis
 
-Simulations should be 172 years in length.
+Your output time axis must start on 1850-01-01 and must end on 2021-12-31.
+You must perform the full simulation i.e. 172 simulation years.
+
+### Minimum ensemble size
 
 Only one ensemble member is required.
 
-### Parent experiment
-
-`hist-piAer` branches from the [piControl](./picontrol.md) simulation (part of [CMIP](./index.md#cmip)).
-
-Branch from `piControl` at a time of your choosing.
-
-The parent experiment comes from [CMIP7](https://wcrp-cmip.org/CMIP7).
-
-This branch time should match the branch time used for initialising the [historical simulation](./historical.md).
-
 ## Forcings
+
+The following information will help you identify the forcings to use.
+However, we can't define every single detail because there can be lots of subjective steps between the raw forcings data
+and model inputs (e.g. interpolation, re-aggregation, supplementation with other information).
+If further guidance would be helpful, please [raise an issue](https://github.com/WCRP-CMIP/cmip7-guidance/issues/new).
 
 ### General headlines
 
-The `hist-piAer` experiment is a time-varying forcings experiment, except for aerosol and tropospheric non-methane ozone
-precursor emissions which should be fixed.
+The hist-piAer experiment is a transient forcings experiment.
 
-### Notes
+### Data
 
-See notes for the [piControl simulation](./picontrol.md) and [historical simulation](./historical.md).
+Here we make a distinction between data that is described on other experiment pages, data that is described on other
+experiment pages with modifications you have to make yourself, data available via ESGF's input4MIPs project and data
+distributed via other channels.
 
-### Versions to use
+#### Data described on other experiment pages
 
-For aerosol and tropospheric non-methane ozone precursor emissions the relevant forcing is the same as for the
-[piControl simulation](./picontrol.md).
+For the following data, please see these other experiment pages:
 
-For all other forcings, the forcing versions relevant for this simulation are the same as for the
-[historical simulation](./historical.md).
+- [historical](./historical.md) for land use, greenhouse gas concentrations, stratospheric aerosol forcing, ozone,
+  nitrogen deposition, solar, aerosol optical properties, population density
 
-### Getting the data
+#### Data described on other experiment pages with modifications you have to make
 
-The data is available on ESGF and searchable
-[via metagrid](https://esgf-node.ornl.gov/search?project=input4MIPs&versionType=all&activeFacets=%7B%22mip_era%22%3A%22CMIP7%22%7D),
-although this method of finding and downloading the data can involve a lot of clicking.
+For the following forcings, please use data from the specified experiments with the specified modifications.
 
-Having said this, please also note: the aerosol optical properties based on the MACv2-SP parameterisation are not
-distributed via the ESGF; please see their
-[specific guidance section](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/aerosol-optical-properties-macv2-sp/#datasets-for-cmip7-phases)
-for data access information.
+- for anthropogenic emissions, use the forcings from [historical](./historical.md) but BC, OC, NH<sub>3</sub> and
+  SO<sub>2</sub> emissions should be fixed to [piControl simulation](./picontrol.md) values
+- for biomass burning emissions, use the forcings from [historical](./historical.md) but BC, OC, NH<sub>3</sub> and
+  SO<sub>2</sub> emissions should be fixed to [piControl simulation](./picontrol.md) values
 
-If you install [esgpull](https://esgf.github.io/esgf-download/), you can download all the data associated with the
-source IDs above with the script shown below.
-Note that this will download all the data associated with these source IDs, which is likely to be much more data than
-you actually need to run your model.
+#### Data available via input4MIPs
 
-```bash
-#!/bin/bash
+No input4MIPs-based data is described specifically on this page.
+Please see the other [data](#data) sub-sections for details of the forcings data to use for this experiment.
 
-EXPERIMENT_NAME="hist-piAer"
+#### Data not available via input4MIPs
 
-## You may need to run the below if you haven't already done it once with esgpull
-# esgpull self install
-## You may also need to run this step to get the data to download
-# esgpull config api.index_node esgf-node.ornl.gov/esgf-1-5-bridge
-esgpull add --track --tag ${EXPERIMENT_NAME} source_id:CEDS-CMIP-2025-04-18,CEDS-CMIP-2025-04-18-supplemental,DRES-CMIP-BB4CMIP7-2-0,UofMD-landState-3-1-2,CR-CMIP-1-0-0,UOEXETER-CMIP-2-2-1,FZJ-CMIP-ozone-2-0,FZJ-CMIP-nitrogen-2-0,SOLARIS-HEPPA-CMIP-4-6,PIK-CMIP-1-0-1
-esgpull update --tag ${EXPERIMENT_NAME} --yes
-esgpull download --tag ${EXPERIMENT_NAME}
-```
+No data that is not input4MIPs-based is described specifically on this page.
+Please see the other [data](#data) sub-sections for details of the forcings data to use for this experiment.
