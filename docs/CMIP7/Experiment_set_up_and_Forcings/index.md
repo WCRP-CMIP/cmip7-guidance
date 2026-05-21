@@ -225,6 +225,19 @@ The following experiments are included in `GeoMIP`:
 
 1. [G7-1p5K-SAI](./g7-1p5k-sai.md)
 
+### LMIP
+
+These pages are intended to help with implementation of these experiments.
+If you notice something that is unclear, please
+[raise an issue](https://github.com/WCRP-CMIP/cmip7-guidance/issues/new).
+For the full background of the experiments, please see the following URLs:
+
+- [https://doi.org/10.5194/gmd-9-2809-2016](https://doi.org/10.5194/gmd-9-2809-2016)
+
+The following experiments are included in `LMIP`:
+
+1. [land-hist](./land-hist.md)
+
 ### PMIP
 
 Palaeoclimate modelling intercomparison project: assessment of paleoclimate i.e. climate thousands of years or more in
