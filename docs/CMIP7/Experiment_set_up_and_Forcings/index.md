@@ -125,6 +125,9 @@ The following experiments are included in `C4MIP`:
 
 1. [1pctCO2-bgc](./1pctco2-bgc.md)
 1. [1pctCO2-rad](./1pctco2-rad.md)
+1. [esm-flat10](./esm-flat10.md)
+1. [esm-flat10-cdr](./esm-flat10-cdr.md)
+1. [esm-flat10-zec](./esm-flat10-zec.md)
 
 ### ScenarioMIP
 
