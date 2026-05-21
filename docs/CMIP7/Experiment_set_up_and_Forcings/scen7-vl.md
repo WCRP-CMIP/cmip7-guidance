@@ -5,8 +5,10 @@ title: "Experiment Setup and Forcings Guidance: scen7-vl"
 
 # Experiment Setup and Forcings Guidance: scen7-vl
 
-PLACEHOLDER TBC.
-CMIP7 ScenarioMIP very low emissions future.
+CMIP7 ScenarioMIP Very Low emission scenario - The Very Low emission scenario is designed to keep the temperature level
+as low as plausible given feasibility constraints.
+This scenario is thus relevant for the low end of the Paris range (staying as close as plausible to 1.5C at the time of
+peak warming and limiting warming to 1.5C by the end of the century).
 Run with prescribed carbon dioxide concentrations (for prescribed carbon dioxide emissions, see `esm-scen7-vl`).
 
 - Responsible activity: [ScenarioMIP](./index.md#scenariomip)

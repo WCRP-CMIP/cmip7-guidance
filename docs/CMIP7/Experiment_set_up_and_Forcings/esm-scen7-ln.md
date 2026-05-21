@@ -5,8 +5,9 @@ title: "Experiment Setup and Forcings Guidance: esm-scen7-ln"
 
 # Experiment Setup and Forcings Guidance: esm-scen7-ln
 
-PLACEHOLDER TBC.
-CMIP7 ScenarioMIP low followed by negative (steep reductions begin in 2040, negative from TBD) emissions future.
+CMIP7 ScenarioMIP Low-to-Negative emission scenario - A scenario with a higher overshoot of the 1.5C goal, followed by
+stringent climate policies resulting in net-negative greenhouse gas emissions to return to lower warming levels, thus
+supporting research into the reversibility of climate outcomes and their impacts.
 Run with prescribed carbon dioxide emissions (for prescribed carbon dioxide concentrations, see `scen7-ln`).
 
 - Responsible activity: [ScenarioMIP](./index.md#scenariomip)

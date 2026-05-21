@@ -5,12 +5,10 @@ title: "Experiment Setup and Forcings Guidance: piClim-histall"
 
 # Experiment Setup and Forcings Guidance: piClim-histall
 
-Simulation of the historical period with prescribed sea-surface temperatures and sea-ice concentrations (the slightly
-confusing name is a legacy thing).
-All forcings follow the `historical` experiment then the `scen7-m` or `esm-scen7-m` experiment (whichever is relevant to
-your model setup) to allow for a (approximate) diagnosis of transient historical effective radiative forcing (ERF) (can
-be compared with the `piClim-*` experiments which provide a more precise quantification of present-day ERF from various
-forcers).
+In combination with `piClim-control`, quantifies transient effective radiative forcing (ERF) over the historical period
+and the `scen7-m` or `esm-scen7-m` experiment (whichever is relevant to your model setup).
+This complements the `piClim-*` experiments which provide a more precise quantification of present-day ERF for various
+forcing components.
 
 - Responsible activity: [RFMIP](./index.md#rfmip)
 - Tier: 1
@@ -32,7 +30,11 @@ piClim-histaer is the same setup as [piClim-control](./piclim-control.md), excep
 
 ### Parent experiment and branching
 
-piClim-histall does not have a parent experiment.
+The piClim-histall experiment branches from the [piControl](./picontrol.md) experiment (part of
+[CMIP](./index.md#cmip)).
+The parent experiment's MIP era is [CMIP7](https://wcrp-cmip.org/CMIP7).
+
+Branch from [piControl](./picontrol.md) at the same time as [piClim-control](./piclim-control.md).
 
 ### Output time axis
 

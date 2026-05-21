@@ -5,8 +5,8 @@ title: "Experiment Setup and Forcings Guidance: scen7-l"
 
 # Experiment Setup and Forcings Guidance: scen7-l
 
-PLACEHOLDER TBC.
-CMIP7 ScenarioMIP low emissions future.
+CMIP7 ScenarioMIP Low emission scenario - The Low emission scenario is designed to be consistent with the pursuit of
+holding warming to a level likely below 2C, without returning to 1.5C before the end of the century.
 Run with prescribed carbon dioxide concentrations (for prescribed carbon dioxide emissions, see `esm-scen7-l`).
 
 - Responsible activity: [ScenarioMIP](./index.md#scenariomip)

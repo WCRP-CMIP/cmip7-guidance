@@ -5,8 +5,8 @@ title: "Experiment Setup and Forcings Guidance: scen7-ml"
 
 # Experiment Setup and Forcings Guidance: scen7-ml
 
-PLACEHOLDER TBC.
-CMIP7 ScenarioMIP medium followed by low (from 2040) emissions future.
+CMIP7 ScenarioMIP Medium-to-Low emission scenario - A scenario exploring a delayed increase in mitigation efforts, short
+of the Paris temperature goal but achieving net-zero CO2 emissions by the end of the century.
 Run with prescribed carbon dioxide concentrations (for prescribed carbon dioxide emissions, see `esm-scen7-ml`).
 
 - Responsible activity: [ScenarioMIP](./index.md#scenariomip)
