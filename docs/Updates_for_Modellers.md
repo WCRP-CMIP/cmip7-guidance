@@ -10,11 +10,12 @@ This page will be updated with information of interest to modelling groups that 
 ## 22nd May 2026
 
 This update contains information on:
-1.	ESGF-NG update
-2.	Essential Model Documentation
-3.	CMOR updates and tables
-4.	Quality control
-5.	Upcoming Data Request patch release
+
+   1. ESGF-NG update
+   2. Essential Model Documentation
+   3. CMOR updates and tables
+   4. Quality control
+   5. Upcoming Data Request patch release
 
 ### ESGF-NG update
 The ESGF project leadership have set a new date of 1st June for the ability of ESGF-NG to publish CMIP7 data. The development teams are working tirelessly to ensure that the last pieces of infrastructure are available and are appropriately configured. We apologise for any confusion or inconvenience the delay may have caused.
@@ -23,8 +24,9 @@ Modelling groups who are keen to engage with the publication process within the 
 
 ### Essential Model Documentation (EMD)
 The Essential Model Documentation is a required step for contribution towards CMIP7. Over the last month the review process has accelerated and we strongly encourage modelling groups to engage with this process around a month before preparing data for publication. There are two key phases of the EMD process:
-1. Registration of model and output grids: this ensures that a grid label is available for your data. Each distinct grid on which data is published requires a corresponding label. (Since many common grids have been registered, this step may have been completed by other members of the community.)
-2. Registration of models and their components: this will finalise the source_id needed for producing publishable output data.
+
+   1. Registration of model and output grids: this ensures that a grid label is available for your data. Each distinct grid on which data is published requires a corresponding label. (Since many common grids have been registered, this step may have been completed by other members of the community.)
+   2. Registration of models and their components: this will finalise the source_id needed for producing publishable output data.
    
 Producing standardized (CMORized) data requires both grid labels and source_id. Modelling groups should be able to use the allocated grid labels once the first phase is completed, and an assumed source_id, following the [guidance](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/Source_ID_guidance/), can be used while the second phase is in progress. Both phases of the EMD process must be completed before ESGF publication can begin.
 
