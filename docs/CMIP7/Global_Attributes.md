@@ -601,7 +601,7 @@ Some of the currently existing CVs have only been partially populated. The follo
 - experiment_id
 - grid_label
 - institution_id
-- source_id
+- source_id (see [Source ID Guidance](Source_ID_guidance.md) for information on constructing a new source id)
 
 ### Variable Identifiers
 
