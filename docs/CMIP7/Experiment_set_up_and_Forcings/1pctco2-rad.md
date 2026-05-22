@@ -59,7 +59,7 @@ If further guidance would be helpful, please [raise an issue](https://github.com
 
 ### General headlines
 
-The 1pctCO2-bgc experiment is a fixed forcings experiment, except for CO<sub>2</sub> which is transient.
+The 1pctCO2-rad experiment is a fixed forcings experiment, except for CO<sub>2</sub> which is transient.
 
 ### Data
 
