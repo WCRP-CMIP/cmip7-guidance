@@ -48,6 +48,7 @@
   - [Guidance for modellers](CMIP7/Guidance_for_modellers.md)
   - [Guidance for users](CMIP7/Guidance_for_users.md)
   - [QC checks](CMIP7/QC_checks.md)
+  - [Source ID guidance](CMIP7/Source_ID_guidance.md)
 - How to Guides:
   - [CVs discussion](How_to_Guides/CVs_discussion.md)
   - [Energy Consumption and Carbon Footprint Spreadsheet](How_to_Guides/Energy_Consumption_and_Carbon_Footprint_Spreadsheet.md)

@@ -55,6 +55,8 @@ Register your institution before registering a model.
 |------|------|
 | Source (Model) | [Register source_id](https://github.com/WCRP-CMIP/CMIP7-CVs/issues/new?template=source.yml) |
 
+Further guidance on constructing a source id is provided in the [Source ID Guidance](Source_ID_guidance.md)
+
 ---
 
 ### 2.3 Experiment Registration
