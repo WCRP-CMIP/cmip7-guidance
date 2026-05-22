@@ -7,9 +7,11 @@ title: "Overview"
 
 !!! tip "Documentation under development"
 
-    The contents of these pages are currently in development.
-    Their format and content will evolve as feedback is received on the drafts.
-    We will remove this tip once the guidance is stable.
+    The contents of these pages are currently under review.
+    On each experiment page, you will see a dot point for "MIP co-chair review".
+    Where this says "Complete", you can assume that the guidance is stable and reliable.
+    Otherwise, please treat the guidance with some caution, because it has not been reviewed by the experiment designers
+    (the MIP co-chairs) yet.
     If you have any feedback, please feel free to raise an issue at
     https://github.com/WCRP-CMIP/cmip7-guidance/issues/new and tag @znichollscr.
 
