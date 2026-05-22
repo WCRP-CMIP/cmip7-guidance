@@ -5,12 +5,9 @@ title: "Experiment Setup and Forcings Guidance: piClim-histaer"
 
 # Experiment Setup and Forcings Guidance: piClim-histaer
 
-Simulation of the historical and future period with prescribed sea-surface temperatures and sea-ice concentrations (the
-slightly confusing name is a legacy thing).
-Aerosol emissions follow the `historical` experiment then the `scen7-m` or `esm-scen7-m` experiment (whichever is
-relevant to your model setup) while all other forcings follow `piControl` to allow for a (approximate) diagnosis of
-transient historical aerosol effective radiative forcing (ERF) (can be compared with `piClim-aer` which provides a more
-precise quantification of present-day aerosol ERF).
+In combination with `piClim-control`, quantifies transient aerosol effective radiative forcing (ERF) over the historical
+period and the `scen7-m` or `esm-scen7-m` experiment (whichever is relevant to your model setup).
+This can be compared with `piClim-aer` which provides a more precise quantification of present-day aerosol ERF.
 
 - Responsible activity: [RFMIP](./index.md#rfmip)
 - Tier: 1
@@ -32,7 +29,11 @@ piClim-histaer is the same setup as [piClim-control](./piclim-control.md), excep
 
 ### Parent experiment and branching
 
-piClim-histaer does not have a parent experiment.
+The piClim-histaer experiment branches from the [piControl](./picontrol.md) experiment (part of
+[CMIP](./index.md#cmip)).
+The parent experiment's MIP era is [CMIP7](https://wcrp-cmip.org/CMIP7).
+
+Branch from [piControl](./picontrol.md) at the same time as [piClim-control](./piclim-control.md).
 
 ### Output time axis
 

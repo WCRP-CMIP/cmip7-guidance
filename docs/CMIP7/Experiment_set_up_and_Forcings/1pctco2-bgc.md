@@ -19,8 +19,8 @@ If you notice something that is unclear, please
 
 For the full background of the experiment, please see the following URLs:
 
-- [https://doi.org/10.5194/egusphere-2024-3356](https://doi.org/10.5194/egusphere-2024-3356)
 - [https://doi.org/10.5194/gmd-17-8141-2024](https://doi.org/10.5194/gmd-17-8141-2024)
+- [https://doi.org/10.5194/gmd-18-5699-2025](https://doi.org/10.5194/gmd-18-5699-2025)
 - [https://doi.org/10.5194/gmd-9-2853-2016](https://doi.org/10.5194/gmd-9-2853-2016)
 
 ## Experiment set up

@@ -19,13 +19,13 @@ If you notice something that is unclear, please
 
 For the full background of the experiment, please see the following URLs:
 
-- [https://doi.org/10.5194/egusphere-2024-3356](https://doi.org/10.5194/egusphere-2024-3356)
 - [https://doi.org/10.5194/gmd-17-8141-2024](https://doi.org/10.5194/gmd-17-8141-2024)
+- [https://doi.org/10.5194/gmd-18-5699-2025](https://doi.org/10.5194/gmd-18-5699-2025)
 - [https://doi.org/10.5194/gmd-9-2853-2016](https://doi.org/10.5194/gmd-9-2853-2016)
 
 ## Experiment set up
 
-The 1pctCO2-bgc simulation has the same forcing setup as the [1pctCO2 simulation](./1pctco2.md).
+The 1pctCO2-rad simulation has the same forcing setup as the [1pctCO2 simulation](./1pctco2.md).
 
 The difference is that your model should be configured such that the carbon cycle only sees the change in radiation and
 does not see any other changes (e.g. changes in atmospheric CO<sub>2</sub> concentrations).
