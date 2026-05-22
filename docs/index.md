@@ -20,6 +20,7 @@ title: CMIP7 Guidance and Documentation
 - [Global Attributes](CMIP7/Global_Attributes.md)
 - [Branded Variables](CMIP7/Branded_Variables.md)
 - [CV Registration](CMIP7/cv_registration.md)
+    - [Source ID guidance](CMIP7/Source_ID_guidance.md)
 - [Data Specs Version](CMIP7/data_specs_version.md)
 - [Guidance for modellers](CMIP7/Guidance_for_modellers.md)
     - [Experiment setup and forcings](CMIP7/Experiment_set_up_and_Forcings/index.md)
