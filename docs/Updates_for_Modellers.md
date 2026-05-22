@@ -7,6 +7,40 @@ title: CMIP7 Updates for modelling groups
 
 This page will be updated with information of interest to modelling groups that the CMIP IPO has communicated by email (most recent at top).
 ---
+## 22nd May 2026
+
+This update contains information on:
+1.	ESGF-NG update
+2.	Essential Model Documentation
+3.	CMOR updates and tables
+4.	Quality control
+5.	Upcoming Data Request patch release
+
+### ESGF-NG update
+The ESGF project leadership have set a new date of 1st June for the ability of ESGF-NG to publish CMIP7 data. The development teams are working tirelessly to ensure that the last pieces of infrastructure are available and are appropriately configured. We apologise for any confusion or inconvenience the delay may have caused.
+
+Modelling groups who are keen to engage with the publication process within the next month should alert the CMIP IPO (cmip-ipo@esa.int) immediately. We strongly recommend engaging with the [Climate Data Node Operations Team (CDNOT)](https://wcrp-cmip.org/cmip7-task-teams/cdnot/) to obtain support with the publication process.
+
+### Essential Model Documentation (EMD)
+The Essential Model Documentation is a required step for contribution towards CMIP7. Over the last month the review process has accelerated and we strongly encourage modelling groups to engage with this process around a month before preparing data for publication. There are two key phases of the EMD process:
+1. Registration of model and output grids: this ensures that a grid label is available for your data. Each distinct grid on which data is published requires a corresponding label. (Since many common grids have been registered, this step may have been completed by other members of the community.)
+2. Registration of models and their components: this will finalise the source_id needed for producing publishable output data.
+   
+Producing standardized (CMORized) data requires both grid labels and source_id. Modelling groups should be able to use the allocated grid labels once the first phase is completed, and an assumed source_id, following the [guidance](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/Source_ID_guidance/), can be used while the second phase is in progress. Both phases of the EMD process must be completed before ESGF publication can begin.
+
+[EMD drop-in sessions](https://wcrp-cmip.org/event/emd-user-drop-in-session-1/) for modellers have been scheduled for 28 May to assist with the process. Modellers may contact the CMIP IPO (cmip-ipo@esa.int) to arrange a meeting with the EMD team to help advance their EMD submissions if they are facing significant timeline pressure.
+
+### CMOR updates and tables
+CMOR developers are continuing to test and respond to issues raised by users testing out the data delivery process. A CMOR v3.15.1 version is now available with the latest updates needed to ensure that core variables for CMIP7 are correctly processed.
+
+### Quality control
+As noted in the CMIP7 guidance pages there is a [wcrp-cmip7 plugin](https://github.com/ESGF/cc-plugin-wcrp) for the IOOS/compliance checker plugin that will be used to ensure compliance with data standards for CMIP7 as part of the publication system. Modelling groups are strongly encouraged to test their datasets for compliance prior to publishing.
+
+### Upcoming Data Request patch release
+We anticipate a Data Request patch update (v1.2.2.4) will be released within the coming weeks providing minor update and fixes. The updates will be well documented so you can easily see what has changed. We expect data publication to continue to support recent versions of the Data Request and will confirm the range of valid versions on the guidance pages in the near future. 
+
+
+
 ## 14th April 2026
 
 This update contains information on:
