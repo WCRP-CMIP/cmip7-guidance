@@ -73,7 +73,7 @@ Again, there are minor changes from CMIP6 and each DRS global attribute used in 
 
 ---
 
-## 3. Data Reference Syntax (DRS) Elements
+## 4. Data Reference Syntax (DRS) Elements
 
 The CMIP7 data descriptors used in constructing filenames and directory paths comprise the DRS. Except for two exceptions, this metadata is drawn from controlled vocabularies and stored as global attributes in files. Table 1 summarizes the DRS elements, duplicating a subset of the information found in the [reference document](https://zenodo.org/records/19366138) but adding a column indicating any difference in how the terms were defined in CMIP6.
 
@@ -199,7 +199,7 @@ All elements are drawn from CMIP7 controlled vocabularies (CVs) or constructed u
 </tr>
 <tr style="background-color: #f9f9f9;">
 <td style="border: 1px solid #cccccc; padding: 8px; background-color: #ffff00; word-wrap: break-word;"><strong>variant_label</strong></td>
-<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">a label distinguishing datasets produced under only slight variants of experiment conditions or source configurations. See section 4 below.</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">a label distinguishing datasets produced under only slight variants of experiment conditions or source configurations. See section 5 below.</td>
 <td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">r1i1p1f1, r2i2p2f1, r1i198001p1f1, r1i198001ap1f1, r1i199001bp1f1 (constructed from elements in Table 2)</td>
 <td style="border: 1px solid #cccccc; padding: 8px; text-align: center; word-wrap: break-word;">yes</td>
 <td style="border: 1px solid #cccccc; padding: 8px; text-align: center; word-wrap: break-word;">yes</td>
@@ -210,7 +210,7 @@ All elements are drawn from CMIP7 controlled vocabularies (CVs) or constructed u
 
 ---
 
-## 4. Notes on "variant_label"
+## 5. Notes on "variant_label"
 
 When two datasets differ due to slight differences in experiment conditions (e.g., initial conditions or forcing) or slight differences in the model formulation (e.g., a small treatment in one of the parameterizations), they must be distinguished by assigning them different variant "labels". The variant_label is constructed from four indexes, "realization", "initialization", "physics", and "forcing", and these are combined into a single text string of the form "r2i1p1f3" recording the "r", "i", "p", "f" values identifying the variant.
 
@@ -228,7 +228,7 @@ When more than one variant is assigned to the files produced by a model, the dif
 
 ---
 
-## 5. Additional Required Global Attributes
+## 6. Additional Required Global Attributes
 
 Additional attributes that are not included in the DRS are nevertheless required. They are listed in Table 2 along with an indication of how they might differ from their CMIP6 counterparts.
 
@@ -250,25 +250,25 @@ Additional required global attributes in addition to those found in Table 1. **H
 <tr>
 <td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;" rowspan="4">Elements of the variant_label attribute</td>
 <td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;"><strong>realization_index</strong></td>
-<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">index distinguishing the members of an ensemble initialized from different points in a parent run. See section 4.</td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">index distinguishing the members of an ensemble initialized from different points in a parent run. See section 5.</td>
 <td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">"r1", "r3", "r224", following the template: "r"&lt;n&gt;</td>
 <td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">Now a text string (not an integer) that includes the "r" prefix</td>
 </tr>
 <tr>
 <td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;"><strong>initialization_index</strong></td>
-<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">index indicating initialization method and/or, for decadal predictions, initialization date. See section 4.</td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">index indicating initialization method and/or, for decadal predictions, initialization date. See section 6.</td>
 <td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">"i1", "i2", "i196001", "i201001", "i201001a", "i201001b", following the template: "i"&lt;n&gt;[a]</td>
 <td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">Now a text string (not an integer) that includes the "i" prefix</td>
 </tr>
 <tr>
 <td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;"><strong>physics_index</strong></td>
-<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">index distinguishing among simulations generated by the same "source", but with minor differences in physics. See section 4.</td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">index distinguishing among simulations generated by the same "source", but with minor differences in physics. See section 6.</td>
 <td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">"p1", "p3", "p45", following the template: "p"&lt;n&gt;</td>
 <td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">Now a text string (not an integer) that includes the "p" prefix</td>
 </tr>
 <tr>
 <td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;"><strong>forcing_index</strong></td>
-<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">index identifying variant of forcing. See section 4.</td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">index identifying variant of forcing. See section 5.</td>
 <td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">"f1", "f6", "f13", following the template: "f"&lt;n&gt;</td>
 <td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">Now a text string (not an integer) that includes the "f" prefix</td>
 </tr>
@@ -359,7 +359,7 @@ Additional required global attributes in addition to those found in Table 1. **H
 
 ---
 
-## 6. Conditionally Required Global Attributes
+## 7. Conditionally Required Global Attributes
 
 ### Table 3. Conditionally required global attributes
 
@@ -427,7 +427,7 @@ These attributes are defined as they were in CMIP6.
 
 ---
 
-## 7. Optional Global Attributes
+## 8. Optional Global Attributes
 
 ### Table 4. Optional attributes
 
@@ -473,7 +473,7 @@ These attributes are optional, and some modeling groups might elect to provide t
 <td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">No change</td>
 </tr>
 <tr>
-<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;"><strong>reference</strong></td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;"><strong>references</strong></td>
 <td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">references relevant to the data reported (recognized by the CF Conventions)</td>
 <td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">No change</td>
 </tr>
@@ -484,7 +484,7 @@ These attributes are optional, and some modeling groups might elect to provide t
 </tr>
 <tr>
 <td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;"><strong>variant_info</strong></td>
-<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">description of the simulation variant and how it differs from other variants. See section 4 above.</td>
+<td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">description of the simulation variant and how it differs from other variants. See section 5 above.</td>
 <td style="border: 1px solid #cccccc; padding: 8px; word-wrap: break-word;">No change</td>
 </tr>
 </tbody>
