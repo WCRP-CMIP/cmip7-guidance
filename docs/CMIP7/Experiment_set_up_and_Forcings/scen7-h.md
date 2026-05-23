@@ -5,8 +5,9 @@ title: "Experiment Setup and Forcings Guidance: scen7-h"
 
 # Experiment Setup and Forcings Guidance: scen7-h
 
-PLACEHOLDER TBC.
-CMIP7 ScenarioMIP high emissions future.
+CMIP7 ScenarioMIP High emission scenario - A scenario with emissions as high as judged to be plausible, based on
+assuming developments that include a rollback of current mitigation policies.
+This scenario is expected to result in forcings below SSP5-8.5.
 Run with prescribed carbon dioxide concentrations (for prescribed carbon dioxide emissions, see `esm-scen7-h`).
 
 - Responsible activity: [ScenarioMIP](./index.md#scenariomip)

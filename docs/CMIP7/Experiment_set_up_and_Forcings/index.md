@@ -5,7 +5,7 @@ title: "Overview"
 
 # CMIP7 Experiment Setup and Forcings Guidance
 
-!!! tip "Documentation under development"
+!!! tip "Documentation under review"
 
     The contents of these pages are currently under review.
     On each experiment page, you will see a dot point for "MIP co-chair review".
@@ -127,6 +127,9 @@ The following experiments are included in `C4MIP`:
 
 1. [1pctCO2-bgc](./1pctco2-bgc.md)
 1. [1pctCO2-rad](./1pctco2-rad.md)
+1. [esm-flat10](./esm-flat10.md)
+1. [esm-flat10-cdr](./esm-flat10-cdr.md)
+1. [esm-flat10-zec](./esm-flat10-zec.md)
 
 ### ScenarioMIP
 
@@ -223,6 +226,22 @@ For the full background of the experiments, please see the following URLs:
 The following experiments are included in `GeoMIP`:
 
 1. [G7-1p5K-SAI](./g7-1p5k-sai.md)
+
+### LMIP
+
+Land (offline) Model Intercomparison Project: advancing understanding of the impacts of land-use and land-cover change
+(LULCC) on climate
+
+These pages are intended to help with implementation of these experiments.
+If you notice something that is unclear, please
+[raise an issue](https://github.com/WCRP-CMIP/cmip7-guidance/issues/new).
+For the full background of the experiments, please see the following URLs:
+
+- [https://doi.org/10.5194/gmd-9-2809-2016](https://doi.org/10.5194/gmd-9-2809-2016)
+
+The following experiments are included in `LMIP`:
+
+1. [land-hist](./land-hist.md)
 
 ### PMIP
 

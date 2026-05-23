@@ -5,8 +5,9 @@ title: "Experiment Setup and Forcings Guidance: esm-scen7-hl"
 
 # Experiment Setup and Forcings Guidance: esm-scen7-hl
 
-PLACEHOLDER TBC.
-CMIP7 ScenarioMIP High followed by low (from 2060) emissions future.
+CMIP7 ScenarioMIP High-to-Low emission scenario - A scenario that follows approximately the same emissions pathway as
+the High, but changes course in the second half of the century, applying strong mitigation measures to reach net zero
+CO2 emissions by 2100.
 Run with prescribed carbon dioxide emissions (for prescribed carbon dioxide concentrations, see `scen7-hl`).
 
 - Responsible activity: [ScenarioMIP](./index.md#scenariomip)

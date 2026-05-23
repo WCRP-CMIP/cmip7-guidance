@@ -5,8 +5,8 @@ title: "Experiment Setup and Forcings Guidance: esm-scen7-m"
 
 # Experiment Setup and Forcings Guidance: esm-scen7-m
 
-PLACEHOLDER TBC.
-CMIP7 ScenarioMIP medium emissions future.
+CMIP7 ScenarioMIP Medium emission scenario - A middle scenario exploring consequences of extending current policies and
+trends into the future.
 Run with prescribed carbon dioxide emissions (for prescribed carbon dioxide concentrations, see `scen7-m`).
 
 - Responsible activity: [ScenarioMIP](./index.md#scenariomip)
