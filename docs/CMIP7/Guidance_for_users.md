@@ -164,13 +164,15 @@ CMIP7 datasets can be identified through a series of facets that represents key 
 * grid
 * version
 
-!!! Info
 
-    Current advice from the CVs task team is to only access the CVs via [ESGVOC](https://esgf.github.io/esgf-vocab/). This will be subject to change in the future.
+More information about the meaning of these facets is provided in the [Global Attributes page](Global_Attributes.md).  This section provides helpful links and gives a bit more information on a few key facets. 
 
+??? Info "Controlled Vocabularies"
+    The values associated with each facet are standardized through the CVs. They are used to search the ESGF database and can be found in the global attributes and filename of the data. The source of truth for the CVs is [ESGVOC][esgvoc]. This software feeds other tools for viewing the CVs:
 
+    * The [CV viewer][CVviewer]
+    * [CMOR tables JSON files][cmip7cmor]
 
-More information about the meaning of these facets is provided in the [Global Attributes page](Global_Attributes.md). The values associated with each facet are standardized through the [CVs][CVviewer]. They are used to search the ESGF database and can be found in the global attributes of the data. This section provides helpful links and gives a bit more information on a few key facets. 
 
 
 ### 3.1.  Source and Variant
@@ -372,6 +374,7 @@ First time using CMIP? Need a bit more help ? Check out these resources:
 [tools]: https://wcrp-cmip.org/tools/
 [virtualizarr]: https://virtualizarr.readthedocs.io/en/stable/
 [CVviewer]: https://esgvoc.ipsl.fr/
+[esgvoc]: https://esgf.github.io/esgf-vocab/
 
  <!-- CMIP7 links -->
 [GMDSpecialIssue]: https://gmd.copernicus.org/articles/special_issue1315.html
@@ -395,6 +398,7 @@ First time using CMIP? Need a bit more help ? Check out these resources:
 [sourcelist]:  https://esgvoc.ipsl.fr/concept/model?projects=cmip7
 [experimentlist]:  https://esgvoc.ipsl.fr/concept/experiment?projects=cmip7
 [activitylist]:  https://esgvoc.ipsl.fr/concept/activity?projects=cmip7
+[cmip7cmor]: https://github.com/WCRP-CMIP/cmip7-cmor-tables/tree/main/tables-cvs/split-view
 
 
 
