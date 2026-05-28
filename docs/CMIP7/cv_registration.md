@@ -59,21 +59,31 @@ Further guidance on constructing a source id is provided in the [Source ID Guida
 
 ---
 
-### 2.3 Experiment Registration
+### 2.3 Activity Registration
+
+For new Activities (MIPs) not already in the CV.
+
+**Repository**: [CMIP7-CVs](https://github.com/WCRP-CMIP/CMIP7-CVs/issues)
+
+| Form | Link |
+|------|------|
+| Activity (MIP) | [Register activity](https://github.com/WCRP-CMIP/CMIP7-CVs/issues/new?template=register-activity.yml) |
+
+---
+
+### 2.4 Experiment Registration
 
 For new experiments not already in the CV.
 
-🛑 *Process suspended temporarily, should return end May 2026* 🛑
-
 **Repository**: [CMIP7-CVs](https://github.com/WCRP-CMIP/CMIP7-CVs/issues)
-<!--
+
 | Form | Link |
 |------|------|
-| Experiment | [Register experiment](https://github.com/WCRP-CMIP/CMIP7-CVs/issues/new?template=experiment.yml) |
---!>
+| Experiment | [Register experiment](https://github.com/WCRP-CMIP/CMIP7-CVs/issues/new?template=register-experiment.yml) |
+
 ---
 
-### 2.4 Essential Model Documentation (EMD)
+### 2.5 Essential Model Documentation (EMD)
 
 EMD provides detailed technical documentation of your model. Registration follows a **hierarchical process** - you must register components in order. This should take a maximum of 4 hours wall time (although not all at once, as **each step has a separate review process**). 
 
