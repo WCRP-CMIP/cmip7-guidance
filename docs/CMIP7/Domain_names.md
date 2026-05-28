@@ -24,6 +24,6 @@ To update this list please raise an issue (pull requests welcome) via [github](h
 | CEDA ESGF Metagrid | `esgf-ui.ceda.ac.uk` |
 | DKRZ ESGF Metagrid | `esgf-metagrid.cloud.dkrz.de` |
 | ESGF webpages | `*.esgf.io` |
+| CMIP7 guidance sites | `*.mipcvs.dev` |
 
-Last update Apr 2026
-
+Last update May 2026
