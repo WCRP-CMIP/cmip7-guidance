@@ -8,86 +8,79 @@ title: "Experiment Setup and Forcings Guidance: abrupt-2xCO2"
 Abrupt doubling of atmospheric carbon dioxide levels.
 All other conditions are kept the same as piControl.
 
-Responsible activity: [CFMIP](./index.md#cfmip). Tier: 1
+- Responsible activity: [CFMIP](./index.md#cfmip)
+- Tier: 1
+- MIP co-chair review: No review initiated yet
 
-These pages are intended to help with implementation of these experiments.
+This page is intended to help with implementation.
 If you notice something that is unclear, please
 [raise an issue](https://github.com/WCRP-CMIP/cmip7-guidance/issues/new).
-For the full background of the experiments, please see the following URLs:
+
+For the full background of the experiment, please see the following URLs:
 
 - [https://doi.org/10.5194/gmd-10-359-2017](https://doi.org/10.5194/gmd-10-359-2017)
 
 ## Experiment set up
 
-The abrupt CO<sub>2</sub> doubling simulation is a simple branch from the [piControl simulation](./picontrol.md).
+The abrupt CO<sub>2</sub> doubling experiment is a simple branch from the [piControl simulation](./picontrol.md).
 
-After branching, the atmospheric CO<sub>2</sub> concentrations should be set to two times the concentrations used in the
-`piControl` simulation.
+After branching, the atmospheric CO<sub>2</sub> concentrations should be set to two times the CO<sub>2</sub>
+concentrations used in the piControl experiment.
 
-The start-time of the simulation is not tied to a particular year but, rather, can be chosen arbitrarily (e.g., year 200
-or year 1850 or year 1).
-However, it is easier for analysts if the start-time is consistent with the branching time in the parent experiment
-(e.g., if the the simulation branches from year 200 in the parent experiment, then the start time in the child
-experiment would be set to year 200).
+### Parent experiment and branching
 
-### Timing, length and ensemble size
+The abrupt-2xCO2 experiment branches from the [piControl](./picontrol.md) experiment (part of [CMIP](./index.md#cmip)).
+The parent experiment's MIP era is [CMIP7](https://wcrp-cmip.org/CMIP7).
 
-The CMIP7 CVs do not define fixed start or end dates for this simulation.
+Branch from [piControl](./picontrol.md) at a time of your choosing.
 
-Simulations should be at least 300 years in length.
+### Output time axis
+
+You are free to start and end the time axis of your outputs at whatever time you like (e.g. starting at year 1, or 1850,
+or year 500).
+You must perform at least 300 simulation years.
+
+### Minimum ensemble size
 
 Only one ensemble member is required.
 
-### Parent experiment
-
-`abrupt-2xCO2` branches from the [piControl](./picontrol.md) simulation (part of [CMIP](./index.md#cmip)).
-
-Branch from `piControl` at a time of your choosing.
-
-The parent experiment comes from [CMIP7](https://wcrp-cmip.org/CMIP7).
-
 ## Forcings
+
+The following information will help you identify the forcings to use.
+However, we can't define every single detail because there can be lots of subjective steps between the raw forcings data
+and model inputs (e.g. interpolation, re-aggregation, supplementation with other information).
+If further guidance would be helpful, please [raise an issue](https://github.com/WCRP-CMIP/cmip7-guidance/issues/new).
 
 ### General headlines
 
-See general headlines for the [abrupt-4xCO2 simulation](./abrupt-4xco2.md).
+The abrupt-2xCO2 experiment is a fixed forcings experiment.
 
-### Notes
+### Data
 
-See notes for the [piControl simulation](./picontrol.md).
+Here we make a distinction between data that is described on other experiment pages, data that is described on other
+experiment pages with modifications you have to make yourself, data available via ESGF's input4MIPs project and data
+distributed via other channels.
 
-You have to double the atmospheric CO<sub>2</sub> concentrations yourself.
+#### Data described on other experiment pages
 
-### Versions to use
+For the following data, please see these other experiment pages:
 
-The forcings relevant for this simulation are the same as for the [piControl simulation](./picontrol.md).
+- [piControl](./picontrol.md) for anthropogenic emissions, biomass burning emissions, land use, stratospheric aerosol
+  forcing, solar, aerosol optical properties, population density, ozone, nitrogen deposition
 
-### Getting the data
+#### Data described on other experiment pages with modifications you have to make
 
-The data is available on ESGF and searchable
-[via metagrid](https://esgf-node.ornl.gov/search?project=input4MIPs&versionType=all&activeFacets=%7B%22mip_era%22%3A%22CMIP7%22%7D),
-although this method of finding and downloading the data can involve a lot of clicking.
+For the following forcings, please use data from the specified experiments with the specified modifications.
 
-Having said this, please also note: the aerosol optical properties based on the MACv2-SP parameterisation are not
-distributed via the ESGF; please see their
-[specific guidance section](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/aerosol-optical-properties-macv2-sp/#datasets-for-cmip7-phases)
-for data access information.
+- for greenhouse gas concentrations, use the forcings from [piControl](./picontrol.md) but double the CO<sub>2</sub>
+  concentrations
 
-If you install [esgpull](https://esgf.github.io/esgf-download/), you can download all the data associated with the
-source IDs above with the script shown below.
-Note that this will download all the data associated with these source IDs, which is likely to be much more data than
-you actually need to run your model.
+#### Data available via input4MIPs
 
-```bash
-#!/bin/bash
+No input4MIPs-based data is described specifically on this page.
+Please see the other [data](#data) sub-sections for details of the forcings data to use for this experiment.
 
-EXPERIMENT_NAME="abrupt-2xCO2"
+#### Data not available via input4MIPs
 
-## You may need to run the below if you haven't already done it once with esgpull
-# esgpull self install
-## You may also need to run this step to get the data to download
-# esgpull config api.index_node esgf-node.ornl.gov/esgf-1-5-bridge
-esgpull add --track --tag ${EXPERIMENT_NAME} source_id:CEDS-CMIP-2025-04-18,CEDS-CMIP-2025-04-18-supplemental,DRES-CMIP-BB4CMIP7-2-0,UofMD-landState-3-1-2,CR-CMIP-1-0-0,UOEXETER-CMIP-2-2-1,FZJ-CMIP-ozone-1-2,FZJ-CMIP-nitrogen-2-0,SOLARIS-HEPPA-CMIP-4-6,PIK-CMIP-1-0-1
-esgpull update --tag ${EXPERIMENT_NAME} --yes
-esgpull download --tag ${EXPERIMENT_NAME}
-```
+No data that is not input4MIPs-based is described specifically on this page.
+Please see the other [data](#data) sub-sections for details of the forcings data to use for this experiment.

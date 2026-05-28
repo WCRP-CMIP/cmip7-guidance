@@ -13,113 +13,92 @@ All other forcings evolve as in `scen7-h`.
 Requires interactive chemistry.
 Models without interactive chemistry should run `scen7-h-Aer` instead.
 
-Responsible activity: [AerChemMIP](./index.md#aerchemmip). Tier: 1
+- Responsible activity: [AerChemMIP](./index.md#aerchemmip)
+- Tier: 1
+- MIP co-chair review: No review initiated yet
 
-These pages are intended to help with implementation of these experiments.
+This page is intended to help with implementation.
 If you notice something that is unclear, please
 [raise an issue](https://github.com/WCRP-CMIP/cmip7-guidance/issues/new).
-For the full background of the experiments, please see the following URLs:
+
+For the full background of the experiment, please see the following URLs:
 
 - [https://doi.org/10.5194/gmd-10-585-2017](https://doi.org/10.5194/gmd-10-585-2017)
 
-## Related experiments
+## Paired experiments
 
+- [esm-scen7-h-AQ](./esm-scen7-h-aq.md) is the emissions-driven counterpart to this concentration-driven experiment.
 - [scen7-h-Aer](./scen7-h-aer.md) is the corresponding non-interactive-chemistry experiment for models that do not
   include interactive chemistry.
 
 ## Experiment set up
 
-The `scen7-h-AQ` simulation is a variant of the `scen7-h` simulation.
+### Parent experiment and branching
 
-The anthropogenic non-CH4 tropospheric ozone precursor emissions, aerosols and aerosol precursor emissions should be
-held fixed at 2021 values from the historical simulation.
+The scen7-h-AQ experiment branches from the [historical](./historical.md) experiment (part of [CMIP](./index.md#cmip)).
+The parent experiment's MIP era is [CMIP7](https://wcrp-cmip.org/CMIP7).
 
-All other forcings should evolve as in `scen7-h`.
+Branch from [historical](./historical.md) at 2021-12-31.
 
-`scen7-h-AQ` is for models that include interactive chemistry.
+### Output time axis
 
-### Timing, length and ensemble size
+Your output time axis must start on 2022-01-01 and must end on 2100-12-31.
+You must perform the full simulation i.e. 79 simulation years.
 
-The simulation output should start on 2022-01-01 and end on 2100-12-31.
-
-Simulations should be 79 years in length.
+### Minimum ensemble size
 
 Only one ensemble member is required.
 
-### Parent experiment
-
-`scen7-h-AQ` branches from the [historical](./historical.md) simulation (part of [CMIP](./index.md#cmip)).
-
-Branch from `historical` at 2022-01-01.
-
-The parent experiment comes from [CMIP7](https://wcrp-cmip.org/CMIP7).
-
 ## Forcings
+
+The following information will help you identify the forcings to use.
+However, we can't define every single detail because there can be lots of subjective steps between the raw forcings data
+and model inputs (e.g. interpolation, re-aggregation, supplementation with other information).
+If further guidance would be helpful, please [raise an issue](https://github.com/WCRP-CMIP/cmip7-guidance/issues/new).
 
 ### General headlines
 
-The `scen7-h-AQ` experiment is a time-varying forcings experiment, combining anthropogenic non-CH4 tropospheric ozone
-precursor emissions, aerosols and aerosol precursor emissions from the 2021 values in the
-[historical simulation](./historical.md) with all other forcings from the `scen7-h` simulation.
+The scen7-h-AQ experiment uses a mix of fixed and transient forcings.
+The fixed forcings are: anthropogenic emissions and biomass burning emissions.
+The transient forcings are: aerosol optical properties, anthropogenic emissions, biomass burning emissions, greenhouse
+gas concentrations, land use, nitrogen deposition, ozone, population density, solar and stratospheric aerosol forcing.
 
-### Notes
+### Data
 
-The following pages give further information on each forcing:
+Here we make a distinction between data that is described on other experiment pages, data that is described on other
+experiment pages with modifications you have to make yourself, data available via ESGF's input4MIPs project and data
+distributed via other channels.
 
-- anthropogenic emissions:
-  [input4mips-cvs.readthedocs.io/dataset-overviews/anthropogenic-slcf-co2-emissions](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/anthropogenic-slcf-co2-emissions/)
-- biomass burning emissions:
-  [input4mips-cvs.readthedocs.io/dataset-overviews/open-biomass-burning-emissions](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/open-biomass-burning-emissions/)
-- land use:
-  [input4mips-cvs.readthedocs.io/dataset-overviews/land-use](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/land-use/)
-- greenhouse gas concentrations:
-  [input4mips-cvs.readthedocs.io/dataset-overviews/greenhouse-gas-concentrations](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/greenhouse-gas-concentrations/)
-- stratospheric aerosol forcing:
-  [input4mips-cvs.readthedocs.io/dataset-overviews/stratospheric-volcanic-so2-emissions-aod](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/stratospheric-volcanic-so2-emissions-aod/)
-- ozone:
-  [input4mips-cvs.readthedocs.io/dataset-overviews/ozone](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/ozone/)
-- nitrogen deposition:
-  [input4mips-cvs.readthedocs.io/dataset-overviews/nitrogen-deposition](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/nitrogen-deposition/)
-- solar:
-  [input4mips-cvs.readthedocs.io/dataset-overviews/solar](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/solar/)
-- aerosol optical properties:
-  [input4mips-cvs.readthedocs.io/dataset-overviews/aerosol-optical-properties-macv2-sp](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/aerosol-optical-properties-macv2-sp/)
-- population density:
-  [input4mips-cvs.readthedocs.io/dataset-overviews/population](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/population/)
+#### Data described on other experiment pages
 
-### Versions to use
+For the following data, please see these other experiment pages:
 
-For anthropogenic non-CH4 tropospheric ozone precursor emissions, aerosols and aerosol precursor emissions, the relevant
-forcing is the same as for the 2021 values in the [historical simulation](./historical.md).
+- [scen7-h](./scen7-h.md) for land use, greenhouse gas concentrations, stratospheric aerosol forcing, ozone, nitrogen
+  deposition, solar, aerosol optical properties, population density
 
-For all other forcings, the forcing versions relevant for this simulation are the same as for the `scen7-h` simulation.
+#### Data described on other experiment pages with modifications you have to make
 
-### Getting the data
+For the following forcings, please use data from the specified experiments with the specified modifications.
 
-The data is available on ESGF and searchable
-[via metagrid](https://esgf-node.ornl.gov/search?project=input4MIPs&versionType=all&activeFacets=%7B%22mip_era%22%3A%22CMIP7%22%7D),
-although this method of finding and downloading the data can involve a lot of clicking.
+- for anthropogenic emissions, use the forcings from [scen7-h](./scen7-h.md) but only for everything except aerosol (BC,
+  OC, NH<sub>3</sub>, SO<sub>2</sub>) and tropospheric non-methane ozone precursor emissions (NMVOCs, CO,
+  NO<sub>x</sub>).
+- for biomass burning emissions, use the forcings from [scen7-h](./scen7-h.md) but only for everything except aerosol
+  (BC, OC, NH<sub>3</sub>, SO<sub>2</sub>) and tropospheric non-methane ozone precursor emissions (NMVOCs, CO,
+  NO<sub>x</sub>).
+- for anthropogenic emissions, use the forcings from [historical](./historical.md) but only for aerosol (BC, OC,
+  NH<sub>3</sub>, SO<sub>2</sub>) and tropospheric non-methane ozone precursor emissions (NMVOCs, CO, NO<sub>x</sub>).
+  These forcings should be fixed to 2021 values.
+- for biomass burning emissions, use the forcings from [historical](./historical.md) but only for aerosol (BC, OC,
+  NH<sub>3</sub>, SO<sub>2</sub>) and tropospheric non-methane ozone precursor emissions (NMVOCs, CO, NO<sub>x</sub>).
+  These forcings should be fixed to 2021 values.
 
-Having said this, please also note: the aerosol optical properties based on the MACv2-SP parameterisation are not
-distributed via the ESGF; please see their
-[specific guidance section](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/aerosol-optical-properties-macv2-sp/#datasets-for-cmip7-phases)
-for data access information.
+#### Data available via input4MIPs
 
-If you install [esgpull](https://esgf.github.io/esgf-download/), you can download all the data associated with the
-source IDs above with the script shown below.
-Note that this will download all the data associated with these source IDs, which is likely to be much more data than
-you actually need to run your model.
+No input4MIPs-based data is described specifically on this page.
+Please see the other [data](#data) sub-sections for details of the forcings data to use for this experiment.
 
-```bash
-#!/bin/bash
+#### Data not available via input4MIPs
 
-EXPERIMENT_NAME="scen7-h-AQ"
-
-## You may need to run the below if you haven't already done it once with esgpull
-# esgpull self install
-## You may also need to run this step to get the data to download
-# esgpull config api.index_node esgf-node.ornl.gov/esgf-1-5-bridge
-esgpull add --track --tag ${EXPERIMENT_NAME} source_id:CEDS-CMIP-2025-04-18,CEDS-CMIP-2025-04-18-supplemental,IIASA-IAMC-h-1-0-0,IIASA-IAMC-1-0-0,UofMD-landState-h-3-1-1,CR-h-1-0-0,UOEXETER-ScenarioMIP-2-2-2,FZJ-CMIP-ozone-vl-1-0,FZJ-CMIP-nitrogen-vl-1-0,SOLARIS-HEPPA-ScenarioMIP-4-6,PIK-h-1-0-0
-esgpull update --tag ${EXPERIMENT_NAME} --yes
-esgpull download --tag ${EXPERIMENT_NAME}
-```
+No data that is not input4MIPs-based is described specifically on this page.
+Please see the other [data](#data) sub-sections for details of the forcings data to use for this experiment.
