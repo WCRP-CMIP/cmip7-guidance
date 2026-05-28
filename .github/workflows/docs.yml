@@ -47,17 +47,17 @@ jobs:
           python-version: '3.11'
 
   # Archive version to versions branch
-  archive:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Archive to versions branch
-        uses: WCRP-CMIP/CMIPLD/actions/archive-version@copier
-        with:
-          version: ${{ needs.build.outputs.version }}
-          artifact-name: docs-build
-          versions-branch: versions
-          repository: ${{ github.repository }}
+  # archive:
+  #   needs: build
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Archive to versions branch
+  #       uses: WCRP-CMIP/CMIPLD/actions/archive-version@copier
+  #       with:
+  #         version: ${{ needs.build.outputs.version }}
+  #         artifact-name: docs-build
+  #         versions-branch: versions
+  #         repository: ${{ github.repository }}
 
   # Deploy to GitHub Pages
   deploy-pages:
