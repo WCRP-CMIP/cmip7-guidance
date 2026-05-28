@@ -5,160 +5,226 @@ title: "Experiment Setup and Forcings Guidance: historical"
 
 # Experiment Setup and Forcings Guidance: historical
 
-Simulation of the climate of the recent past (typically meaning 1850 to present-day) with prescribed carbon dioxide
-concentrations (for prescribed carbon dioxide emissions, see `esm-hist`).
+Simulation of the climate of the recent past (1850 onwards) with prescribed carbon dioxide concentrations.
 
-Responsible activity: [CMIP](./index.md#cmip). Tier: 1
+- Responsible activity: [CMIP](./index.md#cmip)
+- Tier: 1
+- MIP co-chair review: No review initiated yet
 
-These pages are intended to help with implementation of these experiments.
+This page is intended to help with implementation.
 If you notice something that is unclear, please
 [raise an issue](https://github.com/WCRP-CMIP/cmip7-guidance/issues/new).
-For the full background of the experiments, please see the following URLs:
+
+For the full background of the experiment, please see the following URLs:
 
 - [https://doi.org/10.5194/gmd-18-6671-2025](https://doi.org/10.5194/gmd-18-6671-2025)
 
-## Related experiments
+## Paired experiments
 
 - [esm-hist](./esm-hist.md) is the emissions-driven counterpart to this concentration-driven experiment.
 
 ## Experiment set up
 
-The historical simulation uses a specific set of forcings (see [forcings](#forcings)).
+### Parent experiment and branching
 
-These should be applied as transient (i.e. time-changing) forcings over the length of the simulation.
+The historical experiment branches from the [piControl](./picontrol.md) experiment (part of [CMIP](./index.md#cmip)).
+The parent experiment's MIP era is [CMIP7](https://wcrp-cmip.org/CMIP7).
 
-### Timing, length and ensemble size
+Branch from [piControl](./picontrol.md) at a time of your choosing.
 
-The simulation output should start on 1850-01-01 and end on 2021-12-31.
+### Output time axis
 
-Simulations should be 172 years in length.
+Your output time axis must start on 1850-01-01 and must end on 2021-12-31.
+You must perform the full simulation i.e. 172 simulation years.
+
+### Minimum ensemble size
 
 Only one ensemble member is required.
 
-### Parent experiment
-
-`historical` branches from the [piControl](./picontrol.md) simulation (part of [CMIP](./index.md#cmip)).
-
-Branch from `piControl` at a time of your choosing.
-
-The parent experiment comes from [CMIP7](https://wcrp-cmip.org/CMIP7).
-
 ## Forcings
+
+The following information will help you identify the forcings to use.
+However, we can't define every single detail because there can be lots of subjective steps between the raw forcings data
+and model inputs (e.g. interpolation, re-aggregation, supplementation with other information).
+If further guidance would be helpful, please [raise an issue](https://github.com/WCRP-CMIP/cmip7-guidance/issues/new).
 
 ### General headlines
 
-The `historical` experiment is a time-varying forcings experiment.
+The historical experiment is a transient forcings experiment.
 
-Please note that the ozone forcing should come from files with the source ID `FZJ-CMIP-ozone-2-0`: the CMIP Panel
-co-chairs are recommending that simulations based on `FZJ-CMIP-ozone-1-2` are re-run if possible.
-`FZJ-CMIP-ozone-2-0` was released quite late, so if you have simulations based on `FZJ-CMIP-ozone-1-2`, these would be
-of interest to the Forcings Task Team so please publish them
-([discussion of how to set the value for the forcing 'f' identifier in such files is ongoing](https://github.com/PCMDI/input4MIPs_CVs/issues/415)).
+### Data
 
-Please also note that the nitrogen deposition forcing should come from files with the source ID `FZJ-CMIP-nitrogen-2-0`.
-`FZJ-CMIP-nitrogen-2-0` was released quite late and the impact of the change is likely to be small, so if you have
-simulations based on `FZJ-CMIP-nitrogen-1-2`, you do not need to re-run them.
+Here we make a distinction between data that is described on other experiment pages, data that is described on other
+experiment pages with modifications you have to make yourself, data available via ESGF's input4MIPs project and data
+distributed via other channels.
 
-Further, even if you have run pre-industrial control simulations with `FZJ-CMIP-nitrogen-1-2`, it is recommended to
-nonetheless run historical simulations with `FZJ-CMIP-nitrogen-2-0` because the discontinuity going from pre-industrial
-control `FZJ-CMIP-nitrogen-1-2` to historical `FZJ-CMIP-nitrogen-2-0` is expected to introduce smaller issues than using
-`FZJ-CMIP-nitrogen-1-2` over the historical period.
+#### Data described on other experiment pages
 
-Please read the guidance pages linked under [notes](#notes) to ensure that you use the correct forcing values.
+No data is described on other experiment pages.
+Please see the other [data](#data) sub-sections for details of the forcings data to use for this experiment.
 
-### Notes
+#### Data described on other experiment pages with modifications you have to make
 
-The following pages give further information on each forcing:
+No data described on other experiment pages requires modifications by you.
+Please see the other [data](#data) sub-sections for details of the forcings data to use for this experiment.
 
-- anthropogenic emissions:
-  [input4mips-cvs.readthedocs.io/dataset-overviews/anthropogenic-slcf-co2-emissions](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/anthropogenic-slcf-co2-emissions/)
-- biomass burning emissions:
-  [input4mips-cvs.readthedocs.io/dataset-overviews/open-biomass-burning-emissions](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/open-biomass-burning-emissions/)
-- land use:
-  [input4mips-cvs.readthedocs.io/dataset-overviews/land-use](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/land-use/)
-- greenhouse gas concentrations:
-  [input4mips-cvs.readthedocs.io/dataset-overviews/greenhouse-gas-concentrations](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/greenhouse-gas-concentrations/)
-- stratospheric aerosol forcing:
-  [input4mips-cvs.readthedocs.io/dataset-overviews/stratospheric-volcanic-so2-emissions-aod](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/stratospheric-volcanic-so2-emissions-aod/)
-- ozone:
-  [input4mips-cvs.readthedocs.io/dataset-overviews/ozone](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/ozone/)
-- nitrogen deposition:
-  [input4mips-cvs.readthedocs.io/dataset-overviews/nitrogen-deposition](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/nitrogen-deposition/)
-- solar:
-  [input4mips-cvs.readthedocs.io/dataset-overviews/solar](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/solar/)
-- aerosol optical properties:
-  [input4mips-cvs.readthedocs.io/dataset-overviews/aerosol-optical-properties-macv2-sp](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/aerosol-optical-properties-macv2-sp/)
-- population density:
-  [input4mips-cvs.readthedocs.io/dataset-overviews/population](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/population/)
+#### Data available via input4MIPs
 
-### Versions to use
+##### Versions to use
 
-The forcings relevant for this simulation are listed below.
-For each forcing, we provide the version(s), in the form of "source ID(s)", which should be used when running this
-simulation.
+For each forcing available via input4MIPs, we provide the version(s), called 'source ID(s)' in the file's metadata,
+which should be used when running this simulation.
 The recommended version(s) are the version(s) we recommend using.
 Any acceptable versions can be used (you are not obliged to re-run simulations that used them).
-Please see the guidance pages linked above for details and note that the data-retrieval script below only includes
-recommended versions.
+Please see the guidance pages linked under each forcing for full details.
+
+- anthropogenic emissions
+    - recommended source IDs: CEDS-CMIP-2025-04-18, CEDS-CMIP-2025-04-18-supplemental
+    - further guidance:
+      [input4mips-cvs.readthedocs.io/dataset-overviews/anthropogenic-slcf-co2-emissions](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/anthropogenic-slcf-co2-emissions/)
+
+- biomass burning emissions
+    - recommended source IDs: DRES-CMIP-BB4CMIP7-2-0
+    - further guidance:
+      [input4mips-cvs.readthedocs.io/dataset-overviews/open-biomass-burning-emissions](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/open-biomass-burning-emissions/)
+
+- land use
+    - recommended source IDs: UofMD-landState-3-1-2
+    - acceptable source IDs: UofMD-landState-3-1-1
+    - further guidance:
+      [input4mips-cvs.readthedocs.io/dataset-overviews/land-use](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/land-use/)
+
+- greenhouse gas concentrations
+    - recommended source IDs: CR-CMIP-1-0-0
+    - further guidance:
+      [input4mips-cvs.readthedocs.io/dataset-overviews/greenhouse-gas-concentrations](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/greenhouse-gas-concentrations/)
+
+- stratospheric aerosol forcing
+    - recommended source IDs: UOEXETER-CMIP-2-2-1
+    - further guidance:
+      [input4mips-cvs.readthedocs.io/dataset-overviews/stratospheric-volcanic-so2-emissions-aod](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/stratospheric-volcanic-so2-emissions-aod/)
+
+- ozone
+    - recommended source IDs: FZJ-CMIP-ozone-2-0
+    - acceptable source IDs: FZJ-CMIP-ozone-1-2
+    - notes: the ozone forcing should come from files with the source ID `FZJ-CMIP-ozone-2-0`.
+      The CMIP Panel co-chairs are recommending that simulations based on `FZJ-CMIP-ozone-1-2` are re-run if possible.
+      `FZJ-CMIP-ozone-2-0` was released quite late, so if you have simulations based on `FZJ-CMIP-ozone-1-2`, these
+      would be of interest to the Forcings Task Team so please publish them
+      ([discussion of how to set the value for the forcing 'f' identifier in such files is ongoing](https://github.com/PCMDI/input4MIPs_CVs/issues/415)).
+    - further guidance:
+      [input4mips-cvs.readthedocs.io/dataset-overviews/ozone](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/ozone/)
+
+- nitrogen deposition
+    - recommended source IDs: FZJ-CMIP-nitrogen-2-0
+    - acceptable source IDs: FZJ-CMIP-nitrogen-1-2
+    - notes: the nitrogen deposition forcing should come from files with the source ID `FZJ-CMIP-nitrogen-2-0`.
+      `FZJ-CMIP-nitrogen-2-0` was released quite late and the impact of the change is likely to be small, so if you have
+      simulations based on `FZJ-CMIP-nitrogen-1-2`, you do not need to re-run them.
+      Even if you have run pre-industrial control simulations with `FZJ-CMIP-nitrogen-1-2`, it is recommended to
+      nonetheless run historical simulations with `FZJ-CMIP-nitrogen-2-0` because the discontinuity going from
+      pre-industrial control `FZJ-CMIP-nitrogen-1-2` to historical `FZJ-CMIP-nitrogen-2-0` is expected to introduce
+      smaller issues than using `FZJ-CMIP-nitrogen-1-2` over the historical period.
+    - further guidance:
+      [input4mips-cvs.readthedocs.io/dataset-overviews/nitrogen-deposition](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/nitrogen-deposition/)
+
+- solar
+    - recommended source IDs: SOLARIS-HEPPA-CMIP-4-6
+    - further guidance:
+      [input4mips-cvs.readthedocs.io/dataset-overviews/solar](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/solar/)
+
+- population density
+    - recommended source IDs: PIK-CMIP-1-0-1
+    - further guidance:
+      [input4mips-cvs.readthedocs.io/dataset-overviews/population](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/population/)
+
+###### JSON
+
+For easier parsing with machines, we also present the information given above as JSON.
 
 ```json
 {
-    "anthropogenic-emissions": {
-        "recommended": [
+    "anthropogenic-slcf-co2-emissions": {
+        "human_readable_name": "anthropogenic emissions",
+        "recommended_versions": [
             "CEDS-CMIP-2025-04-18",
             "CEDS-CMIP-2025-04-18-supplemental"
-        ]
+        ],
+        "acceptable_versions": []
     },
-    "biomass-burning-emissions": {
-        "recommended": "DRES-CMIP-BB4CMIP7-2-0"
+    "open-biomass-burning-emissions": {
+        "human_readable_name": "biomass burning emissions",
+        "recommended_versions": [
+            "DRES-CMIP-BB4CMIP7-2-0"
+        ],
+        "acceptable_versions": []
     },
     "land-use": {
-        "recommended": "UofMD-landState-3-1-2",
-        "acceptable": [
+        "human_readable_name": "land use",
+        "recommended_versions": [
+            "UofMD-landState-3-1-2"
+        ],
+        "acceptable_versions": [
             "UofMD-landState-3-1-1"
         ]
     },
     "greenhouse-gas-concentrations": {
-        "recommended": "CR-CMIP-1-0-0"
+        "human_readable_name": "greenhouse gas concentrations",
+        "recommended_versions": [
+            "CR-CMIP-1-0-0"
+        ],
+        "acceptable_versions": []
     },
-    "stratospheric-aerosol-forcing": {
-        "recommended": "UOEXETER-CMIP-2-2-1"
+    "stratospheric-volcanic-so2-emissions-aod": {
+        "human_readable_name": "stratospheric aerosol forcing",
+        "recommended_versions": [
+            "UOEXETER-CMIP-2-2-1"
+        ],
+        "acceptable_versions": []
     },
     "ozone": {
-        "recommended": "FZJ-CMIP-ozone-2-0",
-        "acceptable": [
+        "human_readable_name": "ozone",
+        "recommended_versions": [
+            "FZJ-CMIP-ozone-2-0"
+        ],
+        "acceptable_versions": [
             "FZJ-CMIP-ozone-1-2"
         ]
     },
     "nitrogen-deposition": {
-        "recommended": "FZJ-CMIP-nitrogen-2-0",
-        "acceptable": [
+        "human_readable_name": "nitrogen deposition",
+        "recommended_versions": [
+            "FZJ-CMIP-nitrogen-2-0"
+        ],
+        "acceptable_versions": [
             "FZJ-CMIP-nitrogen-1-2"
         ]
     },
     "solar": {
-        "recommended": "SOLARIS-HEPPA-CMIP-4-6"
+        "human_readable_name": "solar",
+        "recommended_versions": [
+            "SOLARIS-HEPPA-CMIP-4-6"
+        ],
+        "acceptable_versions": []
     },
-    "aerosol-optical-properties": null,
-    "population-density": {
-        "recommended": "PIK-CMIP-1-0-1"
+    "population": {
+        "human_readable_name": "population density",
+        "recommended_versions": [
+            "PIK-CMIP-1-0-1"
+        ],
+        "acceptable_versions": []
     }
 }
 ```
 
-### Getting the data
+###### Download via esgpull
 
-The data is available on ESGF and searchable
+The data is on ESGF and searchable
 [via metagrid](https://esgf-node.ornl.gov/search?project=input4MIPs&versionType=all&activeFacets=%7B%22mip_era%22%3A%22CMIP7%22%7D),
 although this method of finding and downloading the data can involve a lot of clicking.
 
-Having said this, please also note: the aerosol optical properties based on the MACv2-SP parameterisation are not
-distributed via the ESGF; please see their
-[specific guidance section](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/aerosol-optical-properties-macv2-sp/#datasets-for-cmip7-phases)
-for data access information.
-
 If you install [esgpull](https://esgf.github.io/esgf-download/), you can download all the data associated with the
-source IDs above with the script shown below.
+recommended source IDs above using the script given below.
 Note that this will download all the data associated with these source IDs, which is likely to be much more data than
 you actually need to run your model.
 
@@ -171,7 +237,16 @@ EXPERIMENT_NAME="historical"
 # esgpull self install
 ## You may also need to run this step to get the data to download
 # esgpull config api.index_node esgf-node.ornl.gov/esgf-1-5-bridge
-esgpull add --track --tag ${EXPERIMENT_NAME} source_id:CEDS-CMIP-2025-04-18,CEDS-CMIP-2025-04-18-supplemental,DRES-CMIP-BB4CMIP7-2-0,UofMD-landState-3-1-2,CR-CMIP-1-0-0,UOEXETER-CMIP-2-2-1,FZJ-CMIP-ozone-2-0,FZJ-CMIP-nitrogen-2-0,SOLARIS-HEPPA-CMIP-4-6,PIK-CMIP-1-0-1
+esgpull add --track --tag ${EXPERIMENT_NAME} source_id:CEDS-CMIP-2025-04-18,CEDS-CMIP-2025-04-18-supplemental,CR-CMIP-1-0-0,DRES-CMIP-BB4CMIP7-2-0,FZJ-CMIP-nitrogen-2-0,FZJ-CMIP-ozone-2-0,PIK-CMIP-1-0-1,SOLARIS-HEPPA-CMIP-4-6,UOEXETER-CMIP-2-2-1,UofMD-landState-3-1-2
 esgpull update --tag ${EXPERIMENT_NAME} --yes
 esgpull download --tag ${EXPERIMENT_NAME}
 ```
+
+#### Data not available via input4MIPs
+
+- aerosol optical properties
+    - notes: Please see this
+      [specific guidance section](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/aerosol-optical-properties-macv2-sp/#datasets-for-cmip7-phases)
+      for data access and version information.
+    - further guidance:
+      [input4mips-cvs.readthedocs.io/dataset-overviews/aerosol-optical-properties-macv2-sp](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/aerosol-optical-properties-macv2-sp/)

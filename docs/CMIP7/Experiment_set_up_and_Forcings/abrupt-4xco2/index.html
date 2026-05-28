@@ -1522,64 +1522,61 @@
   <div class="typography w-full flex-1 *:data-[slot=alert]:first:mt-0">
     <p>Abrupt quadrupling of atmospheric carbon dioxide levels.
 All other conditions are kept the same as piControl.</p>
-<p>Responsible activity: <a href="../#cmip">CMIP</a>. Tier: 1</p>
-<p>These pages are intended to help with implementation of these experiments.
+<ul>
+<li>Responsible activity: <a href="../#cmip">CMIP</a></li>
+<li>Tier: 1</li>
+<li>MIP co-chair review: No review initiated yet</li>
+</ul>
+<p>This page is intended to help with implementation.
 If you notice something that is unclear, please
-<a href="https://github.com/WCRP-CMIP/cmip7-guidance/issues/new">raise an issue</a>.
-For the full background of the experiments, please see the following URLs:</p>
+<a href="https://github.com/WCRP-CMIP/cmip7-guidance/issues/new">raise an issue</a>.</p>
+<p>For the full background of the experiment, please see the following URLs:</p>
 <ul>
 <li><a href="https://doi.org/10.5194/gmd-18-6671-2025">https://doi.org/10.5194/gmd-18-6671-2025</a></li>
 </ul>
 <h2 id="experiment-set-up">Experiment set up<a class="headerlink" href="#experiment-set-up" title="Permanent link">&para;</a></h2>
-<p>The abrupt CO<sub>2</sub> quadrupling simulation is a simple branch from the <a href="../picontrol/">piControl simulation</a>.</p>
-<p>After branching, the atmospheric CO<sub>2</sub> concentrations should be set to four times the concentrations used in
-the <code>piControl</code> simulation.</p>
-<p>The start-time of the simulation is not tied to a particular year but, rather, can be chosen arbitrarily (e.g., year 200
-or year 1850 or year 1).
-However, it is easier for analysts if the start-time is consistent with the branching time in the parent experiment
-(e.g., if the the simulation branches from year 200 in the parent experiment, then the start time in the child
-experiment would be set to year 200).</p>
-<h3 id="timing-length-and-ensemble-size">Timing, length and ensemble size<a class="headerlink" href="#timing-length-and-ensemble-size" title="Permanent link">&para;</a></h3>
-<p>The CMIP7 CVs do not define fixed start or end dates for this simulation.</p>
-<p>Simulations should be at least 300 years in length.</p>
+<p>The abrupt CO<sub>2</sub> quadrupling experiment is a simple branch from the <a href="../picontrol/">piControl simulation</a>.</p>
+<p>After branching, the atmospheric CO<sub>2</sub> concentrations should be set to four times the CO<sub>2</sub>
+concentrations used in the piControl experiment.</p>
+<h3 id="parent-experiment-and-branching">Parent experiment and branching<a class="headerlink" href="#parent-experiment-and-branching" title="Permanent link">&para;</a></h3>
+<p>The abrupt-4xCO2 experiment branches from the <a href="../picontrol/">piControl</a> experiment (part of <a href="../#cmip">CMIP</a>).
+The parent experiment's MIP era is <a href="https://wcrp-cmip.org/CMIP7">CMIP7</a>.</p>
+<p>Branch from <a href="../picontrol/">piControl</a> at a time of your choosing.</p>
+<h3 id="output-time-axis">Output time axis<a class="headerlink" href="#output-time-axis" title="Permanent link">&para;</a></h3>
+<p>You are free to start and end the time axis of your outputs at whatever time you like (e.g. starting at year 1, or 1850,
+or year 500).
+You must perform at least 300 simulation years.</p>
+<h3 id="minimum-ensemble-size">Minimum ensemble size<a class="headerlink" href="#minimum-ensemble-size" title="Permanent link">&para;</a></h3>
 <p>Only one ensemble member is required.</p>
-<h3 id="parent-experiment">Parent experiment<a class="headerlink" href="#parent-experiment" title="Permanent link">&para;</a></h3>
-<p><code>abrupt-4xCO2</code> branches from the <a href="../picontrol/">piControl</a> simulation (part of <a href="../#cmip">CMIP</a>).</p>
-<p>Branch from <code>piControl</code> at a time of your choosing.</p>
-<p>The parent experiment comes from <a href="https://wcrp-cmip.org/CMIP7">CMIP7</a>.</p>
 <h2 id="forcings">Forcings<a class="headerlink" href="#forcings" title="Permanent link">&para;</a></h2>
+<p>The following information will help you identify the forcings to use.
+However, we can't define every single detail because there can be lots of subjective steps between the raw forcings data
+and model inputs (e.g. interpolation, re-aggregation, supplementation with other information).
+If further guidance would be helpful, please <a href="https://github.com/WCRP-CMIP/cmip7-guidance/issues/new">raise an issue</a>.</p>
 <h3 id="general-headlines">General headlines<a class="headerlink" href="#general-headlines" title="Permanent link">&para;</a></h3>
-<p>The <code>abrupt-4xCO2</code> experiment is a fixed forcings experiment.
-For further general headlines, please see the general headlines for the <a href="../picontrol/">piControl simulation</a>.</p>
-<h3 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h3>
-<p>See notes for the <a href="../picontrol/">piControl simulation</a>.</p>
-<p>You have to quadruple the atmospheric CO<sub>2</sub> concentrations yourself.</p>
-<h3 id="versions-to-use">Versions to use<a class="headerlink" href="#versions-to-use" title="Permanent link">&para;</a></h3>
-<p>The forcings relevant for this simulation are the same as for the <a href="../picontrol/">piControl simulation</a>.</p>
-<h3 id="getting-the-data">Getting the data<a class="headerlink" href="#getting-the-data" title="Permanent link">&para;</a></h3>
-<p>The data is available on ESGF and searchable
-<a href="https://esgf-node.ornl.gov/search?project=input4MIPs&amp;versionType=all&amp;activeFacets=%7B%22mip_era%22%3A%22CMIP7%22%7D">via metagrid</a>,
-although this method of finding and downloading the data can involve a lot of clicking.</p>
-<p>Having said this, please also note: the aerosol optical properties based on the MACv2-SP parameterisation are not
-distributed via the ESGF; please see their
-<a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/aerosol-optical-properties-macv2-sp/#datasets-for-cmip7-phases">specific guidance section</a>
-for data access information.</p>
-<p>If you install <a href="https://esgf.github.io/esgf-download/">esgpull</a>, you can download all the data associated with the
-source IDs above with the script shown below.
-Note that this will download all the data associated with these source IDs, which is likely to be much more data than
-you actually need to run your model.</p>
-<div class="codehilite"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="ch">#!/bin/bash</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nv">EXPERIMENT_NAME</span><span class="o">=</span><span class="s2">&quot;abrupt-4xCO2&quot;</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1">## You may need to run the below if you haven&#39;t already done it once with esgpull</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># esgpull self install</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1">## You may also need to run this step to get the data to download</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># esgpull config api.index_node esgf-node.ornl.gov/esgf-1-5-bridge</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>esgpull<span class="w"> </span>add<span class="w"> </span>--track<span class="w"> </span>--tag<span class="w"> </span><span class="si">${</span><span class="nv">EXPERIMENT_NAME</span><span class="si">}</span><span class="w"> </span>source_id:CEDS-CMIP-2025-04-18,CEDS-CMIP-2025-04-18-supplemental,DRES-CMIP-BB4CMIP7-2-0,UofMD-landState-3-1-2,CR-CMIP-1-0-0,UOEXETER-CMIP-2-2-1,FZJ-CMIP-ozone-1-2,FZJ-CMIP-nitrogen-2-0,SOLARIS-HEPPA-CMIP-4-6,PIK-CMIP-1-0-1
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>esgpull<span class="w"> </span>update<span class="w"> </span>--tag<span class="w"> </span><span class="si">${</span><span class="nv">EXPERIMENT_NAME</span><span class="si">}</span><span class="w"> </span>--yes
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>esgpull<span class="w"> </span>download<span class="w"> </span>--tag<span class="w"> </span><span class="si">${</span><span class="nv">EXPERIMENT_NAME</span><span class="si">}</span>
-</code></pre></div>
+<p>The abrupt-4xCO2 experiment is a fixed forcings experiment.</p>
+<h3 id="data">Data<a class="headerlink" href="#data" title="Permanent link">&para;</a></h3>
+<p>Here we make a distinction between data that is described on other experiment pages, data that is described on other
+experiment pages with modifications you have to make yourself, data available via ESGF's input4MIPs project and data
+distributed via other channels.</p>
+<h4 id="data-described-on-other-experiment-pages">Data described on other experiment pages<a class="headerlink" href="#data-described-on-other-experiment-pages" title="Permanent link">&para;</a></h4>
+<p>For the following data, please see these other experiment pages:</p>
+<ul>
+<li><a href="../picontrol/">piControl</a> for anthropogenic emissions, biomass burning emissions, land use, stratospheric aerosol
+  forcing, solar, aerosol optical properties, population density, ozone, nitrogen deposition</li>
+</ul>
+<h4 id="data-described-on-other-experiment-pages-with-modifications-you-have-to-make">Data described on other experiment pages with modifications you have to make<a class="headerlink" href="#data-described-on-other-experiment-pages-with-modifications-you-have-to-make" title="Permanent link">&para;</a></h4>
+<p>For the following forcings, please use data from the specified experiments with the specified modifications.</p>
+<ul>
+<li>for greenhouse gas concentrations, use the forcings from <a href="../piclim-control/">piClim-control</a> but quadruple the
+  CO<sub>2</sub> concentrations</li>
+</ul>
+<h4 id="data-available-via-input4mips">Data available via input4MIPs<a class="headerlink" href="#data-available-via-input4mips" title="Permanent link">&para;</a></h4>
+<p>No input4MIPs-based data is described specifically on this page.
+Please see the other <a href="#data">data</a> sub-sections for details of the forcings data to use for this experiment.</p>
+<h4 id="data-not-available-via-input4mips">Data not available via input4MIPs<a class="headerlink" href="#data-not-available-via-input4mips" title="Permanent link">&para;</a></h4>
+<p>No data that is not input4MIPs-based is described specifically on this page.
+Please see the other <a href="#data">data</a> sub-sections for details of the forcings data to use for this experiment.</p>
   </div>
 </article>
                                 <div class="mx-auto flex flex-wrap h-16 w-full max-w-2xl items-center gap-2 px-4 md:px-0">
@@ -1824,16 +1821,22 @@ you actually need to run your model.</p>
         </a>
         
         
-        <a href="#timing-length-and-ensemble-size"
+        <a href="#parent-experiment-and-branching"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#timing-length-and-ensemble-size');">
-            Timing, length and ensemble size
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#parent-experiment-and-branching');">
+            Parent experiment and branching
         </a>
         
-        <a href="#parent-experiment"
+        <a href="#output-time-axis"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#parent-experiment');">
-            Parent experiment
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#output-time-axis');">
+            Output time axis
+        </a>
+        
+        <a href="#minimum-ensemble-size"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#minimum-ensemble-size');">
+            Minimum ensemble size
         </a>
         
         
@@ -1852,22 +1855,10 @@ you actually need to run your model.</p>
             General headlines
         </a>
         
-        <a href="#notes"
+        <a href="#data"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#notes');">
-            Notes
-        </a>
-        
-        <a href="#versions-to-use"
-            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#versions-to-use');">
-            Versions to use
-        </a>
-        
-        <a href="#getting-the-data"
-            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#getting-the-data');">
-            Getting the data
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#data');">
+            Data
         </a>
         
         

@@ -6,94 +6,80 @@ title: "Experiment Setup and Forcings Guidance: piClim-CH4"
 # Experiment Setup and Forcings Guidance: piClim-CH4
 
 In combination with `piClim-control`, quantifies present-day methane effective radiative forcing (ERF).
-Same as `piClim-control`, except methane concentrations or emissions (as appropriate for the model) use present-day
-values (2021 in CMIP7).
 
-Responsible activity: [AerChemMIP](./index.md#aerchemmip). Tier: 1
+- Responsible activity: [AerChemMIP](./index.md#aerchemmip)
+- Tier: 1
+- MIP co-chair review: No review initiated yet
 
-These pages are intended to help with implementation of these experiments.
+This page is intended to help with implementation.
 If you notice something that is unclear, please
 [raise an issue](https://github.com/WCRP-CMIP/cmip7-guidance/issues/new).
-For the full background of the experiments, please see the following URLs:
+
+For the full background of the experiment, please see the following URLs:
 
 - [https://doi.org/10.5194/gmd-10-585-2017](https://doi.org/10.5194/gmd-10-585-2017)
 
 ## Experiment set up
 
-This simulation uses the same forcings as [piClim-control](./piclim-control.md), except for the forcing listed below.
+### Parent experiment and branching
 
-The following forcing should use 2021 values from the [historical simulation](./historical.md):
+The piClim-CH4 experiment branches from the [piControl](./picontrol.md) experiment (part of [CMIP](./index.md#cmip)).
+The parent experiment's MIP era is [CMIP7](https://wcrp-cmip.org/CMIP7).
 
-- methane concentrations or emissions (as appropriate for the model)
+Branch from [piControl](./picontrol.md) at the same time as [piClim-control](./piclim-control.md).
 
-The 2021 values should be prescribed on repeat throughout the simulation.
+### Output time axis
 
-It is recommended that you use the same time axis as you use for your [piClim-control](./piclim-control.md) output to
-make life easy for analysts of your output (although this is not enforced so you are technically free to start the time
-axis of your outputs at whatever year you like).
+You are free to start and end the time axis of your outputs at whatever time you like (e.g. starting at year 1, or 1850,
+or year 500).
+You must perform at least 30 simulation years.
 
-### Timing, length and ensemble size
+If you have no strong feeling, then you will make life simplest for analysts if you use the same time axis as
+[piClim-control](./piclim-control.md).
 
-The CMIP7 CVs do not define fixed start or end dates for this simulation.
-
-Simulations should be at least 30 years in length.
+### Minimum ensemble size
 
 Only one ensemble member is required.
 
-### Parent experiment
-
-`piClim-CH4` branches from the [piControl](./picontrol.md) simulation (part of [CMIP](./index.md#cmip)).
-
-Branch from piControl at the same time as piClim-control.
-
-The parent experiment comes from [CMIP7](https://wcrp-cmip.org/CMIP7).
-
 ## Forcings
+
+The following information will help you identify the forcings to use.
+However, we can't define every single detail because there can be lots of subjective steps between the raw forcings data
+and model inputs (e.g. interpolation, re-aggregation, supplementation with other information).
+If further guidance would be helpful, please [raise an issue](https://github.com/WCRP-CMIP/cmip7-guidance/issues/new).
 
 ### General headlines
 
-See general headlines for the [`piClim-control` simulation](./piclim-control.md).
+The piClim-CH4 experiment is a fixed forcings experiment.
 
-### Notes
+### Data
 
-See notes for the [piClim-control simulation](./piclim-control.md).
+Here we make a distinction between data that is described on other experiment pages, data that is described on other
+experiment pages with modifications you have to make yourself, data available via ESGF's input4MIPs project and data
+distributed via other channels.
 
-### Versions to use
+#### Data described on other experiment pages
 
-For the forcing listed below, the forcing version relevant for this simulation is the same as for the
-[historical simulation](./historical.md):
+For the following data, please see these other experiment pages:
 
-- methane concentrations or emissions (as appropriate for the model)
+- [piControl](./picontrol.md) for anthropogenic emissions, biomass burning emissions, land use, stratospheric aerosol
+  forcing, solar, aerosol optical properties, population density, ozone, nitrogen deposition
+- [piClim-control](./piclim-control.md) for sea-surface temperature forcing
 
-For all other forcings, the forcing versions relevant for this simulation are the same as for the
-[piClim-control simulation](./piclim-control.md).
+#### Data described on other experiment pages with modifications you have to make
 
-### Getting the data
+For the following forcings, please use data from the specified experiments with the specified modifications.
 
-The data is available on ESGF and searchable
-[via metagrid](https://esgf-node.ornl.gov/search?project=input4MIPs&versionType=all&activeFacets=%7B%22mip_era%22%3A%22CMIP7%22%7D),
-although this method of finding and downloading the data can involve a lot of clicking.
+- for greenhouse gas concentrations, use the forcings from [historical](./historical.md) but apply the 2021 methane
+  (CH<sub>4</sub>) concentrations or emissions (as appropriate for your model) value on repeat and the 1850 value on
+  repeat for all other species
 
-Having said this, please also note: the aerosol optical properties based on the MACv2-SP parameterisation are not
-distributed via the ESGF; please see their
-[specific guidance section](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/aerosol-optical-properties-macv2-sp/#datasets-for-cmip7-phases)
-for data access information.
+#### Data available via input4MIPs
 
-If you install [esgpull](https://esgf.github.io/esgf-download/), you can download all the data associated with the
-source IDs above with the script shown below.
-Note that this will download all the data associated with these source IDs, which is likely to be much more data than
-you actually need to run your model.
+No input4MIPs-based data is described specifically on this page.
+Please see the other [data](#data) sub-sections for details of the forcings data to use for this experiment.
 
-```bash
-#!/bin/bash
+#### Data not available via input4MIPs
 
-EXPERIMENT_NAME="piClim-CH4"
-
-## You may need to run the below if you haven't already done it once with esgpull
-# esgpull self install
-## You may also need to run this step to get the data to download
-# esgpull config api.index_node esgf-node.ornl.gov/esgf-1-5-bridge
-esgpull add --track --tag ${EXPERIMENT_NAME} source_id:CEDS-CMIP-2025-04-18,CEDS-CMIP-2025-04-18-supplemental,DRES-CMIP-BB4CMIP7-2-0,UofMD-landState-3-1-2,UOEXETER-CMIP-2-2-1,FZJ-CMIP-ozone-1-2,FZJ-CMIP-nitrogen-2-0,SOLARIS-HEPPA-CMIP-4-6,PIK-CMIP-1-0-1,CR-CMIP-1-0-0
-esgpull update --tag ${EXPERIMENT_NAME} --yes
-esgpull download --tag ${EXPERIMENT_NAME}
-```
+No data that is not input4MIPs-based is described specifically on this page.
+Please see the other [data](#data) sub-sections for details of the forcings data to use for this experiment.

@@ -1521,10 +1521,12 @@
   </div>
   <div class="typography w-full flex-1 *:data-[slot=alert]:first:mt-0">
     <div class="admonition tip">
-<p class="admonition-title">Documentation under development</p>
-<p>The contents of these pages are currently in development.
-Their format and content will evolve as feedback is received on the drafts.
-We will remove this tip once the guidance is stable.
+<p class="admonition-title">Documentation under review</p>
+<p>The contents of these pages are currently under review.
+On each experiment page, you will see a dot point for "MIP co-chair review".
+Where this says "Complete", you can assume that the guidance is stable and reliable.
+Otherwise, please treat the guidance with some caution, because it has not been reviewed by the experiment designers
+(the MIP co-chairs) yet.
 If you have any feedback, please feel free to raise an issue at
 https://github.com/WCRP-CMIP/cmip7-guidance/issues/new and tag @znichollscr.</p>
 </div>
@@ -1587,9 +1589,13 @@ For the full background of the experiments, please see the following URLs:</p>
 <li><a href="piclim-ods/">piClim-ODS</a></li>
 <li><a href="piclim-so2/">piClim-SO2</a></li>
 <li><a href="scen7-h-aer/">scen7-h-Aer</a></li>
+<li><a href="esm-scen7-h-aer/">esm-scen7-h-Aer</a></li>
 <li><a href="scen7-h-aq/">scen7-h-AQ</a></li>
+<li><a href="esm-scen7-h-aq/">esm-scen7-h-AQ</a></li>
 <li><a href="scen7-vl-aer/">scen7-vl-Aer</a></li>
+<li><a href="esm-scen7-vl-aer/">esm-scen7-vl-Aer</a></li>
 <li><a href="scen7-vl-aq/">scen7-vl-AQ</a></li>
+<li><a href="esm-scen7-vl-aq/">esm-scen7-vl-AQ</a></li>
 </ol>
 <h3 id="cfmip">CFMIP<a class="headerlink" href="#cfmip" title="Permanent link">&para;</a></h3>
 <p>Cloud feedback model intercomparison project.
@@ -1606,6 +1612,8 @@ For the full background of the experiments, please see the following URLs:</p>
 <ol>
 <li><a href="abrupt-0p5xco2/">abrupt-0p5xCO2</a></li>
 <li><a href="abrupt-2xco2/">abrupt-2xCO2</a></li>
+<li><a href="amip-p4k/">amip-p4K</a></li>
+<li><a href="amip-piforcing/">amip-piForcing</a></li>
 </ol>
 <h3 id="c4mip">C4MIP<a class="headerlink" href="#c4mip" title="Permanent link">&para;</a></h3>
 <p>Coupled climate carbon cycle model intercomparison project: exploration of the response of the coupled carbon-climate
@@ -1615,14 +1623,17 @@ If you notice something that is unclear, please
 <a href="https://github.com/WCRP-CMIP/cmip7-guidance/issues/new">raise an issue</a>.
 For the full background of the experiments, please see the following URLs:</p>
 <ul>
-<li><a href="https://doi.org/10.5194/gmd-18-5699-2025">https://doi.org/10.5194/gmd-18-5699-2025</a></li>
 <li><a href="https://doi.org/10.5194/gmd-17-8141-2024">https://doi.org/10.5194/gmd-17-8141-2024</a></li>
+<li><a href="https://doi.org/10.5194/gmd-18-5699-2025">https://doi.org/10.5194/gmd-18-5699-2025</a></li>
 <li><a href="https://doi.org/10.5194/gmd-9-2853-2016">https://doi.org/10.5194/gmd-9-2853-2016</a></li>
 </ul>
 <p>The following experiments are included in <code>C4MIP</code>:</p>
 <ol>
 <li><a href="1pctco2-bgc/">1pctCO2-bgc</a></li>
 <li><a href="1pctco2-rad/">1pctCO2-rad</a></li>
+<li><a href="esm-flat10/">esm-flat10</a></li>
+<li><a href="esm-flat10-cdr/">esm-flat10-cdr</a></li>
+<li><a href="esm-flat10-zec/">esm-flat10-zec</a></li>
 </ol>
 <h3 id="scenariomip">ScenarioMIP<a class="headerlink" href="#scenariomip" title="Permanent link">&para;</a></h3>
 <p>Future scenario experiments.
@@ -1654,7 +1665,109 @@ For the full background of the experiments, please see the following URLs:</p>
 </ul>
 <p>The following experiments are included in <code>ScenarioMIP</code>:</p>
 <ol>
+<li><a href="scen7-h/">scen7-h</a></li>
+<li><a href="esm-scen7-h/">esm-scen7-h</a></li>
+<li><a href="scen7-h-ext/">scen7-h-ext</a></li>
+<li><a href="esm-scen7-h-ext/">esm-scen7-h-ext</a></li>
+<li><a href="scen7-hl/">scen7-hl</a></li>
+<li><a href="esm-scen7-hl/">esm-scen7-hl</a></li>
+<li><a href="scen7-hl-ext/">scen7-hl-ext</a></li>
+<li><a href="esm-scen7-hl-ext/">esm-scen7-hl-ext</a></li>
+<li><a href="scen7-l/">scen7-l</a></li>
+<li><a href="esm-scen7-l/">esm-scen7-l</a></li>
+<li><a href="scen7-l-ext/">scen7-l-ext</a></li>
+<li><a href="esm-scen7-l-ext/">esm-scen7-l-ext</a></li>
+<li><a href="scen7-ln/">scen7-ln</a></li>
+<li><a href="esm-scen7-ln/">esm-scen7-ln</a></li>
+<li><a href="scen7-ln-ext/">scen7-ln-ext</a></li>
+<li><a href="esm-scen7-ln-ext/">esm-scen7-ln-ext</a></li>
+<li><a href="scen7-m/">scen7-m</a></li>
+<li><a href="esm-scen7-m/">esm-scen7-m</a></li>
+<li><a href="scen7-m-ext/">scen7-m-ext</a></li>
+<li><a href="esm-scen7-m-ext/">esm-scen7-m-ext</a></li>
+<li><a href="scen7-ml/">scen7-ml</a></li>
+<li><a href="esm-scen7-ml/">esm-scen7-ml</a></li>
+<li><a href="scen7-ml-ext/">scen7-ml-ext</a></li>
+<li><a href="esm-scen7-ml-ext/">esm-scen7-ml-ext</a></li>
 <li><a href="scen7-vl/">scen7-vl</a></li>
+<li><a href="esm-scen7-vl/">esm-scen7-vl</a></li>
+<li><a href="scen7-vl-ext/">scen7-vl-ext</a></li>
+<li><a href="esm-scen7-vl-ext/">esm-scen7-vl-ext</a></li>
+</ol>
+<h3 id="damip">DAMIP<a class="headerlink" href="#damip" title="Permanent link">&para;</a></h3>
+<p>Detection and attribution model intercomparison project: exploration of the role of individual forcings (both
+anthropogenic and natural) in past and future climate change.</p>
+<p>These pages are intended to help with implementation of these experiments.
+If you notice something that is unclear, please
+<a href="https://github.com/WCRP-CMIP/cmip7-guidance/issues/new">raise an issue</a>.
+For the full background of the experiments, please see the following URLs:</p>
+<ul>
+<li><a href="https://doi.org/10.5194/gmd-18-4399-2025">https://doi.org/10.5194/gmd-18-4399-2025</a></li>
+</ul>
+<p>The following experiments are included in <code>DAMIP</code>:</p>
+<ol>
+<li><a href="hist-aer/">hist-aer</a></li>
+<li><a href="hist-ghg/">hist-GHG</a></li>
+<li><a href="hist-nat/">hist-nat</a></li>
+</ol>
+<h3 id="geomip">GeoMIP<a class="headerlink" href="#geomip" title="Permanent link">&para;</a></h3>
+<p>Geoengineering model intercomparison project: exploration of the climate response to solar radiation manipulation.</p>
+<p>These pages are intended to help with implementation of these experiments.
+If you notice something that is unclear, please
+<a href="https://github.com/WCRP-CMIP/cmip7-guidance/issues/new">raise an issue</a>.
+For the full background of the experiments, please see the following URLs:</p>
+<ul>
+<li><a href="https://doi.org/10.1175/BAMS-D-25-0191.1">https://doi.org/10.1175/BAMS-D-25-0191.1</a></li>
+<li><a href="https://doi.org/10.5194/gmd-17-2583-2024">https://doi.org/10.5194/gmd-17-2583-2024</a></li>
+</ul>
+<p>The following experiments are included in <code>GeoMIP</code>:</p>
+<ol>
+<li><a href="g7-1p5k-sai/">G7-1p5K-SAI</a></li>
+</ol>
+<h3 id="lmip">LMIP<a class="headerlink" href="#lmip" title="Permanent link">&para;</a></h3>
+<p>Land (offline) Model Intercomparison Project: advancing understanding of the impacts of land-use and land-cover change
+(LULCC) on climate</p>
+<p>These pages are intended to help with implementation of these experiments.
+If you notice something that is unclear, please
+<a href="https://github.com/WCRP-CMIP/cmip7-guidance/issues/new">raise an issue</a>.
+For the full background of the experiments, please see the following URLs:</p>
+<ul>
+<li><a href="https://doi.org/10.5194/gmd-9-2809-2016">https://doi.org/10.5194/gmd-9-2809-2016</a></li>
+</ul>
+<p>The following experiments are included in <code>LMIP</code>:</p>
+<ol>
+<li><a href="land-hist/">land-hist</a></li>
+</ol>
+<h3 id="pmip">PMIP<a class="headerlink" href="#pmip" title="Permanent link">&para;</a></h3>
+<p>Palaeoclimate modelling intercomparison project: assessment of paleoclimate i.e. climate thousands of years or more in
+the past.</p>
+<p>These pages are intended to help with implementation of these experiments.
+If you notice something that is unclear, please
+<a href="https://github.com/WCRP-CMIP/cmip7-guidance/issues/new">raise an issue</a>.
+For the full background of the experiments, please see the following URLs:</p>
+<ul>
+<li><a href="https://doi.org/10.5194/cp-19-883-2023">https://doi.org/10.5194/cp-19-883-2023</a></li>
+<li><a href="https://doi.org/10.5194/gmd-10-3979-2017">https://doi.org/10.5194/gmd-10-3979-2017</a></li>
+</ul>
+<p>The following experiments are included in <code>PMIP</code>:</p>
+<ol>
+<li><a href="abrupt-127k/">abrupt-127k</a></li>
+</ol>
+<h3 id="rfmip">RFMIP<a class="headerlink" href="#rfmip" title="Permanent link">&para;</a></h3>
+<p>Radiative Forcing Model Intercomparison Project: characterisation of radiative forcing within models.</p>
+<p>These pages are intended to help with implementation of these experiments.
+If you notice something that is unclear, please
+<a href="https://github.com/WCRP-CMIP/cmip7-guidance/issues/new">raise an issue</a>.
+For the full background of the experiments, please see the following URLs:</p>
+<ul>
+<li><a href="https://doi.org/10.5194/acp-20-9591-2020">https://doi.org/10.5194/acp-20-9591-2020</a></li>
+<li><a href="https://doi.org/10.5194/gmd-9-3447-2016">https://doi.org/10.5194/gmd-9-3447-2016</a></li>
+</ul>
+<p>The following experiments are included in <code>RFMIP</code>:</p>
+<ol>
+<li><a href="piclim-aer/">piClim-aer</a></li>
+<li><a href="piclim-histaer/">piClim-histaer</a></li>
+<li><a href="piclim-histall/">piClim-histall</a></li>
 </ol>
   </div>
 </article>
@@ -1938,6 +2051,36 @@ For the full background of the experiments, please see the following URLs:</p>
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
             data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#scenariomip');">
             ScenarioMIP
+        </a>
+        
+        <a href="#damip"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#damip');">
+            DAMIP
+        </a>
+        
+        <a href="#geomip"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#geomip');">
+            GeoMIP
+        </a>
+        
+        <a href="#lmip"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#lmip');">
+            LMIP
+        </a>
+        
+        <a href="#pmip"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#pmip');">
+            PMIP
+        </a>
+        
+        <a href="#rfmip"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#rfmip');">
+            RFMIP
         </a>
         
         

@@ -80,6 +80,8 @@ markdown_extensions:
       anchor_linenums: true
       css_class: codehilite
   - pymdownx.inlinehilite
+  # - pymdownx.arithmatex:
+  #     generic: true
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
