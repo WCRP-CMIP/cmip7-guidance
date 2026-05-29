@@ -26,16 +26,19 @@ Registration is done through **GitHub issue forms** that are linked below (no Gi
 
 ### 2.1 Institution Registration
 
+
 Register your institution before registering a model.
 
+**PROCESS UNDER REVIEW**
+<!--
 **Repository**: [WCRP-constants](https://github.com/WCRP-CMIP/WCRP-constants/issues)
 
 | Form | Link | Required Fields |
 |------|------|-----------------|
 | Organisation | [Register Institution](https://github.com/WCRP-CMIP/WCRP-constants/issues/new?template=organisation.yml) | Acronym, Full name, ROR |
-
+--> 
 **Notes**:
-- The **acronym** must be unique and cannot be changed once data is published
+- The **acronym** used for the institution id must be unique and cannot be changed once data is published
 - A **ROR** (Research Organisation Registry) identifier is required for traceability. Find yours at [ror.org](https://ror.org)
 - Consortia are also registered as organisations
 
@@ -49,13 +52,17 @@ Register your institution before registering a model.
 1. Institution registered (see 2.1)
 2. EMD registration completed (see 2.4) - including grids, components, and top-level Model
 
-**Repository**: [CMIP7-CVs](https://github.com/WCRP-CMIP/CMIP7-CVs/issues)
+**Repository**: CMIP7-CVs [Registered Content](https://github.com/WCRP-CMIP/CMIP7-CVs/tree/main/model/)
 
+<!--
 | Form | Link |
 |------|------|
 | Source (Model) | [Register source_id](https://github.com/WCRP-CMIP/CMIP7-CVs/issues/new?template=source.yml) |
+--> 
 
-Further guidance on constructing a source id is provided in the [Source ID Guidance](Source_ID_guidance.md)
+Source IDs will be registered automatically within the CVs once EMD has been completed.
+
+Guidance on constructing a source id is provided in the [Source ID Guidance](Source_ID_guidance.md)
 
 ---
 
@@ -68,7 +75,7 @@ please check [this issue](https://github.com/WCRP-CMIP/CMIP7-CVs/issues/385)
 which tracks the progress and process for adding these lost registrations
 back into the CV.
 
-**Repository**: [CMIP7-CVs](https://github.com/WCRP-CMIP/CMIP7-CVs/issues)
+**Repository**: CMIP7-CVs [Issues](https://github.com/WCRP-CMIP/CMIP7-CVs/issues?q=is%3Aissue%20state%3Aopen%20label%3Aactivity), [Registered Content](https://github.com/WCRP-CMIP/CMIP7-CVs/tree/main/activity)
 
 | Form | Link |
 |------|------|
@@ -85,7 +92,7 @@ please check [this issue](https://github.com/WCRP-CMIP/CMIP7-CVs/issues/385)
 which tracks the progress and process for adding these lost registrations
 back into the CV.
 
-**Repository**: [CMIP7-CVs](https://github.com/WCRP-CMIP/CMIP7-CVs/issues)
+**Repository**: CMIP7-CVs [Issues](https://github.com/WCRP-CMIP/CMIP7-CVs/issues?q=is%3Aissue%20state%3Aopen%20label%3Aexperiment), [Registered Content](https://github.com/WCRP-CMIP/CMIP7-CVs/tree/main/experiment)
 
 | Form | Link |
 |------|------|
@@ -183,7 +190,7 @@ The `esgvoc` Python library provides programmatic access to all CVs:
 |------------|---------|
 | [CMIP7-CVs](https://github.com/WCRP-CMIP/CMIP7_CVs/) | CMIP7-specific CVs (source_id, experiment) |
 | [WCRP-Universe](https://github.com/WCRP-CMIP/WCRP-Universe/) | ESGVOC collection for all projects |
-| [WCRP-constants](https://github.com/WCRP-CMIP/WCRP-constants/) | Organisations/institutions, and universal constants e.g. frequency,realm etc.|
+| [WCRP-constants](https://github.com/WCRP-CMIP/WCRP-constants/) | Organisations/institutions, and universal constants e.g. frequency,realm etc. **UNDER REVIEW**|
 | [Essential-Model-Documentation](https://github.com/WCRP-CMIP/Essential-Model-Documentation/) | EMD components |
 
 ---
@@ -191,5 +198,5 @@ The `esgvoc` Python library provides programmatic access to all CVs:
 ## 6. Getting Help
 
 - **General questions**: Open a [General Issue](https://github.com/WCRP-CMIP/CMIP7-CVs/issues/new) in the relevant repository
-- **CV discussions**: See [CVs_discussion.md](CVs_discussion.md)
-- **Contact IPO**: For complex cases, contact the CMIP International Project Office
+- **CV discussions**: See [Discussions on the CVs repo](https://github.com/WCRP-CMIP/CMIP7-CVs/discussions)
+- **Contact IPO**: For complex cases, contact the [CMIP International Project Office](mailto:cmip-ipo@esa.int)
