@@ -30,13 +30,13 @@ Registration is done through **GitHub issue forms** that are linked below (no Gi
 Register your institution before registering a model.
 
 **PROCESS UNDER REVIEW**
-<!--
+
 **Repository**: [WCRP-constants](https://github.com/WCRP-CMIP/WCRP-constants/issues)
 
 | Form | Link | Required Fields |
 |------|------|-----------------|
 | Organisation | [Register Institution](https://github.com/WCRP-CMIP/WCRP-constants/issues/new?template=organisation.yml) | Acronym, Full name, ROR |
---> 
+ 
 **Notes**:
 - The **acronym** used for the institution id must be unique and cannot be changed once data is published
 - A **ROR** (Research Organisation Registry) identifier is required for traceability. Find yours at [ror.org](https://ror.org)
