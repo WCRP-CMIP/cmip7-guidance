@@ -28,6 +28,7 @@ title: CMIP7 Guidance and Documentation
 - [Guidance for users, including Terms of Use](CMIP7/Guidance_for_users.md)
 - [Guidance for ESGF node operators and publishers](CMIP7/Guidance_for_ESGF.md)
 - [Guidance for MIPs](CMIP7/Guidance_for_MIPs.md)
+- [Citation Guidance](CMIP7/Citation_Guidance.md)
 - [Domain names for CMIP7 services](CMIP7/Domain_names.md)
 - [Frequently Asked Questions (FAQ)](CMIP7/FAQ.md)
 - [Annex 1: QC checks performed prior to publication](CMIP7/QC_checks.md)
