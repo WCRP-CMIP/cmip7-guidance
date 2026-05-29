@@ -15,10 +15,10 @@ CMIP7 uses **Controlled Vocabularies (CVs)** to ensure consistency across all pa
 
 - Your **institution** (organisation)
 - Your **model** (source_id)
-- Any new **experiments** (if applicable) 🛑 *Process suspended temporarily, should return end May 2026* 🛑
+- Any new **experiments** (if applicable)
 - **Model documentation** (EMD) components
 
-Registration is done through **GitHub issue forms** - no Git expertise required.
+Registration is done through **GitHub issue forms** that are linked below (no Git expertise required).
 
 ---
 
@@ -43,7 +43,7 @@ Register your institution before registering a model.
 
 ### 2.2 Model Registration (source_id)
 
-**Important**: Before registering a `source_id`, you **must** complete the EMD (Essential Model Documentation) registration process first. The `source_id` registration requires a reference to your registered EMD Model entry.
+**Important**: To register a `source_id`, you **must** complete the EMD (Essential Model Documentation) registration process.
 
 **Prerequisites**:
 1. Institution registered (see 2.1)
@@ -62,6 +62,11 @@ Further guidance on constructing a source id is provided in the [Source ID Guida
 ### 2.3 Activity Registration
 
 For new Activities (MIPs) not already in the CV.
+If you previously did the activity registration process,
+but your activity is not in the CV,
+please check [this issue](https://github.com/WCRP-CMIP/CMIP7-CVs/issues/385)
+which tracks the progress and process for adding these lost registrations
+back into the CV.
 
 **Repository**: [CMIP7-CVs](https://github.com/WCRP-CMIP/CMIP7-CVs/issues)
 
@@ -74,6 +79,11 @@ For new Activities (MIPs) not already in the CV.
 ### 2.4 Experiment Registration
 
 For new experiments not already in the CV.
+If you previously did the experiment registration process,
+but your experiment is not in the CV,
+please check [this issue](https://github.com/WCRP-CMIP/CMIP7-CVs/issues/385)
+which tracks the progress and process for adding these lost registrations
+back into the CV.
 
 **Repository**: [CMIP7-CVs](https://github.com/WCRP-CMIP/CMIP7-CVs/issues)
 
@@ -126,7 +136,7 @@ flowchart LR
 ```
 ### Step-by-Step Process
 
-1. **Check if already registered**: Before creating a new entry, verify it doesn't already exist in the CV
+1. **Check if already registered**: Before creating a new entry, verify it doesn't already exist in the CV (see links above for how to check)
 2. **Fill the form**: Click the appropriate link and complete all required fields
 3. **Submit**: This creates a GitHub issue
 4. **Automated checks**: The system performs initial validation
