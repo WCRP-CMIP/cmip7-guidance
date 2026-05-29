@@ -16,6 +16,9 @@ The Citation Service is configured to natively support CMIP7, CORDEX-CMIP6 and C
 !!! tip "A Note on CMIP6 DCPP sub-experiments "
     Sub-experiments are not part of the data model for the CMIP7 citation service, however the sub-experiment-id can still be manually included in the citation title field. Only the core CMIP7 search facets are validated against the ESGVOC API, so the sub-experiment ID will not appear in the search facets area, but they will be findable via the fuzzy search in the free text search box.
 
-A flow diagram explaining the internal processes to create records can be found here: [https://github.com/cedadev/cmip7-citation-service/blob/main/docs/CitationServiceFlowDiagram.png](https://github.com/cedadev/cmip7-citation-service/blob/main/docs/CitationServiceFlowDiagram.png)
+![Citation Flow Diagram](https://raw.githubusercontent.com/cedadev/cmip7-citation-service/main/docs/CitationServiceFlowDiagram.png)
+
+Above is the flow diagram showing internal processes within the citation service, including the user-facing landing pages (Purple Boxes).
+
 
 Additional information for developers can be found at the citation service documentation site [https://cedadev.github.io/cmip7-citation-service](https://cedadev.github.io/cmip7-citation-service)
