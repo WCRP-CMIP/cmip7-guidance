@@ -12,7 +12,8 @@ Run with prescribed carbon dioxide emissions (for prescribed carbon dioxide conc
 
 - Responsible activity: [ScenarioMIP](./index.md#scenariomip)
 - Tier: See [ScenarioMIP](./index.md#scenariomip) information
-- MIP co-chair review: No review initiated yet
+- MIP co-chair review: **In progress** see
+  [https://github.com/WCRP-CMIP/cmip7-guidance/issues/187](https://github.com/WCRP-CMIP/cmip7-guidance/issues/187)
 
 This page is intended to help with implementation.
 If you notice something that is unclear, please

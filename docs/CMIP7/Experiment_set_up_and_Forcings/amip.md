@@ -9,7 +9,8 @@ Simulation of the climate of the recent past with prescribed sea surface tempera
 
 - Responsible activity: [CMIP](./index.md#cmip)
 - Tier: 1
-- MIP co-chair review: No review initiated yet
+- MIP co-chair review: **In progress** see
+  [https://github.com/WCRP-CMIP/cmip7-guidance/issues/183](https://github.com/WCRP-CMIP/cmip7-guidance/issues/183)
 
 This page is intended to help with implementation.
 If you notice something that is unclear, please
