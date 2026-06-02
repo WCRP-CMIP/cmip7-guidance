@@ -35,7 +35,7 @@ This is done in two parts:
     - If your institution ID is associated with a consortium, you will have more than one member and an institution ID that differs from those of your members
     - If your institution ID is associated with a single member, you will have one member and an institution ID that is the same as the the member's ID (i.e. DRS name).
 
-**Repository**: [CMIP7-CVs](https://github.com/WCRP-CMIP/CMIP7-CVs) [Registered Content](https://github.com/WCRP-CMIP/CMIP7-CVs/tree/main/institution)
+**Repository**: [CMIP7-CVs](https://github.com/WCRP-CMIP/CMIP7-CVs) [Registered content for institutes](https://github.com/WCRP-CMIP/CMIP7-CVs/tree/main/institution), [Registered content for institute members](https://github.com/WCRP-CMIP/WCRP-universe/tree/esgvoc/institution)
 
 | Form | Link | Required Fields |
 |------|------|-----------------|
