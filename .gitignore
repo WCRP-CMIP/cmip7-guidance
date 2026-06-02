@@ -11,6 +11,8 @@ venv
 
 # Auto-generated documentation files
 # Generated during MkDocs build - do not commit
+# SUMMARY.md is no longer generated, but keep ignoring it so stale copies from
+# previous builds on contributors' machines never get committed.
 docs/SUMMARY.md
 docs/*_Contributors.md
 contributors.html

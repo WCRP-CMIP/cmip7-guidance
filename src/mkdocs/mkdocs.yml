@@ -50,7 +50,6 @@ plugins:
 
 # Hooks
 hooks:
-  - hooks/generate_nav.py
   - hooks/post_build.py
 
 extra:

@@ -89,27 +89,6 @@ def rename_paths(site_dir, replacements):
             shutil.move(str(old_path), str(new_path))
 
 
-def update_summary_md(site_dir, replacements):
-    """Update SUMMARY.md with cleaned paths."""
-    summary_path = site_dir / 'SUMMARY.md'
-    if not summary_path.exists():
-        return
-    
-    try:
-        content = summary_path.read_text(encoding='utf-8')
-        original = content
-        
-        # Replace prefixed paths in SUMMARY.md
-        for old_name, clean_name in replacements.items():
-            content = content.replace(old_name, clean_name)
-        
-        if content != original:
-            summary_path.write_text(content, encoding='utf-8')
-            print(f"[clean_urls] Updated SUMMARY.md with cleaned paths")
-    except Exception as e:
-        print(f"Warning: Could not update SUMMARY.md: {e}")
-
-
 def clean_urls(config):
     """Strip numeric prefixes from built site URLs."""
     site_dir = Path(config['site_dir'])
@@ -127,10 +106,7 @@ def clean_urls(config):
     
     # Fix HTML links first (before renaming directories)
     fix_html_links(site_dir, replacements)
-    
-    # Update SUMMARY.md with cleaned paths
-    update_summary_md(site_dir, replacements)
-    
+
     # Rename directories and files
     rename_paths(site_dir, replacements)
     
