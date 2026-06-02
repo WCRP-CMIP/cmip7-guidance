@@ -26,6 +26,7 @@ Registration is done through **GitHub issue forms** that are linked below (no Gi
 
 ### 2.1 Institution Registration
 
+
 Register your institution before registering a model.
 This is done in two parts:
 
@@ -51,6 +52,7 @@ This is done in two parts:
 ### 2.2 Model Registration (source_id)
 
 **Important**: To register a `source_id`, you **must** complete the EMD (Essential Model Documentation) registration process.
+
 Guidance on constructing a source id is provided in the [Source ID Guidance](Source_ID_guidance.md)
 
 **Prerequisites**:
