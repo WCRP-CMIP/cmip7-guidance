@@ -72,8 +72,8 @@ For the following data, please see these other experiment pages:
 
 For the following forcings, please use data from the specified experiments with the specified modifications.
 
-- for greenhouse gas concentrations, use the forcings from [piClim-control](./piclim-control.md) but quadruple the
-  CO<sub>2</sub> concentrations
+- for greenhouse gas concentrations, use the forcings from [piControl](./picontrol.md) but quadruple the CO<sub>2</sub>
+  concentrations
 
 #### Data available via input4MIPs
 
