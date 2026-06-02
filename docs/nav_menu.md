@@ -1,5 +1,6 @@
 - [Home](index.md)
 - [Updates for modellers](Updates_for_Modellers.md)
+- [Updates for users](Updates_for_Users.md)
 - [CMIP7](CMIP7/index.md)
   - [General Guidance](CMIP7/General_Guidance.md)
   - [Global Attributes](CMIP7/Global_Attributes.md)
@@ -98,6 +99,9 @@
   - [Guidance for users](CMIP6/guidance_for_users.md)
   - [Terms of use](CMIP6/terms_of_use.md)
   - [Time and area averaging](CMIP6/time_and_area_averaging.md)
+- Resources
+  - [GitHub issue helper](resources/GitHub_issue_helper.html)
+- [Contributors](Contributors.md)
 - [Essential Model Documentation](https://emd.mipcvs.dev/docs/)
 - [CMIP Website](https://wcrp-cmip.org/)
 - [WCRP](https://www.wcrp-climate.org/)
