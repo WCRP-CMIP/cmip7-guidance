@@ -50,6 +50,9 @@ The following information will help you identify the forcings to use.
 However, we can't define every single detail because there can be lots of subjective steps between the raw forcings data
 and model inputs (e.g. interpolation, re-aggregation, supplementation with other information).
 If further guidance would be helpful, please [raise an issue](https://github.com/WCRP-CMIP/cmip7-guidance/issues/new).
+The species to perturb are SO2, BC, OC, NOx, NH3, VOC and CO. However, gas phase chemistry should be turned off, in order
+to isolate the aerosol forcing from any chemistry effects, such as ozone and methane production. The treatment should
+follow the same as DAMIP's [hist-aer](./hist-aer.md) and RFMIP's [piClim-histaer](./piClim-histaer.md).
 
 ### General headlines
 
