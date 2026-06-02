@@ -47,6 +47,7 @@ Register your institution before registering a model.
 ### 2.2 Model Registration (source_id)
 
 **Important**: To register a `source_id`, you **must** complete the EMD (Essential Model Documentation) registration process.
+Guidance on constructing a source id is provided in the [Source ID Guidance](Source_ID_guidance.md)
 
 **Prerequisites**:
 1. ~Institution registered (see 2.1)~ To discuss: Should not be required because this is not related to completing the EMD ?
@@ -54,10 +55,10 @@ Register your institution before registering a model.
 
 **Repository**: CMIP7-CVs [Registered Content](https://github.com/WCRP-CMIP/CMIP7-CVs/tree/main/model/)
 
-Source IDs will be registered automatically within the CVs once EMD has been completed.
-
-<!-- Move this to the EMD, as that is where it is relevant -->
-Guidance on constructing a source id is provided in the [Source ID Guidance](Source_ID_guidance.md)
+Source IDs and grid labels will be registered automatically within the CVs once EMD has been completed.
+If you have completed the EMD but your source ID or grid label is not in the CVs,
+please [open an issue in the CMIP7 CVs repository](https://github.com/WCRP-CMIP/CMIP7-CVs/issues/new?template=BLANK_ISSUE)
+so we can figure out where the information processing has gone wrong.
 
 ---
 
