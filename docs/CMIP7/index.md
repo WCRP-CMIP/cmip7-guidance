@@ -8,7 +8,7 @@ title: CMIP7 Guidance
 
 - [General Guidance](General_Guidance.md)
 - [Updates for modelling groups](../Updates_for_Modellers.md)
-- [Updates for Users](../Updates_for_users.md)
+- [Updates for Users](../Updates_for_Users.md)
 - [Global Attributes](Global_Attributes.md)
 - [Data Specifications Versioning](data_specs_version.md)
 - [CV Registration Guide](cv_registration.md)

@@ -12,7 +12,7 @@ venv
 # Auto-generated documentation files
 # Generated during MkDocs build - do not commit
 docs/SUMMARY.md
-docs/*_Contributors.md
+docs/Contributors.md
 contributors.html
 .contributors
 docs/.version
