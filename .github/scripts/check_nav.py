@@ -39,6 +39,10 @@ IGNORE = {
 }
 
 
+class MissingNavPagesError(Exception):
+    """Raised when documentation pages are not referenced in nav_menu.md."""
+
+
 def parse_link_targets(text: str) -> list[str]:
     """Return the raw link targets (the `...` in `[text](...)`) from markdown.
 
@@ -106,8 +110,7 @@ def find_nav_targets() -> set[str]:
 
 def main() -> int:
     if not NAV_FILE.exists():
-        print(f"ERROR: nav file not found: {NAV_FILE}", file=sys.stderr)
-        return 1
+        raise FileNotFoundError(f"nav file not found: {NAV_FILE}")
 
     pages = find_pages()
     nav_targets = find_nav_targets()
@@ -116,14 +119,13 @@ def main() -> int:
 
     if missing:
         rel_self = Path(__file__).resolve().relative_to(REPO_ROOT)
-        print("ERROR: the following pages are not referenced in nav_menu.md:")
-        for page in missing:
-            print(f"  - {page}")
-        print(
-            f"\nAdd each page to docs/nav_menu.md, or add it to IGNORE in "
+        listing = "\n".join(f"  - {page}" for page in missing)
+        raise MissingNavPagesError(
+            "the following pages are not referenced in nav_menu.md:\n"
+            f"{listing}\n\n"
+            f"Add each page to docs/nav_menu.md, or add it to IGNORE in "
             f"{rel_self} if it should not appear in the navigation."
         )
-        return 1
 
     print(f"OK: all {len(pages)} documentation pages are referenced in nav_menu.md.")
     return 0
