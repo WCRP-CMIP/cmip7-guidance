@@ -9,7 +9,8 @@ Stablisation of global-mean temperature at 1.5C by increasing stratospheric sulf
 
 - Responsible activity: [GeoMIP](./index.md#geomip)
 - Tier: 1
-- MIP co-chair review: No review initiated yet
+- MIP co-chair review: **In progress** see
+  [https://github.com/WCRP-CMIP/cmip7-guidance/issues/189](https://github.com/WCRP-CMIP/cmip7-guidance/issues/189)
 
 This page is intended to help with implementation.
 If you notice something that is unclear, please
