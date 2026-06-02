@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 """
-Check that every documentation page is referenced in ``nav_menu.md``.
+Check that every documentation page is referenced in `nav_menu.md`.
 
-Standalone CI check (standard library only): it scans the ``docs`` directory
-for content pages (``.md`` / ``.html``) and verifies that each one appears as a
-link target in ``docs/nav_menu.md``. Navigation here is hand-maintained, so new
-pages must be added to ``nav_menu.md`` by hand -- this guards against forgetting.
+Standalone CI check (standard library only): it scans the `docs` directory
+for content pages (`.md` / `.html`) and verifies that each one appears as a
+link target in `docs/nav_menu.md`. Navigation here is hand-maintained, so new
+pages must be added to `nav_menu.md` by hand — this guards against forgetting.
 
 Pages that should intentionally *not* appear in the navigation (for example
-some section ``index.md`` files, or auto-generated files) are listed in the
-``IGNORE`` set below.
+some section `index.md` files, or auto-generated files) are listed in the
+`IGNORE` set below.
 
 Exit code is 0 if every page is in the nav, 1 otherwise.
 """
@@ -40,12 +40,12 @@ IGNORE = {
 
 
 def parse_link_targets(text: str) -> list[str]:
-    """Return the raw link targets (the ``...`` in ``[text](...)``) from markdown.
+    """Return the raw link targets (the `...` in `[text](...)`) from markdown.
 
     Parsed line by line without regular expressions, expecting at most one link
-    per line (as nav_menu.md is structured). Each line's single ``](`` opener is
-    read up to its closing ``)`` on that same line. A ``](`` with no closing
-    ``)``, or a second link on the line, is malformed and raises ``ValueError``.
+    per line (as nav_menu.md is structured). Each line's single `](` opener is
+    read up to its closing `)` on that same line. A `](` with no closing
+    `)`, or a second link on the line, is malformed and raises `ValueError`.
     """
     targets = []
     opener = "]("
