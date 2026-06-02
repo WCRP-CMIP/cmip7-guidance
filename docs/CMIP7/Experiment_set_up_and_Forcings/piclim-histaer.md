@@ -6,7 +6,7 @@ title: "Experiment Setup and Forcings Guidance: piClim-histaer"
 # Experiment Setup and Forcings Guidance: piClim-histaer
 
 In combination with `piClim-control`, quantifies transient aerosol effective radiative forcing (ERF) over the historical
-period and the `scen7-m` or `esm-scen7-m` experiment (whichever is relevant to your model setup).
+period and the `scen7-m` experiment.
 This can be compared with `piClim-aer` which provides a more precise quantification of present-day aerosol ERF.
 
 - Responsible activity: [RFMIP](./index.md#rfmip)
@@ -20,6 +20,7 @@ If you notice something that is unclear, please
 
 For the full background of the experiment, please see the following URLs:
 
+- [https://doi.org/10.5194/gmd-19-4447-2026](https://doi.org/10.5194/gmd-19-4447-2026)
 - [https://doi.org/10.5194/acp-20-9591-2020](https://doi.org/10.5194/acp-20-9591-2020)
 - [https://doi.org/10.5194/gmd-9-3447-2016](https://doi.org/10.5194/gmd-9-3447-2016)
 
@@ -40,6 +41,7 @@ Branch from [piControl](./picontrol.md) at the same time as [piClim-control](./p
 
 Your output time axis must start on 1850-01-01 and must end on 2100-12-31.
 You must perform the full simulation i.e. 251 simulation years.
+Extensions to 2150-12-31 (301 simulation years) are welcome but not mandatory.
 
 ### Minimum ensemble size
 
@@ -58,6 +60,9 @@ The piClim-histaer experiment uses a mix of fixed and transient forcings.
 The fixed forcings are: aerosol optical properties, greenhouse gas concentrations, land use, nitrogen deposition, ozone,
 population density, sea-surface temperature forcing, solar and stratospheric aerosol forcing.
 The transient forcings are: anthropogenic emissions and biomass burning emissions.
+The species to perturb are SO2, BC, OC, NOx, NH3, VOC and CO. However, gas phase chemistry should be turned off, in order
+to isolate the aerosol forcing from any chemistry effects, such as ozone and methane production. The treatment should
+follow the same as DAMIP's [hist-aer](./hist-aer.md) and RFMIP's [piClim-aer](./piClim-aer.md).
 
 ### Data
 
