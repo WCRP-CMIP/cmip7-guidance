@@ -1527,14 +1527,15 @@
 <ul>
 <li>Your <strong>institution</strong> (organisation)</li>
 <li>Your <strong>model</strong> (source_id)</li>
-<li>Any new <strong>experiments</strong> (if applicable) 🛑 <em>Process suspended temporarily, should return end May 2026</em> 🛑</li>
+<li>Any new <strong>experiments</strong> (if applicable)</li>
 <li><strong>Model documentation</strong> (EMD) components</li>
 </ul>
-<p>Registration is done through <strong>GitHub issue forms</strong> - no Git expertise required.</p>
+<p>Registration is done through <strong>GitHub issue forms</strong> that are linked below (no Git expertise required).</p>
 <hr />
 <h2 id="2-registration-forms">2. Registration Forms<a class="headerlink" href="#2-registration-forms" title="Permanent link">&para;</a></h2>
 <h3 id="21-institution-registration">2.1 Institution Registration<a class="headerlink" href="#21-institution-registration" title="Permanent link">&para;</a></h3>
 <p>Register your institution before registering a model.</p>
+<p><strong>PROCESS UNDER REVIEW</strong></p>
 <p><strong>Repository</strong>: <a href="https://github.com/WCRP-CMIP/WCRP-constants/issues">WCRP-constants</a></p>
 <div class="table-wrapper"><table>
 <thead>
@@ -1553,16 +1554,33 @@
 </tbody>
 </table></div>
 <p><strong>Notes</strong>:
-- The <strong>acronym</strong> must be unique and cannot be changed once data is published
+- The <strong>acronym</strong> used for the institution id must be unique and cannot be changed once data is published
 - A <strong>ROR</strong> (Research Organisation Registry) identifier is required for traceability. Find yours at <a href="https://ror.org">ror.org</a>
 - Consortia are also registered as organisations</p>
 <hr />
 <h3 id="22-model-registration-source_id">2.2 Model Registration (source_id)<a class="headerlink" href="#22-model-registration-source_id" title="Permanent link">&para;</a></h3>
-<p><strong>Important</strong>: Before registering a <code>source_id</code>, you <strong>must</strong> complete the EMD (Essential Model Documentation) registration process first. The <code>source_id</code> registration requires a reference to your registered EMD Model entry.</p>
+<p><strong>Important</strong>: To register a <code>source_id</code>, you <strong>must</strong> complete the EMD (Essential Model Documentation) registration process.</p>
 <p><strong>Prerequisites</strong>:
 1. Institution registered (see 2.1)
 2. EMD registration completed (see 2.4) - including grids, components, and top-level Model</p>
-<p><strong>Repository</strong>: <a href="https://github.com/WCRP-CMIP/CMIP7-CVs/issues">CMIP7-CVs</a></p>
+<p><strong>Repository</strong>: CMIP7-CVs <a href="https://github.com/WCRP-CMIP/CMIP7-CVs/tree/main/model/">Registered Content</a></p>
+<!--
+| Form | Link |
+|------|------|
+| Source (Model) | [Register source_id](https://github.com/WCRP-CMIP/CMIP7-CVs/issues/new?template=source.yml) |
+-->
+
+<p>Source IDs will be registered automatically within the CVs once EMD has been completed.</p>
+<p>Guidance on constructing a source id is provided in the <a href="../Source_ID_guidance/">Source ID Guidance</a></p>
+<hr />
+<h3 id="23-activity-registration">2.3 Activity Registration<a class="headerlink" href="#23-activity-registration" title="Permanent link">&para;</a></h3>
+<p>For new Activities (MIPs) not already in the CV.
+If you previously did the activity registration process,
+but your activity is not in the CV,
+please check <a href="https://github.com/WCRP-CMIP/CMIP7-CVs/issues/385">this issue</a>
+which tracks the progress and process for adding these lost registrations
+back into the CV.</p>
+<p><strong>Repository</strong>: CMIP7-CVs <a href="https://github.com/WCRP-CMIP/CMIP7-CVs/issues?q=is%3Aissue%20state%3Aopen%20label%3Aactivity">Issues</a>, <a href="https://github.com/WCRP-CMIP/CMIP7-CVs/tree/main/activity">Registered Content</a></p>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
@@ -1572,24 +1590,36 @@
 </thead>
 <tbody>
 <tr>
-<td>Source (Model)</td>
-<td><a href="https://github.com/WCRP-CMIP/CMIP7-CVs/issues/new?template=source.yml">Register source_id</a></td>
+<td>Activity (MIP)</td>
+<td><a href="https://github.com/WCRP-CMIP/CMIP7-CVs/issues/new?template=register-activity.yml">Register activity</a></td>
 </tr>
 </tbody>
 </table></div>
-<p>Further guidance on constructing a source id is provided in the <a href="../Source_ID_guidance/">Source ID Guidance</a></p>
 <hr />
-<h3 id="23-experiment-registration">2.3 Experiment Registration<a class="headerlink" href="#23-experiment-registration" title="Permanent link">&para;</a></h3>
-<p>For new experiments not already in the CV.</p>
-<p>🛑 <em>Process suspended temporarily, should return end May 2026</em> 🛑</p>
-<p><strong>Repository</strong>: <a href="https://github.com/WCRP-CMIP/CMIP7-CVs/issues">CMIP7-CVs</a></p>
-<!--
-| Form | Link |
-|------|------|
-| Experiment | [Register experiment](https://github.com/WCRP-CMIP/CMIP7-CVs/issues/new?template=experiment.yml) |
--->
+<h3 id="24-experiment-registration">2.4 Experiment Registration<a class="headerlink" href="#24-experiment-registration" title="Permanent link">&para;</a></h3>
+<p>For new experiments not already in the CV.
+If you previously did the experiment registration process,
+but your experiment is not in the CV,
+please check <a href="https://github.com/WCRP-CMIP/CMIP7-CVs/issues/385">this issue</a>
+which tracks the progress and process for adding these lost registrations
+back into the CV.</p>
+<p><strong>Repository</strong>: CMIP7-CVs <a href="https://github.com/WCRP-CMIP/CMIP7-CVs/issues?q=is%3Aissue%20state%3Aopen%20label%3Aexperiment">Issues</a>, <a href="https://github.com/WCRP-CMIP/CMIP7-CVs/tree/main/experiment">Registered Content</a></p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Form</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Experiment</td>
+<td><a href="https://github.com/WCRP-CMIP/CMIP7-CVs/issues/new?template=register-experiment.yml">Register experiment</a></td>
+</tr>
+</tbody>
+</table></div>
 <hr />
-<h3 id="24-essential-model-documentation-emd">2.4 Essential Model Documentation (EMD)<a class="headerlink" href="#24-essential-model-documentation-emd" title="Permanent link">&para;</a></h3>
+<h3 id="25-essential-model-documentation-emd">2.5 Essential Model Documentation (EMD)<a class="headerlink" href="#25-essential-model-documentation-emd" title="Permanent link">&para;</a></h3>
 <p>EMD provides detailed technical documentation of your model. Registration follows a <strong>hierarchical process</strong> - you must register components in order. This should take a maximum of 4 hours wall time (although not all at once, as <strong>each step has a separate review process</strong>). </p>
 <p>For information on the EMD <strong>please read the <a href="https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/Information_for_Submitters/Submission-Guide/">DOCUMENTATION</a></strong></p>
 <p>Other links: <a href="https://github.com/WCRP-CMIP/Essential-Model-Documentation/issues">GitHub Repository</a></p>
@@ -1662,7 +1692,7 @@
     C --&gt; D["4. Experiments (if needed)"]</code></pre>
 <h3 id="step-by-step-process">Step-by-Step Process<a class="headerlink" href="#step-by-step-process" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>Check if already registered</strong>: Before creating a new entry, verify it doesn't already exist in the CV</li>
+<li><strong>Check if already registered</strong>: Before creating a new entry, verify it doesn't already exist in the CV (see links above for how to check)</li>
 <li><strong>Fill the form</strong>: Click the appropriate link and complete all required fields</li>
 <li><strong>Submit</strong>: This creates a GitHub issue</li>
 <li><strong>Automated checks</strong>: The system performs initial validation</li>
@@ -1717,7 +1747,7 @@
 </tr>
 <tr>
 <td><a href="https://github.com/WCRP-CMIP/WCRP-constants/">WCRP-constants</a></td>
-<td>Organisations/institutions, and universal constants e.g. frequency,realm etc.</td>
+<td>Organisations/institutions, and universal constants e.g. frequency,realm etc. <strong>UNDER REVIEW</strong></td>
 </tr>
 <tr>
 <td><a href="https://github.com/WCRP-CMIP/Essential-Model-Documentation/">Essential-Model-Documentation</a></td>
@@ -1729,8 +1759,8 @@
 <h2 id="6-getting-help">6. Getting Help<a class="headerlink" href="#6-getting-help" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>General questions</strong>: Open a <a href="https://github.com/WCRP-CMIP/CMIP7-CVs/issues/new">General Issue</a> in the relevant repository</li>
-<li><strong>CV discussions</strong>: See <a href="CVs_discussion.md">CVs_discussion.md</a></li>
-<li><strong>Contact IPO</strong>: For complex cases, contact the CMIP International Project Office</li>
+<li><strong>CV discussions</strong>: See <a href="https://github.com/WCRP-CMIP/CMIP7-CVs/discussions">Discussions on the CVs repo</a></li>
+<li><strong>Contact IPO</strong>: For complex cases, contact the <a href="mailto:cmip-ipo@esa.int">CMIP International Project Office</a></li>
 </ul>
   </div>
 </article>
@@ -1996,16 +2026,22 @@
             2.2 Model Registration (source_id)
         </a>
         
-        <a href="#23-experiment-registration"
+        <a href="#23-activity-registration"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#23-experiment-registration');">
-            2.3 Experiment Registration
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#23-activity-registration');">
+            2.3 Activity Registration
         </a>
         
-        <a href="#24-essential-model-documentation-emd"
+        <a href="#24-experiment-registration"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#24-essential-model-documentation-emd');">
-            2.4 Essential Model Documentation (EMD)
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#24-experiment-registration');">
+            2.4 Experiment Registration
+        </a>
+        
+        <a href="#25-essential-model-documentation-emd"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#25-essential-model-documentation-emd');">
+            2.5 Essential Model Documentation (EMD)
         </a>
         
         
