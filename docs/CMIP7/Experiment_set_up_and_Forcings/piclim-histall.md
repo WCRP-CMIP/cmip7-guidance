@@ -6,7 +6,7 @@ title: "Experiment Setup and Forcings Guidance: piClim-histall"
 # Experiment Setup and Forcings Guidance: piClim-histall
 
 In combination with `piClim-control`, quantifies transient effective radiative forcing (ERF) over the historical period
-and the `scen7-m` or `esm-scen7-m` experiment (whichever is relevant to your model setup).
+and the `scen7-m` experiment.
 This complements the `piClim-*` experiments which provide a more precise quantification of present-day ERF for various
 forcing components.
 
@@ -22,6 +22,7 @@ If you notice something that is unclear, please
 For the full background of the experiment, please see the following URLs:
 
 - [https://doi.org/10.5194/acp-20-9591-2020](https://doi.org/10.5194/acp-20-9591-2020)
+- [https://doi.org/10.5194/gmd-9-3447-2016](https://doi.org/10.5194/gmd-9-3447-2016)
 - [https://doi.org/10.5194/gmd-9-3447-2016](https://doi.org/10.5194/gmd-9-3447-2016)
 
 ## Experiment set up
@@ -41,6 +42,7 @@ Branch from [piControl](./picontrol.md) at the same time as [piClim-control](./p
 
 Your output time axis must start on 1850-01-01 and must end on 2100-12-31.
 You must perform the full simulation i.e. 251 simulation years.
+Extensions to 2150-12-31 (301 simulation years) are welcome but not mandatory.
 
 ### Minimum ensemble size
 
