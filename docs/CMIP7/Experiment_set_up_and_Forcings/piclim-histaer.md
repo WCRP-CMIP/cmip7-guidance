@@ -45,7 +45,7 @@ Extensions to 2150-12-31 (301 simulation years) are welcome but not mandatory.
 
 ### Minimum ensemble size
 
-Only one ensemble member is required.
+Only one ensemble member is required, but multiple ensemble members are welcomed.
 
 ## Forcings
 
@@ -60,9 +60,7 @@ The piClim-histaer experiment uses a mix of fixed and transient forcings.
 The fixed forcings are: aerosol optical properties, greenhouse gas concentrations, land use, nitrogen deposition, ozone,
 population density, sea-surface temperature forcing, solar and stratospheric aerosol forcing.
 The transient forcings are: anthropogenic emissions and biomass burning emissions.
-The species to perturb are SO2, BC, OC, NOx, NH3, VOC and CO. However, gas phase chemistry should be turned off, in order
-to isolate the aerosol forcing from any chemistry effects, such as ozone and methane production. The treatment should
-follow the same as DAMIP's [hist-aer](./hist-aer.md) and RFMIP's [piClim-aer](./piClim-aer.md).
+The species to perturb are SO2, BC, OC, NOx, NH3, VOC and CO.
 
 ### Data
 
