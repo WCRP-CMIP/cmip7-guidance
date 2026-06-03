@@ -46,7 +46,7 @@ Extensions to 2150-12-31 (301 simulation years) are welcome but not mandatory.
 
 ### Minimum ensemble size
 
-Only one ensemble member is required.
+Only one ensemble member is required, however multiple ensemble members are welcomed.
 
 ## Forcings
 
