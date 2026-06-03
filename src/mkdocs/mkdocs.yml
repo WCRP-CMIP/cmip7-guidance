@@ -48,10 +48,6 @@ plugins:
         'CMIP7/guidance_for_modellers.md': 'CMIP7/Guidance_for_modellers.md'
         'CMIP7/guidance_for_users.md': 'CMIP7/Guidance_for_users.md'
 
-# Hooks
-hooks:
-  - hooks/post_build.py
-
 extra:
   generator: false
 
