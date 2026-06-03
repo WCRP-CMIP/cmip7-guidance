@@ -14,6 +14,8 @@ use_directory_urls: true  # Creates clean URLs like /page/ instead of /page.html
 theme:
   name: shadcn
   custom_dir: overrides
+  # Must be a dict, not null to avoid a bug in shadcn katex
+  katex_options: {}
   palette:
     primary: teal
     accent: teal
