@@ -72,6 +72,14 @@
     <script integrity="sha384-V2jkXRy811qODUbfkLlkVJYBbf4h6XHAEjcU6ReASBPrJvTrlYh4GrI4t6GCju6n" src="../../../js/callbacks.js"></script>
 
     
+    
+<!-- katex -->
+<link href="../../../css/katex.min.css" rel="stylesheet"/>
+<!-- The loading of KaTeX is deferred to speed up page rendering -->
+<script defer="" integrity="sha384-YPHNAPyrxGS8BNnA7Q4ommqra8WQPEjooVSLzFgwgs8OXJBvadbyvx4QpfiFurGr" src="../../../js/katex.min.js"></script>
+<!-- To automatically render math in text elements, include the auto-render extension: -->
+<script defer="" integrity="sha384-JKXHIJf8PKPyDFptuKZoUyMRQJAmQKj4B4xyOca62ebJhciMYGiDdq/9twUUWyZH" onload='renderMathInElement(document.body, "{}");' src="../../../js/auto-render.min.js"></script>
+    
 
     
 
@@ -1573,39 +1581,39 @@ distributed via other channels.</p>
 <p>for greenhouse gas concentrations, use the forcings from <a href="../picontrol/">piControl</a> but increase the atmospheric
   CO<sub>2</sub> concentrations at one percent per year yourself.
   CO2 concentrations should increase as</p>
-<p>$$
+<div class="arithmatex">\[
 c(t) = c_0 \cdot 1.01^{\frac{t - t_0}{\tau}},
-$$</p>
-<p>where $t_0$ is 1850 and $\tau$ is one year.</p>
+\]</div>
+<p>where <span class="arithmatex">\(t_0\)</span> is 1850 and <span class="arithmatex">\(\tau\)</span> is one year.</p>
 <p>For step-wise increases of CO<sub>2</sub>, specify a concentration that results, to good approximation, in a mean
 CO2 concentration (or mean forcing) for each time step consistent with the mean calculated when the CO2
 concentration increases continuously.
 A particularly simple formula of sufficient accuracy for a 1% increase and time steps used in earth system models is</p>
-<p>$$
+<div class="arithmatex">\[
 c(t \rightarrow t + \Delta t) = \frac{c(t) + c(t + \Delta t)}{2},
-$$</p>
-<p>where $c(t \rightarrow t + \Delta t)$ is the value to apply in the time step that extends from time $t$ to $t +
-\Delta t$ and $\Delta t$ is the size of the time step in your model (this can vary from time step to time step and
+\]</div>
+<p>where <span class="arithmatex">\(c(t \rightarrow t + \Delta t)\)</span> is the value to apply in the time step that extends from time <span class="arithmatex">\(t\)</span> to <span class="arithmatex">\(t +
+\Delta t\)</span> and <span class="arithmatex">\(\Delta t\)</span> is the size of the time step in your model (this can vary from time step to time step and
 it does not affect the formula above).
 For annual time steps, this reduces to</p>
-<p>$$
+<div class="arithmatex">\[
 \begin{aligned}
 c(y)
-&amp;= c_0 \cdot 1.01^{y - y_0} \cdot \frac{1 + 1.01}{2} \
+&amp;= c_0 \cdot 1.01^{y - y_0} \cdot \frac{1 + 1.01}{2} \\
 &amp;= c_0 \cdot 1.01^{y - y_0} \cdot 1.05,
 \end{aligned}
-$$</p>
-<p>where $y$ is the year in which to apply the given value and $y_0$ is the starting year i.e. 1850.</p>
+\]</div>
+<p>where <span class="arithmatex">\(y\)</span> is the year in which to apply the given value and <span class="arithmatex">\(y_0\)</span> is the starting year i.e. 1850.</p>
 <p>For monthly time steps, this reduces to</p>
-<p>$$
+<div class="arithmatex">\[
 \begin{aligned}
 c(y, m)
-&amp;= c_0 \cdot \frac{1.01^{y - y_0} \cdot 1.01^{(m - 1) / 12} + 1.01^{y - y_0} \cdot 1.01^{m / 12}}{2} \
-&amp;= c_0 \cdot 1.01^{y - y_0} \cdot 1.01^{(m - 1) / 12} \cdot \frac{1 + 1.01^(1 / 12)}{2} \
+&amp;= c_0 \cdot \frac{1.01^{y - y_0} \cdot 1.01^{(m - 1) / 12} + 1.01^{y - y_0} \cdot 1.01^{m / 12}}{2} \\
+&amp;= c_0 \cdot 1.01^{y - y_0} \cdot 1.01^{(m - 1) / 12} \cdot \frac{1 + 1.01^(1 / 12)}{2} \\
 &amp;= c_0 \cdot 1.01^{y - y_0} \cdot 1.01^{(m - 1) / 12} \cdot 1.0004,
 \end{aligned}
-$$</p>
-<p>where $m$ is the month in which to apply the given value (January is 1, February is 2 etc.).</p>
+\]</div>
+<p>where <span class="arithmatex">\(m\)</span> is the month in which to apply the given value (January is 1, February is 2 etc.).</p>
 </li>
 </ul>
 <h4 id="data-available-via-input4mips">Data available via input4MIPs<a class="headerlink" href="#data-available-via-input4mips" title="Permanent link">&para;</a></h4>

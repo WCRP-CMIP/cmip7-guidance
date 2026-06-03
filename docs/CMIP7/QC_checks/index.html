@@ -72,6 +72,14 @@
     <script integrity="sha384-V2jkXRy811qODUbfkLlkVJYBbf4h6XHAEjcU6ReASBPrJvTrlYh4GrI4t6GCju6n" src="../../js/callbacks.js"></script>
 
     
+    
+<!-- katex -->
+<link href="../../css/katex.min.css" rel="stylesheet"/>
+<!-- The loading of KaTeX is deferred to speed up page rendering -->
+<script defer="" integrity="sha384-YPHNAPyrxGS8BNnA7Q4ommqra8WQPEjooVSLzFgwgs8OXJBvadbyvx4QpfiFurGr" src="../../js/katex.min.js"></script>
+<!-- To automatically render math in text elements, include the auto-render extension: -->
+<script defer="" integrity="sha384-JKXHIJf8PKPyDFptuKZoUyMRQJAmQKj4B4xyOca62ebJhciMYGiDdq/9twUUWyZH" onload='renderMathInElement(document.body, "{}");' src="../../js/auto-render.min.js"></script>
+    
 
     
 
@@ -2151,7 +2159,7 @@ Each table relates to one of the files within the plugin and has three columns:<
 <tr>
 <td>global.attributes.parent_time_units</td>
 <td>pattern</td>
-<td>^days since [0-9]{4}-[0-9]{1,2}-[0-9]{1,2}( [0-9]{2}:[0-9]{2}:[0-9]{2})?( ((gregorian|standard|proleptic_gregorian|julian|noleap|365_day|all_leap|366_day|360_day|utc|tai)))?$</td>
+<td>^days since [0-9]{4}-[0-9]{1,2}-[0-9]{1,2}( [0-9]{2}:[0-9]{2}:[0-9]{2})?( <span class="arithmatex">\((gregorian\|standard\|proleptic_gregorian\|julian\|noleap\|365_day\|all_leap\|366_day\|360_day\|utc\|tai)\)</span>)?$</td>
 </tr>
 <tr>
 <td>global.attributes.parent_time_units</td>
