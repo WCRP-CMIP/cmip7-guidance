@@ -35,6 +35,8 @@ EXCLUDE_DIRS = {"scripts", "assets", "stylesheets", "__pycache__"}
 # the navigation, e.g. some section index.md files or auto-generated files.
 IGNORE = {
     "nav_menu.md",  # the navigation file itself
+    # Surfaced in the sidebar's "Additional Resources" via links.yml, not nav_menu.md.
+    "resources/GitHub_issue_helper.html",
 }
 
 
