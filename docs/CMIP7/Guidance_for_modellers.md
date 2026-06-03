@@ -255,7 +255,7 @@ Note that CMOR tables may also be referred to in some contexts as MIP tables.
 
 The Controlled Vocabulary (CV) JSON file used by CMOR is [available here](https://github.com/WCRP-CMIP/cmip7-cmor-tables/blob/main/tables-cvs/cmor-cvs.json).
 This file is updated automatically when [new CVs entries are registered](cv_registration.md).
-For easier viewing, the same information is also provided in [files separated by CV term](https://github.com/WCRP-CMIP/cmip7-cmor-tables/tree/main/tables-cvs/split-view).
+For easier viewing the same information is also provided in [files separated by CV term](https://github.com/WCRP-CMIP/cmip7-cmor-tables/tree/main/tables-cvs/split-view).
 Users should be aware that the primary source of CMIP7 CVs information is [esgvoc](https://esgf.github.io/esgf-vocab/), from which information required by CMOR propagates into the CV JSON file used by CMOR.
 
 Examples of the input JSON file for CMOR are available via [a jupyter notebook](https://github.com/WCRP-CMIP/cmip7-cmor-tables/blob/main/cmor_demo.ipynb).
@@ -355,7 +355,8 @@ The **configuration** enables simple versioning and sharing of rule sets, while 
     - ℹ️ **OPTIONAL**: Informational checks with no impact on validity
 - Expected values or constraints where applicable
 
-> ⚠️ The **variable registry is not yet queried**. Variable information from CVs is provided by **esgvoc**.
+> ⚠️ Variable information in the CVs originates from the CMIP7 Data Request and is provided to the QC tool by **esgvoc**. It will follow data request releases until the new WCRP Variable Registry is established.
+
 
 **Usage** is built on the IOOS Compliance Checker, maintaining workflow flexibility for modeling groups that already operate their own QA/QC pipelines. It generates atomic log files per run (at both file and dataset levels) and supports seamless parallel execution, enabling straightforward integration with batch schedulers and large-scale production workflows. 
   ```bash
