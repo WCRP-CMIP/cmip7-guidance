@@ -44,5 +44,8 @@ Thumbs.db
 # Generated files
 docs/SUMMARY.md
 
+# Local-only MkDocs override (e.g. building with redirects disabled for preview)
+mkdocs.local.yml
+
 # Copier answers (optional - keep if you want to track config)
 # .copier-answers.yml
