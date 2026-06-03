@@ -29,10 +29,6 @@ plugins:
       lang: en
       separator: '[\s\-\.]+'
 
-  - gen-files:
-      scripts:
-        - hooks/run_scripts.py
-
   - literate-nav:
       nav_file: nav_menu.md
       implicit_index: true
