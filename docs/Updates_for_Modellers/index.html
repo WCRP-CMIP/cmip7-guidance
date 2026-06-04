@@ -2580,7 +2580,46 @@
     </div>
   </div>
   <div class="typography w-full flex-1 *:data-[slot=alert]:first:mt-0">
-    <h2 id="this-page-will-be-updated-with-information-of-interest-to-modelling-groups-that-the-cmip-ipo-has-communicated-by-email-most-recent-at-top">This page will be updated with information of interest to modelling groups that the CMIP IPO has communicated by email (most recent at top).<a class="headerlink" href="#this-page-will-be-updated-with-information-of-interest-to-modelling-groups-that-the-cmip-ipo-has-communicated-by-email-most-recent-at-top" title="Permanent link">&para;</a></h2>
+    <p>This page will be updated with information of interest to modelling groups that the CMIP IPO has communicated by email (most recent at top).</p>
+<hr />
+<h2 id="4th-june-2026">4th June 2026<a class="headerlink" href="#4th-june-2026" title="Permanent link">&para;</a></h2>
+<p>This update includes:</p>
+<ol>
+<li>ESGF-NG update</li>
+<li>Essential Model Documentation (EMD) update and reminder</li>
+<li>Upcoming Data Request patch release
+ </li>
+</ol>
+<h3 id="esgf-ng-publishing-update">ESGF-NG publishing update<a class="headerlink" href="#esgf-ng-publishing-update" title="Permanent link">&para;</a></h3>
+<p>ESGF-NG is now ready to publish CMIP7 data! </p>
+<p>We strongly recommend engaging with the <a href="https://wcrp-cmip.org/cmip7-task-teams/cdnot/">Climate Data Node Operations Team (CDNOT)</a> to obtain support with the publication process.</p>
+<p>Machine readable interfaces are available via the links below, and updates to metagrid (for humans) will be announced once the first data has been published.  Within the new data structure there are two search indices,  east and west, which will be kept synchronised.
+Machine readable interfaces:</p>
+<ul>
+<li><a href="https://search.west.esgf.io/">https://search.west.esgf.io/</a></li>
+<li><a href="https://search.east.esgf.io/">https://search.east.esgf.io/</a></li>
+</ul>
+<h3 id="emd-update-and-reminder">EMD update and reminder<a class="headerlink" href="#emd-update-and-reminder" title="Permanent link">&para;</a></h3>
+<p>The <a href="https://emd.mipcvs.dev/docs/">Essential Model Documentation</a> is a required step for contribution towards CMIP7. Over the last month the review process has accelerated and we strongly encourage modelling groups to engage with this process around a month before preparing data for publication. There are two key phases of the EMD process:</p>
+<ol>
+<li>Registration of model and output grids: this ensures that a grid label is available for your data. Each distinct grid on which data is published requires a corresponding label. (Since many common grids have been registered, this step may have been completed by other members of the community.)</li>
+<li>Registration of models and their components: this will finalise the source_id needed for producing publishable output data.</li>
+</ol>
+<p>Producing standardized (CMORized) data requires both grid labels and source_id. Modelling groups should be able to use the allocated grid labels once the first phase is completed, and an assumed source_id, following the <a href="../CMIP7/Source_ID_guidance/">guidance</a>, can be used while the second phase is in progress. Both phases of the EMD process must be completed before ESGF publication can begin.</p>
+<h4 id="monitoring-the-status-of-your-emd-submissions">Monitoring the status of your EMD submissions<a class="headerlink" href="#monitoring-the-status-of-your-emd-submissions" title="Permanent link">&para;</a></h4>
+<p>If you would like to monitor the status of your submissions to the EMD repository, you can <a href="https://emd.mipcvs.dev/docs/Progress_Tracker.html">enter your GitHub ID here</a>. This tracker will show what you have submitted and which of those have been merged, are in progress by the EMD, or require you to make changes/respond to queries. </p>
+<h4 id="where-can-i-get-more-help">Where can I get more help?<a class="headerlink" href="#where-can-i-get-more-help" title="Permanent link">&para;</a></h4>
+<p>For questions or queries, please send an email to emd@wcrp-cmip.org. We have also compiled some FAQs you might find useful <a href="https://emd.mipcvs.dev/docs/FAQ/">here</a>.</p>
+<h4 id="how-can-i-help-speed-up-the-emd-process">How can I help speed up the EMD process?<a class="headerlink" href="#how-can-i-help-speed-up-the-emd-process" title="Permanent link">&para;</a></h4>
+<p>They key way to speed up the registration process is to increase our pool of reviewers. Those submitting EMD for their centres will be best placed to review other people’s submissions. We estimate the time committent for reviewers is ~30 minutes per week.</p>
+<p><a href="https://airtable.com/apphXCUgASIeT6jCz/pag2oVCHWXFCkJQ3A/form">Sign up to help with reviewing here.</a></p>
+<h3 id="new-institution-registration-for-cmip7-action-required">NEW: Institution registration for CMIP7 (ACTION REQUIRED)<a class="headerlink" href="#new-institution-registration-for-cmip7-action-required" title="Permanent link">&para;</a></h3>
+<p>To ensure that the institution identifiers are correctly understood by the publication infrastructure, a change as been made that requires all modelling groups to use a simple set of forms to register institution member ids and institution ids.</p>
+<p>The institution id is directly used within the data preparation and publication process, while the introduction of an institution member id allows multiple institutes using the same institution id to be appropriately identified. See the <a href="../CMIP7/cv_registration/#2-registration-forms">CMIP7 guidance pages</a> for details and for links to the registration forms.</p>
+<h3 id="data-request-updates">Data Request updates<a class="headerlink" href="#data-request-updates" title="Permanent link">&para;</a></h3>
+<p>A patch release (v1.2.2.4) of the CMIP7 Data Request for AFT production will be released this week to correct minor issues in the previous version (v1.2.2.3, released 19 Dec 2025). Release notes will be <a href="https://wcrp-cmip.org/cmip7-data-request-v1-2-2-4/">available here</a>. Less than 1% of DR variables are affected by the v1.2.2.4 release.</p>
+<p>Following the initial phase of CMIP7 AFT production, an Unharmonised component of the Data Request will exist to facilitate requests by Community MIPs that are not aligned with the AFT timescale. The Harmonised component of the Data Request, which was developed in a community-led process facilitated by the Data Request Task Team and CMIP IPO, is intended for AFT production. The Unharmonised component will involve MIP-defined requests subject only to transparent technical requirements, supported by a simplified workflow (e.g. python tools, variable spreadsheets) designed to help MIPs select subsets of variables from a centralised registry of variables and share their requests with participating modelling centres. Community MIPs interested in this process are encouraged to let the CMIP IPO know their planned timeline.</p>
+<hr />
 <h2 id="22nd-may-2026">22nd May 2026<a class="headerlink" href="#22nd-may-2026" title="Permanent link">&para;</a></h2>
 <p>This update contains information on:</p>
 <ol>
@@ -2607,6 +2646,7 @@
 <p>As noted in the CMIP7 guidance pages there is a <a href="https://github.com/ESGF/cc-plugin-wcrp">wcrp-cmip7 plugin</a> for the IOOS/compliance checker plugin that will be used to ensure compliance with data standards for CMIP7 as part of the publication system. Modelling groups are strongly encouraged to test their datasets for compliance prior to publishing.</p>
 <h3 id="upcoming-data-request-patch-release">Upcoming Data Request patch release<a class="headerlink" href="#upcoming-data-request-patch-release" title="Permanent link">&para;</a></h3>
 <p>We anticipate a Data Request patch update (v1.2.2.4) will be released within the coming weeks providing minor update and fixes. The updates will be well documented so you can easily see what has changed. We expect data publication to continue to support recent versions of the Data Request and will confirm the range of valid versions on the guidance pages in the near future. </p>
+<hr />
 <h2 id="14th-april-2026">14th April 2026<a class="headerlink" href="#14th-april-2026" title="Permanent link">&para;</a></h2>
 <p>This update contains information on:
 1.  Scenario forcings update (H and VL ozone and nitrogen deposition now available!)
@@ -2646,6 +2686,7 @@
 <p>Thank you so much for support and willingness to enable the impact model simulations within the ISIMIP4-FT hopefully in time for the AR7!</p>
 <p>Kind regards
 Katja from the ISIMIP coordination team (katja.frieler@pik-potsdam.de)      </p>
+<hr />
 <h2 id="20th-march-2026">20th March 2026<a class="headerlink" href="#20th-march-2026" title="Permanent link">&para;</a></h2>
 <p>There is an update to the nitrogen deposition data (new data is published under source ID FZJ-CMIP-nitrogen-2-0). However, if you already have simulations that use the previous version (source ID FZJ-CMIP-nitrogen-1-2`), you do not need to re-run. Further details below and at https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/nitrogen-deposition/</p>
 <p>As a result of an issue being found (<a href="https://github.com/PCMDI/input4MIPs_CVs/issues/425">#425</a>), a new version of the nitrogen deposition forcing has been released.</p>
@@ -2656,6 +2697,7 @@ For further details about the error and recommended action, please see the nitro
 </ul>
 <p>If any modelling centres run piControl and/or historical simulations with both the FZJ-CMIP-nitrogen-2-0 and FZJ-CMIP-nitrogen-1-2 forcing,
 these simulations would be of interest to the Forcings Task Team. (<a href="https://github.com/PCMDI/input4MIPs_CVs/pull/427">#427</a>)</p>
+<hr />
 <h2 id="26th-february-2026">26th February 2026<a class="headerlink" href="#26th-february-2026" title="Permanent link">&para;</a></h2>
 <p>A further update on CMIP7 future forcings availability, the simple plumes aerosol data for the scenarios VL and H are now published:</p>
 <p>Fiedler, S., &amp; Azoulay, A. (2026). CMIP7 Climate Forcings Dataset: Simple plumes for anthropogenic aerosols in H and VL scenarios (SPv2.1) [Data set]. Zenodo. <a href="https://doi.org/10.5281/zenodo.18713154">https://doi.org/10.5281/zenodo.18713154</a> </p>
@@ -3663,11 +3705,37 @@ CMIP IPO (on behalf of the Data Request Task Team)</p>
         
         
         
-        <a href="#this-page-will-be-updated-with-information-of-interest-to-modelling-groups-that-the-cmip-ipo-has-communicated-by-email-most-recent-at-top"
+        <a href="#4th-june-2026"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#this-page-will-be-updated-with-information-of-interest-to-modelling-groups-that-the-cmip-ipo-has-communicated-by-email-most-recent-at-top');">
-            This page will be updated with information of interest to modelling groups that the CMIP IPO has communicated by email (most recent at top).
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#4th-june-2026');">
+            4th June 2026
         </a>
+        
+        
+        <a href="#esgf-ng-publishing-update"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#esgf-ng-publishing-update');">
+            ESGF-NG publishing update
+        </a>
+        
+        <a href="#emd-update-and-reminder"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#emd-update-and-reminder');">
+            EMD update and reminder
+        </a>
+        
+        <a href="#new-institution-registration-for-cmip7-action-required"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#new-institution-registration-for-cmip7-action-required');">
+            NEW: Institution registration for CMIP7 (ACTION REQUIRED)
+        </a>
+        
+        <a href="#data-request-updates"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#data-request-updates');">
+            Data Request updates
+        </a>
+        
         
 
         
