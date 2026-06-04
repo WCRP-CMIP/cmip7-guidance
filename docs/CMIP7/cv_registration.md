@@ -30,7 +30,7 @@ Registration is done through **GitHub issue forms** that are linked below (no Gi
 Register your institution before registering a model.
 This is done in two parts:
 
-1. register as an 'institution member' with an associated ID (i.e. DRS name)
+1. register as an 'institution member' with an associated ID (i.e. [DRS name](Global_Attributes.md#4-data-reference-syntax-drs-elements))
 2. register for an institution ID (i.e. DRS name) based on the members that should be associated with the institution ID
     - If your institution ID is associated with a consortium, you will have more than one member and an institution ID that differs from those of your members
     - If your institution ID is associated with a single member, you will have one member and an institution ID that is the same as the the member's ID (i.e. DRS name).
