@@ -17,7 +17,8 @@ provided as early as possible):
   Publication of your model output (on ESGF) will not be possible
   without first registering your institution and model, which includes providing the
   **Essential Model Documentation (EMD)** for your model. 
-  The EMD registration process is [documented here](https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/) and the list of currently registered institutions can be [found here](https://github.com/WCRP-CMIP/CMIP7-CVs/tree/main/institution).
+  The EMD registration process is [documented here](https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/). 
+  The list of institutions currently registered for CMIP7 can be [found here](https://github.com/WCRP-CMIP/CMIP7-CVs/tree/main/institution) and further details about the registered institutions are [stored here](https://github.com/WCRP-CMIP/WCRP-universe/tree/esgvoc/institution).
   **Output grids for regridded data must also be registered** via an online form described in the [EMD documenation](https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/) (i.e., for any grid used to report data that is not the model's native grid).
 
 [//]: # (* Following, or as part of, the registration of your models you will be able to indicate your )
