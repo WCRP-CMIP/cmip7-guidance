@@ -50,7 +50,7 @@ They key way to speed up the registration process is to increase our pool of rev
 ### NEW: Institution registration for CMIP7 (ACTION REQUIRED)
 To ensure that the institution identifiers are correctly understood by the publication infrastructure, a change as been made that requires all modelling groups to use a simple set of forms to register institution member ids and institution ids.
 
-The institution id is directly used within the data preparation and publication process, while the introduction of an institution member id allows multiple institutes using the same institution id to be appropriately identified. See the [CMIP7 guidance pages](CMIP7/cv_registration/#2-registration-forms) for details and for links to the registration forms.
+The institution id is directly used within the data preparation and publication process, while the introduction of an institution member id allows multiple institutes using the same institution id to be appropriately identified. See the [CMIP7 guidance pages](CMIP7/cv_registration.md#2-registration-forms) for details and for links to the registration forms.
 
 ### Data Request updates
 A patch release (v1.2.2.4) of the CMIP7 Data Request for AFT production will be released this week to correct minor issues in the previous version (v1.2.2.3, released 19 Dec 2025). Release notes will be [available here](https://wcrp-cmip.org/cmip7-data-request-v1-2-2-4/). Less than 1% of DR variables are affected by the v1.2.2.4 release.
