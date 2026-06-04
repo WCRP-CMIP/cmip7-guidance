@@ -13,12 +13,15 @@ This guide explains how to register new entries in CMIP7 Controlled Vocabularies
 
 CMIP7 uses **Controlled Vocabularies (CVs)** to ensure consistency across all participating modelling centres. Before publishing data, you must register:
 
-- Your **institution** (organisation)
+- Your **institution**
 - Your **model** (source_id)
-- Any new **experiments** (if applicable)
+- Any new **experiments** (if applicable, to be done by MIP leads)
 - **Model documentation** (EMD) components
 
 Registration is done through **GitHub issue forms** that are linked below (no Git expertise required).
+
+!!! info "Data production overview:"
+    Key steps for data preparation and publication readiness are outlined in the slides from [CMIP 2026 workshop WIP session](https://zenodo.org/records/18934629) (slides 30-36).
 
 ---
 
@@ -28,7 +31,16 @@ Registration is done through **GitHub issue forms** that are linked below (no Gi
 
 
 Register your institution before registering a model.
-This is done in two parts:
+This requires the creation of two "objects"; the *institution member id* and the *institution id*.
+
+In CMIP6 several institution ids represented a collection of multiple
+institutes (see for example `E3SM-Project` and `EC-Earth-Consortium` within the 
+[CMIP6 CVs](https://wcrp-cmip.github.io/CMIP6_CVs/docs/CMIP6_institution_id.html)). 
+For CMIP7 this would be achieved through multiple *institution member* registrations and a single *institution id* registration. The institution id is then used in data preparation and publication processes.
+
+If there is only a single institution member publishing under a single institution id then **it is necessary to complete both registration forms**, but only a single institution member needs to be referenced in the second form.
+
+The complete the institution registration it is necessary to 
 
 1. register as an 'institution member' with an associated ID (i.e. [DRS name](Global_Attributes.md#4-data-reference-syntax-drs-elements))
 2. register for an institution ID (i.e. DRS name) based on the members that should be associated with the institution ID
@@ -60,7 +72,7 @@ Guidance on constructing a source id is provided in the [Source ID Guidance](Sou
 
 **Repository**: [CMIP7-CVs](https://github.com/WCRP-CMIP/CMIP7-CVs) [Registered Content](https://github.com/WCRP-CMIP/CMIP7-CVs/tree/main/institution) (content populated via [the EMD](https://github.com/WCRP-CMIP/Essential-Model-Documentation/tree/src-data/model))
 
-Source IDs and grid labels will be registered automatically within the CVs once EMD has been completed.
+Grid labels and Source IDs will be registered automatically within the CVs once the relevant EMD stages have been completed.
 If you have completed the EMD but your source ID or grid label is not in the CVs,
 please [open an issue in the CMIP7 CVs repository](https://github.com/WCRP-CMIP/CMIP7-CVs/issues/new?template=BLANK_ISSUE)
 so we can figure out where the information processing has gone wrong.
@@ -140,8 +152,8 @@ flowchart LR
 ```mermaid
 flowchart LR
     A["1. Institution (CMIP7-CVs)"] --> B["2. EMD Registration (Essential-Model-Documentation)"]
-    B --> C["3. source_id (CMIP7-CVs)"]
-    C --> D["4. Experiments (if needed, CMIP7-CVs)"]
+    B --> C["3. source_id (CMIP7-CVs, automated)"]
+    C --> D["4. Experiments (if needed, MIPs to request via CMIP7-CVs)"]
 ```
 ### Step-by-Step Process
 
@@ -156,7 +168,7 @@ flowchart LR
 ### Typical Timeline
 
 - Simple registrations (institution, component configuration): 1-3 days
-- Complex registrations (grid-cells, source-id): May take longer due to dependencies
+- Complex registrations (grid-cells, source-id): May take longer due to dependencies and clarifications
 
 ### Tips
 
@@ -169,11 +181,11 @@ flowchart LR
 
 ## 4. After Registration
 
-Once your data is registered:
+Once your entries are registered:
 
 1. The **esgvoc** library will include your entries in the next update
-2. You can use your registered identifiers in CMOR tables
-3. Your data will pass QA/QC validation for these CV fields
+2. Your registered identifiers will appear as valid entries in the CMIP7 CMOR tables
+3. Your model output netCDF files will be able to pass QA/QC validation for these CV fields
 
 ---
 
@@ -200,7 +212,7 @@ The `esgvoc` Python library provides programmatic access to all CVs:
 These repositories maintain the information used by the EMD.
 Some of the information is automatically translated out into the CV repositories,
 but these EMD repositories are not themselves CV repositories.
-**Your data is only registered in the CVs if it appears in the CVs repositories above. Registration in the EMD repositories alone is not registration in the CVs.**
+**Your data is only registered in the CVs if it appears in the CVs repositories above. Registration in the EMD repositories alone is not registration in the CVs.  However the EMD information required by the CVs should automatically propagate into the CVs on successful completion of the relevant EMD stages.**
 
 | Repository | Content |
 |------------|---------|
@@ -214,4 +226,4 @@ but these EMD repositories are not themselves CV repositories.
 - **Question about a specific CV value**: Open a [CV value issue](https://github.com/WCRP-CMIP/CMIP7-CVs/issues/new?template=cv-value.md) in the CMIP7 CVS repository
 - **CV discussions**: See [Discussions on the CVs repo](https://github.com/WCRP-CMIP/CMIP7-CVs/discussions)
 - **General questions**: Open a [blank issue](https://github.com/WCRP-CMIP/CMIP7-CVs/issues/new?template=BLANK_ISSUE) in the CMIP7 CVS repository and ask your question. Please include as much context and other helpful information as possible.
-- **Contact IPO**: For complex cases, contact the [CMIP International Project Office](mailto:cmip-ipo@esa.int)
+- **Contact IPO**: For complex or sensitive cases, contact the [CMIP International Project Office](mailto:cmip-ipo@esa.int)
