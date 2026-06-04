@@ -2785,10 +2785,11 @@ Developers of tools that do an equivalent job to CMOR for CMIP7 are invited to
 update to this section of the documentation.</p>
 <h3 id="6a-cmor">6a CMOR<a class="headerlink" href="#6a-cmor" title="Permanent link">&para;</a></h3>
 <p>CMOR, the <code>Climate Model Output Rewriter</code>, is a library written in C with interfaces for both Fortran and Python, with the aim of enforcing correct data and metadata structures for projects such as CMIP, which are now used widely across many projects.
-CMOR is maintained by PCMDI on <a href="https://github.com/PCMDI/cmor">github</a> and is available for installation via <a href="https://anaconda.org/conda-forge/cmor">conda</a> and has documentation <a href="https://cmor.llnl.gov/">here</a>.
+CMOR is maintained by PCMDI on <a href="https://github.com/PCMDI/cmor">github</a> and has documentation <a href="https://cmor.llnl.gov/">here</a>.
+It is available for installation via <a href="https://anaconda.org/conda-forge/cmor">conda</a>, and via pip since version 3.15.0 using the wheel builds provided on the <a href="https://github.com/PCMDI/cmor/releases/latest">release page</a>.
 For CMIP7, the CMOR library has been updated in line with the changes to the <a href="https://doi.org/10.5281/zenodo.17250296">CMIP7 Global Attributes</a>. 
-The <strong>minimum CMOR version</strong> required for CMIP7 production is <a href="https://github.com/PCMDI/cmor/releases/3.14.2">CMOR 3.14.2</a>.</p>
-<p>The CMOR PrePARE tool, used for quality checking in CMIP6, has been retired and data producers should refer to section 7 below for guidance on the new quality control tool, <code>esgf-qc</code>.</p>
+The <strong>minimum CMOR version</strong> recommended for CMIP7 production is <a href="https://github.com/PCMDI/cmor/releases/3.15.1">CMOR 3.15.1</a>.</p>
+<p>The CMOR PrePARE tool, used for quality checking in CMIP6, has been retired and data producers should refer to the <a href="#7-software-for-checking-output">Quality Control (QC) checks section</a> below for guidance on its replacement.</p>
 <p>CMOR uses three main inputs;</p>
 <div class="table-wrapper"><table>
 <thead>
@@ -2815,9 +2816,10 @@ The <strong>minimum CMOR version</strong> required for CMIP7 production is <a hr
 <p>For CMIP7 the <a href="https://github.com/WCRP-CMIP/cmip7-cmor-tables/">CMOR tables</a> have been constructed from 
 the <a href="https://wcrp-cmip.org/cmip-phases/cmip7/cmip7-data-request/">CMIP7 data request</a> and releases of these tables, starting with version v1.2.2.2, will follow data request releases until the new WCRP Variable Registry is established.
 Note that CMOR tables may also be referred to in some contexts as MIP tables.</p>
-<p>The Controlled Vocabulary JSON file used by CMOR will be produced and made available as part of the <a href="https://github.com/WCRP-CMIP/CMIP7-CVs">CMIP7-CVs</a> repository and versioned separately. 
-Note that this is a change relative to CMIP6 and further guidance alongside the CMOR tables when this file is ready for use. 
-For testing purposes sample CV JSON files are available via the <a href="https://github.com/WCRP-CMIP/cmip7-cmor-tables/tree/test">CMOR tables</a> repository.</p>
+<p>The Controlled Vocabulary (CV) JSON file used by CMOR is <a href="https://github.com/WCRP-CMIP/cmip7-cmor-tables/blob/main/tables-cvs/cmor-cvs.json">available here</a>.
+This file is updated automatically when <a href="../cv_registration/">new CVs entries are registered</a>.
+For easier viewing the same information is also provided in <a href="https://github.com/WCRP-CMIP/cmip7-cmor-tables/tree/main/tables-cvs/split-view">files separated by CV term</a>.
+Users should be aware that the primary source of CMIP7 CVs information is <a href="https://esgf.github.io/esgf-vocab/">esgvoc</a>, from which information required by CMOR propagates into the CV JSON file used by CMOR.</p>
 <p>Examples of the input JSON file for CMOR are available via <a href="https://github.com/WCRP-CMIP/cmip7-cmor-tables/blob/main/cmor_demo.ipynb">a jupyter notebook</a>.</p>
 <h3 id="6b-cmip7repack">6b cmip7repack<a class="headerlink" href="#6b-cmip7repack" title="Permanent link">&para;</a></h3>
 <p><code>cmip7repack</code>, for repacking CMIP7 datasets to have a cloud-optimized internal structure, is a command-line tool maintained by NCAS on <a href="https://github.com/NCAS-CMS/cmip7repack">github</a>, will be available for installation via <a href="https://anaconda.org/conda-forge/cmip7repack">conda</a>, and has documentation <a href="https://github.com/NCAS-CMS/cmip7repack">here</a>.</p>
@@ -2843,7 +2845,7 @@ For testing purposes sample CV JSON files are available via the <a href="https:/
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>usage: check_cmip7_packing [-h] [-v] [-V] FILE [FILE ...]
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>Full man page with -h
 </code></pre></div>
-<h2 id="7-software-for-checking-output">7.  Software for checking output<a class="headerlink" href="#7-software-for-checking-output" title="Permanent link">&para;</a></h2>
+<h2 id="7-software-for-checking-output">7. Software for checking output<a class="headerlink" href="#7-software-for-checking-output" title="Permanent link">&para;</a></h2>
 <p>The <strong>ESGF Quality Control (QC) solution</strong> is built around a new plugin developed for the <a href="http://ioos.github.io/compliance-checker/">IOOS Compliance Checker</a>, providing a unified and extensible way to validate climate model outputs intended for publication on the Earth System Grid Federation (ESGF). 
 Documentation for the WCRP plugin is <a href="https://esgf.github.io/cc-plugin-wcrp/">found here</a>.</p>
 <p>The goal of this plugin is to provide a cohesive, extensible, and transparent system that consolidates key checks for WCRP projects, covers at least the minimum requirements for ESGF publication, and produces standardized reporting.</p>
@@ -2894,7 +2896,7 @@ Documentation for the WCRP plugin is <a href="https://esgf.github.io/cc-plugin-w
 <li>Expected values or constraints where applicable</li>
 </ul>
 <blockquote>
-<p>⚠️ The <strong>variable registry is not yet queried</strong>. Variable information from CVs is provided by <strong>esgvoc</strong>.</p>
+<p>⚠️ Variable information in the CVs originates from the CMIP7 Data Request and is provided to the QC tool by <strong>esgvoc</strong>. It will follow data request releases until the new WCRP Variable Registry is established.</p>
 </blockquote>
 <p><strong>Usage</strong> is built on the IOOS Compliance Checker, maintaining workflow flexibility for modeling groups that already operate their own QA/QC pipelines. It generates atomic log files per run (at both file and dataset levels) and supports seamless parallel execution, enabling straightforward integration with batch schedulers and large-scale production workflows. 
   <div class="codehilite"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>compliance-checker<span class="w"> </span>-t<span class="w"> </span>wcrp_cmip6:1.0<span class="w"> </span>/path/to/data/file.nc

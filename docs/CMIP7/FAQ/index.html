@@ -2600,9 +2600,9 @@ There should be no confusion between grids and there is no distinction in the gr
 <h2 id="standardizing-cmorizing-data">Standardizing (CMORizing) data<a class="headerlink" href="#standardizing-cmorizing-data" title="Permanent link">&para;</a></h2>
 <h3 id="has-cmor-been-updated-to-accommodate-cmip7s-metadata-requirements">Has CMOR been updated to accommodate CMIP7's metadata requirements?<a class="headerlink" href="#has-cmor-been-updated-to-accommodate-cmip7s-metadata-requirements" title="Permanent link">&para;</a></h3>
 <p><strong>Yes.</strong>
-The minimum CMOR version required for CMIP7 production is <a href="https://github.com/PCMDI/cmor/releases/3.14.2">CMOR 3.14.2</a> in order to output the global attributes correctly and to read the MIP tables (CMOR tables) correctly.
-The <a href="https://github.com/WCRP-CMIP/cmip7-cmor-tables/blob/main/cmor_demo.ipynb">CMOR usage examples</a> show how to use CMOR with the <a href="https://github.com/WCRP-CMIP/cmip7-cmor-tables/">new tables</a> and <a href="../Branded_Variables/">branded variables</a>.
-See also the <a href="../Guidance_for_modellers/#6a-cmor">CMOR guidance</a> section.</p>
+The minimum recommended version is given in the <a href="../Guidance_for_modellers/#6a-cmor">CMOR guidance</a> section, along with further information about using CMOR.
+A recent CMOR version is required in order to output the global attributes correctly and to read the MIP tables (CMOR tables) correctly.
+The <a href="https://github.com/WCRP-CMIP/cmip7-cmor-tables/blob/main/cmor_demo.ipynb">CMOR usage examples</a> show how to use CMOR with the <a href="https://github.com/WCRP-CMIP/cmip7-cmor-tables/">new tables</a> and <a href="../Branded_Variables/">branded variables</a>.</p>
 <h3 id="does-cmip7repack-duplicate-the-amount-of-data">Does cmip7repack duplicate the amount of data?<a class="headerlink" href="#does-cmip7repack-duplicate-the-amount-of-data" title="Permanent link">&para;</a></h3>
 <p><strong>No.</strong>
 Although each file is duplicated as it is being repacked, the default behaviour of the <a href="../Guidance_for_modellers/#6b-cmip7repack"><code>cmip7repack</code> tool</a> is to overwrite the original file. 
@@ -2614,7 +2614,7 @@ There should be no need to keep the un-repacked versions.</p>
 Repacking the data greatly improves the efficiency of these operations. 
 Not repacking the data can lead to prohibitively slow access, which may in turn degrade access for other users who are accessing data from the same node (server).</p>
 <h3 id="is-cmip7-repacking-integrated-into-cmor">Is CMIP7 repacking integrated into CMOR?<a class="headerlink" href="#is-cmip7-repacking-integrated-into-cmor" title="Permanent link">&para;</a></h3>
-<p>Improved chunking to support CMIP7's repacking requirement has been introduced in <a href="https://github.com/PCMDI/cmor/releases/3.14.0">CMOR 3.14.0</a>.
+<p>Improved chunking to support CMIP7's repacking requirement was introduced in <a href="https://github.com/PCMDI/cmor/releases/3.14.0">CMOR 3.14.0</a> (see the <a href="../Guidance_for_modellers/#6a-cmor">CMOR guidance</a> section for further information about using CMOR).
 However if netCDF files written by CMOR are subsequently concatenated (e.g., if one-year files are concatenated to a single file covering an experiment's whole time period) then it is still necessary to run <code>cmip7repack</code> on the concatenated file.
 The <a href="../Guidance_for_modellers/#6b-cmip7repack"><code>check_cmip7_packing</code> tool</a> can be used to confirm that a netCDF file is compliant with the repacking requirement.</p>
 <h3 id="if-model-documentation-grid-registration-and-repacking-are-mandatory-isnt-there-a-risk-that-this-is-too-much-of-an-obstacle-for-modeling-groups-without-the-resources-to-prepare-everything">If model documentation, grid registration, and repacking are mandatory, isn’t there a risk that this is too much of an obstacle for modeling groups without the resources to prepare everything?<a class="headerlink" href="#if-model-documentation-grid-registration-and-repacking-are-mandatory-isnt-there-a-risk-that-this-is-too-much-of-an-obstacle-for-modeling-groups-without-the-resources-to-prepare-everything" title="Permanent link">&para;</a></h3>
