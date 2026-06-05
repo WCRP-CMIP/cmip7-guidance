@@ -285,8 +285,9 @@ Different MIPs also have different requirements for vertical grid reporting. Out
 As in previous phases, all CMIP7 output has been written to netCDF files.
 Before being published, these files must pass the [ESGF Quality Control (ESGF-QC)][esgfqc].
 Many modelling centres use the [CMOR][cmor] software to standardize their files. They are then said to have been “CMORized”.
+(The term "CMORized" can also refer to netCDF files that meet the same standards even if CMOR itself did not produce them.)
 
-Essential features of CMORized data are :
+Essential features of CMORized data are:
 
 * Standardized naming from CMIP [CVs][cmipCvs]
 * Consistent [file naming convention][GlobalAttrs]
@@ -297,9 +298,6 @@ Essential features of CMORized data are :
 * Self-describing (all metadata needed to interpret the data are included in the file)
 * Consistent units and standard names following [CF conventions][cfConventionsPage]
 * [Standard chunking](Guidance_for_modellers.md#5-model-output-requirements)
-
-
-
 
 
 ## 5.  Reporting suspected errors
