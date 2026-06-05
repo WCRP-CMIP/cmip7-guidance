@@ -18,7 +18,7 @@ provided as early as possible):
   without first registering your institution and model, which includes providing the
   **Essential Model Documentation (EMD)** for your model. 
   The EMD registration process is [documented here](https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/). 
-  The institution registration process, and the list of already-registered institutes, are [available here](cv_registration.md#21-institution-registration).
+  The institution registration process is [available here](cv_registration.md#21-institution-registration) (including the list of institutes that are already registered).
   **Output grids for regridded data must also be registered** via an online form described in the [EMD documenation](https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/) (i.e., for any grid used to report data that is not the model's native grid).
 
 [//]: # (* Following, or as part of, the registration of your models you will be able to indicate your )
