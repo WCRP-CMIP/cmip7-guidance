@@ -12,12 +12,13 @@ General guidance is also available via the [General Guidance](General_Guidance.m
 Groups who plan to participate in CMIP7 should (in roughly this order, although model documentation should be 
 provided as early as possible):
 
-* Indicate your intention to participate by registering your institution and model with the 
-  [CMIP7 Controlled Vocabularies](https://github.com/WCRP-CMIP/CMIP7-CVs) when the registration
-  process is available. Publication of your model output (on ESGF) will not be possible
+* Indicate your intention to participate by [registering your institution and model](cv_registration.md) with the 
+  [CMIP7 Controlled Vocabularies](https://github.com/WCRP-CMIP/CMIP7-CVs). 
+  Publication of your model output (on ESGF) will not be possible
   without first registering your institution and model, which includes providing the
   **Essential Model Documentation (EMD)** for your model. 
-  The EMD registration process is [documented here](https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/) and the list of currently registered institutions can be found at ***link needed***.
+  The EMD registration process is [documented here](https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/). 
+  The institution registration process is [available here](cv_registration.md#21-institution-registration) (including the list of institutes that are already registered).
   **Output grids for regridded data must also be registered** via an online form described in the [EMD documenation](https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/) (i.e., for any grid used to report data that is not the model's native grid).
 
 [//]: # (* Following, or as part of, the registration of your models you will be able to indicate your )
