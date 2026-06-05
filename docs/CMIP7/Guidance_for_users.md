@@ -12,6 +12,7 @@ This page is designed to inform users of climate model outputs on key CMIP7 conc
     An overview of **how to access and use CMIP data** is given in the slides from [CMIP 2026 workshop WIP session](https://zenodo.org/records/18934629) (slides 3-20).
 
 General guidance is also available via the [General Guidance](General_Guidance.md) page.
+To sign up for the CMIP Community News mailing list please visit <https://wcrp-cmip.org/cmip-mailing-lists/>.
 
 ## 1.  Accessing CMIP7 data
 

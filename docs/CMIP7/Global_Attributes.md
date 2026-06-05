@@ -603,6 +603,8 @@ Some of the currently existing CVs have only been partially populated. The follo
 - institution_id
 - source_id (see [Source ID Guidance](Source_ID_guidance.md) for information on constructing a new source id)
 
+How to register new values is [described here](cv_registration.md).
+
 ### Variable Identifiers
 
 The variable_id global attribute records the "root name" of a branded variable. The recognized root names can be found either in the [CMIP7 Data Request](https://cmip-data-request.github.io/cmip7-dreq-webview/variable_search.html) or the [CMOR variable tables](https://github.com/WCRP-CMIP/cmip7-cmor-tables/tree/main/tables). Further guidance on the branded variables naming scheme, which is new in CMIP7, is [available here](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/Branded_Variables/).
