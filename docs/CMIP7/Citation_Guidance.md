@@ -5,7 +5,7 @@ title: CMIP7 Citation Guidance
 
 # Guidance for CMIP7 Citations
 
-The CMIP7 Citation service is hosted at [https://cmip7-citations.ceda.ac.uk/citations/](https://cmip7-citations.ceda.ac.uk/citations/).
+The CMIP7 Citation service is hosted at <https://cmip7-citations.ceda.ac.uk/citations/>.
 
 CMIP7 data citations will be created automatically in response to data publication on ESGF. The granularity of the data citations will be at the level of a model's contribution to an experiment.
 
