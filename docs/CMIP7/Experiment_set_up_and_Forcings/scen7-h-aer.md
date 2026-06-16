@@ -14,7 +14,7 @@ Models with interactive chemistry should run `scen7-h-AQ` instead.
 
 - Responsible activity: [AerChemMIP](./index.md#aerchemmip)
 - Tier: 1
-- MIP co-chair review: **In progress** see
+- MIP co-chair review: **Complete** see
   [https://github.com/WCRP-CMIP/cmip7-guidance/issues/184](https://github.com/WCRP-CMIP/cmip7-guidance/issues/184)
 
 This page is intended to help with implementation.
