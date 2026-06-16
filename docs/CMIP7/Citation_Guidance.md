@@ -21,4 +21,4 @@ The Citation Service is configured to natively support CMIP7, CORDEX-CMIP6 and C
 Above is the flow diagram showing internal processes within the citation service, including the user-facing landing pages (Purple Boxes).
 
 
-Additional information for developers can be found at the citation service documentation site [https://cedadev.github.io/cmip7-citation-service](https://cedadev.github.io/cmip7-citation-service)
+Additional information for developers can be found at the citation service documentation site: <https://cedadev.github.io/cmip7-citation-service>
