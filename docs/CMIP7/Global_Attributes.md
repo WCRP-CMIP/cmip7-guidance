@@ -23,7 +23,7 @@ Each CMIP7 model output file includes standardized metadata, often included as f
 
 Some of the global attributes are mandatory (e.g., the attributes comprising the DRS), while others are conditionally required or optional. Most attributes must be assigned a value found in a particular list of terms referred to as its controlled vocabulary (CV). Most CVs are revised versions of those relied on in previous CMIP phases. Controlled vocabularies ensure metadata consistency across datasets, which facilitates interpretation of the data and development of software tools for search and retrieval of data.
 
-The CMIP7 Controlled Vocabularies (CVs) for the attributes described in this document are available in human-readable form in the [cmor-cvs.json file](https://github.com/WCRP-CMIP/cmip7-cmor-tables/blob/main/tables-cvs/cmor-cvs.json) found in the CMOR github repository as described in [Appendix 3](#appendix-3-cmip7-controlled-vocabularies-cvs-for-global-attributes) below.
+The CMIP7 Controlled Vocabularies (CVs) for the attributes described in this document are available in human-readable form in the [CMOR CVs file][cmor-cvs] (or its [split view][cmor-cvs-split]) found in the CMOR github repository as described in [Appendix 3](#appendix-3-cmip7-controlled-vocabularies-cvs-for-global-attributes) below.
 
 ---
 
@@ -577,7 +577,7 @@ The following CMIP6 global attributes are no longer officially recognized by CMI
 
 ## Appendix 3. CMIP7 Controlled Vocabularies (CVs) for Global Attributes
 
-The controlled vocabularies (CVs) from which values assigned to many of the global attributes can be viewed in human readable lists in the CMIP7 CMOR tables github repository in the [cmor-cvs.json file](https://github.com/WCRP-CMIP/cmip7-cmor-tables/blob/main/tables-cvs/cmor-cvs.json). The following CVs in this file are not expected to be amended for the duration of CMIP7:
+The controlled vocabularies (CVs) from which values assigned to many of the global attributes can be viewed in human readable lists in the CMIP7 CMOR tables github repository in the [CMOR CVs file][cmor-cvs] or its [split view][cmor-cvs-split]. The following CVs in this file are not expected to be amended for the duration of CMIP7:
 
 ### Static CVs
 
@@ -595,7 +595,7 @@ The controlled vocabularies (CVs) from which values assigned to many of the glob
 
 ### CVs in Place but with Ongoing Addition of New Values
 
-Some of the currently existing CVs have only been partially populated. The following attribute lists (again available in the [cmor-cvs.json file](https://github.com/WCRP-CMIP/cmip7-cmor-tables/blob/main/tables-cvs/cmor-cvs.json)) will be supplemented as additional values are registered:
+Some of the currently existing CVs have only been partially populated. The following attribute lists (again available in the [CMOR CVs file][cmor-cvs] or its [split view][cmor-cvs-split]) will be supplemented as additional values are registered:
 
 - activity_id
 - experiment_id
@@ -603,6 +603,13 @@ Some of the currently existing CVs have only been partially populated. The follo
 - institution_id
 - source_id (see [Source ID Guidance](Source_ID_guidance.md) for information on constructing a new source id)
 
+How to register new values is [described here](cv_registration.md).
+
 ### Variable Identifiers
 
 The variable_id global attribute records the "root name" of a branded variable. The recognized root names can be found either in the [CMIP7 Data Request](https://cmip-data-request.github.io/cmip7-dreq-webview/variable_search.html) or the [CMOR variable tables](https://github.com/WCRP-CMIP/cmip7-cmor-tables/tree/main/tables). Further guidance on the branded variables naming scheme, which is new in CMIP7, is [available here](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/Branded_Variables/).
+
+
+
+[cmor-cvs]: https://github.com/WCRP-CMIP/cmip7-cmor-tables/blob/main/tables-cvs/cmor-cvs.json
+[cmor-cvs-split]: https://github.com/WCRP-CMIP/cmip7-cmor-tables/blob/main/tables-cvs/split-view
