@@ -41,7 +41,6 @@ Branch from [piControl](./picontrol.md) at the same time as [piClim-control](./p
 
 Your output time axis must start on 1850-01-01 and must end on 2100-12-31.
 You must perform the full simulation i.e. 251 simulation years.
-Extensions to 2150-12-31 (301 simulation years) are welcome but not mandatory.
 
 ### Minimum ensemble size
 
@@ -60,7 +59,7 @@ The piClim-histaer experiment uses a mix of fixed and transient forcings.
 The fixed forcings are: aerosol optical properties, greenhouse gas concentrations, land use, nitrogen deposition, ozone,
 population density, sea-surface temperature forcing, solar and stratospheric aerosol forcing.
 The transient forcings are: anthropogenic emissions and biomass burning emissions.
-The species to perturb are SO2, BC, OC, NOx, NH3, VOC and CO.
+The species to perturb are SO2, BC, OC, NH3.
 
 ### Data
 
