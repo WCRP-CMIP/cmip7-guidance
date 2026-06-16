@@ -59,9 +59,7 @@ If further guidance would be helpful, please [raise an issue](https://github.com
 ### General headlines
 
 The esm-scen7-h-Aer experiment uses a mix of fixed and transient forcings.
-The fixed forcings are: anthropogenic emissions and biomass burning emissions.
-The transient forcings are: aerosol optical properties, greenhouse gas concentrations, land use, nitrogen deposition,
-ozone, population density, solar and stratospheric aerosol forcing.
+Please see the data sections below for details.
 
 ### Data
 
