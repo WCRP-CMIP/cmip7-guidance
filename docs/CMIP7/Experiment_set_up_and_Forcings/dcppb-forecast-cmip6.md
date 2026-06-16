@@ -35,8 +35,9 @@ dcppB-forecast-cmip6 does not have a parent experiment.
 
 ### Output time axis
 
-Your output time axis must start on 2025-01-01 and must end on 2034-12-31.
-You must perform the full simulation i.e. 10 simulation years.
+Your output time axis must not end later than 2035-12-31.
+You are free to start the time axis of your outputs at whatever time you like that is compatible with the end date.
+You must perform at least 10 simulation years.
 
 ### Minimum ensemble size
 
