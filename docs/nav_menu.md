@@ -20,6 +20,7 @@
     - [amip](CMIP7/Experiment_set_up_and_Forcings/amip.md)
     - [amip-p4K](CMIP7/Experiment_set_up_and_Forcings/amip-p4k.md)
     - [amip-piForcing](CMIP7/Experiment_set_up_and_Forcings/amip-piforcing.md)
+    - [dcppB-forecast-cmip6](CMIP7/Experiment_set_up_and_Forcings/dcppb-forecast-cmip6.md)
     - [esm-flat10](CMIP7/Experiment_set_up_and_Forcings/esm-flat10.md)
     - [esm-flat10-cdr](CMIP7/Experiment_set_up_and_Forcings/esm-flat10-cdr.md)
     - [esm-flat10-zec](CMIP7/Experiment_set_up_and_Forcings/esm-flat10-zec.md)
