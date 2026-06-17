@@ -18,6 +18,7 @@ If you notice something that is unclear, please
 
 For the full background of the experiment, please see the following URLs:
 
+- [https://doi.org/10.5194/gmd-19-4447-2026](https://doi.org/10.5194/gmd-19-4447-2026)
 - [https://doi.org/10.5194/acp-20-9591-2020](https://doi.org/10.5194/acp-20-9591-2020)
 - [https://doi.org/10.5194/gmd-9-3447-2016](https://doi.org/10.5194/gmd-9-3447-2016)
 
@@ -49,6 +50,7 @@ The following information will help you identify the forcings to use.
 However, we can't define every single detail because there can be lots of subjective steps between the raw forcings data
 and model inputs (e.g. interpolation, re-aggregation, supplementation with other information).
 If further guidance would be helpful, please [raise an issue](https://github.com/WCRP-CMIP/cmip7-guidance/issues/new).
+The species to perturb are SO2, BC, OC, and NH3.
 
 ### General headlines
 

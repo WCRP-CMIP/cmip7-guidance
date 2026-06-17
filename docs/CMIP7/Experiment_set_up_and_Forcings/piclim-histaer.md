@@ -6,7 +6,7 @@ title: "Experiment Setup and Forcings Guidance: piClim-histaer"
 # Experiment Setup and Forcings Guidance: piClim-histaer
 
 In combination with `piClim-control`, quantifies transient aerosol effective radiative forcing (ERF) over the historical
-period and the `scen7-m` or `esm-scen7-m` experiment (whichever is relevant to your model setup).
+period and the `scen7-m` experiment.
 This can be compared with `piClim-aer` which provides a more precise quantification of present-day aerosol ERF.
 
 - Responsible activity: [RFMIP](./index.md#rfmip)
@@ -20,6 +20,7 @@ If you notice something that is unclear, please
 
 For the full background of the experiment, please see the following URLs:
 
+- [https://doi.org/10.5194/gmd-19-4447-2026](https://doi.org/10.5194/gmd-19-4447-2026)
 - [https://doi.org/10.5194/acp-20-9591-2020](https://doi.org/10.5194/acp-20-9591-2020)
 - [https://doi.org/10.5194/gmd-9-3447-2016](https://doi.org/10.5194/gmd-9-3447-2016)
 
@@ -43,7 +44,7 @@ You must perform the full simulation i.e. 251 simulation years.
 
 ### Minimum ensemble size
 
-Only one ensemble member is required.
+Only one ensemble member is required, but multiple ensemble members are welcomed.
 
 ## Forcings
 
@@ -58,6 +59,7 @@ The piClim-histaer experiment uses a mix of fixed and transient forcings.
 The fixed forcings are: aerosol optical properties, greenhouse gas concentrations, land use, nitrogen deposition, ozone,
 population density, sea-surface temperature forcing, solar and stratospheric aerosol forcing.
 The transient forcings are: anthropogenic emissions and biomass burning emissions.
+The species to perturb are SO2, BC, OC, NH3.
 
 ### Data
 
