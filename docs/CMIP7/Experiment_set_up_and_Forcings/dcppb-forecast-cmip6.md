@@ -10,7 +10,7 @@ This forecast is initialised from observations with forcing from ssp245 applied 
 
 - Responsible activity: [DCPP](./index.md#dcpp)
 - Tier: 1
-- MIP co-chair review: **In progress** see
+- MIP co-chair review: **Complete** see
   [https://github.com/WCRP-CMIP/cmip7-guidance/issues/207](https://github.com/WCRP-CMIP/cmip7-guidance/issues/207)
 
 This page is intended to help with implementation.
