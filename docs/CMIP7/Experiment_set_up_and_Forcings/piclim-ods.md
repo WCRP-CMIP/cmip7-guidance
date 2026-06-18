@@ -10,7 +10,7 @@ In combination with `piClim-control`, quantifies present-day ozone-depleting sub
 
 - Responsible activity: [AerChemMIP](./index.md#aerchemmip)
 - Tier: 1
-- MIP co-chair review: **In progress** see
+- MIP co-chair review: **Complete** see
   [https://github.com/WCRP-CMIP/cmip7-guidance/issues/184](https://github.com/WCRP-CMIP/cmip7-guidance/issues/184)
 
 This page is intended to help with implementation.
@@ -72,9 +72,9 @@ For the following data, please see these other experiment pages:
 
 For the following forcings, please use data from the specified experiments with the specified modifications.
 
-- for greenhouse gas concentrations, use the forcings from [historical](./historical.md) but apply the 2021
-  ozone-depleting substances (ODS) concentrations (as appropriate for your model) value on repeat and the 1850 value on
-  repeat for all other species
+- for greenhouse gas concentrations, use the forcings from [historical](./historical.md) but hold the values constant
+  throughout the simulation; apply 2021 values for ozone-depleting substances (ODS) emissions and 1850 values for all
+  other species
 
 #### Data available via input4MIPs
 
