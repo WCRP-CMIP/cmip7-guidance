@@ -32,7 +32,7 @@ They encourage ESMs (with full chemistry) that have not yet started their Scenar
 
 ### When will the corrected emissions data be available?
 
-Corrected emissions for all scenarios will be available from the ESGF (via the input4MIPs portal) by Friday 26 June. If you have any questions, please raise an issue or start a discussion at https://github.com/PCMDI/input4MIPs_CVs/discussions 
+Corrected emissions for all scenarios will be available from the ESGF (via the input4MIPs portal) by Friday 26 June. If you have any questions, please raise an issue or start a discussion at <https://github.com/PCMDI/input4MIPs_CVs/discussions> 
 
 Best wishes,
 
