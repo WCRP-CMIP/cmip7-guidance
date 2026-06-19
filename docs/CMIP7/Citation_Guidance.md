@@ -5,7 +5,7 @@ title: CMIP7 Citation Guidance
 
 # Guidance for CMIP7 Citations
 
-The CMIP7 Citation service is hosted at [https://cmip7-citations.ceda.ac.uk/citations/](https://cmip7-citations.ceda.ac.uk/citations/).
+The CMIP7 Citation service is hosted at <https://cmip7-citations.ceda.ac.uk/citations/>.
 
 CMIP7 data citations will be created automatically in response to data publication on ESGF. The granularity of the data citations will be at the level of a model's contribution to an experiment, such that all ensemble members plus all erratas and future corrections within an experiment are covered by one citation. The citations are expected to be published (minted with a DOI) before all data is fully available - this is in line with guidance from DataCite on evolving dataset citations. Citations are only defined at this granularity, any additional citation requirements will need to be discussed with the Citation Working Group.
 
@@ -21,4 +21,4 @@ The Citation Service is configured to natively support CMIP7, CORDEX-CMIP6 and C
 Above is the flow diagram showing internal processes within the citation service, including the user-facing landing pages (Purple Boxes).
 
 
-Additional information for developers can be found at the citation service documentation site [https://cedadev.github.io/cmip7-citation-service](https://cedadev.github.io/cmip7-citation-service)
+Additional information for developers can be found at the citation service documentation site: <https://cedadev.github.io/cmip7-citation-service>
