@@ -67,9 +67,7 @@ def parse_link_targets(text: str) -> list[str]:
             )
         close_paren = close + 1
         if opener in line[close_paren:]:
-            raise ValueError(
-                f"line {lineno}: more than one link on a line: {line!r}"
-            )
+            raise ValueError(f"line {lineno}: more than one link on a line: {line!r}")
         delimited = line[open_paren:close_paren]
         assert delimited.startswith("(") and delimited.endswith(")"), delimited
         target = delimited[1:-1]

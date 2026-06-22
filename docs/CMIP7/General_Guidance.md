@@ -20,3 +20,8 @@ A separate GMD-ESSD inter-journal special issue [“(CMIP7) forcings and inputs 
 
 The CMIP Panel is aware of concern regarding the pace of the review process for anticipated CMIP7 Assessment Fast Track analysis papers. Although these papers are not suitable for inclusion in the CMIP7 special issues, the Panel has raised the issue with the WCRP Joint Scientific Committee.
 
+## CMIP Community News mailing list
+
+The CMIP Community News mailing list is the primary list for sending out communications across the CMIP network. 
+To sign up for it, please visit <https://wcrp-cmip.org/cmip-mailing-lists/>.
+

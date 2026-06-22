@@ -13,12 +13,15 @@ This guide explains how to register new entries in CMIP7 Controlled Vocabularies
 
 CMIP7 uses **Controlled Vocabularies (CVs)** to ensure consistency across all participating modelling centres. Before publishing data, you must register:
 
-- Your **institution** (organisation)
+- Your **institution**
 - Your **model** (source_id)
-- Any new **experiments** (if applicable)
+- Any new **experiments** (if applicable, to be done by MIP leads)
 - **Model documentation** (EMD) components
 
 Registration is done through **GitHub issue forms** that are linked below (no Git expertise required).
+
+!!! info "Data production overview:"
+    Key steps for data preparation and publication readiness are outlined in the slides from [CMIP 2026 workshop WIP session](https://zenodo.org/records/18934629) (slides 30-36).
 
 ---
 
@@ -28,19 +31,33 @@ Registration is done through **GitHub issue forms** that are linked below (no Gi
 
 
 Register your institution before registering a model.
+This requires the creation of two "objects"; the *institution member id* and the *institution id*.
 
-**PROCESS UNDER REVIEW**
+In CMIP6 several institution ids represented a collection of multiple
+institutes (see for example `E3SM-Project` and `EC-Earth-Consortium` within the 
+[CMIP6 CVs](https://wcrp-cmip.github.io/CMIP6_CVs/docs/CMIP6_institution_id.html)). 
+For CMIP7 this would be achieved through multiple *institution member* registrations and a single *institution id* registration. The institution id is then used in data preparation and publication processes.
 
-**Repository**: [WCRP-constants](https://github.com/WCRP-CMIP/WCRP-constants/issues)
+If there is only a single institution member publishing under a single institution id then **it is necessary to complete both registration forms**, but only a single institution member needs to be referenced in the second form.
+
+The complete the institution registration it is necessary to 
+
+1. register as an 'institution member' with an associated ID (i.e. [DRS name](Global_Attributes.md#4-data-reference-syntax-drs-elements))
+2. register for an institution ID (i.e. DRS name) based on the members that should be associated with the institution ID
+    - If your institution ID is associated with a consortium, you will have more than one member and an institution ID that differs from those of your members
+    - If your institution ID is associated with a single member, you will have one member and an institution ID that is the same as the the member's ID (i.e. DRS name).
+
+**Repository**: [CMIP7-CVs](https://github.com/WCRP-CMIP/CMIP7-CVs) [Registered content for institutes](https://github.com/WCRP-CMIP/CMIP7-CVs/tree/main/institution), [Registered content for institute members](https://github.com/WCRP-CMIP/WCRP-universe/tree/esgvoc/institution)
 
 | Form | Link | Required Fields |
 |------|------|-----------------|
-| Organisation | [Register Institution](https://github.com/WCRP-CMIP/WCRP-constants/issues/new?template=organisation.yml) | Acronym, Full name, ROR |
+| Institution member | [Register Institution member](https://github.com/WCRP-CMIP/CMIP7-CVs/issues/new?template=register-institution-member.yml) | Title, ID (i.e. DRS name), description, [ROR](https://ror.org/) |
+| Institution | [Register Institution](https://github.com/WCRP-CMIP/CMIP7-CVs/issues/new?template=register-institution.yml) | Title, ID (i.e. DRS name), description, members |
  
 **Notes**:
 - The **acronym** used for the institution id must be unique and cannot be changed once data is published
-- A **ROR** (Research Organisation Registry) identifier is required for traceability. Find yours at [ror.org](https://ror.org)
-- Consortia are also registered as organisations
+- An **ROR** (Research Organisation Registry) identifier is required for traceability. Find yours at [ror.org](https://ror.org)
+- If you previously did the institution ID registration process, but your institution is not in the CVs, please [raise an issue in the CMIP7-CVs repository](https://github.com/WCRP-CMIP/CMIP7-CVs/issues/new?template=BLANK_ISSUE)
 
 ---
 
@@ -48,21 +65,17 @@ Register your institution before registering a model.
 
 **Important**: To register a `source_id`, you **must** complete the EMD (Essential Model Documentation) registration process.
 
-**Prerequisites**:
-1. Institution registered (see 2.1)
-2. EMD registration completed (see 2.4) - including grids, components, and top-level Model
-
-**Repository**: CMIP7-CVs [Registered Content](https://github.com/WCRP-CMIP/CMIP7-CVs/tree/main/model/)
-
-<!--
-| Form | Link |
-|------|------|
-| Source (Model) | [Register source_id](https://github.com/WCRP-CMIP/CMIP7-CVs/issues/new?template=source.yml) |
---> 
-
-Source IDs will be registered automatically within the CVs once EMD has been completed.
-
 Guidance on constructing a source id is provided in the [Source ID Guidance](Source_ID_guidance.md)
+
+**Prerequisites**:
+1. EMD registration completed (see 2.4) - including grids, components, and top-level Model
+
+**Repository**: [CMIP7-CVs](https://github.com/WCRP-CMIP/CMIP7-CVs) [Registered Content](https://github.com/WCRP-CMIP/CMIP7-CVs/tree/main/institution) (content populated via [the EMD](https://github.com/WCRP-CMIP/Essential-Model-Documentation/tree/src-data/model))
+
+Grid labels and Source IDs will be registered automatically within the CVs once the relevant EMD stages have been completed.
+If you have completed the EMD but your source ID or grid label is not in the CVs,
+please [open an issue in the CMIP7 CVs repository](https://github.com/WCRP-CMIP/CMIP7-CVs/issues/new?template=BLANK_ISSUE)
+so we can figure out where the information processing has gone wrong.
 
 ---
 
@@ -71,11 +84,11 @@ Guidance on constructing a source id is provided in the [Source ID Guidance](Sou
 For new Activities (MIPs) not already in the CV.
 If you previously did the activity registration process,
 but your activity is not in the CV,
-please check [this issue](https://github.com/WCRP-CMIP/CMIP7-CVs/issues/385)
+please check and engage on [this issue](https://github.com/WCRP-CMIP/CMIP7-CVs/issues/385)
 which tracks the progress and process for adding these lost registrations
 back into the CV.
 
-**Repository**: CMIP7-CVs [Issues](https://github.com/WCRP-CMIP/CMIP7-CVs/issues?q=is%3Aissue%20state%3Aopen%20label%3Aactivity), [Registered Content](https://github.com/WCRP-CMIP/CMIP7-CVs/tree/main/activity)
+**Repository**: [CMIP7-CVs](https://github.com/WCRP-CMIP/CMIP7-CVs) [Registered Content](https://github.com/WCRP-CMIP/CMIP7-CVs/tree/main/activity)
 
 | Form | Link |
 |------|------|
@@ -88,11 +101,11 @@ back into the CV.
 For new experiments not already in the CV.
 If you previously did the experiment registration process,
 but your experiment is not in the CV,
-please check [this issue](https://github.com/WCRP-CMIP/CMIP7-CVs/issues/385)
+please check and engage on [this issue](https://github.com/WCRP-CMIP/CMIP7-CVs/issues/385)
 which tracks the progress and process for adding these lost registrations
 back into the CV.
 
-**Repository**: CMIP7-CVs [Issues](https://github.com/WCRP-CMIP/CMIP7-CVs/issues?q=is%3Aissue%20state%3Aopen%20label%3Aexperiment), [Registered Content](https://github.com/WCRP-CMIP/CMIP7-CVs/tree/main/experiment)
+**Repository**: [CMIP7-CVs](https://github.com/WCRP-CMIP/CMIP7-CVs) [Registered Content](https://github.com/WCRP-CMIP/CMIP7-CVs/tree/main/experiment)
 
 | Form | Link |
 |------|------|
@@ -135,43 +148,44 @@ flowchart LR
 ## 3. Registration Workflow
 
 ### Overall Registration Order
+
 ```mermaid
 flowchart LR
-    A["1. Institution (WCRP-constants)"] --> B["2. EMD Registration (Essential-Model-Documentation)"]
-    B --> C["3. source_id (CMIP7-CVs)"]
-    C --> D["4. Experiments (if needed)"]
+    A["1. Institution (CMIP7-CVs)"] --> B["2. EMD Registration (Essential-Model-Documentation)"]
+    B --> C["3. source_id (CMIP7-CVs, automated)"]
+    C --> D["4. Experiments (if needed, MIPs to request via CMIP7-CVs)"]
 ```
 ### Step-by-Step Process
 
-1. **Check if already registered**: Before creating a new entry, verify it doesn't already exist in the CV (see links above for how to check)
+1. **Check if already registered**: Before creating a new entry, verify it doesn't already exist (see links above for how to check)
 2. **Fill the form**: Click the appropriate link and complete all required fields
 3. **Submit**: This creates a GitHub issue
 4. **Automated checks**: The system performs initial validation
 5. **Review**: A reviewer checks your submission
 6. **Feedback loop**: You may be asked to make corrections
-7. **Approval**: Once approved, the entry is merged into the CV
+7. **Approval**: Once approved, the entry is merged into the relevant repository
 
 ### Typical Timeline
 
 - Simple registrations (institution, component configuration): 1-3 days
-- Complex registrations (grid-cells, source-id): May take longer due to dependencies
+- Complex registrations (grid-cells, source-id): May take longer due to dependencies and clarifications
 
 ### Tips
 
 - **Don't wait**: Start EMD registration early - dependencies mean sequential steps
 - **Check dependencies**: A Model Component cannot reference a grid that isn't registered yet, a source cannot refer to components that don't exist. 
 - **Be precise**: Acronyms and identifiers cannot be changed after data publication
-- **Ask for help**: Consult the documentation first, and if needed try the "General Issue" form for  questions.
+- **Ask for help**: Consult the documentation first, and if needed use the general forms linked below for questions.
 
 ---
 
 ## 4. After Registration
 
-Once your CVs are registered:
+Once your entries are registered:
 
-1. **esgvoc** library will include your entries in the next update
-2. You can use your registered identifiers in CMOR tables
-3. Your data will pass QA/QC validation for these CV fields
+1. The **esgvoc** library will include your entries in the next update
+2. Your registered identifiers will appear as valid entries in the CMIP7 CMOR tables
+3. Your model output netCDF files will be able to pass QA/QC validation for these CV fields
 
 ---
 
@@ -183,20 +197,33 @@ The `esgvoc` Python library provides programmatic access to all CVs:
 
 - GitHub: https://github.com/WCRP-CMIP/esgf-vocab
 - Documentation: https://esgf.github.io/esgf-vocab/
+- Accessing the CMIP7 CVs via esgvoc documentation: https://github.com/WCRP-CMIP/CMIP7-CVs#viewing-the-cvs-and-browsing-terms
 
 ### CV Repositories
 
 | Repository | Content |
 |------------|---------|
-| [CMIP7-CVs](https://github.com/WCRP-CMIP/CMIP7_CVs/) | CMIP7-specific CVs (source_id, experiment) |
-| [WCRP-Universe](https://github.com/WCRP-CMIP/WCRP-Universe/) | ESGVOC collection for all projects |
-| [WCRP-constants](https://github.com/WCRP-CMIP/WCRP-constants/) | Organisations/institutions, and universal constants e.g. frequency,realm etc. **UNDER REVIEW**|
-| [Essential-Model-Documentation](https://github.com/WCRP-CMIP/Essential-Model-Documentation/) | EMD components |
-
+| [CMIP7-CVs](https://github.com/WCRP-CMIP/CMIP7_CVs/) | CMIP7-specific CVs |
+| [WCRP-Universe](https://github.com/WCRP-CMIP/WCRP-Universe/) | ESGVOC collection for all WCRP-CMIP projects |
 ---
+
+### EMD Repositories
+
+These repositories maintain the information used by the EMD.
+Some of the information is automatically translated out into the CV repositories,
+but these EMD repositories are not themselves CV repositories.
+**Your data is only registered in the CVs if it appears in the CVs repositories above. Registration in the EMD repositories alone is not registration in the CVs.  However the EMD information required by the CVs should automatically propagate into the CVs on successful completion of the relevant EMD stages.**
+
+| Repository | Content |
+|------------|---------|
+| [WCRP-constants](https://github.com/WCRP-CMIP/WCRP-constants/) | Constants required to support the EMD |
+| [Essential-Model-Documentation](https://github.com/WCRP-CMIP/Essential-Model-Documentation/) | EMD components |
+---
+
 
 ## 6. Getting Help
 
-- **General questions**: Open a [General Issue](https://github.com/WCRP-CMIP/CMIP7-CVs/issues/new) in the relevant repository
+- **Question about a specific CV value**: Open a [CV value issue](https://github.com/WCRP-CMIP/CMIP7-CVs/issues/new?template=cv-value.md) in the CMIP7 CVS repository
 - **CV discussions**: See [Discussions on the CVs repo](https://github.com/WCRP-CMIP/CMIP7-CVs/discussions)
-- **Contact IPO**: For complex cases, contact the [CMIP International Project Office](mailto:cmip-ipo@esa.int)
+- **General questions**: Open a [blank issue](https://github.com/WCRP-CMIP/CMIP7-CVs/issues/new?template=BLANK_ISSUE) in the CMIP7 CVS repository and ask your question. Please include as much context and other helpful information as possible.
+- **Contact IPO**: For complex or sensitive cases, contact the [CMIP International Project Office](mailto:cmip-ipo@esa.int)

@@ -6,7 +6,92 @@ title: CMIP7 Updates for modelling groups
 # Updates for Modelling groups
 
 This page will be updated with information of interest to modelling groups that the CMIP IPO has communicated by email (most recent at top).
+
 ---
+## 19th June 2026
+
+**Subject**: Notice of issue with CEDS CMIP7 aviation emissions data for 2023, and consequently, all scenario data (which uses 2023-historical seasonality for anthropogenic emissions).
+
+Dear Modelling centres (science and forcings contacts),
+
+We would like to make you aware of an error that has been identified in the seasonality of aircraft emissions in the scenario forcing. The issue stems from an error in the 2023 seasonality, which was subsequently used for the scenario emissions. Please note this issue does not affect the CMIP7 historical simulations (which end in 2021).
+
+### Issue detail
+
+An input processing error in the Carbon Monitor data used to generate the monthly air seasonality has caused some January-June 2023 aviation values to be inadvertently counted twice. This has resulted in:
+
+1.	 Artificially inflated aviation emissions during the first half of 2023
+2.	Suppressed emissions during the second half of 2023
+3.	An unrealistic seasonal profile compared with surrounding years
+
+### Impacts and proposed action
+
+The CMIP Forcings TT co-leads have completed some further investigation to determine the impact of this issue in the seasonality on ozone simulation for 2023. They, together with the ozone dataset provider, have concluded that the impact is likely small, can be treated as a forcing uncertainty, and is not significant enough to warrant a rerun of ozone forcing simulations. 
+
+They encourage ESMs (with full chemistry) that have not yet started their ScenarioMIP simulations to use the corrected emissions, once available. Those that have already completed the simulations can decide whether to rerun depending on their resources and any other demands.
+
+### When will the corrected emissions data be available?
+
+Corrected emissions for all scenarios will be available from the ESGF (via the input4MIPs portal) by Friday 26 June. If you have any questions, please raise an issue or start a discussion at <https://github.com/PCMDI/input4MIPs_CVs/discussions> 
+
+Best wishes,
+
+CMIP IPO on behalf of CMIP Forcings Task Team and CMIP Panel Co-chairs
+
+
+
+---
+
+## 4th June 2026
+
+This update includes:
+
+1.	ESGF-NG update
+2.	Essential Model Documentation (EMD) update and reminder
+3.	Upcoming Data Request patch release
+ 
+### ESGF-NG publishing update
+ESGF-NG is now ready to publish CMIP7 data! 
+
+We strongly recommend engaging with the [Climate Data Node Operations Team (CDNOT)](https://wcrp-cmip.org/cmip7-task-teams/cdnot/) to obtain support with the publication process.
+
+Machine readable interfaces are available via the links below, and updates to metagrid (for humans) will be announced once the first data has been published.  Within the new data structure there are two search indices,  east and west, which will be kept synchronised.
+Machine readable interfaces:
+
+- <https://search.west.esgf.io/>
+- <https://search.east.esgf.io/>
+
+### EMD update and reminder
+The [Essential Model Documentation](https://emd.mipcvs.dev/docs/) is a required step for contribution towards CMIP7. Over the last month the review process has accelerated and we strongly encourage modelling groups to engage with this process around a month before preparing data for publication. There are two key phases of the EMD process:
+
+1. Registration of model and output grids: this ensures that a grid label is available for your data. Each distinct grid on which data is published requires a corresponding label. (Since many common grids have been registered, this step may have been completed by other members of the community.)
+2.	Registration of models and their components: this will finalise the source_id needed for producing publishable output data.
+
+Producing standardized (CMORized) data requires both grid labels and source_id. Modelling groups should be able to use the allocated grid labels once the first phase is completed, and an assumed source_id, following the [guidance](CMIP7/Source_ID_guidance.md), can be used while the second phase is in progress. Both phases of the EMD process must be completed before ESGF publication can begin.
+
+#### Monitoring the status of your EMD submissions
+If you would like to monitor the status of your submissions to the EMD repository, you can [enter your GitHub ID here](https://emd.mipcvs.dev/docs/Progress_Tracker.html). This tracker will show what you have submitted and which of those have been merged, are in progress by the EMD, or require you to make changes/respond to queries. 
+
+#### Where can I get more help?
+For questions or queries, please send an email to emd@wcrp-cmip.org. We have also compiled some FAQs you might find useful [here](https://emd.mipcvs.dev/docs/FAQ/).
+
+#### How can I help speed up the EMD process?
+They key way to speed up the registration process is to increase our pool of reviewers. Those submitting EMD for their centres will be best placed to review other people’s submissions. We estimate the time committent for reviewers is ~30 minutes per week.
+
+[Sign up to help with reviewing here.](https://airtable.com/apphXCUgASIeT6jCz/pag2oVCHWXFCkJQ3A/form)
+
+### NEW: Institution registration for CMIP7 (ACTION REQUIRED)
+To ensure that the institution identifiers are correctly understood by the publication infrastructure, a change as been made that requires all modelling groups to use a simple set of forms to register institution member ids and institution ids.
+
+The institution id is directly used within the data preparation and publication process, while the introduction of an institution member id allows multiple institutes using the same institution id to be appropriately identified. See the [CMIP7 guidance pages](CMIP7/cv_registration.md#2-registration-forms) for details and for links to the registration forms.
+
+### Data Request updates
+A patch release (v1.2.2.4) of the CMIP7 Data Request for AFT production will be released this week to correct minor issues in the previous version (v1.2.2.3, released 19 Dec 2025). Release notes will be [available here](https://wcrp-cmip.org/cmip7-data-request-v1-2-2-4/). Less than 1% of DR variables are affected by the v1.2.2.4 release.
+
+Following the initial phase of CMIP7 AFT production, an Unharmonised component of the Data Request will exist to facilitate requests by Community MIPs that are not aligned with the AFT timescale. The Harmonised component of the Data Request, which was developed in a community-led process facilitated by the Data Request Task Team and CMIP IPO, is intended for AFT production. The Unharmonised component will involve MIP-defined requests subject only to transparent technical requirements, supported by a simplified workflow (e.g. python tools, variable spreadsheets) designed to help MIPs select subsets of variables from a centralised registry of variables and share their requests with participating modelling centres. Community MIPs interested in this process are encouraged to let the CMIP IPO know their planned timeline.
+
+---
+
 ## 22nd May 2026
 
 This update contains information on:
@@ -41,7 +126,7 @@ As noted in the CMIP7 guidance pages there is a [wcrp-cmip7 plugin](https://gith
 ### Upcoming Data Request patch release
 We anticipate a Data Request patch update (v1.2.2.4) will be released within the coming weeks providing minor update and fixes. The updates will be well documented so you can easily see what has changed. We expect data publication to continue to support recent versions of the Data Request and will confirm the range of valid versions on the guidance pages in the near future. 
 
-
+---
 
 ## 14th April 2026
 
@@ -104,6 +189,7 @@ Thank you so much for support and willingness to enable the impact model simulat
 Kind regards
 Katja from the ISIMIP coordination team (katja.frieler@pik-potsdam.de)      
 
+---
 
 ## 20th March 2026
 There is an update to the nitrogen deposition data (new data is published under source ID FZJ-CMIP-nitrogen-2-0). However, if you already have simulations that use the previous version (source ID FZJ-CMIP-nitrogen-1-2`), you do not need to re-run. Further details below and at https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/nitrogen-deposition/
@@ -116,6 +202,8 @@ For further details about the error and recommended action, please see the nitro
 
 If any modelling centres run piControl and/or historical simulations with both the FZJ-CMIP-nitrogen-2-0 and FZJ-CMIP-nitrogen-1-2 forcing,
 these simulations would be of interest to the Forcings Task Team. ([#427](https://github.com/PCMDI/input4MIPs_CVs/pull/427))
+
+---
 
 ## 26th February 2026
 

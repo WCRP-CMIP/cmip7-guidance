@@ -99,6 +99,8 @@
   - [Guidance for users](CMIP6/guidance_for_users.md)
   - [Terms of use](CMIP6/terms_of_use.md)
   - [Time and area averaging](CMIP6/time_and_area_averaging.md)
+- Resources
+  - [GitHub issue helper](resources/GitHub_issue_helper.html)
 - [Essential Model Documentation](https://emd.mipcvs.dev/docs/)
 - [CMIP Website](https://wcrp-cmip.org/)
 - [WCRP](https://www.wcrp-climate.org/)

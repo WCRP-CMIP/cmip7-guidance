@@ -14,6 +14,8 @@ use_directory_urls: true  # Creates clean URLs like /page/ instead of /page.html
 theme:
   name: shadcn
   custom_dir: overrides
+  # Must be a dict, not null to avoid a bug in shadcn katex
+  katex_options: {}
   palette:
     primary: teal
     accent: teal
@@ -71,8 +73,8 @@ markdown_extensions:
       anchor_linenums: true
       css_class: codehilite
   - pymdownx.inlinehilite
-  # - pymdownx.arithmatex:
-  #     generic: true
+  - pymdownx.arithmatex:
+      generic: true
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
