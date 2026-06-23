@@ -6,15 +6,11 @@ mkdocs-gen-files==0.6.0
 mkdocs-literate-nav==0.6.2
 mkdocs-redirects==1.2.2
 pymdown-extensions==10.21
-# Pygments held <2.19: 2.19+ escapes the code-block `filename` option without a
+# Pygments 2.19+ escapes the code-block `filename` option without a
 # None guard, which crashes pymdownx (it passes filename=None for untitled
 # blocks). See pymdownx.highlight + pygments HtmlFormatter.
 pygments==2.18.0
 pyyaml==6.0.3
-# mike>=2.0.0  # Removed - simple deployment without versioning
 beautifulsoup4==4.14.3
-
-# Generator script dependencies
-cmipld @ git+https://github.com/WCRP-CMIP/CMIPLD.git
 jinja2==3.1.6
 tqdm==4.67.3
