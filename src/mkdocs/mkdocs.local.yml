@@ -1,0 +1,21 @@
+# Local build config.
+#
+# Inherits everything from mkdocs.yml, but redefines `plugins` to drop the
+# `redirects` plugin. The redirect maps only differ from their targets by case
+# (e.g. global_attributes.md -> Global_Attributes.md), which causes infinite
+# redirect loops when serving from a case-insensitive filesystem like macOS.
+#
+# Build/serve with:
+#   mkdocs build -f mkdocs.local.yml
+#   mkdocs serve -f mkdocs.local.yml
+INHERIT: mkdocs.yml
+
+plugins:
+  - search:
+      lang: en
+      separator: '[\s\-\.]+'
+
+  - literate-nav:
+      nav_file: nav_menu.md
+      implicit_index: true
+      tab_length: 2
