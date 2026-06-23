@@ -1546,6 +1546,24 @@ th[data-sort="desc"] .sort-indicator {
   visibility: visible !important;
 }
 
+/* ============================================
+   SIDEBAR FADE OVERLAYS - LET CLICKS THROUGH
+   ============================================ */
+
+/*
+ * Newer mkdocs-shadcn renders decorative gradient "fade" overlays at the top
+ * and bottom of the sidebar (absolute, z-10) to soften scrolling content under
+ * the sticky header. These overlays ship WITHOUT pointer-events:none, so the
+ * top fade sits over the first nav item ("Home") and swallows clicks on it -
+ * the link is correct but unclickable. The overlays are purely visual, so
+ * disable pointer events on them. (Scoped to the sidebar; verified it matches
+ * the fades and no interactive elements.)
+ */
+[data-slot="sidebar"] .absolute.top-8.z-10,
+[data-slot="sidebar"] [class*="bg-gradient-to-b"].absolute {
+  pointer-events: none !important;
+}
+
 
 /* ============================================
    DOCS CONTENT AREA PADDING

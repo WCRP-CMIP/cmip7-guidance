@@ -1,6 +1,6 @@
 # MkDocs dependencies for Guidance and Documentation
 mkdocs>=1.5.0
-mkdocs-shadcn>=0.1.0
+mkdocs-shadcn==0.11.0  # Pinned: recommend pinning the rest too to avoid accidental regressions
 mkdocs-gen-files>=0.5.0
 mkdocs-literate-nav>=0.6.0
 mkdocs-redirects>=1.2.2
