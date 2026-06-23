@@ -1,3 +1,6 @@
+# Case-insensitive build helper
+src/mkdocs/mkdocs.local.yml
+
 .DS_Store
 */.DS_Store
 
