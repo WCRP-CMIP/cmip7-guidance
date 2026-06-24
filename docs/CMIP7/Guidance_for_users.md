@@ -34,7 +34,7 @@ There are 3 options to access the data:
 
  1. **MetaGrid** ([West index][metagridwest])
 
-    Web interface to search and download ESGF data. It provides access through http downloads, wget scripts, OPeNDAP URLs and Globus transfers. It is most useful for browsing and downloading a small number of files. The data can be accessed through any of the CMIP7 web interfaces linked above, which enable users to search across the entire distributed archive as if it were all centrally located.
+    Web interface to search and download ESGF data. It provides access through http downloads, wget scripts, OPeNDAP URLs and Globus transfers. It is most useful for browsing and downloading a small number of files. The data can currently be accessed from the web interface linked above, which enables users to search across the entire distributed archive as if it were all centrally located.
 
  2. **Using a python package**
 
