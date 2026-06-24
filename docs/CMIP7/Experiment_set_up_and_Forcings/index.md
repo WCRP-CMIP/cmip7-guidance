@@ -131,6 +131,22 @@ The following experiments are included in `C4MIP`:
 1. [esm-flat10-cdr](./esm-flat10-cdr.md)
 1. [esm-flat10-zec](./esm-flat10-zec.md)
 
+### DCPP
+
+Decadal climate prediction project: Coordinated multi-model investigation into decadal climate prediction,
+predictability, and variability
+
+These pages are intended to help with implementation of these experiments.
+If you notice something that is unclear, please
+[raise an issue](https://github.com/WCRP-CMIP/cmip7-guidance/issues/new).
+For the full background of the experiments, please see the following URLs:
+
+- [https://doi.org/10.5194/gmd-9-3751-2016](https://doi.org/10.5194/gmd-9-3751-2016)
+
+The following experiments are included in `DCPP`:
+
+1. [dcppB-forecast-cmip6](./dcppb-forecast-cmip6.md)
+
 ### ScenarioMIP
 
 Future scenario experiments.

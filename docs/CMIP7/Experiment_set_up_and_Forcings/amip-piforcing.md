@@ -46,9 +46,7 @@ If further guidance would be helpful, please [raise an issue](https://github.com
 ### General headlines
 
 The amip-piForcing experiment uses a mix of fixed and transient forcings.
-The fixed forcings are: aerosol optical properties, anthropogenic emissions, biomass burning emissions, greenhouse gas
-concentrations, land use, nitrogen deposition, ozone, population density, solar and stratospheric aerosol forcing.
-The transient forcings are: AMIP sea-surface temperature and sea-ice boundary forcing.
+Please see the data sections below for details.
 
 ### Data
 

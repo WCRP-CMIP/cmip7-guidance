@@ -70,15 +70,22 @@ For the following data, please see these other experiment pages:
 
 For the following forcings, please use data from the specified experiments with the specified modifications.
 
-- for anthropogenic emissions, use the forcings from [historical](./historical.md) but apply the 2021 value on repeat
-- for biomass burning emissions, use the forcings from [historical](./historical.md) but apply the 2021 value on repeat
-- for land use, use the forcings from [historical](./historical.md) but apply the 2021 value on repeat
-- for greenhouse gas concentrations, use the forcings from [historical](./historical.md) but apply the 2021 value on
-  repeat
-- for ozone, use the forcings from [historical](./historical.md) but apply the 2021 value on repeat
-- for nitrogen deposition, use the forcings from [historical](./historical.md) but apply the 2021 value on repeat
-- for aerosol optical properties, use the forcings from [historical](./historical.md) but apply the 2021 value on repeat
-- for population density, use the forcings from [historical](./historical.md) but apply the 2021 value on repeat
+- for anthropogenic emissions, use the forcings from [historical](./historical.md) but hold the values constant
+  throughout the simulation; apply 2021 values
+- for biomass burning emissions, use the forcings from [historical](./historical.md) but hold the values constant
+  throughout the simulation; apply 2021 values
+- for land use, use the forcings from [historical](./historical.md) but hold the values constant throughout the
+  simulation; apply 2021 values
+- for greenhouse gas concentrations, use the forcings from [historical](./historical.md) but hold the values constant
+  throughout the simulation; apply 2021 values
+- for ozone, use the forcings from [historical](./historical.md) but hold the values constant throughout the simulation;
+  apply 2021 values
+- for nitrogen deposition, use the forcings from [historical](./historical.md) but hold the values constant throughout
+  the simulation; apply 2021 values
+- for aerosol optical properties, use the forcings from [historical](./historical.md) but hold the values constant
+  throughout the simulation; apply 2021 values
+- for population density, use the forcings from [historical](./historical.md) but hold the values constant throughout
+  the simulation; apply 2021 values
 
 #### Data available via input4MIPs
 

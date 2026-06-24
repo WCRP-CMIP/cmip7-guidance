@@ -49,9 +49,7 @@ If further guidance would be helpful, please [raise an issue](https://github.com
 ### General headlines
 
 The hist-nat experiment uses a mix of fixed and transient forcings.
-The fixed forcings are: aerosol optical properties, anthropogenic emissions, biomass burning emissions, greenhouse gas
-concentrations, land use, nitrogen deposition, ozone and population density.
-The transient forcings are: solar and stratospheric aerosol forcing.
+Please see the data sections below for details.
 
 ### Data
 
