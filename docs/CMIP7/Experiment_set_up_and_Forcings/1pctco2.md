@@ -1,70 +1,131 @@
 ---
 layout: default
-title: 1pctCO2 Experiment Setup and Forcings Guidance
+title: "Experiment Setup and Forcings Guidance: 1pctCO2"
 ---
 
-# 1pctCO2 Experiment Setup and Forcings Guidance
+# Experiment Setup and Forcings Guidance: 1pctCO2
 
-<!-- TODO: get this information from esgvoc (add reference URLs at that point) -->
-Responsible activity: CMIP
+1% per year increase in atmospheric carbon dioxide levels.
+All other conditions are kept the same as piControl.
 
-<!-- TODO: get this one line description from esgvoc -->
-1% per year increase in atmospheric carbon dioxide levels. All other conditions are kept the same as piControl.
+- Responsible activity: [CMIP](./index.md#cmip)
+- Tier: 1
+- MIP co-chair review: **In progress** see
+  [https://github.com/WCRP-CMIP/cmip7-guidance/issues/183](https://github.com/WCRP-CMIP/cmip7-guidance/issues/183)
+
+This page is intended to help with implementation.
+If you notice something that is unclear, please
+[raise an issue](https://github.com/WCRP-CMIP/cmip7-guidance/issues/new).
+
+For the full background of the experiment, please see the following URLs:
+
+- [https://doi.org/10.5194/gmd-18-6671-2025](https://doi.org/10.5194/gmd-18-6671-2025)
 
 ## Experiment set up
 
-<!-- TODO: decide and then consistently apply some convention about whether experiment names are always surround by backticks `` or not -->
-The 1pctCO2 simulation is a simple branch from the [piControl simulation](./picontrol.md).
-After branching, the atmospheric CO<sub>2</sub> concentrations should increase at one percent per year throughout the simulation.
-<!-- TODO: consider whether we can generate these sentences automatically based on esgvoc -->
-The start-time of the simulation is not tied to a particular year but, rather, can be chosen arbitrarily
-(e.g., year 200 or year 1850 or year 1).
-However, it is easier for analysts if the start-time is consistent with the branching time in the parent experiment
-(e.g., if the the simulation branches from year 200 in the parent experiment,
-then the start time in the child experiment would be set to year 200).
-Simulations should be at least 150 years in length.
+The 1pctCO2 experiment is a simple branch from the [piControl simulation](./picontrol.md).
+
+After branching, the atmospheric CO<sub>2</sub> concentrations should increase at one percent per year throughout the
+experiment.
+
+### Parent experiment and branching
+
+The 1pctCO2 experiment branches from the [piControl](./picontrol.md) experiment (part of [CMIP](./index.md#cmip)).
+The parent experiment's MIP era is [CMIP7](https://wcrp-cmip.org/CMIP7).
+
+Branch from [piControl](./picontrol.md) at a time of your choosing.
+
+### Output time axis
+
+You are free to start and end the time axis of your outputs at whatever time you like (e.g. starting at year 1, or 1850,
+or year 500).
+You must perform at least 150 simulation years.
+
+### Minimum ensemble size
+
 Only one ensemble member is required.
-
-### Parent experiment
-
-<!--
-    TODO: use esgvoc to fill out the template
-    `<experiment-name>` branches from the `<parent-experiment-name>` simulation (part of `<parent-experiment-activity>`).
--->
-`1pctCO2` branches from the `piControl` simulation (part of `CMIP`).
-<!-- TODO: get branch information from esgvoc -->
-Branch from `piControl` at a time of your choosing.
 
 ## Forcings
 
+The following information will help you identify the forcings to use.
+However, we can't define every single detail because there can be lots of subjective steps between the raw forcings data
+and model inputs (e.g. interpolation, re-aggregation, supplementation with other information).
+If further guidance would be helpful, please [raise an issue](https://github.com/WCRP-CMIP/cmip7-guidance/issues/new).
+
 ### General headlines
 
-The `1pctCO2` experiment is a fixed forcings experiment, except for CO<sub>2</sub> which is transient.
+The 1pctCO2 experiment is a fixed forcings experiment, except for CO<sub>2</sub> which is transient.
 
-### Notes
+### Data
 
-See notes for the [piControl simulation](./picontrol.md).
+Here we make a distinction between data that is described on other experiment pages, data that is described on other
+experiment pages with modifications you have to make yourself, data available via ESGF's input4MIPs project and data
+distributed via other channels.
 
-### Versions to use
+#### Data described on other experiment pages
 
-The forcings relevant for this simulation are the same as for the [piControl simulation](./picontrol.md).
+For the following data, please see these other experiment pages:
 
-### Getting the data
+- [piControl](./picontrol.md) for anthropogenic emissions, biomass burning emissions, land use, stratospheric aerosol
+  forcing, solar, aerosol optical properties, population density, ozone, nitrogen deposition
 
-See instructions for the [piControl simulation](./picontrol.md).
-You have to increase the atmospheric CO<sub>2</sub> concentrations at one percent per year yourself.
-<!--- 
-    TODO: discuss with Matt/someone else the specific implementation instructions.
-    Set concentrations in first year to be higher than piControl
-    (because, if you don't do this and you have a linear increase,
-    then you'd have to drop concentrations in January of the first year in order to get the average correct)
-    TODO: check formula rendering
--->
-The annual-average concentrations should increase following the formula c(y) = c_0 * 1.01 ** (y - y_0 - 1),
-where c is the annual-average concentration in year y and y_0 is the first year of the `1pctCO2` simulation
-(i.e. average atmospheric CO<sub>2</sub> concentrations in the first year of the `1pctCO2` simulation
-should be higher than in `piControl`).
-It is up to you to decide whether you apply your concentrations as a series of step changes
-(constant over each year) or as a steady linear increase
-(such that e.g. concentrations in December are higher than those in January)
-that results in the correct annual average being applied.
+#### Data described on other experiment pages with modifications you have to make
+
+For the following forcings, please use data from the specified experiments with the specified modifications.
+
+- for greenhouse gas concentrations, use the forcings from [piControl](./picontrol.md) but increase the atmospheric
+  CO<sub>2</sub> concentrations at one percent per year yourself.
+  CO2 concentrations should increase as
+
+    $$
+    c(t) = c_0 \cdot 1.01^{\frac{t - t_0}{\tau}},
+    $$
+
+    where $t_0$ is 1850 and $\tau$ is one year.
+
+    For step-wise increases of CO<sub>2</sub>, specify a concentration that results, to good approximation, in a mean
+    CO2 concentration (or mean forcing) for each time step consistent with the mean calculated when the CO2
+    concentration increases continuously.
+    A particularly simple formula of sufficient accuracy for a 1% increase and time steps used in earth system models is
+
+    $$
+    c(t \rightarrow t + \Delta t) = \frac{c(t) + c(t + \Delta t)}{2},
+    $$
+
+    where $c(t \rightarrow t + \Delta t)$ is the value to apply in the time step that extends from time $t$ to $t +
+    \Delta t$ and $\Delta t$ is the size of the time step in your model (this can vary from time step to time step and
+    it does not affect the formula above).
+    For annual time steps, this reduces to
+
+    $$
+    \begin{aligned}
+    c(y)
+    &= c_0 \cdot 1.01^{y - y_0} \cdot \frac{1 + 1.01}{2} \\
+    &= c_0 \cdot 1.01^{y - y_0} \cdot 1.05,
+    \end{aligned}
+    $$
+
+    where $y$ is the year in which to apply the given value and $y_0$ is the starting year i.e. 1850.
+
+    For monthly time steps, this reduces to
+
+    $$
+    \begin{aligned}
+    c(y, m)
+    &= c_0 \cdot \frac{1.01^{y - y_0} \cdot 1.01^{(m - 1) / 12} + 1.01^{y - y_0} \cdot 1.01^{m / 12}}{2} \\
+    &= c_0 \cdot 1.01^{y - y_0} \cdot 1.01^{(m - 1) / 12} \cdot \frac{1 + 1.01^(1 / 12)}{2} \\
+    &= c_0 \cdot 1.01^{y - y_0} \cdot 1.01^{(m - 1) / 12} \cdot 1.0004,
+    \end{aligned}
+    $$
+
+    where $m$ is the month in which to apply the given value (January is 1, February is 2 etc.).
+
+#### Data available via input4MIPs
+
+No input4MIPs-based data is described specifically on this page.
+Please see the other [data](#data) sub-sections for details of the forcings data to use for this experiment.
+
+#### Data not available via input4MIPs
+
+No data that is not input4MIPs-based is described specifically on this page.
+Please see the other [data](#data) sub-sections for details of the forcings data to use for this experiment.

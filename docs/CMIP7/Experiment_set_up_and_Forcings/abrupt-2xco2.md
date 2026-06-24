@@ -1,56 +1,87 @@
 ---
 layout: default
-title: abrupt-2xCO2 Experiment Setup and Forcings Guidance
+title: "Experiment Setup and Forcings Guidance: abrupt-2xCO2"
 ---
 
-# abrupt-2xCO2 Experiment Setup and Forcings Guidance
+# Experiment Setup and Forcings Guidance: abrupt-2xCO2
 
-<!-- TODO: get this information from esgvoc (add reference URLs at that point) -->
-Responsible activity: CFMIP
+Abrupt doubling of atmospheric carbon dioxide levels.
+All other conditions are kept the same as piControl.
 
-<!-- TODO: get this one line description from esgvoc -->
-Abrupt doubling of atmospheric carbon dioxide levels. All other conditions are kept the same as piControl.
+- Responsible activity: [CFMIP](./index.md#cfmip)
+- Tier: 1
+- MIP co-chair review: **In progress** see
+  [https://github.com/WCRP-CMIP/cmip7-guidance/issues/185](https://github.com/WCRP-CMIP/cmip7-guidance/issues/185)
+
+This page is intended to help with implementation.
+If you notice something that is unclear, please
+[raise an issue](https://github.com/WCRP-CMIP/cmip7-guidance/issues/new).
+
+For the full background of the experiment, please see the following URLs:
+
+- [https://doi.org/10.5194/gmd-10-359-2017](https://doi.org/10.5194/gmd-10-359-2017)
 
 ## Experiment set up
 
-<!-- TODO: decide and then consistently apply some convention about whether experiment names are always surround by backticks `` or not -->
-The abrupt CO<sub>2</sub> doubling simulation is a simple branch from the [piControl simulation](./picontrol.md).
-After branching, the atmospheric CO<sub>2</sub> concentrations should be set to two times
-the concentrations used in the `piControl` simulation.
-<!-- TODO: consider whether we can generate these sentences automatically based on esgvoc -->
-The start-time of the simulation is not tied to a particular year but, rather, can be chosen arbitrarily
-(e.g., year 200 or year 1850 or year 1).
-However, it is easier for analysts if the start-time is consistent with the branching time in the parent experiment
-(e.g., if the the simulation branches from year 200 in the parent experiment,
-then the start time in the child experiment would be set to year 200).
-Simulations should be at least 300 years in length.
+The abrupt CO<sub>2</sub> doubling experiment is a simple branch from the [piControl simulation](./picontrol.md).
+
+After branching, the atmospheric CO<sub>2</sub> concentrations should be set to two times the CO<sub>2</sub>
+concentrations used in the piControl experiment.
+
+### Parent experiment and branching
+
+The abrupt-2xCO2 experiment branches from the [piControl](./picontrol.md) experiment (part of [CMIP](./index.md#cmip)).
+The parent experiment's MIP era is [CMIP7](https://wcrp-cmip.org/CMIP7).
+
+Branch from [piControl](./picontrol.md) at a time of your choosing.
+
+### Output time axis
+
+You are free to start and end the time axis of your outputs at whatever time you like (e.g. starting at year 1, or 1850,
+or year 500).
+You must perform at least 300 simulation years.
+
+### Minimum ensemble size
+
 Only one ensemble member is required.
-
-### Parent experiment
-
-<!--
-    TODO: use esgvoc to fill out the template
-    `<experiment-name>` branches from the `<parent-experiment-name>` simulation (part of `<parent-experiment-activity>`).
--->
-`abrupt-2xCO2` branches from the `piControl` simulation (part of `CMIP`).
-<!-- TODO: get branch information from esgvoc -->
-Branch from `piControl` at a time of your choosing.
 
 ## Forcings
 
+The following information will help you identify the forcings to use.
+However, we can't define every single detail because there can be lots of subjective steps between the raw forcings data
+and model inputs (e.g. interpolation, re-aggregation, supplementation with other information).
+If further guidance would be helpful, please [raise an issue](https://github.com/WCRP-CMIP/cmip7-guidance/issues/new).
+
 ### General headlines
 
-See general headlines for the [abrupt-4xCO2 simulation](./abrupt-4xco2.md).
+The abrupt-2xCO2 experiment is a fixed forcings experiment.
 
-### Notes
+### Data
 
-See notes for the [piControl simulation](./picontrol.md).
+Here we make a distinction between data that is described on other experiment pages, data that is described on other
+experiment pages with modifications you have to make yourself, data available via ESGF's input4MIPs project and data
+distributed via other channels.
 
-### Versions to use
+#### Data described on other experiment pages
 
-The forcings relevant for this simulation are the same as for the [piControl simulation](./picontrol.md).
+For the following data, please see these other experiment pages:
 
-### Getting the data
+- [piControl](./picontrol.md) for anthropogenic emissions, biomass burning emissions, land use, stratospheric aerosol
+  forcing, solar, aerosol optical properties, population density, ozone, nitrogen deposition
 
-See instructions for the [piControl simulation](./picontrol.md).
-You have to double the atmospheric CO<sub>2</sub> concentrations yourself.
+#### Data described on other experiment pages with modifications you have to make
+
+For the following forcings, please use data from the specified experiments with the specified modifications.
+
+- for greenhouse gas concentrations, use the forcings from [piControl](./picontrol.md) but double the CO<sub>2</sub>
+  concentrations
+
+#### Data available via input4MIPs
+
+No input4MIPs-based data is described specifically on this page.
+Please see the other [data](#data) sub-sections for details of the forcings data to use for this experiment.
+
+#### Data not available via input4MIPs
+
+No data that is not input4MIPs-based is described specifically on this page.
+Please see the other [data](#data) sub-sections for details of the forcings data to use for this experiment.

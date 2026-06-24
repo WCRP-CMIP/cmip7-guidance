@@ -8,7 +8,11 @@ title: CMIP7 Guidance for Data Users
 
 This page is designed to inform users of climate model outputs on key CMIP7 concepts and tools. It is a landing page to provide context and to redirect them to more detailed resources.
 
+!!! info ""
+    An overview of **how to access and use CMIP data** is given in the slides from [CMIP 2026 workshop WIP session](https://zenodo.org/records/18934629) (slides 3-20).
 
+General guidance is also available via the [General Guidance](General_Guidance.md) page.
+To sign up for the CMIP Community News mailing list please visit <https://wcrp-cmip.org/cmip-mailing-lists/>.
 
 ## 1.  Accessing CMIP7 data
 
@@ -28,9 +32,9 @@ CMIP7 model output is available through a distributed data archive developed and
 
 There are 3 options to access the data:
 
- 1. **MetaGrid** ([LLNL][metagridllnl], [DKRZ][metagriddkrz], [ORNL][metagridornl], [CEDA][metagridceda])
+ 1. **MetaGrid** ([West index][metagridwest])
 
-    Web interface to search and download ESGF data. It provides access through http downloads, wget scripts, OPeNDAP URLs and Globus transfers. It is most useful for browsing and downloading a small number of files. The data can be accessed through any of the CMIP7 web interfaces linked above, which enable users to search across the entire distributed archive as if it were all centrally located.
+    Web interface to search and download ESGF data. It provides access through http downloads, wget scripts, OPeNDAP URLs and Globus transfers. It is most useful for browsing and downloading a small number of files. The data can currently be accessed from the web interface linked above, which enables users to search across the entire distributed archive as if it were all centrally located.
 
  2. **Using a python package**
 
@@ -68,12 +72,11 @@ To enable modelling groups and others who support CMIP7 to demonstrate its impac
 
     For each model whose data is used, please include a citation in the form of:
 
-        Authors/Data Creators (publication year): Title. Version YYYYMMDD. Earth System Grid Federation. DOI.
+    > Authors/Data Creators (publication year): Title. Version YYYYMMDD. Earth System Grid Federation. DOI.
         
     e.g. 
 
-        Swart et al. (2019): CCCma CanESM5 model output prepared for CMIP6 ScenarioMIP. Version 20190429. Earth System Grid Federation. https://doi.org/10.22033/ESGF/CMIP6.1317. 
-
+    > Swart et al. (2019): CCCma CanESM5 model output prepared for CMIP6 ScenarioMIP. Version 20190429. Earth System Grid Federation. https://doi.org/10.22033/ESGF/CMIP6.1317.
 
     Please include a table with at minimum the models ("sources"), institutions, and data citations as above, as well as a data availability statement pointing to the table and acknowledging ESGF. If the journal has a citation limit, putting the table in the Supporting Information is acceptable.
 
@@ -131,8 +134,9 @@ To enable modelling groups and others who support CMIP7 to demonstrate its impac
 
 2. **Register your work.**
 
-    Register your work on the [CMIP7 Publication Hub][CMIPpubs] (coming soon). 
-
+    Register your work on the [CMIP Publication Hub][CMIPpubs].
+    
+    ⚠️ The Publication Hub will be updated to allow registration of CMIP7 publications. Currently it provides a searchable database of publications from previous CMIP phases.
 
 3. **Use the standard vocabularies**
 
@@ -225,7 +229,7 @@ The CMIP7 compound name used in the Data Request also includes each requested va
 For example, the equivalent of `Amon.tas` in CMIP6 would be  `atmos.tas_tavg-h2m-hxy-u.mon.GLB` in CMIP7.
 
 ??? info "Understanding the Data Request"
-    The variables produced in CMIP7 were recommended by the [CMIP7 Data Request task team][DataRequestTeam]. The latest version of the Data Request can be [viewed here][datarequest], and further guidance can be [found here](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/Guidance_for_modellers/#4-model-output-fields). 
+    The variables produced in CMIP7 were recommended by the [CMIP7 Data Request task team][DataRequestTeam]. The latest version of the Data Request can be [viewed here][datarequest], and further guidance can be [found here](Guidance_for_modellers.md/#4-model-output-fields-data-request). 
 
 
 ### 3.4 Frequency
@@ -281,8 +285,9 @@ Different MIPs also have different requirements for vertical grid reporting. Out
 As in previous phases, all CMIP7 output has been written to netCDF files.
 Before being published, these files must pass the [ESGF Quality Control (ESGF-QC)][esgfqc].
 Many modelling centres use the [CMOR][cmor] software to standardize their files. They are then said to have been “CMORized”.
+(The term "CMORized" can also refer to netCDF files that meet the same standards even if CMOR itself did not produce them.)
 
-Essential features of CMORized data are :
+Essential features of CMORized data are:
 
 * Standardized naming from CMIP [CVs][cmipCvs]
 * Consistent [file naming convention][GlobalAttrs]
@@ -293,9 +298,6 @@ Essential features of CMORized data are :
 * Self-describing (all metadata needed to interpret the data are included in the file)
 * Consistent units and standard names following [CF conventions][cfConventionsPage]
 * [Standard chunking](Guidance_for_modellers.md#5-model-output-requirements)
-
-
-
 
 
 ## 5.  Reporting suspected errors
@@ -342,6 +344,7 @@ First time using CMIP? Need a bit more help ? Check out these resources:
 *[ARCO]: Analysis-Ready Cloud-Optimized
 
  <!-- valid general links -->
+[metagridwest]: https://metagrid.esgf-west.org/
 [metagridllnl]: https://aims2.llnl.gov/search/
 [metagriddkrz]: https://esgf-metagrid.cloud.dkrz.de/search
 [metagridornl]: https://esgf-node.ornl.gov/search
@@ -353,7 +356,7 @@ First time using CMIP? Need a bit more help ? Check out these resources:
 [CMIPMips]: https://wcrp-cmip.org/mips/
 [platform]: https://github.com/orgs/Fresh-Eyes-on-CMIP/discussions
 [register]: https://github.com/Fresh-Eyes-on-CMIP/member-requests/issues/new?template=new_user.yml
-[ErrataService]: https://errata.ipsl.fr/static/index.html
+[ErrataService]: https://errata.esgf.io/
 [esmvaltool]: https://esmvaltool.org/
 [intakeesgf]: https://github.com/esgf2-us/intake-esgf
 [cmor]:https://cmor.llnl.gov/
@@ -382,19 +385,18 @@ First time using CMIP? Need a bit more help ? Check out these resources:
 [FeoC]: https://wcrp-cmip.org/cmip7-task-teams/fresh-eyes-on-cmip/
 [GlobalAttrs]: https://doi.org/10.5281/zenodo.17250296
 [grid]: https://doi.org/10.5281/zenodo.15697024
-[variableid]: https://airtable.com/apphMYhEwBJfd0bUK/shrYC888Qxf8gkvky/tblpo5L8maBIGlM1B/viwNNzrqK5oPL7zk2
 [datareqpaperatm]: https://egusphere.copernicus.org/preprints/2025/egusphere-2025-3189/
 [datarequest]: https://bit.ly/CMIP7-DReq-latest
 [cmortablecmip7]: https://github.com/WCRP-CMIP/cmip7-cmor-tables
 [varlist]: https://cmip-data-request.github.io/cmip7-dreq-webview/latest/variables.html
 [freqlist]: https://cmip-data-request.github.io/cmip7-dreq-webview/latest/cmip7_frequency.html
 [emd]:  https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/
+[CMIPpubs]: https://cmip-publications.llnl.gov
 
 
- <!-- TODO: all the links below need to be changed when the new version arrives. airtable ? -->
+ <!-- TODO: all the links below need to be changed when the new version arrives. -->
  <!-- CMIP6 links -->
  <!--[CMIPpubs]: https://cmip-publications.llnl.gov/view/CMIP6/  
-[varlist]: https://airtable.com/apphXCUgASIeT6jCz/shrFnB7BtupFo1Y1e/tblqMgEiHxBJbwm2x
 [experimentlist]: https://wcrp-cmip.github.io/CMIP6_CVs/docs/CMIP6_experiment_id.html
 [activitylist]: https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_activity_id.json
 [sourcelist]: https://wcrp-cmip.github.io/CMIP6_CVs/docs/CMIP6_source_id.html 
@@ -403,9 +405,7 @@ First time using CMIP? Need a bit more help ? Check out these resources:
 [freqlist]: https://github.com/WCRP-CMIP/CMIP6_CVs/blob/main/CMIP6_frequency.json
 [maskavg]: https://wcrp-cmip.github.io/WGCM_Infrastructure_Panel/CMIP6/time_and_area_averaging.html -->
 
-
  <!-- unknown links -->
-[CMIPpubs]:  ?
 [experimentlist]:  ?
 [activitylist]:  ?
 [sourcelist]:  ?

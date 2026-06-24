@@ -6,14 +6,14 @@ title: Domain names relevant to CMIP7 activities
 # Domain names relevant to CMIP7 activities
 
 The following domains and URLs are relevant to CMIP7 activities and may be useful to ensure that 
-institutional fire walls allow access.
+institutional firewalls allow access.
 
 To update this list please raise an issue (pull requests welcome) via [github](https://github.com/WCRP-CMIP/cmip7-guidance/).
 
 
 | Service | Domains |
 | --- | --- |
-| Errata | `errata.ipsl.fr` |
+| Errata | `errata.esgf.io` |
 | Errata Documentation | `ipsl.gitbook.io` |
 | CMIP6 Citation service | `www.wdc-climate.de` |
 | PID / Handle service | `handle-esgf.dkrz.de` |
@@ -24,6 +24,7 @@ To update this list please raise an issue (pull requests welcome) via [github](h
 | CEDA ESGF Metagrid | `esgf-ui.ceda.ac.uk` |
 | DKRZ ESGF Metagrid | `esgf-metagrid.cloud.dkrz.de` |
 | ESGF webpages | `*.esgf.io` |
+| CMIP7 guidance sites | `*.mipcvs.dev` |
 
-Last update Apr 2026
+Last update May 2026
 

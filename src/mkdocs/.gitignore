@@ -41,7 +41,8 @@ ENV/
 .DS_Store
 Thumbs.db
 
-# Generated files
+# No longer generated, but keep ignoring it so stale copies from previous
+# builds on contributors' machines never get committed.
 docs/SUMMARY.md
 
 # Copier answers (optional - keep if you want to track config)

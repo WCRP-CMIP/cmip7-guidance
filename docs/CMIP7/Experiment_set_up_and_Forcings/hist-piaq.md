@@ -1,66 +1,96 @@
 ---
 layout: default
-title: hist-piAQ Experiment Setup and Forcings Guidance
+title: "Experiment Setup and Forcings Guidance: hist-piAQ"
 ---
 
-# hist-piAQ Experiment Setup and Forcings Guidance
+# Experiment Setup and Forcings Guidance: hist-piAQ
 
-<!-- TODO: get this information from esgvoc (add reference URLs at that point) -->
-Responsible activity: AerChemMIP
+Used to diagnose climate and air quality responses to the regionally heterogeneous evolution of anthropogenic non-CH4
+SLCF emissions.
+Anthropogenic non-CH4 tropospheric O3 precursor emissions (NMVOCs, CO, NOx), aerosols, and aerosol precursor emissions
+(BC, OC, NH3, SO2) evolve as in `piControl`.
+All other forcings evolve as in `historical`.
+Requires interactive chemistry.
+Models without interactive chemistry should run `hist-piAer` instead.
+(Renamed from `hist-piNTCF` in AerChemMIP phase 1.)
 
-Note, the information on this page is likely not correct.
-We are awaiting documentation of the forcings for the AerChemMIP CMIP7 AFT experiments.
-Some details may be available in [Fiedler et al](https://doi.org/10.5194/egusphere-2025-5669) (preprint)
-and information on AerChemMIP can be found via the [CMIP IPO website](https://wcrp-cmip.org/mips/aerchemmip2/).
-Please see [issue #124](https://github.com/WCRP-CMIP/cmip7-guidance/issues/124)
-to track progress resolving this.
+- Responsible activity: [AerChemMIP](./index.md#aerchemmip)
+- Tier: 1
+- MIP co-chair review: **In progress** see
+  [https://github.com/WCRP-CMIP/cmip7-guidance/issues/184](https://github.com/WCRP-CMIP/cmip7-guidance/issues/184)
 
-<!-- TODO: get this one line description from esgvoc -->
-<!-- TODO: check this with someone who knows what they're reading -->
-In combination with `historical`, allows for evaluation of the air quality and climate effect of historical aerosol and tropospheric non-methane ozone precursor emissions in models with interactive chemistry (for models without interactive chemistry, see `hist-piAer`).
+This page is intended to help with implementation.
+If you notice something that is unclear, please
+[raise an issue](https://github.com/WCRP-CMIP/cmip7-guidance/issues/new).
+
+For the full background of the experiment, please see the following URLs:
+
+- [https://doi.org/10.5194/gmd-10-585-2017](https://doi.org/10.5194/gmd-10-585-2017)
+
+## Paired experiments
+
+- [hist-piAer](./hist-piaer.md) is the corresponding non-interactive-chemistry experiment for models that do not include
+  interactive chemistry.
 
 ## Experiment set up
 
-<!-- TODO: check this with someone who knows what they're reading -->
-<!-- TODO: decide and then consistently apply some convention about whether experiment names are always surround by backticks `` or not -->
-The `hist-piAQ` simulation is a simple variant of the [historical simulation](./historical.md)
-where aerosol and trospheric non-methane ozone precursor emissions are kept at pre-industrial levels.
-`hist-piAQ` is for models that include interactive chemistry.
-For models without interactive chemistry, please see [hist-piAer](./hist-piaer.md) instead.
-<!-- TODO: consider whether we can generate these sentences automatically based on esgvoc -->
-The simulation output should start on 1850-01-01 and end on 2021-12-31.
-<!-- TODO: double check, dunne et al. says 6?! -->
+### Parent experiment and branching
+
+The hist-piAQ experiment branches from the [piControl](./picontrol.md) experiment (part of [CMIP](./index.md#cmip)).
+The parent experiment's MIP era is [CMIP7](https://wcrp-cmip.org/CMIP7).
+
+Branch from [piControl](./picontrol.md) at the same time as [historical](./historical.md).
+
+### Output time axis
+
+Your output time axis must start on 1850-01-01 and must end on 2021-12-31.
+You must perform the full simulation i.e. 172 simulation years.
+
+### Minimum ensemble size
+
 Only one ensemble member is required.
-
-### Parent experiment
-
-<!--
-    TODO: use esgvoc to fill out the template
-    `<experiment-name>` branches from the `<parent-experiment-name>` simulation (part of `<parent-experiment-activity>`).
--->
-`hist-piAQ` branches from the `piControl` simulation (part of `CMIP`).
-<!-- TODO: get branch information from esgvoc -->
-Branch from `piControl` at a time of your choosing.
-This branch time should match the branch time used for initialising the [historical simulation](./historical.md).
 
 ## Forcings
 
+The following information will help you identify the forcings to use.
+However, we can't define every single detail because there can be lots of subjective steps between the raw forcings data
+and model inputs (e.g. interpolation, re-aggregation, supplementation with other information).
+If further guidance would be helpful, please [raise an issue](https://github.com/WCRP-CMIP/cmip7-guidance/issues/new).
+
 ### General headlines
 
-The `hist-piAQ` experiment is a time-varying forcings experiment,
-except for aerosol and tropospheric non-methane ozone precursor emissions which should be fixed.
+The hist-piAQ experiment is a transient forcings experiment.
 
-### Notes
+### Data
 
-See notes for the [piControl simulation](./picontrol.md) and [historical simulation](./historical.md).
+Here we make a distinction between data that is described on other experiment pages, data that is described on other
+experiment pages with modifications you have to make yourself, data available via ESGF's input4MIPs project and data
+distributed via other channels.
 
-### Versions to use
+#### Data described on other experiment pages
 
-For aerosol and trospheric non-methane ozone precursor emissions
-the relevant forcing is the same as for the [piControl simulation](./picontrol.md).
-For all other forcings,
-the forcing versions relevant for this simulation are the same as for the [historical simulation](./historical.md).
+For the following data, please see these other experiment pages:
 
-### Getting the data
+- [historical](./historical.md) for land use, greenhouse gas concentrations, stratospheric aerosol forcing, ozone,
+  nitrogen deposition, solar, aerosol optical properties, population density
 
-See instructions for the [piControl simulation](./picontrol.md) and [historical simulation](./historical.md).
+#### Data described on other experiment pages with modifications you have to make
+
+For the following forcings, please use data from the specified experiments with the specified modifications.
+
+- for anthropogenic emissions, use the forcings from [historical](./historical.md) but aerosol (BC, OC, NH<sub>3</sub>,
+  SO<sub>2</sub>) and tropospheric non-methane ozone precursor emissions (NMVOCs, CO, NO<sub>x</sub>) should be fixed to
+  [piControl simulation](./picontrol.md) values
+- for biomass burning emissions, use the forcings from [historical](./historical.md) but aerosol (BC, OC,
+  NH<sub>3</sub>, SO<sub>2</sub>) and tropospheric non-methane ozone precursor emissions (NMVOCs, CO, NO<sub>x</sub>)
+  should be fixed to [piControl simulation](./picontrol.md) values
+
+#### Data available via input4MIPs
+
+No input4MIPs-based data is described specifically on this page.
+Please see the other [data](#data) sub-sections for details of the forcings data to use for this experiment.
+
+#### Data not available via input4MIPs
+
+No data that is not input4MIPs-based is described specifically on this page.
+Please see the other [data](#data) sub-sections for details of the forcings data to use for this experiment.

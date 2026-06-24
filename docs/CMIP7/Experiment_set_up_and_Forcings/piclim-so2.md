@@ -1,58 +1,87 @@
 ---
 layout: default
-title: piClim-SO2 Experiment Setup and Forcings Guidance
+title: "Experiment Setup and Forcings Guidance: piClim-SO2"
 ---
 
-# piClim-SO2 Experiment Setup and Forcings Guidance
+# Experiment Setup and Forcings Guidance: piClim-SO2
 
-<!-- TODO: get this information from esgvoc (add reference URLs at that point) -->
-Responsible activity: AerChemMIP
-
-<!-- TODO: get this one line description from esgvoc -->
 In combination with `piClim-control`, quantifies present-day sulfur (dioxide) effective radiative forcing (ERF).
-Same as `piClim-control`, except sulfur emissions use present-day values
-(in CMIP defined as the last year of the `historical` simulation within the same CMIP era i.e. 2021 values for CMIP7).
+
+- Responsible activity: [AerChemMIP](./index.md#aerchemmip)
+- Tier: 1
+- MIP co-chair review: **In progress** see
+  [https://github.com/WCRP-CMIP/cmip7-guidance/issues/184](https://github.com/WCRP-CMIP/cmip7-guidance/issues/184)
+
+This page is intended to help with implementation.
+If you notice something that is unclear, please
+[raise an issue](https://github.com/WCRP-CMIP/cmip7-guidance/issues/new).
+
+For the full background of the experiment, please see the following URLs:
+
+- [https://doi.org/10.5194/gmd-10-585-2017](https://doi.org/10.5194/gmd-10-585-2017)
 
 ## Experiment set up
 
-The piClim-SO2 simulation uses the same forcings as [piClim-control](./piclim-control.md),
-except emissions of sulfur dioxide (SO<sub>2</sub>) use 2021 values.
-The 2021 values should be prescribed on repeat throughout the simulation.
-<!-- TODO: consider whether we can generate these sentences automatically based on esgvoc -->
-It is recommended that you use the same time axis as you use for your [piClim-control](./piclim-control.md) output
-to make life easy for analysts of your output
-(although this is not enforced so you are technically free to start the time axis of your outputs at whatever year you like).
-Simulations should be at least 30 years in length.
+### Parent experiment and branching
+
+The piClim-SO2 experiment branches from the [piControl](./picontrol.md) experiment (part of [CMIP](./index.md#cmip)).
+The parent experiment's MIP era is [CMIP7](https://wcrp-cmip.org/CMIP7).
+
+Branch from [piControl](./picontrol.md) at the same time as [piClim-control](./piclim-control.md).
+
+### Output time axis
+
+You are free to start and end the time axis of your outputs at whatever time you like (e.g. starting at year 1, or 1850,
+or year 500).
+You must perform at least 30 simulation years.
+
+If you have no strong feeling, then you will make life simplest for analysts if you use the same time axis as
+[piClim-control](./piclim-control.md).
+
+### Minimum ensemble size
+
 Only one ensemble member is required.
-
-### Parent experiment
-
-<!--
-    TODO: use esgvoc to fill out the template
-    `<experiment-name>` branches from the `<parent-experiment-name>` simulation (part of `<parent-experiment-activity>`).
--->
-<!-- TODO: check if there is meant to be a spinup -->
-`piClim-SO2` does not branch from another simulation.
 
 ## Forcings
 
+The following information will help you identify the forcings to use.
+However, we can't define every single detail because there can be lots of subjective steps between the raw forcings data
+and model inputs (e.g. interpolation, re-aggregation, supplementation with other information).
+If further guidance would be helpful, please [raise an issue](https://github.com/WCRP-CMIP/cmip7-guidance/issues/new).
+
 ### General headlines
 
-See general headlines for the [`piClim-control` simulation](./piclim-control.md).
+The piClim-SO2 experiment is a fixed forcings experiment.
 
-### Notes
+### Data
 
-See notes for the [piClim-control simulation](./piclim-control.md).
+Here we make a distinction between data that is described on other experiment pages, data that is described on other
+experiment pages with modifications you have to make yourself, data available via ESGF's input4MIPs project and data
+distributed via other channels.
 
-### Versions to use
+#### Data described on other experiment pages
 
-For the sulfur dioxide (SO2) emissions,
-the forcing version relevant for this simulation is the same as for the [historical simulation](./historical.md).
-For all other forcings,
-the forcing versions relevant for this simulation are the same as for the [piClim-control simulation](./piclim-control.md).
+For the following data, please see these other experiment pages:
 
-### Getting the data
+- [piControl](./picontrol.md) for land use, greenhouse gas concentrations, stratospheric aerosol forcing, solar, aerosol
+  optical properties, population density, ozone, nitrogen deposition
+- [piClim-control](./piclim-control.md) for sea-surface temperature forcing
 
-<!-- TODO: allow for just putting the bash script here again i.e. repeat the information rather than forcing people to go digging -->
-See instructions for the[piClim-control simulation](./piclim-control.md) 
-and [historical simulation](./historical.md).
+#### Data described on other experiment pages with modifications you have to make
+
+For the following forcings, please use data from the specified experiments with the specified modifications.
+
+- for anthropogenic emissions, use the forcings from [historical](./historical.md) but apply the 2021 sulfur dioxide
+  (SO<sub>2</sub>) emissions value on repeat and the 1850 value on repeat for all other species
+- for biomass burning emissions, use the forcings from [historical](./historical.md) but apply the 2021 sulfur dioxide
+  (SO<sub>2</sub>) emissions value on repeat and the 1850 value on repeat for all other species
+
+#### Data available via input4MIPs
+
+No input4MIPs-based data is described specifically on this page.
+Please see the other [data](#data) sub-sections for details of the forcings data to use for this experiment.
+
+#### Data not available via input4MIPs
+
+No data that is not input4MIPs-based is described specifically on this page.
+Please see the other [data](#data) sub-sections for details of the forcings data to use for this experiment.
