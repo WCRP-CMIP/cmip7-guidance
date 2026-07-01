@@ -319,7 +319,7 @@ A list of the checks included in the plugin for CMIP7 can be found [here](QC_che
 ### 🚧 Important Caveats
 
 - **Scope is limited**
-    - Support **CMIP6**, **CMIP7** and **CORDEX-CMIP6**
+    - Support **CMIP6**, **CMIP6Plis**, **CMIP7** and **CORDEX-CMIP6**
     - Additional projets will come in the future depending on the resources.
 
 - **Development in progress**:  
@@ -339,6 +339,10 @@ The framework for the [new WCRP plugin](https://esgf.github.io/cc-plugin-wcrp/) 
 - Development progress tracked via a shared, public QC checklist table
 
 ### 📦 How to Get Started
+
+> ⚠️ For **CMIP7** and **CORDEX-CMIP6**, the QC plugin is mandatory and is therefore enabled by default into ESGF publisher. Modellers are nevertheless strongly encouraged to run it prior in their data preparation workflow, in order to identify and fix issues before reaching the publication stage.
+
+> ⚠️ For **CMIP6** and **CMIP6Plus**, the QC is not mandatory and is therefore **_not_** enabled by default into ESGF publisher. However, modellers are strongly encouraged to run it prior in their data preparation workflow, both to comply with ESGF publication requirements (as _PrePARE_ used to do) and to improve metadata consistency and reuse by downstream services such as REF and C3S.
 
 - Installation instructions and basic usage are available here: 📘 <https://github.com/ESGF/cc-plugin-wcrp>
 - GitHub release: 🔗 <https://github.com/ESGF/cc-plugin-wcrp/releases>
