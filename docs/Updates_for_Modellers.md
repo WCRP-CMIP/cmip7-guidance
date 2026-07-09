@@ -38,7 +38,21 @@ Best wishes,
 
 CMIP IPO on behalf of CMIP Forcings Task Team and CMIP Panel Co-chairs
 
+---
 
+## 9th June 2026
+
+Dear All,
+
+The CMIP Essential Model Documentation (EMD) team are holding regular online drop-in sessions "EMD-Live!" to support modelling centres who are completing their CMIP7 model documentation.
+
+The aim of the sessions is to help modelling centres to progress through the EMD process alongside the live reviewing of your submissions. EMD-Live! sessions will be held every week on Mondays at 15:00 UTC and Tuesdays at 07:00 UTC throughout June and July. You will have received calendar invites for these sessions.
+
+If you would prefer a one-to-one session with the EMD team, please contact [cmip-ipo@esa.int](mailto:cmip-ipo@esa.int) with your availability and we can arrange this for you.
+
+Best wishes,
+
+CMIP IPO
 
 ---
 
