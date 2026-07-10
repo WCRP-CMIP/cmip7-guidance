@@ -47,7 +47,7 @@ Information on the CMIP7 citation service is now available here and further inf
 
 We urgently remind modelling centres to complete the data protection form and energy use spreadsheet sent to all modelling centre scientific and technical leads on the 9th February 2026.  
 
-If you have not received a link to your survey spreadsheet, or require personal assistance to complete the spreadsheet please [contact the task team](http://energy-carbon-questionnaire@wcrp-cmip.org/). 
+If you have not received a link to your survey spreadsheet, or require personal assistance to complete the spreadsheet please [contact the task team](mailto:energy-carbon-questionnaire@wcrp-cmip.org/). 
  
 [How-to-guide for the spreadsheet](https://github.com/WCRP-CMIP/cmip7-guidance/blob/docs/docs/How_to_Guides/Energy_Consumption_and_Carbon_Footprint_Spreadsheet.md) 
 
