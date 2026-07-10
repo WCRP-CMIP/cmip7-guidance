@@ -8,6 +8,50 @@ title: CMIP7 Updates for modelling groups
 This page will be updated with information of interest to modelling groups that the CMIP IPO has communicated by email (most recent at top).
 
 ---
+## 10 July 2026
+**Subject:** CMIP7 UPDATE: please read email and link carefully for latest information
+
+Dear modelling centres,
+ 
+Thank you for your continued engagement and dedication to delivering CMIP data. The latest update can be found below and at Updates for modelling groups:
+
+- Scenario forcings update
+- Experiment naming update and data request release
+- Data citation service
+- Energy Consumption and Carbon Footprint TT survey
+- Data delivery update reminder
+  
+### Scenario forcings
+
+Following our update on 19 June regarding an issue with CEDS CMIP7 aviation emissions data for 2023, the updated aircraft data (with fixed seasonality) is now available here.
+ 
+The final Medium (M) and High-to-Low (HL) scenario forcings for land use, ozone and nitrogen deposition are now available:
+- [Land use](https://metagrid.esgf-west.org/search?project=input4MIPs&activeFacets=%7B%22mip_era%22%3A%22CMIP7%22%2C%22target_mip_list%22%3A%22ScenarioMIP%22%2C%22institution_id%22%3A%22UofMD%22%7D&textInputs=%5B%22land%22%5D)
+- [Ozone](https://metagrid.esgf-west.org/search?project=input4MIPs&activeFacets=%7B%22mip_era%22%3A%22CMIP7%22%2C%22target_mip_list%22%3A%22ScenarioMIP%22%2C%22institution_id%22%3A%22UofMD%22%7D&textInputs=%5B%22land%22%5D)
+- [Nitrogen deposition](https://metagrid.esgf-west.org/search?project=input4MIPs&activeFacets=%7B%22mip_era%22%3A%22CMIP7%22%2C%22target_mip_list%22%3A%22ScenarioMIP%22%2C%22institution_id%22%3A%22UofMD%22%7D&textInputs=%5B%22land%22%5D)
+ 
+
+The next set of scenarios to be produced for these three forcings will be Low-to-Negative (LN) and Medium-to-Low (ML) and are expected to be available by end of September 2026. This will then leave Low (L) which will be made available before end of the year.
+ 
+All forcing datasets can be accessed from the [input4MIPs webpages](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/), however the documentation pages for the three datasets above are not yet updated to reflect the publication of the datasets. You can track the [status of these here](https://github.com/PCMDI/input4MIPs_CVs/issues/459).
+
+### Experiment naming update and data request release
+
+An issue has been reported with incorrect updates to experiment ids in the [Data Request v1.2.2.4](https://wcrp-cmip.org/cmip7-data-request-v1-2-2-4/). The issue is only with lower case letters being used instead of upper case letters (e.g. picontrol instead of piControl). This will be corrected in a new release, which should be available from mid July. 
+ 
+### Data citation service
+
+Information on the CMIP7 citation service is now available here and further information will be distributed once data is being published.
+ 
+### Energy Consumption & Carbon Footprint Task Team survey
+
+We urgently remind modelling centres to complete the data protection form and energy use spreadsheet sent to all modelling centre scientific and technical leads on the 9th February 2026.  
+
+If you have not received a link to your survey spreadsheet, or require personal assistance to complete the spreadsheet please [contact the task team](http://energy-carbon-questionnaire@wcrp-cmip.org/). 
+ 
+[How-to-guide for the spreadsheet](https://github.com/WCRP-CMIP/cmip7-guidance/blob/docs/docs/How_to_Guides/Energy_Consumption_and_Carbon_Footprint_Spreadsheet.md) 
+
+---
 ## 19th June 2026
 
 **Subject**: Notice of issue with CEDS CMIP7 aviation emissions data for 2023, and consequently, all scenario data (which uses 2023-historical seasonality for anthropogenic emissions).
@@ -20,7 +64,7 @@ We would like to make you aware of an error that has been identified in the seas
 
 An input processing error in the Carbon Monitor data used to generate the monthly air seasonality has caused some January-June 2023 aviation values to be inadvertently counted twice. This has resulted in:
 
-1.	 Artificially inflated aviation emissions during the first half of 2023
+1.	Artificially inflated aviation emissions during the first half of 2023
 2.	Suppressed emissions during the second half of 2023
 3.	An unrealistic seasonal profile compared with surrounding years
 
