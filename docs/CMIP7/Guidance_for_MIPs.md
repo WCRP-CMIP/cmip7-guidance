@@ -16,8 +16,6 @@ General guidance on setting up a MIP is provided in [Appendix B of Dunne et al. 
 
 Guidance on naming MIP experiments is [available here](https://zenodo.org/records/14929769).
 
-General guidance is also available via the [General Guidance](General_Guidance.md) page.
-
 ## 1. Activity and Experiment registration
 
 Information on registering new activities (MIPs) and experiments in the Controlled Vocabularies can be found within the CV registration documentation [here](cv_registration.md#23-activity-registration) and [here](cv_registration.md#24-experiment-registration).

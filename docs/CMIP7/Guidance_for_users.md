@@ -8,10 +8,6 @@ title: CMIP7 Guidance for Data Users
 
 This page is designed to inform users of climate model outputs on key CMIP7 concepts and tools. It is a landing page to provide context and to redirect them to more detailed resources.
 
-!!! info ""
-    An overview of **how to access and use CMIP data** is given in the slides from [CMIP 2026 workshop WIP session](https://zenodo.org/records/18934629) (slides 3-20).
-
-General guidance is also available via the [General Guidance](General_Guidance.md) page.
 To sign up for the CMIP Community News mailing list please visit <https://wcrp-cmip.org/cmip-mailing-lists/>.
 
 ## 1.  Accessing CMIP7 data
@@ -58,7 +54,8 @@ There are 3 options to access the data:
       
 For data access routes that do not involve official ESGF nodes, we encourage users to verify that the data used is the latest version, and cite the original sources appropriately (see below). 
 
-
+!!! info ""
+    An overview of **how to access and use CMIP data** is given in the slides from [CMIP 2026 workshop WIP session](https://zenodo.org/records/18934629) (slides 3-20).
 
 
 
@@ -69,43 +66,33 @@ To enable modelling groups and others who support CMIP7 to demonstrate its impac
 ### Mandatory
 
 1. **Cite the specific dataset(s) used.**
+       <!-- TODO: verify if version is in citation for CMIP7 
+            TODO: verify that PID and handle.net still work for CMIP7 
+            TODO: Add a CMIP7 example of citation when one exists-->
 
-    For each model whose data is used, please include a citation in the form of:
+     For each model whose data is used, please include a citation in the form of:
 
     > Authors/Data Creators (publication year): Title. Version YYYYMMDD. Earth System Grid Federation. DOI.
         
     e.g. 
 
-    > Swart et al. (2019): CCCma CanESM5 model output prepared for CMIP6 ScenarioMIP. Version 20190429. Earth System Grid Federation. https://doi.org/10.22033/ESGF/CMIP6.1317.
+    > Swart et al. (2019). CCCma CanESM5 model output prepared for CMIP6 CMIP historical. Version 20190429. Earth System Grid Federation. https://doi.org/10.22033/ESGF/CMIP6.3610 .
 
     Please include a table with at minimum the models ("sources"), institutions, and data citations as above, as well as a data availability statement pointing to the table and acknowledging ESGF. If the journal has a citation limit, putting the table in the Supporting Information is acceptable.
 
+    For CMIP7,the granularity of the data citations is at the level of a model's contribution to an experiment, such that all ensemble members plus all erratas and future corrections within an experiment are covered by one citation.
+
     ??? Question "How to find the DOI and the version?"
+        🔍 You can search databases.  The [Citation Search][citesearch] can help you find the DOI (but not the version). [MetaGrid][metagridwest] results indicate the version and have a citation tab.
+  
+        
         🤖 You can use the python library [CMIPcite][cmipcite]. Input tracking_id(s), dataset PID(s) or file paths(s) to retrieve the citation (textually or in the bibtex format).
 
-        🖱️ You can also do the work on CMIPcite by hand: Take the `tracking_id` global attribute of a file and append it to [http://hdl.handle.net/](http://hdl.handle.net/) (e.g., [http://hdl.handle.net/hdl:21.14100/be06a059-363d-47a4-97a2-d5253190fd15](http://hdl.handle.net/hdl:21.14100/be06a059-363d-47a4-97a2-d5253190fd15)). From there, you can follow "The file is part of the following aggregation(s)" and find the DOI and version of the dataset.
-
-        🔍 You can also search databases.  The [Citation Search][citesearch] can help you find the DOI (but not the version). MetaGrid results indicate the version and have a citation tab.
-
-        Note that there are two citation granularities (MIP-model-experiment data and MIP-model data) and that the version has to be added separately as it is not included in the DOI.
-
-        Further information on the data citation concept is described in [Stockhause and Lautenschlager (2017)][Stockhause2017].
+        🖱️ You can also do the work of CMIPcite by hand: Take the `tracking_id` global attribute of a file and append it to [http://hdl.handle.net/](http://hdl.handle.net/) (e.g., [http://hdl.handle.net/hdl:21.14100/be06a059-363d-47a4-97a2-d5253190fd15](http://hdl.handle.net/hdl:21.14100/be06a059-363d-47a4-97a2-d5253190fd15)). From there, you can follow "The file is part of the following aggregation(s)" and find the DOI and version of the dataset.
 
 
-    ??? Question "Do I cite the model based on activity or experiment?"
+    Further information on the data citation concept is described on the [Citation Guidance page](Citation_Guidance.md).
 
-        For each participating model, data citations exist at two high-level aggregations: activity and experiment. 
-        The activity-level citation refers to all experiments defined by that activity (i.e., MIP) for a given model. 
-        While data citation is mandatory, data users can choose which of these aggregation levels should be cited. 
-        It is recommended that:
-
-        - Wherever possible cite the experiments used (e.g., historical), using the experiment-level data citations.
-        - If this isn't feasible (e.g. limitations of the number of data citations imposed by a journal), use the activity-level data citation.
-
-        Experiment-specific data citations are useful for tracking the impact of specific CMIP7 experiments, which is valuable information for modelling centres and planning of future CMIP phases. 
-        However it is recognized that their finer granularity could result in an unmanageable number of references for data users, journals may limit the number of references, and a balance between the number of data and literature citations is desirable in scholarly publications.
-        
-    <!--TODO: Is #2 acknoledgmet necessary for funding ? or could it be replaced by a data availability statement.-->
 
 2. **Acknowledge CMIP7.**
 
@@ -300,7 +287,7 @@ Essential features of CMORized data are:
 * [Standard chunking](Guidance_for_modellers.md#5-model-output-requirements)
 
 
-## 5.  Reporting suspected errors
+## 5.  Errata: Searching and Reporting suspected errors 
 
 
 !!! Danger "Warning"
@@ -326,7 +313,7 @@ First time using CMIP? Need a bit more help ? Check out these resources:
 
 
 
-###### Document version: 2026-04-08
+###### Document version: 2026-07-13
  <!--  abbreviation -->
 *[CMIP7]: Coupled Model Intercomparison Project phase 7
 *[LLNL]: Lawrence Livermore National Laboratory
@@ -363,7 +350,6 @@ First time using CMIP? Need a bit more help ? Check out these resources:
 [cftime]: https://unidata.github.io/cftime/
 [ref]: https://dashboard.climate-ref.org
 [cmipcite]: https://cmipcite.readthedocs.io/en/latest/
-[citesearch]: https://www.wdc-climate.de/ords/f?p=127:2 
 [esgfqc]: https://github.com/ESGF/esgf-qc 
 [nodes]: https://wcrp-cmip.org/map/
 [cmcc]: https://esgf-ui.cmcc.it/esgf-dashboard-ui/index.html
@@ -392,6 +378,8 @@ First time using CMIP? Need a bit more help ? Check out these resources:
 [freqlist]: https://cmip-data-request.github.io/cmip7-dreq-webview/latest/cmip7_frequency.html
 [emd]:  https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/
 [CMIPpubs]: https://cmip-publications.llnl.gov
+[citesearch]: https://cmip7-citations.ceda.ac.uk/citations/
+
 
 
  <!-- TODO: all the links below need to be changed when the new version arrives. -->
