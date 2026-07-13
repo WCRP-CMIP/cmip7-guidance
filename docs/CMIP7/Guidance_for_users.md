@@ -94,16 +94,19 @@ To enable modelling groups and others who support CMIP7 to demonstrate its impac
 
     ??? Question "Do I cite the model based on activity or experiment?"
 
-        For each participating model, data citations exist at two high-level aggregations: activity and experiment. 
+        For each participating model, CMIP7 data citations are defined at the experiment level, as described in the [Citation Guidance](Citation_Guidance.md).
+        Experiment-specific data citations are useful for tracking the impact of specific CMIP7 experiments, which is valuable information for modelling centres and planning of future CMIP phases. 
+
+        For CMIP6, data citations existed at two high-level aggregations: activity and experiment.
         The activity-level citation refers to all experiments defined by that activity (i.e., MIP) for a given model. 
-        While data citation is mandatory, data users can choose which of these aggregation levels should be cited. 
+        While data citation is mandatory, users of CMIP6 data can choose which of these aggregation levels should be cited. 
         It is recommended that:
 
         - Wherever possible cite the experiments used (e.g., historical), using the experiment-level data citations.
         - If this isn't feasible (e.g. limitations of the number of data citations imposed by a journal), use the activity-level data citation.
+        
+        Since a balance between the number of data and literature citations may be desirable in scholarly publications, authors may choose to use activity citations if necessary.
 
-        Experiment-specific data citations are useful for tracking the impact of specific CMIP7 experiments, which is valuable information for modelling centres and planning of future CMIP phases. 
-        However it is recognized that their finer granularity could result in an unmanageable number of references for data users, journals may limit the number of references, and a balance between the number of data and literature citations is desirable in scholarly publications.
         
     <!--TODO: Is #2 acknoledgmet necessary for funding ? or could it be replaced by a data availability statement.-->
 
