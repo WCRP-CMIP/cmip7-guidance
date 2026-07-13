@@ -85,10 +85,9 @@ To enable modelling groups and others who support CMIP7 to demonstrate its impac
     ??? Question "How to find the DOI and the version?"
         🔍 You can search databases.  The [Citation Search][citesearch] can help you find the DOI (but not the version). [MetaGrid][metagridwest] results indicate the version and have a citation tab.
   
-        
-        🤖 You can use the python library [CMIPcite][cmipcite]. Input tracking_id(s), dataset PID(s) or file paths(s) to retrieve the citation (textually or in the bibtex format).
+        🖱️ You can also use the tracking id: Take the `tracking_id` global attribute of a file and append it to [http://hdl.handle.net/](http://hdl.handle.net/) (e.g., [http://hdl.handle.net/hdl:21.14100/be06a059-363d-47a4-97a2-d5253190fd15](http://hdl.handle.net/hdl:21.14100/be06a059-363d-47a4-97a2-d5253190fd15)). From there, you can follow "The file is part of the following aggregation(s)" and find the DOI and version of the dataset.
 
-        🖱️ You can also do the work of CMIPcite by hand: Take the `tracking_id` global attribute of a file and append it to [http://hdl.handle.net/](http://hdl.handle.net/) (e.g., [http://hdl.handle.net/hdl:21.14100/be06a059-363d-47a4-97a2-d5253190fd15](http://hdl.handle.net/hdl:21.14100/be06a059-363d-47a4-97a2-d5253190fd15)). From there, you can follow "The file is part of the following aggregation(s)" and find the DOI and version of the dataset.
+        🤖 You can use the experimental python library [CMIPcite][cmipcite]. Input tracking_id(s), dataset PID(s) or file paths(s) to retrieve the citation (textually or in the bibtex format).
 
 
     Further information on the data citation concept is described on the [Citation Guidance page](Citation_Guidance.md).
