@@ -85,10 +85,10 @@
   - [Guidance for users](CMIP7/Guidance_for_users.md)
   - [Guidance for ESGF](CMIP7/Guidance_for_ESGF.md)
   - [Guidance for MIPs](CMIP7/Guidance_for_MIPs.md)
-  - Standards
+  - Standards and References
     - [Global Attributes](CMIP7/Global_Attributes.md)
     - [Branded Variables](CMIP7/Branded_Variables.md)
-  - [GMD Special Issues](CMIP7/Special_Issues.md)
+    - [GMD Special Issues](CMIP7/Special_Issues.md)
   - [FAQ](CMIP7/FAQ.md)
 - How-to Guides
   - [Energy Consumption and Carbon Footprint Spreadsheet](How_to_Guides/Energy_Consumption_and_Carbon_Footprint_Spreadsheet.md)

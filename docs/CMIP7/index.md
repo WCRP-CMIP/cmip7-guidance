@@ -17,9 +17,10 @@ title: CMIP7 Guidance
 - [Guidance for users, including Terms of Use](Guidance_for_users.md)
 - [Guidance for ESGF node operators and publishers](Guidance_for_ESGF.md)
 - [Guidance for MIPs](Guidance_for_MIPs.md)
-- Standards
+- Standards and References
     - [Global Attributes](Global_Attributes.md)
     - [Branded Variables](Branded_Variables.md)
+    - [GMD Special Issues](CMIP7/Special_Issues.md)
 - [Frequently Asked Questions (FAQ)](FAQ.md)
 - [Domain names for CMIP7 services](Domain_names.md)
 
