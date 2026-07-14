@@ -311,6 +311,9 @@ First time using CMIP? Need a bit more help ? Check out these resources:
 
 
 
+If something is missing from this documentation, please open an issue [here][issue].
+
+
 
 ###### Document version: 2026-07-13
  <!--  abbreviation -->
@@ -358,6 +361,7 @@ First time using CMIP? Need a bit more help ? Check out these resources:
 [pangeo]: https://pangeo-data.github.io/pangeo-cmip6-cloud/
 [tools]: https://wcrp-cmip.org/tools/
 [virtualizarr]: https://virtualizarr.readthedocs.io/en/stable/
+[issue]: https://github.com/WCRP-CMIP/cmip7-guidance/issues
 
  <!-- CMIP7 links -->
 [GMDSpecialIssue]: https://gmd.copernicus.org/articles/special_issue1315.html
