@@ -278,3 +278,21 @@ The following experiments are included in `RFMIP`:
 1. [piClim-aer](./piclim-aer.md)
 1. [piClim-histaer](./piclim-histaer.md)
 1. [piClim-histall](./piclim-histall.md)
+
+## Other experiments
+
+### PolMIP
+
+Policy-aligned model intercomparison project: assessment of climate scenarios that are explicitly anchored in national policy objectives.
+
+These pages are intended to help with implementation of these experiments.
+If you notice something that is unclear, please
+[raise an issue](https://github.com/WCRP-CMIP/cmip7-guidance/issues/new).
+For the full background of the experiments, please see the following URLs:
+
+- [https://doi.org/10.1038/s41467-025-62983-5](https://doi.org/10.1038/s41467-025-62983-5)
+- [https://dx.doi.org/10.1088/1748-9326/adfbfb](https://dx.doi.org/10.1088/1748-9326/adfbfb)
+
+The following experiments are included in `PolMIP`:
+
+1. [vl-cf](./vl-cf.md)
