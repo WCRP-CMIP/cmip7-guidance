@@ -131,6 +131,9 @@ Producing standardized (CMORized) data requires both grid labels and source_id. 
 #### Monitoring the status of your EMD submissions
 If you would like to monitor the status of your submissions to the EMD repository, you can [enter your GitHub ID here](https://emd.mipcvs.dev/docs/Progress_Tracker.html). This tracker will show what you have submitted and which of those have been merged, are in progress by the EMD, or require you to make changes/respond to queries. 
 
+!!! info "View your registered model"
+    Once your EMD Model registration (Step 4) is merged, view your registered model and assigned `source_id` at: [EMD Model Documentation](https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/Model/)
+
 #### Where can I get more help?
 For questions or queries, please send an email to emd@wcrp-cmip.org. We have also compiled some FAQs you might find useful [here](https://emd.mipcvs.dev/docs/FAQ/).
 
@@ -294,6 +297,8 @@ Several recent updates have been made  to the [CMIP7 Guidance and Documentation 
 ### Essential Model Documentation
 
 To register a model for inclusion in CMIP7 the [Essential Model Documentation (EMD)](https://doi.org/10.5281/zenodo.15439551) must be provided. The EMD registration forms are now available for beta testers, and documentation is available at <https://emd.mipcvs.dev/docs>. Model output grids must also be registered using these forms.
+
+You can track the progress of your EMD submissions using the [Progress Tracker](https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/Progress_Tracker.html) — simply enter your GitHub ID to monitor what's been submitted, what's in review, and what needs revision.
 
 Note that while a spreadsheet was recently circulated (21st December) to help modellers collaboratively gather this information, completion of the EMD github forms will be required. Since the EMD and grid registrations will be reviewed prior to acceptance, modellers are advised to complete these steps at least 2-3 weeks before beginning to write CMORized netcdf files.
 
