@@ -1,6 +1,5 @@
 ---
 layout: default
-<!--- Do we want to call this vl-cf or scen7-vl-cf (in line with ScenarioMIP names)? I can see pros and cons either way, guess it mostly depends how much we want this to be aligned with ScenarioMIP vs. clearly different --->
 title: "Experiment Setup and Forcings Guidance: vl-cf"
 ---
 
@@ -19,9 +18,8 @@ If you notice something that is unclear, please
 
 For the full background of the experiment, please see the following URLs:
 
-- [https://doi.org/10.1038/s41467-025-62983-5](https://doi.org/10.1038/s41467-025-62983-5)
-- [https://dx.doi.org/10.1088/1748-9326/adfbfb](https://dx.doi.org/10.1088/1748-9326/adfbfb)
-[https://doi.org/10.5281/zenodo.21487424](https://doi.org/10.5281/zenodo.21487424)
+- [https://doi.org/10.5281/zenodo.21487424](https://doi.org/10.5281/zenodo.21487424)
+
 ## Experiment set up
 
 ### Parent experiment and branching
