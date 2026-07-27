@@ -22,7 +22,7 @@ For the full background of the experiment, please see the following URLs:
 
 - [https://doi.org/10.1038/s41467-025-62983-5](https://doi.org/10.1038/s41467-025-62983-5)
 - [https://dx.doi.org/10.1088/1748-9326/adfbfb](https://dx.doi.org/10.1088/1748-9326/adfbfb)
-
+[https://doi.org/10.5281/zenodo.21487424](https://doi.org/10.5281/zenodo.21487424)
 ## Experiment set up
 
 ### Parent experiment and branching
