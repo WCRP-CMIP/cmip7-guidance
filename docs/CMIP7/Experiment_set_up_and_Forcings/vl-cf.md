@@ -5,7 +5,7 @@ title: "Experiment Setup and Forcings Guidance: vl-cf"
 
 # Experiment Setup and Forcings Guidance: vl-cf
 
-Counterfactual version of the `vl` scenario simulation
+Counterfactual version of the `scen7-vl` scenario simulation
 where reductions in CO<sub>2</sub> fossil emissions start in 2016-01.
 
 - Responsible activity: [PolMIP](./index.md#polmip)
@@ -20,6 +20,11 @@ If you notice something that is unclear, please
 For the full background of the experiment, please see the following URLs:
 
 - [https://doi.org/10.5281/zenodo.21487424](https://doi.org/10.5281/zenodo.21487424)
+
+<!--- Note to self: this pairing is missing on all scenario pages -->
+## Paired experiments
+
+- [esm-vl-cf](./esm-vl-cf.md) is the emissions-driven counterpart to this concentration-driven experiment
 
 ## Experiment set up
 
@@ -60,17 +65,15 @@ distributed via other channels.
 
 For the following data, please see these other experiment pages:
 
-- [historical](./historical.md) for biomass burning emissions, land use, stratospheric aerosol
+- [historical](./historical.md) for anthropogenic emissions, biomass burning emissions, land use, stratospheric aerosol
   forcing, solar, aerosol optical properties, population density, ozone, nitrogen deposition 
-- [scen7-vl](./scen7-vl.md) for biomass burning emissions, land use, stratospheric aerosol
+- [scen7-vl](./scen7-vl.md) for anthropogenic emissions, biomass burning emissions, land use, stratospheric aerosol
   forcing, solar, aerosol optical properties, population density, ozone, nitrogen deposition 
 
 #### Data described on other experiment pages with modifications you have to make
 
-For the following forcings, please use data from the specified experiments with the specified modifications.
-
-- for anthropogenic emissions, use the forcings from [historical](./historical.md) and [scen7-vl](./scen7-vl.md) 
-  for everything except CO<sub>2</sub>.
+No data described on other experiment pages requires modifications by you.
+Please see the other [data](#data) sub-sections for details of the forcings data to use for this experiment.
 
 #### Data available via input4MIPs
 
@@ -81,14 +84,6 @@ which should be used when running this simulation.
 The recommended version(s) are the version(s) we recommend using.
 Any acceptable versions can be used (you are not obliged to re-run simulations that used them).
 Please see the guidance pages linked under each forcing for full details.
-
-- anthropogenic emissions of CO<sub>2</sub>
-    - recommended source IDs: IIASA-IAMC-vl-cf-1-1-1, IIASA-IAMC-1-1-1
-<!---
-    TODO
-    - further guidance:
-      [input4mips-cvs.readthedocs.io/dataset-overviews/anthropogenic-slcf-co2-emissions](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/anthropogenic-slcf-co2-emissions/)
--->
 
 - greenhouse gas concentrations
     - recommended source IDs: CR-vl-cf-1-1-0
@@ -104,14 +99,6 @@ For easier parsing with machines, we also present the information given above as
 
 ```json
 {
-    "anthropogenic-slcf-co2-emissions": {
-        "human_readable_name": "anthropogenic emissions",
-        "recommended_versions": [
-            "IIASA-IAMC-vl-cf-1-1-1",
-            "IIASA-IAMC-1-1-1"
-        ],
-        "acceptable_versions": []
-    },
     "greenhouse-gas-concentrations": {
         "human_readable_name": "greenhouse gas concentrations",
         "recommended_versions": [
@@ -142,7 +129,7 @@ EXPERIMENT_NAME="vl-cf"
 # esgpull self install
 ## You may also need to run this step to get the data to download
 # esgpull config api.index_node esgf-node.ornl.gov/esgf-1-5-bridge
-esgpull add --track --tag ${EXPERIMENT_NAME} source_id:CR-vl-cf-1-1-0,IIASA-IAMC-1-1-1,IIASA-IAMC-vl-cf-1-1-1
+esgpull add --track --tag ${EXPERIMENT_NAME} source_id:CR-vl-cf-1-1-0
 esgpull update --tag ${EXPERIMENT_NAME} --yes
 esgpull download --tag ${EXPERIMENT_NAME}
 ```

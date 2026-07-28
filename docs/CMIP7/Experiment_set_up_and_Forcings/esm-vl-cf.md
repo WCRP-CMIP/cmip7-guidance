@@ -1,11 +1,13 @@
 ---
 layout: default
-title: "Experiment Setup and Forcings Guidance: vl-cf-ext"
+title: "Experiment Setup and Forcings Guidance: esm-vl-cf"
 ---
 
-# Experiment Setup and Forcings Guidance: vl-cf-ext
+# Experiment Setup and Forcings Guidance: esm-vl-cf
 
-Extension of `vl-cf` beyond 2100.
+Counterfactual version of the `esm-scen7-vl` scenario simulation
+where reductions in CO<sub>2</sub> fossil emissions start in 2016-01.
+Run with prescribed carbon dioxide emissions (for prescribed carbon dioxide concentrations, see `vl-cf`).
 
 - Responsible activity: [PolMIP](./index.md#polmip)
 - Tier: 1
@@ -20,24 +22,23 @@ For the full background of the experiment, please see the following URLs:
 
 - [https://doi.org/10.5281/zenodo.21487424](https://doi.org/10.5281/zenodo.21487424)
 
-<!--- Note to self: this pairing is missing on all scenario pages -->
 ## Paired experiments
 
-- [esm-vl-cf-ext](./esm-vl-cf-ext.md) is the emissions-driven counterpart to this concentration-driven experiment
+- [vl-cf](./vl-cf.md) is the concentration-driven counterpart to this emissions-driven experiment
 
 ## Experiment set up
 
 ### Parent experiment and branching
 
-The vl-cf-ext experiment branches from the [vl-cf](./vl-cf.md) experiment (part of [PolMIP](./index.md#polmip)).
+The esm-vl-cf experiment branches from the [esm-hist](./esm-hist.md) experiment (part of [CMIP](./index.md#cmip)).
 The parent experiment's MIP era is [CMIP7](https://wcrp-cmip.org/CMIP7).
 
-Branch from [vl-cf](./vl-cf.md) at 2100-12-31.
+Branch from [esm-hist](./esm-hist.md) at 2015-12-31.
 
 ### Output time axis
 
-Your output time axis must start on 2101-01-01 and must not end later than 2500-12-31.
-You must perform at least 50 simulation years.
+Your output time axis must start on 2016-01-01 and must end on 2100-12-31.
+You must perform the full simulation i.e. 85 simulation years.
 
 ### Minimum ensemble size
 
@@ -52,10 +53,7 @@ If further guidance would be helpful, please [raise an issue](https://github.com
 
 ### General headlines
 
-The vl-cf-ext experiment uses a mix of fixed and transient forcings.
-The fixed forcings are: nitrogen deposition, ozone and stratospheric aerosol forcing.
-The transient forcings are: aerosol optical properties, anthropogenic emissions, biomass burning emissions, greenhouse
-gas concentrations, land use, population density and solar.
+The esm-vl-cf experiment is a transient forcings experiment.
 
 ### Data
 
@@ -67,13 +65,17 @@ distributed via other channels.
 
 For the following data, please see these other experiment pages:
 
-- [scen7-vl-ext](./scen7-vl-ext.md) for anthropogenic emissions, biomass burning emissions, land use, stratospheric aerosol
+- [historical](./historical.md) for biomass burning emissions, land use, stratospheric aerosol
+  forcing, solar, aerosol optical properties, population density, ozone, nitrogen deposition 
+- [scen7-vl](./scen7-vl.md) for biomass burning emissions, land use, stratospheric aerosol
   forcing, solar, aerosol optical properties, population density, ozone, nitrogen deposition 
 
 #### Data described on other experiment pages with modifications you have to make
 
-No data described on other experiment pages requires modifications by you.
-Please see the other [data](#data) sub-sections for details of the forcings data to use for this experiment.
+For the following forcings, please use data from the specified experiments with the specified modifications.
+
+- for anthropogenic emissions, use the forcings from [historical](./historical.md) and [scen7-vl](./scen7-vl.md) 
+  for everything except CO<sub>2</sub>.
 
 #### Data available via input4MIPs
 
@@ -85,8 +87,16 @@ The recommended version(s) are the version(s) we recommend using.
 Any acceptable versions can be used (you are not obliged to re-run simulations that used them).
 Please see the guidance pages linked under each forcing for full details.
 
+- anthropogenic emissions of CO<sub>2</sub>
+    - recommended source IDs: IIASA-IAMC-vl-cf-1-1-1, IIASA-IAMC-1-1-1
+<!---
+    TODO
+    - further guidance:
+      [input4mips-cvs.readthedocs.io/dataset-overviews/anthropogenic-slcf-co2-emissions](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/anthropogenic-slcf-co2-emissions/)
+-->
+
 - greenhouse gas concentrations
-    - recommended source IDs: CR-vl-cf-ext-1-1-0
+    - recommended source IDs: CR-vl-cf-1-1-0
 <!---
     TODO
     - further guidance:
@@ -99,10 +109,18 @@ For easier parsing with machines, we also present the information given above as
 
 ```json
 {
+    "anthropogenic-slcf-co2-emissions": {
+        "human_readable_name": "anthropogenic emissions",
+        "recommended_versions": [
+            "IIASA-IAMC-vl-cf-1-1-1",
+            "IIASA-IAMC-1-1-1"
+        ],
+        "acceptable_versions": []
+    },
     "greenhouse-gas-concentrations": {
         "human_readable_name": "greenhouse gas concentrations",
         "recommended_versions": [
-            "CR-vl-cf-ext-1-1-0"
+            "CR-vl-cf-1-1-0"
         ],
         "acceptable_versions": []
     }
@@ -123,13 +141,13 @@ you actually need to run your model.
 ```bash
 #!/bin/bash
 
-EXPERIMENT_NAME="vl-cf-ext"
+EXPERIMENT_NAME="esm-vl-cf"
 
 ## You may need to run the below if you haven't already done it once with esgpull
 # esgpull self install
 ## You may also need to run this step to get the data to download
 # esgpull config api.index_node esgf-node.ornl.gov/esgf-1-5-bridge
-esgpull add --track --tag ${EXPERIMENT_NAME} source_id:CR-vl-cf-ext-1-1-0
+esgpull add --track --tag ${EXPERIMENT_NAME} source_id:CR-vl-cf-1-1-0,IIASA-IAMC-1-1-1,IIASA-IAMC-vl-cf-1-1-1
 esgpull update --tag ${EXPERIMENT_NAME} --yes
 esgpull download --tag ${EXPERIMENT_NAME}
 ```
