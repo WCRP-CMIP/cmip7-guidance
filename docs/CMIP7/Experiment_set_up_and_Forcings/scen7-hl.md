@@ -82,9 +82,7 @@ Please see the guidance pages linked under each forcing for full details.
     - recommended source IDs: IIASA-IAMC-1-1-1, IIASA-IAMC-hl-1-1-1, IIASA-IAMC-hl-1-1-2
     - notes: the aviation emissions should come from `IIASA-IAMC-hl-1-1-2`.
       `IIASA-IAMC-hl-1-1-2` was released quite late and the impact of the change is likely to be small, so if you have
-      simulations based on `IIASA-IAMC-hl-1-1-1`, you do not need to re-run them (but note that the extensions emissions
-      have the fix included, so there will be a small jump from the uncorrected scenario aviation emissions to the
-      corrected extension aviation emissions).
+      simulations based on `IIASA-IAMC-hl-1-1-1`, you do not need to re-run them.
     - further guidance:
       [input4mips-cvs.readthedocs.io/dataset-overviews/anthropogenic-slcf-co2-emissions](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/anthropogenic-slcf-co2-emissions/)
 
@@ -92,9 +90,7 @@ Please see the guidance pages linked under each forcing for full details.
     - recommended source IDs: IIASA-IAMC-1-1-1, IIASA-IAMC-hl-1-1-1, IIASA-IAMC-hl-1-1-2
     - notes: the aviation emissions should come from `IIASA-IAMC-hl-1-1-2`.
       `IIASA-IAMC-hl-1-1-2` was released quite late and the impact of the change is likely to be small, so if you have
-      simulations based on `IIASA-IAMC-hl-1-1-1`, you do not need to re-run them (but note that the extensions emissions
-      have the fix included, so there will be a small jump from the uncorrected scenario aviation emissions to the
-      corrected extension aviation emissions).
+      simulations based on `IIASA-IAMC-hl-1-1-1`, you do not need to re-run them.
     - further guidance:
       [input4mips-cvs.readthedocs.io/dataset-overviews/open-biomass-burning-emissions](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/open-biomass-burning-emissions/)
 

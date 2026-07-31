@@ -85,12 +85,22 @@ Any acceptable versions can be used (you are not obliged to re-run simulations t
 Please see the guidance pages linked under each forcing for full details.
 
 - anthropogenic emissions
-    - recommended source IDs: IIASA-IAMC-1-1-1, IIASA-IAMC-esm-ln-ext-1-1-1
+    - recommended source IDs: IIASA-IAMC-1-1-1, IIASA-IAMC-ln-ext-1-1-1, IIASA-IAMC-ln-ext-1-1-2
+    - notes: the aviation emissions should come from `IIASA-IAMC-ln-ext-1-1-2`.
+      `IIASA-IAMC-ln-ext-1-1-2` was released quite late and the impact of the change is likely to be small, so if you
+      have simulations based on `IIASA-IAMC-ln-ext-1-1-1`, you do not need to re-run them.
+      Please follow this pull request to track progress of the publication of the `IIASA-IAMC-ln-ext-1-1-2` aviation
+      emissions: [https://github.com/PCMDI/input4MIPs_CVs/pull/465](https://github.com/PCMDI/input4MIPs_CVs/pull/465)
     - further guidance:
       [input4mips-cvs.readthedocs.io/dataset-overviews/anthropogenic-slcf-co2-emissions](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/anthropogenic-slcf-co2-emissions/)
 
 - biomass burning emissions
-    - recommended source IDs: IIASA-IAMC-1-1-1, IIASA-IAMC-esm-ln-ext-1-1-1
+    - recommended source IDs: IIASA-IAMC-1-1-1, IIASA-IAMC-ln-ext-1-1-1, IIASA-IAMC-ln-ext-1-1-2
+    - notes: the aviation emissions should come from `IIASA-IAMC-ln-ext-1-1-2`.
+      `IIASA-IAMC-ln-ext-1-1-2` was released quite late and the impact of the change is likely to be small, so if you
+      have simulations based on `IIASA-IAMC-ln-ext-1-1-1`, you do not need to re-run them.
+      Please follow this pull request to track progress of the publication of the `IIASA-IAMC-ln-ext-1-1-2` aviation
+      emissions: [https://github.com/PCMDI/input4MIPs_CVs/pull/465](https://github.com/PCMDI/input4MIPs_CVs/pull/465)
     - further guidance:
       [input4mips-cvs.readthedocs.io/dataset-overviews/open-biomass-burning-emissions](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/open-biomass-burning-emissions/)
 
@@ -127,7 +137,8 @@ For easier parsing with machines, we also present the information given above as
         "human_readable_name": "anthropogenic emissions",
         "recommended_versions": [
             "IIASA-IAMC-1-1-1",
-            "IIASA-IAMC-esm-ln-ext-1-1-1"
+            "IIASA-IAMC-ln-ext-1-1-1",
+            "IIASA-IAMC-ln-ext-1-1-2"
         ],
         "acceptable_versions": []
     },
@@ -135,7 +146,8 @@ For easier parsing with machines, we also present the information given above as
         "human_readable_name": "biomass burning emissions",
         "recommended_versions": [
             "IIASA-IAMC-1-1-1",
-            "IIASA-IAMC-esm-ln-ext-1-1-1"
+            "IIASA-IAMC-ln-ext-1-1-1",
+            "IIASA-IAMC-ln-ext-1-1-2"
         ],
         "acceptable_versions": []
     },
@@ -190,7 +202,7 @@ EXPERIMENT_NAME="esm-scen7-ln-ext"
 # esgpull self install
 ## You may also need to run this step to get the data to download
 # esgpull config api.index_node esgf-node.ornl.gov/esgf-1-5-bridge
-esgpull add --track --tag ${EXPERIMENT_NAME} source_id:CR-esm-ln-ext-1-1-0,IIASA-IAMC-1-1-1,IIASA-IAMC-esm-ln-ext-1-1-1,PIK-esm-ln-ext-1-0-0,SOLARIS-HEPPA-ScenarioMIP-4-6
+esgpull add --track --tag ${EXPERIMENT_NAME} source_id:CR-esm-ln-ext-1-1-0,IIASA-IAMC-1-1-1,IIASA-IAMC-ln-ext-1-1-1,IIASA-IAMC-ln-ext-1-1-2,PIK-esm-ln-ext-1-0-0,SOLARIS-HEPPA-ScenarioMIP-4-6
 esgpull update --tag ${EXPERIMENT_NAME} --yes
 esgpull download --tag ${EXPERIMENT_NAME}
 ```
