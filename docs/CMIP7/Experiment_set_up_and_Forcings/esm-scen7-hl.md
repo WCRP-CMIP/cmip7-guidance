@@ -87,10 +87,7 @@ Please see the guidance pages linked under each forcing for full details.
       [input4mips-cvs.readthedocs.io/dataset-overviews/anthropogenic-slcf-co2-emissions](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/anthropogenic-slcf-co2-emissions/)
 
 - biomass burning emissions
-    - recommended source IDs: IIASA-IAMC-1-1-1, IIASA-IAMC-hl-1-1-1, IIASA-IAMC-hl-1-1-2
-    - notes: the aviation emissions should come from `IIASA-IAMC-hl-1-1-2`.
-      `IIASA-IAMC-hl-1-1-2` was released quite late and the impact of the change is likely to be small, so if you have
-      simulations based on `IIASA-IAMC-hl-1-1-1`, you do not need to re-run them.
+    - recommended source IDs: IIASA-IAMC-1-1-1, IIASA-IAMC-hl-1-1-1
     - further guidance:
       [input4mips-cvs.readthedocs.io/dataset-overviews/open-biomass-burning-emissions](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/open-biomass-burning-emissions/)
 
@@ -151,8 +148,7 @@ For easier parsing with machines, we also present the information given above as
         "human_readable_name": "biomass burning emissions",
         "recommended_versions": [
             "IIASA-IAMC-1-1-1",
-            "IIASA-IAMC-hl-1-1-1",
-            "IIASA-IAMC-hl-1-1-2"
+            "IIASA-IAMC-hl-1-1-1"
         ],
         "acceptable_versions": []
     },
