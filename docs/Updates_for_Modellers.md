@@ -32,9 +32,10 @@ In addition to supporting a community paper on CMIP7 ECS and TCR/TCRE, led by th
 **Please complete this [short survey](https://airtable.com/applbQctZtl09L2Ga/pagkVTXiJRhUE5NLh/form) for each model that your centre/group will contribute to CMIP7.**
 
 ### 2. Scenario forcings update
-**NEW DATA**: Simple plumes for anthropogenic aerosols in extended CMIP7 scenarios (Version SPv2.1) [Dataset]. Zenodo. [https://doi.org/10.5281/zenodo.21671953](https://doi.org/10.5281/zenodo.21671953) (Fiedler et al., 2026).
+**NEW DATA**: The latest simple plumes for anthropogenic aerosols in extended CMIP7 scenarios (Version SP v2.1) can be found at [Fiedler et al., 2026](https://doi.org/10.5281/zenodo.21671953).
 
-**DATASET UPDATE**: Please note as a result of an issue being found ([this comment](https://github.com/PCMDI/input4MIPs_CVs/discussions/464#discussioncomment-17835122)), aviation data needs to come from files with a different source ID than the rest of the data. For aviation data, files with source IDs of the form IIASA-IAMC-*-ext-1-1-2 should be used. For all other data, files with source IDs of the form IIASA-IAMC-*-ext-1-1-1 should be used.
+**DATASET UPDATE**: Please note as a result of an issue being found ([this comment](https://github.com/PCMDI/input4MIPs_CVs/discussions/464#discussioncomment-17835122)), aviation data needs to come from files with a different source ID than the rest of the data. For aviation data, files with source IDs of the form IIASA-IAMC-\*-ext-1-1-2 should be used. For all other data, files with source IDs of the form IIASA-IAMC-\*-ext-1-1-1 should be used.
+
 For full details and links to the data please see the guidance pages [here](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/anthropogenic-slcf-co2-emissions/#cmip7_1).
 
 **DELAY IN DATA AVAILABILITY**: We apologise for the delay to the delivery of the following land use scenario and scenario extension data:
