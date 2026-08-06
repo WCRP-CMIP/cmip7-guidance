@@ -29,7 +29,7 @@ To support early understanding of the CMIP7 model ensemble, the CMIP Panel would
 
 In addition to supporting a community paper on CMIP7 ECS and TCR/TCRE, led by the CMIP Panel on behalf of the CMIP7 modelling community, this effort would help facilitate timely and evidence-based communication in response to anticipated interest from the media, policymakers, and the wider public.
 
-**Please complete this [short survey](https://airtable.com/applbQctZtl09L2Ga/pagkVTXiJRhUE5NLh/form) for each model that your centre/group will contribute to CMIP7.**
+**Please see email version of this update for survey link. If you cannot find this, please contact the CMIP IPO.**
 
 ### 2. Scenario forcings update
 **NEW DATA**: The latest simple plumes for anthropogenic aerosols in extended CMIP7 scenarios (Version SP v2.1) can be found at [Fiedler et al., 2026](https://doi.org/10.5281/zenodo.21671953).
