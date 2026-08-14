@@ -119,6 +119,8 @@ EMD provides detailed technical documentation of your model. Registration follow
 
 For information on the EMD **please read the [DOCUMENTATION](https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/Information_for_Submitters/Submission-Guide/)**
 
+You can monitor the progress of your EMD submissions using the [Progress Tracker](https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/Progress_Tracker.html) — enter your GitHub ID to see what's submitted, in progress, or needs revision.
+
 Other links: [GitHub Repository](https://github.com/WCRP-CMIP/Essential-Model-Documentation/issues)
 
 
@@ -143,6 +145,9 @@ flowchart LR
 | 3b | [(or) Link existing component](https://github.com/WCRP-CMIP/Essential-Model-Documentation/issues/new?template=link_existing_component.yml) | Component ID, grid IDs | Config ID |
 | 4 | [Model](https://github.com/WCRP-CMIP/Essential-Model-Documentation/issues/new?template=model.yml) | Config IDs, coupling | `source_id` |
 
+!!! info "View registered models"
+    Once your EMD Model registration (Step 4) is merged, view your registered model and assigned `source_id` at: [EMD Model Documentation](https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/Model/)
+
 ---
 
 ## 3. Registration Workflow
@@ -162,8 +167,9 @@ flowchart LR
 3. **Submit**: This creates a GitHub issue
 4. **Automated checks**: The system performs initial validation
 5. **Review**: A reviewer checks your submission
-6. **Feedback loop**: You may be asked to make corrections
-7. **Approval**: Once approved, the entry is merged into the relevant repository
+6. **Track Progress**: Use the [EMD Progress Tracker](https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/Progress_Tracker.html) to monitor your submission status in real-time — enter your GitHub ID to see all your submissions
+7. **Feedback loop**: You may be asked to make corrections
+8. **Approval**: Once approved, the entry is merged into the relevant repository
 
 ### Typical Timeline
 
