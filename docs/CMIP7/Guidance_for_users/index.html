@@ -2708,7 +2708,7 @@ To sign up for the CMIP Community News mailing list please visit <a href="https:
 <summary>How to find the DOI and the version?</summary>
 <p>🤖 You can use the python library <a href="https://cmipcite.readthedocs.io/en/latest/">CMIPcite</a>. Input tracking_id(s), dataset PID(s) or file paths(s) to retrieve the citation (textually or in the bibtex format).</p>
 <p>🖱️ You can also do the work on CMIPcite by hand: Take the <code>tracking_id</code> global attribute of a file and append it to <a href="http://hdl.handle.net/">http://hdl.handle.net/</a> (e.g., <a href="http://hdl.handle.net/hdl:21.14100/be06a059-363d-47a4-97a2-d5253190fd15">http://hdl.handle.net/hdl:21.14100/be06a059-363d-47a4-97a2-d5253190fd15</a>). From there, you can follow "The file is part of the following aggregation(s)" and find the DOI and version of the dataset.</p>
-<p>🔍 You can also search databases.  The <a href="https://www.wdc-climate.de/ords/f?p=127:2">Citation Search</a> can help you find the DOI (but not the version). MetaGrid results indicate the version and have a citation tab.</p>
+<p>🔍 You can also search databases.  The <a href="https://cmip7-citations.ceda.ac.uk/citations/">Citation Search</a> can help you find the DOI (but not the version). MetaGrid results indicate the version and have a citation tab.</p>
 <p>Note that there are two citation granularities (MIP-model-experiment data and MIP-model data) and that the version has to be added separately as it is not included in the DOI.</p>
 <p>Further information on the data citation concept is described in <a href="https://doi.org/10.5334/dsj-2017-030">Stockhause and Lautenschlager (2017)</a>.</p>
 </details>
@@ -2781,14 +2781,18 @@ However it is recognized that their finer granularity could result in an unmanag
 <li>grid</li>
 <li>version</li>
 </ul>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>Current advice from the <abbr title="Controlled Vocabularies">CVs</abbr> task team is to only access the <abbr title="Controlled Vocabularies">CVs</abbr> via <a href="https://esgf.github.io/esgf-vocab/">ESGVOC</a>. This will be subject to change in the future.</p>
-</div>
-<p>More information about the meaning of these facets is provided in the <a href="https://doi.org/10.5281/zenodo.17250296">global attributes documentation</a>, with further guidance provided on the <a href="../Global_Attributes/">Global Attributes page</a>. The values associated with each facet are standardized through the <a href="https://github.com/WCRP-CMIP/CMIP7-CVs"><abbr title="Controlled Vocabularies">CVs</abbr></a>. They are used to search the ESGF database and can be found in the global attributes of the data. This section provides helpful links and gives a bit more information on a few key facets. </p>
+<p>More information about the meaning of these facets is provided in the <a href="../Global_Attributes/">Global Attributes page</a>.  This section provides helpful links and gives a bit more information on a few key facets. </p>
+<details class="info">
+<summary>Controlled Vocabularies</summary>
+<p>The values associated with each facet are standardized through the <abbr title="Controlled Vocabularies">CVs</abbr>. They are used to search the ESGF database and can be found in the global attributes and filename of the data. The source of truth for the <abbr title="Controlled Vocabularies">CVs</abbr> is <a href="https://esgf.github.io/esgf-vocab/">ESGVOC</a>. This software feeds other tools for viewing the <abbr title="Controlled Vocabularies">CVs</abbr>:</p>
+<ul>
+<li>The <a href="https://esgvoc.ipsl.fr/">CV viewer</a></li>
+<li><a href="https://github.com/WCRP-CMIP/cmip7-cmor-tables/tree/main/tables-cvs/split-view"><abbr title="Climate Model Output Rewriter">CMOR</abbr> tables JSON files</a></li>
+</ul>
+</details>
 <h3 id="31-source-and-variant">3.1.  Source and Variant<a class="headerlink" href="#31-source-and-variant" title="Permanent link">&para;</a></h3>
 <ul>
-<li><a href="?">List of models</a> (coming soon)</li>
+<li><a href="https://esgvoc.ipsl.fr/concept/model?projects=cmip7">List of models</a></li>
 <li><a href="https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/">Essential Model Documentation (<abbr title="Essential Model Documentation">EMD</abbr>)</a> (coming soon)</li>
 </ul>
 <p>The Essential Model Documentation (<abbr title="Essential Model Documentation">EMD</abbr>) contains a high-level description intended to contain information on model formulation that can be easily compared between different models. The <a href="https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/"><abbr title="Essential Model Documentation">EMD</abbr> guidance pages</a> contain links to more in-depth model documentation for each source.</p>
@@ -2799,8 +2803,8 @@ However it is recognized that their finer granularity could result in an unmanag
 <p>A useful tool to evaluate the models is the <a href="https://dashboard.climate-ref.org">Rapid Evaluation Framework (<abbr title="Rapid Evaluation Framework">REF</abbr>)</a>. It is an evaluation of the models participating in CMIP6 and the <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> Assessment Fast Track (<abbr title="Assessment Fast Track">AFT</abbr>).</p>
 <h3 id="32-experiment-and-activity">3.2.  Experiment and Activity<a class="headerlink" href="#32-experiment-and-activity" title="Permanent link">&para;</a></h3>
 <ul>
-<li><a href="?">List of experiments</a> (coming soon)</li>
-<li><a href="?">List of activities</a> (coming soon)</li>
+<li><a href="https://esgvoc.ipsl.fr/concept/experiment?projects=cmip7">List of experiments</a></li>
+<li><a href="https://esgvoc.ipsl.fr/concept/activity?projects=cmip7">List of activities</a></li>
 </ul>
 <p>The <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> protocol and experiments are described in a <a href="https://gmd.copernicus.org/articles/special_issue1315.html">special issue</a> of Geoscientific Model Development with an overview of the design and scientific strategy provided in the lead article of that issue by <a href="https://gmd.copernicus.org/articles/18/6671/2025/">Dunne et al. (2025)</a>.</p>
 <details class="info">
@@ -2831,7 +2835,7 @@ The <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> com
 </details>
 <h3 id="34-frequency">3.4 Frequency<a class="headerlink" href="#34-frequency" title="Permanent link">&para;</a></h3>
 <ul>
-<li><a href="https://cmip-data-request.github.io/cmip7-dreq-webview/latest/cmip7_frequency.html">List of frequencies</a></li>
+<li><a href="https://esgvoc.ipsl.fr/concept/frequency?projects=cmip7">List of frequencies</a></li>
 </ul>
 <p>Models report data on a variety of time steps. </p>
 <p>In CMIP6, the definition of requested variables included the frequency in which it should be reported, through the table id (e.g., "Amon", "day"). In <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr>, the  definition of the variables are independent of the frequency, which is specified separately for every requested variable.</p>
