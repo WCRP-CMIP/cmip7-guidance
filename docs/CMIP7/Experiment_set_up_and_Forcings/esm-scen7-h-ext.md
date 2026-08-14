@@ -85,14 +85,15 @@ Any acceptable versions can be used (you are not obliged to re-run simulations t
 Please see the guidance pages linked under each forcing for full details.
 
 - anthropogenic emissions
-    - recommended source IDs: not-available-yet
-    - notes: In preparation
+    - recommended source IDs: IIASA-IAMC-1-1-1, IIASA-IAMC-h-ext-1-1-1, IIASA-IAMC-h-ext-1-1-2
+    - notes: the aviation emissions should come from `IIASA-IAMC-h-ext-1-1-2`.
+      `IIASA-IAMC-h-ext-1-1-2` was released quite late and the impact of the change is likely to be small, so if you
+      have simulations based on `IIASA-IAMC-h-ext-1-1-1`, you do not need to re-run them.
     - further guidance:
       [input4mips-cvs.readthedocs.io/dataset-overviews/anthropogenic-slcf-co2-emissions](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/anthropogenic-slcf-co2-emissions/)
 
 - biomass burning emissions
-    - recommended source IDs: not-available-yet
-    - notes: In preparation
+    - recommended source IDs: IIASA-IAMC-1-1-1, IIASA-IAMC-h-ext-1-1-1
     - further guidance:
       [input4mips-cvs.readthedocs.io/dataset-overviews/open-biomass-burning-emissions](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/open-biomass-burning-emissions/)
 
@@ -128,14 +129,17 @@ For easier parsing with machines, we also present the information given above as
     "anthropogenic-slcf-co2-emissions": {
         "human_readable_name": "anthropogenic emissions",
         "recommended_versions": [
-            "not-available-yet"
+            "IIASA-IAMC-1-1-1",
+            "IIASA-IAMC-h-ext-1-1-1",
+            "IIASA-IAMC-h-ext-1-1-2"
         ],
         "acceptable_versions": []
     },
     "open-biomass-burning-emissions": {
         "human_readable_name": "biomass burning emissions",
         "recommended_versions": [
-            "not-available-yet"
+            "IIASA-IAMC-1-1-1",
+            "IIASA-IAMC-h-ext-1-1-1"
         ],
         "acceptable_versions": []
     },
@@ -190,7 +194,7 @@ EXPERIMENT_NAME="esm-scen7-h-ext"
 # esgpull self install
 ## You may also need to run this step to get the data to download
 # esgpull config api.index_node esgf-node.ornl.gov/esgf-1-5-bridge
-esgpull add --track --tag ${EXPERIMENT_NAME} source_id:CR-esm-h-ext-1-1-0,PIK-esm-h-ext-1-0-0,SOLARIS-HEPPA-ScenarioMIP-4-6
+esgpull add --track --tag ${EXPERIMENT_NAME} source_id:CR-esm-h-ext-1-1-0,IIASA-IAMC-1-1-1,IIASA-IAMC-h-ext-1-1-1,IIASA-IAMC-h-ext-1-1-2,PIK-esm-h-ext-1-0-0,SOLARIS-HEPPA-ScenarioMIP-4-6
 esgpull update --tag ${EXPERIMENT_NAME} --yes
 esgpull download --tag ${EXPERIMENT_NAME}
 ```
@@ -198,6 +202,6 @@ esgpull download --tag ${EXPERIMENT_NAME}
 #### Data not available via input4MIPs
 
 - aerosol optical properties
-    - notes: In preparation, waiting on the emissions to be available
+    - notes: In preparation, will be made available at https://zenodo.org/records/21671953
     - further guidance:
       [input4mips-cvs.readthedocs.io/dataset-overviews/aerosol-optical-properties-macv2-sp](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/aerosol-optical-properties-macv2-sp/)

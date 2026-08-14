@@ -79,12 +79,15 @@ Any acceptable versions can be used (you are not obliged to re-run simulations t
 Please see the guidance pages linked under each forcing for full details.
 
 - anthropogenic emissions
-    - recommended source IDs: IIASA-IAMC-hl-1-1-1, IIASA-IAMC-1-1-1
+    - recommended source IDs: IIASA-IAMC-1-1-1, IIASA-IAMC-hl-1-1-1, IIASA-IAMC-hl-1-1-2
+    - notes: the aviation emissions should come from `IIASA-IAMC-hl-1-1-2`.
+      `IIASA-IAMC-hl-1-1-2` was released quite late and the impact of the change is likely to be small, so if you have
+      simulations based on `IIASA-IAMC-hl-1-1-1`, you do not need to re-run them.
     - further guidance:
       [input4mips-cvs.readthedocs.io/dataset-overviews/anthropogenic-slcf-co2-emissions](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/anthropogenic-slcf-co2-emissions/)
 
 - biomass burning emissions
-    - recommended source IDs: IIASA-IAMC-hl-1-1-1, IIASA-IAMC-1-1-1
+    - recommended source IDs: IIASA-IAMC-1-1-1, IIASA-IAMC-hl-1-1-1
     - further guidance:
       [input4mips-cvs.readthedocs.io/dataset-overviews/open-biomass-burning-emissions](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/open-biomass-burning-emissions/)
 
@@ -105,14 +108,12 @@ Please see the guidance pages linked under each forcing for full details.
       [input4mips-cvs.readthedocs.io/dataset-overviews/stratospheric-volcanic-so2-emissions-aod](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/stratospheric-volcanic-so2-emissions-aod/)
 
 - ozone
-    - recommended source IDs: not-available-yet
-    - notes: In preparation
+    - recommended source IDs: FZJ-CMIP-ozone-hl-1-0
     - further guidance:
       [input4mips-cvs.readthedocs.io/dataset-overviews/ozone](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/ozone/)
 
 - nitrogen deposition
-    - recommended source IDs: not-available-yet
-    - notes: In preparation
+    - recommended source IDs: FZJ-CMIP-nitrogen-hl-1-0
     - further guidance:
       [input4mips-cvs.readthedocs.io/dataset-overviews/nitrogen-deposition](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/nitrogen-deposition/)
 
@@ -135,16 +136,17 @@ For easier parsing with machines, we also present the information given above as
     "anthropogenic-slcf-co2-emissions": {
         "human_readable_name": "anthropogenic emissions",
         "recommended_versions": [
+            "IIASA-IAMC-1-1-1",
             "IIASA-IAMC-hl-1-1-1",
-            "IIASA-IAMC-1-1-1"
+            "IIASA-IAMC-hl-1-1-2"
         ],
         "acceptable_versions": []
     },
     "open-biomass-burning-emissions": {
         "human_readable_name": "biomass burning emissions",
         "recommended_versions": [
-            "IIASA-IAMC-hl-1-1-1",
-            "IIASA-IAMC-1-1-1"
+            "IIASA-IAMC-1-1-1",
+            "IIASA-IAMC-hl-1-1-1"
         ],
         "acceptable_versions": []
     },
@@ -172,14 +174,14 @@ For easier parsing with machines, we also present the information given above as
     "ozone": {
         "human_readable_name": "ozone",
         "recommended_versions": [
-            "not-available-yet"
+            "FZJ-CMIP-ozone-hl-1-0"
         ],
         "acceptable_versions": []
     },
     "nitrogen-deposition": {
         "human_readable_name": "nitrogen deposition",
         "recommended_versions": [
-            "not-available-yet"
+            "FZJ-CMIP-nitrogen-hl-1-0"
         ],
         "acceptable_versions": []
     },
@@ -220,7 +222,7 @@ EXPERIMENT_NAME="scen7-hl"
 # esgpull self install
 ## You may also need to run this step to get the data to download
 # esgpull config api.index_node esgf-node.ornl.gov/esgf-1-5-bridge
-esgpull add --track --tag ${EXPERIMENT_NAME} source_id:CR-hl-1-1-0,IIASA-IAMC-1-1-1,IIASA-IAMC-hl-1-1-1,PIK-hl-1-0-0,SOLARIS-HEPPA-ScenarioMIP-4-6,UOEXETER-ScenarioMIP-2-2-2
+esgpull add --track --tag ${EXPERIMENT_NAME} source_id:CR-hl-1-1-0,FZJ-CMIP-nitrogen-hl-1-0,FZJ-CMIP-ozone-hl-1-0,IIASA-IAMC-1-1-1,IIASA-IAMC-hl-1-1-1,IIASA-IAMC-hl-1-1-2,PIK-hl-1-0-0,SOLARIS-HEPPA-ScenarioMIP-4-6,UOEXETER-ScenarioMIP-2-2-2
 esgpull update --tag ${EXPERIMENT_NAME} --yes
 esgpull download --tag ${EXPERIMENT_NAME}
 ```
