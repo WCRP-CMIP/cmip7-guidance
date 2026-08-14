@@ -14,6 +14,9 @@ title: CMIP7 Guidance and Documentation
 ## Guidance documents
 
 ### CMIP7
+The vision and design of CMIP7 is outlined in ['An evolving Coupled Model Intercomparison Project phase 7 (CMIP7) and Fast Track in support of future climate assessment'](https://gmd.copernicus.org/articles/18/6671/2025/) (Dunne et al., 2025).
+
+#### Guidance index:
 
 - [General Guidance](CMIP7/General_Guidance.md)
 - [Updates for modelling groups](Updates_for_Modellers.md)
