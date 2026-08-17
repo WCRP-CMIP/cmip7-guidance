@@ -99,6 +99,7 @@ To enable modelling groups and others who support CMIP7 to demonstrate its impac
 
     >We acknowledge the World Climate Research Programme's Coupled Model Intercomparison Project contributors who coordinated and promoted CMIP7. We thank the climate modelling groups for producing and making available their model output, the Earth System Grid Federation (ESGF) for archiving the data and providing access, and the multiple funding agencies who support CMIP7 and ESGF.
 
+
 3. **Adhere to the license**
         
     Adhere to the license conditions listed in the global attribute of each dataset.
@@ -164,10 +165,10 @@ More information about the meaning of these facets is provided in the [Global At
 
 ### 3.1.  Source and Variant
 * [List of models][sourcelist]
-* [Essential Model Documentation (EMD)][emd] (coming soon)
+* [Essential Model Documentation (EMD)][emd]
 
 
-The Essential Model Documentation (EMD) contains a high-level description intended to contain information on model formulation that can be easily compared between different models. The [EMD guidance pages][emd] contain links to more in-depth model documentation for each source.
+The Essential Model Documentation (EMD) contains a high-level description intended to contain information on model formulation that can be easily compared between different models, as well as, more in-depth model documentation for each source.
 
 ??? info "Basic Concepts to Understand Variants"
     The source facet gives the name of the model and the variant facet represents each member of an ensemble for a given source. It can also be called the “ripf” identifier (“r” for realization, “i” for initialization, “p” for physics, and “f” for forcing).
@@ -177,6 +178,7 @@ A useful tool to evaluate the models is the [Rapid Evaluation Framework (REF)][r
 
 ### 3.2.  Experiment and Activity
 * [List of experiments][experimentlist]
+* [Experiment setup and forcings](Experiment_set_up_and_Forcings/index.md)
 * [List of activities][activitylist]
 
  
@@ -189,13 +191,13 @@ The CMIP7 protocol and experiments are described in a [special issue][GMDSpecial
 
     Each model participating in CMIP7 will contribute results from the eight DECK experiments. These experiments are the only ones directly overseen by the [CMIP Panel][CMIPPanel], and together these constitute the ongoing (slowly evolving) “CMIP” activity. In addition to the DECK, each modeling group may choose to contribute to any of the [CMIP7 Community MIPs][CMIPMips]. The CMIP panel identifies key experiments to be prioritized on different timelines through fast tracks. The first one is the AFT, which includes a set of Community MIP experiments chosen by the CMIP panel to address specific needs.
     
-    MORE COMING SOON
 
 <!--TODO: https://github.com/WCRP-CMIP/cmip7-guidance/issues/46-->
 
 
 ### 3.3. Variable
 * [List of variables][varlist]
+* [List of requested branded variables][vardatareq]
 * [Branded variable documentation](Branded_Variables.md)
 
 In CMIP7, the concept of branded variables has been introduced to make it easier to find the variables you want. Branded variables follow the template: 
@@ -254,11 +256,12 @@ In CMIP6, the definition of requested variables included the frequency in which 
 
 
 ### 3.5 Grid
-* [List of grids][gridlist] (coming soon)
+* [List of grids][gridlist]
 * List of pressure levels: [Table 2 of Dingley et al. 2025][datareqpaperatm]
 * [CMIP7 Guidance on Grids][grid]
 
 Different climate models use a variety of different horizontal grids that are documented in the [grid registry][gridreg] (coming soon).
+<!-- TODO: add info on grids in EMD -->
 
 Different MIPs also have different requirements for vertical grid reporting. Output can be defined either on the native model levels, or it can be remapped to pressure levels.
 
@@ -282,7 +285,6 @@ Essential features of CMORized data are:
     * [Global attributes][GlobalAttrs]
     * Coordinate variables such as time, lat, lon, plev
     * One variable per file
-* Self-describing (all metadata needed to interpret the data are included in the file)
 * Consistent units and standard names following [CF conventions][cfConventionsPage]
 * [Standard chunking](Guidance_for_modellers.md#5-model-output-requirements)
 
@@ -380,30 +382,26 @@ If something is missing from this documentation, please open an issue [here][iss
 [datareqpaperatm]: https://egusphere.copernicus.org/preprints/2025/egusphere-2025-3189/
 [datarequest]: https://bit.ly/CMIP7-DReq-latest
 [cmortablecmip7]: https://github.com/WCRP-CMIP/cmip7-cmor-tables
-[varlist]: https://cmip-data-request.github.io/cmip7-dreq-webview/latest/variables.html
+[vardatareq]: https://cmip-data-request.github.io/cmip7-dreq-webview/latest/variables.html
+[varlist]:https://esgvoc.ipsl.fr/concept/variable?projects=cmip7
 [freqlist]: https://esgvoc.ipsl.fr/concept/frequency?projects=cmip7
-[emd]:  https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/
+[emd]: https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/Model/
 [CMIPpubs]: https://cmip-publications.llnl.gov
 [citesearch]: https://cmip7-citations.ceda.ac.uk/citations/ 
 [sourcelist]:  https://esgvoc.ipsl.fr/concept/model?projects=cmip7
 [experimentlist]:  https://esgvoc.ipsl.fr/concept/experiment?projects=cmip7
 [activitylist]:  https://esgvoc.ipsl.fr/concept/activity?projects=cmip7
 [cmip7cmor]: https://github.com/WCRP-CMIP/cmip7-cmor-tables/tree/main/tables-cvs/split-view
+[gridlist]: https://esgvoc.ipsl.fr/concept/grid?projects=cmip7
 
 
  <!-- TODO: all the links below need to be changed when the new version arrives. -->
  <!-- CMIP6 links -->
  <!--[CMIPpubs]: https://cmip-publications.llnl.gov/view/CMIP6/  
-[experimentlist]: https://wcrp-cmip.github.io/CMIP6_CVs/docs/CMIP6_experiment_id.html
-[activitylist]: https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_activity_id.json
-[sourcelist]: https://wcrp-cmip.github.io/CMIP6_CVs/docs/CMIP6_source_id.html 
-[gridlist]: https://github.com/WCRP-CMIP/CMIP6_CVs/blob/main/CMIP6_grid_label.json 
 [levellist]: https://cmip6dr.github.io/Data_Request_Home/Documents/CMIP6_pressure_levels.pdf?id=88 
-[freqlist]: https://github.com/WCRP-CMIP/CMIP6_CVs/blob/main/CMIP6_frequency.json
 [maskavg]: https://wcrp-cmip.github.io/WGCM_Infrastructure_Panel/CMIP6/time_and_area_averaging.html -->
 
  <!-- unknown links -->
-[gridlist]: ?
 [levellist]:  ?
 [maskavg]:  ?
 [eld]: ?
