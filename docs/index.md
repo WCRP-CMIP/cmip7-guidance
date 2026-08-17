@@ -15,6 +15,7 @@ title: CMIP7 Guidance and Documentation
 
 ### CMIP7
 
+- [GMD Special Issues](CMIP7/Special_Issues.md)
 - [Updates for modelling groups](Updates_for_Modellers.md)
 - [Updates for Users](Updates_for_Users.md)
 - [Guidance for modellers](CMIP7/Guidance_for_modellers.md)
@@ -29,8 +30,8 @@ title: CMIP7 Guidance and Documentation
 - Standards and References
     - [Global Attributes](CMIP7/Global_Attributes.md)
     - [Branded Variables](CMIP7/Branded_Variables.md)
-    - [GMD Special Issues](CMIP7/Special_Issues.md)
-- [GMD Special Issues](CMIP7/Special_Issues.md)
+    - [Data Specs Version](CMIP7/data_specs_version.md)
+ 
 - [Frequently Asked Questions (FAQ)](CMIP7/FAQ.md)
 
 ### CMIP6

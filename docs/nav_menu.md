@@ -1,4 +1,5 @@
 - [Home](index.md)
+- [GMD Special Issues](CMIP7/Special_Issues.md)
 - [Updates for modellers](Updates_for_Modellers.md)
 - [Updates for users](Updates_for_Users.md)
 - CMIP7
@@ -80,7 +81,6 @@
       - [scen7-vl-ext](CMIP7/Experiment_set_up_and_Forcings/scen7-vl-ext.md)
       - [esm-scen7-vl-ext](CMIP7/Experiment_set_up_and_Forcings/esm-scen7-vl-ext.md)
     - [Citation Guidance](CMIP7/Citation_Guidance.md)
-    - [Data Specs Version](CMIP7/data_specs_version.md)
     - [Annex 1: Checks performed prior to publication](CMIP7/QC_checks.md)
   - [Guidance for users](CMIP7/Guidance_for_users.md)
   - [Guidance for ESGF](CMIP7/Guidance_for_ESGF.md)
@@ -88,7 +88,7 @@
   - Standards and References
     - [Global Attributes](CMIP7/Global_Attributes.md)
     - [Branded Variables](CMIP7/Branded_Variables.md)
-    - [GMD Special Issues](CMIP7/Special_Issues.md)
+    - [Data Specs Version](CMIP7/data_specs_version.md)
   - [FAQ](CMIP7/FAQ.md)
 - How-to Guides
   - [Energy Consumption and Carbon Footprint Spreadsheet](How_to_Guides/Energy_Consumption_and_Carbon_Footprint_Spreadsheet.md)

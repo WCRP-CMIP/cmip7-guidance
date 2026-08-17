@@ -80,7 +80,7 @@ To enable modelling groups and others who support CMIP7 to demonstrate its impac
 
     Please include a table with at minimum the models ("sources"), institutions, and data citations as above, as well as a data availability statement pointing to the table and acknowledging ESGF. If the journal has a citation limit, putting the table in the Supporting Information is acceptable.
 
-    For CMIP7,the granularity of the data citations is at the level of a model's contribution to an experiment, such that all ensemble members plus all erratas and future corrections within an experiment are covered by one citation.
+    For CMIP7, the granularity of the data citations is at the level of a model's contribution to an experiment, such that all ensemble members plus all erratas and future corrections within an experiment are covered by one citation.
 
     ??? Question "How to find the DOI and the version?"
         🔍 You can search databases.  The [Citation Search][citesearch] can help you find the DOI (but not the version). [MetaGrid][metagridwest] results indicate the version and have a citation tab.
