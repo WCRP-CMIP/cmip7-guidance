@@ -1,16 +1,12 @@
 ---
 layout: default
-title: CMIP7 General Guidance
+title: GMD special issues
 ---
 
-# CMIP7 General Guidance
+# GMD special issues
 
-
-## CMIP7 Overview Paper
 The vision and design behind CMIP7 are outlined in detail in the CMIP7 overview paper: ['An evolving Coupled Model Intercomparison Project phase 7 (CMIP7) and Fast Track in support of future climate assessment
 '](https://gmd.copernicus.org/articles/18/6671/2025/).
-
-## CMIP7 GMD special issues
 
 As in previous CMIP phases, a Geoscientific Model Development (GMD) Special Issue has been established for CMIP7 [“CMIP7 scientific objectives, experimental design, and organization”](https://gmd.copernicus.org/articles/special_issue1315.html). The CMIP and WIP leadership encourage the community to submit papers addressing the following topics to the CMIP7 Special Issue:
 
@@ -24,8 +20,4 @@ A separate GMD-ESSD inter-journal special issue [“(CMIP7) forcings and inputs 
 
 The CMIP Panel is aware of concern regarding the pace of the review process for anticipated CMIP7 Assessment Fast Track analysis papers. Although these papers are not suitable for inclusion in the CMIP7 special issues, the Panel has raised the issue with the WCRP Joint Scientific Committee.
 
-## CMIP Community News mailing list
-
-The CMIP Community News mailing list is the primary list for sending out communications across the CMIP network. 
-To sign up for it, please visit <https://wcrp-cmip.org/cmip-mailing-lists/>.
 
