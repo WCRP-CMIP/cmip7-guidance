@@ -7,13 +7,14 @@ title: CMIP7 Guidance and Documentation
 
 !!! tip "Documentation in progress: "
     Updates to these pages will be made when new developments occur, to improve the documentation, and in response to user feedback (to contribute please [see here](#development-of-this-documentation)).
-    
-    ⚠️ To use the **search function**, please use the [mirrored version of the site](https://guidance.mipcvs.dev/) instead of the [github.io version](https://wcrp-cmip.github.io/cmip7-guidance/). This is a bug that will be corrected shortly.
 
 
 ## Guidance documents
 
 ### CMIP7
+The vision and design of CMIP7 is outlined in ['An evolving Coupled Model Intercomparison Project phase 7 (CMIP7) and Fast Track in support of future climate assessment'](https://gmd.copernicus.org/articles/18/6671/2025/) (Dunne et al., 2025).
+
+#### Guidance index:
 
 - [GMD Special Issues](CMIP7/Special_Issues.md)
 - [Updates for modelling groups](Updates_for_Modellers.md)

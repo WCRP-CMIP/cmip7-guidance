@@ -151,18 +151,19 @@ CMIP7 datasets can be identified through a series of facets that represents key 
 * grid
 * version
 
-!!! Info
 
-    Current advice from the CVs task team is to only access the CVs via [ESGVOC](https://esgf.github.io/esgf-vocab/). This will be subject to change in the future.
+More information about the meaning of these facets is provided in the [Global Attributes page](Global_Attributes.md).  This section provides helpful links and gives a bit more information on a few key facets. 
 
+??? Info "Controlled Vocabularies"
+    The values associated with each facet are standardized through the CVs. They are used to search the ESGF database and can be found in the global attributes and filename of the data. The source of truth for the CVs is [ESGVOC][esgvoc]. This software feeds other tools for viewing the CVs:
 
-
-More information about the meaning of these facets is provided in the [global attributes documentation][GlobalAttrs], with further guidance provided on the [Global Attributes page](Global_Attributes.md). The values associated with each facet are standardized through the [CVs][cmipCvs]. They are used to search the ESGF database and can be found in the global attributes of the data. This section provides helpful links and gives a bit more information on a few key facets. 
+    * The [CV viewer][CVviewer]
+    * [CMOR tables JSON files][cmip7cmor]
 
 
 
 ### 3.1.  Source and Variant
-* [List of models][sourcelist] (coming soon)
+* [List of models][sourcelist]
 * [Essential Model Documentation (EMD)][emd] (coming soon)
 
 
@@ -175,8 +176,8 @@ A useful tool to evaluate the models is the [Rapid Evaluation Framework (REF)][r
 
 
 ### 3.2.  Experiment and Activity
-* [List of experiments][experimentlist] (coming soon)
-* [List of activities][activitylist] (coming soon)
+* [List of experiments][experimentlist]
+* [List of activities][activitylist]
 
  
 The CMIP7 protocol and experiments are described in a [special issue][GMDSpecialIssue] of Geoscientific Model Development with an overview of the design and scientific strategy provided in the lead article of that issue by [Dunne et al. (2025)][dunne2025].
@@ -361,6 +362,8 @@ If something is missing from this documentation, please open an issue [here][iss
 [pangeo]: https://pangeo-data.github.io/pangeo-cmip6-cloud/
 [tools]: https://wcrp-cmip.org/tools/
 [virtualizarr]: https://virtualizarr.readthedocs.io/en/stable/
+[CVviewer]: https://esgvoc.ipsl.fr/
+[esgvoc]: https://esgf.github.io/esgf-vocab/
 [issue]: https://github.com/WCRP-CMIP/cmip7-guidance/issues
 
  <!-- CMIP7 links -->
@@ -378,11 +381,14 @@ If something is missing from this documentation, please open an issue [here][iss
 [datarequest]: https://bit.ly/CMIP7-DReq-latest
 [cmortablecmip7]: https://github.com/WCRP-CMIP/cmip7-cmor-tables
 [varlist]: https://cmip-data-request.github.io/cmip7-dreq-webview/latest/variables.html
-[freqlist]: https://cmip-data-request.github.io/cmip7-dreq-webview/latest/cmip7_frequency.html
+[freqlist]: https://esgvoc.ipsl.fr/concept/frequency?projects=cmip7
 [emd]:  https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/
 [CMIPpubs]: https://cmip-publications.llnl.gov
-[citesearch]: https://cmip7-citations.ceda.ac.uk/citations/
-
+[citesearch]: https://cmip7-citations.ceda.ac.uk/citations/ 
+[sourcelist]:  https://esgvoc.ipsl.fr/concept/model?projects=cmip7
+[experimentlist]:  https://esgvoc.ipsl.fr/concept/experiment?projects=cmip7
+[activitylist]:  https://esgvoc.ipsl.fr/concept/activity?projects=cmip7
+[cmip7cmor]: https://github.com/WCRP-CMIP/cmip7-cmor-tables/tree/main/tables-cvs/split-view
 
 
  <!-- TODO: all the links below need to be changed when the new version arrives. -->
@@ -397,9 +403,6 @@ If something is missing from this documentation, please open an issue [here][iss
 [maskavg]: https://wcrp-cmip.github.io/WGCM_Infrastructure_Panel/CMIP6/time_and_area_averaging.html -->
 
  <!-- unknown links -->
-[experimentlist]:  ?
-[activitylist]:  ?
-[sourcelist]:  ?
 [gridlist]: ?
 [levellist]:  ?
 [maskavg]:  ?

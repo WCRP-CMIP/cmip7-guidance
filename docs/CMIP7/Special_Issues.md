@@ -5,7 +5,8 @@ title: GMD special issues
 
 # GMD special issues
 
-
+The vision and design behind CMIP7 are outlined in detail in the CMIP7 overview paper: ['An evolving Coupled Model Intercomparison Project phase 7 (CMIP7) and Fast Track in support of future climate assessment
+'](https://gmd.copernicus.org/articles/18/6671/2025/).
 
 As in previous CMIP phases, a Geoscientific Model Development (GMD) Special Issue has been established for CMIP7 [“CMIP7 scientific objectives, experimental design, and organization”](https://gmd.copernicus.org/articles/special_issue1315.html). The CMIP and WIP leadership encourage the community to submit papers addressing the following topics to the CMIP7 Special Issue:
 
