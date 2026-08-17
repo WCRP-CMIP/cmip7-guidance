@@ -1,5 +1,5 @@
 - [Home](index.md)
-- [GMD Special Issues](CMIP7/Special_Issues.md)
+- [General Guidance](CMIP7/General_Guidance.md)
 - [Updates for modellers](Updates_for_Modellers.md)
 - [Updates for users](Updates_for_Users.md)
 - CMIP7

@@ -16,14 +16,13 @@ The vision and design of CMIP7 is outlined in ['An evolving Coupled Model Interc
 
 #### Guidance index:
 
-- [GMD Special Issues](CMIP7/Special_Issues.md)
+- [General Guidance](CMIP7/General_Guidance.md)
 - [Updates for modelling groups](Updates_for_Modellers.md)
 - [Updates for Users](Updates_for_Users.md)
 - [Guidance for modellers](CMIP7/Guidance_for_modellers.md)
     - [CV Registration](CMIP7/cv_registration.md)
     - [Experiment setup and forcings](CMIP7/Experiment_set_up_and_Forcings/index.md)
     - [Citation Guidance](CMIP7/Citation_Guidance.md)
-    - [Data Specs Version](CMIP7/data_specs_version.md)
     - [Annex 1: QC checks performed prior to publication](CMIP7/QC_checks.md)
 - [Guidance for users, including Terms of Use](CMIP7/Guidance_for_users.md)
 - [Guidance for ESGF node operators and publishers](CMIP7/Guidance_for_ESGF.md)
@@ -32,7 +31,6 @@ The vision and design of CMIP7 is outlined in ['An evolving Coupled Model Interc
     - [Global Attributes](CMIP7/Global_Attributes.md)
     - [Branded Variables](CMIP7/Branded_Variables.md)
     - [Data Specs Version](CMIP7/data_specs_version.md)
- 
 - [Frequently Asked Questions (FAQ)](CMIP7/FAQ.md)
 
 ### CMIP6
