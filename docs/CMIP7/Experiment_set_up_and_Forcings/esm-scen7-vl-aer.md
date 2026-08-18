@@ -26,8 +26,7 @@ For the full background of the experiment, please see the following URLs:
 
 ## Paired experiments
 
-- [esm-scen7-vl-AQ](./esm-scen7-vl-aq.md) is the corresponding interactive-chemistry experiment for models that include
-  interactive chemistry.
+- [esm-scen7-vl-AQ](./esm-scen7-vl-aq.md) is the corresponding experiment for models that include interactive chemistry
 - [scen7-vl-Aer](./scen7-vl-aer.md) is the concentration-driven counterpart to this emissions-driven experiment.
 
 ## Experiment set up

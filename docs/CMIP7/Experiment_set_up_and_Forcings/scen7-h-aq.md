@@ -29,8 +29,7 @@ For the full background of the experiment, please see the following URLs:
 ## Paired experiments
 
 - [esm-scen7-h-AQ](./esm-scen7-h-aq.md) is the emissions-driven counterpart to this concentration-driven experiment.
-- [scen7-h-Aer](./scen7-h-aer.md) is the corresponding non-interactive-chemistry experiment for models that do not
-  include interactive chemistry.
+- [scen7-h-Aer](./scen7-h-aer.md) is the corresponding experiment for models that do not include interactive chemistry
 
 ## Experiment set up
 
