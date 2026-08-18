@@ -22,6 +22,10 @@ For the full background of the experiment, please see the following URLs:
 
 - [https://doi.org/10.5194/egusphere-2024-3765](https://doi.org/10.5194/egusphere-2024-3765)
 
+## Paired experiments
+
+- [esm-scen7-ml](./esm-scen7-ml.md) is the emissions-driven counterpart to this concentration-driven experiment.
+
 ## Experiment set up
 
 ### Parent experiment and branching
