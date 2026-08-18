@@ -18,12 +18,11 @@ If you notice something that is unclear, please
 
 For the full background of the experiment, please see the following URLs:
 
+- [https://doi.org/10.1038/s41467-025-62983-5](https://doi.org/10.1038/s41467-025-62983-5)
+- [https://doi.org/10.1016/j.eng.2024.11.023](https://doi.org/10.1016/j.eng.2024.11.023)
+- [https://doi.org/10.1016/j.accre.2023.11.004](https://doi.org/10.1016/j.accre.2023.11.004)
+- [https://dx.doi.org/10.1088/1748-9326/adfbfb](https://dx.doi.org/10.1088/1748-9326/adfbfb)
 - [https://doi.org/10.5281/zenodo.21487424](https://doi.org/10.5281/zenodo.21487424)
-
-<!--- Note to self: this pairing is missing on all scenario pages -->
-## Paired experiments
-
-- [esm-vl-cf-ext](./esm-vl-cf-ext.md) is the emissions-driven counterpart to this concentration-driven experiment
 
 ## Experiment set up
 
@@ -37,7 +36,7 @@ Branch from [vl-cf](./vl-cf.md) at 2100-12-31.
 ### Output time axis
 
 Your output time axis must start on 2101-01-01 and must not end later than 2500-12-31.
-You must perform at least 50 simulation years.
+You must perform at least 100 simulation years.
 
 ### Minimum ensemble size
 
@@ -67,8 +66,8 @@ distributed via other channels.
 
 For the following data, please see these other experiment pages:
 
-- [scen7-vl-ext](./scen7-vl-ext.md) for anthropogenic emissions, biomass burning emissions, land use, stratospheric aerosol
-  forcing, solar, aerosol optical properties, population density, ozone, nitrogen deposition 
+- [scen7-vl-ext](./scen7-vl-ext.md) for anthropogenic emissions, biomass burning emissions, land use, stratospheric
+  aerosol forcing, ozone, nitrogen deposition, solar, aerosol optical properties, population density
 
 #### Data described on other experiment pages with modifications you have to make
 
@@ -87,11 +86,8 @@ Please see the guidance pages linked under each forcing for full details.
 
 - greenhouse gas concentrations
     - recommended source IDs: CR-vl-cf-ext-1-1-0
-<!---
-    TODO
     - further guidance:
       [input4mips-cvs.readthedocs.io/dataset-overviews/greenhouse-gas-concentrations](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/greenhouse-gas-concentrations/)
--->
 
 ###### JSON
 

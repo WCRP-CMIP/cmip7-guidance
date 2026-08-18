@@ -18,18 +18,18 @@ If you notice something that is unclear, please
 
 For the full background of the experiment, please see the following URLs:
 
+- [https://doi.org/10.1038/s41467-025-62983-5](https://doi.org/10.1038/s41467-025-62983-5)
+- [https://doi.org/10.1016/j.eng.2024.11.023](https://doi.org/10.1016/j.eng.2024.11.023)
+- [https://doi.org/10.1016/j.accre.2023.11.004](https://doi.org/10.1016/j.accre.2023.11.004)
+- [https://dx.doi.org/10.1088/1748-9326/adfbfb](https://dx.doi.org/10.1088/1748-9326/adfbfb)
 - [https://doi.org/10.5281/zenodo.21487424](https://doi.org/10.5281/zenodo.21487424)
-
-<!--- Note to self: this pairing is missing on all scenario pages -->
-## Paired experiments
-
-- [vl-cf-ext](./vl-cf-ext.md) is the concentration-driven counterpart to this emissions-driven experiment
 
 ## Experiment set up
 
 ### Parent experiment and branching
 
-The esm-vl-cf-ext experiment branches from the [esm-vl-cf](./esm-vl-cf.md) experiment (part of [PolMIP](./index.md#polmip)).
+The esm-vl-cf-ext experiment branches from the [esm-vl-cf](./esm-vl-cf.md) experiment (part of
+[PolMIP](./index.md#polmip)).
 The parent experiment's MIP era is [CMIP7](https://wcrp-cmip.org/CMIP7).
 
 Branch from [esm-vl-cf](./esm-vl-cf.md) at 2100-12-31.
@@ -37,7 +37,7 @@ Branch from [esm-vl-cf](./esm-vl-cf.md) at 2100-12-31.
 ### Output time axis
 
 Your output time axis must start on 2101-01-01 and must not end later than 2500-12-31.
-You must perform at least 50 simulation years.
+You must perform at least 100 simulation years.
 
 ### Minimum ensemble size
 
@@ -67,15 +67,13 @@ distributed via other channels.
 
 For the following data, please see these other experiment pages:
 
-- [esm-scen7-vl-ext](./esm-scen7-vl-ext.md) for biomass burning emissions, land use, stratospheric aerosol
-  forcing, solar, aerosol optical properties, population density, ozone, nitrogen deposition 
+- [esm-scen7-vl-ext](./esm-scen7-vl-ext.md) for anthropogenic emissions, biomass burning emissions, land use,
+  stratospheric aerosol forcing, ozone, nitrogen deposition, solar, aerosol optical properties, population density
 
 #### Data described on other experiment pages with modifications you have to make
 
-For the following forcings, please use data from the specified experiments with the specified modifications.
-
-- for anthropogenic emissions, use the forcings from [esm-scen7-vl-ext](./esm-scen7-vl-ext.md)
-  for everything except CO<sub>2</sub>.
+No data described on other experiment pages requires modifications by you.
+Please see the other [data](#data) sub-sections for details of the forcings data to use for this experiment.
 
 #### Data available via input4MIPs
 
@@ -87,21 +85,17 @@ The recommended version(s) are the version(s) we recommend using.
 Any acceptable versions can be used (you are not obliged to re-run simulations that used them).
 Please see the guidance pages linked under each forcing for full details.
 
-- anthropogenic emissions of CO<sub>2</sub>
-    - recommended source IDs: IIASA-IAMC-vl-cf-ext-1-1-1, IIASA-IAMC-1-1-1
-<!---
-    TODO
+- anthropogenic emissions
+    - recommended source IDs: IIASA-IAMC-1-1-1, IIASA-IAMC-vl-cf-ext-1-1-1
+    - notes: All anthropogenic emissions forcings other than CO<sub>2</sub> emissions must come from the forcings used
+      for `esm-scen7-vl-ext`
     - further guidance:
       [input4mips-cvs.readthedocs.io/dataset-overviews/anthropogenic-slcf-co2-emissions](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/anthropogenic-slcf-co2-emissions/)
--->
 
 - greenhouse gas concentrations
     - recommended source IDs: CR-vl-cf-ext-1-1-0
-<!---
-    TODO
     - further guidance:
       [input4mips-cvs.readthedocs.io/dataset-overviews/greenhouse-gas-concentrations](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/greenhouse-gas-concentrations/)
--->
 
 ###### JSON
 
@@ -112,8 +106,8 @@ For easier parsing with machines, we also present the information given above as
     "anthropogenic-slcf-co2-emissions": {
         "human_readable_name": "anthropogenic emissions",
         "recommended_versions": [
-            "IIASA-IAMC-vl-cf-ext-1-1-1",
-            "IIASA-IAMC-1-1-1"
+            "IIASA-IAMC-1-1-1",
+            "IIASA-IAMC-vl-cf-ext-1-1-1"
         ],
         "acceptable_versions": []
     },
@@ -147,7 +141,7 @@ EXPERIMENT_NAME="esm-vl-cf-ext"
 # esgpull self install
 ## You may also need to run this step to get the data to download
 # esgpull config api.index_node esgf-node.ornl.gov/esgf-1-5-bridge
-esgpull add --track --tag ${EXPERIMENT_NAME} source_id:CR-vl-cf-ext-1-1-0,IIASA-IAMC-vl-cf-ext-1-1-1,IIASA-IAMC-1-1-1
+esgpull add --track --tag ${EXPERIMENT_NAME} source_id:CR-vl-cf-ext-1-1-0,IIASA-IAMC-1-1-1,IIASA-IAMC-vl-cf-ext-1-1-1
 esgpull update --tag ${EXPERIMENT_NAME} --yes
 esgpull download --tag ${EXPERIMENT_NAME}
 ```
