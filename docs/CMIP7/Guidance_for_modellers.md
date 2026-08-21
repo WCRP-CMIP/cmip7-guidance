@@ -18,7 +18,8 @@ provided as early as possible):
   **Essential Model Documentation (EMD)** for your model. 
   The EMD registration process is [documented here](https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/). 
   The institution registration process is [available here](cv_registration.md#21-institution-registration) (including the list of institutes that are already registered).
-  **Output grids for regridded data must also be registered** via an online form described in the [EMD documenation](https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/) (i.e., for any grid used to report data that is not the model's native grid).
+
+* **Output grids for regridded data must also be registered** via the same online form used to describe the native computational grids, as described in the [EMD documenation](https://emd.mipcvs.dev/docs/Information_for_Submitters/Submission-Guide/) (i.e., for any grid used to report data that is not the model's native computational grid). It is recommended to do this at the same time as creation of the general EMD documentation (rather than afterwards), and remember that grid(s) for all archived variables must have been described prior to data publication, so that their grid labels (e.g. `g###`) can be included in the file metadata and file names. 
   
   !!! tip "EMD Tools"
       - **View your registered model**: [EMD Model Documentation](https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/Model/)
