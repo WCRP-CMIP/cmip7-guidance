@@ -2832,7 +2832,7 @@ The <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> com
 <summary>Understanding the Data Request</summary>
 <p>The variables produced in <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> were recommended by the <a href="https://wcrp-cmip.org/cmip-phases/cmip7/cmip7-data-request/"><abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> Data Request task team</a>. The latest version of the Data Request can be <a href="https://bit.ly/CMIP7-DReq-latest">viewed here</a>, and further guidance can be <a href="../Guidance_for_modellers/#4-model-output-fields-data-request">found here</a>. </p>
 </details>
-<h3 id="34-frequency">3.4 Frequency<a class="headerlink" href="#34-frequency" title="Permanent link">&para;</a></h3>
+<h3 id="34-frequency">3.4. Frequency<a class="headerlink" href="#34-frequency" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="https://esgvoc.ipsl.fr/concept/frequency?projects=cmip7">List of frequencies</a></li>
 </ul>
@@ -2857,19 +2857,23 @@ Before working with any CMIP dataset, users should <strong>check the calendar ty
 <p>Further reading in CF conventions for time coordinate: <a href="https://cfconventions.org/Data/cf-conventions/cf-conventions-1.12/cf-conventions.html#time-coordinate">https://cfconventions.org/Data/cf-conventions/cf-conventions-1.12/cf-conventions.html#time-coordinate</a></p>
 <p>It is recommended that users use the <a href="https://unidata.github.io/cftime/">cftime</a> library to handle time.</p>
 </details>
-<h3 id="35-grid">3.5 Grid<a class="headerlink" href="#35-grid" title="Permanent link">&para;</a></h3>
+<h3 id="35-grids">3.5. Grids<a class="headerlink" href="#35-grids" title="Permanent link">&para;</a></h3>
 <ul>
-<li><a href="https://esgvoc.ipsl.fr/concept/grid?projects=cmip7">List of grids</a></li>
-<li>List of pressure levels: <a href="https://egusphere.copernicus.org/preprints/2025/egusphere-2025-3189/">Table 2 of Dingley et al. 2025</a></li>
+<li><a href="https://emd.mipcvs.dev/docs/grid_viewer/horizontal/">Horizontal grid cells viewer</a></li>
+<li><a href="https://emd.mipcvs.dev/docs/grid_viewer/vertical/">Vertical grids viewer</a></li>
 <li><a href="https://doi.org/10.5281/zenodo.15697024"><abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> Guidance on Grids</a></li>
 </ul>
-<p>Different climate models use a variety of different horizontal grids that are documented in the <a href="?">grid registry</a> (coming soon).</p>
-<!-- TODO: add info on grids in EMD -->
-
-<p>Different <abbr title="Model Intercomparison Projects">MIPs</abbr> also have different requirements for vertical grid reporting. Output can be defined either on the native model levels, or it can be remapped to pressure levels.</p>
+<p>Horizontal and vertical grids are registered in the <abbr title="Essential Model Documentation">EMD</abbr>.  On each <a href="https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/Model/"><abbr title="Essential Model Documentation">EMD</abbr> model page</a>, you can find which grids were used in each component of the model.</p>
 <details class="info">
-<summary>Masked Averaging</summary>
-<p>Many variables in <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> are defined as masked means, defined as the mean of a quantity over a portion of the grid cell defined by an area type. For more information on this, see this <a href="?">webpage</a> (coming soon).</p>
+<summary>Basic Concepts to Understand Grids</summary>
+<p>In the <abbr title="Essential Model Documentation">EMD</abbr>, there are 4 different record types:</p>
+<ul>
+<li>Horizontal grid cells (ex. g100) describe the shape, resolution, and number of cells. </li>
+<li>Horizontal subgrids (ex. g100-mass) describe where different physical quantities sit within a horizontal grid cell.</li>
+<li>Horizontal computational grids (ex. h100) describe the arrangement of multiple subgrids into the complete horizontal domain.</li>
+<li>Vertical computational grids (ex. v100) describe the number of levels, the coordinate, the total depth, and the heigh of the top and bottom layer of the 3rd dimension.</li>
+</ul>
+<p>More information can be found in the <a href="https://emd.mipcvs.dev/docs/#what-does-it-contain"><abbr title="Essential Model Documentation">EMD</abbr> Guidance</a>.</p>
 </details>
 <h2 id="4-cmip7-data-format">4. <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> data format<a class="headerlink" href="#4-cmip7-data-format" title="Permanent link">&para;</a></h2>
 <p>As in previous phases, all <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> output has been written to netCDF files.
@@ -2914,7 +2918,6 @@ Proposing erratum through the webform requires a contact email address. Once the
 <!-- TODO: all the links below need to be changed when the new version arrives. -->
 <!-- CMIP6 links -->
 <!--[CMIPpubs]: https://cmip-publications.llnl.gov/view/CMIP6/  
-[levellist]: https://cmip6dr.github.io/Data_Request_Home/Documents/CMIP6_pressure_levels.pdf?id=88 
 [maskavg]: https://wcrp-cmip.github.io/WGCM_Infrastructure_Panel/CMIP6/time_and_area_averaging.html -->
 
 <!-- unknown links -->
@@ -3183,13 +3186,13 @@ Proposing erratum through the webform requires a contact email address. Once the
         <a href="#34-frequency"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
             data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#34-frequency');">
-            3.4 Frequency
+            3.4. Frequency
         </a>
         
-        <a href="#35-grid"
+        <a href="#35-grids"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#35-grid');">
-            3.5 Grid
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#35-grids');">
+            3.5. Grids
         </a>
         
         
