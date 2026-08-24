@@ -8,6 +8,25 @@ title: CMIP7 Updates for modelling groups
 This page will be updated with information of interest to modelling groups that the CMIP IPO has communicated by email (most recent at top).
 
 ---
+## 23 August 2026
+**Subject:** CMIP7 update: h-ext availability, status update and ECS/TCR/TCRE requests
+
+Dear modelling centres,
+
+We would like to highlight the following:
+
+### 1.	h-ext land use scenario forcing now available
+ land use scenario extension for the High scenario extension (h-ext) is now available – please see [here](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/land-use/#cmip7_1) for details and links to the data.
+
+### 2.	Request for latest update on expected first data delivery
+We ask that modelling centre representatives ensure the data at [https://wcrp-cmip.org/cmip-phases/cmip7/#when_to_expect_cmip7_data](https://wcrp-cmip.org/cmip-phases/cmip7/#when_to_expect_cmip7_data) is kept up to date to manage expectations of CMIP data users and facilitate support for ESGF publication (dataset publication guidance [here](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/Guidance_for_ESGF/#2-dataset-publication)). Please use the relevant link in the table provided in the email from the CMIP IPO to update your model/centres’ status.
+
+Please note you **must have completed the Essential Model Documentation process (details [here](https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/))** before publishing data on the ESGF!
+
+### 3.	ECS/TCR/TCRE survey
+To support early understanding of the CMIP7 model ensemble, the CMIP Panel would like to gather preliminary information on expected ECS and TCR/TCRE from participating modelling centres. Collecting these insights ahead of the widespread publication of model data and the availability of results through the Rapid Evaluation Framework would provide an early indication of the characteristics of the emerging CMIP7 ensemble. If you have not already done so, please complete the short survey (link provided in the email version of this update) for each model that your centre/group will contribute to CMIP7.
+
+---
 ## 6 August 2026
 **Subject:** CMIP7 update: please read email carefully - latest information and survey request
 
