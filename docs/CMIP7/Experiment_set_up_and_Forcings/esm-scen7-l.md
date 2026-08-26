@@ -63,8 +63,7 @@ distributed via other channels.
 
 #### Data described on other experiment pages
 
-No data is described on other experiment pages.
-Please see the other [data](#data) sub-sections for details of the forcings data to use for this experiment.
+All data is described on the [scen7-l](./scen7-l.md) experiment page.
 
 #### Data described on other experiment pages with modifications you have to make
 
@@ -73,170 +72,10 @@ Please see the other [data](#data) sub-sections for details of the forcings data
 
 #### Data available via input4MIPs
 
-##### Versions to use
-
-For each forcing available via input4MIPs, we provide the version(s), called 'source ID(s)' in the file's metadata,
-which should be used when running this simulation.
-The recommended version(s) are the version(s) we recommend using.
-Any acceptable versions can be used (you are not obliged to re-run simulations that used them).
-Please see the guidance pages linked under each forcing for full details.
-
-- anthropogenic emissions
-    - recommended source IDs: IIASA-IAMC-1-1-1, IIASA-IAMC-l-1-1-1, IIASA-IAMC-l-1-1-2
-    - notes: the aviation emissions should come from `IIASA-IAMC-l-1-1-2`.
-      `IIASA-IAMC-l-1-1-2` was released quite late and the impact of the change is likely to be small, so if you have
-      simulations based on `IIASA-IAMC-l-1-1-1`, you do not need to re-run them.
-    - further guidance:
-      [input4mips-cvs.readthedocs.io/dataset-overviews/anthropogenic-slcf-co2-emissions](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/anthropogenic-slcf-co2-emissions/)
-
-- biomass burning emissions
-    - recommended source IDs: IIASA-IAMC-1-1-1, IIASA-IAMC-l-1-1-1
-    - further guidance:
-      [input4mips-cvs.readthedocs.io/dataset-overviews/open-biomass-burning-emissions](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/open-biomass-burning-emissions/)
-
-- land use
-    - recommended source IDs: not-available-yet
-    - notes: In preparation
-    - further guidance:
-      [input4mips-cvs.readthedocs.io/dataset-overviews/land-use](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/land-use/)
-
-- greenhouse gas concentrations
-    - recommended source IDs: CR-esm-l-1-1-0
-    - further guidance:
-      [input4mips-cvs.readthedocs.io/dataset-overviews/greenhouse-gas-concentrations](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/greenhouse-gas-concentrations/)
-
-- stratospheric aerosol forcing
-    - recommended source IDs: UOEXETER-ScenarioMIP-2-2-2
-    - further guidance:
-      [input4mips-cvs.readthedocs.io/dataset-overviews/stratospheric-volcanic-so2-emissions-aod](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/stratospheric-volcanic-so2-emissions-aod/)
-
-- ozone
-    - recommended source IDs: not-available-yet
-    - notes: In preparation
-    - further guidance:
-      [input4mips-cvs.readthedocs.io/dataset-overviews/ozone](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/ozone/)
-
-- nitrogen deposition
-    - recommended source IDs: not-available-yet
-    - notes: In preparation
-    - further guidance:
-      [input4mips-cvs.readthedocs.io/dataset-overviews/nitrogen-deposition](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/nitrogen-deposition/)
-
-- solar
-    - recommended source IDs: SOLARIS-HEPPA-ScenarioMIP-4-6
-    - further guidance:
-      [input4mips-cvs.readthedocs.io/dataset-overviews/solar](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/solar/)
-
-- population density
-    - recommended source IDs: PIK-esm-l-1-0-0
-    - further guidance:
-      [input4mips-cvs.readthedocs.io/dataset-overviews/population](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/population/)
-
-###### JSON
-
-For easier parsing with machines, we also present the information given above as JSON.
-
-```json
-{
-    "anthropogenic-slcf-co2-emissions": {
-        "human_readable_name": "anthropogenic emissions",
-        "recommended_versions": [
-            "IIASA-IAMC-1-1-1",
-            "IIASA-IAMC-l-1-1-1",
-            "IIASA-IAMC-l-1-1-2"
-        ],
-        "acceptable_versions": []
-    },
-    "open-biomass-burning-emissions": {
-        "human_readable_name": "biomass burning emissions",
-        "recommended_versions": [
-            "IIASA-IAMC-1-1-1",
-            "IIASA-IAMC-l-1-1-1"
-        ],
-        "acceptable_versions": []
-    },
-    "land-use": {
-        "human_readable_name": "land use",
-        "recommended_versions": [
-            "not-available-yet"
-        ],
-        "acceptable_versions": []
-    },
-    "greenhouse-gas-concentrations": {
-        "human_readable_name": "greenhouse gas concentrations",
-        "recommended_versions": [
-            "CR-esm-l-1-1-0"
-        ],
-        "acceptable_versions": []
-    },
-    "stratospheric-volcanic-so2-emissions-aod": {
-        "human_readable_name": "stratospheric aerosol forcing",
-        "recommended_versions": [
-            "UOEXETER-ScenarioMIP-2-2-2"
-        ],
-        "acceptable_versions": []
-    },
-    "ozone": {
-        "human_readable_name": "ozone",
-        "recommended_versions": [
-            "not-available-yet"
-        ],
-        "acceptable_versions": []
-    },
-    "nitrogen-deposition": {
-        "human_readable_name": "nitrogen deposition",
-        "recommended_versions": [
-            "not-available-yet"
-        ],
-        "acceptable_versions": []
-    },
-    "solar": {
-        "human_readable_name": "solar",
-        "recommended_versions": [
-            "SOLARIS-HEPPA-ScenarioMIP-4-6"
-        ],
-        "acceptable_versions": []
-    },
-    "population": {
-        "human_readable_name": "population density",
-        "recommended_versions": [
-            "PIK-esm-l-1-0-0"
-        ],
-        "acceptable_versions": []
-    }
-}
-```
-
-###### Download via esgpull
-
-The available data is on ESGF and searchable
-[via metagrid](https://esgf-node.ornl.gov/search?project=input4MIPs&versionType=all&activeFacets=%7B%22mip_era%22%3A%22CMIP7%22%7D),
-although this method of finding and downloading the data can involve a lot of clicking.
-
-If you install [esgpull](https://esgf.github.io/esgf-download/), you can download all the data associated with the
-recommended source IDs above using the script given below.
-Note that this will download all the data associated with these source IDs, which is likely to be much more data than
-you actually need to run your model.
-
-```bash
-#!/bin/bash
-
-EXPERIMENT_NAME="esm-scen7-l"
-
-## You may need to run the below if you haven't already done it once with esgpull
-# esgpull self install
-## You may also need to run this step to get the data to download
-# esgpull config api.index_node esgf-node.ornl.gov/esgf-1-5-bridge
-esgpull add --track --tag ${EXPERIMENT_NAME} source_id:CR-esm-l-1-1-0,IIASA-IAMC-1-1-1,IIASA-IAMC-l-1-1-1,IIASA-IAMC-l-1-1-2,PIK-esm-l-1-0-0,SOLARIS-HEPPA-ScenarioMIP-4-6,UOEXETER-ScenarioMIP-2-2-2
-esgpull update --tag ${EXPERIMENT_NAME} --yes
-esgpull download --tag ${EXPERIMENT_NAME}
-```
+No input4MIPs-based data is described specifically on this page.
+Please see the other [data](#data) sub-sections for details of the forcings data to use for this experiment.
 
 #### Data not available via input4MIPs
 
-- aerosol optical properties
-    - notes: Please see this
-      [specific guidance section](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/aerosol-optical-properties-macv2-sp/#datasets-for-cmip7-phases)
-      for data access and version information.
-    - further guidance:
-      [input4mips-cvs.readthedocs.io/dataset-overviews/aerosol-optical-properties-macv2-sp](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/aerosol-optical-properties-macv2-sp/)
+No data that is not input4MIPs-based is described specifically on this page.
+Please see the other [data](#data) sub-sections for details of the forcings data to use for this experiment.
