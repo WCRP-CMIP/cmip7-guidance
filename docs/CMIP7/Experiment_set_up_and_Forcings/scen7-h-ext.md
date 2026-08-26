@@ -150,7 +150,7 @@ For easier parsing with machines, we also present the information given above as
         "recommended_versions": [
             "UofMD-landState-h-ext-3-1"
         ],
-        "acceptable_versions": null
+        "acceptable_versions": []
     },
     "greenhouse-gas-concentrations": {
         "human_readable_name": "greenhouse gas concentrations",
