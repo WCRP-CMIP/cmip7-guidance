@@ -95,8 +95,8 @@ Please see the guidance pages linked under each forcing for full details.
       [input4mips-cvs.readthedocs.io/dataset-overviews/open-biomass-burning-emissions](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/open-biomass-burning-emissions/)
 
 - land use
-    - recommended source IDs: not-available-yet
-    - notes: In preparation
+    - recommended source IDs: UofMD-landState-m-3-1-1
+    - acceptable source IDs: UofMD-landState-m-3-1
     - further guidance:
       [input4mips-cvs.readthedocs.io/dataset-overviews/land-use](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/land-use/)
 
@@ -158,9 +158,11 @@ For easier parsing with machines, we also present the information given above as
     "land-use": {
         "human_readable_name": "land use",
         "recommended_versions": [
-            "not-available-yet"
+            "UofMD-landState-m-3-1-1"
         ],
-        "acceptable_versions": []
+        "acceptable_versions": [
+            "UofMD-landState-m-3-1"
+        ]
     },
     "greenhouse-gas-concentrations": {
         "human_readable_name": "greenhouse gas concentrations",
@@ -227,7 +229,7 @@ EXPERIMENT_NAME="esm-scen7-m"
 # esgpull self install
 ## You may also need to run this step to get the data to download
 # esgpull config api.index_node esgf-node.ornl.gov/esgf-1-5-bridge
-esgpull add --track --tag ${EXPERIMENT_NAME} source_id:CR-esm-m-1-1-0,IIASA-IAMC-1-1-1,IIASA-IAMC-m-1-1-1,IIASA-IAMC-m-1-1-2,PIK-esm-m-1-0-0,SOLARIS-HEPPA-ScenarioMIP-4-6,UOEXETER-ScenarioMIP-2-2-2
+esgpull add --track --tag ${EXPERIMENT_NAME} source_id:CR-esm-m-1-1-0,IIASA-IAMC-1-1-1,IIASA-IAMC-m-1-1-1,IIASA-IAMC-m-1-1-2,PIK-esm-m-1-0-0,SOLARIS-HEPPA-ScenarioMIP-4-6,UOEXETER-ScenarioMIP-2-2-2,UofMD-landState-m-3-1-1
 esgpull update --tag ${EXPERIMENT_NAME} --yes
 esgpull download --tag ${EXPERIMENT_NAME}
 ```
