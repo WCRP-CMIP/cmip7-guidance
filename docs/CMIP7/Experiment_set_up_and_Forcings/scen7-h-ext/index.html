@@ -2739,8 +2739,7 @@ Please see the guidance pages linked under each forcing for full details.</p>
 <li>
 <p>land use</p>
 <ul>
-<li>recommended source IDs: not-available-yet</li>
-<li>notes: In preparation</li>
+<li>recommended source IDs: UofMD-landState-h-ext-3-1</li>
 <li>further guidance:
   <a href="https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/land-use/">input4mips-cvs.readthedocs.io/dataset-overviews/land-use</a></li>
 </ul>
@@ -2795,7 +2794,7 @@ Please see the guidance pages linked under each forcing for full details.</p>
 <a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="nt">"land-use"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">        </span><span class="nt">"human_readable_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"land use"</span><span class="p">,</span>
 <a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">        </span><span class="nt">"recommended_versions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">            </span><span class="s2">"not-available-yet"</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">            </span><span class="s2">"UofMD-landState-h-ext-3-1"</span>
 <a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">        </span><span class="p">],</span>
 <a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">        </span><span class="nt">"acceptable_versions"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
 <a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">    </span><span class="p">},</span>
@@ -2823,7 +2822,7 @@ Please see the guidance pages linked under each forcing for full details.</p>
 <a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a><span class="p">}</span>
 </code></pre></div>
 <h6 id="download-via-esgpull">Download via esgpull<a class="headerlink" href="#download-via-esgpull" title="Permanent link">&para;</a></h6>
-<p>The available data is on ESGF and searchable
+<p>The data is on ESGF and searchable
 <a href="https://esgf-node.ornl.gov/search?project=input4MIPs&amp;versionType=all&amp;activeFacets=%7B%22mip_era%22%3A%22CMIP7%22%7D">via metagrid</a>,
 although this method of finding and downloading the data can involve a lot of clicking.</p>
 <p>If you install <a href="https://esgf.github.io/esgf-download/">esgpull</a>, you can download all the data associated with the
@@ -2838,7 +2837,7 @@ you actually need to run your model.</p>
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1"># esgpull self install</span>
 <a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1">## You may also need to run this step to get the data to download</span>
 <a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1"># esgpull config api.index_node esgf-node.ornl.gov/esgf-1-5-bridge</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>esgpull<span class="w"> </span>add<span class="w"> </span>--track<span class="w"> </span>--tag<span class="w"> </span><span class="si">${</span><span class="nv">EXPERIMENT_NAME</span><span class="si">}</span><span class="w"> </span>source_id:CR-h-ext-1-1-0,IIASA-IAMC-1-1-1,IIASA-IAMC-h-ext-1-1-1,IIASA-IAMC-h-ext-1-1-2,PIK-h-ext-1-0-0,SOLARIS-HEPPA-ScenarioMIP-4-6
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>esgpull<span class="w"> </span>add<span class="w"> </span>--track<span class="w"> </span>--tag<span class="w"> </span><span class="si">${</span><span class="nv">EXPERIMENT_NAME</span><span class="si">}</span><span class="w"> </span>source_id:CR-h-ext-1-1-0,IIASA-IAMC-1-1-1,IIASA-IAMC-h-ext-1-1-1,IIASA-IAMC-h-ext-1-1-2,PIK-h-ext-1-0-0,SOLARIS-HEPPA-ScenarioMIP-4-6,UofMD-landState-h-ext-3-1
 <a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>esgpull<span class="w"> </span>update<span class="w"> </span>--tag<span class="w"> </span><span class="si">${</span><span class="nv">EXPERIMENT_NAME</span><span class="si">}</span><span class="w"> </span>--yes
 <a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>esgpull<span class="w"> </span>download<span class="w"> </span>--tag<span class="w"> </span><span class="si">${</span><span class="nv">EXPERIMENT_NAME</span><span class="si">}</span>
 </code></pre></div>
