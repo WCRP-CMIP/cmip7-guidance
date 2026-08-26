@@ -9,7 +9,7 @@ Counterfactual emissions pathway that is as physically consistent as possible, w
 temperature to peak at 1.5C and stabilise or slowly decline.
 
 - Responsible activity: [PolMIP](./index.md#polmip)
-- Tier: 1
+- Tier: 2
 - MIP co-chair review: **In progress** see
   [https://github.com/WCRP-CMIP/cmip7-guidance/issues/226](https://github.com/WCRP-CMIP/cmip7-guidance/issues/226)
 

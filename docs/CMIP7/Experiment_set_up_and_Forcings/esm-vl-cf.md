@@ -69,6 +69,7 @@ For the following data, please see these other experiment pages:
   aerosol forcing, ozone, nitrogen deposition, solar, aerosol optical properties, population density
 - [historical](./historical.md) for biomass burning emissions, land use, stratospheric aerosol forcing, ozone, nitrogen
   deposition, solar, aerosol optical properties, population density
+- [vl-cf](./vl-cf.md) for greenhouse gas concentrations
 
 #### Data described on other experiment pages with modifications you have to make
 
@@ -92,11 +93,6 @@ Please see the guidance pages linked under each forcing for full details.
     - further guidance:
       [input4mips-cvs.readthedocs.io/dataset-overviews/anthropogenic-slcf-co2-emissions](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/anthropogenic-slcf-co2-emissions/)
 
-- greenhouse gas concentrations
-    - recommended source IDs: CR-vl-cf-1-1-0
-    - further guidance:
-      [input4mips-cvs.readthedocs.io/dataset-overviews/greenhouse-gas-concentrations](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/greenhouse-gas-concentrations/)
-
 ###### JSON
 
 For easier parsing with machines, we also present the information given above as JSON.
@@ -108,13 +104,6 @@ For easier parsing with machines, we also present the information given above as
         "recommended_versions": [
             "IIASA-IAMC-1-1-1",
             "IIASA-IAMC-vl-cf-1-1-1"
-        ],
-        "acceptable_versions": []
-    },
-    "greenhouse-gas-concentrations": {
-        "human_readable_name": "greenhouse gas concentrations",
-        "recommended_versions": [
-            "CR-vl-cf-1-1-0"
         ],
         "acceptable_versions": []
     }
@@ -141,7 +130,7 @@ EXPERIMENT_NAME="esm-vl-cf"
 # esgpull self install
 ## You may also need to run this step to get the data to download
 # esgpull config api.index_node esgf-node.ornl.gov/esgf-1-5-bridge
-esgpull add --track --tag ${EXPERIMENT_NAME} source_id:CR-vl-cf-1-1-0,IIASA-IAMC-1-1-1,IIASA-IAMC-vl-cf-1-1-1
+esgpull add --track --tag ${EXPERIMENT_NAME} source_id:IIASA-IAMC-1-1-1,IIASA-IAMC-vl-cf-1-1-1
 esgpull update --tag ${EXPERIMENT_NAME} --yes
 esgpull download --tag ${EXPERIMENT_NAME}
 ```

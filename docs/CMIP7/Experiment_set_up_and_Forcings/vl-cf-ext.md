@@ -8,7 +8,7 @@ title: "Experiment Setup and Forcings Guidance: vl-cf-ext"
 Extension of `vl-cf` beyond 2100.
 
 - Responsible activity: [PolMIP](./index.md#polmip)
-- Tier: 1
+- Tier: 2
 - MIP co-chair review: **In progress** see
   [https://github.com/WCRP-CMIP/cmip7-guidance/issues/226](https://github.com/WCRP-CMIP/cmip7-guidance/issues/226)
 
