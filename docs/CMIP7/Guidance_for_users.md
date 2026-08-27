@@ -30,10 +30,11 @@ There are 3 options to access the data:
 
  1. **MetaGrid** ([West index][metagridwest]) ([East index][metagrideast])
 
-**Current Status** 
-    27-08-2026: East index has CMIP7 and CORDEX CMIP6 data, however search facets are not currently available to filter results. To search for data files, set number of results to 50 or 100 per page, and scroll through the results to find the files. West index is currently not mirroring the East index for CMIP7 and CORDEX CMIP6. An update to Metagrid to v1.6.3 is currently under beta testing, expected to be implemented in early September 2026. 
-    
     Web interface to search and download ESGF data. It provides access through http downloads, wget scripts, OPeNDAP URLs and Globus transfers. It is most useful for browsing and downloading a small number of files. The data can be accessed from the web interface links above, enabling users to search across the entire distributed archive as if it were all centrally located.
+    
+    !!! info ""
+        **Current Status** 
+         27-08-2026: East index has CMIP7 and CORDEX CMIP6 data, however search facets are not currently available to filter results. To search for data files, set number of results to 50 or 100 per page, and scroll through the results to find the files. West index is currently not mirroring the East index for CMIP7 and CORDEX CMIP6. An update to Metagrid to v1.6.3 is currently under beta testing, expected to be implemented in early September 2026. 
 
  2. **Using a python package**
 
