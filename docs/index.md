@@ -27,8 +27,6 @@ The vision and design of CMIP7 is outlined in ['An evolving Coupled Model Interc
 - [Guidance for users, including Terms of Use](CMIP7/Guidance_for_users.md)
 - [Guidance for ESGF node operators and publishers](CMIP7/Guidance_for_ESGF.md)
 - [Guidance for MIPs](CMIP7/Guidance_for_MIPs.md)
-- [Citation Guidance](CMIP7/Citation_Guidance.md)
-- [Domain names for CMIP7 services](CMIP7/Domain_names.md)
 - Standards and References
     - [Global Attributes](CMIP7/Global_Attributes.md)
     - [Branded Variables](CMIP7/Branded_Variables.md)
