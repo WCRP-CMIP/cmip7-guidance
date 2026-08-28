@@ -32,11 +32,11 @@ Updated information on ESGF policies will be added here soon.
 <!-- For new or exisiting ESGF node installations, first read the [following document](www.esgf.com) on ESGF policies, as this will influence the type of installation you need to deploy.  -->
 <!-- _needs proper link and updating_  -->
 
-### 1.2 How to install data node services
+### 1.2 How to Install Data Node Services
 **Requirements, setup and usage documentation**
 
 **Software Stack**
-The ESGF software stack requires Linux RedHat Enterprise or Rocky/Alma distributions. Administrators must have full sudo privileges to root access or a Kubernetes Cluster.
+The ESGF software stack for a Data Node requires Linux RedHat Enterprise or Rocky/Alma distributions. Administrators must have full sudo privileges to root access or a Kubernetes Cluster.
 The services are meant to run on webserver-grade hardware.
 For data-sharing nodes the storage holding your data must be mounted on the node. 
 <!-- _need a practical example here with cost estimate_.  -->
@@ -44,7 +44,7 @@ For data-sharing nodes the storage holding your data must be mounted on the node
 
 **ESGF Docker** 
 Instructions and links to any issuses can be [found here](https://github.com/ESGF/esgf-docker/).
-
+It is at this point where the node adminstrator will configure data mounts within the container and these mounts become available via a "logical prefix" in the published url.  Refer to these when configuring the publisher `data_roots` section. (see below)
 
 **Metagrid user interface - optional**
 To install the Metagrid UI for end-users to search and download data, read the documentation [here](https://metagrid.readthedocs.io/en/latest/) and see the Github repo [here](https://github.com/esgf2-us/metagrid). 
@@ -86,6 +86,12 @@ The publisher installation includes the IOOS checker and WCRP plugins.
 2. Mountpoint map to data on the same host as the publisher software installation, so the publisher has access to scan data using the integrated XArray package.
 3. Basic dataset information provided via the esg mapfile format. For example using the esgf-prepare/esgmapfile utility.
 4.  `pip install esgcet` will install the most recent version of the package.
+5.  You will need to provide appropriate settings for your _Data Node_ in your `esg.yaml` or similarly named esg-publisher configuration file.  `data_node` contains the hostname where your data is available and configured in `esgf-docker`.   Similarly, `data_roots` must be configured for the mounted file system and logically accessible prefix on your data node NGINX webserver.  Example:
+```
+data_roots:
+   esg_dataroot: /path/to/esgf/data
+```
+The `/path/to/esgf/data` must be visible by the local `esgcet` installation environment.
 
 ### 2.6. Authorizarion to Publish  
 

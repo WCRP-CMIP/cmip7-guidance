@@ -14,8 +14,9 @@ title: CMIP7 Frequently Asked Questions (FAQ)
 
 ### During or before publication, how will data centres verify that grids have been registered?
 
-The grid registration form will list grids that have already been registered. 
-If your grid has not been registered, you can register it and a new `grid_label` will be assigned.
+The grid registration form will list grids that have already been registered. To locate the grid label of a grid that has already been registered, you may use the [EMD grid finder](https://emd.mipcvs.dev/docs/grid_viewer/). 
+
+If your grid has not been registered, you can [register it](https://github.com/WCRP-CMIP/Essential-Model-Documentation/issues/new?template=horizontal_grid_cell.yml)   and a new `grid_label` will be assigned.
 There will be an initial period where the first people to register their grids have to register everything, but these grids will then appear for others to use.
 Importantly, the `grid_label` is a [high-severity QC check](QC_checks.md), meaning that netCDF files without a valid registered `grid_label` cannot be published.
 
@@ -37,9 +38,9 @@ There should be no confusion between grids and there is no distinction in the gr
 ### Has CMOR been updated to accommodate CMIP7's metadata requirements?
 
 **Yes.**
-The minimum CMOR version required for CMIP7 production is [CMOR 3.14.2](https://github.com/PCMDI/cmor/releases/3.14.2) in order to output the global attributes correctly and to read the MIP tables (CMOR tables) correctly.
+The minimum recommended version is given in the [CMOR guidance](Guidance_for_modellers.md/#6a-cmor) section, along with further information about using CMOR.
+A recent CMOR version is required in order to output the global attributes correctly and to read the MIP tables (CMOR tables) correctly.
 The [CMOR usage examples](https://github.com/WCRP-CMIP/cmip7-cmor-tables/blob/main/cmor_demo.ipynb) show how to use CMOR with the [new tables](https://github.com/WCRP-CMIP/cmip7-cmor-tables/) and [branded variables](Branded_Variables.md).
-See also the [CMOR guidance](Guidance_for_modellers.md/#6a-cmor) section.
 
 
 ### Does cmip7repack duplicate the amount of data?
@@ -60,7 +61,7 @@ Not repacking the data can lead to prohibitively slow access, which may in turn 
 
 ### Is CMIP7 repacking integrated into CMOR?
 
-Improved chunking to support CMIP7's repacking requirement has been introduced in [CMOR 3.14.0](https://github.com/PCMDI/cmor/releases/3.14.0).
+Improved chunking to support CMIP7's repacking requirement was introduced in [CMOR 3.14.0](https://github.com/PCMDI/cmor/releases/3.14.0) (see the [CMOR guidance](Guidance_for_modellers.md/#6a-cmor) section for further information about using CMOR).
 However if netCDF files written by CMOR are subsequently concatenated (e.g., if one-year files are concatenated to a single file covering an experiment's whole time period) then it is still necessary to run `cmip7repack` on the concatenated file.
 The [`check_cmip7_packing` tool](Guidance_for_modellers.md/#6b-cmip7repack) can be used to confirm that a netCDF file is compliant with the repacking requirement.
 

@@ -15,14 +15,16 @@ If DOI-breaking changes to a citation are required after a DOI has been minted, 
 "Last Name, First Name. (2026). CMIP7.CMIP.CCCma.CanESM5-1.piControl. v1. STFC. https://doi.org/10.83017/tt0t-ve21"
 ```
 
-CMIP7 data providers will need to review the information on the data citation landing pages and add party information before DOIs can be issued. An [Approver Guide Document](docs/assets/CitationReviewerGuide.pdf) has been prepared to articulate how to use the UI to make edits and publish citation information (i.e Mint DOIs)
+CMIP7 data providers will need to review the information on the data citation landing pages and add party information before DOIs can be issued. An [Approver Guide Document](../assets/CitationReviewerGuide.pdf) has been prepared to articulate how to use the UI to make edits and publish citation information (i.e Mint DOIs)
+
 
 The Citation Service is configured to natively support CMIP7, CORDEX-CMIP6 and CMIP6Plus via the [ESGVOC Python Package](https://esgf.github.io/esgf-vocab/).
 
 !!! tip "A Note on CMIP6/CMIP6Plus DCPP sub-experiments "
     Sub-experiments are not part of the data model for the CMIP7 citation service, however the sub-experiment-id can still be manually included in the citation title field. Only the core CMIP7 search facets are validated against the ESGVOC API, so the sub-experiment ID will not appear in the search facets area, but they will be findable via the fuzzy search in the free text search box.
 
-![Citation Flow Diagram - 28/08/2026](docs/assets/citation_flowdiagram_280826.png)
+
+![Citation Flow Diagram - 28/08/2026](../assets/citation_flowdiagram_280826.png)
 
 Above is the flow diagram showing internal processes within the citation service, including the user-facing landing pages (Purple Boxes).
 

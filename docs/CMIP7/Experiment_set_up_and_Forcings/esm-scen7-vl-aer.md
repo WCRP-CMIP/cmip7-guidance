@@ -13,7 +13,8 @@ Models with interactive chemistry should run `esm-scen7-vl-AQ` instead.
 
 - Responsible activity: [AerChemMIP](./index.md#aerchemmip)
 - Tier: 1
-- MIP co-chair review: No review initiated yet
+- MIP co-chair review: **In progress** see
+  [https://github.com/WCRP-CMIP/cmip7-guidance/issues/184](https://github.com/WCRP-CMIP/cmip7-guidance/issues/184)
 
 This page is intended to help with implementation.
 If you notice something that is unclear, please
@@ -25,8 +26,7 @@ For the full background of the experiment, please see the following URLs:
 
 ## Paired experiments
 
-- [esm-scen7-vl-AQ](./esm-scen7-vl-aq.md) is the corresponding interactive-chemistry experiment for models that include
-  interactive chemistry.
+- [esm-scen7-vl-AQ](./esm-scen7-vl-aq.md) is the corresponding experiment for models that include interactive chemistry
 - [scen7-vl-Aer](./scen7-vl-aer.md) is the concentration-driven counterpart to this emissions-driven experiment.
 
 ## Experiment set up

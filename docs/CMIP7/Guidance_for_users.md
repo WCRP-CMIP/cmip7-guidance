@@ -8,10 +8,7 @@ title: CMIP7 Guidance for Data Users
 
 This page is designed to inform users of climate model outputs on key CMIP7 concepts and tools. It is a landing page to provide context and to redirect them to more detailed resources.
 
-!!! info ""
-    An overview of **how to access and use CMIP data** is given in the slides from [CMIP 2026 workshop WIP session](https://zenodo.org/records/18934629) (slides 3-20).
-
-General guidance is also available via the [General Guidance](General_Guidance.md) page.
+To sign up for the CMIP Community News mailing list please visit <https://wcrp-cmip.org/cmip-mailing-lists/>.
 
 ## 1.  Accessing CMIP7 data
 
@@ -31,9 +28,9 @@ CMIP7 model output is available through a distributed data archive developed and
 
 There are 3 options to access the data:
 
- 1. **MetaGrid** ([LLNL][metagridllnl], [DKRZ][metagriddkrz], [ORNL][metagridornl], [CEDA][metagridceda])
+ 1. **MetaGrid** ([West index][metagridwest])
 
-    Web interface to search and download ESGF data. It provides access through http downloads, wget scripts, OPeNDAP URLs and Globus transfers. It is most useful for browsing and downloading a small number of files. The data can be accessed through any of the CMIP7 web interfaces linked above, which enable users to search across the entire distributed archive as if it were all centrally located.
+    Web interface to search and download ESGF data. It provides access through http downloads, wget scripts, OPeNDAP URLs and Globus transfers. It is most useful for browsing and downloading a small number of files. The data can currently be accessed from the web interface linked above, which enables users to search across the entire distributed archive as if it were all centrally located.
 
  2. **Using a python package**
 
@@ -57,7 +54,8 @@ There are 3 options to access the data:
       
 For data access routes that do not involve official ESGF nodes, we encourage users to verify that the data used is the latest version, and cite the original sources appropriately (see below). 
 
-
+!!! info ""
+    An overview of **how to access and use CMIP data** is given in the slides from [CMIP 2026 workshop WIP session](https://zenodo.org/records/18934629) (slides 3-20).
 
 
 
@@ -68,49 +66,39 @@ To enable modelling groups and others who support CMIP7 to demonstrate its impac
 ### Mandatory
 
 1. **Cite the specific dataset(s) used.**
+       <!-- TODO: verify if version is in citation for CMIP7 
+            TODO: verify that PID and handle.net still work for CMIP7 
+            TODO: Add a CMIP7 example of citation when one exists-->
 
-    For each model whose data is used, please include a citation in the form of:
+     For each model whose data is used, please include a citation in the form of:
 
     > Authors/Data Creators (publication year): Title. Version YYYYMMDD. Earth System Grid Federation. DOI.
         
     e.g. 
 
-    > Swart et al. (2019): CCCma CanESM5 model output prepared for CMIP6 ScenarioMIP. Version 20190429. Earth System Grid Federation. https://doi.org/10.22033/ESGF/CMIP6.1317.
+    > Swart et al. (2019). CCCma CanESM5 model output prepared for CMIP6 CMIP historical. Version 20190429. Earth System Grid Federation. https://doi.org/10.22033/ESGF/CMIP6.3610 .
 
     Please include a table with at minimum the models ("sources"), institutions, and data citations as above, as well as a data availability statement pointing to the table and acknowledging ESGF. If the journal has a citation limit, putting the table in the Supporting Information is acceptable.
 
+    For CMIP7, the granularity of the data citations is at the level of a model's contribution to an experiment, such that all ensemble members plus all erratas and future corrections within an experiment are covered by one citation.
+
     ??? Question "How to find the DOI and the version?"
-        🤖 You can use the python library [CMIPcite][cmipcite]. Input tracking_id(s), dataset PID(s) or file paths(s) to retrieve the citation (textually or in the bibtex format).
+        🔍 You can search databases.  The [Citation Search][citesearch] can help you find the DOI (but not the version). [MetaGrid][metagridwest] results indicate the version and have a citation tab.
+  
+        🖱️ You can also use the tracking id: Take the `tracking_id` global attribute of a file and append it to [http://hdl.handle.net/](http://hdl.handle.net/) (e.g., [http://hdl.handle.net/hdl:21.14100/be06a059-363d-47a4-97a2-d5253190fd15](http://hdl.handle.net/hdl:21.14100/be06a059-363d-47a4-97a2-d5253190fd15)). From there, you can follow "The file is part of the following aggregation(s)" and find the DOI and version of the dataset.
 
-        🖱️ You can also do the work on CMIPcite by hand: Take the `tracking_id` global attribute of a file and append it to [http://hdl.handle.net/](http://hdl.handle.net/) (e.g., [http://hdl.handle.net/hdl:21.14100/be06a059-363d-47a4-97a2-d5253190fd15](http://hdl.handle.net/hdl:21.14100/be06a059-363d-47a4-97a2-d5253190fd15)). From there, you can follow "The file is part of the following aggregation(s)" and find the DOI and version of the dataset.
-
-        🔍 You can also search databases.  The [Citation Search][citesearch] can help you find the DOI (but not the version). MetaGrid results indicate the version and have a citation tab.
-
-        Note that there are two citation granularities (MIP-model-experiment data and MIP-model data) and that the version has to be added separately as it is not included in the DOI.
-
-        Further information on the data citation concept is described in [Stockhause and Lautenschlager (2017)][Stockhause2017].
+        🤖 You can use the experimental python library [CMIPcite][cmipcite]. Input tracking_id(s), dataset PID(s) or file paths(s) to retrieve the citation (textually or in the bibtex format).
 
 
-    ??? Question "Do I cite the model based on activity or experiment?"
+    Further information on the data citation concept is described on the [Citation Guidance page](Citation_Guidance.md).
 
-        For each participating model, data citations exist at two high-level aggregations: activity and experiment. 
-        The activity-level citation refers to all experiments defined by that activity (i.e., MIP) for a given model. 
-        While data citation is mandatory, data users can choose which of these aggregation levels should be cited. 
-        It is recommended that:
-
-        - Wherever possible cite the experiments used (e.g., historical), using the experiment-level data citations.
-        - If this isn't feasible (e.g. limitations of the number of data citations imposed by a journal), use the activity-level data citation.
-
-        Experiment-specific data citations are useful for tracking the impact of specific CMIP7 experiments, which is valuable information for modelling centres and planning of future CMIP phases. 
-        However it is recognized that their finer granularity could result in an unmanageable number of references for data users, journals may limit the number of references, and a balance between the number of data and literature citations is desirable in scholarly publications.
-        
-    <!--TODO: Is #2 acknoledgmet necessary for funding ? or could it be replaced by a data availability statement.-->
 
 2. **Acknowledge CMIP7.**
 
     In the Acknowledgment section, insert the following text:
 
     >We acknowledge the World Climate Research Programme's Coupled Model Intercomparison Project contributors who coordinated and promoted CMIP7. We thank the climate modelling groups for producing and making available their model output, the Earth System Grid Federation (ESGF) for archiving the data and providing access, and the multiple funding agencies who support CMIP7 and ESGF.
+
 
 3. **Adhere to the license**
         
@@ -164,22 +152,23 @@ CMIP7 datasets can be identified through a series of facets that represents key 
 * grid
 * version
 
-!!! Info
 
-    Current advice from the CVs task team is to only access the CVs via [ESGVOC](https://esgf.github.io/esgf-vocab/). This will be subject to change in the future.
+More information about the meaning of these facets is provided in the [Global Attributes page](Global_Attributes.md).  This section provides helpful links and gives a bit more information on a few key facets. 
 
+??? Info "Controlled Vocabularies"
+    The values associated with each facet are standardized through the CVs. They are used to search the ESGF database and can be found in the global attributes and filename of the data. The source of truth for the CVs is [ESGVOC][esgvoc]. This software feeds other tools for viewing the CVs:
 
-
-More information about the meaning of these facets is provided in the [global attributes documentation][GlobalAttrs], with further guidance provided on the [Global Attributes page](Global_Attributes.md). The values associated with each facet are standardized through the [CVs][cmipCvs]. They are used to search the ESGF database and can be found in the global attributes of the data. This section provides helpful links and gives a bit more information on a few key facets. 
+    * The [CV viewer][CVviewer]
+    * [CMOR tables JSON files][cmip7cmor]
 
 
 
 ### 3.1.  Source and Variant
-* [List of models][sourcelist] (coming soon)
-* [Essential Model Documentation (EMD)][emd] (coming soon)
+* [List of models][sourcelist]
+* [Essential Model Documentation (EMD)][emd]
 
 
-The Essential Model Documentation (EMD) contains a high-level description intended to contain information on model formulation that can be easily compared between different models. The [EMD guidance pages][emd] contain links to more in-depth model documentation for each source.
+The Essential Model Documentation (EMD) contains a high-level description intended to contain information on model formulation that can be easily compared between different models, as well as, more in-depth model documentation for each source.
 
 ??? info "Basic Concepts to Understand Variants"
     The source facet gives the name of the model and the variant facet represents each member of an ensemble for a given source. It can also be called the “ripf” identifier (“r” for realization, “i” for initialization, “p” for physics, and “f” for forcing).
@@ -188,8 +177,9 @@ A useful tool to evaluate the models is the [Rapid Evaluation Framework (REF)][r
 
 
 ### 3.2.  Experiment and Activity
-* [List of experiments][experimentlist] (coming soon)
-* [List of activities][activitylist] (coming soon)
+* [List of experiments][experimentlist]
+* [Experiment setup and forcings](Experiment_set_up_and_Forcings/index.md)
+* [List of activities][activitylist]
 
  
 The CMIP7 protocol and experiments are described in a [special issue][GMDSpecialIssue] of Geoscientific Model Development with an overview of the design and scientific strategy provided in the lead article of that issue by [Dunne et al. (2025)][dunne2025].
@@ -201,13 +191,13 @@ The CMIP7 protocol and experiments are described in a [special issue][GMDSpecial
 
     Each model participating in CMIP7 will contribute results from the eight DECK experiments. These experiments are the only ones directly overseen by the [CMIP Panel][CMIPPanel], and together these constitute the ongoing (slowly evolving) “CMIP” activity. In addition to the DECK, each modeling group may choose to contribute to any of the [CMIP7 Community MIPs][CMIPMips]. The CMIP panel identifies key experiments to be prioritized on different timelines through fast tracks. The first one is the AFT, which includes a set of Community MIP experiments chosen by the CMIP panel to address specific needs.
     
-    MORE COMING SOON
 
 <!--TODO: https://github.com/WCRP-CMIP/cmip7-guidance/issues/46-->
 
 
 ### 3.3. Variable
 * [List of variables][varlist]
+* [List of requested branded variables][vardatareq]
 * [Branded variable documentation](Branded_Variables.md)
 
 In CMIP7, the concept of branded variables has been introduced to make it easier to find the variables you want. Branded variables follow the template: 
@@ -231,7 +221,7 @@ For example, the equivalent of `Amon.tas` in CMIP6 would be  `atmos.tas_tavg-h2m
     The variables produced in CMIP7 were recommended by the [CMIP7 Data Request task team][DataRequestTeam]. The latest version of the Data Request can be [viewed here][datarequest], and further guidance can be [found here](Guidance_for_modellers.md/#4-model-output-fields-data-request). 
 
 
-### 3.4 Frequency
+### 3.4. Frequency
 * [List of frequencies][freqlist]
 
 Models report data on a variety of time steps. 
@@ -263,20 +253,24 @@ In CMIP6, the definition of requested variables included the frequency in which 
 
     It is recommended that users use the [cftime][cftime] library to handle time.
 
-
-
-### 3.5 Grid
-* [List of grids][gridlist] (coming soon)
-* List of pressure levels: [Table 2 of Dingley et al. 2025][datareqpaperatm]
+### 3.5. Grids
+* [Horizontal grid cells viewer][horgridlist]
+* [Vertical grids viewer][vergridlist]
 * [CMIP7 Guidance on Grids][grid]
 
-Different climate models use a variety of different horizontal grids that are documented in the [grid registry][gridreg] (coming soon).
 
-Different MIPs also have different requirements for vertical grid reporting. Output can be defined either on the native model levels, or it can be remapped to pressure levels.
+Horizontal and vertical grids are registered in the EMD.  On each [EMD model page][emd], you can find which grids were used in each component of the model.
 
-??? info "Masked Averaging"
 
-    Many variables in CMIP7 are defined as masked means, defined as the mean of a quantity over a portion of the grid cell defined by an area type. For more information on this, see this [webpage][maskavg] (coming soon).
+??? info "Basic Concepts to Understand Grids"
+    In the EMD, there are 4 different record types:
+    
+    * Horizontal grid cells (ex. g100) describe the shape, resolution, and number of cells. 
+    * Horizontal subgrids (ex. g100-mass) describe where different physical quantities sit within a horizontal grid cell.
+    * Horizontal computational grids (ex. h100) describe the arrangement of multiple subgrids into the complete horizontal domain.
+    * Vertical computational grids (ex. v100) describe the number of levels, the coordinate, the total depth, and the heigh of the top and bottom layer of the 3rd dimension.
+    
+    More information can be found in the [EMD Guidance][emdguidance].
 
 
 ## 4. CMIP7 data format
@@ -284,8 +278,9 @@ Different MIPs also have different requirements for vertical grid reporting. Out
 As in previous phases, all CMIP7 output has been written to netCDF files.
 Before being published, these files must pass the [ESGF Quality Control (ESGF-QC)][esgfqc].
 Many modelling centres use the [CMOR][cmor] software to standardize their files. They are then said to have been “CMORized”.
+(The term "CMORized" can also refer to netCDF files that meet the same standards even if CMOR itself did not produce them.)
 
-Essential features of CMORized data are :
+Essential features of CMORized data are:
 
 * Standardized naming from CMIP [CVs][cmipCvs]
 * Consistent [file naming convention][GlobalAttrs]
@@ -293,15 +288,11 @@ Essential features of CMORized data are :
     * [Global attributes][GlobalAttrs]
     * Coordinate variables such as time, lat, lon, plev
     * One variable per file
-* Self-describing (all metadata needed to interpret the data are included in the file)
 * Consistent units and standard names following [CF conventions][cfConventionsPage]
 * [Standard chunking](Guidance_for_modellers.md#5-model-output-requirements)
 
 
-
-
-
-## 5.  Reporting suspected errors
+## 5.  Errata: Searching and Reporting suspected errors 
 
 
 !!! Danger "Warning"
@@ -326,8 +317,11 @@ First time using CMIP? Need a bit more help ? Check out these resources:
 
 
 
+If something is missing from this documentation, please open an issue [here][issue].
 
-###### Document version: 2026-04-08
+
+
+###### Document version: 2026-07-13
  <!--  abbreviation -->
 *[CMIP7]: Coupled Model Intercomparison Project phase 7
 *[LLNL]: Lawrence Livermore National Laboratory
@@ -345,6 +339,7 @@ First time using CMIP? Need a bit more help ? Check out these resources:
 *[ARCO]: Analysis-Ready Cloud-Optimized
 
  <!-- valid general links -->
+[metagridwest]: https://metagrid.esgf-west.org/
 [metagridllnl]: https://aims2.llnl.gov/search/
 [metagriddkrz]: https://esgf-metagrid.cloud.dkrz.de/search
 [metagridornl]: https://esgf-node.ornl.gov/search
@@ -363,7 +358,6 @@ First time using CMIP? Need a bit more help ? Check out these resources:
 [cftime]: https://unidata.github.io/cftime/
 [ref]: https://dashboard.climate-ref.org
 [cmipcite]: https://cmipcite.readthedocs.io/en/latest/
-[citesearch]: https://www.wdc-climate.de/ords/f?p=127:2 
 [esgfqc]: https://github.com/ESGF/esgf-qc 
 [nodes]: https://wcrp-cmip.org/map/
 [cmcc]: https://esgf-ui.cmcc.it/esgf-dashboard-ui/index.html
@@ -373,6 +367,9 @@ First time using CMIP? Need a bit more help ? Check out these resources:
 [pangeo]: https://pangeo-data.github.io/pangeo-cmip6-cloud/
 [tools]: https://wcrp-cmip.org/tools/
 [virtualizarr]: https://virtualizarr.readthedocs.io/en/stable/
+[CVviewer]: https://esgvoc.ipsl.fr/
+[esgvoc]: https://esgf.github.io/esgf-vocab/
+[issue]: https://github.com/WCRP-CMIP/cmip7-guidance/issues
 
  <!-- CMIP7 links -->
 [GMDSpecialIssue]: https://gmd.copernicus.org/articles/special_issue1315.html
@@ -385,31 +382,30 @@ First time using CMIP? Need a bit more help ? Check out these resources:
 [FeoC]: https://wcrp-cmip.org/cmip7-task-teams/fresh-eyes-on-cmip/
 [GlobalAttrs]: https://doi.org/10.5281/zenodo.17250296
 [grid]: https://doi.org/10.5281/zenodo.15697024
-[datareqpaperatm]: https://egusphere.copernicus.org/preprints/2025/egusphere-2025-3189/
+[datareqpaperatm]: https://gmd.copernicus.org/articles/19/2945/2026/
 [datarequest]: https://bit.ly/CMIP7-DReq-latest
 [cmortablecmip7]: https://github.com/WCRP-CMIP/cmip7-cmor-tables
-[varlist]: https://cmip-data-request.github.io/cmip7-dreq-webview/latest/variables.html
-[freqlist]: https://cmip-data-request.github.io/cmip7-dreq-webview/latest/cmip7_frequency.html
-[emd]:  https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/
+[vardatareq]: https://cmip-data-request.github.io/cmip7-dreq-webview/latest/variables.html
+[varlist]:https://esgvoc.ipsl.fr/concept/variable?projects=cmip7
+[freqlist]: https://esgvoc.ipsl.fr/concept/frequency?projects=cmip7
+[emd]: https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/Model/
+[emdguidance]: https://emd.mipcvs.dev/docs/#what-does-it-contain
 [CMIPpubs]: https://cmip-publications.llnl.gov
+[citesearch]: https://cmip7-citations.ceda.ac.uk/citations/ 
+[sourcelist]:  https://esgvoc.ipsl.fr/concept/model?projects=cmip7
+[experimentlist]:  https://esgvoc.ipsl.fr/concept/experiment?projects=cmip7
+[activitylist]:  https://esgvoc.ipsl.fr/concept/activity?projects=cmip7
+[cmip7cmor]: https://github.com/WCRP-CMIP/cmip7-cmor-tables/tree/main/tables-cvs/split-view
+[horgridlist]: https://emd.mipcvs.dev/docs/grid_viewer/horizontal/
+[vergridlist]: https://emd.mipcvs.dev/docs/grid_viewer/vertical/
 
 
  <!-- TODO: all the links below need to be changed when the new version arrives. -->
  <!-- CMIP6 links -->
  <!--[CMIPpubs]: https://cmip-publications.llnl.gov/view/CMIP6/  
-[experimentlist]: https://wcrp-cmip.github.io/CMIP6_CVs/docs/CMIP6_experiment_id.html
-[activitylist]: https://github.com/WCRP-CMIP/CMIP6_CVs/blob/master/CMIP6_activity_id.json
-[sourcelist]: https://wcrp-cmip.github.io/CMIP6_CVs/docs/CMIP6_source_id.html 
-[gridlist]: https://github.com/WCRP-CMIP/CMIP6_CVs/blob/main/CMIP6_grid_label.json 
-[levellist]: https://cmip6dr.github.io/Data_Request_Home/Documents/CMIP6_pressure_levels.pdf?id=88 
-[freqlist]: https://github.com/WCRP-CMIP/CMIP6_CVs/blob/main/CMIP6_frequency.json
 [maskavg]: https://wcrp-cmip.github.io/WGCM_Infrastructure_Panel/CMIP6/time_and_area_averaging.html -->
 
  <!-- unknown links -->
-[experimentlist]:  ?
-[activitylist]:  ?
-[sourcelist]:  ?
-[gridlist]: ?
 [levellist]:  ?
 [maskavg]:  ?
 [eld]: ?

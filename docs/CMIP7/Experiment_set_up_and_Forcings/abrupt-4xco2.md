@@ -10,7 +10,8 @@ All other conditions are kept the same as piControl.
 
 - Responsible activity: [CMIP](./index.md#cmip)
 - Tier: 1
-- MIP co-chair review: No review initiated yet
+- MIP co-chair review: **In progress** see
+  [https://github.com/WCRP-CMIP/cmip7-guidance/issues/183](https://github.com/WCRP-CMIP/cmip7-guidance/issues/183)
 
 This page is intended to help with implementation.
 If you notice something that is unclear, please
@@ -72,8 +73,8 @@ For the following data, please see these other experiment pages:
 
 For the following forcings, please use data from the specified experiments with the specified modifications.
 
-- for greenhouse gas concentrations, use the forcings from [piClim-control](./piclim-control.md) but quadruple the
-  CO<sub>2</sub> concentrations
+- for greenhouse gas concentrations, use the forcings from [piControl](./picontrol.md) but quadruple the CO<sub>2</sub>
+  concentrations
 
 #### Data available via input4MIPs
 

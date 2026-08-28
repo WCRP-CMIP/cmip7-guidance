@@ -6,7 +6,245 @@ title: CMIP7 Updates for modelling groups
 # Updates for Modelling groups
 
 This page will be updated with information of interest to modelling groups that the CMIP IPO has communicated by email (most recent at top).
+
 ---
+## 23 August 2026
+**Subject:** CMIP7 update: h-ext availability, status update and ECS/TCR/TCRE requests
+
+Dear modelling centres,
+
+We would like to highlight the following:
+
+### 1.	h-ext land use scenario forcing now available
+ land use scenario extension for the High scenario extension (h-ext) is now available – please see [here](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/land-use/#cmip7_1) for details and links to the data.
+
+### 2.	Request for latest update on expected first data delivery
+We ask that modelling centre representatives ensure the data at [https://wcrp-cmip.org/cmip-phases/cmip7/#when_to_expect_cmip7_data](https://wcrp-cmip.org/cmip-phases/cmip7/#when_to_expect_cmip7_data) is kept up to date to manage expectations of CMIP data users and facilitate support for ESGF publication (dataset publication guidance [here](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/Guidance_for_ESGF/#2-dataset-publication)). Please use the relevant link in the table provided in the email from the CMIP IPO to update your model/centres’ status.
+
+Please note you **must have completed the Essential Model Documentation process (details [here](https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/))** before publishing data on the ESGF!
+
+### 3.	ECS/TCR/TCRE survey
+To support early understanding of the CMIP7 model ensemble, the CMIP Panel would like to gather preliminary information on expected ECS and TCR/TCRE from participating modelling centres. Collecting these insights ahead of the widespread publication of model data and the availability of results through the Rapid Evaluation Framework would provide an early indication of the characteristics of the emerging CMIP7 ensemble. If you have not already done so, please complete the short survey (link provided in the email version of this update) for each model that your centre/group will contribute to CMIP7.
+
+---
+## 6 August 2026
+**Subject:** CMIP7 update: please read email carefully - latest information and survey request
+
+Dear modelling centres,
+
+Thank you for your continued engagement and dedication to delivering CMIP data. The latest update can be found below:
+
+1.  Request from the CMIP Panel: Updated ECS/TCR/TCRE analysis
+2.	Scenario forcings update
+3.	ESGF onboarding and data access links
+4.	EMD viewer now available
+5.	ISIMIP request
+6.	Data delivery update reminder (see email)
+
+### 1. Request from the CMIP Panel: Updated ECS/TCR/TCRE analysis
+The CMIP Panel previously led a community paper assessing the equilibrium climate sensitivity (ECS) and Transient Climate Response (TCR) of CMIP6 models ([Meehl et al., 2020](https://www.science.org/doi/10.1126/sciadv.aba1981)), compiling estimates across CMIP6 and comparing them with values from earlier CMIP phases. The emergence of a subset of CMIP6 models with notably higher ECS and TCR attracted considerable scientific, policy, and media attention.
+
+To support early understanding of the CMIP7 model ensemble, the CMIP Panel would like to gather preliminary information on expected ECS and TCR/TCRE from participating modelling centres. Collecting these insights ahead of the widespread publication of model data and the availability of results through the Rapid Evaluation Framework would provide an early indication of the characteristics of the emerging CMIP7 ensemble. With the focus of emissions driven runs in CMIP7, the CMIP Panel are keen to emphasise TCR/TCRE over ECS in this analysis. 
+
+In addition to supporting a community paper on CMIP7 ECS and TCR/TCRE, led by the CMIP Panel on behalf of the CMIP7 modelling community, this effort would help facilitate timely and evidence-based communication in response to anticipated interest from the media, policymakers, and the wider public.
+
+**Please see email version of this update for survey link. If you cannot find this, please contact the CMIP IPO.**
+
+### 2. Scenario forcings update
+**NEW DATA**: The latest simple plumes for anthropogenic aerosols in extended CMIP7 scenarios (Version SP v2.1) can be found at [Fiedler et al., 2026](https://doi.org/10.5281/zenodo.21671953).
+
+**DATASET UPDATE**: Please note as a result of an issue being found ([this comment](https://github.com/PCMDI/input4MIPs_CVs/discussions/464#discussioncomment-17835122)), aviation data needs to come from files with a different source ID than the rest of the data. For aviation data, files with source IDs of the form IIASA-IAMC-\*-ext-1-1-2 should be used. For all other data, files with source IDs of the form IIASA-IAMC-\*-ext-1-1-1 should be used.
+
+For full details and links to the data please see the guidance pages [here](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/anthropogenic-slcf-co2-emissions/#cmip7_1).
+
+**DELAY IN DATA AVAILABILITY**: We apologise for the delay to the delivery of the following land use scenario and scenario extension data:
+
+- HL land use scenario data (to 2100)
+- H, HL, M and VL land use scenario extensions (2105-2500)
+
+For links to all scenario forcing data please see [here](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/#scenariomip).
+
+Outstanding data will become available in the coming months:
+
+- LN and ML land use, ozone and nitrogen deposition scenario data (anticipated early October).
+- M and HL land use scenario extension data (anticipated early October).
+- L land use, ozone and nitrogen deposition scenario, and remaining land use scenario extension data (anticipated before end 2026)
+
+### 3. ESGF onboarding and data access update
+The two ESGF-NG index nodes are now available for modelling centres’ onboarding – for full information see [ESGF onboarding webpages](https://github.com/ESGF/esgf-ng-onboarding/tree/main) 
+
+Once published, all CMIP7 data will be available at:
+
+- [Metagrid](https://metagrid.esgf-west.org/search)
+- [ESGF-West API](https://discovery.west.esgf.io/)
+- [ESGF-East API](https://api.stac.esgf.ceda.ac.uk/)
+
+### 4. EMD viewer now available
+We now have a viewer available for the Essential Model Documentation (EMD), making it easier to see all the linked information for each source, once it has successfully passed through all stages of the EMD.
+
+You can explore the [EMD Viewer here](https://emd.mipcvs.dev/docs/Model/?model=ec-earth3-esm-1-1).
+
+**PLEASE NOTE**: All models must complete the EMD process before being able to publish CMIP7 data!
+
+### 5. ISIMIP request
+Dear CMIP7-ScenarioMIP modellers, 
+After finishing the pre-processing of the required Direct Human Forcing data and getting access to the first ESM simulations from EC-Earth (picontrol, historical, H and VL) we are about to start the ISIMIP4b-Fast Track with the release of the first input data package to the impact modelling community. We will be very happy to add additional ESMs to the input data package to hopefully still enable CMIP7-based impact simulations for the AR7 although the IPCC-WGII submission deadline may already be in May next year. If your simulations are already finished or about to be finished it would be great to let us know (isimip-data@pik-potsdam.de). Then we could already exchange the data for bias-adjustment or announce the availability of the additional simulations in the email to the ISIMIP modellers associated with the release of the first ISIMIP4b input data package that is planned for the second week of August. Ideally we would need these variables, where ESMs not providing all ocean variables can nevertheless be included.   
+Thank you so much for your support!  
+Katja, on behalf of the ISIMIP coordination team
+
+### 6. Data delivery update reminder
+Please see email for centre/group specific links to provide the latest update
+To support downstream activities (e.g., CORDEX, ISIMIP and ISMIP7) and key partners such as IPCC AR7 WGI we are asking you to provide an update on your CMIP7 Assessment Fast Track simulation status using the dedicated centre/model specific links in the table below. The status can then be viewed [here](https://wcrp-cmip.org/cmip-phases/cmip7/#when_to_expect_cmip7_data) on the CMIP website.
+ 
+Some modelling centres have previously provided different dates for different models within their centre. Those different models are listed separately here. If your centre would like to start providing different dates for different models, please let us know and we will create additional links for you to facilitate this.
+
+---
+## 10 July 2026
+**Subject:** CMIP7 UPDATE: please read email and link carefully for latest information
+
+Dear modelling centres,
+ 
+Thank you for your continued engagement and dedication to delivering CMIP data. The latest update can be found below and at Updates for modelling groups:
+
+- Scenario forcings update
+- Experiment naming update and data request release
+- Data citation service
+- Energy Consumption and Carbon Footprint TT survey
+- Data delivery update reminder
+  
+### Scenario forcings
+
+Following our update on 19 June regarding an issue with CEDS CMIP7 aviation emissions data for 2023, the updated aircraft data (with fixed seasonality) is now available here.
+ 
+The final Medium (M) and High-to-Low (HL) scenario forcings for land use, ozone and nitrogen deposition are now available:
+- [Land use](https://metagrid.esgf-west.org/search?project=input4MIPs&activeFacets=%7B%22mip_era%22%3A%22CMIP7%22%2C%22target_mip_list%22%3A%22ScenarioMIP%22%2C%22institution_id%22%3A%22UofMD%22%7D&textInputs=%5B%22land%22%5D)
+- [Ozone](https://metagrid.esgf-west.org/search?project=input4MIPs&activeFacets=%7B%22mip_era%22%3A%22CMIP7%22%2C%22target_mip_list%22%3A%22ScenarioMIP%22%2C%22institution_id%22%3A%22UofMD%22%7D&textInputs=%5B%22land%22%5D)
+- [Nitrogen deposition](https://metagrid.esgf-west.org/search?project=input4MIPs&activeFacets=%7B%22mip_era%22%3A%22CMIP7%22%2C%22target_mip_list%22%3A%22ScenarioMIP%22%2C%22institution_id%22%3A%22UofMD%22%7D&textInputs=%5B%22land%22%5D)
+ 
+
+The next set of scenarios to be produced for these three forcings will be Low-to-Negative (LN) and Medium-to-Low (ML) and are expected to be available by end of September 2026. This will then leave Low (L) which will be made available before end of the year.
+ 
+All forcing datasets can be accessed from the [input4MIPs webpages](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/), however the documentation pages for the three datasets above are not yet updated to reflect the publication of the datasets. You can track the [status of these here](https://github.com/PCMDI/input4MIPs_CVs/issues/459).
+
+### Experiment naming update and data request release
+
+An issue has been reported with incorrect updates to experiment ids in the [Data Request v1.2.2.4](https://wcrp-cmip.org/cmip7-data-request-v1-2-2-4/). The issue is only with lower case letters being used instead of upper case letters (e.g. picontrol instead of piControl). This will be corrected in a new release, which should be available from mid July. 
+ 
+### Data citation service
+
+Information on the CMIP7 citation service is now available here and further information will be distributed once data is being published.
+ 
+### Energy Consumption & Carbon Footprint Task Team survey
+
+We urgently remind modelling centres to complete the data protection form and energy use spreadsheet sent to all modelling centre scientific and technical leads on the 9th February 2026.  
+
+If you have not received a link to your survey spreadsheet, or require personal assistance to complete the spreadsheet please [contact the task team](mailto:energy-carbon-questionnaire@wcrp-cmip.org/). 
+
+
+[How-to-guide for the spreadsheet](https://github.com/WCRP-CMIP/cmip7-guidance/blob/docs/docs/How_to_Guides/Energy_Consumption_and_Carbon_Footprint_Spreadsheet.md) 
+
+---
+## 19th June 2026
+
+**Subject**: Notice of issue with CEDS CMIP7 aviation emissions data for 2023, and consequently, all scenario data (which uses 2023-historical seasonality for anthropogenic emissions).
+
+Dear Modelling centres (science and forcings contacts),
+
+We would like to make you aware of an error that has been identified in the seasonality of aircraft emissions in the scenario forcing. The issue stems from an error in the 2023 seasonality, which was subsequently used for the scenario emissions. Please note this issue does not affect the CMIP7 historical simulations (which end in 2021).
+
+### Issue detail
+
+An input processing error in the Carbon Monitor data used to generate the monthly air seasonality has caused some January-June 2023 aviation values to be inadvertently counted twice. This has resulted in:
+
+1.	Artificially inflated aviation emissions during the first half of 2023
+2.	Suppressed emissions during the second half of 2023
+3.	An unrealistic seasonal profile compared with surrounding years
+
+### Impacts and proposed action
+
+The CMIP Forcings TT co-leads have completed some further investigation to determine the impact of this issue in the seasonality on ozone simulation for 2023. They, together with the ozone dataset provider, have concluded that the impact is likely small, can be treated as a forcing uncertainty, and is not significant enough to warrant a rerun of ozone forcing simulations. 
+
+They encourage ESMs (with full chemistry) that have not yet started their ScenarioMIP simulations to use the corrected emissions, once available. Those that have already completed the simulations can decide whether to rerun depending on their resources and any other demands.
+
+### When will the corrected emissions data be available?
+
+Corrected emissions for all scenarios will be available from the ESGF (via the input4MIPs portal) by Friday 26 June. If you have any questions, please raise an issue or start a discussion at <https://github.com/PCMDI/input4MIPs_CVs/discussions> 
+
+Best wishes,
+
+CMIP IPO on behalf of CMIP Forcings Task Team and CMIP Panel Co-chairs
+
+---
+
+## 9th June 2026
+
+Dear All,
+
+The CMIP Essential Model Documentation (EMD) team are holding regular online drop-in sessions "EMD-Live!" to support modelling centres who are completing their CMIP7 model documentation.
+
+The aim of the sessions is to help modelling centres to progress through the EMD process alongside the live reviewing of your submissions. EMD-Live! sessions will be held every week on Mondays at 15:00 UTC and Tuesdays at 07:00 UTC throughout June and July. You will have received calendar invites for these sessions.
+
+If you would prefer a one-to-one session with the EMD team, please contact [cmip-ipo@esa.int](mailto:cmip-ipo@esa.int) with your availability and we can arrange this for you.
+
+Best wishes,
+
+CMIP IPO
+
+---
+
+## 4th June 2026
+
+This update includes:
+
+1.	ESGF-NG update
+2.	Essential Model Documentation (EMD) update and reminder
+3.	Upcoming Data Request patch release
+ 
+### ESGF-NG publishing update
+ESGF-NG is now ready to publish CMIP7 data! 
+
+We strongly recommend engaging with the [Climate Data Node Operations Team (CDNOT)](https://wcrp-cmip.org/cmip7-task-teams/cdnot/) to obtain support with the publication process.
+
+Machine readable interfaces are available via the links below, and updates to metagrid (for humans) will be announced once the first data has been published.  Within the new data structure there are two search indices,  east and west, which will be kept synchronised.
+Machine readable interfaces:
+
+- <https://search.west.esgf.io/>
+- <https://search.east.esgf.io/>
+
+### EMD update and reminder
+The [Essential Model Documentation](https://emd.mipcvs.dev/docs/) is a required step for contribution towards CMIP7. Over the last month the review process has accelerated and we strongly encourage modelling groups to engage with this process around a month before preparing data for publication. There are two key phases of the EMD process:
+
+1. Registration of model and output grids: this ensures that a grid label is available for your data. Each distinct grid on which data is published requires a corresponding label. (Since many common grids have been registered, this step may have been completed by other members of the community.)
+2.	Registration of models and their components: this will finalise the source_id needed for producing publishable output data.
+
+Producing standardized (CMORized) data requires both grid labels and source_id. Modelling groups should be able to use the allocated grid labels once the first phase is completed, and an assumed source_id, following the [guidance](CMIP7/Source_ID_guidance.md), can be used while the second phase is in progress. Both phases of the EMD process must be completed before ESGF publication can begin.
+
+#### Monitoring the status of your EMD submissions
+If you would like to monitor the status of your submissions to the EMD repository, you can [enter your GitHub ID here](https://emd.mipcvs.dev/docs/Progress_Tracker.html). This tracker will show what you have submitted and which of those have been merged, are in progress by the EMD, or require you to make changes/respond to queries. 
+
+!!! info "View your registered model"
+    Once your EMD Model registration (Step 4) is merged, view your registered model and assigned `source_id` at: [EMD Model Documentation](https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/Model/)
+
+#### Where can I get more help?
+For questions or queries, please send an email to emd@wcrp-cmip.org. We have also compiled some FAQs you might find useful [here](https://emd.mipcvs.dev/docs/FAQ/).
+
+#### How can I help speed up the EMD process?
+They key way to speed up the registration process is to increase our pool of reviewers. Those submitting EMD for their centres will be best placed to review other people’s submissions. We estimate the time committent for reviewers is ~30 minutes per week.
+
+[Sign up to help with reviewing here.](https://airtable.com/apphXCUgASIeT6jCz/pag2oVCHWXFCkJQ3A/form)
+
+### NEW: Institution registration for CMIP7 (ACTION REQUIRED)
+To ensure that the institution identifiers are correctly understood by the publication infrastructure, a change as been made that requires all modelling groups to use a simple set of forms to register institution member ids and institution ids.
+
+The institution id is directly used within the data preparation and publication process, while the introduction of an institution member id allows multiple institutes using the same institution id to be appropriately identified. See the [CMIP7 guidance pages](CMIP7/cv_registration.md#2-registration-forms) for details and for links to the registration forms.
+
+### Data Request updates
+A patch release (v1.2.2.4) of the CMIP7 Data Request for AFT production will be released this week to correct minor issues in the previous version (v1.2.2.3, released 19 Dec 2025). Release notes will be [available here](https://wcrp-cmip.org/cmip7-data-request-v1-2-2-4/). Less than 1% of DR variables are affected by the v1.2.2.4 release.
+
+Following the initial phase of CMIP7 AFT production, an Unharmonised component of the Data Request will exist to facilitate requests by Community MIPs that are not aligned with the AFT timescale. The Harmonised component of the Data Request, which was developed in a community-led process facilitated by the Data Request Task Team and CMIP IPO, is intended for AFT production. The Unharmonised component will involve MIP-defined requests subject only to transparent technical requirements, supported by a simplified workflow (e.g. python tools, variable spreadsheets) designed to help MIPs select subsets of variables from a centralised registry of variables and share their requests with participating modelling centres. Community MIPs interested in this process are encouraged to let the CMIP IPO know their planned timeline.
+
+---
+
 ## 22nd May 2026
 
 This update contains information on:
@@ -41,7 +279,7 @@ As noted in the CMIP7 guidance pages there is a [wcrp-cmip7 plugin](https://gith
 ### Upcoming Data Request patch release
 We anticipate a Data Request patch update (v1.2.2.4) will be released within the coming weeks providing minor update and fixes. The updates will be well documented so you can easily see what has changed. We expect data publication to continue to support recent versions of the Data Request and will confirm the range of valid versions on the guidance pages in the near future. 
 
-
+---
 
 ## 14th April 2026
 
@@ -104,6 +342,7 @@ Thank you so much for support and willingness to enable the impact model simulat
 Kind regards
 Katja from the ISIMIP coordination team (katja.frieler@pik-potsdam.de)      
 
+---
 
 ## 20th March 2026
 There is an update to the nitrogen deposition data (new data is published under source ID FZJ-CMIP-nitrogen-2-0). However, if you already have simulations that use the previous version (source ID FZJ-CMIP-nitrogen-1-2`), you do not need to re-run. Further details below and at https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/nitrogen-deposition/
@@ -116,6 +355,8 @@ For further details about the error and recommended action, please see the nitro
 
 If any modelling centres run piControl and/or historical simulations with both the FZJ-CMIP-nitrogen-2-0 and FZJ-CMIP-nitrogen-1-2 forcing,
 these simulations would be of interest to the Forcings Task Team. ([#427](https://github.com/PCMDI/input4MIPs_CVs/pull/427))
+
+---
 
 ## 26th February 2026
 
@@ -147,6 +388,8 @@ Several recent updates have been made  to the [CMIP7 Guidance and Documentation 
 ### Essential Model Documentation
 
 To register a model for inclusion in CMIP7 the [Essential Model Documentation (EMD)](https://doi.org/10.5281/zenodo.15439551) must be provided. The EMD registration forms are now available for beta testers, and documentation is available at <https://emd.mipcvs.dev/docs>. Model output grids must also be registered using these forms.
+
+You can track the progress of your EMD submissions using the [Progress Tracker](https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/Progress_Tracker.html) — simply enter your GitHub ID to monitor what's been submitted, what's in review, and what needs revision.
 
 Note that while a spreadsheet was recently circulated (21st December) to help modellers collaboratively gather this information, completion of the EMD github forms will be required. Since the EMD and grid registrations will be reviewed prior to acceptance, modellers are advised to complete these steps at least 2-3 weeks before beginning to write CMORized netcdf files.
 
@@ -911,7 +1154,7 @@ CMIP IPO
 
 A number of CMIP6Plus preliminary forcing datasets have been made [available ](https://input4mips-controlled-vocabularies-cvs.readthedocs.io/en/latest/database-views/input4MIPs_delivery-summary_CMIP6Plus.html)via ESGF through the input4MIPs project ([https://aims2.llnl.gov/search/input4MIPs](https://aims2.llnl.gov/search?project=input4MIPs&activeFacets=%7B%22mip_era%22%3A%22CMIP6Plus%22%7D)) and are ready for testing by any interested modelling centres or data analysts.
 
- We encourage users to test the [available datasets ](https://input4mips-controlled-vocabularies-cvs.readthedocs.io/en/latest/database-views/input4MIPs_delivery-summary_CMIP6Plus.html)and provide feedback via the input4MIPs_CVs repository discussions on [GitHub (https://github.com/PCMDI/input4MIPs_CVs/discussions)](https://github.com/PCMDI/input4MIPs_CVs/discussions). For further details on the CMIP DECK forcing suite please see the [CMIP Forcings Task Team webpage](https://wcrp-cmip.org/cmip7-task-teams/forcings/), the recent open community drop-in session [slides](https://wcrp-cmip.org/wp-content/uploads/2024/10/2024-10-29_Forcings-drop-in_session.pdf) and [recording](19a0cdb6fd9d5ada593958dfb1a9daf2), and the input4MIPs documentation repository ([https://input4mips-controlled-vocabularies-cvs.readthedocs.io/en/latest/dataset-overviews/](https://input4mips-controlled-vocabularies-cvs.readthedocs.io/en/latest/dataset-overviews/)) 
+We encourage users to test the [available datasets](https://input4mips-controlled-vocabularies-cvs.readthedocs.io/en/latest/database-views/input4MIPs_delivery-summary_CMIP6Plus.html)and provide feedback via the input4MIPs_CVs repository discussions on [GitHub (https://github.com/PCMDI/input4MIPs_CVs/discussions)](https://github.com/PCMDI/input4MIPs_CVs/discussions). For further details on the CMIP DECK forcing suite please see the [CMIP Forcings Task Team webpage](https://wcrp-cmip.org/cmip7-task-teams/forcings/), the recent open community drop-in session [slides](https://wcrp-cmip.org/wp-content/uploads/2024/10/2024-10-29_Forcings-drop-in_session.pdf) and [recording](https://esait.webex.com/esait/ldr.php?RCID=0fd380e8c773c80bf80453f789c3851c), and the input4MIPs documentation repository ([https://input4mips-controlled-vocabularies-cvs.readthedocs.io/en/latest/dataset-overviews/](https://input4mips-controlled-vocabularies-cvs.readthedocs.io/en/latest/dataset-overviews/)) 
 
 All CMIP6Plus era data sets are for testing purposes only, i.e. they are not to be relied upon for CMIP7 production runs. CMIP7 datasets to support the AR7 Fast Track will be made available in early 2025.
 

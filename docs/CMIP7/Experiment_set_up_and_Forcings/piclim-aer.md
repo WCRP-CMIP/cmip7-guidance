@@ -9,7 +9,8 @@ In combination with `piClim-control`, quantifies present-day aerosol effective r
 
 - Responsible activity: [RFMIP](./index.md#rfmip)
 - Tier: 1
-- MIP co-chair review: No review initiated yet
+- MIP co-chair review: **In progress** see
+  [https://github.com/WCRP-CMIP/cmip7-guidance/issues/192](https://github.com/WCRP-CMIP/cmip7-guidance/issues/192)
 
 This page is intended to help with implementation.
 If you notice something that is unclear, please
@@ -18,6 +19,7 @@ If you notice something that is unclear, please
 For the full background of the experiment, please see the following URLs:
 
 - [https://doi.org/10.5194/acp-20-9591-2020](https://doi.org/10.5194/acp-20-9591-2020)
+- [https://doi.org/10.5194/gmd-19-4447-2026](https://doi.org/10.5194/gmd-19-4447-2026)
 - [https://doi.org/10.5194/gmd-9-3447-2016](https://doi.org/10.5194/gmd-9-3447-2016)
 
 ## Experiment set up

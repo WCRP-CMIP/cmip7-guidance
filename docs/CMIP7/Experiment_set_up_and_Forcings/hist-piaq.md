@@ -16,7 +16,8 @@ Models without interactive chemistry should run `hist-piAer` instead.
 
 - Responsible activity: [AerChemMIP](./index.md#aerchemmip)
 - Tier: 1
-- MIP co-chair review: No review initiated yet
+- MIP co-chair review: **In progress** see
+  [https://github.com/WCRP-CMIP/cmip7-guidance/issues/184](https://github.com/WCRP-CMIP/cmip7-guidance/issues/184)
 
 This page is intended to help with implementation.
 If you notice something that is unclear, please
@@ -28,8 +29,7 @@ For the full background of the experiment, please see the following URLs:
 
 ## Paired experiments
 
-- [hist-piAer](./hist-piaer.md) is the corresponding non-interactive-chemistry experiment for models that do not include
-  interactive chemistry.
+- [hist-piAer](./hist-piaer.md) is the corresponding experiment for models that do not include interactive chemistry
 
 ## Experiment set up
 

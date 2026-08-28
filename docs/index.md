@@ -7,31 +7,33 @@ title: CMIP7 Guidance and Documentation
 
 !!! tip "Documentation in progress: "
     Updates to these pages will be made when new developments occur, to improve the documentation, and in response to user feedback (to contribute please [see here](#development-of-this-documentation)).
-    
-    ⚠️ To use the **search function**, please use the [mirrored version of the site](https://guidance.mipcvs.dev/) instead of the [github.io version](https://wcrp-cmip.github.io/cmip7-guidance/). This is a bug that will be corrected shortly.
 
 
 ## Guidance documents
 
 ### CMIP7
+The vision and design of CMIP7 is outlined in ['An evolving Coupled Model Intercomparison Project phase 7 (CMIP7) and Fast Track in support of future climate assessment'](https://gmd.copernicus.org/articles/18/6671/2025/) (Dunne et al., 2025).
+
+#### Guidance index:
 
 - [General Guidance](CMIP7/General_Guidance.md)
 - [Updates for modelling groups](Updates_for_Modellers.md)
 - [Updates for Users](Updates_for_Users.md)
-- [Global Attributes](CMIP7/Global_Attributes.md)
-- [Branded Variables](CMIP7/Branded_Variables.md)
-- [CV Registration](CMIP7/cv_registration.md)
-    - [Source ID guidance](CMIP7/Source_ID_guidance.md)
-- [Data Specs Version](CMIP7/data_specs_version.md)
 - [Guidance for modellers](CMIP7/Guidance_for_modellers.md)
+    - [CV Registration](CMIP7/cv_registration.md)
     - [Experiment setup and forcings](CMIP7/Experiment_set_up_and_Forcings/index.md)
+    - [Citation Guidance](CMIP7/Citation_Guidance.md)
+    - [Annex 1: QC checks performed prior to publication](CMIP7/QC_checks.md)
 - [Guidance for users, including Terms of Use](CMIP7/Guidance_for_users.md)
 - [Guidance for ESGF node operators and publishers](CMIP7/Guidance_for_ESGF.md)
 - [Guidance for MIPs](CMIP7/Guidance_for_MIPs.md)
 - [Citation Guidance](CMIP7/Citation_Guidance.md)
 - [Domain names for CMIP7 services](CMIP7/Domain_names.md)
+- Standards and References
+    - [Global Attributes](CMIP7/Global_Attributes.md)
+    - [Branded Variables](CMIP7/Branded_Variables.md)
+    - [Data Specs Version](CMIP7/data_specs_version.md)
 - [Frequently Asked Questions (FAQ)](CMIP7/FAQ.md)
-- [Annex 1: QC checks performed prior to publication](CMIP7/QC_checks.md)
 
 ### CMIP6
 
