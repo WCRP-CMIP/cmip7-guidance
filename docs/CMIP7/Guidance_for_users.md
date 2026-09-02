@@ -34,7 +34,7 @@ There are 3 options to access the data:
     
     !!! info ""
         **Current Status** 
-         27-08-2026: East index has CMIP7 and CORDEX CMIP6 data, however search facets are not currently available to filter results. To search for data files, set number of results to 50 or 100 per page, and scroll through the results to find the files. West index is currently not mirroring the East index for CMIP7 and CORDEX CMIP6. An update to Metagrid to v1.6.3 is currently under beta testing, expected to be implemented in early September 2026. 
+         02-09-2026: East Metagrid index has been updated to v1.6.3 CMIP7 and CORDEX CMIP6 data are searchable with facets. West index is currently not mirroring the East index for CMIP7 and CORDEX CMIP6. 
 
  2. **Using a python package**
 
