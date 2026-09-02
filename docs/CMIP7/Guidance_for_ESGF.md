@@ -59,7 +59,8 @@ _Coming soon...._
 
 ### 2.1 Requirements
 
-Publishers to ESGF **must** have an existing Data Node installed at their site. Although the publisher software (from v5.x onwards) does not need to run on the Data Node it does require a _Data mount_ for the software to access data files. 
+Publishers to ESGF **must** have an existing Data Node installed at their site. Although the [publisher software (from v5.x onwards)](https://esg-publisher.readthedocs.io/en/stable/) does not need to run on the Data Node it does require a _Data mount_ for the software to access data files. 
+Publishers to ESGF **must** only publish to West **OR** East node, **DO NOT PUBLISH TO BOTH.**
 
 ### 2.2 Introduction to ESGF-NG and Authorization for Publishing
 
