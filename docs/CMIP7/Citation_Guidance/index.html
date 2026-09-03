@@ -2669,6 +2669,20 @@
 </div>
 <p><img alt="Citation Flow Diagram - 28/08/2026" src="../../assets/citation_flowdiagram_280826.png" /></p>
 <p>Above is the flow diagram showing internal processes within the citation service, including the user-facing landing pages (Purple Boxes).</p>
+<h2 id="relation-to-the-drs-version-concept">Relation to the DRS' version concept<a class="headerlink" href="#relation-to-the-drs-version-concept" title="Permanent link">&para;</a></h2>
+<p>The version included in the citations above is not the same as the dataset version
+(more precisely, the DRS "directoryDateDD" element, <a href="../Global_Attributes#4-data-reference-syntax-drs-elements">see the DRS elements docs here</a>).
+These citations cover all versions.</p>
+<p>This is change from previous phases.
+For example, in CMIP6, the cite as links on landing pages left the version unfilled as "YYYYMMDD",
+expecting the user to fill this in
+(see e.g. <a href="https://www.wdc-climate.de/ui/cmip6?input=CMIP6.CMIP.CAMS.CAMS-CSM1-0.historical">www.wdc-climate.de/ui/cmip6?input=CMIP6.CMIP.CAMS.CAMS-CSM1-0.historical</a>).</p>
+<p>This infilling is completed automatically using <a href="https://github.com/WCRP-CMIP/cmipcite">cmipcite</a>
+based on the PID service provided by DKRZ.
+Discussions about whether to include something similar for CMIP7 are ongoing,
+but they will have to be supported via a mechanism other than altering the cite-as link,
+as the CMIP7 cite-as links do not have this unfilled version idea.</p>
+<h2 id="additional-information-for-developers">Additional information for developers<a class="headerlink" href="#additional-information-for-developers" title="Permanent link">&para;</a></h2>
 <p>Additional information for developers can be found at the citation service documentation site: <a href="https://cedadev.github.io/cmip7-citation-service">https://cedadev.github.io/cmip7-citation-service</a></p>
   </div>
 </article>
@@ -2875,6 +2889,22 @@
         
         
         
+        
+        <a href="#relation-to-the-drs-version-concept"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#relation-to-the-drs-version-concept');">
+            Relation to the DRS' version concept
+        </a>
+        
+
+        
+        <a href="#additional-information-for-developers"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#additional-information-for-developers');">
+            Additional information for developers
+        </a>
+        
+
         
         
         
