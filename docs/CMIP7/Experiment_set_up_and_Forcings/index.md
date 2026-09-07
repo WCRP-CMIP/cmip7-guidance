@@ -278,3 +278,43 @@ The following experiments are included in `RFMIP`:
 1. [piClim-aer](./piclim-aer.md)
 1. [piClim-histaer](./piclim-histaer.md)
 1. [piClim-histall](./piclim-histall.md)
+
+## Other experiments
+
+### PolMIP
+
+Policy-Aligned Model Intercomparison Project (PolMIP).
+PolMIP is designed as a complementary effort to existing MIPs.
+While ScenarioMIP explores the breadth of future forcing levels under idealized assumptions, PolMIP focuses on the depth
+of policy-driven pathways, offering higher fidelity for regions where specific mitigation strategies and timelines are
+defined.
+By providing a coordinated infrastructure for policy-driven scenario simulations, PolMIP aims to deliver actionable
+science for national climate assessments, enhance the policy relevance of CMIP, and foster closer collaboration between
+the climate modeling community and policymakers.
+Ultimately, PolMIP seeks to ensure that the next generation of climate projections is not only scientifically robust but
+also deeply rooted in the real-world decisions shaping our collective future.
+The project has completed phase 1: demonstration and proof of concept, starting from the SSP2-com scenario that was
+developed by Chinese scientists that aligns with China's carbon neutrality pledge (peaking carbon emissions before 2030
+and achieving carbon neutrality before 2060) within the SSP2 socioeconomic framework and the NDC data of countries
+worldwide.
+The next phase will expand the framework to include policy-aligned scenarios from other nations and regions, creating a
+multi-country ensemble that enables consistent cross-comparison of national climate action strategies under a unified
+protocol.
+
+These pages are intended to help with implementation of these experiments.
+If you notice something that is unclear, please
+[raise an issue](https://github.com/WCRP-CMIP/cmip7-guidance/issues/new).
+For the full background of the experiments, please see the following URLs:
+
+- [https://doi.org/10.1038/s41467-025-62983-5](https://doi.org/10.1038/s41467-025-62983-5)
+- [https://doi.org/10.1016/j.eng.2024.11.023](https://doi.org/10.1016/j.eng.2024.11.023)
+- [https://doi.org/10.1016/j.accre.2023.11.004](https://doi.org/10.1016/j.accre.2023.11.004)
+- [https://dx.doi.org/10.1088/1748-9326/adfbfb](https://dx.doi.org/10.1088/1748-9326/adfbfb)
+- [https://doi.org/10.5281/zenodo.21487424](https://doi.org/10.5281/zenodo.21487424)
+
+The following experiments are included in `PolMIP`:
+
+1. [vl-cf](./vl-cf.md)
+1. [esm-vl-cf](./esm-vl-cf.md)
+1. [vl-cf-ext](./vl-cf-ext.md)
+1. [esm-vl-cf-ext](./esm-vl-cf-ext.md)
