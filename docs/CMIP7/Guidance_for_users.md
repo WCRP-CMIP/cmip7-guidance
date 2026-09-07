@@ -7,7 +7,7 @@ title: CMIP7 Guidance for Data Users
 
 !!! info "Data access status"
 
-    With initial data being published to ESGF there is ongoing work to ensure that data access tools are working. As of 7th September the MetaGrid web interface is operational as is intake-esgf, but esgpull is undergoing configuration work enable them to talk to the new indexes. This page will be updated as soon as further information is available.
+    With initial data being published to ESGF there is ongoing work to ensure that data access tools are working. As of 7th September the MetaGrid web interface is operational as is intake-esgf, but esgpull is undergoing configuration work enable it to talk to the new indexes. This page will be updated as soon as further information is available.
 
 
 This page is designed to inform users of climate model outputs on key CMIP7 concepts and tools. It is a landing page to provide context and to redirect them to more detailed resources.
