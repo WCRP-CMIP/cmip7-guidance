@@ -29,6 +29,13 @@ CMIP7 model output is available through a distributed data archive developed and
 
     ESGF data usage and publication metrics can be found on the [CMCC dashboard][cmcc].
 
+Summaries of data sets published to ESGF include the following:
+
+ - [Climate Resource/REF data availability][publication-summary-ref]: A summary of datasets available with particular focus on those used by the REF.
+ - [CMIP-IPO summary page][publication-summary-ipo]: Counts of datasets published for each institution/model/experiment combination (in development)
+ - [EMD model descriptions][emd]: An "ESGF publication" section has been added to the each of the model description visualisation pages indicating the variables, grids and frequencies used.
+ - ESGF project summary page (in development)
+ 
 
 There are 3 options to access the data:
 
@@ -398,15 +405,17 @@ If something is missing from this documentation, please open an issue [here][iss
 [varlist]:https://esgvoc.ipsl.fr/concept/variable?projects=cmip7
 [freqlist]: https://esgvoc.ipsl.fr/concept/frequency?projects=cmip7
 [emd]: https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/Model/
-[emdguidance]: https://emd.mipcvs.dev/docs/#what-does-it-contain
+[emdguidance]: https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/#what-does-it-contain
 [CMIPpubs]: https://cmip-publications.llnl.gov
 [citesearch]: https://cmip7-citations.ceda.ac.uk/citations/ 
 [sourcelist]:  https://esgvoc.ipsl.fr/concept/model?projects=cmip7
 [experimentlist]:  https://esgvoc.ipsl.fr/concept/experiment?projects=cmip7
 [activitylist]:  https://esgvoc.ipsl.fr/concept/activity?projects=cmip7
 [cmip7cmor]: https://github.com/WCRP-CMIP/cmip7-cmor-tables/tree/main/tables-cvs/split-view
-[horgridlist]: https://emd.mipcvs.dev/docs/grid_viewer/horizontal/
-[vergridlist]: https://emd.mipcvs.dev/docs/grid_viewer/vertical/
+[horgridlist]: https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/grid_viewer/horizontal/
+[vergridlist]: https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/grid_viewer/vertical/
+[publication-summary-ipo]: https://esgf.mipcvs.dev/
+[publication-summary-ref]: https://www.climate-resource.com/tools/esm-model/cmip7-availability
 
 
  <!-- TODO: all the links below need to be changed when the new version arrives. -->
