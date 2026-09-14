@@ -405,8 +405,8 @@ If something is missing from this documentation, please open an issue [here][iss
 [vardatareq]: https://cmip-data-request.github.io/cmip7-dreq-webview/latest/variables.html
 [varlist]:https://esgvoc.ipsl.fr/concept/variable?projects=cmip7
 [freqlist]: https://esgvoc.ipsl.fr/concept/frequency?projects=cmip7
-[emd]: https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/Model/
-[emdguidance]: https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/#what-does-it-contain
+[emd]: https://emd.wcrp-cmip.org/docs/
+[emdguidance]: https://emd.wcrp-cmip.org/docs/#what-does-it-contain
 [CMIPpubs]: https://cmip-publications.llnl.gov
 [citesearch]: https://cmip7-citations.ceda.ac.uk/citations/ 
 [sourcelist]:  https://esgvoc.ipsl.fr/concept/model?projects=cmip7
@@ -415,7 +415,7 @@ If something is missing from this documentation, please open an issue [here][iss
 [cmip7cmor]: https://github.com/WCRP-CMIP/cmip7-cmor-tables/tree/main/tables-cvs/split-view
 [horgridlist]: https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/grid_viewer/horizontal/
 [vergridlist]: https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/grid_viewer/vertical/
-[publication-summary-ipo]: https://esgf.mipcvs.dev/
+[publication-summary-ipo]: https://esgf.wcrp-cmip.org/
 [publication-summary-ref]: https://www.climate-resource.com/tools/esm-model/cmip7-availability
 
 
