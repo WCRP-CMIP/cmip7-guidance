@@ -29,12 +29,13 @@ CMIP7 model output is available through a distributed data archive developed and
 
     ESGF data usage and publication metrics can be found on the [CMCC dashboard][cmcc].
 
-Summaries of data sets published to ESGF include the following:
+??? info "What has been published so far ?"
+    Summaries of data sets published to ESGF include the following:
 
- - [Climate Resource/REF data availability][publication-summary-ref]: A summary of datasets available with particular focus on those used by the REF.
- - [CMIP-IPO summary page][publication-summary-ipo]: Counts of datasets published for each institution/model/experiment combination (in development)
- - [EMD model descriptions][emd]: An "ESGF publication" section has been added to the each of the model description visualisation pages indicating the variables, grids and frequencies used.
- - ESGF project summary page (in development)
+    - [Climate Resource][publication-summary-ref]: Summary of datasets that are used by the REF and available on ESGF.
+     - [CMIP-IPO summary page][publication-summary-ipo]: Counts of datasets published for each institution/model/experiment combination (in development)
+     - [EMD model descriptions][emd]: Timeseries of publication on each model's EMD page.
+     - ESGF project summary page (in development)
  
 
 There are 3 options to access the data:
