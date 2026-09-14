@@ -413,8 +413,8 @@ If something is missing from this documentation, please open an issue [here][iss
 [experimentlist]:  https://esgvoc.ipsl.fr/concept/experiment?projects=cmip7
 [activitylist]:  https://esgvoc.ipsl.fr/concept/activity?projects=cmip7
 [cmip7cmor]: https://github.com/WCRP-CMIP/cmip7-cmor-tables/tree/main/tables-cvs/split-view
-[horgridlist]: https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/grid_viewer/horizontal/
-[vergridlist]: https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/grid_viewer/vertical/
+[horgridlist]: https://emd.wcrp-cmip.org/docs/grid_viewer/horizontal/
+[vergridlist]: https://emd.wcrp-cmip.org/docs/grid_viewer/vertical/
 [publication-summary-ipo]: https://esgf.wcrp-cmip.org/
 [publication-summary-ref]: https://www.climate-resource.com/tools/esm-model/cmip7-availability
 
