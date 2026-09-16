@@ -5,7 +5,6 @@ title: CMIP7 Participation Guidance for Modellers
 
 # CMIP7 Participation Guidance for Modellers
 
-General guidance is also available via the [General Guidance](General_Guidance.md) page.
 
 ## 1. Requirements & Expectations
 
@@ -19,7 +18,12 @@ provided as early as possible):
   **Essential Model Documentation (EMD)** for your model. 
   The EMD registration process is [documented here](https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/). 
   The institution registration process is [available here](cv_registration.md#21-institution-registration) (including the list of institutes that are already registered).
-  **Output grids for regridded data must also be registered** via an online form described in the [EMD documenation](https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/) (i.e., for any grid used to report data that is not the model's native grid).
+
+* **Output grids for regridded data must also be registered** via the same online form used to describe the native computational grids, as described in the [EMD documenation](https://emd.mipcvs.dev/docs/Information_for_Submitters/Submission-Guide/) (i.e., for any grid used to report data that is not the model's native computational grid). It is recommended to do this at the same time as creation of the general EMD documentation (rather than afterwards), and remember that grid(s) for all archived variables must have been described prior to data publication, so that their grid labels (e.g. `g###`) can be included in the file metadata and file names. 
+  
+  !!! tip "EMD Tools"
+      - **View your registered model**: [EMD Model Documentation](https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/Model/)
+      - **Track submission progress**: [Progress Tracker](https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/Progress_Tracker.html) (enter your GitHub ID)
 
 [//]: # (* Following, or as part of, the registration of your models you will be able to indicate your )
 [//]: # (  intention to participate in community MIPs through the `activity_participation` information )
@@ -319,7 +323,7 @@ A list of the checks included in the plugin for CMIP7 can be found [here](QC_che
 ### 🚧 Important Caveats
 
 - **Scope is limited**
-    - Support **CMIP6**, **CMIP7** and **CORDEX-CMIP6**
+    - Support **CMIP6**, **CMIP6Plus**, **CMIP7** and **CORDEX-CMIP6**
     - Additional projets will come in the future depending on the resources.
 
 - **Development in progress**:  
@@ -339,6 +343,10 @@ The framework for the [new WCRP plugin](https://esgf.github.io/cc-plugin-wcrp/) 
 - Development progress tracked via a shared, public QC checklist table
 
 ### 📦 How to Get Started
+
+> ⚠️ For **CMIP7** and **CORDEX-CMIP6**, the QC is mandatory and is therefore enabled by default into ESGF publisher. Modellers are nevertheless strongly encouraged to run it prior in their data preparation workflow, in order to identify and fix issues before reaching the publication stage.
+
+> ⚠️ For **CMIP6** and **CMIP6Plus**, the QC is not mandatory and is therefore **_not_** enabled by default into ESGF publisher. However, modellers are strongly encouraged to run it prior in their data preparation workflow, both to comply with ESGF publication requirements (as _PrePARE_ used to do) and to improve metadata consistency and reuse by downstream services such as REF and C3S.
 
 - Installation instructions and basic usage are available here: 📘 <https://github.com/ESGF/cc-plugin-wcrp>
 - GitHub release: 🔗 <https://github.com/ESGF/cc-plugin-wcrp/releases>

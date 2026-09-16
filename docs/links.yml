@@ -22,5 +22,5 @@ links:
   - title: "WCRP"
     url: "https://www.wcrp-climate.org/"
 
-  - title: "GitHub issue helper"
-    url: "resources/GitHub_issue_helper.html"
+  #- title: "GitHub issue helper"
+  #  url: "resources/GitHub_issue_helper.html"

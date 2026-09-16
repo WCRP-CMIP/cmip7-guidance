@@ -19,6 +19,7 @@ If you notice something that is unclear, please
 For the full background of the experiment, please see the following URLs:
 
 - [https://doi.org/10.5194/acp-20-9591-2020](https://doi.org/10.5194/acp-20-9591-2020)
+- [https://doi.org/10.5194/gmd-19-4447-2026](https://doi.org/10.5194/gmd-19-4447-2026)
 - [https://doi.org/10.5194/gmd-9-3447-2016](https://doi.org/10.5194/gmd-9-3447-2016)
 
 ## Experiment set up

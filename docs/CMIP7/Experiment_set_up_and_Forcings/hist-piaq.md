@@ -29,8 +29,7 @@ For the full background of the experiment, please see the following URLs:
 
 ## Paired experiments
 
-- [hist-piAer](./hist-piaer.md) is the corresponding non-interactive-chemistry experiment for models that do not include
-  interactive chemistry.
+- [hist-piAer](./hist-piaer.md) is the corresponding experiment for models that do not include interactive chemistry
 
 ## Experiment set up
 

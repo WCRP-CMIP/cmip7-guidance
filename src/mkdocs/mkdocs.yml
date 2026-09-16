@@ -31,10 +31,6 @@ plugins:
       lang: en
       separator: '[\s\-\.]+'
 
-  - gen-files:
-      scripts:
-        - hooks/run_scripts.py
-
   - literate-nav:
       nav_file: nav_menu.md
       implicit_index: true
@@ -49,11 +45,6 @@ plugins:
         'CMIP7/guidance_for_mips.md': 'CMIP7/Guidance_for_MIPs.md'
         'CMIP7/guidance_for_modellers.md': 'CMIP7/Guidance_for_modellers.md'
         'CMIP7/guidance_for_users.md': 'CMIP7/Guidance_for_users.md'
-
-# Hooks
-hooks:
-  - hooks/generate_nav.py
-  - hooks/post_build.py
 
 extra:
   generator: false

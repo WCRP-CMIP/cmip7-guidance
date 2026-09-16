@@ -323,20 +323,28 @@ function addCustomLinks() {
   
   
   if (!sidebarContent) return;
-  
+
+  const basePath = detectBasePath();
   const section = document.createElement('div');
   section.className = 'custom-links-section';
   section.innerHTML = `
     <div class="custom-links-title">Additional Resources</div>
     <div class="custom-links-list">
-      ${CONFIG.customLinks.map(link => `
-        <a href="${link.url}" class="custom-link" target="_blank" rel="noopener">
+      ${CONFIG.customLinks.map(link => {
+        const isExternal = /^https?:\/\//.test(link.url);
+        // Resolve internal (relative) links against the site root so they work
+        // from any page depth; external links are used as-is and open in a new tab.
+        const href = isExternal ? link.url : basePath + link.url.replace(/^\.?\//, '');
+        const attrs = isExternal ? ' target="_blank" rel="noopener"' : '';
+        return `
+        <a href="${href}" class="custom-link"${attrs}>
           <span>${link.title}</span>
         </a>
-      `).join('')}
+      `;
+      }).join('')}
     </div>
   `;
-  
+
   sidebarContent.appendChild(section);
 }
 

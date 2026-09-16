@@ -27,8 +27,7 @@ For the full background of the experiment, please see the following URLs:
 
 ## Paired experiments
 
-- [hist-piAQ](./hist-piaq.md) is the corresponding interactive-chemistry experiment for models that include interactive
-  chemistry.
+- [hist-piAQ](./hist-piaq.md) is the corresponding experiment for models that include interactive chemistry
 
 ## Experiment set up
 
