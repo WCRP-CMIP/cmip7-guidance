@@ -56,7 +56,9 @@ If further guidance would be helpful, please [raise an issue](https://github.com
 ### General headlines
 
 The piClim-histaer experiment uses a mix of fixed and transient forcings.
-Please see the data sections below for details.
+The fixed forcings are: aerosol optical properties, greenhouse gas concentrations, land use, nitrogen deposition, ozone,
+population density, sea-surface temperature forcing, solar and stratospheric aerosol forcing.
+The transient forcings are: anthropogenic emissions and biomass burning emissions.
 
 ### Data
 

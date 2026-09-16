@@ -15,7 +15,7 @@ Models without interactive chemistry should run `esm-scen7-h-Aer` instead.
 
 - Responsible activity: [AerChemMIP](./index.md#aerchemmip)
 - Tier: 1
-- MIP co-chair review: **Complete** see
+- MIP co-chair review: **In progress** see
   [https://github.com/WCRP-CMIP/cmip7-guidance/issues/184](https://github.com/WCRP-CMIP/cmip7-guidance/issues/184)
 
 This page is intended to help with implementation.
@@ -60,7 +60,9 @@ If further guidance would be helpful, please [raise an issue](https://github.com
 ### General headlines
 
 The esm-scen7-h-AQ experiment uses a mix of fixed and transient forcings.
-Please see the data sections below for details.
+The fixed forcings are: anthropogenic emissions and biomass burning emissions.
+The transient forcings are: aerosol optical properties, greenhouse gas concentrations, land use, nitrogen deposition,
+ozone, population density, solar and stratospheric aerosol forcing.
 
 ### Data
 

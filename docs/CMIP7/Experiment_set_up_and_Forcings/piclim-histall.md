@@ -57,7 +57,9 @@ If further guidance would be helpful, please [raise an issue](https://github.com
 ### General headlines
 
 The piClim-histall experiment uses a mix of fixed and transient forcings.
-Please see the data sections below for details.
+The fixed forcings are: sea-surface temperature forcing.
+The transient forcings are: aerosol optical properties, anthropogenic emissions, biomass burning emissions, greenhouse
+gas concentrations, land use, nitrogen deposition, ozone, population density, solar and stratospheric aerosol forcing.
 
 ### Data
 
