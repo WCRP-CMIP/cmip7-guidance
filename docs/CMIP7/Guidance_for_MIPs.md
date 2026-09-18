@@ -23,7 +23,7 @@ During registration, we ask for MIP scientific and technical contact details - t
 
 ## 2. Activity and Experiment registration
 
-Information on registering new activities (MIPs) and experiments in the Controlled Vocabularies can be found within the CV registration documentation [here](cv_registration.md#23-activity-registration) and [here](cv_registration.md#24-experiment-registration). 
+Information on registering new activities (MIPs) and experiments in the Controlled Vocabularies can be found within the CV registration documentation [here (for activity registration)](cv_registration.md#23-activity-registration) and [here (for experiment registration)](cv_registration.md#24-experiment-registration). 
 
 !!! warning "Please note" 
 
