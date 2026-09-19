@@ -12,6 +12,7 @@ Used to get the model into a state of approximate radiative equilibrium before s
 - Tier: 3
 - MIP co-chair review: **In progress** see
   [https://github.com/WCRP-CMIP/cmip7-guidance/issues/183](https://github.com/WCRP-CMIP/cmip7-guidance/issues/183)
+- Tags: AFT (Assessment Fast Track)
 
 This page is intended to help with implementation.
 If you notice something that is unclear, please

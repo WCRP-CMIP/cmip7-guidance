@@ -11,6 +11,7 @@ In combination with `piClim-control`, quantifies present-day aerosol effective r
 - Tier: 1
 - MIP co-chair review: **In progress** see
   [https://github.com/WCRP-CMIP/cmip7-guidance/issues/192](https://github.com/WCRP-CMIP/cmip7-guidance/issues/192)
+- Tags: AFT (Assessment Fast Track)
 
 This page is intended to help with implementation.
 If you notice something that is unclear, please

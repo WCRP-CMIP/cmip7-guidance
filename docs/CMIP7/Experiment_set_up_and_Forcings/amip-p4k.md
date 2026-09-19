@@ -11,6 +11,7 @@ Same as `amip` simulation, except sea surface temperatures are increased by 4K i
 - Tier: 1
 - MIP co-chair review: **In progress** see
   [https://github.com/WCRP-CMIP/cmip7-guidance/issues/185](https://github.com/WCRP-CMIP/cmip7-guidance/issues/185)
+- Tags: AFT (Assessment Fast Track)
 
 This page is intended to help with implementation.
 If you notice something that is unclear, please
