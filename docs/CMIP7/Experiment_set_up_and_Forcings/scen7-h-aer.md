@@ -16,6 +16,7 @@ Models with interactive chemistry should run `scen7-h-AQ` instead.
 - Tier: 1
 - MIP co-chair review: **In progress** see
   [https://github.com/WCRP-CMIP/cmip7-guidance/issues/184](https://github.com/WCRP-CMIP/cmip7-guidance/issues/184)
+- Tags: AFT (Assessment Fast Track)
 
 This page is intended to help with implementation.
 If you notice something that is unclear, please

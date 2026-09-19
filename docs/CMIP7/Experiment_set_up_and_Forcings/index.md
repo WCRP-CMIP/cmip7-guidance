@@ -195,8 +195,8 @@ The following experiments are included in `ScenarioMIP`:
 
 ### DCPP
 
-Decadal climate prediction project:
-Coordinated multi-model investigation into decadal climate prediction, predictability, and variability.
+Decadal climate prediction project: Coordinated multi-model investigation into decadal climate prediction,
+predictability, and variability
 
 These pages are intended to help with implementation of these experiments.
 If you notice something that is unclear, please

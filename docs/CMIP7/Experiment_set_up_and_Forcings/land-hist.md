@@ -11,6 +11,7 @@ Land-only version of `historical` with prescribed climate and weather inputs req
 - Tier: 1
 - MIP co-chair review: **In progress** see
   [https://github.com/WCRP-CMIP/cmip7-guidance/issues/190](https://github.com/WCRP-CMIP/cmip7-guidance/issues/190)
+- Tags: AFT (Assessment Fast Track)
 
 This page is intended to help with implementation.
 If you notice something that is unclear, please
