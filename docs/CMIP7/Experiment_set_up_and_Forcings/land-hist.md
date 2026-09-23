@@ -17,9 +17,16 @@ This page is intended to help with implementation.
 If you notice something that is unclear, please
 [raise an issue](https://github.com/WCRP-CMIP/cmip7-guidance/issues/new).
 
-For the full background of the experiment, please see the following URLs:
+For the full background of the experiment, please see the following references:
 
-- [https://doi.org/10.5194/gmd-9-2809-2016](https://doi.org/10.5194/gmd-9-2809-2016)
+- van den Hurk, B., Kim, H., Krinner, G., Seneviratne, S.
+  I., Derksen, C., Oki, T., Douville, H., Colin, J., Ducharne, A., Cheruy, F., Viovy, N., Puma, M.
+  J., Wada, Y., Li, W., Jia, B., Alessandri, A., Lawrence, D.
+  M., Weedon, G.
+  P., Ellis, R., et al. (2016).
+  LS3MIP (v1.0) contribution to CMIP6: the Land Surface, Snow and Soil
+moisture Model Intercomparison Project – aims, setup and expected outcome.
+Geoscientific Model Development, 9(8), 2809–2832. https://doi.org/10.5194/gmd-9-2809-2016
 
 ## Experiment set up
 
