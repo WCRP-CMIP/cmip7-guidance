@@ -19,15 +19,9 @@ If you notice something that is unclear, please
 
 For the full background of the experiment, please see the following references:
 
-- Dunne, J.
-  P., Hewitt, H.
-  T., Arblaster, J.
-  M., Bonou, F., Boucher, O., Cavazos, T., Dingley, B., Durack, P.
-  J., Hassler, B., Juckes, M., Miyakawa, T., Mizielinski, M., Naik, V., Nicholls, Z., O’Rourke, E., Pincus, R.,
-  Sanderson, B.
-  M., Simpson, I.
-  R., & Taylor, K.
-  E. (2025).
+- Dunne, J. P., Hewitt, H. T., Arblaster, J. M., Bonou, F., Boucher, O., Cavazos, T., Dingley, B., Durack, P. J.,
+  Hassler, B., Juckes, M., Miyakawa, T., Mizielinski, M., Naik, V., Nicholls, Z., O’Rourke, E., Pincus, R., Sanderson,
+  B. M., Simpson, I. R., & Taylor, K. E. (2025).
   An evolving Coupled Model Intercomparison Project phase 7 (CMIP7) and Fast Track in support of future climate
   assessment.
   Geoscientific Model Development, 18(19), 6671–6700. https://doi.org/10.5194/gmd-18-6671-2025

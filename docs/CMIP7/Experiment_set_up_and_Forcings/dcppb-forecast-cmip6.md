@@ -20,12 +20,8 @@ If you notice something that is unclear, please
 
 For the full background of the experiment, please see the following references:
 
-- Boer, G.
-  J., Smith, D.
-  M., Cassou, C., Doblas-Reyes, F., Danabasoglu, G., Kirtman, B., Kushnir, Y., Kimoto, M., Meehl, G.
-  A., Msadek, R., Mueller, W.
-  A., Taylor, K.
-  E., Zwiers, F., Rixen, M., Ruprich-Robert, Y., & Eade, R. (2016).
+- Boer, G. J., Smith, D. M., Cassou, C., Doblas-Reyes, F., Danabasoglu, G., Kirtman, B., Kushnir, Y., Kimoto, M., Meehl,
+  G. A., Msadek, R., Mueller, W. A., Taylor, K. E., Zwiers, F., Rixen, M., Ruprich-Robert, Y., & Eade, R. (2016).
   The Decadal Climate Prediction Project (DCPP) contribution to CMIP6.
   Geoscientific Model Development, 9(10), 3751–3777. https://doi.org/10.5194/gmd-9-3751-2016
 

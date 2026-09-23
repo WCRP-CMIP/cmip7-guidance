@@ -20,10 +20,8 @@ If you notice something that is unclear, please
 
 For the full background of the experiment, please see the following references:
 
-- Collins, W.
-  J., Lamarque, J.-F., Schulz, M., Boucher, O., Eyring, V., Hegglin, M.
-  I., Maycock, A., Myhre, G., Prather, M., Shindell, D., & Smith, S.
-  J. (2017).
+- Collins, W. J., Lamarque, J.-F., Schulz, M., Boucher, O., Eyring, V., Hegglin, M. I., Maycock, A., Myhre, G., Prather,
+  M., Shindell, D., & Smith, S. J. (2017).
   AerChemMIP: quantifying the effects of chemistry and aerosols in CMIP6.
   Geoscientific Model Development, 10(2), 585–607. https://doi.org/10.5194/gmd-10-585-2017
 

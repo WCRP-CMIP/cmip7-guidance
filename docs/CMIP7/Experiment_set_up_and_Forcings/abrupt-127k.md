@@ -20,20 +20,13 @@ If you notice something that is unclear, please
 
 For the full background of the experiment, please see the following references:
 
-- Otto-Bliesner, B.
-  L., Braconnot, P., Harrison, S.
-  P., Lunt, D.
-  J., Abe-Ouchi, A., Albani, S., Bartlein, P.
-  J., Capron, E., Carlson, A.
-  E., Dutton, A., Fischer, H., Goelzer, H., Govin, A., Haywood, A., Joos, F., LeGrande, A.
-  N., Lipscomb, W.
-  H., Lohmann, G., Mahowald, N., et al. (2017).
+- Otto-Bliesner, B. L., Braconnot, P., Harrison, S. P., Lunt, D. J., Abe-Ouchi, A., Albani, S., Bartlein, P. J., Capron,
+  E., Carlson, A. E., Dutton, A., Fischer, H., Goelzer, H., Govin, A., Haywood, A., Joos, F., LeGrande, A. N., Lipscomb,
+  W. H., Lohmann, G., Mahowald, N., et al. (2017).
   The PMIP4 contribution to CMIP6 – Part 2: Two interglacials, scientific objective and experimental design for Holocene
   and Last Interglacial simulations.
   Geoscientific Model Development, 10(11), 3979–4003. https://doi.org/10.5194/gmd-10-3979-2017
-- Sime, L.
-  C., Sivankutty, R., Vallet-Malmierca, I., de Boer, A.
-  M., & Sicard, M. (2023).
+- Sime, L. C., Sivankutty, R., Vallet-Malmierca, I., de Boer, A. M., & Sicard, M. (2023).
   Summer surface air temperature proxies point to near-sea-ice-free conditions in the Arctic at 127 ka.
   Climate of the Past, 19(4), 883–900. https://doi.org/10.5194/cp-19-883-2023
 
