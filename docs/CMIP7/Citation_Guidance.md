@@ -8,7 +8,7 @@ title: CMIP7 Citation Guidance
 The CMIP7 Citation service is hosted at <https://cmip7-citations.ceda.ac.uk/citations/>.
 
 !!! info "Looking for citation guidance for users ?"
-    This page explains how the CMIP7 citation service works for modellers registering new citations. To know how to properly cite the data, visit the [Guidance for Users page](Guidance_for_users.md/#2--terms-of-use-and-citations-requirements).
+    This page explains how the CMIP7 citation service works for modellers registering new citations. To know how to properly cite the data, visit the [Guidance for Users page](Guidance_for_users.md/#2-terms-of-use-and-citations-requirements).
 
 CMIP7 data citations will be created automatically in response to data publication on ESGF. The granularity of the data citations will be at the level of a model's contribution to an experiment, such that all ensemble members plus all erratas and future corrections within an experiment are covered by one citation. The citations are expected to be published (minted with a DOI) before all data is fully available - this is in line with guidance from DataCite on evolving dataset citations. Citations are only defined at this granularity, any additional citation requirements will need to be discussed with the Citation Working Group.
 
