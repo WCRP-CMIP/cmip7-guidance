@@ -18,9 +18,13 @@ This page is intended to help with implementation.
 If you notice something that is unclear, please
 [raise an issue](https://github.com/WCRP-CMIP/cmip7-guidance/issues/new).
 
-For the full background of the experiment, please see the following URLs:
+For the full background of the experiment, please see the following references:
 
-- [https://doi.org/10.5194/gmd-10-359-2017](https://doi.org/10.5194/gmd-10-359-2017)
+- Webb, M. J., Andrews, T., Bodas-Salcedo, A., Bony, S., Bretherton, C. S., Chadwick, R., Chepfer, H., Douville, H.,
+  Good, P., Kay, J. E., Klein, S. A., Marchand, R., Medeiros, B., Siebesma, A. P., Skinner, C. B., Stevens, B.,
+  Tselioudis, G., Tsushima, Y., & Watanabe, M. (2017).
+  The Cloud Feedback Model Intercomparison Project (CFMIP) contribution to CMIP6.
+  Geoscientific Model Development, 10(1), 359–384. https://doi.org/10.5194/gmd-10-359-2017
 
 ## Experiment set up
 
