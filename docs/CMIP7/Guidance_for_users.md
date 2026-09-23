@@ -5,6 +5,10 @@ title: CMIP7 Guidance for Data Users
 
 # CMIP7 Guidance for Data Users
 
+!!! info "Data access status"
+
+    With initial data being published to ESGF there is ongoing work to ensure that data access tools are working. As of 7th September the MetaGrid web interface and intake-esgf are operational, but esgpull is undergoing configuration work enable it to talk to the new indexes. This page will be updated as soon as further information is available.
+
 
 This page is designed to inform users of climate model outputs on key CMIP7 concepts and tools. It is a landing page to provide context and to redirect them to more detailed resources.
 
@@ -25,20 +29,32 @@ CMIP7 model output is available through a distributed data archive developed and
 
     ESGF data usage and publication metrics can be found on the [CMCC dashboard][cmcc].
 
+??? info "What has been published so far ?"
+    Summaries of CMIP7 data sets published to ESGF include the following:
+
+    - [Climate Resource][publication-summary-ref]: Summary of data published by experiment and model, with particular focus on the [Baseline Climate Variables](Guidance_for_modellers.md/#core-request).
+     - [CMIP-IPO summary page][publication-summary-ipo]: ESGF catalogue overview including counts of datasets published for each institution/model/experiment combination, counts of variables by experiment, and data volume by experiment.
+     - [EMD model descriptions][emd]: Timeseries of publication on each model's EMD page.
+     - ESGF project summary page (in development)
+ 
 
 There are 3 options to access the data:
 
- 1. **MetaGrid** ([West index][metagridwest])
+ 1. **MetaGrid** ([West index][metagridwest]) ([East index][metagrideast])
 
-    Web interface to search and download ESGF data. It provides access through http downloads, wget scripts, OPeNDAP URLs and Globus transfers. It is most useful for browsing and downloading a small number of files. The data can currently be accessed from the web interface linked above, which enables users to search across the entire distributed archive as if it were all centrally located.
+    Web interface to search and download ESGF data. It provides access through http downloads, wget scripts, OPeNDAP URLs and Globus transfers. It is most useful for browsing and downloading a small number of files. The data can be accessed from the web interface links above, enabling users to search across the entire distributed archive as if it were all centrally located.
+    
+    !!! info ""
+        **Current Status** 
+         06-09-2026: West and East Metagrid indexes are mirroring holdings of CMIP7 and CORDEX CMIP6 data. In case of a search returning '0', go to Filter with Facets > Additional Properties > Version and select 'All'.
 
  2. **Using a python package**
 
     For larger queries, it might be more appropriate to automate the search and downloads. A few packages are available to do this:
 
-    * [ESGpull][esgpull]
+    * [ESGpull][esgpull]  **Status (04-09-2026): Awaiting an update to work with the new ESGF indexes, coming soon**
     * [ESMValTool][esmvaltool]
-    * [intake-esgf][intakeesgf]
+    * [intake-esgf][intakeesgf] **Version v2026.9.4 supports interaction with the CMIP7 indexes**
 
 3. **Alternative Access Platforms**
 
@@ -221,7 +237,7 @@ For example, the equivalent of `Amon.tas` in CMIP6 would be  `atmos.tas_tavg-h2m
     The variables produced in CMIP7 were recommended by the [CMIP7 Data Request task team][DataRequestTeam]. The latest version of the Data Request can be [viewed here][datarequest], and further guidance can be [found here](Guidance_for_modellers.md/#4-model-output-fields-data-request). 
 
 
-### 3.4 Frequency
+### 3.4. Frequency
 * [List of frequencies][freqlist]
 
 Models report data on a variety of time steps. 
@@ -253,21 +269,24 @@ In CMIP6, the definition of requested variables included the frequency in which 
 
     It is recommended that users use the [cftime][cftime] library to handle time.
 
-
-
-### 3.5 Grid
-* [List of grids][gridlist]
-* List of pressure levels: [Table 2 of Dingley et al. 2025][datareqpaperatm]
+### 3.5. Grids
+* [Horizontal grid cells viewer][horgridlist]
+* [Vertical grids viewer][vergridlist]
 * [CMIP7 Guidance on Grids][grid]
 
-Different climate models use a variety of different horizontal grids that are documented in the [grid registry][gridreg] (coming soon).
-<!-- TODO: add info on grids in EMD -->
 
-Different MIPs also have different requirements for vertical grid reporting. Output can be defined either on the native model levels, or it can be remapped to pressure levels.
+Horizontal and vertical grids are registered in the EMD.  On each [EMD model page][emd], you can find which grids were used in each component of the model.
 
-??? info "Masked Averaging"
 
-    Many variables in CMIP7 are defined as masked means, defined as the mean of a quantity over a portion of the grid cell defined by an area type. For more information on this, see this [webpage][maskavg] (coming soon).
+??? info "Basic Concepts to Understand Grids"
+    In the EMD, there are 4 different record types:
+    
+    * Horizontal grid cells (ex. g100) describe the shape, resolution, and number of cells. 
+    * Horizontal subgrids (ex. g100-mass) describe where different physical quantities sit within a horizontal grid cell.
+    * Horizontal computational grids (ex. h100) describe the arrangement of multiple subgrids into the complete horizontal domain.
+    * Vertical computational grids (ex. v100) describe the number of levels, the coordinate, the total depth, and the heigh of the top and bottom layer of the 3rd dimension.
+    
+    More information can be found in the [EMD Guidance][emdguidance].
 
 
 ## 4. CMIP7 data format
@@ -337,6 +356,7 @@ If something is missing from this documentation, please open an issue [here][iss
 
  <!-- valid general links -->
 [metagridwest]: https://metagrid.esgf-west.org/
+[metagrideast]: https://metagrid-ceda.east.esgf.io/search
 [metagridllnl]: https://aims2.llnl.gov/search/
 [metagriddkrz]: https://esgf-metagrid.cloud.dkrz.de/search
 [metagridornl]: https://esgf-node.ornl.gov/search
@@ -379,26 +399,29 @@ If something is missing from this documentation, please open an issue [here][iss
 [FeoC]: https://wcrp-cmip.org/cmip7-task-teams/fresh-eyes-on-cmip/
 [GlobalAttrs]: https://doi.org/10.5281/zenodo.17250296
 [grid]: https://doi.org/10.5281/zenodo.15697024
-[datareqpaperatm]: https://egusphere.copernicus.org/preprints/2025/egusphere-2025-3189/
+[datareqpaperatm]: https://gmd.copernicus.org/articles/19/2945/2026/
 [datarequest]: https://bit.ly/CMIP7-DReq-latest
 [cmortablecmip7]: https://github.com/WCRP-CMIP/cmip7-cmor-tables
 [vardatareq]: https://cmip-data-request.github.io/cmip7-dreq-webview/latest/variables.html
 [varlist]:https://esgvoc.ipsl.fr/concept/variable?projects=cmip7
 [freqlist]: https://esgvoc.ipsl.fr/concept/frequency?projects=cmip7
 [emd]: https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/Model/
+[emdguidance]: https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/#what-does-it-contain
 [CMIPpubs]: https://cmip-publications.llnl.gov
 [citesearch]: https://cmip7-citations.ceda.ac.uk/citations/ 
 [sourcelist]:  https://esgvoc.ipsl.fr/concept/model?projects=cmip7
 [experimentlist]:  https://esgvoc.ipsl.fr/concept/experiment?projects=cmip7
 [activitylist]:  https://esgvoc.ipsl.fr/concept/activity?projects=cmip7
 [cmip7cmor]: https://github.com/WCRP-CMIP/cmip7-cmor-tables/tree/main/tables-cvs/split-view
-[gridlist]: https://esgvoc.ipsl.fr/concept/grid?projects=cmip7
+[horgridlist]: https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/grid_viewer/horizontal/
+[vergridlist]: https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/grid_viewer/vertical/
+[publication-summary-ipo]: https://esgf.mipcvs.dev/
+[publication-summary-ref]: https://www.climate-resource.com/tools/esm-model/cmip7-availability
 
 
  <!-- TODO: all the links below need to be changed when the new version arrives. -->
  <!-- CMIP6 links -->
  <!--[CMIPpubs]: https://cmip-publications.llnl.gov/view/CMIP6/  
-[levellist]: https://cmip6dr.github.io/Data_Request_Home/Documents/CMIP6_pressure_levels.pdf?id=88 
 [maskavg]: https://wcrp-cmip.github.io/WGCM_Infrastructure_Panel/CMIP6/time_and_area_averaging.html -->
 
  <!-- unknown links -->

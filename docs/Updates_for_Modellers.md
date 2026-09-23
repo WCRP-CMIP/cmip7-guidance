@@ -8,6 +8,80 @@ title: CMIP7 Updates for modelling groups
 This page will be updated with information of interest to modelling groups that the CMIP IPO has communicated by email (most recent at top).
 
 ---
+## 14 September 2026
+
+**Subject:** CMIP7 update: ECS/TCR/TCRE requests, hl availability, citation service drop-ins, and tool/guidance updates
+
+Dear modelling centres
+
+Thank you for your continued engagement and dedication to delivering CMIP data. The latest update can be found below
+
+### 1.	Request from the CMIP Panel: Updated ECS/TCR/TCRE analysis
+The CMIP Panel previously led a community paper assessing the equilibrium climate sensitivity (ECS) and Transient Climate Response (TCR) of CMIP6 models (Meehl et al., 2020), compiling estimates across CMIP6 and comparing them with values from earlier CMIP phases. The emergence of a subset of CMIP6 models with notably higher ECS and TCR attracted considerable scientific, policy, and media attention.
+
+To support early understanding of the CMIP7 model ensemble, the CMIP Panel would like to gather preliminary information on expected ECS and TCR/TCRE from participating modelling centres. Collecting these insights ahead of the widespread publication of model data and the availability of results through the Rapid Evaluation Framework would provide an early indication of the characteristics of the emerging CMIP7 ensemble. With the focus of emissions driven runs in CMIP7, the CMIP Panel are keen to emphasise TCR/TCRE over ECS in this analysis. 
+
+In addition to supporting a community paper on CMIP7 ECS and TCR/TCRE, led by the CMIP Panel on behalf of the CMIP7 modelling community, this effort would help facilitate timely and evidence-based communication in response to anticipated interest from the media, policymakers, and the wider public.
+
+Please complete the short survey linked in this original email for each model that your centre/group will contribute to CMIP7.
+
+### 2.	Citation service drop-in sessions this week
+These sessions will provide an overview of the Citation Service and offer the opportunity for modelling centre representatives and users of the service to ask questions to the Citation Service team. The session will be repeated across two time slots on Friday 18 September:
+
+- [Session 1: 07:00-08:00 UTC](https://wcrp-cmip.org/event/citation-service-drop-in-session-1/)
+- [Session 2: 15:00-16:00 UTC](https://wcrp-cmip.org/event/citation-service-drop-in-session-2/)
+
+For greater detail, see: [CMIP7 Citation Guidance](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/Citation_Guidance/). A reminder that CMIP7 data providers will need to review the information on the data citation landing pages and add party information before DOIs can be issued.
+
+Deadline for registration: 17:00 UTC Thursday 18 September 2026.
+
+To register to attend (or to receive the recording and slides) please complete [this form](https://airtable.com/appGEHtbRi0wy6T0x/pag50zMLjcIVcmfNK/form).
+
+### 3.	An update on the HL scenario forcing
+We would like to apologise for the ongoing delay to availability of the HL harmonised land use scenario dataset. Despite the best efforts of our provider, a number of issues have emerged delaying finalisation. We will inform you as soon as the data is published on the ESGF.
+
+The outstanding scenario forcing datasets to be delivered are:
+
+- HL land use (see above)
+- M-ext, HL-ext land use (anticipated end of October)
+- LN, ML and L land use (anticipated before end of year)
+- LN, ML and L ozone and nitrogen deposition (expected by end of September 2026)
+
+### 4.	Updates to publication tools
+An update to the CMIP7 quality control checks for publication has been released and all groups will need to update to [version 2.3.5](https://github.com/ESGF/cc-plugin-wcrp/releases/tag/2.3.5).   This fixes a bug that prevents the publication of any dataset.
+
+An update to the ESGF publisher ([version 5.5.2](https://github.com/ESGF/esg-publisher/releases#release-v5.5.2)) has been released that corrects an issue that prevented publication of ocean datasets and zonal/global means. 
+
+The [Errata Service](https://errata.esgf.io) has been updated to allow registration of errata relating to CMIP7, CMI6Plus and CORDEX-CMIP6.
+
+### 5.	Documentation updates
+Two services which summarise the status of published datasets have been deployed and they can be found via the [CMIP7 Guidance for users](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/Guidance_for_users/#1-accessing-cmip7-data) page along with information on tools that can be used to search ESGF.
+
+### 6.	Please provide an update on your data delivery timeline
+To support downstream activities (e.g., CORDEX, ISIMIP and ISMIP7) and key partners such as IPCC AR7 WGI we are asking you to provide an update on your CMIP7 Assessment Fast Track simulation status using the dedicated centre/model specific links in the table sent via email. The status can then be [viewed here](https://wcrp-cmip.org/cmip-phases/cmip7/#when_to_expect_cmip7_data) – you may notice many of the updates are now out of date!
+
+Some modelling centres have previously provided different dates for different models within their centre. Those different models are listed separately in the table in your email. If your centre would like to start providing different dates for different models, please let us know and we will create additional links for you to facilitate this.
+
+---
+## 23 August 2026
+**Subject:** CMIP7 update: h-ext availability, status update and ECS/TCR/TCRE requests
+
+Dear modelling centres,
+
+We would like to highlight the following:
+
+### 1.	h-ext land use scenario forcing now available
+ land use scenario extension for the High scenario extension (h-ext) is now available – please see [here](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/land-use/#cmip7_1) for details and links to the data.
+
+### 2.	Request for latest update on expected first data delivery
+We ask that modelling centre representatives ensure the data at [https://wcrp-cmip.org/cmip-phases/cmip7/#when_to_expect_cmip7_data](https://wcrp-cmip.org/cmip-phases/cmip7/#when_to_expect_cmip7_data) is kept up to date to manage expectations of CMIP data users and facilitate support for ESGF publication (dataset publication guidance [here](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/Guidance_for_ESGF/#2-dataset-publication)). Please use the relevant link in the table provided in the email from the CMIP IPO to update your model/centres’ status.
+
+Please note you **must have completed the Essential Model Documentation process (details [here](https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/))** before publishing data on the ESGF!
+
+### 3.	ECS/TCR/TCRE survey
+To support early understanding of the CMIP7 model ensemble, the CMIP Panel would like to gather preliminary information on expected ECS and TCR/TCRE from participating modelling centres. Collecting these insights ahead of the widespread publication of model data and the availability of results through the Rapid Evaluation Framework would provide an early indication of the characteristics of the emerging CMIP7 ensemble. If you have not already done so, please complete the short survey (link provided in the email version of this update) for each model that your centre/group will contribute to CMIP7.
+
+---
 ## 6 August 2026
 **Subject:** CMIP7 update: please read email carefully - latest information and survey request
 
