@@ -76,15 +76,17 @@ For data access routes that do not involve official ESGF nodes, we encourage use
 
 
 ## 2.  Terms of use and citations requirements
-<!--TODO: Make sure we have a link (with persistent URL) to this in the license global attrs-->
+
+!!! info "DOI status"
+
+    2026-09-23: No CMIP7 DOIs have been minted to date. 
+
 To enable modelling groups and others who support CMIP7 to demonstrate its impact (and secure ongoing funding), you are required to cite and acknowledge those who have made CMIP7 possible. Some best practices are also recommended.
 
 ### Mandatory
 
 1. **Cite the specific dataset(s) used.**
-       <!-- TODO: verify if version is in citation for CMIP7 
-            TODO: verify that PID and handle.net still work for CMIP7 
-            TODO: Add a CMIP7 example of citation when one exists-->
+       <!-- TODO: Add a CMIP7 example of citation when one exists-->
 
      For each model whose data is used, please include a citation in the form of:
 
