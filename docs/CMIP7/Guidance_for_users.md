@@ -1,6 +1,9 @@
 ---
 layout: default
 title: CMIP7 Guidance for Data Users
+intro: Informs users of CMIP7 data concepts, tools and requirements. Learn how to access
+ the CMIP data, how to create citations, where to find model documentation, where to find the 
+ lists of variables, experiment and erratas.
 ---
 
 # CMIP7 Guidance for Data Users
@@ -76,37 +79,40 @@ For data access routes that do not involve official ESGF nodes, we encourage use
 
 
 ## 2.  Terms of use and citations requirements
-<!--TODO: Make sure we have a link (with persistent URL) to this in the license global attrs-->
+
+!!! info "DOI status"
+
+    2026-09-23: No CMIP7 DOIs have been minted to date. 
+
 To enable modelling groups and others who support CMIP7 to demonstrate its impact (and secure ongoing funding), you are required to cite and acknowledge those who have made CMIP7 possible. Some best practices are also recommended.
 
 ### Mandatory
 
 1. **Cite the specific dataset(s) used.**
-       <!-- TODO: verify if version is in citation for CMIP7 
-            TODO: verify that PID and handle.net still work for CMIP7 
-            TODO: Add a CMIP7 example of citation when one exists-->
+       <!-- TODO: Add a CMIP7 example of citation when one exists-->
 
      For each model whose data is used, please include a citation in the form of:
 
-    > Authors/Data Creators (publication year): Title. Version YYYYMMDD. Earth System Grid Federation. DOI.
+    > Authors/Data Creators (publication year): Title. Earth System Grid Federation. DOI.
         
     e.g. 
 
-    > Swart et al. (2019). CCCma CanESM5 model output prepared for CMIP6 CMIP historical. Version 20190429. Earth System Grid Federation. https://doi.org/10.22033/ESGF/CMIP6.3610 .
+    > Swart et al. (2019). CCCma CanESM5 model output prepared for CMIP6 CMIP historical. Earth System Grid Federation. https://doi.org/10.22033/ESGF/CMIP6.3610 .
 
-    Please include a table with at minimum the models ("sources"), institutions, and data citations as above, as well as a data availability statement pointing to the table and acknowledging ESGF. If the journal has a citation limit, putting the table in the Supporting Information is acceptable.
+    Please include a table with at minimum the models ("sources"), institutions, and data citations as above. Adding the dataset version in the table is also suggested.  A data availability statement pointing to the table and acknowledging ESGF is required. If the journal has a citation limit, putting the table in the Supporting Information is acceptable.
 
-    For CMIP7, the granularity of the data citations is at the level of a model's contribution to an experiment, such that all ensemble members plus all erratas and future corrections within an experiment are covered by one citation.
+    For CMIP7, the granularity of the data citations is at the level of a model's contribution to an experiment, such that all ensemble members plus all erratas and future corrections within an experiment are covered by one citation. Note it is possible to have multiple versions of a citation (_different from the dataset version_). In that case, vX will be added after the title in the textual citation.
 
     ??? Question "How to find the DOI and the version?"
-        🔍 You can search databases.  The [Citation Search][citesearch] can help you find the DOI (but not the version). [MetaGrid][metagridwest] results indicate the version and have a citation tab.
+        🔍 You can search databases.  The [Citation Search][citesearch] can help you find the DOI. [MetaGrid][metagridwest] results indicate the version and have a citation tab.
+
+        🤖 You can use the experimental python library [CMIPcite][cmipcite]. Input tracking_id(s), dataset PID(s) or file paths(s) to retrieve the citation (textually or in the bibtex format) and latex table of data information (status: feature in development).
   
-        🖱️ You can also use the tracking id: Take the `tracking_id` global attribute of a file and append it to [http://hdl.handle.net/](http://hdl.handle.net/) (e.g., [http://hdl.handle.net/hdl:21.14100/be06a059-363d-47a4-97a2-d5253190fd15](http://hdl.handle.net/hdl:21.14100/be06a059-363d-47a4-97a2-d5253190fd15)). From there, you can follow "The file is part of the following aggregation(s)" and find the DOI and version of the dataset.
+        🖱️ You can also use the tracking id. Take the `tracking_id` global attribute of a file and search it in the [PID lookup page](https://esgf.wcrp-cmip.org/other-pid-lookup). The dataset version is at the end of the title in format vYYYYMMDD. For the citation link, click on "show raw JSON" and find the cite-as under the 'links' key (status: some cite-as are missing at the moment).
+    
 
-        🤖 You can use the experimental python library [CMIPcite][cmipcite]. Input tracking_id(s), dataset PID(s) or file paths(s) to retrieve the citation (textually or in the bibtex format).
 
-
-    Further information on the data citation concept is described on the [Citation Guidance page](Citation_Guidance.md).
+    Further information on the data citation service is described on the [Citation Guidance page for modellers](Citation_Guidance.md).
 
 
 2. **Acknowledge CMIP7.**
@@ -329,7 +335,8 @@ First time using CMIP? Need a bit more help ? Check out these resources:
 
 * [Entry-Level Documentation][eld] (coming soon), put together by the [Fresh Eyes on CMIP][FeoC] group.
 * [List of tools for using climate data][tools].
-* You have a more specific question ? Ask it on the [Fresh Eyes Platform][platform]. (You need to register [here][register] first.)
+* [List of tutorials][tutorials]
+* You have a more specific question ? Ask it on the [Fresh Eyes Platform][platform] (You need to register [here][register] first.) or on the [community Q&A Forum][qa].
 
 
 
@@ -337,7 +344,9 @@ If something is missing from this documentation, please open an issue [here][iss
 
 
 
-###### Document version: 2026-07-13
+###### Document version: 2026-09-24
+ <!--  all the github contributors to the page -->
+###### Authors: Juliette Lavoie, James Anstey, Matthew Mizielinski, Paul Smith, Sasha Ames, Aparna Radhakrishnan, Eleanor O'Rourke 
  <!--  abbreviation -->
 *[CMIP7]: Coupled Model Intercomparison Project phase 7
 *[LLNL]: Lawrence Livermore National Laboratory
@@ -387,6 +396,8 @@ If something is missing from this documentation, please open an issue [here][iss
 [CVviewer]: https://esgvoc.ipsl.fr/
 [esgvoc]: https://esgf.github.io/esgf-vocab/
 [issue]: https://github.com/WCRP-CMIP/cmip7-guidance/issues
+[tutorials]: https://wcrp-cmip.org/tutorials/
+[QA]: https://wcrp-cmip.org/faqs/
 
  <!-- CMIP7 links -->
 [GMDSpecialIssue]: https://gmd.copernicus.org/articles/special_issue1315.html
