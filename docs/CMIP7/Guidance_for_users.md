@@ -1,7 +1,9 @@
 ---
 layout: default
 title: CMIP7 Guidance for Data Users
-intro: This page is designed to inform users of climate model outputs on key CMIP7 concepts and tools.
+intro: Informs users of CMIP7 data concepts, tools and requirements. Learn how to access
+ the CMIP data, how to create citations, where to find model documentation, where to find the 
+ lists of variables, experiment and erratas.
 ---
 
 # CMIP7 Guidance for Data Users
