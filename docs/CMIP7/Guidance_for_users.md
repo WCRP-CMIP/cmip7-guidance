@@ -1,6 +1,7 @@
 ---
 layout: default
 title: CMIP7 Guidance for Data Users
+intro: This page is designed to inform users of climate model outputs on key CMIP7 concepts and tools.
 ---
 
 # CMIP7 Guidance for Data Users
@@ -341,7 +342,9 @@ If something is missing from this documentation, please open an issue [here][iss
 
 
 
-###### Document version: 2026-07-13
+###### Document version: 2026-09-24
+ <!--  all the github contributors to the page -->
+###### Authors: Juliette Lavoie, James Anstey, Matthew Mizielinski, Paul Smith, Sasha Ames, Aparna Radhakrishnan, Eleanor O'Rourke 
  <!--  abbreviation -->
 *[CMIP7]: Coupled Model Intercomparison Project phase 7
 *[LLNL]: Lawrence Livermore National Laboratory
