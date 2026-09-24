@@ -32,7 +32,7 @@ Above is the flow diagram showing internal processes within the citation service
 ## Relation to the DRS' version concept
 
 The version included in the citations above is not the same as the dataset version
-(more precisely, the DRS "directoryDateDD" element, [see the DRS elements docs here](../Global_Attributes#4-data-reference-syntax-drs-elements)).
+(more precisely, the DRS "directoryDateDD" element, [see the DRS elements docs here](Global_Attributes.md#4-data-reference-syntax-drs-elements).
 These citations cover all versions.
 
 This is change from previous phases.
