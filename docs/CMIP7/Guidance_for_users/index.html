@@ -2738,32 +2738,33 @@
 <p>An overview of <strong>how to access and use CMIP data</strong> is given in the slides from <a href="https://zenodo.org/records/18934629">CMIP 2026 workshop WIP session</a> (slides 3-20).</p>
 </div>
 <h2 id="2-terms-of-use-and-citations-requirements">2.  Terms of use and citations requirements<a class="headerlink" href="#2-terms-of-use-and-citations-requirements" title="Permanent link">&para;</a></h2>
-<!--TODO: Make sure we have a link (with persistent URL) to this in the license global attrs-->
+<div class="admonition info">
+<p class="admonition-title">DOI status</p>
+<p>2026-09-23: No <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> DOIs have been minted to date. </p>
+</div>
 <p>To enable modelling groups and others who support <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> to demonstrate its impact (and secure ongoing funding), you are required to cite and acknowledge those who have made <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> possible. Some best practices are also recommended.</p>
 <h3 id="mandatory">Mandatory<a class="headerlink" href="#mandatory" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p><strong>Cite the specific dataset(s) used.</strong>
-       <!-- TODO: verify if version is in citation for CMIP7 
-            TODO: verify that PID and handle.net still work for CMIP7 
-            TODO: Add a CMIP7 example of citation when one exists--></p>
+       <!-- TODO: Add a CMIP7 example of citation when one exists--></p>
 <p>For each model whose data is used, please include a citation in the form of:</p>
 <blockquote>
-<p>Authors/Data Creators (publication year): Title. Version YYYYMMDD. Earth System Grid Federation. DOI.</p>
+<p>Authors/Data Creators (publication year): Title. Earth System Grid Federation. DOI.</p>
 </blockquote>
 <p>e.g. </p>
 <blockquote>
-<p>Swart et al. (2019). CCCma CanESM5 model output prepared for CMIP6 CMIP historical. Version 20190429. Earth System Grid Federation. https://doi.org/10.22033/ESGF/CMIP6.3610 .</p>
+<p>Swart et al. (2019). CCCma CanESM5 model output prepared for CMIP6 CMIP historical. Earth System Grid Federation. https://doi.org/10.22033/ESGF/CMIP6.3610 .</p>
 </blockquote>
-<p>Please include a table with at minimum the models ("sources"), institutions, and data citations as above, as well as a data availability statement pointing to the table and acknowledging ESGF. If the journal has a citation limit, putting the table in the Supporting Information is acceptable.</p>
-<p>For <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr>, the granularity of the data citations is at the level of a model's contribution to an experiment, such that all ensemble members plus all erratas and future corrections within an experiment are covered by one citation.</p>
+<p>Please include a table with at minimum the models ("sources"), institutions, and data citations as above. Adding the dataset version in the table is also strongly recommended.  A data availability statement pointing to the table and acknowledging ESGF is required. If the journal has a citation limit, putting the table in the Supporting Information is acceptable.</p>
+<p>For <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr>, the granularity of the data citations is at the level of a model's contribution to an experiment, such that all ensemble members plus all errata and future corrections within an experiment (new dataset versions, if any) are covered by one citation. Note, in the citation service it is possible to have multiple versions of a citation (<em>different from the dataset version</em>) if a citation needs to be updated (to update the authors list, for example). In that case, vX will be added after the title in the textual citation.</p>
 <details class="question">
 <summary>How to find the DOI and the version?</summary>
-<p>🔍 You can search databases.  The <a href="https://cmip7-citations.ceda.ac.uk/citations/">Citation Search</a> can help you find the DOI (but not the version). <a href="https://metagrid.esgf-west.org/">MetaGrid</a> results indicate the version and have a citation tab.</p>
-<p>🖱️ You can also use the tracking id: Take the <code>tracking_id</code> global attribute of a file and append it to <a href="http://hdl.handle.net/">http://hdl.handle.net/</a> (e.g., <a href="http://hdl.handle.net/hdl:21.14100/be06a059-363d-47a4-97a2-d5253190fd15">http://hdl.handle.net/hdl:21.14100/be06a059-363d-47a4-97a2-d5253190fd15</a>). From there, you can follow "The file is part of the following aggregation(s)" and find the DOI and version of the dataset.</p>
-<p>🤖 You can use the experimental python library <a href="https://cmipcite.readthedocs.io/en/latest/">CMIPcite</a>. Input tracking_id(s), dataset PID(s) or file paths(s) to retrieve the citation (textually or in the bibtex format).</p>
+<p>🔍 You can search databases.  The <a href="https://cmip7-citations.ceda.ac.uk/citations/">Citation Search</a> can help you find the DOI. <a href="https://metagrid.esgf-west.org/">MetaGrid</a> results indicate the version and have a citation tab.</p>
+<p>🤖 You can use the experimental python library <a href="https://cmipcite.readthedocs.io/en/latest/">CMIPcite</a>. Input tracking_id(s), dataset PID(s) or file paths(s) to retrieve the citation (textually or in the bibtex format) and latex table of data information (status: feature in development).</p>
+<p>🖱️ You can also use the tracking id. Take the <code>tracking_id</code> global attribute of a file and search it in the <a href="https://esgf.wcrp-cmip.org/other-pid-lookup">PID lookup page</a>. The dataset version is at the end of the title in format vYYYYMMDD. For the citation link, click on "show raw JSON" and find the cite-as under the 'links' key (status: some cite-as are missing at the moment).</p>
 </details>
-<p>Further information on the data citation concept is described on the <a href="../Citation_Guidance/">Citation Guidance page</a>.</p>
+<p>Further information on the data citation service is described on the <a href="../Citation_Guidance/">Citation Guidance page for modellers</a>.</p>
 </li>
 <li>
 <p><strong>Acknowledge <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr>.</strong></p>
@@ -2948,10 +2949,13 @@ Proposing erratum through the webform requires a contact email address. Once the
 <ul>
 <li><a href="?">Entry-Level Documentation</a> (coming soon), put together by the <a href="https://wcrp-cmip.org/cmip7-task-teams/fresh-eyes-on-cmip/">Fresh Eyes on CMIP</a> group.</li>
 <li><a href="https://wcrp-cmip.org/tools/">List of tools for using climate data</a>.</li>
-<li>You have a more specific question ? Ask it on the <a href="https://github.com/orgs/Fresh-Eyes-on-CMIP/discussions">Fresh Eyes Platform</a>. (You need to register <a href="https://github.com/Fresh-Eyes-on-CMIP/member-requests/issues/new?template=new_user.yml">here</a> first.)</li>
+<li><a href="https://wcrp-cmip.org/tutorials/">List of tutorials</a></li>
+<li>You have a more specific question ? Ask it on the <a href="https://github.com/orgs/Fresh-Eyes-on-CMIP/discussions">Fresh Eyes Platform</a> (You need to register <a href="https://github.com/Fresh-Eyes-on-CMIP/member-requests/issues/new?template=new_user.yml">here</a> first.) or on the <a href="https://wcrp-cmip.org/faqs/">community Q&amp;A Forum</a>.</li>
 </ul>
 <p>If something is missing from this documentation, please open an issue <a href="https://github.com/WCRP-CMIP/cmip7-guidance/issues">here</a>.</p>
-<h6 id="document-version-2026-07-13">Document version: 2026-07-13<a class="headerlink" href="#document-version-2026-07-13" title="Permanent link">&para;</a></h6>
+<h6 id="document-version-2026-09-24">Document version: 2026-09-24<a class="headerlink" href="#document-version-2026-09-24" title="Permanent link">&para;</a></h6>
+<!--  all the github contributors to the page -->
+<h6 id="authors-juliette-lavoie-james-anstey-matthew-mizielinski-paul-smith-sasha-ames-aparna-radhakrishnan-eleanor-orourke">Authors: Juliette Lavoie, James Anstey, Matthew Mizielinski, Paul Smith, Sasha Ames, Aparna Radhakrishnan, Eleanor O'Rourke<a class="headerlink" href="#authors-juliette-lavoie-james-anstey-matthew-mizielinski-paul-smith-sasha-ames-aparna-radhakrishnan-eleanor-orourke" title="Permanent link">&para;</a></h6>
 <!--  abbreviation -->
 <!-- valid general links -->
 <!-- CMIP7 links -->
