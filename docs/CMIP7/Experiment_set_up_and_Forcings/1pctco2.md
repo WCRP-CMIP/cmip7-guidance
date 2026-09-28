@@ -107,7 +107,7 @@ For the following forcings, please use data from the specified experiments with 
     \begin{aligned}
     c(y)
     &= c_0 \cdot 1.01^{y - y_0} \cdot \frac{1 + 1.01}{2} \\
-    &= c_0 \cdot 1.01^{y - y_0} \cdot 1.05,
+    &= c_0 \cdot 1.01^{y - y_0} \cdot 1.005,
     \end{aligned}
     $$
 
@@ -119,7 +119,7 @@ For the following forcings, please use data from the specified experiments with 
     \begin{aligned}
     c(y, m)
     &= c_0 \cdot \frac{1.01^{y - y_0} \cdot 1.01^{(m - 1) / 12} + 1.01^{y - y_0} \cdot 1.01^{m / 12}}{2} \\
-    &= c_0 \cdot 1.01^{y - y_0} \cdot 1.01^{(m - 1) / 12} \cdot \frac{1 + 1.01^(1 / 12)}{2} \\
+    &= c_0 \cdot 1.01^{y - y_0} \cdot 1.01^{(m - 1) / 12} \cdot \frac{1 + 1.01^{1 / 12}}{2} \\
     &= c_0 \cdot 1.01^{y - y_0} \cdot 1.01^{(m - 1) / 12} \cdot 1.0004,
     \end{aligned}
     $$
