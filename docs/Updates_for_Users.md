@@ -7,6 +7,8 @@ title: CMIP7 Updates for users
 
 To sign up for the CMIP Community News mailing list please visit <https://wcrp-cmip.org/cmip-mailing-lists/>.
 
+!!! info "For perennial information, visit the [Guidance for users page](CMIP7/Guidance_for_users.md). "
+
 ---
 
 ## 10 September 2026
