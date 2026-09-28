@@ -33,7 +33,7 @@ Above is the flow diagram showing internal processes within the citation service
 
 The version included in the citations above is not the same as the dataset version
 (more precisely, the DRS "directoryDateDD" element, [see the DRS elements docs here](Global_Attributes.md#4-data-reference-syntax-drs-elements).
-These citations cover all versions.
+These citations cover all dataset versions.
 
 This is change from previous phases.
 For example, in CMIP6, the cite as links on landing pages left the version unfilled as "YYYYMMDD",

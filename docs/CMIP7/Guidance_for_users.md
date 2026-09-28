@@ -99,9 +99,9 @@ To enable modelling groups and others who support CMIP7 to demonstrate its impac
 
     > Swart et al. (2019). CCCma CanESM5 model output prepared for CMIP6 CMIP historical. Earth System Grid Federation. https://doi.org/10.22033/ESGF/CMIP6.3610 .
 
-    Please include a table with at minimum the models ("sources"), institutions, and data citations as above. Adding the dataset version in the table is also suggested.  A data availability statement pointing to the table and acknowledging ESGF is required. If the journal has a citation limit, putting the table in the Supporting Information is acceptable.
+    Please include a table with at minimum the models ("sources"), institutions, and data citations as above. Adding the dataset version in the table is also strongly recommended.  A data availability statement pointing to the table and acknowledging ESGF is required. If the journal has a citation limit, putting the table in the Supporting Information is acceptable.
 
-    For CMIP7, the granularity of the data citations is at the level of a model's contribution to an experiment, such that all ensemble members plus all erratas and future corrections within an experiment are covered by one citation. Note it is possible to have multiple versions of a citation (_different from the dataset version_). In that case, vX will be added after the title in the textual citation.
+    For CMIP7, the granularity of the data citations is at the level of a model's contribution to an experiment, such that all ensemble members plus all errata and future corrections within an experiment (new dataset versions, if any) are covered by one citation. Note, in the citation service it is possible to have multiple versions of a citation (_different from the dataset version_) if a citation needs to be updated (to update the authors list, for example). In that case, vX will be added after the title in the textual citation.
 
     ??? Question "How to find the DOI and the version?"
         🔍 You can search databases.  The [Citation Search][citesearch] can help you find the DOI. [MetaGrid][metagridwest] results indicate the version and have a citation tab.
