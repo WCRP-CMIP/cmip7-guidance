@@ -19,9 +19,12 @@ This page is intended to help with implementation.
 If you notice something that is unclear, please
 [raise an issue](https://github.com/WCRP-CMIP/cmip7-guidance/issues/new).
 
-For the full background of the experiment, please see the following URLs:
+For the full background of the experiment, please see the following references:
 
-- [https://doi.org/10.5194/egusphere-2024-3765](https://doi.org/10.5194/egusphere-2024-3765)
+- van Vuuren, D., O’Neill, B., Tebaldi, C., Chini, L., Friedlingstein, P., Hasegawa, T., Riahi, K., Sanderson, B.,
+  Govindasamy, B., Bauer, N., Eyring, V., Fall, C., Frieler, K., Gidden, M., Gohar, L., Jones, A., King, A., Knutti, R.,
+  Kriegler, E., et al. (2025).
+  The Scenario Model Intercomparison Project for CMIP7 (ScenarioMIP-CMIP7) . https://doi.org/10.5194/egusphere-2024-3765
 
 ## Paired experiments
 

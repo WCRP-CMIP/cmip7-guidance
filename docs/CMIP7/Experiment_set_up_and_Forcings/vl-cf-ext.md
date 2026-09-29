@@ -11,18 +11,34 @@ Extension of `vl-cf` beyond 2100.
 - Tier: 2
 - MIP co-chair review: **In progress** see
   [https://github.com/WCRP-CMIP/cmip7-guidance/issues/226](https://github.com/WCRP-CMIP/cmip7-guidance/issues/226)
+- Tags:
 
 This page is intended to help with implementation.
 If you notice something that is unclear, please
 [raise an issue](https://github.com/WCRP-CMIP/cmip7-guidance/issues/new).
 
-For the full background of the experiment, please see the following URLs:
+For the full background of the experiment, please see the following references:
 
-- [https://doi.org/10.1038/s41467-025-62983-5](https://doi.org/10.1038/s41467-025-62983-5)
-- [https://doi.org/10.1016/j.eng.2024.11.023](https://doi.org/10.1016/j.eng.2024.11.023)
-- [https://doi.org/10.1016/j.accre.2023.11.004](https://doi.org/10.1016/j.accre.2023.11.004)
-- [https://dx.doi.org/10.1088/1748-9326/adfbfb](https://dx.doi.org/10.1088/1748-9326/adfbfb)
-- [https://doi.org/10.5281/zenodo.21487424](https://doi.org/10.5281/zenodo.21487424)
+- Zhong, J., Zhang, X., Zhang, D., Wang, D., Guo, L., Peng, H., Huang, X., Wang, Z., Lei, Y., Lu, Y., Qu, C., Zhang, X.,
+  & Miao, C. (2025).
+  Plausible global emissions scenario for 2 °C aligned with China’s net-zero pathway.
+  Nature Communications, 16(1). https://doi.org/10.1038/s41467-025-62983-5
+- Zhang, X., Zhong, J., Zhang, X., Zhang, D., Miao, C., Wang, D., & Guo, L. (2025).
+  China Can Achieve Carbon Neutrality in Line with the Paris Agreement’s 2 °C Target: Navigating Global Emissions
+  Scenarios, Warming Levels, and Extreme Event Projections.
+  Engineering, 44, 207–214. https://doi.org/10.1016/j.eng.2024.11.023
+- Zhang, D., Huang, X.-D., Zhong, J.-T., Guo, L.-F., Guo, S.-Y., Wang, D.-Y., Miao, C.-H., Zhang, X.-L., & Zhang, X.-Y.
+  (2023).
+  A representative CO2 emissions pathway for China toward carbon neutrality under the Paris Agreement’s 2 °C target.
+  Advances in Climate Change Research, 14(6), 941–951. https://doi.org/10.1016/j.accre.2023.11.004
+- Lu, Y., Jin, L., Zhong, J., Zhang, X., Zhang, Y., Wu, F., Zhang, F., Wang, Z., Zhang, J., Xin, X., Wu, T., Wang, D.,
+  Zhang, D., Wang, T., & Hua, W. (2025).
+  Earth system responses under a global 2 °C-target scenario aligned with China’s carbon neutrality pledge.
+  Environmental Research Letters, 20(10), 104049. https://doi.org/10.1088/1748-9326/adfbfb
+- Högner, A., Sandstad, M., Kikstra, J., Nauels, A., Nicholls, Z., Sanderson, B., Smith, C., Zecchetto, M., &amp;
+  Schleussner, C.-F. (2026). <i>The CMIP7 VL-CF counterfactual emissions pathway dataset v1.1.1 documentation</i>
+  [Dataset].
+  Zenodo. https://doi.org/10.5281/ZENODO.21487424
 
 ## Experiment set up
 

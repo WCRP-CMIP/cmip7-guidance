@@ -18,9 +18,14 @@ This page is intended to help with implementation.
 If you notice something that is unclear, please
 [raise an issue](https://github.com/WCRP-CMIP/cmip7-guidance/issues/new).
 
-For the full background of the experiment, please see the following URLs:
+For the full background of the experiment, please see the following references:
 
-- [https://doi.org/10.5194/gmd-18-6671-2025](https://doi.org/10.5194/gmd-18-6671-2025)
+- Dunne, J. P., Hewitt, H. T., Arblaster, J. M., Bonou, F., Boucher, O., Cavazos, T., Dingley, B., Durack, P. J.,
+  Hassler, B., Juckes, M., Miyakawa, T., Mizielinski, M., Naik, V., Nicholls, Z., O’Rourke, E., Pincus, R., Sanderson,
+  B. M., Simpson, I. R., & Taylor, K. E. (2025).
+  An evolving Coupled Model Intercomparison Project phase 7 (CMIP7) and Fast Track in support of future climate
+  assessment.
+  Geoscientific Model Development, 18(19), 6671–6700. https://doi.org/10.5194/gmd-18-6671-2025
 
 ## Experiment set up
 
@@ -76,46 +81,50 @@ For the following forcings, please use data from the specified experiments with 
 
 - for greenhouse gas concentrations, use the forcings from [piControl](./picontrol.md) but increase the atmospheric
   CO<sub>2</sub> concentrations at one percent per year yourself.
-  CO2 concentrations should increase as
+  CO<sub>2</sub> concentrations should increase as
 
     $$
     c(t) = c_0 \cdot 1.01^{\frac{t - t_0}{\tau}},
     $$
 
-    where $t_0$ is 1850 and $\tau$ is one year.
+    where $c_0$ is the CO<sub>2</sub> concentration at $t_0$ (i.e. the piControl CO<sub>2</sub> concentration),
+    $t_0$ is the start year of the simulation and $\tau$ is one year.
 
     For step-wise increases of CO<sub>2</sub>, specify a concentration that results, to good approximation, in a mean
-    CO2 concentration (or mean forcing) for each time step consistent with the mean calculated when the CO2
-    concentration increases continuously.
+    CO<sub>2</sub> concentration (or mean forcing) for each time step consistent with the mean calculated when the
+    CO<sub>2</sub> concentration increases continuously.
     A particularly simple formula of sufficient accuracy for a 1% increase and time steps used in earth system models is
 
     $$
-    c(t \rightarrow t + \Delta t) = \frac{c(t) + c(t + \Delta t)}{2},
+    \bar{c}(t \rightarrow t + \Delta t) = \frac{c(t) + c(t + \Delta t)}{2},
     $$
 
-    where $c(t \rightarrow t + \Delta t)$ is the value to apply in the time step that extends from time $t$ to $t +
-    \Delta t$ and $\Delta t$ is the size of the time step in your model (this can vary from time step to time step and
-    it does not affect the formula above).
+    where $\bar{c}(t \rightarrow t + \Delta t)$ is the value to apply in the time step that extends from time $t$
+    to $t + \Delta t$ and $\Delta t$ is the size of the time step in your model (this can vary from time step to time
+    step and it does not affect the formula above).
     For annual time steps, this reduces to
 
     $$
     \begin{aligned}
-    c(y)
+    \bar{c}(y)
+    &= c_0 \cdot \frac{1.01^{y - y_0} + 1.01^{y - y_0 + 1}}{2} \\
     &= c_0 \cdot 1.01^{y - y_0} \cdot \frac{1 + 1.01}{2} \\
-    &= c_0 \cdot 1.01^{y - y_0} \cdot 1.05,
+    &= c_0 \cdot 1.01^{y - y_0} \cdot 1.005,
     \end{aligned}
     $$
 
-    where $y$ is the year in which to apply the given value and $y_0$ is the starting year i.e. 1850.
+    where $y$ is the year in which to apply the given value and $y_0$ is the starting year of the simulation.
 
-    For monthly time steps, this reduces to
+    For monthly time steps, assuming all months can be approximated as being of equal length
+    (the general formula above is what you need if you want to exactly capture the variations due to differing month
+    lengths), this reduces to
 
     $$
     \begin{aligned}
-    c(y, m)
+    \bar{c}(y, m)
     &= c_0 \cdot \frac{1.01^{y - y_0} \cdot 1.01^{(m - 1) / 12} + 1.01^{y - y_0} \cdot 1.01^{m / 12}}{2} \\
-    &= c_0 \cdot 1.01^{y - y_0} \cdot 1.01^{(m - 1) / 12} \cdot \frac{1 + 1.01^(1 / 12)}{2} \\
-    &= c_0 \cdot 1.01^{y - y_0} \cdot 1.01^{(m - 1) / 12} \cdot 1.0004,
+    &= c_0 \cdot 1.01^{y - y_0} \cdot 1.01^{(m - 1) / 12} \cdot \frac{1 + 1.01^{1 / 12}}{2} \\
+    &= c_0 \cdot 1.01^{y - y_0} \cdot 1.01^{(m - 1) / 12} \cdot 1.00041477,
     \end{aligned}
     $$
 

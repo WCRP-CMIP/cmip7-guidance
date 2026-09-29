@@ -19,11 +19,19 @@ This page is intended to help with implementation.
 If you notice something that is unclear, please
 [raise an issue](https://github.com/WCRP-CMIP/cmip7-guidance/issues/new).
 
-For the full background of the experiment, please see the following URLs:
+For the full background of the experiment, please see the following references:
 
-- [https://doi.org/10.5194/acp-20-9591-2020](https://doi.org/10.5194/acp-20-9591-2020)
-- [https://doi.org/10.5194/gmd-19-4447-2026](https://doi.org/10.5194/gmd-19-4447-2026)
-- [https://doi.org/10.5194/gmd-9-3447-2016](https://doi.org/10.5194/gmd-9-3447-2016)
+- Pincus, R., Forster, P. M., & Stevens, B. (2016).
+  The Radiative Forcing Model Intercomparison Project (RFMIP): experimental protocol for CMIP6.
+  Geoscientific Model Development, 9(9), 3447–3460. https://doi.org/10.5194/gmd-9-3447-2016
+- Smith, C. J., Kramer, R. J., Myhre, G., Alterskjær, K., Collins, W., Sima, A., Boucher, O., Dufresne, J.-L., Nabat,
+  P., Michou, M., Yukimoto, S., Cole, J., Paynter, D., Shiogama, H., O’Connor, F. M., Robertson, E., Wiltshire, A.,
+  Andrews, T., Hannay, C., et al. (2020).
+  Effective radiative forcing and adjustments in CMIP6 models.
+  Atmospheric Chemistry and Physics, 20(16), 9591–9618. https://doi.org/10.5194/acp-20-9591-2020
+- Kramer, R. J., Smith, C., & Andrews, T. (2026).
+  The Radiative Forcing Model Intercomparison Project (RFMIP2.0) for CMIP7.
+  Geoscientific Model Development, 19(10), 4447–4466. https://doi.org/10.5194/gmd-19-4447-2026
 
 ## Experiment set up
 

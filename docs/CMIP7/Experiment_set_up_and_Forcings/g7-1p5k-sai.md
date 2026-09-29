@@ -17,10 +17,18 @@ This page is intended to help with implementation.
 If you notice something that is unclear, please
 [raise an issue](https://github.com/WCRP-CMIP/cmip7-guidance/issues/new).
 
-For the full background of the experiment, please see the following URLs:
+For the full background of the experiment, please see the following references:
 
-- [https://doi.org/10.1175/BAMS-D-25-0191.1](https://doi.org/10.1175/BAMS-D-25-0191.1)
-- [https://doi.org/10.5194/gmd-17-2583-2024](https://doi.org/10.5194/gmd-17-2583-2024)
+- Visioni, D., Robock, A., Haywood, J., Henry, M., Tilmes, S., MacMartin, D. G., Kravitz, B., Doherty, S. J., Moore, J.,
+  Lennard, C., Watanabe, S., Muri, H., Niemeier, U., Boucher, O., Syed, A., Egbebiyi, T. S., Séférian, R., & Quaglia, I.
+  (2024).
+  G6-1.5K-SAI: a new Geoengineering Model Intercomparison Project (GeoMIP) experiment integrating recent advances in
+  solar radiation modification studies.
+  Geoscientific Model Development, 17(7), 2583–2596. https://doi.org/10.5194/gmd-17-2583-2024
+- Visioni, D., Robock, A., Roberts, K. E., Lee, W., Henry, M., Duffey, A., Hirasawa, H., Chegwidden, O., & Sipra, H.
+  (2025).
+  Finalizing Experimental Protocols for the Geoengineering Model Intercomparison Project (GeoMIP) Contribution to CMIP7.
+  Bulletin of the American Meteorological Society, 106(10), E2029–E2035. https://doi.org/10.1175/bams-d-25-0191.1
 
 ## Experiment set up
 
