@@ -8,6 +8,59 @@ title: CMIP7 Updates for modelling groups
 This page will be updated with information of interest to modelling groups that the CMIP IPO has communicated by email (most recent at top).
 
 ---
+## 30 September 2026
+
+**Subject:** CMIP7 update: hl and m-ext scenario forcings available now, data delivery updates requested, and new QA/QC version available for testing
+ 
+
+1. Please provide an update on your data delivery timeline
+
+2.	HL and M-ext scenario land use forcings now available!
+
+3.	QAQC new version beta release available for testing
+
+4.	Reminder: Request from the CMIP Panel: Updated ECS/TCR/TCRE analysis
+
+5.	Where to go if you need support with publication
+
+### 1.	Please provide an update on your data delivery timeline
+The IPO are asked regularly when data is expected so communities can plan their work. Please can you review your last submission and update with your new data delivery timeline by clicking the relevant link(s) in the table at the end of the email you were sent.
+
+To support downstream activities (e.g., CORDEX, ISIMIP and ISMIP7) and key partners such as IPCC AR7 WGI we are asking you to provide an update on your CMIP7 Assessment Fast Track simulation status using the dedicated centre/model specific links in the table below. The status can then be [viewed here](https://wcrp-cmip.org/cmip-phases/cmip7/#when_to_expect_cmip7_data) – you may notice many of the updates are now out of date!
+
+### 2.	HL and M-ext scenario land use forcings now available!
+We are pleased to let you know that the land use forcing for the HL and M-ext scenarios are now available on ESGF! You can [access the new datasets here](https://metagrid-nersc.west.esgf.io/search?project=input4MIPs&activeFacets=%7B%22institution_id%22%3A%22UofMD%22%2C%22source_version%22%3A%223.1%22%2C%22source_id%22%3A%5B%22UofMD-landState-m-ext-3-1%22%2C%22UofMD-landState-hl-3-1%22%5D%7D). 
+
+The outstanding scenario forcing datasets to be delivered are:
+
+- LN, ML and L ozone and nitrogen deposition (expected imminently)
+- HL-ext land use (anticipated end of October)
+- LN, ML and L land use (anticipated before end of year)
+
+### 3.	QA/QC new version beta release available for testing
+The QA/QC development team have prepared a [beta release of the QA/QC framework](https://github.com/ESGF/cc-plugin-wcrp/releases/tag/v2.4.0b1), including work completed over the past few weeks on coordinate validation, in close collaboration with the CV Task Team.
+
+This release is available for modelling groups willing to test it and provide feedback.
+
+The QA/QC team have already run a number of tests on CMIP7 files, but naturally not on a sufficiently diverse set of datasets to catch every possible issue. We therefore expect that some adjustments will still be needed, particularly regarding the severity levels assigned to some checks.
+
+We are ready to react quickly to any feedback that comes in. Feedback can be left via Issues in the QA/QC GitHub repo.
+
+### 4.	Request from the CMIP Panel: Updated ECS/TCR/TCRE analysis
+The CMIP Panel previously led a community paper assessing the equilibrium climate sensitivity (ECS) and Transient Climate Response (TCR) of CMIP6 models (Meehl et al., 2020), compiling estimates across CMIP6 and comparing them with values from earlier CMIP phases. The emergence of a subset of CMIP6 models with notably higher ECS and TCR attracted considerable scientific, policy, and media attention.
+
+To support early understanding of the CMIP7 model ensemble, the CMIP Panel would like to gather preliminary information on expected ECS and TCR/TCRE from participating modelling centres. Collecting these insights ahead of the widespread publication of model data and the availability of results through the Rapid Evaluation Framework would provide an early indication of the characteristics of the emerging CMIP7 ensemble. With the focus of emissions driven runs in CMIP7, the CMIP Panel are keen to emphasise TCR/TCRE over ECS in this analysis. 
+
+In addition to supporting a community paper on CMIP7 ECS and TCR/TCRE, led by the CMIP Panel on behalf of the CMIP7 modelling community, this effort would help facilitate timely and evidence-based communication in response to anticipated interest from the media, policymakers, and the wider public.
+
+Please complete this short survey for each model that your centre/group will contribute to CMIP7 (link is in the email you were sent).
+
+### 5. Where to go if you need support
+If you or your colleagues are having any issues with the publication process, we recommend you attend the CDNOT meetings and/or contact the IPO and we can help point you in the right direction.
+
+If you do not receive the CDNOT meeting invites but would like to attend, please contact the CMIP IPO.
+
+---
 ## 14 September 2026
 
 **Subject:** CMIP7 update: ECS/TCR/TCRE requests, hl availability, citation service drop-ins, and tool/guidance updates
