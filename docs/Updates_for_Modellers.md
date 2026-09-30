@@ -12,10 +12,15 @@ This page will be updated with information of interest to modelling groups that 
 
 **Subject:** CMIP7 update: hl and m-ext scenario forcings available now, data delivery updates requested, and new QA/QC version available for testing
  
+
 1. Please provide an update on your data delivery timeline
+
 2.	HL and M-ext scenario land use forcings now available!
+
 3.	QAQC new version beta release available for testing
+
 4.	Reminder: Request from the CMIP Panel: Updated ECS/TCR/TCRE analysis
+
 5.	Where to go if you need support with publication
 
 ### 1.	Please provide an update on your data delivery timeline
