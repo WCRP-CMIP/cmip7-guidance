@@ -52,7 +52,7 @@ There are 3 options to access the data:
          07-10-2026: Metagrid deployed at the West indexes have not been displaying CMIP7 data (under investigation). Use East index if West index does not allow CMIP7 searches.
          A further update to the URL for metagrid deployed at ORNL is expected within the next month.
 
- 3. **Using a python package**
+ 2. **Using a python package**
 
     For larger queries, it might be more appropriate to automate the search and downloads. A few packages are available to do this:
 
@@ -60,7 +60,7 @@ There are 3 options to access the data:
     * [ESMValTool][esmvaltool]
     * [intake-esgf][intakeesgf] **Version v2026.9.4 supports interaction with the CMIP7 indexes**
 
-4. **Alternative Access Platforms**
+3. **Alternative Access Platforms**
 
     While all published CMIP7 data is available from ESGF, some of it is additionally hosted in non-ESGF storage facilities. Below are links to some of these replicas. If you know of another place CMIP data is currently being stored, please submit [this form][altaccess] to let us and the community know!
 
