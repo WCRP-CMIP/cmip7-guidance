@@ -43,19 +43,20 @@ CMIP7 model output is available through a distributed data archive developed and
 
 There are 3 options to access the data:
 
- 1. **MetaGrid** ([West index][metagridwest]) ([East index][metagrideast])
+ 1. **MetaGrid** ([West index ORNL][metagridwestornl]) ([West index NERSC][metagridwestnersc]) ([East index][metagrideast])
 
     Web interface to search and download ESGF data. It provides access through http downloads, wget scripts, OPeNDAP URLs and Globus transfers. It is most useful for browsing and downloading a small number of files. The data can be accessed from the web interface links above, enabling users to search across the entire distributed archive as if it were all centrally located.
     
     !!! info ""
         **Current Status** 
-         06-09-2026: West and East Metagrid indexes are mirroring holdings of CMIP7 and CORDEX CMIP6 data. In case of a search returning '0', go to Filter with Facets > Additional Properties > Version and select 'All'.
+         07-10-2026: Metagrid deployed at the West indexes have not been displaying CMIP7 data (under investigation). Use East index if West index does not allow CMIP7 searches.
+         A further update to the URL for metagrid deployed at ORNL is expected within the next month.
 
  2. **Using a python package**
 
     For larger queries, it might be more appropriate to automate the search and downloads. A few packages are available to do this:
 
-    * [ESGpull][esgpull]  **Status (04-09-2026): Awaiting an update to work with the new ESGF indexes, coming soon**
+    * [ESGpull][esgpull]  **Version 0.10.0 supports interaction with the CMIP7 indexes, but does need some configuration (see docs)**
     * [ESMValTool][esmvaltool]
     * [intake-esgf][intakeesgf] **Version v2026.9.4 supports interaction with the CMIP7 indexes**
 
@@ -104,7 +105,7 @@ To enable modelling groups and others who support CMIP7 to demonstrate its impac
     For CMIP7, the granularity of the data citations is at the level of a model's contribution to an experiment, such that all ensemble members plus all errata and future corrections within an experiment (new dataset versions, if any) are covered by one citation. Note, in the citation service it is possible to have multiple versions of a citation (_different from the dataset version_) if a citation needs to be updated (to update the authors list, for example). In that case, vX will be added after the title in the textual citation.
 
     ??? Question "How to find the DOI and the version?"
-        🔍 You can search databases.  The [Citation Search][citesearch] can help you find the DOI. [MetaGrid][metagridwest] results indicate the version and have a citation tab.
+        🔍 You can search databases.  The [Citation Search][citesearch] can help you find the DOI. [MetaGrid][metagrideast] results indicate the version and have a citation tab.
 
         🤖 You can use the experimental python library [CMIPcite][cmipcite]. Input tracking_id(s), dataset PID(s) or file paths(s) to retrieve the citation (textually or in the bibtex format) and latex table of data information (status: feature in development).
   
@@ -364,7 +365,8 @@ If something is missing from this documentation, please open an issue [here][iss
 *[ARCO]: Analysis-Ready Cloud-Optimized
 
  <!-- valid general links -->
-[metagridwest]: https://metagrid.esgf-west.org/
+[metagridwestornl]: https://metagrid.esgf-west.org/
+[metagridwestnersc]: https://metagrid-nersc.west.esgf.io/
 [metagrideast]: https://metagrid-ceda.east.esgf.io/search
 [metagridllnl]: https://aims2.llnl.gov/search/
 [metagriddkrz]: https://esgf-metagrid.cloud.dkrz.de/search
