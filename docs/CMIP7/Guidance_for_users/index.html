@@ -2789,18 +2789,19 @@
 <p>There are 3 options to access the data:</p>
 <ol>
 <li>
-<p><strong>MetaGrid</strong> (<a href="https://metagrid.esgf-west.org/">West index</a>) (<a href="https://metagrid-ceda.east.esgf.io/search">East index</a>)</p>
+<p><strong>MetaGrid</strong> (<a href="https://metagrid.esgf-west.org/">West index <abbr title="Oak Ridge National Laboratory">ORNL</abbr></a>) (<a href="https://metagrid-nersc.west.esgf.io/">West index NERSC</a>) (<a href="https://metagrid-ceda.east.esgf.io/search">East index</a>)</p>
 <p>Web interface to search and download ESGF data. It provides access through http downloads, wget scripts, OPeNDAP URLs and Globus transfers. It is most useful for browsing and downloading a small number of files. The data can be accessed from the web interface links above, enabling users to search across the entire distributed archive as if it were all centrally located.</p>
 <div class="admonition info">
 <p><strong>Current Status</strong> 
- 06-09-2026: West and East Metagrid indexes are mirroring holdings of <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> and CORDEX CMIP6 data. In case of a search returning '0', go to Filter with Facets &gt; Additional Properties &gt; Version and select 'All'.</p>
+ 07-10-2026: Metagrid deployed at the West indexes have not been displaying <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> data (under investigation). Use East index if West index does not allow <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> searches.
+ A further update to the URL for metagrid deployed at <abbr title="Oak Ridge National Laboratory">ORNL</abbr> is expected within the next month.</p>
 </div>
 </li>
 <li>
 <p><strong>Using a python package</strong></p>
 <p>For larger queries, it might be more appropriate to automate the search and downloads. A few packages are available to do this:</p>
 <ul>
-<li><a href="https://esgf.github.io/esgf-download/">ESGpull</a>  <strong>Status (04-09-2026): Awaiting an update to work with the new ESGF indexes, coming soon</strong></li>
+<li><a href="https://esgf.github.io/esgf-download/">ESGpull</a>  <strong>Version 0.10.0 supports interaction with the <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> indexes, but does need some configuration (see docs)</strong></li>
 <li><a href="https://esmvaltool.org/">ESMValTool</a></li>
 <li><a href="https://github.com/esgf2-us/intake-esgf">intake-esgf</a> <strong>Version v2026.9.4 supports interaction with the <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> indexes</strong></li>
 </ul>
@@ -2844,7 +2845,7 @@
 <p>For <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr>, the granularity of the data citations is at the level of a model's contribution to an experiment, such that all ensemble members plus all errata and future corrections within an experiment (new dataset versions, if any) are covered by one citation. Note, in the citation service it is possible to have multiple versions of a citation (<em>different from the dataset version</em>) if a citation needs to be updated (to update the authors list, for example). In that case, vX will be added after the title in the textual citation.</p>
 <details class="question">
 <summary>How to find the DOI and the version?</summary>
-<p>🔍 You can search databases.  The <a href="https://cmip7-citations.ceda.ac.uk/citations/">Citation Search</a> can help you find the DOI. <a href="https://metagrid.esgf-west.org/">MetaGrid</a> results indicate the version and have a citation tab.</p>
+<p>🔍 You can search databases.  The <a href="https://cmip7-citations.ceda.ac.uk/citations/">Citation Search</a> can help you find the DOI. <a href="https://metagrid-ceda.east.esgf.io/search">MetaGrid</a> results indicate the version and have a citation tab.</p>
 <p>🤖 You can use the experimental python library <a href="https://cmipcite.readthedocs.io/en/latest/">CMIPcite</a>. Input tracking_id(s), dataset PID(s) or file paths(s) to retrieve the citation (textually or in the bibtex format) and latex table of data information (status: feature in development).</p>
 <p>🖱️ You can also use the tracking id. Take the <code>tracking_id</code> global attribute of a file and search it in the <a href="https://esgf.wcrp-cmip.org/other-pid-lookup">PID lookup page</a>. The dataset version is at the end of the title in format vYYYYMMDD. For the citation link, click on "show raw JSON" and find the cite-as under the 'links' key (status: some cite-as are missing at the moment).</p>
 </details>
