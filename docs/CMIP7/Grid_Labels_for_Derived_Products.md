@@ -11,7 +11,7 @@ This page provides guidance on which `grid_label` to use when reporting data on 
 
     This guidance does **not** concern new variables computed from other variables (e.g., computing relative humidity from temperature and specific humidity). It concerns the same variable reported on a **non-standard spatial sampling**: a zonal mean, a global mean, data at specific sites, etc. The variable itself (`tas`, `thetao`, ...) is unchanged -- what differs is the horizontal grid on which it is reported.
 
-These outputs are not on standard 2D horizontal grids but are spatially reduced from them, which raises the question of how to assign the `grid_label` used in the [DRS file naming and directory structure](./Global_Attributes.md#4-file-name-template).
+These outputs are not on standard 2D horizontal grids but are spatially reduced from them, which raises the question of how to assign the `grid_label` used in the [DRS file naming and directory structure](./Global_Attributes.md#2-filenames).
 
 **Quick links:** [Guidance for data producers](#2-two-acceptable-approaches) | [Guidance for data users](#3-guidance-for-data-users) | [Summary table](#4-summary-table) | [Examples](#6-examples)
 
