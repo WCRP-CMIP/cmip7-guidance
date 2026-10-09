@@ -5,14 +5,7 @@ title: Grid Labels for Non-2D Grids
 
 # Grid Labels for Non-2D Grids
 
-!!! info "Document status"
-
-    **Status:** Draft v2 -- pending review by the CMIP Panel.
-    This guidance was prepared by the CV Task Team following discussions at the WIP extended panel meeting (August 2026).
-
-    **Open question for CV-TT:** The title "non-2D grids" (suggested by Karl Taylor to replace "derived products") is technically imprecise -- site data (`hs`) is 0D points scattered in 2D space, and transects (`ht`) are lines in 2D space, so the outputs are not strictly "non-2D". Alternatives considered: "reduced grids", "non-standard grids". To be decided.
-
-This page provides guidance on which `grid_label` to use when reporting data on **non-2D grids** such as global means, zonal means, basin means, site data, and transect data.
+This page provides guidance on which `grid_label` to use when reporting data on **non-2D grids** such as global means, zonal means, ocean basin data, site data, and transect data.
 
 !!! note "What "non-2D grids" means in this document"
 
@@ -41,13 +34,21 @@ The [horizontal label](./Branded_Variables.md#horizontal-labels) component of th
 | Horizontal label | Description | Examples |
 |---|---|---|
 | `hxy` | Standard longitude-latitude field | Most variables |
-| `hy` | Zonal mean | Zonal-mean temperature, wind |
-| `hyb` | Zonal mean by ocean basin | Basin-mean ocean transport as a function of latitude |
+| `hy` | Zonal mean | Zonal-mean air temperature (`ta`), eastward wind (`ua`), ozone (`o3`) on pressure levels |
+| `hyb` | Zonal mean by ocean basin | Northward ocean heat transport (`hfbasin`), ocean overturning mass streamfunction (`msftm`) as a function of latitude |
 | `hs` | Site-specific data | Variables sampled at fixed measurement stations |
-| `ht` | Transect data | Ocean transports across straits ([oline](https://cmip-data-request.github.io/cmip7-dreq-webview/latest/variables.html)), sea-ice transports across lines ([siline](https://cmip-data-request.github.io/cmip7-dreq-webview/latest/variables.html)) |
+| `ht` | Transect data | Ocean transports across straits ([oline](https://cmip-data-request.github.io/cmip7-dreq-webview/latest/variables.html)), sea-ice transports across lines ([siline](https://cmip-data-request.github.io/cmip7-dreq-webview/latest/variables.html)), ocean overturning streamfunctions on the native grid (`msfty`, `msftypa`) |
 | `hm` | Horizontal (area) mean | Global mean, hemispheric mean, sub-global means (e.g., 30S-90S, Antarctica, Greenland) |
 
 This guidance applies to all non-`hxy` horizontal labels.
+
+!!! note "What the Data Request contains"
+
+    As of [Data Request](https://cmip-data-request.github.io/cmip7-dreq-webview/latest/variables.html) v1.2.2.5:
+
+    - All `hy` variables are atmospheric (atmosphere, aerosol and atmospheric chemistry), on pressure levels, with area label `air`. There are no ocean `hy` variables: ocean zonal quantities are requested by basin (`hyb`).
+    - All `hyb` variables are ocean transports or overturning streamfunctions. They are **sums** along each basin, not means: their `cell_methods` contain `longitude: sum where sea (along a zig-zag grid path spanning a basin)`.
+    - `ht` includes both line transects (`oline`, `siline`) and ocean overturning streamfunctions on the native grid (`msfty`, `msftypa`), which have `gridlatitude` and `basin` dimensions.
 
 ---
 
@@ -59,7 +60,7 @@ However, this guidance was not available at the start of CMIP7 production, and s
 
 !!! warning "Impact on archive consistency and data discoverability"
 
-    If some models use dedicated grid labels (e.g., `g239` for a zonal mean) while others use their parent grid label (e.g., `g110`, `g126`), users searching the ESGF archive by `grid_label` will not find all zonal mean data in a single query. A multi-model analysis of zonal mean ocean temperature, for example, would require users to know which approach each model used -- or to filter by `horizontal_label` instead of `grid_label`. Registering dedicated grids avoids this fragmentation.
+    If some models use dedicated grid labels (e.g., `g239` for a zonal mean) while others use their parent grid label (e.g., `g100`, `g110`), users searching the ESGF archive by `grid_label` will not find all zonal mean data in a single query. A multi-model analysis of zonal mean air temperature, for example, would require users to know which approach each model used -- or to filter by `horizontal_label` instead of `grid_label`. Registering dedicated grids avoids this fragmentation.
 
 Modelling centres may use different approaches for different product types (e.g., a shared registered grid for global means, and the parent grid for zonal means). Whichever approach is chosen for a given product, the horizontal label in the branding suffix **must** be set correctly (i.e., not `hxy`) to reflect the nature of the non-2D output.
 
@@ -71,34 +72,34 @@ Modelling centres may use different approaches for different product types (e.g.
 
 The recommended approach is to register a specific grid for each type of non-2D output via the [Essential Model Documentation (EMD)](https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/).
 
-For the most common non-2D outputs, **shared grid labels** are registered (or will be registered) centrally so that all modelling centres can use the same `grid_label`, without needing to register their own. The table below lists the current status. Always check the [EMD grid viewer](https://emd.mipcvs.dev/docs/grid_viewer/horizontal/) for the latest registered grids.
+For the most common non-2D outputs, **shared grid labels** are registered centrally so that all modelling centres can use the same `grid_label`, without needing to register their own. Shared grids are not tied to any model: any `source_id` can use them, since non-2D output can be computed from the output of any model. The table below lists the current status. Always check the [EMD grid viewer](https://emd.mipcvs.dev/docs/grid_viewer/horizontal/) for the latest registered grids.
 
 | Product type | Description | Shared grid | Status |
 |---|---|---|---|
-| Global mean (`hm`) | Single grid cell covering the globe | [`g190`](https://github.com/WCRP-CMIP/Essential-Model-Documentation/blob/src-data/horizontal_grid_cell/g190.json) | Registered (1 cell, 360x180 deg) |
-| Northern Hemisphere mean (`hm`) | Single grid cell covering NH | [`g010`](https://github.com/WCRP-CMIP/Essential-Model-Documentation/blob/src-data/horizontal_grid_cell/g010.json) | Registered (1 cell, 360x90 deg) |
-| Southern Hemisphere mean (`hm`) | Single grid cell covering SH | [`g011`](https://github.com/WCRP-CMIP/Essential-Model-Documentation/blob/src-data/horizontal_grid_cell/g011.json) | Registered (1 cell, 360x90 deg) |
-| Site data (`hs`) | Fixed set of measurement sites ([site list on Zenodo](https://zenodo.org/records/17966101)) | [`g012`](https://github.com/WCRP-CMIP/Essential-Model-Documentation/blob/src-data/horizontal_grid_cell/g012.json) | Registered (discrete-points) |
-| Ocean line transects (`ht`, oline) | Transports across fixed ocean straits | [`g013`](https://github.com/WCRP-CMIP/Essential-Model-Documentation/blob/src-data/horizontal_grid_cell/g013.json) | Registered (discrete-lines) |
-| Sea-ice line transects (`ht`, siline) | Transports across fixed sea-ice lines | [`g013`](https://github.com/WCRP-CMIP/Essential-Model-Documentation/blob/src-data/horizontal_grid_cell/g013.json) | Registered (discrete-lines) |
-| Zonal mean (`hy`) and basin mean (`hyb`) | Mean over longitudes, reported as a function of latitude | Centre-specific | Each centre must register its own (latitude resolution depends on source grid). Example: [`g239`](https://github.com/WCRP-CMIP/Essential-Model-Documentation/blob/src-data/horizontal_grid_cell/g239.json) is a 1-degree zonal mean grid (180 cells). To find existing zonal mean grids, filter the [EMD grid viewer](https://emd.mipcvs.dev/docs/grid_viewer/horizontal/) with x_resolution = 360 and y_resolution matching your latitude spacing |
+| Global mean (`hm`) | Single grid cell covering the globe | [`g010`](https://github.com/WCRP-CMIP/Essential-Model-Documentation/blob/src-data/horizontal_grid_cell/g010.json) | Registered (1 cell, 360x180 deg) |
+| Sub-global mean (`hm`) | Mean or total over a region (e.g., `30S-90S`, `ata`, `grl`) | [`g010`](https://github.com/WCRP-CMIP/Essential-Model-Documentation/blob/src-data/horizontal_grid_cell/g010.json) | Registered (1 cell, 360x180 deg). The `region` DRS element identifies the region |
+| Northern Hemisphere mean (`hm`) | Single grid cell covering NH | [`g011`](https://github.com/WCRP-CMIP/Essential-Model-Documentation/blob/src-data/horizontal_grid_cell/g011.json) | Registered (1 cell, 360x90 deg) |
+| Southern Hemisphere mean (`hm`) | Single grid cell covering SH | [`g012`](https://github.com/WCRP-CMIP/Essential-Model-Documentation/blob/src-data/horizontal_grid_cell/g012.json) | Registered (1 cell, 360x90 deg) |
+| Site data (`hs`) | Fixed set of measurement sites ([site list on Zenodo](https://zenodo.org/records/17966101)) | [`g013`](https://github.com/WCRP-CMIP/Essential-Model-Documentation/blob/src-data/horizontal_grid_cell/g013.json) | Registered (discrete-points) |
+| Ocean line transects (`ht`, oline) | Transports across fixed ocean straits | [`g014`](https://github.com/WCRP-CMIP/Essential-Model-Documentation/blob/src-data/horizontal_grid_cell/g014.json) | Registered (discrete-lines) |
+| Sea-ice line transects (`ht`, siline) | Transports across fixed sea-ice lines | [`g014`](https://github.com/WCRP-CMIP/Essential-Model-Documentation/blob/src-data/horizontal_grid_cell/g014.json) | Registered (discrete-lines) |
+| Overturning on the native grid (`ht`, `msfty`, `msftypa`) | Streamfunctions along native grid rows, by basin | Centre-specific | No shared grid: `g014` does not apply because these are not line transects. Register your own output grid via the [EMD Submission Guide](https://emd.mipcvs.dev/docs/Information_for_Submitters/Submission-Guide/#stage-1-grid-cells). The parent grid is a last resort (see [Section 2.2](#22-alternative-use-the-parent-grid-label)) |
+| Zonal mean (`hy`) | Mean over all longitudes, reported as a function of latitude (atmosphere only in the current Data Request) | Centre-specific | Each centre must register its own (latitude resolution depends on source grid). Example: [`g239`](https://github.com/WCRP-CMIP/Essential-Model-Documentation/blob/src-data/horizontal_grid_cell/g239.json) is a 1-degree zonal mean grid (180 cells). To find existing zonal mean grids, filter the [EMD grid viewer](https://emd.mipcvs.dev/docs/grid_viewer/horizontal/) with grid_type "regular-latitude-longitude", x_resolution = 360 and y_resolution matching your latitude spacing |
+| Basin (`hyb`) | Sum over each ocean basin, reported as a function of latitude | [`g015`](https://github.com/WCRP-CMIP/Essential-Model-Documentation/blob/src-data/horizontal_grid_cell/g015.json) (1-degree latitude bands) | Registered (basin-zonal-bands). For other latitude spacings, register your own basin grid. See [Ocean basin grids](#ocean-basin-grids) |
 
 !!! tip "Already registered grids you can reuse"
 
-    - **`g190`** -- A single grid cell covering the entire globe (360x180 deg, 1 cell). Use for global means.
-    - **`g010`** -- A single grid cell covering the Northern Hemisphere (360x90 deg, 1 cell). Use for NH means.
-    - **`g011`** -- A single grid cell covering the Southern Hemisphere (360x90 deg, 1 cell). Use for SH means.
-    - **`g012`** -- A discrete-points grid for site data. Use for all `hs` variables.
-    - **`g013`** -- A discrete-lines grid for transect data. Use for oline and siline variables.
-    - **`g239`** -- A zonal mean grid at 1-degree latitude resolution (180 cells, latitudes from -89.5 to 89.5). If your model's zonal mean or basin mean output has the same latitude resolution, you can reuse this grid label instead of registering a new one.
+    - **`g010`** -- A single grid cell covering the entire globe (360x180 deg, 1 cell). Use for global and sub-global means.
+    - **`g011`** -- A single grid cell covering the Northern Hemisphere (360x90 deg, 1 cell). Use for NH means.
+    - **`g012`** -- A single grid cell covering the Southern Hemisphere (360x90 deg, 1 cell). Use for SH means.
+    - **`g013`** -- A discrete-points grid for site data. Use for all `hs` variables.
+    - **`g014`** -- A discrete-lines grid for transect data. Use for oline and siline variables.
+    - **`g015`** -- An ocean basin grid with zonal bands at 1-degree latitude resolution (latitudes from -89.5 to 89.5). Use for basin (`hyb`) output on 1-degree latitude bands.
+    - **`g239`** -- A zonal mean grid at 1-degree latitude resolution (180 cells, latitudes from -89.5 to 89.5). If your model's zonal mean (`hy`) output has the same latitude resolution, you can reuse this grid label instead of registering a new one. It cannot be used for basin (`hyb`) data (see [Ocean basin grids](#ocean-basin-grids)).
 
     Check the [EMD grid viewer](https://emd.mipcvs.dev/docs/grid_viewer/horizontal/) or the [EMD repository](https://github.com/WCRP-CMIP/Essential-Model-Documentation/tree/src-data/horizontal_grid_cell) for the full list of registered grids.
 
-For **zonal means** (`hy`) and **basin means** (`hyb`), modelling centres must register their own grids if no existing grid matches their latitude resolution. See the [EMD Submission Guide](https://emd.mipcvs.dev/docs/Information_for_Submitters/Submission-Guide/#stage-1-grid-cells) for how to do this.
-
-#### Zonal means and basin means share the same grid
-
-Zonal mean (`hy`) and basin mean (`hyb`) data share the same latitude dimension and should use the **same `grid_label`**. The `basin` dimension in basin mean data is a category (containing values such as `atlantic_arctic_ocean`, `indian_pacific_ocean`, `global_ocean`), not a spatial dimension that defines a different grid. Since only the latitude axis defines the grid, a single registered grid serves both `hy` and `hyb` output at the same latitude resolution.
+For **zonal means** (`hy`), modelling centres must register their own grid if no existing grid matches their latitude resolution. See the [EMD Submission Guide](https://emd.mipcvs.dev/docs/Information_for_Submitters/Submission-Guide/#stage-1-grid-cells) for how to do this. For **basin data** (`hyb`), use `g015` if your output is on 1-degree latitude bands, otherwise register your own basin grid (see [Ocean basin grids](#ocean-basin-grids)). For **overturning streamfunctions on the native grid** (`msfty`, `msftypa`), no shared grid exists: register your own output grid.
 
 **Advantages of registering a dedicated grid:**
 
@@ -113,6 +114,16 @@ Zonal mean (`hy`) and basin mean (`hyb`) data share the same latitude dimension 
 2. If a shared grid exists (e.g., for global means or site data), use it
 3. If no suitable grid exists (e.g., for zonal means on your specific latitude grid), register a new output grid via the [EMD Submission Guide](https://emd.mipcvs.dev/docs/Information_for_Submitters/Submission-Guide/#stage-1-grid-cells)
 4. Use the registered `grid_label` in your file names and directory paths
+
+#### Ocean basin grids
+
+Ocean basin data has a `basin` dimension that categorises different basins (containing values such as `atlantic_arctic_ocean`, `indian_pacific_ocean`, `global_ocean`), and a latitude dimension that contains the latitude locations for all basins (an individual basin's data will store missing values for latitudes not spanned by the basin). In the current Data Request, all `hyb` variables are transports or streamfunctions summed along a path of the model grid spanning each basin, so each latitude value is the nominal latitude of that grid path.
+
+An atmospheric zonal mean grid cannot be used for ocean basins, and vice versa. This is because they have different grid types and different `x_resolution`: the ocean basin grid type is "basin-zonal-bands" and has no `x_resolution` (it varies for each basin and latitude), whereas the atmospheric zonal mean grid type is "regular-latitude-longitude" with `x_resolution` = 360 degrees.
+
+!!! tip "Shared basin grid"
+
+    `g015` is a shared basin grid with zonal bands at 1-degree latitude resolution (latitudes from -89.5 to 89.5). If your basin output is on 1-degree latitude bands, use `g015`. Otherwise, register your own basin grid with grid type "basin-zonal-bands" and the `y_resolution` matching your latitude spacing, following the [EMD Submission Guide](https://emd.mipcvs.dev/docs/Information_for_Submitters/Submission-Guide/#stage-1-grid-cells).
 
 ### 2.2 Alternative: Use the Parent Grid Label
 
@@ -136,18 +147,18 @@ The parent grid is the **reporting grid from which the non-2D output was compute
 
 !!! warning "Curvilinear and tripolar ocean grids"
 
-    Many ocean models use curvilinear or tripolar grids (e.g., ORCA, tripolar NEMO) where latitude lines do not align with grid rows. There are two common ways to compute a zonal mean from such grids:
+    Many ocean models use curvilinear or tripolar grids (e.g., ORCA, tripolar NEMO) where latitude lines do not align with grid rows. There are two common ways to compute basin (`hyb`) quantities from such grids:
 
-    **Path A -- Regrid first, then compute the zonal mean:**
-    You regrid from the native tripolar grid to a regular latitude-longitude grid, then average over longitudes.
-    For example, your native ocean grid is [`g156`](https://github.com/WCRP-CMIP/Essential-Model-Documentation/blob/src-data/horizontal_grid_cell/g156.json) (tripolar, 120184 cells). You regrid to [`g123`](https://github.com/WCRP-CMIP/Essential-Model-Documentation/blob/src-data/horizontal_grid_cell/g123.json) (regular 2x2 deg, 14400 cells), then compute the zonal mean from `g123`.
+    **Path A -- Regrid first, then compute:**
+    You regrid from the native tripolar grid to a regular latitude-longitude grid, then sum over each basin.
+    For example, your native ocean grid is [`g156`](https://github.com/WCRP-CMIP/Essential-Model-Documentation/blob/src-data/horizontal_grid_cell/g156.json) (tripolar, 120184 cells). You regrid to [`g123`](https://github.com/WCRP-CMIP/Essential-Model-Documentation/blob/src-data/horizontal_grid_cell/g123.json) (regular 2x2 deg, 14400 cells), then compute the basin quantities from `g123`.
     In this case, the parent grid is **`g123`** (the regular grid), not `g156` (the native grid).
 
-    **Path B -- Compute directly from the native grid using weighted sums:**
-    You compute the zonal mean directly on the tripolar grid by binning grid cells into latitude bands and using area-weighted sums -- no intermediate regridding step.
+    **Path B -- Compute directly on the native grid:**
+    You sum along grid paths spanning each basin directly on the tripolar grid -- no intermediate regridding step. This is what the Data Request `cell_methods` describe ("along a zig-zag grid path spanning a basin").
     In this case, the parent grid is **`g156`** (the native tripolar grid).
 
-    In both cases, the recommended approach remains to register a **dedicated zonal mean grid** (see [Section 2.1](#21-recommended-register-a-dedicated-grid)) rather than reusing the parent grid label. The dedicated grid will accurately describe the output (e.g., 90 latitude cells at 2-degree spacing) regardless of how the zonal mean was computed.
+    In both cases, the recommended approach is a **dedicated basin grid** (see [Ocean basin grids](#ocean-basin-grids)) rather than reusing the parent grid label: `g015` for 1-degree latitude bands, or your own registered basin grid otherwise (e.g., 90 latitudes at 2-degree spacing). The dedicated grid accurately describes the output regardless of how the basin quantities were computed.
 
 ---
 
@@ -162,19 +173,19 @@ Because modelling centres may use different `grid_label` approaches (see [Sectio
 | To find... | Filter by `horizontal_label` |
 |---|---|
 | Zonal mean data | `hy` |
-| Basin mean data | `hyb` |
-| Global, hemispheric, or sub-global means | `hm` (combine with `region`, e.g., `glb`, `nh`, `sh`, `30s-90s`) |
+| Basin data | `hyb` |
+| Global, hemispheric, or sub-global means | `hm` (combine with `region`, e.g., `glb`, `nh`, `sh`, `30S-90S`, `ata`, `grl`) |
 | Site data | `hs` |
 | Transect data (oline, siline) | `ht` |
 
-The `horizontal_label` is both a global attribute in the netCDF file and the third component of the branding suffix in the DRS path and file name. For example, in `thetao_tavg-ol-hy-u_mon_glb_g239_...nc`, the `hy` in the branding suffix `tavg-ol-hy-u` identifies this as a zonal mean.
+The `horizontal_label` is both a global attribute in the netCDF file and the third component of the branding suffix in the DRS path and file name. For example, in `ta_tavg-p39-hy-air_mon_glb_g239_...nc`, the `hy` in the branding suffix `tavg-p39-hy-air` identifies this as a zonal mean.
 
 ### 3.2 How to determine which grid labelling approach a file uses
 
 There is no metadata flag that explicitly records whether a modelling centre used a dedicated grid or the parent grid. However, you can determine this by looking up the `grid_label` in the [EMD grid viewer](https://emd.mipcvs.dev/docs/grid_viewer/horizontal/):
 
-- If the registered grid has properties consistent with the non-2D output (e.g., `g190` with 1 cell for a global mean, or `g239` with 180 latitude cells for a zonal mean), it is a **dedicated grid**.
-- If the registered grid is a standard 2D grid with thousands of cells (e.g., `g110` with 55296 cells), but the file contains a zonal mean, then the **parent grid** approach was used.
+- If the registered grid has properties consistent with the non-2D output (e.g., `g010` with 1 cell for a global mean, or `g239` with 180 latitude cells for a zonal mean), it is a **dedicated grid**.
+- If the registered grid is a standard 2D grid with thousands of cells (e.g., `g110` with 27648 cells), but the file contains a zonal mean, then the **parent grid** approach was used.
 
 In practice, for most analyses this distinction does not matter -- the data values are the same either way. The `horizontal_label` in the branding suffix reliably tells you the structure of the data.
 
@@ -186,10 +197,10 @@ The following table summarises what you can expect inside a non-2D output file a
 |---|---|---|---|
 | `hxy` | `latitude`, `longitude` (+ `time`, vertical, etc.) | `grid_label` identifies the exact grid | -- |
 | `hy` (zonal mean) | `latitude` (+ `time`, vertical, etc.). No `longitude` | `horizontal_label` confirms it is a zonal mean | Latitude coordinates and bounds for the actual resolution |
-| `hyb` (basin mean) | `latitude`, `basin` (+ `time`, vertical, etc.) | `horizontal_label` confirms it is a basin mean | The `basin` coordinate for which basins are included |
+| `hyb` (basin data) | `latitude`, `basin` (+ `time`, vertical, etc.) | `horizontal_label` confirms it is basin data | The `basin` coordinate for which basins are included |
 | `hs` (site data) | `site` or equivalent (+ `time`, vertical, etc.) | `horizontal_label` confirms it is site data | Coordinate variables (`latitude`, `longitude`) for site locations |
 | `hm` (area mean) | No spatial dimensions (timeseries or scalar) | `horizontal_label` + `region` (e.g., `glb`, `nh`, `sh`) | -- |
-| `ht` (transect) | Transect-specific coordinates | `horizontal_label` confirms it is transect data | Coordinate variables for the transect definition |
+| `ht` (transect) | `line` for oline and siline variables; `gridlatitude` and `basin` for `msfty` and `msftypa` (+ `time`, vertical, etc.) | `horizontal_label` confirms it is transect data | Coordinate variables for the transect definition |
 
 ### 3.4 Cell measures and weighted averages
 
@@ -197,7 +208,7 @@ Cell measure variables (`areacella`, `areacello`, `volcello`) are **not provided
 
 - **Global, hemispheric, or sub-global means** (`hm`): the data is already an area-weighted average -- no further weighting is needed.
 - **Zonal means** (`hy`): if you need to compute a latitude-weighted average (e.g., a global mean from a zonal mean field), use the latitude bounds from the file to compute the area weight of each latitude band (proportional to the difference in sine of the bounding latitudes).
-- **Basin means** (`hyb`): in the current Data Request, all basin mean variables are transports (e.g., northward ocean salt transport in kg/s). Averaging or totalling transports across latitudes is generally not meaningful, and weights are not provided. The basin width information needed for such calculations is not available in the output. If future Data Request versions introduce non-transport basin mean variables, this guidance may need to be revisited.
+- **Basin data** (`hyb`): in the current Data Request, all basin variables are transports or overturning streamfunctions (e.g., northward ocean salt transport in kg/s). Averaging or totalling transports across latitudes is generally not meaningful, and weights are not provided. The basin width information needed for such calculations is not available in the output. If future Data Request versions introduce other kinds of basin variables, this guidance may need to be revisited.
 - **Site data** (`hs`) and **transect data** (`ht`): these are point or line data; area weighting does not apply.
 
 ### 3.5 Quality assurance checks (QA/QC)
@@ -216,20 +227,21 @@ As QA/QC evolves toward more robust validation, checks comparing the file conten
 
 | Product type | Recommended grid_label | Alternative grid_label | Notes |
 |---|---|---|---|
-| Global mean (`hm`) | `g190` (shared) | Parent grid | Region label `glb` distinguishes from 2D output |
-| Hemispheric mean (`hm`) | `g010` (NH) or `g011` (SH) | Parent grid | Region label (e.g., `nh`, `sh`) distinguishes from 2D output |
-| Sub-global mean (`hm`) | `g190` or centre-specific | Parent grid | Region label (e.g., `30s-90s`) distinguishes from 2D output |
+| Global mean (`hm`) | `g010` (shared) | Parent grid | Region label `glb` distinguishes from 2D output |
+| Hemispheric mean (`hm`) | `g011` (NH) or `g012` (SH) | Parent grid | Region label (e.g., `nh`, `sh`) distinguishes from 2D output |
+| Sub-global mean (`hm`) | `g010` (shared) | Parent grid | Region label (e.g., `30S-90S`, `ata`, `grl`) identifies the region |
 | Zonal mean (`hy`) | Register your own (or reuse an existing match, e.g. `g239`) | Parent grid | Latitude resolution depends on source grid |
-| Basin mean (`hyb`) | Same grid as zonal mean at matching latitude resolution | Parent grid | `basin` is a category, not a spatial dimension; see [details](#zonal-means-and-basin-means-share-the-same-grid) |
-| Site data (`hs`) | `g012` (shared) | Parent grid | Sites are fixed across models ([site list](https://zenodo.org/records/17966101)) |
-| Ocean transects (`ht`, oline) | `g013` (shared) | Parent grid | Transect locations are fixed |
-| Sea-ice transects (`ht`, siline) | `g013` (shared) | Parent grid | Transect locations are fixed |
+| Basin data (`hyb`) | `g015` (shared, 1-degree latitude bands) or register your own | Parent grid | Cannot share a grid with zonal means. See [Ocean basin grids](#ocean-basin-grids) |
+| Site data (`hs`) | `g013` (shared) | Parent grid | Sites are fixed across models ([site list](https://zenodo.org/records/17966101)) |
+| Ocean transects (`ht`, oline) | `g014` (shared) | Parent grid | Transect locations are fixed |
+| Sea-ice transects (`ht`, siline) | `g014` (shared) | Parent grid | Transect locations are fixed |
+| Overturning on the native grid (`ht`, `msfty`, `msftypa`) | Register your own | Parent grid (last resort) | Not line transects: `g014` does not apply |
 
 **Key points:**
 
 1. **Always set the horizontal label correctly.** Whatever approach you choose for `grid_label`, the `horizontal_label` in the branding suffix must reflect the nature of the non-2D output (e.g., `hy` for zonal mean, `hm` for area mean). This is not optional. Note that this is currently **not** verified by QA/QC -- it is the responsibility of data producers.
 
-2. **No cell measures are needed for non-2D grids.** Variables such as `areacella` or `areacello` do not need to be provided for zonal mean, basin mean, global mean, site, or transect grids. The Data Request does not include cell area variables for these product types.
+2. **No cell measures are needed for non-2D grids.** Variables such as `areacella` or `areacello` do not need to be provided for zonal mean, basin, global mean, site, or transect grids. The Data Request does not include cell area variables for these product types.
 
 3. **Check for existing grids.** Before registering a new grid, use the [EMD grid viewer](https://emd.mipcvs.dev/docs/grid_viewer/horizontal/) to see if a suitable grid already exists.
 
@@ -243,56 +255,105 @@ As QA/QC evolves toward more robust validation, checks comparing the file conten
 
 ## 5. Registering a New Output Grid
 
-If you need to register a grid for non-2D output (i.e., for zonal means or basin means), follow the [EMD Submission Guide -- Stage 1: Grid Cells](https://emd.mipcvs.dev/docs/Information_for_Submitters/Submission-Guide/#stage-1-grid-cells). Before registering, check the [EMD grid viewer](https://emd.mipcvs.dev/docs/grid_viewer/horizontal/) to verify no suitable grid already exists.
+If you need to register a grid for non-2D output (e.g., for zonal means, basin data, or native-grid overturning streamfunctions), follow the [EMD Submission Guide -- Stage 1: Grid Cells](https://emd.mipcvs.dev/docs/Information_for_Submitters/Submission-Guide/#stage-1-grid-cells). Before registering, check the [EMD grid viewer](https://emd.mipcvs.dev/docs/grid_viewer/horizontal/) to verify no suitable grid already exists.
 
 ---
 
 ## 6. Examples
 
-### 6.1 Global Mean Temperature
+All examples below use variables from the CMIP7 Data Request.
 
-A modelling centre publishes monthly global-mean near-surface air temperature from the historical experiment.
+### 6.1 Global Mean Sea Surface Temperature
 
-**With a dedicated grid (recommended):**
-```
-tas_tavg-h2m-hm-u_mon_glb_g190_ModelA_historical_r1i1p1f1_185001-201412.nc
-```
-Here `g190` is the shared single-cell global grid (1 cell, 360x180 deg).
-
-**With the parent grid:**
-```
-tas_tavg-h2m-hm-u_mon_glb_g110_ModelA_historical_r1i1p1f1_185001-201412.nc
-```
-Here `g110` is the grid used for 2D atmosphere output. The `hm` horizontal label and `glb` region together indicate this is a global area mean, not 2D gridded data.
-
-### 6.2 Zonal Mean Ocean Temperature
-
-A modelling centre publishes monthly zonal-mean ocean temperature. Their ocean model uses a tripolar native grid, which the original data was mapped from to a regular 1-degree grid (`g126`) before computing zonal means.
+A modelling centre publishes monthly global-mean sea surface temperature (`tos`) from the historical experiment. Their native ocean grid is the tripolar grid `g156`.
 
 **With a dedicated grid (recommended):**
 ```
-thetao_tavg-ol-hy-u_mon_glb_g239_ModelA_historical_r1i1p1f1_185001-201412.nc
+tos_tavg-u-hm-sea_mon_glb_g010_ModelA_historical_r1i1p1f1_185001-201412.nc
 ```
-Here `g239` is a registered zonal-mean grid with 180 latitude cells at 1-degree spacing. If your ocean model has the same latitude resolution, you can reuse this grid label.
+Here `g010` is the shared single-cell global grid (1 cell, 360x180 deg).
 
 **With the parent grid:**
 ```
-thetao_tavg-ol-hy-u_mon_glb_g126_ModelA_historical_r1i1p1f1_185001-201412.nc
+tos_tavg-u-hm-sea_mon_glb_g156_ModelA_historical_r1i1p1f1_185001-201412.nc
 ```
-Here `g126` is the regular 1-degree grid which the original data on the native tripolar grid was mapped to before computing zonal means. The `hy` horizontal label tells users that the longitudinal axis has been averaged out.
+Here `g156` is the native ocean grid from which the global mean was computed. The `hm` horizontal label and `glb` region together indicate this is a global area mean, not 2D gridded data.
 
-### 6.3 Site Data
+### 6.2 Hemispheric Sea-Ice Area
 
-A modelling centre publishes temperature at fixed measurement sites.
+A modelling centre publishes monthly Northern Hemisphere sea-ice area (`siarea`), computed from its native ocean/sea-ice grid `g156`.
 
 **With a dedicated grid (recommended):**
 ```
-tas_tavg-h2m-hs-u_mon_glb_g012_ModelA_historical_r1i1p1f1_185001-201412.nc
+siarea_tavg-u-hm-u_mon_nh_g011_ModelA_historical_r1i1p1f1_185001-201412.nc
 ```
-Here `g012` is the shared discrete-points grid for site data. The site locations are defined in the [site list on Zenodo](https://zenodo.org/records/17966101).
+Here `g011` is the shared single-cell Northern Hemisphere grid.
 
 **With the parent grid:**
 ```
-tas_tavg-h2m-hs-u_mon_glb_g110_ModelA_historical_r1i1p1f1_185001-201412.nc
+siarea_tavg-u-hm-u_mon_nh_g156_ModelA_historical_r1i1p1f1_185001-201412.nc
+```
+
+### 6.3 Zonal Mean Air Temperature
+
+A modelling centre publishes monthly zonal-mean air temperature (`ta`) on 39 pressure levels. The zonal mean is computed from atmosphere data regridded to the regular 1x1 deg grid [`g150`](https://github.com/WCRP-CMIP/Essential-Model-Documentation/blob/src-data/horizontal_grid_cell/g150.json).
+
+**With a dedicated grid (recommended):**
+```
+ta_tavg-p39-hy-air_mon_glb_g239_ModelA_historical_r1i1p1f1_185001-201412.nc
+```
+Here `g239` is a registered zonal-mean grid with 180 latitude cells at 1-degree spacing. If your zonal mean has the same latitude resolution, you can reuse this grid label.
+
+**With the parent grid:**
+```
+ta_tavg-p39-hy-air_mon_glb_g150_ModelA_historical_r1i1p1f1_185001-201412.nc
+```
+Here `g150` is the regular 1x1 deg grid from which the zonal mean was computed. The `hy` horizontal label tells users that the longitudinal axis has been averaged out.
+
+### 6.4 Northward Ocean Heat Transport by Basin
+
+A modelling centre publishes monthly northward ocean heat transport by basin (`hfbasin`), computed directly on its native tripolar ocean grid `g156` and reported on 1-degree latitude bands.
+
+**With a dedicated grid (recommended):**
+```
+hfbasin_tavg-u-hyb-sea_mon_glb_g015_ModelA_historical_r1i1p1f1_185001-201412.nc
+```
+Here `g015` is the shared basin grid with zonal bands at 1-degree latitude resolution.
+
+**With the parent grid:**
+```
+hfbasin_tavg-u-hyb-sea_mon_glb_g156_ModelA_historical_r1i1p1f1_185001-201412.nc
+```
+Here `g156` is the native ocean grid on which the transports were computed. The `hyb` horizontal label tells users that the data is reported by basin as a function of latitude.
+
+### 6.5 Site Data
+
+A modelling centre publishes sub-hourly near-surface air temperature (`tas`) at the fixed CFMIP sites.
+
+**With a dedicated grid (recommended):**
+```
+tas_tpt-h2m-hs-u_subhr_glb_g013_ModelA_historical_r1i1p1f1_20140101000000-20141231233000.nc
+```
+Here `g013` is the shared discrete-points grid for site data. The site locations are defined in the [site list on Zenodo](https://zenodo.org/records/17966101).
+
+**With the parent grid:**
+```
+tas_tpt-h2m-hs-u_subhr_glb_g110_ModelA_historical_r1i1p1f1_20140101000000-20141231233000.nc
 ```
 Here `g110` tells users the resolution of the grid from which site data was extracted. The `hs` horizontal label indicates this is site-specific data.
+
+### 6.6 Ocean Transport Across Straits
+
+A modelling centre publishes monthly sea water transport across the ocean straits (`mfo`).
+
+**With a dedicated grid (recommended):**
+```
+mfo_tavg-u-ht-sea_mon_glb_g014_ModelA_historical_r1i1p1f1_185001-201412.nc
+```
+Here `g014` is the shared discrete-lines grid for ocean and sea-ice line transects.
+
+**With the parent grid:**
+```
+mfo_tavg-u-ht-sea_mon_glb_g156_ModelA_historical_r1i1p1f1_185001-201412.nc
+```
+Here `g156` is the native ocean grid on which the transports were computed.
