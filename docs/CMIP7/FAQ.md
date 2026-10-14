@@ -14,7 +14,7 @@ title: CMIP7 Frequently Asked Questions (FAQ)
 
 ### During or before publication, how will data centres verify that grids have been registered?
 
-The grid registration form will list grids that have already been registered. To locate the grid label of a grid that has already been registered, you may use the [EMD grid finder](https://emd.mipcvs.dev/docs/grid_viewer/). 
+The grid registration form will list grids that have already been registered. To locate the grid label of a grid that has already been registered, you may use the [EMD grid finder](https://emd.wcrp-cmip.org/docs/grid_viewer/). 
 
 If your grid has not been registered, you can [register it](https://github.com/WCRP-CMIP/Essential-Model-Documentation/issues/new?template=horizontal_grid_cell.yml)   and a new `grid_label` will be assigned.
 There will be an initial period where the first people to register their grids have to register everything, but these grids will then appear for others to use.
