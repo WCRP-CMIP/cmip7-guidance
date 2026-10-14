@@ -428,7 +428,7 @@ If something is missing from this documentation, please open an issue [here][iss
 [cmip7cmor]: https://github.com/WCRP-CMIP/cmip7-cmor-tables/tree/main/tables-cvs/split-view
 [horgridlist]: https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/grid_viewer/horizontal/
 [vergridlist]: https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/grid_viewer/vertical/
-[publication-summary-ipo]: https://esgf.mipcvs.dev/
+[publication-summary-ipo]: https://esgf.wcrp-cmip.org/
 [publication-summary-ref]: https://www.climate-resource.com/tools/esm-model/cmip7-availability
 
 

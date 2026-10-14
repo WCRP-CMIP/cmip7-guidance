@@ -6,13 +6,13 @@
 links:
   # Direct links (no category - appear at root level)
   - title: "Essential Model Documentation"
-    url: "https://emd.mipcvs.dev/docs/"
+    url: "https://emd.wcrp-cmip.org/docs/"
 
   # - title: "CVs Constants"
-  #  url: "https://constants.mipcvs.dev/docs/"
+  #  url: "https://constants.wcrp-cmip.org/docs/"
 
   # - title: "CVs CMIP7"
-  #   url: "https://cmip7.mipcvs.dev/docs/"
+  #   url: "https://cmip7.wcrp-cmip.org/docs/"
 
 
   # Categorized links

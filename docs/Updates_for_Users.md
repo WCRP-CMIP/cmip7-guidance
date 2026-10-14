@@ -33,6 +33,6 @@ We’re pleased to announce that the first CMIP7 datasets are [now available on 
 
 At the time of sending this email there is data published from five models across three modelling centres and seven experiments. We expect data to continue to be published over the coming months.
 
-To help users access and use the data, we have compiled [guidance on access routes data formats in the CMIP7 Guidance website](https://guidance.mipcvs.dev/CMIP7/Guidance_for_users/). We encourage all users to read through this information, as ESGF has undergone a number of updates since CMIP6. 
+To help users access and use the data, we have compiled [guidance on access routes data formats in the CMIP7 Guidance website](https://guidance.wcrp-cmip.org/CMIP7/Guidance_for_users/). We encourage all users to read through this information, as ESGF has undergone a number of updates since CMIP6. 
 
 ---

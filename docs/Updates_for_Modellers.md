@@ -190,7 +190,7 @@ Once published, all CMIP7 data will be available at:
 ### 4. EMD viewer now available
 We now have a viewer available for the Essential Model Documentation (EMD), making it easier to see all the linked information for each source, once it has successfully passed through all stages of the EMD.
 
-You can explore the [EMD Viewer here](https://emd.mipcvs.dev/docs/Model/?model=ec-earth3-esm-1-1).
+You can explore the [EMD Viewer here](https://emd.wcrp-cmip.org/docs/Model/?model=ec-earth3-esm-1-1).
 
 **PLEASE NOTE**: All models must complete the EMD process before being able to publish CMIP7 data!
 
@@ -320,7 +320,7 @@ Machine readable interfaces:
 - <https://search.east.esgf.io/>
 
 ### EMD update and reminder
-The [Essential Model Documentation](https://emd.mipcvs.dev/docs/) is a required step for contribution towards CMIP7. Over the last month the review process has accelerated and we strongly encourage modelling groups to engage with this process around a month before preparing data for publication. There are two key phases of the EMD process:
+The [Essential Model Documentation](https://emd.wcrp-cmip.org/docs/) is a required step for contribution towards CMIP7. Over the last month the review process has accelerated and we strongly encourage modelling groups to engage with this process around a month before preparing data for publication. There are two key phases of the EMD process:
 
 1. Registration of model and output grids: this ensures that a grid label is available for your data. Each distinct grid on which data is published requires a corresponding label. (Since many common grids have been registered, this step may have been completed by other members of the community.)
 2.	Registration of models and their components: this will finalise the source_id needed for producing publishable output data.
@@ -328,13 +328,13 @@ The [Essential Model Documentation](https://emd.mipcvs.dev/docs/) is a required 
 Producing standardized (CMORized) data requires both grid labels and source_id. Modelling groups should be able to use the allocated grid labels once the first phase is completed, and an assumed source_id, following the [guidance](CMIP7/Source_ID_guidance.md), can be used while the second phase is in progress. Both phases of the EMD process must be completed before ESGF publication can begin.
 
 #### Monitoring the status of your EMD submissions
-If you would like to monitor the status of your submissions to the EMD repository, you can [enter your GitHub ID here](https://emd.mipcvs.dev/docs/Progress_Tracker.html). This tracker will show what you have submitted and which of those have been merged, are in progress by the EMD, or require you to make changes/respond to queries. 
+If you would like to monitor the status of your submissions to the EMD repository, you can [enter your GitHub ID here](https://emd.wcrp-cmip.org/docs/Progress_Tracker.html). This tracker will show what you have submitted and which of those have been merged, are in progress by the EMD, or require you to make changes/respond to queries. 
 
 !!! info "View your registered model"
     Once your EMD Model registration (Step 4) is merged, view your registered model and assigned `source_id` at: [EMD Model Documentation](https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/Model/)
 
 #### Where can I get more help?
-For questions or queries, please send an email to emd@wcrp-cmip.org. We have also compiled some FAQs you might find useful [here](https://emd.mipcvs.dev/docs/FAQ/).
+For questions or queries, please send an email to emd@wcrp-cmip.org. We have also compiled some FAQs you might find useful [here](https://emd.wcrp-cmip.org/docs/FAQ/).
 
 #### How can I help speed up the EMD process?
 They key way to speed up the registration process is to increase our pool of reviewers. Those submitting EMD for their centres will be best placed to review other people’s submissions. We estimate the time committent for reviewers is ~30 minutes per week.
@@ -495,7 +495,7 @@ Several recent updates have been made  to the [CMIP7 Guidance and Documentation 
 
 ### Essential Model Documentation
 
-To register a model for inclusion in CMIP7 the [Essential Model Documentation (EMD)](https://doi.org/10.5281/zenodo.15439551) must be provided. The EMD registration forms are now available for beta testers, and documentation is available at <https://emd.mipcvs.dev/docs>. Model output grids must also be registered using these forms.
+To register a model for inclusion in CMIP7 the [Essential Model Documentation (EMD)](https://doi.org/10.5281/zenodo.15439551) must be provided. The EMD registration forms are now available for beta testers, and documentation is available at <https://emd.wcrp-cmip.org/docs>. Model output grids must also be registered using these forms.
 
 You can track the progress of your EMD submissions using the [Progress Tracker](https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/Progress_Tracker.html) — simply enter your GitHub ID to monitor what's been submitted, what's in review, and what needs revision.
 
