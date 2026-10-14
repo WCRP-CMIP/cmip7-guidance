@@ -379,10 +379,13 @@ In addition, an [`esgf-qa` module](https://github.com/ESGF/esgf-qa) provides a h
 $ esgqa -t wcrp_cmip6:latest -t cf:1.11 -o /path/to/results/output /path/to/dataset
 ```
 
-### 🗣️ How to Contribute
+### 🗣️ How to Contribute and Get Support
 
 If you encounter issues or have suggestions, please **open a GitHub issue** on the project repository:  
 👉 <https://github.com/ESGF/cc-plugin-wcrp/issues>
+
+All questions related to these quality control checks should be asked via this route and the developers will 
+redirect issues related to other sources of information, e.g. CVs, as appropriate.
 
 ## 8.  Archiving/publishing output
 
