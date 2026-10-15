@@ -10,7 +10,7 @@
 
 > [!NOTE]
 > The live site is located at
-> [guidance.mipcvs.dev/](https://guidance.mipcvs.dev/)
+> [guidance.mipcvs.dev/](https://guidance.wcrp-cmip.org/)
 
 > GH generated site also mirrored at
 > [wcrp-cmip.github.io/cmip7-guidance/](https://wcrp-cmip.github.io/cmip7-guidance/)
