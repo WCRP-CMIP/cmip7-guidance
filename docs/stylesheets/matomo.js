@@ -2,26 +2,42 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     // ==========================================
-    // WEBSITE CONFIGURATION
+    // WEBSITE CONFIGURATION — EDIT THESE VALUES
     // ==========================================
 
-    const SITE_ID = "1"; // Change for each Matomo website
+    const SITE_ID = "3"; // Matomo website ID
     const TRACKER_URL = "https://webstats.wcrp-cmip.org/matomo.php";
     const PRIVACY_URL = "https://www.wcrp-cmip.org/privacy-policy/";
 
-    // Separate browser storage for each website
+    // Separate banner preferences for each site
     const ACCEPT = "matomo_cookie_accepted_" + SITE_ID;
     const DENY = "matomo_cookie_denied_" + SITE_ID;
 
     // ==========================================
-    // MATOMO COMMANDS
-    // Assumes your Matomo tracking code is loaded
-    // separately and configures the correct site ID.
+    // MATOMO TRACKER
     // ==========================================
 
+    // Use an existing Matomo tracker if available.
+    // Otherwise, create a tracker for this website.
+    let tracker;
+
+    if (window.Matomo && typeof window.Matomo.getTracker === "function") {
+        tracker = window.Matomo.getTracker(TRACKER_URL, SITE_ID);
+    }
+
     function matomo(command) {
-        if (window._paq) {
-            window._paq.push([command]);
+        if (!tracker) return;
+
+        switch (command) {
+            case "rememberCookieConsentGiven":
+                tracker.rememberCookieConsentGiven();
+                break;
+            case "rememberCookieConsentDismissed":
+                tracker.rememberCookieConsentGiven(); 
+                break;
+            case "forgetCookieConsentGiven":
+                tracker.forgetCookieConsentGiven();
+                break;
         }
     }
 
@@ -84,8 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
             localStorage.removeItem(DENY);
 
             matomo("rememberCookieConsentGiven");
-
-            showStatus("Withdraw cookie consent", true);
+            showStatus("Withdraw cookie consent");
         };
 
         // DENY: remember until the next calendar day
@@ -94,16 +109,15 @@ document.addEventListener("DOMContentLoaded", function () {
             localStorage.setItem(DENY, new Date().toDateString());
 
             matomo("rememberCookieConsentDismissed");
-
-            showStatus("Cookies Blocked", false);
+            showStatus("Cookies Blocked");
         };
     }
 
     // ==========================================
-    // STATUS LINK
+    // CLICKABLE STATUS LINK
     // ==========================================
 
-    function showStatus(text, canWithdraw) {
+    function showStatus(text) {
         document.getElementById("matomo-cookie-banner")?.remove();
         document.getElementById("matomo-status")?.remove();
 
@@ -126,16 +140,10 @@ document.addEventListener("DOMContentLoaded", function () {
         link.onclick = function (event) {
             event.preventDefault();
 
-            if (!canWithdraw) {
-                return;
-            }
-
-            // Withdraw previous acceptance and reopen banner
             localStorage.removeItem(ACCEPT);
             localStorage.removeItem(DENY);
 
             matomo("forgetCookieConsentGiven");
-
             showBanner();
         };
 
@@ -147,14 +155,13 @@ document.addEventListener("DOMContentLoaded", function () {
     // ==========================================
 
     const accepted = localStorage.getItem(ACCEPT) === "true";
-
     const deniedToday =
         localStorage.getItem(DENY) === new Date().toDateString();
 
     if (accepted) {
-        showStatus("Withdraw cookie consent", true);
+        showStatus("Withdraw cookie consent");
     } else if (deniedToday) {
-        showStatus("Cookies Blocked", false);
+        showStatus("Cookies Blocked");
     } else {
         showBanner();
     }
