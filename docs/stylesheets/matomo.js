@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function () {
 
     // ==========================================
@@ -17,8 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // MATOMO TRACKER
     // ==========================================
 
-    // Use an existing Matomo tracker if available.
-    // Otherwise, create a tracker for this website.
     let tracker;
 
     if (window.Matomo && typeof window.Matomo.getTracker === "function") {
@@ -32,11 +29,8 @@ document.addEventListener("DOMContentLoaded", function () {
             case "rememberCookieConsentGiven":
                 tracker.rememberCookieConsentGiven();
                 break;
-            case "rememberCookieConsentDismissed":
-                tracker.rememberCookieConsentGiven(); 
-                break;
             case "forgetCookieConsentGiven":
-                tracker.forgetCookieConsentGiven();
+                tracker.forgetCookieConsentGiven(); // Clears cookies and keeps tracking cookielessly
                 break;
         }
     }
@@ -94,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         document.body.appendChild(banner);
 
-        // ACCEPT
+        // ACCEPT: Enable cookies and remember consent
         banner.querySelector("#cookie-accept").onclick = function () {
             localStorage.setItem(ACCEPT, "true");
             localStorage.removeItem(DENY);
@@ -103,12 +97,12 @@ document.addEventListener("DOMContentLoaded", function () {
             showStatus("Withdraw cookie consent");
         };
 
-        // DENY: remember until the next calendar day
+        // DENY: Block/remove cookies, but allow cookieless tracking to continue
         banner.querySelector("#cookie-deny").onclick = function () {
             localStorage.removeItem(ACCEPT);
             localStorage.setItem(DENY, new Date().toDateString());
 
-            matomo("rememberCookieConsentDismissed");
+            matomo("forgetCookieConsentGiven");
             showStatus("Cookies Blocked");
         };
     }
@@ -155,14 +149,17 @@ document.addEventListener("DOMContentLoaded", function () {
     // ==========================================
 
     const accepted = localStorage.getItem(ACCEPT) === "true";
-    const deniedToday =
-        localStorage.getItem(DENY) === new Date().toDateString();
+    const deniedToday = localStorage.getItem(DENY) === new Date().toDateString();
 
     if (accepted) {
+        matomo("rememberCookieConsentGiven");
         showStatus("Withdraw cookie consent");
     } else if (deniedToday) {
+        matomo("forgetCookieConsentGiven");
         showStatus("Cookies Blocked");
     } else {
+        // If no choice made yet, ensure cookies are withheld while visits are recorded
+        matomo("forgetCookieConsentGiven");
         showBanner();
     }
 
