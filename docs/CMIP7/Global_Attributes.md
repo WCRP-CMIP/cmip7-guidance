@@ -340,7 +340,7 @@ Additional required global attributes in addition to those found in Table 1. **H
 <td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;"><strong>nominal_resolution</strong></td>
 <td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">approximate horizontal resolution (computed following the CMIP6 global attributes document Appendix 2)</td>
 <td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">"1 km", "250 km", "500 km"</td>
-<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">No change</td>
+<td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;">Values "1x1 degree" and "0.5 km" have been removed and "None" has been added to accommodate data on a non-2D grid, such as global means</td>
 </tr>
 <tr>
 <td style="border: 1px solid #b7b7b7; padding: 8px; word-wrap: break-word;"><strong>product</strong></td>
