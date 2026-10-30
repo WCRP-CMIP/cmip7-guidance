@@ -77,9 +77,7 @@ For data access routes that do not involve official ESGF nodes, we encourage use
 
 ## 2.  Terms of use and citations requirements
 
-!!! warning " ⚠️ DOI status"
-
-    2026-09-23: No CMIP7 DOIs have been minted to date. 
+**Citations are now being minted by the CMIP7 Citations Service, you can see the latest [here](https://cmip7-citations.ceda.ac.uk/citations/)**
 
 To enable modelling groups and others who support CMIP7 to demonstrate its impact (and secure ongoing funding), you are required to cite and acknowledge those who have made CMIP7 possible. Some best practices are also recommended.
 
