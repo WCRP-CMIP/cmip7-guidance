@@ -191,7 +191,7 @@ More information about the meaning of these facets is provided in the [Global At
 
 ### 3.1.  Source and Variant
 * [List of models][sourcelist]
-* Essential Model Documentation (EMD): [Docs][EMDdocs], [Model Pages][emd]
+* Essential Model Documentation (EMD): [Docs][EMDdocs] and [Model Pages][emd]
 
 
 The Essential Model Documentation (EMD) contains a high-level description intended to contain information on model formulation that can be easily compared between different models, as well as, more in-depth model documentation for each source.
