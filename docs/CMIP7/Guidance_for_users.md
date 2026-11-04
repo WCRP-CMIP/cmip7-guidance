@@ -78,6 +78,7 @@ For data access routes that do not involve official ESGF nodes, we encourage use
 ## 2.  Terms of use and citations requirements
 
 !!! warning ""
+
         ⚠️ 2026-11-02 status: CMIP7 citations are now in the process of being minted by the CMIP7 Citations Service.
         Some datastes have a DOI, others not yet. You can see the latest [here](citesearch).
 
