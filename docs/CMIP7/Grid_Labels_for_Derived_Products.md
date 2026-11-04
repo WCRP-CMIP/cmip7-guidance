@@ -85,7 +85,7 @@ For the most common non-2D outputs, **shared grid labels** are registered centra
 | Sea-ice line transects (`ht`, siline) | Transports across fixed sea-ice lines | [`g014`](https://github.com/WCRP-CMIP/Essential-Model-Documentation/blob/src-data/horizontal_grid_cell/g014.json) | Registered (discrete-lines) |
 | Overturning on the native grid (`ht`, `msfty`, `msftypa`) | Streamfunctions along native grid rows, by basin | Centre-specific | No shared grid: `g014` does not apply because these are not line transects. Register your own output grid via the [EMD Submission Guide](https://emd.mipcvs.dev/docs/Information_for_Submitters/Submission-Guide/#stage-1-grid-cells). The parent grid is a last resort (see [Section 2.2](#22-alternative-use-the-parent-grid-label)) |
 | Zonal mean (`hy`) | Mean over all longitudes, reported as a function of latitude (atmosphere only in the current Data Request) | Centre-specific | Each centre must register its own (latitude resolution depends on source grid). Example: [`g239`](https://github.com/WCRP-CMIP/Essential-Model-Documentation/blob/src-data/horizontal_grid_cell/g239.json) is a 1-degree zonal mean grid (180 cells). To find existing zonal mean grids, filter the [EMD grid viewer](https://emd.mipcvs.dev/docs/grid_viewer/horizontal/) with grid_type "regular-latitude-longitude", x_resolution = 360 and y_resolution matching your latitude spacing |
-| Basin (`hyb`) | Sum over each ocean basin, reported as a function of latitude | [`g015`](https://github.com/WCRP-CMIP/Essential-Model-Documentation/blob/src-data/horizontal_grid_cell/g015.json) (1-degree latitude bands) | Registered (basin-zonal-bands). For other latitude spacings, register your own basin grid. See [Ocean basin grids](#ocean-basin-grids) |
+| Basin (`hyb`) | Sum over each ocean basin, reported as a function of latitude | [`g262`](https://github.com/WCRP-CMIP/Essential-Model-Documentation/blob/src-data/horizontal_grid_cell/g262.json) (1-degree latitude bands) | Registered (basin-by-latitude). For other latitude spacings, register your own basin grid. See [Ocean basin grids](#ocean-basin-grids) |
 
 !!! tip "Already registered grids you can reuse"
 
@@ -94,12 +94,12 @@ For the most common non-2D outputs, **shared grid labels** are registered centra
     - **`g012`** -- A single grid cell covering the Southern Hemisphere (360x90 deg, 1 cell). Use for SH means.
     - **`g013`** -- A discrete-points grid for site data. Use for all `hs` variables.
     - **`g014`** -- A discrete-lines grid for transect data. Use for oline and siline variables.
-    - **`g015`** -- An ocean basin grid with zonal bands at 1-degree latitude resolution (latitudes from -89.5 to 89.5). Use for basin (`hyb`) output on 1-degree latitude bands.
+    - **`g262`** -- An ocean basin grid with zonal bands at 1-degree latitude resolution (latitudes from -89.5 to 89.5). Use for basin (`hyb`) output on 1-degree latitude bands.
     - **`g239`** -- A zonal mean grid at 1-degree latitude resolution (180 cells, latitudes from -89.5 to 89.5). If your model's zonal mean (`hy`) output has the same latitude resolution, you can reuse this grid label instead of registering a new one. It cannot be used for basin (`hyb`) data (see [Ocean basin grids](#ocean-basin-grids)).
 
     Check the [EMD grid viewer](https://emd.mipcvs.dev/docs/grid_viewer/horizontal/) or the [EMD repository](https://github.com/WCRP-CMIP/Essential-Model-Documentation/tree/src-data/horizontal_grid_cell) for the full list of registered grids.
 
-For **zonal means** (`hy`), modelling centres must register their own grid if no existing grid matches their latitude resolution. See the [EMD Submission Guide](https://emd.mipcvs.dev/docs/Information_for_Submitters/Submission-Guide/#stage-1-grid-cells) for how to do this. For **basin data** (`hyb`), use `g015` if your output is on 1-degree latitude bands, otherwise register your own basin grid (see [Ocean basin grids](#ocean-basin-grids)). For **overturning streamfunctions on the native grid** (`msfty`, `msftypa`), no shared grid exists: register your own output grid.
+For **zonal means** (`hy`), modelling centres must register their own grid if no existing grid matches their latitude resolution. See the [EMD Submission Guide](https://emd.mipcvs.dev/docs/Information_for_Submitters/Submission-Guide/#stage-1-grid-cells) for how to do this. For **basin data** (`hyb`), use `g262` if your output is on 1-degree latitude bands, otherwise register your own basin grid (see [Ocean basin grids](#ocean-basin-grids)). For **overturning streamfunctions on the native grid** (`msfty`, `msftypa`), no shared grid exists: register your own output grid.
 
 **Advantages of registering a dedicated grid:**
 
@@ -119,11 +119,11 @@ For **zonal means** (`hy`), modelling centres must register their own grid if no
 
 Ocean basin data has a `basin` dimension that categorises different basins (containing values such as `atlantic_arctic_ocean`, `indian_pacific_ocean`, `global_ocean`), and a latitude dimension that contains the latitude locations for all basins (an individual basin's data will store missing values for latitudes not spanned by the basin). In the current Data Request, all `hyb` variables are transports or streamfunctions summed along a path of the model grid spanning each basin, so each latitude value is the nominal latitude of that grid path.
 
-An atmospheric zonal mean grid cannot be used for ocean basins, and vice versa. This is because they have different grid types and different `x_resolution`: the ocean basin grid type is "basin-zonal-bands" and has no `x_resolution` (it varies for each basin and latitude), whereas the atmospheric zonal mean grid type is "regular-latitude-longitude" with `x_resolution` = 360 degrees.
+An atmospheric zonal mean grid cannot be used for ocean basins, and vice versa. This is because they have different grid types and different `x_resolution`: the ocean basin grid type is "basin-by-latitude" and has no `x_resolution` (it varies for each basin and latitude), whereas the atmospheric zonal mean grid type is "regular-latitude-longitude" with `x_resolution` = 360 degrees.
 
 !!! tip "Shared basin grid"
 
-    `g015` is a shared basin grid with zonal bands at 1-degree latitude resolution (latitudes from -89.5 to 89.5). If your basin output is on 1-degree latitude bands, use `g015`. Otherwise, register your own basin grid with grid type "basin-zonal-bands" and the `y_resolution` matching your latitude spacing, following the [EMD Submission Guide](https://emd.mipcvs.dev/docs/Information_for_Submitters/Submission-Guide/#stage-1-grid-cells).
+    `g262` is a shared basin grid with zonal bands at 1-degree latitude resolution (latitudes from -89.5 to 89.5). If your basin output is on 1-degree latitude bands, use `g262`. Otherwise, register your own basin grid with grid type "basin-by-latitude" and the `y_resolution` matching your latitude spacing, following the [EMD Submission Guide](https://emd.mipcvs.dev/docs/Information_for_Submitters/Submission-Guide/#stage-1-grid-cells). You can use [`g262`](https://github.com/WCRP-CMIP/Essential-Model-Documentation/blob/src-data/horizontal_grid_cell/g262.json) as a template for your registration: keep the same grid type, `region` and `units`, and change only `y_resolution` and `southernmost_latitude` to match your output (see [Section 5](#5-registering-a-new-output-grid)).
 
 ### 2.2 Alternative: Use the Parent Grid Label
 
@@ -158,7 +158,7 @@ The parent grid is the **reporting grid from which the non-2D output was compute
     You sum along grid paths spanning each basin directly on the tripolar grid -- no intermediate regridding step. This is what the Data Request `cell_methods` describe ("along a zig-zag grid path spanning a basin").
     In this case, the parent grid is **`g156`** (the native tripolar grid).
 
-    In both cases, the recommended approach is a **dedicated basin grid** (see [Ocean basin grids](#ocean-basin-grids)) rather than reusing the parent grid label: `g015` for 1-degree latitude bands, or your own registered basin grid otherwise (e.g., 90 latitudes at 2-degree spacing). The dedicated grid accurately describes the output regardless of how the basin quantities were computed.
+    In both cases, the recommended approach is a **dedicated basin grid** (see [Ocean basin grids](#ocean-basin-grids)) rather than reusing the parent grid label: `g262` for 1-degree latitude bands, or your own registered basin grid otherwise (e.g., 90 latitudes at 2-degree spacing). The dedicated grid accurately describes the output regardless of how the basin quantities were computed.
 
 ---
 
@@ -231,7 +231,7 @@ As QA/QC evolves toward more robust validation, checks comparing the file conten
 | Hemispheric mean (`hm`) | `g011` (NH) or `g012` (SH) | Parent grid | Region label (e.g., `nh`, `sh`) distinguishes from 2D output |
 | Sub-global mean (`hm`) | `g010` (shared) | Parent grid | Region label (e.g., `30S-90S`, `ata`, `grl`) identifies the region |
 | Zonal mean (`hy`) | Register your own (or reuse an existing match, e.g. `g239`) | Parent grid | Latitude resolution depends on source grid |
-| Basin data (`hyb`) | `g015` (shared, 1-degree latitude bands) or register your own | Parent grid | Cannot share a grid with zonal means. See [Ocean basin grids](#ocean-basin-grids) |
+| Basin data (`hyb`) | `g262` (shared, 1-degree latitude bands) or register your own | Parent grid | Cannot share a grid with zonal means. See [Ocean basin grids](#ocean-basin-grids) |
 | Site data (`hs`) | `g013` (shared) | Parent grid | Sites are fixed across models ([site list](https://zenodo.org/records/17966101)) |
 | Ocean transects (`ht`, oline) | `g014` (shared) | Parent grid | Transect locations are fixed |
 | Sea-ice transects (`ht`, siline) | `g014` (shared) | Parent grid | Transect locations are fixed |
@@ -256,6 +256,21 @@ As QA/QC evolves toward more robust validation, checks comparing the file conten
 ## 5. Registering a New Output Grid
 
 If you need to register a grid for non-2D output (e.g., for zonal means, basin data, or native-grid overturning streamfunctions), follow the [EMD Submission Guide -- Stage 1: Grid Cells](https://emd.mipcvs.dev/docs/Information_for_Submitters/Submission-Guide/#stage-1-grid-cells). Before registering, check the [EMD grid viewer](https://emd.mipcvs.dev/docs/grid_viewer/horizontal/) to verify no suitable grid already exists.
+
+!!! example "Example: registering an ocean basin grid"
+
+    [`g262`](https://github.com/WCRP-CMIP/Essential-Model-Documentation/blob/src-data/horizontal_grid_cell/g262.json) is the registered shared basin grid and can serve as a worked example of a basin grid registration. Its key fields are:
+
+    | Field | Value | Comment |
+    |---|---|---|
+    | `grid_type` | `basin-by-latitude` | Required for all basin (`hyb`) grids |
+    | `region` | `global` | |
+    | `y_resolution` | `1` | Latitude spacing of your output |
+    | `southernmost_latitude` | `-89.5` | Southernmost latitude of your output |
+    | `units` | `degree` | |
+    | `x_resolution`, `westernmost_longitude`, `n_cells` | *(empty)* | Not applicable: the zonal extent varies for each basin and latitude |
+
+    For a basin grid on 2-degree latitude bands, for example, you would register the same fields with `y_resolution` = 2 and the corresponding `southernmost_latitude` (e.g., -89).
 
 ---
 
@@ -316,9 +331,9 @@ A modelling centre publishes monthly northward ocean heat transport by basin (`h
 
 **With a dedicated grid (recommended):**
 ```
-hfbasin_tavg-u-hyb-sea_mon_glb_g015_ModelA_historical_r1i1p1f1_185001-201412.nc
+hfbasin_tavg-u-hyb-sea_mon_glb_g262_ModelA_historical_r1i1p1f1_185001-201412.nc
 ```
-Here `g015` is the shared basin grid with zonal bands at 1-degree latitude resolution.
+Here `g262` is the shared basin grid with zonal bands at 1-degree latitude resolution.
 
 **With the parent grid:**
 ```
