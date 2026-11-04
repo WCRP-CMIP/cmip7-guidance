@@ -333,7 +333,7 @@ Proposing erratum through the webform requires a contact email address. Once the
 
     If you have a question about a model, you can find contact information of modellers by looking in the Responsible Parties tab of a given dataset on the [citation service][citesearch]. You can also look 
     for the authors of the reference paper(s) in the [EMD][emd].
-
+For some models, a contact email address may be included in netcdf file metadata (under the "contact" global attribute).
 
 
 
