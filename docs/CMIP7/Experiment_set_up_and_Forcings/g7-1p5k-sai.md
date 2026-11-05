@@ -20,8 +20,8 @@ If you notice something that is unclear, please
 For the full background of the experiment, please see the following references:
 
 - Visioni, D., Robock, A., Haywood, J., Henry, M., Tilmes, S., MacMartin, D. G., Kravitz, B., Doherty, S. J., Moore, J.,
-  Lennard, C., Watanabe, S., Muri, H., Niemeier, U., Boucher, O., Syed, A., Egbebiyi, T. S., S\'ef\'erian, R., &
-  Quaglia, I. (2024).
+  Lennard, C., Watanabe, S., Muri, H., Niemeier, U., Boucher, O., Syed, A., Egbebiyi, T. S., Séférian, R., & Quaglia, I.
+  (2024).
   G6-1.5K-SAI: a new Geoengineering Model Intercomparison Project (GeoMIP) experiment integrating recent advances in
   solar radiation modification studies.
   Geoscientific Model Development, 17(7), 2583-2596. https://doi.org/10.5194/gmd-17-2583-2024

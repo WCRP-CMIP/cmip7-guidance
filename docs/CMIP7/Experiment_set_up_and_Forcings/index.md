@@ -274,8 +274,8 @@ If you notice something that is unclear, please
 For the full background of the experiments, please see the following URLs:
 
 - Visioni, D., Robock, A., Haywood, J., Henry, M., Tilmes, S., MacMartin, D. G., Kravitz, B., Doherty, S. J., Moore, J.,
-  Lennard, C., Watanabe, S., Muri, H., Niemeier, U., Boucher, O., Syed, A., Egbebiyi, T. S., S\'ef\'erian, R., &
-  Quaglia, I. (2024).
+  Lennard, C., Watanabe, S., Muri, H., Niemeier, U., Boucher, O., Syed, A., Egbebiyi, T. S., Séférian, R., & Quaglia, I.
+  (2024).
   G6-1.5K-SAI: a new Geoengineering Model Intercomparison Project (GeoMIP) experiment integrating recent advances in
   solar radiation modification studies.
   Geoscientific Model Development, 17(7), 2583-2596. https://doi.org/10.5194/gmd-17-2583-2024
@@ -345,9 +345,9 @@ For the full background of the experiments, please see the following URLs:
 - Pincus, R., Forster, P. M., & Stevens, B. (2016).
   The Radiative Forcing Model Intercomparison Project (RFMIP): experimental protocol for CMIP6.
   Geoscientific Model Development, 9(9), 3447-3460. https://doi.org/10.5194/gmd-9-3447-2016
-- Smith, C. J., Kramer, R. J., Myhre, G., Alterskj{\ae}r, K., Collins, W., Sima, A., Boucher, O., Dufresne, J.-L.,
-  Nabat, P., Michou, M., Yukimoto, S., Cole, J., Paynter, D., Shiogama, H., O'Connor, F. M., Robertson, E., Wiltshire,
-  A., Andrews, T., Hannay, C., et al. (2020).
+- Smith, C. J., Kramer, R. J., Myhre, G., Alterskjær, K., Collins, W., Sima, A., Boucher, O., Dufresne, J.-L., Nabat,
+  P., Michou, M., Yukimoto, S., Cole, J., Paynter, D., Shiogama, H., O'Connor, F. M., Robertson, E., Wiltshire, A.,
+  Andrews, T., Hannay, C., et al. (2020).
   Effective radiative forcing and adjustments in CMIP6 models.
   Atmospheric Chemistry and Physics, 20(16), 9591-9618. https://doi.org/10.5194/acp-20-9591-2020
 - Kramer, R. J., Smith, C., & Andrews, T. (2026).
@@ -389,22 +389,21 @@ For the full background of the experiments, please see the following URLs:
 
 - Zhong, J., Zhang, X., Zhang, D., Wang, D., Guo, L., Peng, H., Huang, X., Wang, Z., Lei, Y., Lu, Y., Qu, C., Zhang, X.,
   & Miao, C. (2025).
-  Plausible global emissions scenario for 2 {\textdegree}C aligned with China's net-zero pathway.
+  Plausible global emissions scenario for 2 °C aligned with China's net-zero pathway.
   Nature Communications, 16(1). https://doi.org/10.1038/s41467-025-62983-5
 - Zhang, X., Zhong, J., Zhang, X., Zhang, D., Miao, C., Wang, D., & Guo, L. (2025).
-  China Can Achieve Carbon Neutrality in Line with the Paris Agreement's 2 {\textdegree}C Target: Navigating Global
-  Emissions Scenarios, Warming Levels, and Extreme Event Projections.
+  China Can Achieve Carbon Neutrality in Line with the Paris Agreement's 2 °C Target: Navigating Global Emissions
+  Scenarios, Warming Levels, and Extreme Event Projections.
   Engineering, 44, 207-214. https://doi.org/10.1016/j.eng.2024.11.023
 - Zhang, D., Huang, X.-D., Zhong, J.-T., Guo, L.-F., Guo, S.-Y., Wang, D.-Y., Miao, C.-H., Zhang, X.-L., & Zhang, X.-Y.
   (2023).
-  A representative CO2 emissions pathway for China toward carbon neutrality under the Paris Agreement's 2 {\textdegree}C
-  target.
+  A representative CO2 emissions pathway for China toward carbon neutrality under the Paris Agreement's 2 °C target.
   Advances in Climate Change Research, 14(6), 941-951. https://doi.org/10.1016/j.accre.2023.11.004
 - Lu, Y., Jin, L., Zhong, J., Zhang, X., Zhang, Y., Wu, F., Zhang, F., Wang, Z., Zhang, J., Xin, X., Wu, T., Wang, D.,
   Zhang, D., Wang, T., & Hua, W. (2025).
-  Earth system responses under a global 2 {\textdegree}C-target scenario aligned with China's carbon neutrality pledge.
+  Earth system responses under a global 2 °C-target scenario aligned with China's carbon neutrality pledge.
   Environmental Research Letters, 20(10), 104049. https://doi.org/10.1088/1748-9326/adfbfb
-- H\"ogner, A., Sandstad, M., Kikstra, J., Nauels, A., Nicholls, Z., Sanderson, B., Smith, C., Zecchetto, M., &amp;
+- Högner, A., Sandstad, M., Kikstra, J., Nauels, A., Nicholls, Z., Sanderson, B., Smith, C., Zecchetto, M., &
   Schleussner, C.-F. (2026). <i>The CMIP7 VL-CF counterfactual emissions pathway dataset v1.1.1 documentation</i>
   [Dataset].
   Zenodo. https://doi.org/10.5281/ZENODO.21487424
