@@ -47,7 +47,7 @@ Each global attribute within the template's angle brackets is replaced with the 
 
 Note that the "variant label" must conform to a pattern-constrained CV. Note also that the last element in the filename template (timeRangeDD) is not a global attribute; rather it provides the date/time of the first and last time-sample found in the file as described in [Appendix 1](#appendix-1-time-labels-appearing-in-filenames).
 
-The CMIP6 filenames differed from the CMIP7 construction defined above in several ways, so codes meant to extract the information from them and interpret it will need to be modified. In CMIP7 variables are uniquely identified by attaching to the variable_id a branding_suffix (see [the guidance notes](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/Branded_Variables/)), whereas in CMIP6 a "table name" was attached. In CMIP7 a region attribute has been included for the first time and the variant_label is interpreted in a different way for decadal prediction forecasts and hindcasts. The CMIP6-defined timeRangeDD has for CMIP7 been slightly simplified as given in [Appendix 1](#appendix-1-time-labels-appearing-in-filenames). The ending suffix `-clim` found in CMIP6 climatological dataset filenames has been eliminated.
+The CMIP6 filenames differed from the CMIP7 construction defined above in several ways, so codes meant to extract the information from them and interpret it will need to be modified. In CMIP7 variables are uniquely identified by attaching to the variable_id a branding_suffix (see [the guidance notes](Branded_Variables.md)), whereas in CMIP6 a "table name" was attached. In CMIP7 a region attribute has been included for the first time and the variant_label is interpreted in a different way for decadal prediction forecasts and hindcasts. The CMIP6-defined timeRangeDD has for CMIP7 been slightly simplified as given in [Appendix 1](#appendix-1-time-labels-appearing-in-filenames). The ending suffix `-clim` found in CMIP6 climatological dataset filenames has been eliminated.
 
 Any code built to parse and interpret CMIP6 filenames will break when applied to CMIP7 files. We understand that this may be disruptive, but the information available from the old filenames is equally available from the new ones. The changes made for CMIP7 result in a more robust, versatile, and long-term method for uniquely identifying files, so we are making this breaking change now and appreciate any effort it may take to update scripts to adjust to it.
 
@@ -607,7 +607,7 @@ How to register new values is [described here](cv_registration.md).
 
 ### Variable Identifiers
 
-The variable_id global attribute records the "root name" of a branded variable. The recognized root names can be found either in the [CMIP7 Data Request](https://cmip-data-request.github.io/cmip7-dreq-webview/variable_search.html) or the [CMOR variable tables](https://github.com/WCRP-CMIP/cmip7-cmor-tables/tree/main/tables). Further guidance on the branded variables naming scheme, which is new in CMIP7, is [available here](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/Branded_Variables/).
+The variable_id global attribute records the "root name" of a branded variable. The recognized root names can be found either in the [CMIP7 Data Request](https://cmip-data-request.github.io/cmip7-dreq-webview/variable_search.html) or the [CMOR variable tables](https://github.com/WCRP-CMIP/cmip7-cmor-tables/tree/main/tables). Further guidance on the branded variables naming scheme, which is new in CMIP7, is [available here](Branded_Variables.md).
 
 
 

@@ -1,0 +1,673 @@
+/* CMIP IPO course theme
+ * Tokens taken from the live theme stylesheet:
+ * wcrp-cmip.org/wp-content/themes/cmip/css/main.css
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Lexend:wght@300;400;500;600&display=swap');
+
+:root {
+  /* Brand palette (Bootstrap vars from the CMIP theme) */
+  --cmip-navy: #000546;          /* --bs-primary */
+  --cmip-navy-hover: #000438;    /* --bs-link-hover-color */
+  --cmip-gold: #f2b30d;          /* --bs-secondary / warning */
+  --cmip-crimson: #a40e4c;       /* --bs-danger */
+  --cmip-teal: #64d2cd;          /* --bs-info */
+  --cmip-black: #0e0f0f;         /* --bs-black */
+  --cmip-body: #212529;          /* --bs-body-color */
+  --cmip-white: #ffffff;
+
+  /* Supporting tints used across the site */
+  --cmip-coral: #f47773;         /* CMIP 2026 announcement bar */
+  --cmip-yellow-pale: #f6e2a6;   /* badges, governance cards */
+  --cmip-pink: #e8d0da;          /* news date badges */
+  --cmip-rule: #dee2e6;          /* --bs-border-color */
+
+  /* Fonts */
+  --cmip-font-heading: 'Akshar', sans-serif;
+  --cmip-font-body: 'Plus Jakarta Sans', sans-serif;
+
+  /* Material overrides */
+  --md-default-bg-color: var(--cmip-white);
+  --md-default-fg-color: var(--cmip-body);
+  --md-default-fg-color--light: #6c757d;
+  --md-primary-fg-color: var(--cmip-navy);
+  --md-primary-bg-color: var(--cmip-white);
+  --md-accent-fg-color: var(--cmip-navy);
+  --md-typeset-a-color: var(--cmip-navy);
+  --md-code-bg-color: #f8f9fa;
+  --md-code-fg-color: var(--cmip-body);
+}
+
+body {
+  background: var(--cmip-white);
+  font-family: var(--cmip-font-body);
+  color: var(--cmip-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Header: navy bar ────────────────────────────────────────────── */
+.md-header--cmip {
+  background: var(--cmip-navy);
+  color: var(--cmip-white);
+  box-shadow: none;
+}
+
+.md-header--cmip .md-header__inner {
+  display: flex;
+  align-items: center;
+  /* The logo is pinned to the page edge (below), so it is no longer in this row.
+     The nav stays at the right of the row, as it was when the logo's auto margin
+     pushed it there. */
+  justify-content: flex-end;
+  gap: 1.5rem;
+  /* The right side is reserved for the version label and the icons under it,
+     which are pinned to the page edge, so the nav never runs underneath them
+     on narrow screens. The left side is reserved for the pinned logo (its .5rem
+     inset + 12.4rem width + a 1.5rem gap). */
+  padding: 0.5rem 5.6rem 0.5rem 14.5rem;
+  /* With the logo out of the row, nothing in it sets the bar's height any more.
+     This restores the height the logo used to give it. */
+  box-sizing: border-box;
+  min-height: 4.8rem;
+}
+
+/* Logo. The supplied file (assets/cmip-logo-white.svg) is white artwork, so it
+   sits on the navy bar as-is. If you swap in a navy version, add
+   filter: brightness(0) invert(1) to the img/svg rule below.
+   Pinned to the far left of the page, mirroring the version label and icons on
+   the far right (the header, not the centred content grid, is the positioned
+   parent). left .5rem plus the button's own .4rem padding puts the artwork
+   .9rem from the edge, the same inset as the right-hand items. Centred
+   vertically on the header.
+   Material hides the logo below 76.25em; we keep it at every width. */
+.md-header--cmip .md-header__button.md-logo {
+  display: block;
+  position: absolute;
+  left: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0;
+}
+
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  height: 2.6rem;
+  width: auto;
+}
+
+.md-header--cmip .md-header__title {
+  display: none;
+}
+
+/* Search: icon only. Material hides this button at 60em and shows an inline
+   search bar instead; we keep the button and collapse the bar until it is
+   opened. Material's own :checked rule then expands it. */
+.md-header--cmip .md-header__button[for="__search"] {
+  display: flex;
+  align-items: center;
+  /* No box around the icon: Material gives the button .4rem padding and .2rem margin. */
+  padding: 0;
+  margin: 0;
+  /* Pinned to the far right of the page, in a row directly under the version
+     label (which sits at top .3rem / right .9rem). The repo icon takes the
+     rightmost slot, so this one sits immediately to its left: right = .9rem
+     inset + one 1.2rem icon. */
+  position: absolute;
+  top: 1.6rem;
+  right: 2.1rem;
+  color: var(--cmip-white);
+  cursor: pointer;
+}
+
+.md-header--cmip .md-header__button[for="__search"]:hover {
+  color: var(--cmip-gold);
+}
+
+/* Collapsed to nothing, and clipped so Material's own magnifier inside the
+   form does not show alongside ours. */
+.md-header--cmip .md-search__inner {
+  width: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* The search form is only the box that opens when the icon is clicked. It is
+   taken out of the header row and anchored in the same row as the icons, just to
+   the left of them (icons occupy right .9rem to 3.3rem), so it opens leftwards
+   from the icon: on screen, centred on the icons, and never past the page edge.
+   Material insets its inner box .2rem from the top of this element, so top 1.1rem
+   centres the 1.8rem box on the 1.2rem icons (at top 1.6rem). right 3.8rem leaves
+   .5rem to the icons and keeps it clear of the version label's left edge. */
+.md-header--cmip .md-search {
+  position: absolute;
+  top: 1.1rem;
+  right: 3.8rem;
+  margin: 0;
+  z-index: 4;
+}
+
+/* Once opened, Material widens it again; let the results escape the box. */
+[data-md-toggle="search"]:checked ~ .md-header--cmip .md-search__inner {
+  overflow: visible;
+}
+
+/* Repo icon: Material hides it below 76.25em and reserves 11.7rem for a name.
+   We show it at every width and let it shrink to the icon. */
+.md-header--cmip .md-header__source {
+  display: flex;
+  align-items: center;
+  width: auto;
+  max-width: none;
+  /* Rightmost slot of the icon row under the version label, lined up with the
+     label's right edge. Taken out of the flex row, so no gap applies to it. */
+  position: absolute;
+  top: 1.6rem;
+  right: 0.9rem;
+  margin: 0;
+}
+
+/* No box around the repo icon: Material makes it 2rem x 2.4rem with the glyph
+   offset .6rem inside it. */
+.md-header--cmip .md-source {
+  display: flex;
+  align-items: center;
+  color: var(--cmip-white);
+}
+
+.md-header--cmip .md-source__icon {
+  width: auto;
+  height: auto;
+}
+
+.md-header--cmip .md-source__icon svg {
+  display: block;
+  margin: 0;
+}
+
+.md-header--cmip .md-source:hover {
+  color: var(--cmip-gold);
+}
+
+.md-header--cmip .md-source__repository {
+  display: none;
+}
+
+/* ── Nav in the header, with dropdowns ───────────────────────────── */
+.cmip-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.7rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cmip-nav .cmip-nav__item {
+  height: auto;
+  position: relative;
+}
+
+.cmip-nav .cmip-nav__link {
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  opacity: 1;
+  font-family: var(--cmip-font-body);
+  font-size: 0.84rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--cmip-white);
+}
+
+.cmip-nav .cmip-nav__link:hover,
+.cmip-nav .cmip-nav__link:focus,
+.cmip-nav .cmip-nav__item--active > .cmip-nav__link {
+  color: var(--cmip-gold);
+  opacity: 1;
+}
+
+/* Current section also gets a gold underline so the state is unmistakable */
+.cmip-nav .cmip-nav__item--active > .cmip-nav__link {
+  box-shadow: inset 0 -2px 0 0 var(--cmip-gold);
+  padding-bottom: 0.2rem;
+}
+
+.cmip-nav .cmip-nav__link--dropdown {
+  cursor: pointer;
+  user-select: none;
+}
+
+.cmip-nav .cmip-nav__link--dropdown::after {
+  content: "";
+  margin-left: 0.45em;
+  border-left: 0.3em solid transparent;
+  border-right: 0.3em solid transparent;
+  border-top: 0.3em solid currentColor;
+}
+
+/* Dropdown panel: navy with white links turning gold, as in the theme */
+.cmip-nav .cmip-nav__dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 0.65rem);
+  left: 0;
+  z-index: 20;
+  min-width: 15rem;
+  margin: 0;
+  padding: 0.5rem 0;
+  list-style: none;
+  background: var(--cmip-navy);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 0.375rem;
+  box-shadow: 0 0.5rem 1rem rgba(14, 15, 15, 0.15);
+}
+
+.cmip-nav .cmip-nav__item--dropdown:hover .cmip-nav__dropdown,
+.cmip-nav .cmip-nav__item--dropdown:focus-within .cmip-nav__dropdown {
+  display: block;
+}
+
+.cmip-nav .cmip-nav__dropdown-link {
+  display: block;
+  padding: 0.25rem 1rem;
+  font-family: var(--cmip-font-body);
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: var(--cmip-white);
+  text-decoration: none;
+}
+
+.cmip-nav .cmip-nav__dropdown-link:hover {
+  color: var(--cmip-gold);
+  background: var(--cmip-navy);
+}
+
+/* A folder inside a folder: a row that flies a submenu out to the side */
+.cmip-nav .cmip-nav__dropdown-item--group {
+  position: relative;
+}
+
+.cmip-nav .cmip-nav__dropdown-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.cmip-nav .cmip-nav__dropdown-toggle::after {
+  content: "";
+  flex: none;
+  border-top: 0.3em solid transparent;
+  border-bottom: 0.3em solid transparent;
+  border-left: 0.3em solid currentColor;
+}
+
+.cmip-nav .cmip-nav__dropdown-sub {
+  display: none;
+  position: absolute;
+  top: -0.5rem;
+  left: 100%;
+  z-index: 30;
+  min-width: 14rem;
+  margin: 0;
+  padding: 0.5rem 0;
+  list-style: none;
+  background: var(--cmip-navy);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 0.375rem;
+  box-shadow: 0 0.5rem 1rem rgba(14, 15, 15, 0.15);
+}
+
+.cmip-nav .cmip-nav__dropdown-item--group:hover > .cmip-nav__dropdown-sub,
+.cmip-nav .cmip-nav__dropdown-item--group:focus-within > .cmip-nav__dropdown-sub {
+  display: block;
+}
+
+/* Near the right edge, fly the submenu out to the left instead */
+.cmip-nav .cmip-nav__item:last-child .cmip-nav__dropdown-sub {
+  left: auto;
+  right: 100%;
+}
+
+/* ── Version selector (mike) ─────────────────────────────────────── */
+/* The selector is a small label pinned to the top-right corner of the header
+   (the header is the positioned ancestor, so this is the true page corner, not
+   the corner of the centred content grid). Material positions
+   .md-header__topic absolutely for its title swap; here it is only a host for
+   the dropdown, so put it back in normal flow. */
+.cmip-version {
+  position: absolute;
+  top: 0.3rem;
+  right: 0.9rem;
+  z-index: 5;
+  line-height: 1;
+}
+
+.cmip-version .md-header__topic {
+  position: static;
+  display: block;
+  transform: none;
+  opacity: 1;
+}
+
+.cmip-version .md-version {
+  height: auto;
+  font-family: var(--cmip-font-body);
+  font-size: 0.66rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.cmip-version .md-version__current {
+  display: inline-block;
+  margin: 0;
+  padding: 0.12rem 0.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 0.25rem;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.02em;
+}
+
+.cmip-version .md-version__current:hover,
+.cmip-version .md-version:focus-within .md-version__current {
+  color: var(--cmip-gold);
+  border-color: var(--cmip-gold);
+}
+
+/* Only one version exists (for example before a second release), so there is
+   nothing to choose: show the label plainly, with no empty menu. */
+.cmip-version .md-version__list:empty {
+  display: none;
+}
+
+.cmip-version .md-version:has(.md-version__list:empty) .md-version__current {
+  cursor: default;
+}
+
+.cmip-version .md-version:has(.md-version__list:empty) .md-version__current::after {
+  display: none;
+}
+
+/* List: a small light card, deliberately unlike the navy nav dropdowns so the
+   version picker reads as a utility, not a menu. */
+.cmip-version .md-version__list {
+  top: 1.4rem;
+  right: 0;
+  left: auto;
+  width: max-content;
+  min-width: 4.5rem;
+  margin: 0;
+  font-size: 0.66rem;
+  background: var(--cmip-white);
+  color: var(--cmip-navy);
+  border: 1px solid var(--cmip-rule);
+  border-radius: 0.25rem;
+  box-shadow: 0 0.15rem 0.5rem rgba(14, 15, 15, 0.12);
+}
+
+.cmip-version .md-version__link {
+  padding: 0.3rem 0.65rem;
+  color: var(--cmip-navy);
+  line-height: 1.2;
+}
+
+.cmip-version .md-version__link:hover,
+.cmip-version .md-version__link:focus {
+  color: var(--cmip-navy);
+  background: var(--cmip-yellow-pale);
+}
+
+/* Newer-version notice: a thin whitesmoke strip, centred, in CMIP cyan and
+   Lexend. Kept to roughly one line of text high so it stays out of the way;
+   the unofficial-copy warning below is the louder of the two.
+   Material's markup is <div data-md-component="outdated"> wrapping
+   <aside class="md-banner">, so the bar is the CHILD of the data attribute. */
+[data-md-component="outdated"] .md-banner {
+  background: whitesmoke;
+  color: var(--cmip-teal);
+  border-bottom: 1px solid var(--cmip-rule);
+  font-family: 'Lexend', var(--cmip-font-body);
+  line-height: 1.2;
+  /* A fixed height, so the header below can be offset by exactly this much. */
+  box-sizing: border-box;
+  height: var(--cmip-notice-h);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+[data-md-component="outdated"] .md-banner .md-banner__inner {
+  margin: 0 auto;
+  font-size: 0.66rem;
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* Always visible: the notice stays pinned to the very top of the screen while the
+   page scrolls, above the header (z-index 5 against the header's 4). It is in the
+   normal flow, so at the top of the page it simply pushes everything down and
+   never covers content. Material removes its [hidden] attribute only on a version
+   that is not the default, so a latest page has no notice and no offset. */
+:root {
+  --cmip-notice-h: 1.15rem;
+}
+
+[data-md-component="outdated"] {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+/* The header is sticky at top 0 by default, which would slide it underneath the
+   pinned notice. When the notice is showing, park the header just below it. */
+body:has([data-md-component="outdated"]:not([hidden])) .md-header--cmip {
+  top: var(--cmip-notice-h);
+}
+
+[data-md-component="outdated"] .md-banner a {
+  color: var(--cmip-navy);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+[data-md-component="outdated"] .md-banner a:hover {
+  color: var(--cmip-navy-hover);
+}
+
+/* ── Fallback banner (unapproved hostname) ────────────────────────────────── */
+/* Unofficial-copy warning. Inserted by stylesheets/fallback-banner.js as the
+   first thing on the page. Pale gold with a gold rule and navy text, in the
+   site's own font: noticeable, but part of the theme rather than a shout. */
+.cmip-fallback-banner {
+  padding: 0.4rem 1.2rem;
+  background: var(--cmip-yellow-pale);
+  color: var(--cmip-navy);
+  border-bottom: 2px solid var(--cmip-gold);
+  font-family: var(--cmip-font-body);
+  font-size: 0.74rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.cmip-fallback-banner a {
+  color: var(--cmip-navy);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.cmip-fallback-banner a:hover {
+  color: var(--cmip-navy-hover);
+}
+
+/* ── Typography: Akshar headings, Plus Jakarta Sans body ─────────── */
+.md-typeset {
+  font-size: 0.86rem;
+  line-height: 1.5;
+  color: var(--cmip-body);
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h5 {
+  font-family: var(--cmip-font-heading);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--cmip-navy);
+  letter-spacing: 0;
+}
+
+/* h4 and h6 use the body face on the live site */
+.md-typeset h4,
+.md-typeset h6 {
+  font-family: var(--cmip-font-body);
+  font-weight: 500;
+  color: var(--cmip-navy);
+}
+
+.md-typeset h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  border: 0;
+  padding: 0;
+}
+
+.md-typeset h2 {
+  font-size: 2rem;
+  margin-top: 2rem;
+  border: 0;
+  padding: 0;
+}
+
+.md-typeset h3 {
+  font-size: 1.75rem;
+}
+
+.md-typeset h4 {
+  font-size: 1.4rem;
+}
+
+.md-typeset p,
+.md-typeset li {
+  color: var(--cmip-body);
+}
+
+.md-typeset a {
+  color: var(--cmip-navy);
+  text-decoration: underline;
+}
+
+.md-typeset a:hover {
+  color: var(--cmip-navy-hover);
+}
+
+/* ── Code and tables ─────────────────────────────────────────────── */
+.md-typeset pre,
+.md-typeset pre > code {
+  border-radius: 0.375rem;
+}
+
+.md-typeset code {
+  border-radius: 0.25rem;
+}
+
+.md-typeset table:not([class]) {
+  border: 1px solid var(--cmip-rule);
+  border-radius: 0.375rem;
+}
+
+.md-typeset table:not([class]) th {
+  font-family: var(--cmip-font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: var(--cmip-yellow-pale);
+  color: var(--cmip-navy);
+}
+
+.md-typeset table:not([class]) tr:hover td {
+  background: #f8f9fa;
+}
+
+/* ── Admonitions ─────────────────────────────────────────────────── */
+.md-typeset .admonition,
+.md-typeset details {
+  border: 1px solid var(--cmip-rule);
+  border-left: 4px solid var(--cmip-gold);
+  border-radius: 0.375rem;
+  box-shadow: none;
+  background: var(--cmip-white);
+  font-size: 0.82rem;
+}
+
+.md-typeset .admonition-title,
+.md-typeset summary {
+  font-family: var(--cmip-font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--cmip-navy);
+  background: rgba(242, 179, 13, 0.14);
+}
+
+.md-typeset .admonition-title::before,
+.md-typeset summary::before {
+  background-color: var(--cmip-navy);
+}
+
+.md-typeset .admonition.warning,
+.md-typeset .admonition.danger {
+  border-left-color: var(--cmip-crimson);
+}
+
+.md-typeset .admonition.tip,
+.md-typeset .admonition.info {
+  border-left-color: var(--cmip-teal);
+}
+
+/* ── Sidebar and contents ────────────────────────────────────────── */
+.md-nav__title {
+  font-family: var(--cmip-font-heading);
+  font-weight: 600;
+  color: var(--cmip-navy);
+}
+
+.md-nav__link {
+  font-family: var(--cmip-font-body);
+  font-size: 0.78rem;
+}
+
+.md-nav__link--active,
+.md-nav__link:hover {
+  color: var(--cmip-navy);
+  font-weight: 600;
+}
+
+/* ── Footer: navy, as on the live site ───────────────────────────── */
+.md-footer {
+  background: var(--cmip-navy);
+  color: var(--cmip-white);
+}
+
+.md-footer-meta {
+  background: var(--cmip-navy);
+}
+
+.md-footer__title {
+  font-family: var(--cmip-font-heading);
+  font-weight: 600;
+}
+
+.md-footer__direction,
+.md-footer-meta__inner {
+  font-family: var(--cmip-font-body);
+}
+
+.md-footer__link:hover .md-footer__title,
+.md-footer-meta a:hover {
+  color: var(--cmip-gold);
+}

@@ -1,0 +1,60 @@
+{#-
+  Top-bar nav items. Uses its own cmip-nav__* classes rather than Material's
+  md-tabs__* ones, because those carry contain/overflow/opacity rules that
+  clip the dropdown and fade the links.
+
+  A folder renders as a dropdown. A folder inside a folder renders as a
+  submenu that flies out to the side on hover or keyboard focus. Sections
+  carry no URL of their own, so they are never rendered as links.
+-#}
+{% macro dropdown_items(items) %}
+  {% for child in items %}
+    {% if child.children %}
+      <li class="cmip-nav__dropdown-item cmip-nav__dropdown-item--group" role="none">
+        <span class="cmip-nav__dropdown-link cmip-nav__dropdown-toggle"
+              tabindex="0" role="button" aria-haspopup="true" aria-expanded="false">
+          {{ child.title }}
+        </span>
+        <ul class="cmip-nav__dropdown-sub" role="menu">
+          {{ dropdown_items(child.children) }}
+        </ul>
+      </li>
+    {% else %}
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="{{ child.url | url }}" class="cmip-nav__dropdown-link" role="menuitem">
+          {{ child.title }}
+        </a>
+      </li>
+    {% endif %}
+  {% endfor %}
+{% endmacro %}
+{% macro render(nav_item, ref = nav_item) %}
+  {% set class = "cmip-nav__item" %}
+  {% if ref.active %}
+    {% set class = class ~ " cmip-nav__item--active" %}
+  {% endif %}
+  {% if nav_item.is_section %}
+    <li class="{{ class }} cmip-nav__item--dropdown">
+      <span class="cmip-nav__link cmip-nav__link--dropdown" tabindex="0"
+            role="button" aria-haspopup="true" aria-expanded="false">
+        {{ nav_item.title }}
+      </span>
+      <ul class="cmip-nav__dropdown" role="menu">
+        {{ dropdown_items(nav_item.children) }}
+      </ul>
+    </li>
+  {% elif nav_item.children %}
+    {% set first = nav_item.children | first %}
+    {% if first.children %}
+      {{ render(first, ref) }}
+    {% else %}
+      <li class="{{ class }}">
+        <a href="{{ first.url | url }}" class="cmip-nav__link">{{ ref.title }}</a>
+      </li>
+    {% endif %}
+  {% else %}
+    <li class="{{ class }}">
+      <a href="{{ nav_item.url | url }}" class="cmip-nav__link">{{ nav_item.title }}</a>
+    </li>
+  {% endif %}
+{% endmacro %}

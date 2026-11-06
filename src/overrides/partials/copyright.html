@@ -1,0 +1,25 @@
+{#-
+  Footer credit. Based on Material's own partials/copyright.html (9.5.47), but the
+  credit line reads "Made with Material for MkDocs (custom)" and BOTH links point
+  at the template repository this site is built from, not at Material's website.
+
+  The address comes from extra.template_url in mkdocs.yml, and falls back to the
+  CMIP template if that is not set.
+
+  Set extra.generator: false to hide the credit line altogether.
+-#}
+{% set template_url = config.extra.template_url | default('https://github.com/cmip-ipo-internal/cmipipo-mkdocs-course', true) %}
+<div class="md-copyright">
+  {% if config.copyright %}
+    <div class="md-copyright__highlight">
+      {{ config.copyright }}
+    </div>
+  {% endif %}
+  {% if not config.extra.generator == false %}
+    Made with
+    <a href="{{ template_url }}" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+    (<a href="{{ template_url }}" target="_blank" rel="noopener">custom</a>)
+  {% endif %}
+</div>

@@ -1,0 +1,221 @@
+name: Deploy versioned site (mike)
+
+# push to docs       -> updates the content of the current "latest" version. It
+#                       does not create a new version, with one exception: if no
+#                       version exists yet (a brand-new repository), the first
+#                       push creates the first one, named after today's date, so
+#                       the site is never blank.
+# GitHub release     -> creates a new version named after the publish date
+#                       (shown as 26.Nov.05), makes it "latest", and makes
+#                       "latest" the default the site root redirects to.
+#
+# mike keeps every version on the gh-pages branch, but that branch is only
+# storage. Pages itself is deployed as an artifact, so
+# Settings > Pages > Source stays on "GitHub Actions".
+
+on:
+  push:
+    branches: [docs]
+    paths:
+      - 'docs/**'
+      - 'src/**'
+      - '.github/pages-404.html'
+      - '.github/workflows/pages.yml'
+  # Kept from the previous workflow: another repository or workflow can ask for
+  # a rebuild. It refreshes "latest" exactly as a push does.
+  repository_dispatch:
+    types: [deploy-docs]
+  release:
+    types: [published]
+  workflow_dispatch:
+
+permissions:
+  contents: write   # mike pushes the gh-pages storage branch
+  pages: write
+  id-token: write
+
+# Never cancel a run part-way: mike pushes to gh-pages, and an interrupted push
+# can leave the branch behind. Queue runs instead.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+env:
+  MKDOCS_CONFIG: src/mkdocs.yml
+  # Points the repo link at whichever repository this runs in,
+  # so a copy of this template needs no edit.
+  REPO_URL: ${{ github.server_url }}/${{ github.repository }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      # "true" only when something was published and needs deploying to Pages.
+      published: ${{ steps.release.outputs.published || steps.update.outputs.published }}
+    steps:
+      # mike needs the full history and the gh-pages branch, not a shallow clone.
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: src/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r src/requirements.txt
+
+      - name: Configure git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      # A fresh checkout only has the remote-tracking branch origin/gh-pages,
+      # and `mike list` reads only a LOCAL gh-pages, so without this step it
+      # reports no versions at all. On a repository that has never published,
+      # the remote branch does not exist yet and this is skipped.
+      - name: Fetch stored versions
+        run: |
+          if git ls-remote --exit-code --heads origin gh-pages > /dev/null 2>&1; then
+            git fetch origin gh-pages:gh-pages
+          else
+            echo "No gh-pages branch yet (nothing has been published)."
+          fi
+
+      # Push to main (or a manual run): refresh whatever version is "latest",
+      # keeping its id and label. No new version is created. The one exception
+      # is a repository with no "latest" at all (no gh-pages branch yet): the
+      # first push then creates the first version, named after today's date
+      # exactly as a release would be, so the site is never blank.
+      - name: Update latest
+        id: update
+        if: github.event_name != 'release'
+        run: |
+          INFO="$(mike list --config-file "$MKDOCS_CONFIG" --json 2>/dev/null | python -c '
+          import sys, json
+          try:
+              data = json.load(sys.stdin)
+          except ValueError:
+              data = []
+          for v in data:
+              if "latest" in v.get("aliases", []):
+                  print(v["version"])
+                  print(v.get("title") or v["version"])
+                  break
+          ' || true)"
+          if [ -z "$INFO" ]; then
+            # Nothing is published yet: create the first version from this push.
+            DATE="$(date -u +%Y.%m.%d)"
+            LABEL="$(LC_ALL=C date -u +%y.%b.%d)"
+            VERSION="$DATE"
+            TITLE="$LABEL"
+            exists() {
+              mike list --config-file "$MKDOCS_CONFIG" --json 2>/dev/null | python -c '
+          import sys, json
+          try:
+              data = json.load(sys.stdin)
+          except ValueError:
+              data = []
+          sys.exit(0 if any(v["version"] == sys.argv[1] for v in data) else 1)
+          ' "$1"
+            }
+            N=2
+            while exists "$VERSION"; do
+              VERSION="${DATE}.${N}"
+              TITLE="${LABEL}.${N}"
+              N=$((N + 1))
+            done
+            echo "No version exists yet. Creating the first one from this push: $VERSION (shown as $TITLE)"
+            mike deploy --config-file "$MKDOCS_CONFIG" --push --title "$TITLE" --update-aliases "$VERSION" latest
+            mike set-default --config-file "$MKDOCS_CONFIG" --push latest
+          else
+            VERSION="$(echo "$INFO" | sed -n 1p)"
+            TITLE="$(echo "$INFO" | sed -n 2p)"
+            echo "Updating latest ($VERSION, shown as $TITLE) from this push"
+            mike deploy --config-file "$MKDOCS_CONFIG" --push --title "$TITLE" --update-aliases "$VERSION" latest
+          fi
+          echo "published=true" >> "$GITHUB_OUTPUT"
+
+      # Published release: the version id is the publish date (UTC) as
+      # YYYY.MM.DD, which is what the URL and the dropdown ordering use (dots,
+      # numeric, so mike sorts it correctly). The label readers see in the
+      # dropdown is the same date as YY.Mon.DD, e.g. 26.Nov.05. A second release
+      # on the same day gets .2, .3, ... instead of overwriting the first.
+      # The tag name is only logged. Pre-releases are skipped so they never
+      # become "latest". Works on a repository with no gh-pages branch yet:
+      # mike creates it.
+      - name: Deploy release
+        id: release
+        if: github.event_name == 'release' && !github.event.release.prerelease
+        env:
+          TAG: ${{ github.event.release.tag_name }}
+          PUBLISHED: ${{ github.event.release.published_at }}
+        run: |
+          DATE="$(date -u -d "$PUBLISHED" +%Y.%m.%d)"
+          LABEL="$(LC_ALL=C date -u -d "$PUBLISHED" +%y.%b.%d)"
+          VERSION="$DATE"
+          TITLE="$LABEL"
+          # mike list prints the title first, e.g. "26.Nov.05" (2026.11.05), so
+          # compare against the version ids in its JSON output instead. Empty
+          # output (no gh-pages branch yet) means no versions exist.
+          exists() {
+            mike list --config-file "$MKDOCS_CONFIG" --json 2>/dev/null | python -c '
+          import sys, json
+          try:
+              data = json.load(sys.stdin)
+          except ValueError:
+              data = []
+          sys.exit(0 if any(v["version"] == sys.argv[1] for v in data) else 1)
+          ' "$1"
+          }
+          N=2
+          while exists "$VERSION"; do
+            VERSION="${DATE}.${N}"
+            TITLE="${LABEL}.${N}"
+            N=$((N + 1))
+          done
+          echo "Release $TAG -> version $VERSION (shown as $TITLE)"
+          mike deploy --config-file "$MKDOCS_CONFIG" --push --title "$TITLE" --update-aliases "$VERSION" latest
+          mike set-default --config-file "$MKDOCS_CONFIG" --push latest
+          echo "published=true" >> "$GITHUB_OUTPUT"
+
+      # Package the stored versions as the Pages artifact. The worktree's .git
+      # pointer file is removed so it is not uploaded with the site.
+      - name: Collect site from gh-pages
+        if: steps.release.outputs.published == 'true' || steps.update.outputs.published == 'true'
+        run: |
+          git worktree add _site gh-pages
+          rm -f _site/.git
+
+      # Once the site is versioned, an old unversioned link such as
+      # /cmip7-guidance/CMIP7/Guidance_for_users/ no longer exists. GitHub Pages
+      # serves the ROOT 404.html for any missing path, so this page forwards such
+      # a link to the same page under /latest/. It is written into the artifact
+      # only, never committed to gh-pages. Skipped if the checked-out commit
+      # predates the page (for example a release on an old tag).
+      - name: Add forwarding page for unversioned links
+        if: steps.release.outputs.published == 'true' || steps.update.outputs.published == 'true'
+        run: |
+          if [ -f .github/pages-404.html ]; then
+            sed "s|__REPO__|${GITHUB_REPOSITORY#*/}|g" .github/pages-404.html > _site/404.html
+          else
+            echo "No .github/pages-404.html in this commit; skipping the forwarding page."
+          fi
+
+      - uses: actions/upload-pages-artifact@v3
+        if: steps.release.outputs.published == 'true' || steps.update.outputs.published == 'true'
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    if: needs.build.outputs.published == 'true'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
