@@ -42,19 +42,27 @@ The site is versioned with [mike](https://github.com/jimporter/mike) and publish
   `docs/stylesheets/matomo.js`). Every visit is tracked from every hostname, including a local
   server, and cookies are only set after a visitor accepts the banner.
 
-## Cloudflare preview
+## Cloudflare
 
-Previews on Cloudflare Pages are built by `src/cloudflare.sh`. In the Cloudflare project's
-build settings use:
+The main site and the previews on Cloudflare Pages are built by `src/cloudflare.sh`. In the
+Cloudflare project's build settings use:
 
+- **Production branch:** `gh-pages`
 - **Build command:** `bash src/cloudflare.sh`
 - **Build output directory:** `docs`
 
-On the `production` branch the script builds nothing and uses the `docs/` folder already
-committed there. On any other branch it builds the site with mkdocs and puts the result in
-`docs/`, because that is the folder Cloudflare publishes.
+`gh-pages` is where the GitHub Action stores the finished, versioned site. After each deploy the
+Action also commits two extra files onto that branch: `404.html` (forwards old unversioned links
+to the latest version) and a copy of `src/cloudflare.sh` (so the build command exists there).
+What the script does depends on the branch Cloudflare is building:
 
-The preview path deletes `docs/` (the source pages) in the checkout it runs in. It is meant for
-Cloudflare's own throwaway build, so it refuses to run unless Cloudflare has set
-`CF_PAGES_BRANCH`. To try it by hand, run it in a throwaway copy of the repository with
-`CF_PAGES_BRANCH=test` set, never in your working copy.
+- **`gh-pages` (production):** nothing is built. The finished site is at the root of the branch,
+  and Cloudflare publishes `docs/`, so the script moves the root into `docs/`.
+- **`production` (the old production branch):** nothing to do; it already has a finished `docs/`.
+- **any other branch (a preview):** the script builds the site with mkdocs and puts the result in
+  `docs/`.
+
+The script moves or deletes files in the checkout it runs in. It is meant for Cloudflare's own
+throwaway build, so it refuses to run unless Cloudflare has set `CF_PAGES_BRANCH`. To try it by
+hand, run it in a throwaway copy of the repository with `CF_PAGES_BRANCH=test` (or `gh-pages`)
+set, never in your working copy.

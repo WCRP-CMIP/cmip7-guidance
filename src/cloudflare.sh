@@ -1,5 +1,4 @@
 #!/bin/bash
-<<<<<<< HEAD
 # Cloudflare Pages build for cmip7-guidance.
 #
 # Cloudflare settings (Workers & Pages > this project > Settings > Builds):
@@ -80,15 +79,3 @@ test -f build/index.html
 rm -rf docs
 mv build docs
 echo "Built site is now in docs/ ($(find docs -name '*.html' | wc -l | tr -d ' ') pages)"
-=======
-
-if [ "$CF_PAGES_BRANCH" == "production" ]; then
-	echo "We are on the production, reusing actions build 'docs'"
-else
-	pip install -r src/mkdocs/requirements.txt;
-	mkdocs build --clean -f src/mkdocs/mkdocs.yml;
-	rm -rf docs; 
-	cp -r src/mkdocs/site docs;
-	rm -rf src/ 
-fi
->>>>>>> e8e795f (Create cloudflare.sh)
