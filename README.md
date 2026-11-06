@@ -2,6 +2,9 @@
 
 Guidance and documentation for CMIP7, built with MkDocs (Material) on the CMIP IPO site template.
 
+The live site is at [guidance.wcrp-cmip.org](https://guidance.wcrp-cmip.org/), and is also
+mirrored on GitHub Pages at [wcrp-cmip.github.io/cmip7-guidance](https://wcrp-cmip.github.io/cmip7-guidance/).
+
 - Pages are in `docs/`, and the navigation is `docs/nav_menu.md`.
 - Settings are in `src/mkdocs.yml`.
 - Run `make dev` to preview, `make build` to build into `build/`.
