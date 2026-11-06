@@ -1,0 +1,129 @@
+site_name: Guidance and Documentation
+# site_url: Empty for relative paths - works at any deployment location (/project/, /custom/, etc.)
+site_url: ''
+repo_url: https://github.com/WCRP-CMIP/cmip7-guidance
+repo_name: WCRP-CMIP/cmip7-guidance
+# The "view" icon at the top of each page opens that page's source on GitHub:
+# <repo_url>/<edit_uri><path of the page>. Here that is the page under docs/ on the
+# docs branch, for example .../blob/docs/docs/CMIP7/Guidance_for_users.md
+# (see overrides/partials/actions.html).
+edit_uri: blob/docs/docs/
+site_description: Documentation for CMIP7.
+# The standard author tag: Material writes this into every page as
+# <meta name="author" content="CMIP-IPO">. The separate author-details tag (author=,
+# github=, contact=) is hard-coded in overrides/main.html and sits alongside it.
+site_author: CMIP-IPO
+
+
+# Paths are relative to this file (src/)
+docs_dir: ../docs
+site_dir: ../build
+use_directory_urls: true
+
+copyright: CMIP International Project Office
+
+theme:
+  name: material
+  language: en
+  custom_dir: overrides
+  logo: assets/cmip-logo-white.svg
+  favicon: assets/cmip-icon.svg
+  icon:
+    repo: fontawesome/brands/git-alt
+  font:
+    text: Plus Jakarta Sans
+    code: Roboto Mono
+  palette:
+    scheme: default
+    primary: custom
+    accent: custom
+  features:
+    # navigation.instant is deliberately not enabled: it swaps pages without
+    # re-rendering the custom header, so the active nav highlight goes stale.
+    - navigation.top
+    - navigation.path
+    - navigation.indexes
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - toc.follow
+    - content.code.copy
+    - content.action.view
+
+plugins:
+  - search:
+      lang: en
+      separator: '[\s\-\.]+'
+  - gen-files:
+      scripts: []
+
+  - literate-nav:
+      nav_file: nav_menu.md
+      implicit_index: true
+      tab_length: 2
+
+  - redirects:
+      redirect_maps:
+        'CMIP7/global_attributes.md': 'CMIP7/Global_Attributes.md'
+        'CMIP7/branded_variables.md': 'CMIP7/Branded_Variables.md'
+        'CMIP7/domain_names.md': 'CMIP7/Domain_names.md'
+        'CMIP7/guidance_for_esgf.md': 'CMIP7/Guidance_for_ESGF.md'
+        'CMIP7/guidance_for_mips.md': 'CMIP7/Guidance_for_MIPs.md'
+        'CMIP7/guidance_for_modellers.md': 'CMIP7/Guidance_for_modellers.md'
+        'CMIP7/guidance_for_users.md': 'CMIP7/Guidance_for_users.md'
+
+
+hooks:
+  - hooks/matomo.py
+
+extra:
+  # Top-level nav titles kept out of the top bar (still in the sidebar).
+  # "Home" is hidden here; the logo in the top bar still links to the home page.
+  nav_exclude:
+    - Home
+
+  # Versioning is handled by mike. The dropdown reads versions.json at the root
+  # of the published site; 'default: latest' decides which version is NOT
+  # flagged as outdated by the notice in overrides/main.html.
+  version:
+    provider: mike
+    default: latest
+
+  # The footer's "Made with Material for MkDocs" link points here, at the template
+  # repository this site is built from (see overrides/partials/copyright.html).
+  template_url: https://github.com/cmip-ipo-internal/cmipipo-mkdocs-course
+
+
+extra_css:
+  - stylesheets/cmip.css
+
+extra_javascript:
+  - stylesheets/fallback-banner.js
+  - https://unpkg.com/mermaid@10/dist/mermaid.min.js
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+
+  - abbr #TODO: check that it is okay to add this
+  
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true

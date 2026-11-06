@@ -1,0 +1,30 @@
+{#-
+  Page template for the pages that forward to an external site (see the pages in
+  docs/resources/ that set "template: external.html").
+
+  A page using it needs this front matter:
+      template: external.html
+      title: Name shown on the page
+      redirect_url: https://where.it/goes/
+  and may add:
+      redirect_delay: 1     (seconds before the automatic forward; default 1)
+
+  The visitor is forwarded automatically by a <meta http-equiv="refresh"> tag
+  (which works without JavaScript). The link is shown on the page straight away,
+  so if the forward is slow, or the browser blocks it, they can just click it.
+  The page is marked noindex so search engines list the real site, not this stop.
+-#}
+{% extends "main.html" %}
+
+{% block extrahead %}
+  {{ super() }}
+  <meta name="robots" content="noindex">
+  <meta http-equiv="refresh" content="{{ page.meta.redirect_delay | default(1) }}; url={{ page.meta.redirect_url | e }}">
+{% endblock %}
+
+{% block content %}
+  <h1>{{ page.title }}</h1>
+  <p>Taking you to <strong>{{ page.title }}</strong>, an external site&hellip;</p>
+  <p>If this takes too long, <a href="{{ page.meta.redirect_url | e }}">open {{ page.title }} directly</a>.</p>
+  <p><small>{{ page.meta.redirect_url | e }}</small></p>
+{% endblock %}

@@ -1,0 +1,29 @@
+{#-
+  Page action buttons (the small icons at the top right of each page). Based on
+  Material's own partials/actions.html (9.5.47), with ONE change.
+
+  Material's "view" button swaps the address of the page's source for its raw
+  form (/blob/ -> /raw/), which opens the plain markdown file. Here the "view"
+  button opens the page's source exactly as GitHub shows it, i.e. page.edit_url
+  unchanged. That address comes from edit_uri in mkdocs.yml, so for the page
+  CMIP7/Guidance_for_users.md it is
+      https://github.com/WCRP-CMIP/cmip7-guidance/blob/docs/docs/CMIP7/Guidance_for_users.md
+
+  Because edit_uri points at /blob/, the "edit" button (only shown if
+  "content.action.edit" is switched on in mkdocs.yml) swaps /blob/ for /edit/ so
+  that it still opens GitHub's editor.
+-#}
+{% if page.edit_url %}
+  {% if "content.action.edit" in features %}
+    <a href="{{ page.edit_url | replace('/blob/', '/edit/') }}" title="{{ lang.t('action.edit') }}" class="md-content__button md-icon">
+      {% set icon = config.theme.icon.edit or "material/file-edit-outline" %}
+      {% include ".icons/" ~ icon ~ ".svg" %}
+    </a>
+  {% endif %}
+  {% if "content.action.view" in features %}
+    <a href="{{ page.edit_url }}" title="{{ lang.t('action.view') }}" class="md-content__button md-icon">
+      {% set icon = config.theme.icon.view or "material/file-eye-outline" %}
+      {% include ".icons/" ~ icon ~ ".svg" %}
+    </a>
+  {% endif %}
+{% endif %}
