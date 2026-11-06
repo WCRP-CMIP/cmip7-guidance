@@ -41,3 +41,20 @@ The site is versioned with [mike](https://github.com/jimporter/mike) and publish
 - **Analytics:** this site reports to Matomo website ID `3` (set as `SITE_ID` in
   `docs/stylesheets/matomo.js`). Every visit is tracked from every hostname, including a local
   server, and cookies are only set after a visitor accepts the banner.
+
+## Cloudflare preview
+
+Previews on Cloudflare Pages are built by `src/cloudflare.sh`. In the Cloudflare project's
+build settings use:
+
+- **Build command:** `bash src/cloudflare.sh`
+- **Build output directory:** `docs`
+
+On the `production` branch the script builds nothing and uses the `docs/` folder already
+committed there. On any other branch it builds the site with mkdocs and puts the result in
+`docs/`, because that is the folder Cloudflare publishes.
+
+The preview path deletes `docs/` (the source pages) in the checkout it runs in. It is meant for
+Cloudflare's own throwaway build, so it refuses to run unless Cloudflare has set
+`CF_PAGES_BRANCH`. To try it by hand, run it in a throwaway copy of the repository with
+`CF_PAGES_BRANCH=test` set, never in your working copy.

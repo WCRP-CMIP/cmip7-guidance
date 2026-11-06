@@ -181,28 +181,58 @@ jobs:
           mike set-default --config-file "$MKDOCS_CONFIG" --push latest
           echo "published=true" >> "$GITHUB_OUTPUT"
 
-      # Package the stored versions as the Pages artifact. The worktree's .git
-      # pointer file is removed so it is not uploaded with the site.
+      # Package the stored versions as the Pages artifact. _site is a worktree of
+      # gh-pages, and stays one until the next step has committed to it.
       - name: Collect site from gh-pages
         if: steps.release.outputs.published == 'true' || steps.update.outputs.published == 'true'
         run: |
           git worktree add _site gh-pages
-          rm -f _site/.git
 
-      # Once the site is versioned, an old unversioned link such as
-      # /cmip7-guidance/CMIP7/Guidance_for_users/ no longer exists. GitHub Pages
-      # serves the ROOT 404.html for any missing path, so this page forwards such
-      # a link to the same page under /latest/. It is written into the artifact
-      # only, never committed to gh-pages. Skipped if the checked-out commit
-      # predates the page (for example a release on an old tag).
-      - name: Add forwarding page for unversioned links
+      # Put two extra files ON the gh-pages branch itself, so that anything that
+      # serves that branch directly (the Cloudflare production site) has them as
+      # well as the GitHub Pages copy:
+      #
+      #   404.html           Once the site is versioned, an old unversioned link
+      #                      such as /CMIP7/Guidance_for_users/ no longer exists.
+      #                      A host serves the ROOT 404.html for any missing path,
+      #                      so this page forwards such a link to the same page
+      #                      under /latest/.
+      #   src/cloudflare.sh  Cloudflare runs "bash src/cloudflare.sh" on whichever
+      #                      branch it builds, so the script must exist on
+      #                      gh-pages as well. On that branch it moves the
+      #                      finished site into docs/, the folder Cloudflare
+      #                      publishes.
+      #
+      # Both are rewritten from the source commit on every run, but a commit is
+      # only made (and pushed) when something actually changed. A file is skipped
+      # if the checked-out commit predates it, for example a release on an old
+      # tag. mike leaves files it does not manage alone, so they survive later
+      # deploys. The script is then removed from the folder uploaded to GitHub
+      # Pages, where it does not belong.
+      - name: Add 404 page and Cloudflare script to gh-pages
         if: steps.release.outputs.published == 'true' || steps.update.outputs.published == 'true'
         run: |
           if [ -f .github/pages-404.html ]; then
             sed "s|__REPO__|${GITHUB_REPOSITORY#*/}|g" .github/pages-404.html > _site/404.html
           else
-            echo "No .github/pages-404.html in this commit; skipping the forwarding page."
+            echo "No .github/pages-404.html in this commit; skipping the 404 page."
           fi
+          if [ -f src/cloudflare.sh ]; then
+            mkdir -p _site/src
+            cp src/cloudflare.sh _site/src/cloudflare.sh
+          else
+            echo "No src/cloudflare.sh in this commit; skipping the Cloudflare script."
+          fi
+          git -C _site add -A
+          if git -C _site diff --cached --quiet; then
+            echo "gh-pages already has the current extra files."
+          else
+            git -C _site commit -m "Add the 404 forwarding page and the Cloudflare build script"
+            git -C _site push origin gh-pages
+          fi
+          # Detach the worktree pointer and drop the script before the upload.
+          rm -f _site/.git
+          rm -rf _site/src
 
       - uses: actions/upload-pages-artifact@v3
         if: steps.release.outputs.published == 'true' || steps.update.outputs.published == 'true'
