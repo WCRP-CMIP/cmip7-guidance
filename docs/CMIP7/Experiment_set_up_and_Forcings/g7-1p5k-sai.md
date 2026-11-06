@@ -24,11 +24,11 @@ For the full background of the experiment, please see the following references:
   (2024).
   G6-1.5K-SAI: a new Geoengineering Model Intercomparison Project (GeoMIP) experiment integrating recent advances in
   solar radiation modification studies.
-  Geoscientific Model Development, 17(7), 2583–2596. https://doi.org/10.5194/gmd-17-2583-2024
+  Geoscientific Model Development, 17(7), 2583-2596. https://doi.org/10.5194/gmd-17-2583-2024
 - Visioni, D., Robock, A., Roberts, K. E., Lee, W., Henry, M., Duffey, A., Hirasawa, H., Chegwidden, O., & Sipra, H.
   (2025).
   Finalizing Experimental Protocols for the Geoengineering Model Intercomparison Project (GeoMIP) Contribution to CMIP7.
-  Bulletin of the American Meteorological Society, 106(10), E2029–E2035. https://doi.org/10.1175/bams-d-25-0191.1
+  Bulletin of the American Meteorological Society, 106(10), E2029-E2035. https://doi.org/10.1175/bams-d-25-0191.1
 
 ## Experiment set up
 

@@ -19,10 +19,10 @@ If you notice something that is unclear, please
 
 For the full background of the experiment, please see the following references:
 
-- van Vuuren, D., O’Neill, B., Tebaldi, C., Chini, L., Friedlingstein, P., Hasegawa, T., Riahi, K., Sanderson, B.,
+- van Vuuren, D., O'Neill, B., Tebaldi, C., Chini, L., Friedlingstein, P., Hasegawa, T., Riahi, K., Sanderson, B.,
   Govindasamy, B., Bauer, N., Eyring, V., Fall, C., Frieler, K., Gidden, M., Gohar, L., Jones, A., King, A., Knutti, R.,
   Kriegler, E., et al. (2025).
-  The Scenario Model Intercomparison Project for CMIP7 (ScenarioMIP-CMIP7) . https://doi.org/10.5194/egusphere-2024-3765
+  The Scenario Model Intercomparison Project for CMIP7 (ScenarioMIP-CMIP7). https://doi.org/10.5194/egusphere-2024-3765
 
 ## Paired experiments
 
@@ -209,6 +209,8 @@ esgpull download --tag ${EXPERIMENT_NAME}
 #### Data not available via input4MIPs
 
 - aerosol optical properties
-    - notes: In preparation, will be made available at https://zenodo.org/records/21671953
+    - notes: Please see this
+      [specific guidance section](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/aerosol-optical-properties-macv2-sp/#datasets-for-cmip7-phases)
+      for data access and version information.
     - further guidance:
       [input4mips-cvs.readthedocs.io/dataset-overviews/aerosol-optical-properties-macv2-sp](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/aerosol-optical-properties-macv2-sp/)
