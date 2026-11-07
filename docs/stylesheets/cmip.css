@@ -478,6 +478,63 @@ body:has([data-md-component="outdated"]:not([hidden])) .md-header--cmip {
   color: var(--cmip-navy-hover);
 }
 
+/* -- Narrow screens: collapsible menu -------------------------------------- */
+/* Below Material's own breakpoint for its slide-out menu (76.25em, which is where
+   Material starts showing its hamburger button) the horizontal nav no longer
+   fits beside the logo. It is hidden, and the hamburger opens Material's
+   collapsible menu instead: the same navigation as an expandable tree. */
+@media screen and (max-width: 76.1875em) {
+  .md-header--cmip .cmip-nav {
+    display: none;
+  }
+
+  /* The hamburger is pinned at the far left, centred vertically, and the logo
+     (also pinned) moves to its right. Both are out of the header row, which
+     otherwise has nothing left in it. */
+  .md-header--cmip .md-header__button[for="__drawer"] {
+    position: absolute;
+    left: 0.3rem;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+    z-index: 1;
+    color: var(--cmip-white);
+    cursor: pointer;
+  }
+
+  .md-header--cmip .md-header__button.md-logo {
+    left: 2.9rem;
+  }
+
+  /* Nothing to reserve room for on the left any more (the nav is hidden); the
+     right is still reserved for the version label and icons. */
+  .md-header--cmip .md-header__inner {
+    padding-left: 0.5rem;
+  }
+}
+
+/* Phones: a smaller logo and a shorter bar, so the logo, the version label and
+   the two icons all fit side by side on a 320px screen. */
+@media screen and (max-width: 40em) {
+  .md-header--cmip .md-header__button.md-logo img,
+  .md-header--cmip .md-header__button.md-logo svg {
+    height: 1.8rem;
+  }
+
+  .md-header--cmip .md-header__inner {
+    min-height: 3.6rem;
+  }
+}
+
+/* The newer-version notice carries the latest version's date, so on a phone it can
+   wrap onto a second line. It gets room for two lines here; the header below it
+   is offset by the same variable, so the two can never overlap. */
+@media screen and (max-width: 30em) {
+  :root {
+    --cmip-notice-h: 2rem;
+  }
+}
+
 /* ── Fallback banner (unapproved hostname) ────────────────────────────────── */
 /* Unofficial-copy warning. Inserted by stylesheets/fallback-banner.js as the
    first thing on the page. Pale gold with a gold rule and navy text, in the
