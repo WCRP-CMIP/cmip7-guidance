@@ -33,7 +33,7 @@ CMIP7 model output is available through a distributed data archive developed and
 ??? info "What has been published so far ?"
     Summaries of CMIP7 data sets published to ESGF include the following:
 
-    - [Climate Resource][publication-summary-ref]: Summary of data published by experiment and model, with particular focus on the [Baseline Climate Variables](Guidance_for_modellers.md/#core-request).
+    - [Climate Resource's CMIP7 Data Availability page][publication-summary-ref]: Summary of data published by experiment and model, with particular focus on the [Baseline Climate Variables](Guidance_for_modellers.md/#core-request).
      - [CMIP-IPO summary page][publication-summary-ipo]: ESGF catalogue overview including counts of datasets published for each institution/model/experiment combination, counts of variables by experiment, and data volume by experiment.
      - [EMD model descriptions][emd]: Timeseries of publication on each model's EMD page.
      - ESGF project summary page (⚠️ in development)
@@ -77,7 +77,10 @@ For data access routes that do not involve official ESGF nodes, we encourage use
 
 ## 2.  Terms of use and citations requirements
 
-**Citations are now being minted by the CMIP7 Citations Service, you can see the latest [here](https://cmip7-citations.ceda.ac.uk/citations/)**
+!!! warning ""
+
+        ⚠️ 2026-11-02 status: CMIP7 citations are now in the process of being minted by the CMIP7 Citations Service.
+        Some datasets have a DOI, others not yet. You can see the latest [here](citesearch).
 
 To enable modelling groups and others who support CMIP7 to demonstrate its impact (and secure ongoing funding), you are required to cite and acknowledge those who have made CMIP7 possible. Some best practices are also recommended.
 
@@ -188,7 +191,7 @@ More information about the meaning of these facets is provided in the [Global At
 
 ### 3.1.  Source and Variant
 * [List of models][sourcelist]
-* [Essential Model Documentation (EMD)][emd]
+* Essential Model Documentation (EMD): [Docs][EMDdocs] and [Model Pages][emd]
 
 
 The Essential Model Documentation (EMD) contains a high-level description intended to contain information on model formulation that can be easily compared between different models, as well as, more in-depth model documentation for each source.
@@ -293,7 +296,7 @@ Horizontal and vertical grids are registered in the EMD.  On each [EMD model pag
     * Horizontal computational grids (ex. h100) describe the arrangement of multiple subgrids into the complete horizontal domain.
     * Vertical computational grids (ex. v100) describe the number of levels, the coordinate, the total depth, and the heigh of the top and bottom layer of the 3rd dimension.
     
-    More information can be found in the [EMD Guidance][emdguidance].
+    More information can be found in the [EMD docs][EMDdocs].
 
 
 ## 4. CMIP7 data format
@@ -328,8 +331,9 @@ Proposing erratum through the webform requires a contact email address. Once the
 
 !!! Success "💡"
 
-    If you have a question about a model, you can find contact information of modellers by looking in the Responsible Parties tab of a given dataset on the [citation service][citesearch].
-
+    If you have a question about a model, you can find contact information of modellers by looking in the Responsible Parties tab of a given dataset on the [citation service][citesearch]. You can also look 
+    for the authors of the reference paper(s) in the [EMD][emd].
+For some models, a contact email address may be included in netcdf file metadata (under the "contact" global attribute).
 
 
 
@@ -348,7 +352,7 @@ If something is missing from this documentation, please open an issue [here][iss
 
 
 
-###### Document version: 2026-10-20
+###### Document version: 2026-11-03
  <!--  all the github contributors to the page -->
 ###### Authors: Juliette Lavoie, James Anstey, Matthew Mizielinski, Paul Smith, Sasha Ames, Aparna Radhakrishnan, Eleanor O'Rourke 
  <!--  abbreviation -->
@@ -404,6 +408,7 @@ If something is missing from this documentation, please open an issue [here][iss
 [tutorials]: https://wcrp-cmip.org/tutorials/
 [QA]: https://wcrp-cmip.org/faqs/
 [mailinglist]:https://wcrp-cmip.org/cmip-mailing-lists/
+[EMDdocs]: https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/
 
  <!-- CMIP7 links -->
 [GMDSpecialIssue]: https://gmd.copernicus.org/articles/special_issue1315.html
@@ -423,7 +428,6 @@ If something is missing from this documentation, please open an issue [here][iss
 [varlist]:https://esgvoc.ipsl.fr/concept/variable?projects=cmip7
 [freqlist]: https://esgvoc.ipsl.fr/concept/frequency?projects=cmip7
 [emd]: https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/Model/
-[emdguidance]: https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/#what-does-it-contain
 [CMIPpubs]: https://cmip-publications.llnl.gov
 [citesearch]: https://cmip7-citations.ceda.ac.uk/citations/ 
 [sourcelist]:  https://esgvoc.ipsl.fr/concept/model?projects=cmip7
