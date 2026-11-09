@@ -2771,7 +2771,7 @@
 <summary>What has been published so far ?</summary>
 <p>Summaries of <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> data sets published to ESGF include the following:</p>
 <ul>
-<li><a href="https://www.climate-resource.com/tools/esm-model/cmip7-availability">Climate Resource</a>: Summary of data published by experiment and model, with particular focus on the <a href="../Guidance_for_modellers/#core-request">Baseline Climate Variables</a>.</li>
+<li><a href="https://www.climate-resource.com/tools/esm-model/cmip7-availability">Climate Resource's <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> Data Availability page</a>: Summary of data published by experiment and model, with particular focus on the <a href="../Guidance_for_modellers/#core-request">Baseline Climate Variables</a>.</li>
 <li><a href="https://esgf.wcrp-cmip.org/">CMIP-IPO summary page</a>: ESGF catalogue overview including counts of datasets published for each institution/model/experiment combination, counts of variables by experiment, and data volume by experiment.</li>
 <li><a href="https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/Model/"><abbr title="Essential Model Documentation">EMD</abbr> model descriptions</a>: Timeseries of publication on each model's <abbr title="Essential Model Documentation">EMD</abbr> page.</li>
 <li>ESGF project summary page (⚠️ in development)</li>
@@ -2812,7 +2812,11 @@
 <p>An overview of <strong>how to access and use CMIP data</strong> is given in the slides from <a href="https://zenodo.org/records/18934629">CMIP 2026 workshop WIP session</a> (slides 3-20).</p>
 </div>
 <h2 id="2-terms-of-use-and-citations-requirements">2.  Terms of use and citations requirements<a class="headerlink" href="#2-terms-of-use-and-citations-requirements" title="Permanent link">&para;</a></h2>
-<p><strong>Citations are now being minted by the <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> Citations Service, you can see the latest <a href="https://cmip7-citations.ceda.ac.uk/citations/">here</a></strong></p>
+<div class="admonition warning">
+<div class="codehilite"><pre><span></span><code>⚠️ 2026-11-02 status: CMIP7 citations are now in the process of being minted by the CMIP7 Citations Service.
+Some datasets have a DOI, others not yet. You can see the latest [here](citesearch).
+</code></pre></div>
+</div>
 <p>To enable modelling groups and others who support <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> to demonstrate its impact (and secure ongoing funding), you are required to cite and acknowledge those who have made <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> possible. Some best practices are also recommended.</p>
 <h3 id="mandatory">Mandatory<a class="headerlink" href="#mandatory" title="Permanent link">&para;</a></h3>
 <ol>
@@ -2912,7 +2916,7 @@
 <h3 id="31-source-and-variant">3.1.  Source and Variant<a class="headerlink" href="#31-source-and-variant" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="https://esgvoc.ipsl.fr/concept/model?projects=cmip7">List of models</a></li>
-<li><a href="https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/Model/">Essential Model Documentation (<abbr title="Essential Model Documentation">EMD</abbr>)</a></li>
+<li>Essential Model Documentation (<abbr title="Essential Model Documentation">EMD</abbr>): <a href="https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/">Docs</a> and <a href="https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/Model/">Model Pages</a></li>
 </ul>
 <p>The Essential Model Documentation (<abbr title="Essential Model Documentation">EMD</abbr>) contains a high-level description intended to contain information on model formulation that can be easily compared between different models, as well as, more in-depth model documentation for each source.</p>
 <details class="info">
@@ -2994,7 +2998,7 @@ Before working with any CMIP dataset, users should <strong>check the calendar ty
 <li>Horizontal computational grids (ex. h100) describe the arrangement of multiple subgrids into the complete horizontal domain.</li>
 <li>Vertical computational grids (ex. v100) describe the number of levels, the coordinate, the total depth, and the heigh of the top and bottom layer of the 3rd dimension.</li>
 </ul>
-<p>More information can be found in the <a href="https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/#what-does-it-contain"><abbr title="Essential Model Documentation">EMD</abbr> Guidance</a>.</p>
+<p>More information can be found in the <a href="https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/"><abbr title="Essential Model Documentation">EMD</abbr> docs</a>.</p>
 </details>
 <h2 id="4-cmip7-data-format">4. <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> data format<a class="headerlink" href="#4-cmip7-data-format" title="Permanent link">&para;</a></h2>
 <p>As in previous phases, all <abbr title="Coupled Model Intercomparison Project phase 7">CMIP7</abbr> output has been written to netCDF files.
@@ -3024,8 +3028,10 @@ Many modelling centres use the <a href="https://cmor.llnl.gov/"><abbr title="Cli
 Proposing erratum through the webform requires a contact email address. Once the webform is validated and created, a special link is created and can be shared but the issue won’t appear on the index page. A moderator (from the relevant modelling centre providing data) will validate, update or reject the entry. When data errors are discovered, data providers are expected to retract the affected datasets from ESGF and, if possible, republish corrected data using updated dataset version identifiers. If no moderation action is taken after the 14-day validation period, the issue will be publicly indexed, albeit with a special flag.</p>
 <div class="admonition success">
 <p class="admonition-title">💡</p>
-<p>If you have a question about a model, you can find contact information of modellers by looking in the Responsible Parties tab of a given dataset on the <a href="https://cmip7-citations.ceda.ac.uk/citations/">citation service</a>.</p>
+<p>If you have a question about a model, you can find contact information of modellers by looking in the Responsible Parties tab of a given dataset on the <a href="https://cmip7-citations.ceda.ac.uk/citations/">citation service</a>. You can also look 
+for the authors of the reference paper(s) in the <a href="https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/Model/"><abbr title="Essential Model Documentation">EMD</abbr></a>.</p>
 </div>
+<p>For some models, a contact email address may be included in netcdf file metadata (under the "contact" global attribute).</p>
 <h2 id="6-new-to-cmip">6. New to CMIP?<a class="headerlink" href="#6-new-to-cmip" title="Permanent link">&para;</a></h2>
 <p>First time using CMIP? Need a bit more help ? Check out these resources:</p>
 <ul>
@@ -3035,7 +3041,7 @@ Proposing erratum through the webform requires a contact email address. Once the
 <li>You have a more specific question ? Ask it on the <a href="https://github.com/orgs/Fresh-Eyes-on-CMIP/discussions">Fresh Eyes Platform</a> (You need to register <a href="https://github.com/Fresh-Eyes-on-CMIP/member-requests/issues/new?template=new_user.yml">here</a> first.) or on the <a href="https://wcrp-cmip.org/faqs/">community Q&amp;A Forum</a>.</li>
 </ul>
 <p>If something is missing from this documentation, please open an issue <a href="https://github.com/WCRP-CMIP/cmip7-guidance/issues">here</a>.</p>
-<h6 id="document-version-2026-10-20">Document version: 2026-10-20<a class="headerlink" href="#document-version-2026-10-20" title="Permanent link">&para;</a></h6>
+<h6 id="document-version-2026-11-03">Document version: 2026-11-03<a class="headerlink" href="#document-version-2026-11-03" title="Permanent link">&para;</a></h6>
 <!--  all the github contributors to the page -->
 <h6 id="authors-juliette-lavoie-james-anstey-matthew-mizielinski-paul-smith-sasha-ames-aparna-radhakrishnan-eleanor-orourke">Authors: Juliette Lavoie, James Anstey, Matthew Mizielinski, Paul Smith, Sasha Ames, Aparna Radhakrishnan, Eleanor O'Rourke<a class="headerlink" href="#authors-juliette-lavoie-james-anstey-matthew-mizielinski-paul-smith-sasha-ames-aparna-radhakrishnan-eleanor-orourke" title="Permanent link">&para;</a></h6>
 <!--  abbreviation -->
