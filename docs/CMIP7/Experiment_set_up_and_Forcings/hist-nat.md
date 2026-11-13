@@ -23,7 +23,7 @@ For the full background of the experiment, please see the following references:
 - Gillett, N. P., Simpson, I. R., Hegerl, G., Knutti, R., Mitchell, D., Ribes, A., Shiogama, H., Stone, D., Tebaldi, C.,
   Wolski, P., Zhang, W., & Arora, V. K. (2025).
   The Detection and Attribution Model Intercomparison Project (DAMIP v2.0) contribution to CMIP7.
-  Geoscientific Model Development, 18(14), 4399–4416. https://doi.org/10.5194/gmd-18-4399-2025
+  Geoscientific Model Development, 18(14), 4399-4416. https://doi.org/10.5194/gmd-18-4399-2025
 
 ## Experiment set up
 

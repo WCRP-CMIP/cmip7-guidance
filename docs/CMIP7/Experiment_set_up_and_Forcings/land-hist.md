@@ -6,8 +6,9 @@ title: "Experiment Setup and Forcings Guidance: land-hist"
 # Experiment Setup and Forcings Guidance: land-hist
 
 Land-only version of `historical` with prescribed climate and weather inputs required to drive land models.
-The land model setup should be the same as that used in the equivalent coupled model historical experiment (`historical` or `esm-hist`),
-other than minor parameter tunings to adjust to the differences in coupled model runs versus prescribed climate runs.
+The land model setup should be the same as that used in the equivalent coupled model historical experiment (`historical`
+or `esm-hist`), other than minor parameter tunings to adjust to the differences in coupled model runs versus prescribed
+climate runs.
 
 - Responsible activity: [LMIP](./index.md#lmip)
 - Tier: 1
@@ -24,9 +25,9 @@ For the full background of the experiment, please see the following references:
 - van den Hurk, B., Kim, H., Krinner, G., Seneviratne, S. I., Derksen, C., Oki, T., Douville, H., Colin, J., Ducharne,
   A., Cheruy, F., Viovy, N., Puma, M. J., Wada, Y., Li, W., Jia, B., Alessandri, A., Lawrence, D. M., Weedon, G. P.,
   Ellis, R., et al. (2016).
-  LS3MIP (v1.0) contribution to CMIP6: the Land Surface, Snow and Soil moisture Model Intercomparison Project – aims,
+  LS3MIP (v1.0) contribution to CMIP6: the Land Surface, Snow and Soil moisture Model Intercomparison Project - aims,
   setup and expected outcome.
-  Geoscientific Model Development, 9(8), 2809–2832. https://doi.org/10.5194/gmd-9-2809-2016
+  Geoscientific Model Development, 9(8), 2809-2832. https://doi.org/10.5194/gmd-9-2809-2016
 
 ## Experiment set up
 
@@ -84,10 +85,11 @@ Please see the other [data](#data) sub-sections for details of the forcings data
 #### Data not available via input4MIPs
 
 - Land model climate and weather inputs
-    <!--- TODO: put this into generation code -->
-    - notes: The default forcing data is from a corrected reanalysis product that includes all the climate/weather inputs to drive a land model. 
-      The dataset is typically referred to as CRUJRA. 
-      CRUJRAv10 climate forcing data are provided by Tim Osborn and Andrew Friedman at UEA for the period 1901-2025
-      (and also used in the TRENDY project that supports the Global Carbon Budget).
-      These data are available from the following location: mdosullivan.github.io/GCB (scroll to bottom and select trendyv15-gcb2026-input). 
+    - notes: The default forcing data is from a corrected reanalysis product that includes all the climate/weather
+      inputs to drive a land model.
+      The dataset is typically referred to as CRUJRA.
+      CRUJRAv10 climate forcing data are provided by Tim Osborn and Andrew Friedman at UEA for the period 1901-2025 (and
+      also used in the TRENDY project that supports the Global Carbon Budget).
+      These data are available from the following location: mdosullivan.github.io/GCB (scroll to bottom and select
+      trendyv15-gcb2026-input).
       A 2nd historical forcing dataset is in development and would ideally also be run.

@@ -23,10 +23,10 @@ If you notice something that is unclear, please
 
 For the full background of the experiment, please see the following references:
 
-- van Vuuren, D., O’Neill, B., Tebaldi, C., Chini, L., Friedlingstein, P., Hasegawa, T., Riahi, K., Sanderson, B.,
+- van Vuuren, D., O'Neill, B., Tebaldi, C., Chini, L., Friedlingstein, P., Hasegawa, T., Riahi, K., Sanderson, B.,
   Govindasamy, B., Bauer, N., Eyring, V., Fall, C., Frieler, K., Gidden, M., Gohar, L., Jones, A., King, A., Knutti, R.,
   Kriegler, E., et al. (2025).
-  The Scenario Model Intercomparison Project for CMIP7 (ScenarioMIP-CMIP7) . https://doi.org/10.5194/egusphere-2024-3765
+  The Scenario Model Intercomparison Project for CMIP7 (ScenarioMIP-CMIP7). https://doi.org/10.5194/egusphere-2024-3765
 
 ## Paired experiments
 
@@ -118,6 +118,7 @@ Please see the guidance pages linked under each forcing for full details.
 
 - ozone
     - recommended source IDs: FZJ-CMIP-ozone-vl-1-0
+    - acceptable source IDs: FZJ-CMIP-ozone-vl-2-0
     - further guidance:
       [input4mips-cvs.readthedocs.io/dataset-overviews/ozone](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/ozone/)
 
@@ -187,7 +188,9 @@ For easier parsing with machines, we also present the information given above as
         "recommended_versions": [
             "FZJ-CMIP-ozone-vl-1-0"
         ],
-        "acceptable_versions": []
+        "acceptable_versions": [
+            "FZJ-CMIP-ozone-vl-2-0"
+        ]
     },
     "nitrogen-deposition": {
         "human_readable_name": "nitrogen deposition",

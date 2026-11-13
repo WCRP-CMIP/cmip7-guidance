@@ -5,7 +5,8 @@ title: "Experiment Setup and Forcings Guidance: amip-p4K"
 
 # Experiment Setup and Forcings Guidance: amip-p4K
 
-Same as `amip` simulation, except sea surface temperatures are increased by 4K in ice-free regions.
+Same as the `amip` simulation, except sea surface temperatures are increased by 4K in ice-free regions (sea ice and SSTs
+in grid boxes containing sea ice remain the same as in the `amip` experiment).
 
 - Responsible activity: [CFMIP](./index.md#cfmip)
 - Tier: 1
@@ -19,11 +20,16 @@ If you notice something that is unclear, please
 
 For the full background of the experiment, please see the following references:
 
-- Webb, M. J., Andrews, T., Bodas-Salcedo, A., Bony, S., Bretherton, C. S., Chadwick, R., Chepfer, H., Douville, H.,
-  Good, P., Kay, J. E., Klein, S. A., Marchand, R., Medeiros, B., Siebesma, A. P., Skinner, C. B., Stevens, B.,
-  Tselioudis, G., Tsushima, Y., & Watanabe, M. (2017).
-  The Cloud Feedback Model Intercomparison Project (CFMIP) contribution to CMIP6.
-  Geoscientific Model Development, 10(1), 359–384. https://doi.org/10.5194/gmd-10-359-2017
+- Ceppi, P., Bodas-Salcedo, A., Zelinka, M. D., Andrews, T., Brient, F., Chadwick, R., Dai, A.-Z., Gregory, J. M.,
+  Hwang, Y.-T., Kang, S. M., Kay, J. E., Mauritsen, T., Ogura, T., Tselioudis, G., Watanabe, M., Webb, M. J., & Wing, A.
+  A. (2026).
+  The Cloud Feedback Model Intercomparison Project (CFMIP) contribution to CMIP7.
+  Geoscientific Model Development, 19(18), 8693-8708. https://doi.org/10.5194/gmd-19-8693-2026
+- Ogura, T., Webb, M. J., & Lock, A. P. (2023).
+  Positive Low Cloud Feedback Primarily Caused by Increasing Longwave Radiation From the Sea Surface in Two Versions of
+  a Climate Model.
+  Geophysical Research Letters, 50(20).
+  Portico. https://doi.org/10.1029/2023gl104786
 
 ## Experiment set up
 

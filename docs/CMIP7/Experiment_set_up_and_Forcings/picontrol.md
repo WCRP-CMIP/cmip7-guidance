@@ -22,11 +22,11 @@ If you notice something that is unclear, please
 For the full background of the experiment, please see the following references:
 
 - Dunne, J. P., Hewitt, H. T., Arblaster, J. M., Bonou, F., Boucher, O., Cavazos, T., Dingley, B., Durack, P. J.,
-  Hassler, B., Juckes, M., Miyakawa, T., Mizielinski, M., Naik, V., Nicholls, Z., O’Rourke, E., Pincus, R., Sanderson,
+  Hassler, B., Juckes, M., Miyakawa, T., Mizielinski, M., Naik, V., Nicholls, Z., O'Rourke, E., Pincus, R., Sanderson,
   B. M., Simpson, I. R., & Taylor, K. E. (2025).
   An evolving Coupled Model Intercomparison Project phase 7 (CMIP7) and Fast Track in support of future climate
   assessment.
-  Geoscientific Model Development, 18(19), 6671–6700. https://doi.org/10.5194/gmd-18-6671-2025
+  Geoscientific Model Development, 18(19), 6671-6700. https://doi.org/10.5194/gmd-18-6671-2025
 
 ## Paired experiments
 
@@ -125,7 +125,8 @@ Please see the guidance pages linked under each forcing for full details.
       [input4mips-cvs.readthedocs.io/dataset-overviews/solar](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/solar/)
 
 - population density
-    - recommended source IDs: PIK-CMIP-1-0-1
+    - recommended source IDs: PIK-CMIP-1-0-2
+    - acceptable source IDs: PIK-CMIP-1-0-1
     - further guidance:
       [input4mips-cvs.readthedocs.io/dataset-overviews/population](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/population/)
 
@@ -202,9 +203,11 @@ For easier parsing with machines, we also present the information given above as
     "population": {
         "human_readable_name": "population density",
         "recommended_versions": [
-            "PIK-CMIP-1-0-1"
+            "PIK-CMIP-1-0-2"
         ],
-        "acceptable_versions": []
+        "acceptable_versions": [
+            "PIK-CMIP-1-0-1"
+        ]
     },
     "ozone": {
         "human_readable_name": "ozone",
@@ -245,7 +248,7 @@ EXPERIMENT_NAME="piControl"
 # esgpull self install
 ## You may also need to run this step to get the data to download
 # esgpull config api.index_node esgf-node.ornl.gov/esgf-1-5-bridge
-esgpull add --track --tag ${EXPERIMENT_NAME} source_id:CEDS-CMIP-2025-04-18,CEDS-CMIP-2025-04-18-supplemental,CR-CMIP-1-0-0,DRES-CMIP-BB4CMIP7-2-0,FZJ-CMIP-nitrogen-2-0,FZJ-CMIP-ozone-1-2,PIK-CMIP-1-0-1,SOLARIS-HEPPA-CMIP-4-6,UOEXETER-CMIP-2-2-1,UofMD-landState-3-1-2
+esgpull add --track --tag ${EXPERIMENT_NAME} source_id:CEDS-CMIP-2025-04-18,CEDS-CMIP-2025-04-18-supplemental,CR-CMIP-1-0-0,DRES-CMIP-BB4CMIP7-2-0,FZJ-CMIP-nitrogen-2-0,FZJ-CMIP-ozone-1-2,PIK-CMIP-1-0-2,SOLARIS-HEPPA-CMIP-4-6,UOEXETER-CMIP-2-2-1,UofMD-landState-3-1-2
 esgpull update --tag ${EXPERIMENT_NAME} --yes
 esgpull download --tag ${EXPERIMENT_NAME}
 ```
