@@ -11,7 +11,7 @@ other than minor parameter tunings to adjust to the differences in coupled model
 
 - Responsible activity: [LMIP](./index.md#lmip)
 - Tier: 1
-- MIP co-chair review: **In progress** see
+- MIP co-chair review: **Complete** see
   [https://github.com/WCRP-CMIP/cmip7-guidance/issues/190](https://github.com/WCRP-CMIP/cmip7-guidance/issues/190)
 - Tags: AFT (Assessment Fast Track)
 
