@@ -105,8 +105,7 @@ Please see the guidance pages linked under each forcing for full details.
       [input4mips-cvs.readthedocs.io/dataset-overviews/open-biomass-burning-emissions](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/open-biomass-burning-emissions/)
 
 - land use
-    - recommended source IDs: not-available-yet
-    - notes: In preparation
+    - recommended source IDs: UofMD-landState-hl-ext-3-1
     - further guidance:
       [input4mips-cvs.readthedocs.io/dataset-overviews/land-use](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/land-use/)
 
@@ -117,8 +116,12 @@ Please see the guidance pages linked under each forcing for full details.
 
 - solar
     - recommended source IDs: SOLARIS-HEPPA-ScenarioMIP-4-6
-    - notes: If running beyond the time period provided in the data, repeat the data, starting with 24 August 2038 (i.e.
-      for 2300-01-01, use data from 2038-08-24, for 2300-01-02, use data from 2038-08-25 etc.).
+    - notes: If running beyond the time period provided in the data, the right approach depends on the temporal
+      frequency that you are using.
+      If you are using the data with daily resolution, simply repeat the data, starting with 24 August 2038.
+      In other words, for 2300-01-01, use data from 2038-08-24, for 2300-01-02, use data from 2038-08-25 and so on.
+      If you are using the data with monthly resolution, there is a dedicated data file which extends beyond 2500.
+      Please use that.
     - further guidance:
       [input4mips-cvs.readthedocs.io/dataset-overviews/solar](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/solar/)
 
@@ -153,7 +156,7 @@ For easier parsing with machines, we also present the information given above as
     "land-use": {
         "human_readable_name": "land use",
         "recommended_versions": [
-            "not-available-yet"
+            "UofMD-landState-hl-ext-3-1"
         ],
         "acceptable_versions": []
     },
@@ -183,7 +186,7 @@ For easier parsing with machines, we also present the information given above as
 
 ###### Download via esgpull
 
-The available data is on ESGF and searchable
+The data is on ESGF and searchable
 [via metagrid](https://esgf-node.ornl.gov/search?project=input4MIPs&versionType=all&activeFacets=%7B%22mip_era%22%3A%22CMIP7%22%7D),
 although this method of finding and downloading the data can involve a lot of clicking.
 
@@ -201,7 +204,7 @@ EXPERIMENT_NAME="scen7-hl-ext"
 # esgpull self install
 ## You may also need to run this step to get the data to download
 # esgpull config api.index_node esgf-node.ornl.gov/esgf-1-5-bridge
-esgpull add --track --tag ${EXPERIMENT_NAME} source_id:CR-hl-ext-1-1-0,IIASA-IAMC-1-1-1,IIASA-IAMC-hl-ext-1-1-1,IIASA-IAMC-hl-ext-1-1-2,PIK-hl-ext-1-0-0,SOLARIS-HEPPA-ScenarioMIP-4-6
+esgpull add --track --tag ${EXPERIMENT_NAME} source_id:CR-hl-ext-1-1-0,IIASA-IAMC-1-1-1,IIASA-IAMC-hl-ext-1-1-1,IIASA-IAMC-hl-ext-1-1-2,PIK-hl-ext-1-0-0,SOLARIS-HEPPA-ScenarioMIP-4-6,UofMD-landState-hl-ext-3-1
 esgpull update --tag ${EXPERIMENT_NAME} --yes
 esgpull download --tag ${EXPERIMENT_NAME}
 ```
