@@ -233,10 +233,14 @@
 
                 
 
-                <div data-orientation="vertical" role="none" data-slot="separator"
+                
+                
+                
+                <div class="hidden 3xl:flex items-center gap-2">
+                    <div data-orientation="vertical" role="none" data-slot="separator"
     class="bg-border shrink-0 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-px">
 </div>
-                <button class="ghost icon" title="Toggle layout" onclick="toggleLayout(event)">
+                    <button class="ghost icon" title="Toggle layout" onclick="toggleLayout(event)">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
     class="lucide lucide-gallery-horizontal">
@@ -245,6 +249,7 @@
     <path d="M22 3v18"></path>
 </svg>
 </button>
+                </div>
                 <div data-orientation="vertical" role="none" data-slot="separator"
     class="bg-border shrink-0 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-px">
 </div>
@@ -2753,11 +2758,13 @@
   </div>
   <div class="typography w-full flex-1 *:data-[slot=alert]:first:mt-0">
     <h1 id="experiment-setup-and-forcings-guidance-land-hist">Experiment Setup and Forcings Guidance: land-hist<a class="headerlink" href="#experiment-setup-and-forcings-guidance-land-hist" title="Permanent link">&para;</a></h1>
-<p>Land-only version of <code>historical</code> with prescribed climate and weather inputs required to drive land models.</p>
+<p>Land-only version of <code>historical</code> with prescribed climate and weather inputs required to drive land models.
+The land model setup should be the same as that used in the equivalent coupled model historical experiment (<code>historical</code> or <code>esm-hist</code>),
+other than minor parameter tunings to adjust to the differences in coupled model runs versus prescribed climate runs.</p>
 <ul>
 <li>Responsible activity: <a href="../#lmip">LMIP</a></li>
 <li>Tier: 1</li>
-<li>MIP co-chair review: <strong>In progress</strong> see
+<li>MIP co-chair review: <strong>Complete</strong> see
   <a href="https://github.com/WCRP-CMIP/cmip7-guidance/issues/190">https://github.com/WCRP-CMIP/cmip7-guidance/issues/190</a></li>
 <li>Tags: AFT (Assessment Fast Track)</li>
 </ul>
@@ -2779,8 +2786,8 @@ If you notice something that is unclear, please
 <h3 id="parent-experiment-and-branching">Parent experiment and branching<a class="headerlink" href="#parent-experiment-and-branching" title="Permanent link">&para;</a></h3>
 <p>land-hist does not have a parent experiment.</p>
 <h3 id="output-time-axis">Output time axis<a class="headerlink" href="#output-time-axis" title="Permanent link">&para;</a></h3>
-<p>Your output time axis must start on 1901-01-01 and must end on 2021-12-31.
-You must perform the full simulation i.e. 121 simulation years.</p>
+<p>Your output time axis must start on 1850-01-01 and must end on 2021-12-31.
+You must perform the full simulation i.e. 172 simulation years.</p>
 <h3 id="minimum-ensemble-size">Minimum ensemble size<a class="headerlink" href="#minimum-ensemble-size" title="Permanent link">&para;</a></h3>
 <p>Only one ensemble member is required.</p>
 <h2 id="forcings">Forcings<a class="headerlink" href="#forcings" title="Permanent link">&para;</a></h2>
@@ -2809,12 +2816,13 @@ Please see the other <a href="#data">data</a> sub-sections for details of the fo
 Please see the other <a href="#data">data</a> sub-sections for details of the forcings data to use for this experiment.</p>
 <h4 id="data-not-available-via-input4mips">Data not available via input4MIPs<a class="headerlink" href="#data-not-available-via-input4mips" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Land model climate and weather inputs<ul>
-<li>notes: The default forcing data is from a corrected reanalysis product that includes all the climate/weather
-  inputs to drive a land model.
-  The dataset is typically referred to as CRUJRA.
-  CRUJRA Climate forcing data are provided by Ian Harris at UEA 1901-2024 and available from the following website:
-  <a href="">crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.09</a>.
+<li>Land model climate and weather inputs
+    <!--- TODO: put this into generation code --><ul>
+<li>notes: The default forcing data is from a corrected reanalysis product that includes all the climate/weather inputs to drive a land model. 
+  The dataset is typically referred to as CRUJRA. 
+  CRUJRAv10 climate forcing data are provided by Tim Osborn and Andrew Friedman at UEA for the period 1901-2025
+  (and also used in the TRENDY project that supports the Global Carbon Budget).
+  These data are available from the following location: mdosullivan.github.io/GCB (scroll to bottom and select trendyv15-gcb2026-input). 
   A 2nd historical forcing dataset is in development and would ideally also be run.</li>
 </ul>
 </li>
