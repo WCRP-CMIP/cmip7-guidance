@@ -99,8 +99,8 @@ Please see the guidance pages linked under each forcing for full details.
       [input4mips-cvs.readthedocs.io/dataset-overviews/open-biomass-burning-emissions](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/open-biomass-burning-emissions/)
 
 - land use
-    - recommended source IDs: not-available-yet
-    - notes: In preparation
+    - recommended source IDs: UofMD-landState-ml-3-1-1
+    - acceptable source IDs: UofMD-landState-ml-3-1
     - further guidance:
       [input4mips-cvs.readthedocs.io/dataset-overviews/land-use](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/land-use/)
 
@@ -115,14 +115,13 @@ Please see the guidance pages linked under each forcing for full details.
       [input4mips-cvs.readthedocs.io/dataset-overviews/stratospheric-volcanic-so2-emissions-aod](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/stratospheric-volcanic-so2-emissions-aod/)
 
 - ozone
-    - recommended source IDs: not-available-yet
-    - notes: In preparation
+    - recommended source IDs: FZJ-CMIP-ozone-ml-1-0
+    - acceptable source IDs: FZJ-CMIP-ozone-ml-2-0
     - further guidance:
       [input4mips-cvs.readthedocs.io/dataset-overviews/ozone](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/ozone/)
 
 - nitrogen deposition
-    - recommended source IDs: not-available-yet
-    - notes: In preparation
+    - recommended source IDs: FZJ-CMIP-nitrogen-ml-1-0
     - further guidance:
       [input4mips-cvs.readthedocs.io/dataset-overviews/nitrogen-deposition](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/nitrogen-deposition/)
 
@@ -162,9 +161,11 @@ For easier parsing with machines, we also present the information given above as
     "land-use": {
         "human_readable_name": "land use",
         "recommended_versions": [
-            "not-available-yet"
+            "UofMD-landState-ml-3-1-1"
         ],
-        "acceptable_versions": []
+        "acceptable_versions": [
+            "UofMD-landState-ml-3-1"
+        ]
     },
     "greenhouse-gas-concentrations": {
         "human_readable_name": "greenhouse gas concentrations",
@@ -183,14 +184,16 @@ For easier parsing with machines, we also present the information given above as
     "ozone": {
         "human_readable_name": "ozone",
         "recommended_versions": [
-            "not-available-yet"
+            "FZJ-CMIP-ozone-ml-1-0"
         ],
-        "acceptable_versions": []
+        "acceptable_versions": [
+            "FZJ-CMIP-ozone-ml-2-0"
+        ]
     },
     "nitrogen-deposition": {
         "human_readable_name": "nitrogen deposition",
         "recommended_versions": [
-            "not-available-yet"
+            "FZJ-CMIP-nitrogen-ml-1-0"
         ],
         "acceptable_versions": []
     },
@@ -213,7 +216,7 @@ For easier parsing with machines, we also present the information given above as
 
 ###### Download via esgpull
 
-The available data is on ESGF and searchable
+The data is on ESGF and searchable
 [via metagrid](https://esgf-node.ornl.gov/search?project=input4MIPs&versionType=all&activeFacets=%7B%22mip_era%22%3A%22CMIP7%22%7D),
 although this method of finding and downloading the data can involve a lot of clicking.
 
@@ -231,7 +234,7 @@ EXPERIMENT_NAME="scen7-ml"
 # esgpull self install
 ## You may also need to run this step to get the data to download
 # esgpull config api.index_node esgf-node.ornl.gov/esgf-1-5-bridge
-esgpull add --track --tag ${EXPERIMENT_NAME} source_id:CR-ml-1-1-0,IIASA-IAMC-1-1-1,IIASA-IAMC-ml-1-1-1,IIASA-IAMC-ml-1-1-2,PIK-ml-1-0-0,SOLARIS-HEPPA-ScenarioMIP-4-6,UOEXETER-ScenarioMIP-2-2-2
+esgpull add --track --tag ${EXPERIMENT_NAME} source_id:CR-ml-1-1-0,FZJ-CMIP-nitrogen-ml-1-0,FZJ-CMIP-ozone-ml-1-0,IIASA-IAMC-1-1-1,IIASA-IAMC-ml-1-1-1,IIASA-IAMC-ml-1-1-2,PIK-ml-1-0-0,SOLARIS-HEPPA-ScenarioMIP-4-6,UOEXETER-ScenarioMIP-2-2-2,UofMD-landState-ml-3-1-1
 esgpull update --tag ${EXPERIMENT_NAME} --yes
 esgpull download --tag ${EXPERIMENT_NAME}
 ```
