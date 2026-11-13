@@ -5,10 +5,12 @@ title: "Experiment Setup and Forcings Guidance: esm-SSP2-com-CMIP7"
 
 # Experiment Setup and Forcings Guidance: esm-SSP2-com-CMIP7
 
-Policy-driven pathway aligned with China's carbon neutrality pledge, peaking carbon emissions before 2030 and achieving
-carbon neutrality before 2060.
-It is developed within the SSP2 socioeconomic framework and consistent with global Nationally Determined Contributions
-(NDCs) data.
+SSP2-com-CMIP7 is a global emissions pathway developed within the SSP2 socioeconomic framework, building on the original
+CGEM-based SSP2-com scenario.
+The CMIP7 update harmonises emissions with the historical inventories used for CMIP7.
+National and regional emissions trajectories are constructed to align with 2030 and 2035 NDC targets and longer-term
+net-zero commitments, while maintaining consistency with global NDC benchmarks and global net-zero emissions objectives.
+Sectoral emissions are provided for 17 CGEM regions.
 Run with prescribed carbon dioxide emissions (for prescribed carbon dioxide concentrations, see `SSP2-com-CMIP7`).
 
 - Responsible activity: [PolMIP](./index.md#polmip)

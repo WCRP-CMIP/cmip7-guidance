@@ -6,6 +6,9 @@ title: "Experiment Setup and Forcings Guidance: land-hist"
 # Experiment Setup and Forcings Guidance: land-hist
 
 Land-only version of `historical` with prescribed climate and weather inputs required to drive land models.
+The land model setup should be the same as that used in the equivalent coupled model historical experiment (`historical`
+or `esm-hist`), other than minor parameter tunings to adjust to the differences in coupled model runs versus prescribed
+climate runs.
 
 - Responsible activity: [LMIP](./index.md#lmip)
 - Tier: 1
@@ -37,8 +40,8 @@ land-hist does not have a parent experiment.
 
 ### Output time axis
 
-Your output time axis must start on 1901-01-01 and must end on 2021-12-31.
-You must perform the full simulation i.e. 121 simulation years.
+Your output time axis must start on 1850-01-01 and must end on 2021-12-31.
+You must perform the full simulation i.e. 172 simulation years.
 
 ### Minimum ensemble size
 
