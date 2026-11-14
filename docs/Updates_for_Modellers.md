@@ -153,7 +153,7 @@ These sessions will provide an overview of the Citation Service and offer the op
 - [Session 1: 07:00-08:00 UTC](https://wcrp-cmip.org/event/citation-service-drop-in-session-1/)
 - [Session 2: 15:00-16:00 UTC](https://wcrp-cmip.org/event/citation-service-drop-in-session-2/)
 
-For greater detail, see: [CMIP7 Citation Guidance](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/Citation_Guidance/). A reminder that CMIP7 data providers will need to review the information on the data citation landing pages and add party information before DOIs can be issued.
+For greater detail, see: [CMIP7 Citation Guidance](CMIP7/Citation_Guidance.md). A reminder that CMIP7 data providers will need to review the information on the data citation landing pages and add party information before DOIs can be issued.
 
 Deadline for registration: 17:00 UTC Thursday 18 September 2026.
 
@@ -177,7 +177,7 @@ An update to the ESGF publisher ([version 5.5.2](https://github.com/ESGF/esg-pub
 The [Errata Service](https://errata.esgf.io) has been updated to allow registration of errata relating to CMIP7, CMI6Plus and CORDEX-CMIP6.
 
 ### 5.	Documentation updates
-Two services which summarise the status of published datasets have been deployed and they can be found via the [CMIP7 Guidance for users](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/Guidance_for_users/#1-accessing-cmip7-data) page along with information on tools that can be used to search ESGF.
+Two services which summarise the status of published datasets have been deployed and they can be found via the [CMIP7 Guidance for users](CMIP7/Guidance_for_users.md#1-accessing-cmip7-data) page along with information on tools that can be used to search ESGF.
 
 ### 6.	Please provide an update on your data delivery timeline
 To support downstream activities (e.g., CORDEX, ISIMIP and ISMIP7) and key partners such as IPCC AR7 WGI we are asking you to provide an update on your CMIP7 Assessment Fast Track simulation status using the dedicated centre/model specific links in the table sent via email. The status can then be [viewed here](https://wcrp-cmip.org/cmip-phases/cmip7/#when_to_expect_cmip7_data) – you may notice many of the updates are now out of date!
@@ -196,7 +196,7 @@ We would like to highlight the following:
  land use scenario extension for the High scenario extension (h-ext) is now available – please see [here](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/land-use/#cmip7_1) for details and links to the data.
 
 ### 2.	Request for latest update on expected first data delivery
-We ask that modelling centre representatives ensure the data at [https://wcrp-cmip.org/cmip-phases/cmip7/#when_to_expect_cmip7_data](https://wcrp-cmip.org/cmip-phases/cmip7/#when_to_expect_cmip7_data) is kept up to date to manage expectations of CMIP data users and facilitate support for ESGF publication (dataset publication guidance [here](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/Guidance_for_ESGF/#2-dataset-publication)). Please use the relevant link in the table provided in the email from the CMIP IPO to update your model/centres’ status.
+We ask that modelling centre representatives ensure the data at [https://wcrp-cmip.org/cmip-phases/cmip7/#when_to_expect_cmip7_data](https://wcrp-cmip.org/cmip-phases/cmip7/#when_to_expect_cmip7_data) is kept up to date to manage expectations of CMIP data users and facilitate support for ESGF publication (dataset publication guidance [here](CMIP7/Guidance_for_ESGF.md#2-dataset-publication)). Please use the relevant link in the table provided in the email from the CMIP IPO to update your model/centres’ status.
 
 Please note you **must have completed the Essential Model Documentation process (details [here](https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/))** before publishing data on the ESGF!
 
@@ -443,7 +443,7 @@ The Essential Model Documentation is a required step for contribution towards CM
    1. Registration of model and output grids: this ensures that a grid label is available for your data. Each distinct grid on which data is published requires a corresponding label. (Since many common grids have been registered, this step may have been completed by other members of the community.)
    2. Registration of models and their components: this will finalise the source_id needed for producing publishable output data.
    
-Producing standardized (CMORized) data requires both grid labels and source_id. Modelling groups should be able to use the allocated grid labels once the first phase is completed, and an assumed source_id, following the [guidance](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/Source_ID_guidance/), can be used while the second phase is in progress. Both phases of the EMD process must be completed before ESGF publication can begin.
+Producing standardized (CMORized) data requires both grid labels and source_id. Modelling groups should be able to use the allocated grid labels once the first phase is completed, and an assumed source_id, following the [guidance](CMIP7/Source_ID_guidance.md), can be used while the second phase is in progress. Both phases of the EMD process must be completed before ESGF publication can begin.
 
 [EMD drop-in sessions](https://wcrp-cmip.org/event/emd-user-drop-in-session-1/) for modellers have been scheduled for 28 May to assist with the process. Modellers may contact the CMIP IPO (cmip-ipo@esa.int) to arrange a meeting with the EMD team to help advance their EMD submissions if they are facing significant timeline pressure.
 
@@ -494,7 +494,7 @@ The ESGF-NG is planned to be open for CMIP7 data publishing on Monday 11 May 202
  - Ensure their CMORized netCDF files pass the mandatory CMIP7 QA/QC checks (non-compliant datasets risk removal from ESGF).
  - Update their data node to use the latest ESGF publishing software.
 
-Full details of these steps are available from the [CMIP7 Guidance webpages](https://wcrp-cmip.github.io/cmip7-guidance/docs/), specifically in the [Guidance for modellers](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/Guidance_for_modellers/) and [Guidance for data managers](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/Guidance_for_ESGF/) sections. Key steps for data preparation and publication readiness are also outlined in the slides from [CMIP 2026 workshop WIP session](https://zenodo.org/records/18934629) (slides 30-36). Published data will become discoverable online via the ESGF Metagrid search interface and other tools.
+Full details of these steps are available from the [CMIP7 Guidance webpages](index.md), specifically in the [Guidance for modellers](CMIP7/Guidance_for_modellers.md) and [Guidance for data managers](CMIP7/Guidance_for_ESGF.md) sections. Key steps for data preparation and publication readiness are also outlined in the slides from [CMIP 2026 workshop WIP session](https://zenodo.org/records/18934629) (slides 30-36). Published data will become discoverable online via the ESGF Metagrid search interface and other tools.
 
 ### New CMOR version
 
@@ -553,9 +553,9 @@ Thank you to the dataset providers, Stephanie Fiedler and Alon Azoulay, for all 
 
 ### Updates to CMIP7 Guidance pages
 
-Several recent updates have been made  to the [CMIP7 Guidance and Documentation webpages](https://wcrp-cmip.github.io/cmip7-guidance/docs/). These include:
+Several recent updates have been made  to the [CMIP7 Guidance and Documentation webpages](index.md). These include:
 
-- Section listing updates for modellers so you don’t have to hunt through your emails: [Updates for Modellers](https://wcrp-cmip.github.io/cmip7-guidance/docs/Updates_for_Modellers/)
+- Section listing updates for modellers so you don’t have to hunt through your emails: [Updates for Modellers](Updates_for_Modellers.md)
 - EMD registration open to beta testers
 - Energy Consumption and Carbon Footprint metrics spreadsheet 
 - Experiment set up and forcing guidance (initial version, further updates expected)
@@ -574,11 +574,11 @@ Note that while a spreadsheet was recently circulated (21st December) to help mo
 
 On the 9th February, the Energy Consumption & Carbon Footprint Task Team circulated a spreadsheet to modelling centres for collection of HPC energy usage metrics from model experiments during CMIP7. This data will be used to estimate the carbon footprint of CMIP7 modelling activities. 
 
-A [Scribehow](https://wcrp-cmip.github.io/cmip7-guidance/docs/How_to_Guides/Energy_Consumption_and_Carbon_Footprint_Spreadsheet/) is available to help you navigate and complete the spreadsheet. Tier 1 metrics are strongly recommended to complete, and are the minimum information required by the Task Team to produce estimates of the carbon footprint. A comprehensive [guideline document](https://doi.org/10.5281/zenodo.17464966) is also available, and we invite any Modelling Centres to contact us with any questions: <energy-carbon-questionnaire@wcrp-cmip.org> 
+A [Scribehow](How_to_Guides/Energy_Consumption_and_Carbon_Footprint_Spreadsheet.md) is available to help you navigate and complete the spreadsheet. Tier 1 metrics are strongly recommended to complete, and are the minimum information required by the Task Team to produce estimates of the carbon footprint. A comprehensive [guideline document](https://doi.org/10.5281/zenodo.17464966) is also available, and we invite any Modelling Centres to contact us with any questions: <energy-carbon-questionnaire@wcrp-cmip.org> 
 
 ### Experiment set up and forcing guidance
 
-Information on the forcings to be used for each experiment are being added to the guidance pages [here](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/Experiment_set_up_and_Forcings/). These pages currently contain an initial set of documentation about a subset of the CMIP7 AFT experiments and there are plans to extend this set in the coming weeks.
+Information on the forcings to be used for each experiment are being added to the guidance pages [here](CMIP7/Experiment_set_up_and_Forcings/index.md). These pages currently contain an initial set of documentation about a subset of the CMIP7 AFT experiments and there are plans to extend this set in the coming weeks.
 
 ### Quality Control
 
@@ -586,15 +586,15 @@ Quality Control (QC): the prototype software for checking compliance of CMORized
 
 Note that this compliance checker plugin should still be considered beta software and changes may be made to its function as early adopter testing continues. There has been limited testing using sample CMIP7 data. 
 
-An update to the [guidance pages](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/guidance_for_modellers/#7-software-for-checking-output) will be made as new versions of this software becomes available. Modelling centres are strongly encouraged to run the QC tool prior to ESGF publication in order to catch and fix potential errors early. CMOR tool users would expect to produce compliant files.  We encourage all modelling centres to run the  compliance checker plugin for CMIP 7 once it is issued for general release.
+An update to the [guidance pages](CMIP7/Guidance_for_modellers.md#7-software-for-checking-output) will be made as new versions of this software becomes available. Modelling centres are strongly encouraged to run the QC tool prior to ESGF publication in order to catch and fix potential errors early. CMOR tool users would expect to produce compliant files.  We encourage all modelling centres to run the  compliance checker plugin for CMIP 7 once it is issued for general release.
 
 ### Rapid Evaluation Framework
 
-Those modelling centres that wish to be REF- ready should keep an eye on the [**Model Output Requirements** section](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/guidance_for_modellers/#5-model-output-requirements) for the forthcoming quality checklist.
+Those modelling centres that wish to be REF- ready should keep an eye on the [**Model Output Requirements** section](CMIP7/Guidance_for_modellers.md#5-model-output-requirements) for the forthcoming quality checklist.
 
 ### Domains to whitelist
 
-There is a dedicated [page listing domain names](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/domain_names/) relevant to CMIP7 activities that might be useful to review and ensure that individual modelling centre institutional fire walls allow access.  Updates to the list are via issues/pull requests on GitHub.
+There is a dedicated [page listing domain names](CMIP7/Domain_names.md) relevant to CMIP7 activities that might be useful to review and ensure that individual modelling centre institutional fire walls allow access.  Updates to the list are via issues/pull requests on GitHub.
 
 ---
 
@@ -820,12 +820,12 @@ Apologies for any cross-posting of this announcement.
 ### Updates from the WIP
 
 * Following the infrastructure drop-in sessions in November updates have been made to the 
-  [CMIP7 guidance for modellers webpages](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/guidance_for_modellers/). These include:
+  [CMIP7 guidance for modellers webpages](CMIP7/Guidance_for_modellers.md). These include:
     * Information on repacking netCDF files that are to be published to CMIP7 has been added, and the cmip7repack tool is available for testing. 
       Note that repacking will be **required** for publishing data to ESGF. Questions and queries are welcome via the [cmip7repack github repository](https://github.com/NCAS-CMS/cmip7_repack).
     * There has been a change to the guidance on QC tools, with a IOOS/compliance-checker plugin replacing a fork of the compliance checker code.
 * QA/QC: early testing is possible, see details in the 
-  [guidance for modellers pages](https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/guidance_for_modellers/#7-software-for-checking-output). 
+  [guidance for modellers pages](CMIP7/Guidance_for_modellers.md#7-software-for-checking-output). 
   Users should note that:
     * Checks for CMIP6 and CORDEX-CMIP6 data are implemented, while CMIP7 checks are being finalized.
     * Some checks will be required by the ESGF publisher, but data producers can also choose to run a heavier set of checks, 

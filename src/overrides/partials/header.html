@@ -1,0 +1,54 @@
+{#-
+  Header override: one dark bar holding the logo, the nav (with dropdowns),
+  a search icon and the repo icon — matching wcrp-cmip.org.
+
+  Top-level nav titles listed in extra.nav_exclude are left out of this bar.
+  They still appear in the sidebar and are still reachable by link.
+-#}
+{% import "partials/tabs-item.html" as item with context %}
+{% set class = "md-header md-header--cmip" %}
+{% set nav_exclude = config.extra.nav_exclude | default([], true) %}
+<header class="{{ class }}" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="{{ lang.t('header') }}">
+    <a href="{{ config.extra.homepage | d(nav.homepage.url, true) | url }}" title="{{ config.site_name | e }}" class="md-header__button md-logo" aria-label="{{ config.site_name }}" data-md-component="logo">
+      {% include "partials/logo.html" %}
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      {% set icon = config.theme.icon.menu or "material/menu" %}
+      {% include ".icons/" ~ icon ~ ".svg" %}
+    </label>
+
+    <ul class="cmip-nav">
+      {% for nav_item in nav %}
+        {% if nav_item.title not in nav_exclude %}
+          {{ item.render(nav_item) }}
+        {% endif %}
+      {% endfor %}
+    </ul>
+
+    {#- Version selector. Material's mike script appends the dropdown to the
+        first .md-header__topic it finds, so this container must exist. It is
+        deliberately NOT given data-md-component="header-title", which would
+        hide it as the page scrolls. -#}
+    {% if config.extra.version %}
+      <div class="cmip-version">
+        <div class="md-header__topic"></div>
+      </div>
+    {% endif %}
+
+    {% if "material/search" in config.plugins %}
+      <label class="md-header__button md-icon cmip-search-toggle" for="__search"
+             title="{{ lang.t('search') }}" aria-label="{{ lang.t('search') }}">
+        {% set icon = config.theme.icon.search or "material/magnify" %}
+        {% include ".icons/" ~ icon ~ ".svg" %}
+      </label>
+      {% include "partials/search.html" %}
+    {% endif %}
+
+    {% if config.repo_url %}
+      <div class="md-header__source">
+        {% include "partials/source.html" %}
+      </div>
+    {% endif %}
+  </nav>
+</header>

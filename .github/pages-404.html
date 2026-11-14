@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Looking for this page…</title>
+  <style>
+    body { font-family: system-ui, sans-serif; color: #000546; max-width: 32rem;
+           margin: 20vh auto; padding: 0 1rem; text-align: center; }
+    a { color: #000546; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <p id="msg">Looking for this page…</p>
+  <noscript><p>This page was not found.</p></noscript>
+
+  <!--
+    Root 404 page for the versioned site. GitHub Pages serves it for ANY missing
+    path. The site now lives under /<version>/ and /latest/, so an old link such
+    as /<repo>/CMIP7/Guidance_for_users/ lands here and is forwarded to
+    /<repo>/latest/CMIP7/Guidance_for_users/.
+
+    The workflow copies this file to the root of the published site and replaces
+    __REPO__ with the repository name, so the same file works in any copy of
+    the template.
+
+    It never loops: a missing page that is ALREADY under a version or "latest"
+    is shown as a plain "not found" instead of being forwarded again.
+  -->
+  <script>
+    (function () {
+      var repo = "__REPO__";
+      var path = location.pathname;
+      // Project sites live under /<repo>/. On a custom domain at the root the
+      // prefix is absent, so fall back to "/".
+      var base = path.indexOf("/" + repo + "/") === 0 ? "/" + repo + "/" : "/";
+      var rest = path.slice(base.length);
+      var msg = document.getElementById("msg");
+
+      // The previous publishing layout served the site under /docs/, so links that
+      // already exist elsewhere look like /<repo>/docs/CMIP7/Guidance_for_users/.
+      // The pages now live at the top level of each version, so drop that prefix.
+      var hadDocs = /^docs(\/|$)/.test(rest);
+      rest = rest.replace(/^docs\/?/, "");
+
+      function notFound() {
+        msg.innerHTML = 'This page was not found. <a href="' + base + '">Go to the home page</a>.';
+      }
+
+      // A bare /<repo>/ is shown as not-found; a bare /<repo>/docs/ is the old
+      // home page, so it goes to the home page of the latest version.
+      if (!rest && !hadDocs) { notFound(); return; }
+
+      fetch(base + "versions.json")
+        .then(function (r) { return r.ok ? r.json() : []; })
+        .then(function (versions) {
+          var first = rest.split("/")[0];
+          var known = versions.some(function (v) {
+            return v.version === first || (v.aliases || []).indexOf(first) !== -1;
+          });
+          if (known) { notFound(); return; }
+          location.replace(base + "latest/" + rest + location.search + location.hash);
+        })
+        .catch(notFound);
+    })();
+  </script>
+</body>
+</html>
