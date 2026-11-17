@@ -116,8 +116,12 @@ Please see the guidance pages linked under each forcing for full details.
 
 - solar
     - recommended source IDs: SOLARIS-HEPPA-ScenarioMIP-4-6
-    - notes: If running beyond the time period provided in the data, repeat the data, starting with 24 August 2038 (i.e.
-      for 2300-01-01, use data from 2038-08-24, for 2300-01-02, use data from 2038-08-25 etc.).
+    - notes: If running beyond the time period provided in the data, the right approach depends on the temporal
+      frequency that you are using.
+      If you are using the data with daily resolution, simply repeat the data, starting with 24 August 2038.
+      In other words, for 2300-01-01, use data from 2038-08-24, for 2300-01-02, use data from 2038-08-25 and so on.
+      If you are using the data with monthly resolution, there is a dedicated data file which extends beyond 2500.
+      Please use that.
     - further guidance:
       [input4mips-cvs.readthedocs.io/dataset-overviews/solar](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/solar/)
 

@@ -117,6 +117,7 @@ Please see the guidance pages linked under each forcing for full details.
 
 - ozone
     - recommended source IDs: FZJ-CMIP-ozone-h-1-0
+    - acceptable source IDs: FZJ-CMIP-ozone-h-2-0
     - further guidance:
       [input4mips-cvs.readthedocs.io/dataset-overviews/ozone](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/ozone/)
 
@@ -186,7 +187,9 @@ For easier parsing with machines, we also present the information given above as
         "recommended_versions": [
             "FZJ-CMIP-ozone-h-1-0"
         ],
-        "acceptable_versions": []
+        "acceptable_versions": [
+            "FZJ-CMIP-ozone-h-2-0"
+        ]
     },
     "nitrogen-deposition": {
         "human_readable_name": "nitrogen deposition",
