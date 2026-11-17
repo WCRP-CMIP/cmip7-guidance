@@ -19,10 +19,10 @@ If you notice something that is unclear, please
 
 For the full background of the experiment, please see the following references:
 
-- van Vuuren, D., O’Neill, B., Tebaldi, C., Chini, L., Friedlingstein, P., Hasegawa, T., Riahi, K., Sanderson, B.,
+- van Vuuren, D., O'Neill, B., Tebaldi, C., Chini, L., Friedlingstein, P., Hasegawa, T., Riahi, K., Sanderson, B.,
   Govindasamy, B., Bauer, N., Eyring, V., Fall, C., Frieler, K., Gidden, M., Gohar, L., Jones, A., King, A., Knutti, R.,
   Kriegler, E., et al. (2025).
-  The Scenario Model Intercomparison Project for CMIP7 (ScenarioMIP-CMIP7) . https://doi.org/10.5194/egusphere-2024-3765
+  The Scenario Model Intercomparison Project for CMIP7 (ScenarioMIP-CMIP7). https://doi.org/10.5194/egusphere-2024-3765
 
 ## Paired experiments
 
@@ -116,8 +116,12 @@ Please see the guidance pages linked under each forcing for full details.
 
 - solar
     - recommended source IDs: SOLARIS-HEPPA-ScenarioMIP-4-6
-    - notes: If running beyond the time period provided in the data, repeat the data, starting with 24 August 2038 (i.e.
-      for 2300-01-01, use data from 2038-08-24, for 2300-01-02, use data from 2038-08-25 etc.).
+    - notes: If running beyond the time period provided in the data, the right approach depends on the temporal
+      frequency that you are using.
+      If you are using the data with daily resolution, simply repeat the data, starting with 24 August 2038.
+      In other words, for 2300-01-01, use data from 2038-08-24, for 2300-01-02, use data from 2038-08-25 and so on.
+      If you are using the data with monthly resolution, there is a dedicated data file which extends beyond 2500.
+      Please use that.
     - further guidance:
       [input4mips-cvs.readthedocs.io/dataset-overviews/solar](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/solar/)
 
@@ -208,6 +212,8 @@ esgpull download --tag ${EXPERIMENT_NAME}
 #### Data not available via input4MIPs
 
 - aerosol optical properties
-    - notes: In preparation, will be made available at https://zenodo.org/records/21671953
+    - notes: Please see this
+      [specific guidance section](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/aerosol-optical-properties-macv2-sp/#datasets-for-cmip7-phases)
+      for data access and version information.
     - further guidance:
       [input4mips-cvs.readthedocs.io/dataset-overviews/aerosol-optical-properties-macv2-sp](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/aerosol-optical-properties-macv2-sp/)
