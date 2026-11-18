@@ -1,0 +1,182 @@
+# Zensical configuration for the CMIP7 guidance site.
+#
+# Converted from mkdocs.yml. The keys are the same as the MkDocs ones; only the
+# syntax is TOML. Two things to know when editing:
+#
+#   * Zensical treats the folder holding THIS file as the project root, and
+#     requires docs_dir and site_dir to sit inside it. That is why the file is at
+#     the repository root rather than in src/.
+#   * Plain key = value lines belong to the top level, so they must all appear
+#     ABOVE the first [table] header. Anything written after a header belongs to
+#     that table.
+
+site_name = "Guidance and Documentation"
+
+# Empty for relative paths - works at any deployment location (/project/, /custom/, etc.)
+site_url = ""
+
+repo_url = "https://github.com/WCRP-CMIP/cmip7-guidance"
+repo_name = "WCRP-CMIP/cmip7-guidance"
+
+# The "view" icon at the top of each page opens that page's source on GitHub:
+# <repo_url>/<edit_uri><path of the page>. Here that is the page under docs/ on the
+# docs branch, for example .../blob/docs/docs/CMIP7/Guidance_for_users.md
+# (see src/overrides/partials/actions.html).
+edit_uri = "blob/docs/docs/"
+
+site_description = "Documentation for CMIP7."
+
+# The standard author tag: written into every page as
+# <meta name="author" content="CMIP-IPO">. The separate author-details tag (author=,
+# github=, contact=) is hard-coded in src/overrides/main.html and sits alongside it.
+site_author = "CMIP-IPO"
+
+# Paths are relative to this file (the repository root).
+docs_dir = "docs"
+site_dir = "src/build"
+use_directory_urls = true
+
+copyright = "CMIP International Project Office"
+
+extra_css = ["stylesheets/cmip.css"]
+
+extra_javascript = [
+  # Analytics. Plain .html pages under docs/ are copied verbatim and are NOT
+  # rendered through the theme, so they each carry their own tag instead; see
+  # src/hooks/check_matomo.py, which fails the build if one is missing.
+  "stylesheets/matomo.js",
+  "stylesheets/fallback-banner.js",
+  "https://unpkg.com/mermaid@10/dist/mermaid.min.js",
+]
+
+
+# ----------------------------------------------------------------------------
+# Theme
+# ----------------------------------------------------------------------------
+
+[theme]
+name = "material"
+
+# The "classic" variant keeps Material's look, which cmip.css relies on.
+variant = "classic"
+
+language = "en"
+custom_dir = "src/overrides"
+logo = "assets/cmip-logo-white.svg"
+favicon = "assets/cmip-icon.svg"
+
+features = [
+  # navigation.instant is deliberately not enabled: it swaps pages without
+  # re-rendering the custom header, so the active nav highlight goes stale.
+  "navigation.top",
+  "navigation.path",
+  "navigation.indexes",
+  "navigation.footer",
+  "search.suggest",
+  "search.highlight",
+  "toc.follow",
+  "content.code.copy",
+  "content.action.view",
+]
+
+[theme.icon]
+repo = "fontawesome/brands/git-alt"
+
+[theme.font]
+text = "Plus Jakarta Sans"
+code = "Roboto Mono"
+
+[theme.palette]
+scheme = "default"
+primary = "custom"
+accent = "custom"
+
+
+# ----------------------------------------------------------------------------
+# Plugins
+# ----------------------------------------------------------------------------
+
+[plugins.search]
+lang = "en"
+separator = '[\s\-\.]+'
+
+[plugins.literate-nav]
+nav_file = "nav_menu.md"
+implicit_index = true
+tab_length = 2
+
+[plugins.redirects.redirect_maps]
+"CMIP7/global_attributes.md" = "CMIP7/Global_Attributes.md"
+"CMIP7/branded_variables.md" = "CMIP7/Branded_Variables.md"
+"CMIP7/domain_names.md" = "CMIP7/Domain_names.md"
+"CMIP7/guidance_for_esgf.md" = "CMIP7/Guidance_for_ESGF.md"
+"CMIP7/guidance_for_mips.md" = "CMIP7/Guidance_for_MIPs.md"
+"CMIP7/guidance_for_modellers.md" = "CMIP7/Guidance_for_modellers.md"
+"CMIP7/guidance_for_users.md" = "CMIP7/Guidance_for_users.md"
+
+
+# ----------------------------------------------------------------------------
+# Extra
+# ----------------------------------------------------------------------------
+
+[extra]
+# Top-level nav titles kept out of the top bar (still in the sidebar).
+# "Home" is hidden here; the logo in the top bar still links to the home page.
+nav_exclude = ["Home"]
+
+# The footer's "Made with" link points here, at the template repository this
+# site is built from (see src/overrides/partials/copyright.html).
+template_url = "https://github.com/cmip-ipo-internal/cmipipo-mkdocs-course"
+
+# Versioning is handled by mike. The dropdown reads versions.json at the root
+# of the published site; 'default = "latest"' decides which version is NOT
+# flagged as outdated by the notice in src/overrides/main.html.
+[extra.version]
+provider = "mike"
+default = "latest"
+
+
+# ----------------------------------------------------------------------------
+# Markdown extensions
+#
+# An extension with no settings of its own is written as `name = {}`.
+# ----------------------------------------------------------------------------
+
+[markdown_extensions]
+admonition = {}
+attr_list = {}
+def_list = {}
+footnotes = {}
+md_in_html = {}
+tables = {}
+abbr = {}                     # TODO: check that it is okay to add this
+
+[markdown_extensions.toc]
+permalink = true
+toc_depth = 3
+# Material's own label for this is "Table of contents"; Zensical's is "On this
+# page". Setting it here keeps the heading the same under either builder.
+title = "Table of contents"
+
+# Written as [markdown_extensions.pymdownx.<name>], which Zensical expands to
+# the "pymdownx.<name>" extension names.
+[markdown_extensions.pymdownx]
+details = {}
+inlinehilite = {}
+
+[markdown_extensions.pymdownx.highlight]
+anchor_linenums = true
+
+[markdown_extensions.pymdownx.superfences]
+# In mkdocs.yml the format was the YAML tag
+# !!python/name:pymdownx.superfences.fence_code_format. TOML has no such tag, so
+# Zensical takes the same function as a plain string and resolves it itself.
+custom_fences = [
+  { name = "mermaid", class = "mermaid", format = "pymdownx.superfences.fence_code_format" },
+]
+
+[markdown_extensions.pymdownx.tabbed]
+alternate_style = true
+
+[markdown_extensions.pymdownx.tasklist]
+custom_checkbox = true

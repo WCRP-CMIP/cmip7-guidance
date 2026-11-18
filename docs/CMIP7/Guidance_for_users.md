@@ -33,7 +33,7 @@ CMIP7 model output is available through a distributed data archive developed and
 ??? info "What has been published so far ?"
     Summaries of CMIP7 data sets published to ESGF include the following:
 
-    - [Climate Resource][publication-summary-ref]: Summary of data published by experiment and model, with particular focus on the [Baseline Climate Variables](Guidance_for_modellers.md/#core-request).
+    - [Climate Resource][publication-summary-ref]: Summary of data published by experiment and model, with particular focus on the [Baseline Climate Variables](Guidance_for_modellers.md#core-request).
      - [CMIP-IPO summary page][publication-summary-ipo]: ESGF catalogue overview including counts of datasets published for each institution/model/experiment combination, counts of variables by experiment, and data volume by experiment.
      - [EMD model descriptions][emd]: Timeseries of publication on each model's EMD page.
      - ESGF project summary page (⚠️ in development)
@@ -241,7 +241,7 @@ The CMIP7 compound name used in the Data Request also includes each requested va
 For example, the equivalent of `Amon.tas` in CMIP6 would be  `atmos.tas_tavg-h2m-hxy-u.mon.GLB` in CMIP7.
 
 ??? info "Understanding the Data Request"
-    The variables produced in CMIP7 were recommended by the [CMIP7 Data Request task team][DataRequestTeam]. The latest version of the Data Request can be [viewed here][datarequest], and further guidance can be [found here](Guidance_for_modellers.md/#4-model-output-fields-data-request). 
+    The variables produced in CMIP7 were recommended by the [CMIP7 Data Request task team][DataRequestTeam]. The latest version of the Data Request can be [viewed here][datarequest], and further guidance can be [found here](Guidance_for_modellers.md#4-model-output-fields-data-request). 
 
 
 ### 3.4. Frequency

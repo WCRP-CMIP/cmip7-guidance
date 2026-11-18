@@ -18,7 +18,7 @@
 #   production   The OLD production branch, which already has the finished site
 #                in docs/. Nothing to do. Kept only so the old setup keeps
 #                working until that branch is retired.
-#   any other    A PREVIEW. Builds the site from source with mkdocs and puts the
+#   any other    A PREVIEW. Builds the site from source with Zensical and puts the
 #                result in docs/, replacing the source pages there, because
 #                docs/ is the folder Cloudflare publishes.
 #
@@ -70,12 +70,16 @@ PIP="pip"
 command -v pip >/dev/null 2>&1 || PIP="python3 -m pip"
 $PIP install -r src/requirements.txt
 
-# Writes to build/ (site_dir in src/mkdocs.yml, relative to src/).
-mkdocs build --clean -f src/mkdocs.yml
+# Plain .html pages under docs/ are copied into the site as-is, so each carries its
+# own Matomo tag. Fail here rather than publish a page that is not tracked.
+python3 src/hooks/check_matomo.py docs
+
+# Writes to src/build/ (site_dir in zensical.toml).
+zensical build -c -f zensical.toml
 
 # Fail loudly rather than publish nothing.
-test -f build/index.html
+test -f src/build/index.html
 
 rm -rf docs
-mv build docs
+mv src/build docs
 echo "Built site is now in docs/ ($(find docs -name '*.html' | wc -l | tr -d ' ') pages)"

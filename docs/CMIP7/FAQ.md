@@ -38,7 +38,7 @@ There should be no confusion between grids and there is no distinction in the gr
 ### Has CMOR been updated to accommodate CMIP7's metadata requirements?
 
 **Yes.**
-The minimum recommended version is given in the [CMOR guidance](Guidance_for_modellers.md/#6a-cmor) section, along with further information about using CMOR.
+The minimum recommended version is given in the [CMOR guidance](Guidance_for_modellers.md#6a-cmor) section, along with further information about using CMOR.
 A recent CMOR version is required in order to output the global attributes correctly and to read the MIP tables (CMOR tables) correctly.
 The [CMOR usage examples](https://github.com/WCRP-CMIP/cmip7-cmor-tables/blob/main/cmor_demo.ipynb) show how to use CMOR with the [new tables](https://github.com/WCRP-CMIP/cmip7-cmor-tables/) and [branded variables](Branded_Variables.md).
 
@@ -46,7 +46,7 @@ The [CMOR usage examples](https://github.com/WCRP-CMIP/cmip7-cmor-tables/blob/ma
 ### Does cmip7repack duplicate the amount of data?
 
 **No.**
-Although each file is duplicated as it is being repacked, the default behaviour of the [`cmip7repack` tool](Guidance_for_modellers.md/#6b-cmip7repack) is to overwrite the original file. 
+Although each file is duplicated as it is being repacked, the default behaviour of the [`cmip7repack` tool](Guidance_for_modellers.md#6b-cmip7repack) is to overwrite the original file. 
 You can choose to also keep the original file. 
 Repacking doesn’t change the information in the file; it is an internal technical restructuring to allow the file to be accessed remotely. 
 There should be no need to keep the un-repacked versions.
@@ -61,9 +61,9 @@ Not repacking the data can lead to prohibitively slow access, which may in turn 
 
 ### Is CMIP7 repacking integrated into CMOR?
 
-Improved chunking to support CMIP7's repacking requirement was introduced in [CMOR 3.14.0](https://github.com/PCMDI/cmor/releases/3.14.0) (see the [CMOR guidance](Guidance_for_modellers.md/#6a-cmor) section for further information about using CMOR).
+Improved chunking to support CMIP7's repacking requirement was introduced in [CMOR 3.14.0](https://github.com/PCMDI/cmor/releases/3.14.0) (see the [CMOR guidance](Guidance_for_modellers.md#6a-cmor) section for further information about using CMOR).
 However if netCDF files written by CMOR are subsequently concatenated (e.g., if one-year files are concatenated to a single file covering an experiment's whole time period) then it is still necessary to run `cmip7repack` on the concatenated file.
-The [`check_cmip7_packing` tool](Guidance_for_modellers.md/#6b-cmip7repack) can be used to confirm that a netCDF file is compliant with the repacking requirement.
+The [`check_cmip7_packing` tool](Guidance_for_modellers.md#6b-cmip7repack) can be used to confirm that a netCDF file is compliant with the repacking requirement.
 
 
 ### If model documentation, grid registration, and repacking are mandatory, isn’t there a risk that this is too much of an obstacle for modeling groups without the resources to prepare everything?

@@ -14,6 +14,13 @@ function init() {
     }
 
     // ==========================================
+    // NOT-FOUND PAGE: NO TRACKING
+    // ==========================================
+    // A mistyped address should not be counted as a visit. Zensical's 404 page says
+    // "404 - Not found"; the old MkDocs build hook skipped that page, and this does the same.
+    if (document.body && document.body.textContent.indexOf("404 - Not found") !== -1) return;
+
+    // ==========================================
     // WEBSITE CONFIGURATION — EDIT THESE VALUES
     // ==========================================
 
