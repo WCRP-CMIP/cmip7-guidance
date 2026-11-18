@@ -27,8 +27,6 @@ edit_uri = "blob/docs/docs/"
 site_description = "Documentation for CMIP7."
 
 # The standard author tag: written into every page as
-# <meta name="author" content="CMIP-IPO">. The separate author-details tag (author=,
-# github=, contact=) is hard-coded in src/overrides/main.html and sits alongside it.
 site_author = "CMIP-IPO"
 
 # Paths are relative to this file (the repository root).
@@ -45,7 +43,9 @@ extra_javascript = [
   # rendered through the theme, so they each carry their own tag instead; see
   # src/hooks/check_matomo.py, which fails the build if one is missing.
   "stylesheets/matomo.js",
+  
   "stylesheets/fallback-banner.js",
+  # mermaid flow charts library 
   "https://unpkg.com/mermaid@10/dist/mermaid.min.js",
 ]
 
@@ -66,8 +66,7 @@ logo = "assets/cmip-logo-white.svg"
 favicon = "assets/cmip-icon.svg"
 
 features = [
-  # navigation.instant is deliberately not enabled: it swaps pages without
-  # re-rendering the custom header, so the active nav highlight goes stale.
+  # navigation.instant is deliberately not enabled: 
   "navigation.top",
   "navigation.path",
   "navigation.indexes",
@@ -124,11 +123,10 @@ tab_length = 2
 # "Home" is hidden here; the logo in the top bar still links to the home page.
 nav_exclude = ["Home"]
 
-# The footer's "Made with" link points here, at the template repository this
-# site is built from (see src/overrides/partials/copyright.html).
+# The footer's "Made with" link points here.
 template_url = "https://github.com/cmip-ipo-internal/cmipipo-mkdocs-course"
 
-# Versioning is handled by mike. The dropdown reads versions.json at the root
+# Versioning is handled by *Zensical's version* of mike. The dropdown reads versions.json at the root
 # of the published site; 'default = "latest"' decides which version is NOT
 # flagged as outdated by the notice in src/overrides/main.html.
 [extra.version]
