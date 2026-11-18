@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{#-
+  Writes ONE author-details tag, with the details as attributes: author=, github=
+  and contact=. It is the FIRST thing in <head>: this overrides Material's
+  site_meta block (which opens the head with the charset tag) and puts the tag in
+  front of it, then renders Material's own site_meta unchanged via super().
+
+  It is deliberately hard-coded here and NOT read from mkdocs.yml. It is IN
+  ADDITION to the standard <meta name="author"> tag that Material writes from
+  site_author (or from a page's own "author:" front matter), which is left
+  exactly as it is.
+-#}
+{% block site_meta %}
+  <meta author="Daniel Ellis" github="wolfiex" contact="product@bytevorous.com">
+  {{ super() }}
+{% endblock %}
+
+{#-
+  Newer-version notice. Material shows this only when mike versioning is on
+  and the page being viewed is NOT the version named in extra.version.default.
+  The link goes to the site root, which mike redirects to the default version.
+-#}
+{% block outdated %}
+  There is a newer version of this page:
+  <a href="{{ '../' ~ base_url }}">See latest</a>
+  <span class="cmip-latest-date"></span>
+  {#- Fills the span with the latest version's label, e.g. "(26.Nov.05)", from
+      the same versions.json the dropdown reads. If it cannot be fetched (for
+      example in a plain `mkdocs serve`) the span just stays empty. -#}
+  <script>
+    (function () {
+      var span = document.currentScript.previousElementSibling;
+      var base = new URL("{{ base_url }}/", location.href);
+      fetch(new URL("../versions.json", base))
+        .then(function (r) { return r.ok ? r.json() : []; })
+        .then(function (versions) {
+          for (var i = 0; i < versions.length; i++) {
+            if ((versions[i].aliases || []).indexOf("latest") !== -1) {
+              span.textContent = "(" + (versions[i].title || versions[i].version) + ")";
+              return;
+            }
+          }
+        })
+        .catch(function () {});
+    })();
+  </script>
+{% endblock %}

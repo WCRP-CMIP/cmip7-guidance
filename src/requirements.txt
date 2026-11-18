@@ -1,0 +1,7 @@
+# Zensical static site generator (successor to Material for MkDocs / MkDocs).
+# Search, literate-nav and redirects are built in, so no plugin packages are needed.
+zensical==0.0.67
+
+# Versioning (mike). Zensical's fork is installed from GitHub and needs git.
+# It has no PyPI release and pulls in mkdocs internally.
+mike @ git+https://github.com/squidfunk/mike.git

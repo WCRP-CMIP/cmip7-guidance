@@ -393,5 +393,14 @@
             }
         });
     </script>
+
+    <!--
+      Matomo analytics and cookie banner. This page is plain HTML copied into the
+      built site as-is, so it is not rendered through the theme and does not pick
+      up extra_javascript. The tag therefore has to live here. Any other plain
+      .html page added under docs/ needs the same line, with ../ adjusted to its
+      depth (this file is at docs/resources/, so one level up).
+    -->
+    <script src="../stylesheets/matomo.js"></script>
 </body>
 </html>
