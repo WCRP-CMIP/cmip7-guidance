@@ -1,4 +1,3 @@
----
 # CMIP7 Global Attributes, Filenames, Directory Path, and CVs
 
 ---

@@ -19,7 +19,9 @@
     </label>
 
     <ul class="cmip-nav">
-      {% for nav_item in nav %}
+      {#- nav.items rather than nav: MkDocs' Navigation object and Zensical's both
+          expose .items, but only MkDocs' is directly iterable. -#}
+      {% for nav_item in nav.items %}
         {% if nav_item.title not in nav_exclude %}
           {{ item.render(nav_item) }}
         {% endif %}
@@ -36,14 +38,15 @@
       </div>
     {% endif %}
 
-    {% if "material/search" in config.plugins %}
-      <label class="md-header__button md-icon cmip-search-toggle" for="__search"
+    {#- Search is always enabled for this site (see plugins in mkdocs.yml). Zensical
+        does not list Material's built-in search under config.plugins, so the
+        check that used to live here would hide the button. -#}
+    <label class="md-header__button md-icon cmip-search-toggle" for="__search"
              title="{{ lang.t('search') }}" aria-label="{{ lang.t('search') }}">
         {% set icon = config.theme.icon.search or "material/magnify" %}
         {% include ".icons/" ~ icon ~ ".svg" %}
       </label>
       {% include "partials/search.html" %}
-    {% endif %}
 
     {% if config.repo_url %}
       <div class="md-header__source">

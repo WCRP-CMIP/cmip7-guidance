@@ -1,23 +1,16 @@
 # ── CMIP IPO MkDocs course ──────────────────────────────────────────────────
 # Run every command from the repository root.
-# Config lives in src/mkdocs.yml. Built site goes to build/.
+# Config lives in zensical.toml. Built site goes to src/build/.
 
-MKDOCS_CONFIG := src/mkdocs.yml
-BUILD_DIR     := build
+ZENSICAL_CONFIG := zensical.toml
+BUILD_DIR     := src/build
 PORT          ?= 48217
 ADDR          := 127.0.0.1:$(PORT)
 PYTHON        ?= python
 
-# mkdocs watches docs/ and the config by default. These add the theme
-# overrides and hooks, so template edits also trigger a reload.
-#
-# --livereload is passed explicitly on purpose. mkdocs sets it by default via a
-# hidden click flag, and click 8.3 does not apply that default, which silently
-# disables watching entirely. Passing it works on every click version.
-SERVE_OPTS    := --livereload --watch src/overrides --watch src/hooks
 
 .DEFAULT_GOAL := help
-.PHONY: help install build serve dev kill clean versions deploy-local serve-versions try-versions
+.PHONY: help install build serve dev kill clean versions deploy-local serve-versions try-versions check-analytics
 
 help:
 	@echo ""
@@ -27,6 +20,7 @@ help:
 	@echo "  make dev      Restart the server and open it in your browser"
 	@echo "  make kill     Stop everything listening on port $(PORT)"
 	@echo "  make clean    Remove $(BUILD_DIR)/"
+	@echo "  make check-analytics  Check plain .html pages carry the Matomo tag"
 	@echo ""
 	@echo "  Versioning (mike) - nothing here pushes to GitHub:"
 	@echo "  make versions        List versions on the local gh-pages branch"
@@ -41,18 +35,18 @@ help:
 install:
 	$(PYTHON) -m pip install -r src/requirements.txt
 
-build:
-	mkdocs build --config-file $(MKDOCS_CONFIG)
+build: check-analytics
+	zensical build -f $(ZENSICAL_CONFIG)
 
 serve:
-	mkdocs serve --config-file $(MKDOCS_CONFIG) --dev-addr $(ADDR) $(SERVE_OPTS)
+	zensical serve -f $(ZENSICAL_CONFIG) -a $(ADDR)
 
 # The server runs in the foreground so it keeps live-reloading and Ctrl-C
 # stops it. Only the browser-opening is backgrounded.
 dev:
-	-@pkill -f "[m]kdocs serve" 2>/dev/null || true
+	-@pkill -f "[z]ensical serve" 2>/dev/null || true
 	@( sleep 2 && $(PYTHON) -m webbrowser http://$(ADDR)/ >/dev/null 2>&1 ) &
-	mkdocs serve --config-file $(MKDOCS_CONFIG) --dev-addr $(ADDR) $(SERVE_OPTS)
+	zensical serve -f $(ZENSICAL_CONFIG) -a $(ADDR)
 
 kill:
 	@pids=$$(lsof -ti tcp:$(PORT) -sTCP:LISTEN); \
@@ -61,6 +55,11 @@ kill:
 	else \
 		echo "Nothing is listening on port $(PORT)"; \
 	fi
+
+# Plain .html pages under docs/ are copied as-is, so they each need their own
+# Matomo tag. Markdown pages get it from extra_javascript.
+check-analytics:
+	@$(PYTHON) src/hooks/check_matomo.py docs
 
 clean:
 	rm -rf $(BUILD_DIR)
@@ -73,19 +72,19 @@ VERSION ?= test
 ALIAS   ?=
 
 versions:
-	mike list --config-file $(MKDOCS_CONFIG)
+	mike list --config-file $(ZENSICAL_CONFIG)
 
 deploy-local:
-	mike deploy --config-file $(MKDOCS_CONFIG) --update-aliases $(VERSION) $(ALIAS)
+	mike deploy --config-file $(ZENSICAL_CONFIG) --update-aliases $(VERSION) $(ALIAS)
 
 serve-versions:
-	mike serve --config-file $(MKDOCS_CONFIG) --dev-addr $(ADDR)
+	mike serve --config-file $(ZENSICAL_CONFIG) --dev-addr $(ADDR)
 
 # One-command local trial: builds 0.9, then 1.0 as "latest", sets "latest" as
 # the default, and serves everything. Nothing is pushed. It creates a LOCAL
 # gh-pages branch; remove it afterwards with:  git branch -D gh-pages
 try-versions:
-	mike deploy --config-file $(MKDOCS_CONFIG) 0.9
-	mike deploy --config-file $(MKDOCS_CONFIG) --update-aliases 1.0 latest
-	mike set-default --config-file $(MKDOCS_CONFIG) latest
-	mike serve --config-file $(MKDOCS_CONFIG) --dev-addr $(ADDR)
+	mike deploy --config-file $(ZENSICAL_CONFIG) 0.9
+	mike deploy --config-file $(ZENSICAL_CONFIG) --update-aliases 1.0 latest
+	mike set-default --config-file $(ZENSICAL_CONFIG) latest
+	mike serve --config-file $(ZENSICAL_CONFIG) --dev-addr $(ADDR)

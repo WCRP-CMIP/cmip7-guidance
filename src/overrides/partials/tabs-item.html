@@ -28,12 +28,16 @@
     {% endif %}
   {% endfor %}
 {% endmacro %}
-{% macro render(nav_item, ref = nav_item) %}
+{% macro render(nav_item, ref = none) %}
+  {% set ref = ref if ref else nav_item %}
   {% set class = "cmip-nav__item" %}
   {% if ref.active %}
     {% set class = class ~ " cmip-nav__item--active" %}
   {% endif %}
-  {% if nav_item.is_section %}
+  {#- A section is an entry with children but no page of its own. MkDocs exposes
+      is_section for this; Zensical does not, so the shape is tested instead,
+      which is true on both. -#}
+  {% if nav_item.children and not nav_item.url %}
     <li class="{{ class }} cmip-nav__item--dropdown">
       <span class="cmip-nav__link cmip-nav__link--dropdown" tabindex="0"
             role="button" aria-haspopup="true" aria-expanded="false">

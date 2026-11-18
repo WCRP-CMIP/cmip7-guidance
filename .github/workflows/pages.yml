@@ -19,6 +19,7 @@ on:
     paths:
       - 'docs/**'
       - 'src/**'
+      - 'zensical.toml'
       - '.github/pages-404.html'
       - '.github/workflows/pages.yml'
   # Kept from the previous workflow: another repository or workflow can ask for
@@ -41,7 +42,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  MKDOCS_CONFIG: src/mkdocs.yml
+  ZENSICAL_CONFIG: zensical.toml
   # Points the repo link at whichever repository this runs in,
   # so a copy of this template needs no edit.
   REPO_URL: ${{ github.server_url }}/${{ github.repository }}
@@ -93,7 +94,7 @@ jobs:
         id: update
         if: github.event_name != 'release'
         run: |
-          INFO="$(mike list --config-file "$MKDOCS_CONFIG" --json 2>/dev/null | python -c '
+          INFO="$(mike list --config-file "$ZENSICAL_CONFIG" --json 2>/dev/null | python -c '
           import sys, json
           try:
               data = json.load(sys.stdin)
@@ -112,7 +113,7 @@ jobs:
             VERSION="$DATE"
             TITLE="$LABEL"
             exists() {
-              mike list --config-file "$MKDOCS_CONFIG" --json 2>/dev/null | python -c '
+              mike list --config-file "$ZENSICAL_CONFIG" --json 2>/dev/null | python -c '
           import sys, json
           try:
               data = json.load(sys.stdin)
@@ -128,13 +129,13 @@ jobs:
               N=$((N + 1))
             done
             echo "No version exists yet. Creating the first one from this push: $VERSION (shown as $TITLE)"
-            mike deploy --config-file "$MKDOCS_CONFIG" --push --title "$TITLE" --update-aliases "$VERSION" latest
-            mike set-default --config-file "$MKDOCS_CONFIG" --push latest
+            mike deploy --config-file "$ZENSICAL_CONFIG" --push --title "$TITLE" --update-aliases "$VERSION" latest
+            mike set-default --config-file "$ZENSICAL_CONFIG" --push latest
           else
             VERSION="$(echo "$INFO" | sed -n 1p)"
             TITLE="$(echo "$INFO" | sed -n 2p)"
             echo "Updating latest ($VERSION, shown as $TITLE) from this push"
-            mike deploy --config-file "$MKDOCS_CONFIG" --push --title "$TITLE" --update-aliases "$VERSION" latest
+            mike deploy --config-file "$ZENSICAL_CONFIG" --push --title "$TITLE" --update-aliases "$VERSION" latest
           fi
           echo "published=true" >> "$GITHUB_OUTPUT"
 
@@ -161,7 +162,7 @@ jobs:
           # compare against the version ids in its JSON output instead. Empty
           # output (no gh-pages branch yet) means no versions exist.
           exists() {
-            mike list --config-file "$MKDOCS_CONFIG" --json 2>/dev/null | python -c '
+            mike list --config-file "$ZENSICAL_CONFIG" --json 2>/dev/null | python -c '
           import sys, json
           try:
               data = json.load(sys.stdin)
@@ -177,8 +178,8 @@ jobs:
             N=$((N + 1))
           done
           echo "Release $TAG -> version $VERSION (shown as $TITLE)"
-          mike deploy --config-file "$MKDOCS_CONFIG" --push --title "$TITLE" --update-aliases "$VERSION" latest
-          mike set-default --config-file "$MKDOCS_CONFIG" --push latest
+          mike deploy --config-file "$ZENSICAL_CONFIG" --push --title "$TITLE" --update-aliases "$VERSION" latest
+          mike set-default --config-file "$ZENSICAL_CONFIG" --push latest
           echo "published=true" >> "$GITHUB_OUTPUT"
 
       # Package the stored versions as the Pages artifact. _site is a worktree of
