@@ -9,7 +9,7 @@ This page provides guidance on which `grid_label` to use when reporting data on 
 
 !!! note "What "non-2D grids" means in this document"
 
-    This guidance does **not** concern new variables computed from other variables (e.g., computing relative humidity from temperature and specific humidity). It concerns the same variable reported on a **non-standard spatial sampling**: a zonal mean, a global mean, data at specific sites, etc. The variable itself (`tas`, `thetao`, ...) is unchanged -- what differs is the horizontal grid on which it is reported.
+    In this guidance, “non-2D” describes a reduced spatial representation, not the number of dimensions used to store the grid. Examples include global or hemispheric means, zonal or basin-by-latitude means, and sampling at specific sites or along transects.
 
 These outputs are not on standard 2D horizontal grids but are spatially reduced from them, which raises the question of how to assign the `grid_label` used in the [DRS file naming and directory structure](./Global_Attributes.md#2-filenames).
 
@@ -64,9 +64,9 @@ However, this guidance was not available at the start of CMIP7 production, and s
 
 Modelling centres may use different approaches for different product types (e.g., a shared registered grid for global means, and the parent grid for zonal means). Whichever approach is chosen for a given product, the horizontal label in the branding suffix **must** be set correctly (i.e., not `hxy`) to reflect the nature of the non-2D output.
 
-!!! note "Correctness of the horizontal label"
+!!! note "QA/QC and producer responsibility"
 
-    QA/QC does **not** currently verify the correctness of the `horizontal_label`. It is the responsibility of data producers to ensure it is set correctly. Incorrect horizontal labels will make data harder to discover and may cause issues for users.
+    QA/QC checks horizontal coordinates and dimensions against the branded-variable definition, checks grid-label consistency, and compares horizontal cell counts with registered counts where applicable and available; data producers remain responsible for ensuring that the grid label correctly describes their output.
 
 ### 2.1 Recommended: Register a Dedicated Grid
 
@@ -77,7 +77,9 @@ For the most common non-2D outputs, **shared grid labels** are registered centra
 | Product type | Description | Shared grid | Status |
 |---|---|---|---|
 | Global mean (`hm`) | Single grid cell covering the globe | [`g010`](https://github.com/WCRP-CMIP/Essential-Model-Documentation/blob/src-data/horizontal_grid_cell/g010.json) | Registered (1 cell, 360x180 deg) |
-| Sub-global mean (`hm`) | Mean or total over a region (e.g., `30S-90S`, `ata`, `grl`) | [`g010`](https://github.com/WCRP-CMIP/Essential-Model-Documentation/blob/src-data/horizontal_grid_cell/g010.json) | Registered (1 cell, 360x180 deg). The `region` DRS element identifies the region |
+| 30S-90S spatial mean (`hm`) | Mean or total over the region from 30S to 90S degrees latitude | [`g015`](https://github.com/WCRP-CMIP/Essential-Model-Documentation/blob/src-data/horizontal_grid_cell/g015.json) | Registered (1 cell, 360x60 deg). The `region` DRS element identifies the region |
+| Greenland spatial mean (`hm`) | Mean or total over the region of Greenland (`grl`) | [`g016`](https://github.com/WCRP-CMIP/Essential-Model-Documentation/blob/src-data/horizontal_grid_cell/g016.json) | Registered (1 cell). The `region` DRS element identifies the region |
+| Antarctica spatial mean (`hm`) | Mean or total over the region of Antarctica (`ata`) | [`g017`](https://github.com/WCRP-CMIP/Essential-Model-Documentation/blob/src-data/horizontal_grid_cell/g017.json) | Registered (1 cell). The `region` DRS element identifies the region |
 | Northern Hemisphere mean (`hm`) | Single grid cell covering NH | [`g011`](https://github.com/WCRP-CMIP/Essential-Model-Documentation/blob/src-data/horizontal_grid_cell/g011.json) | Registered (1 cell, 360x90 deg) |
 | Southern Hemisphere mean (`hm`) | Single grid cell covering SH | [`g012`](https://github.com/WCRP-CMIP/Essential-Model-Documentation/blob/src-data/horizontal_grid_cell/g012.json) | Registered (1 cell, 360x90 deg) |
 | Site data (`hs`) | Fixed set of measurement sites ([site list on Zenodo](https://zenodo.org/records/17966101)) | [`g013`](https://github.com/WCRP-CMIP/Essential-Model-Documentation/blob/src-data/horizontal_grid_cell/g013.json) | Registered (discrete-points) |
@@ -89,7 +91,10 @@ For the most common non-2D outputs, **shared grid labels** are registered centra
 
 !!! tip "Already registered grids you can reuse"
 
-    - **`g010`** -- A single grid cell covering the entire globe (360x180 deg, 1 cell). Use for global and sub-global means.
+    - **`g010`** -- A single grid cell covering the entire globe (360x180 deg, 1 cell). Use for global means.
+    - **`g015`** -- A single grid cell covering the region `30S-90S` (360x60 deg, 1 cell). Use for `30S-90S` spatial means.
+    - **`g016`** -- A single grid cell covering Greenland (1 cell). Use for Greenland spatial means.
+    - **`g017`** -- A single grid cell covering Antarctica (1 cell). Use for Antarctica spatial means.
     - **`g011`** -- A single grid cell covering the Northern Hemisphere (360x90 deg, 1 cell). Use for NH means.
     - **`g012`** -- A single grid cell covering the Southern Hemisphere (360x90 deg, 1 cell). Use for SH means.
     - **`g013`** -- A discrete-points grid for site data. Use for all `hs` variables.
@@ -104,7 +109,7 @@ For **zonal means** (`hy`), modelling centres must register their own grid if no
 **Advantages of registering a dedicated grid:**
 
 - The `grid_label` alone is sufficient to determine the output grid, consistent with the principle that grid labels uniquely identify grids
-- Enables potential future QA/QC checks (e.g., verifying that the number of grid cells in a file matches the registered grid)
+- Enables QA/QC checks (e.g., verifying that the number of grid cells in a file matches the registered grid)
 - Self-describing: users can look up the `grid_label` to understand the grid without inspecting the data
 - Consistent meaning: the `grid_label` always refers to the actual grid of the data, regardless of the horizontal label
 
@@ -213,13 +218,21 @@ Cell measure variables (`areacella`, `areacello`, `volcello`) are **not provided
 
 ### 3.5 Quality assurance checks (QA/QC)
 
-Currently, QA/QC does **not** verify the consistency between the `grid_label` in the file name and the actual grid in the data (e.g., it does not check that data labelled `g239` actually has 180 latitude cells). Similarly, the correctness of the `horizontal_label` is **not** currently checked by QA/QC. You should not assume that these labels have been validated, especially for files using the parent grid approach.
+QA/QC compares the output grid with information registered for its `grid_label`. The following checks use the standard CMIP7 severities:
 
-As QA/QC evolves toward more robust validation, checks comparing the file contents against the registered grid definition are expected to be implemented. This will primarily benefit files using dedicated grid labels.
+| What is checked | When it applies | Severity |
+|---|---|---|
+| `grid_label` is registered and consistent between the filename, directory and file metadata | Where the relevant metadata and DRS components are available | High |
+| Horizontal coordinate layout matches the topology associated with the grid label | For full horizontal grids (`hxy`); reduced output follows the branded-variable coordinate requirements | High |
+| File region agrees with the registered grid region | When both are available | Medium |
+| File grid mapping agrees with the registered mapping | When both are specified | Medium |
+| Horizontal cell count agrees with the registered count | Where applicable and the count can be determined reliably | Medium |
+| Registered cell count is unavailable | Where a cell-count comparison would otherwise apply | Low |
+| A recommended dedicated grid label or grid type is used for reduced output | Where a recommendation is defined | Medium |
 
-!!! warning "Future-proofing your data (for producers)"
+Using a parent grid label for reduced / non-2D grids is permitted as specified in this guidance, but may produce medium severity findings because the registration describes the parent grid rather than the reduced output. This will however not interfere with ESGF publication. Selecting or registering an appropriate dedicated grid is strongly encouraged.
 
-    If you choose the parent grid approach today, be aware that future QA/QC improvements may generate warnings or errors for your published data. Registering dedicated grids now avoids this risk and ensures your data will pass stricter validation checks without reprocessing.
+Data producers remain responsible for selecting an appropriate grid label. Passing the implemented checks does not establish that every coordinate value matches the registered grid.
 
 ---
 
@@ -227,9 +240,11 @@ As QA/QC evolves toward more robust validation, checks comparing the file conten
 
 | Product type | Recommended grid_label | Alternative grid_label | Notes |
 |---|---|---|---|
-| Global mean (`hm`) | `g010` (shared) | Parent grid | Region label `glb` distinguishes from 2D output |
+| Global mean (`hm`) | `g010` | Parent grid | Region label `glb` specifies global coverage |
 | Hemispheric mean (`hm`) | `g011` (NH) or `g012` (SH) | Parent grid | Region label (e.g., `nh`, `sh`) distinguishes from 2D output |
-| Sub-global mean (`hm`) | `g010` (shared) | Parent grid | Region label (e.g., `30S-90S`, `ata`, `grl`) identifies the region |
+| 30S-90S spatial mean (`hm`) | `g015` | Parent grid | Region label `30S-90S` identifies the region |
+| Greenland spatial mean (`hm`) | `g016` | Parent grid | Region label `grl` identifies the region |
+| Antarctica spatial mean (`hm`) | `g017` | Parent grid | Region label `ata` identifies the region |
 | Zonal mean (`hy`) | Register your own (or reuse an existing match, e.g. `g239`) | Parent grid | Latitude resolution depends on source grid |
 | Basin data (`hyb`) | `g262` (shared, 1-degree latitude bands) or register your own | Parent grid | Cannot share a grid with zonal means. See [Ocean basin grids](#ocean-basin-grids) |
 | Site data (`hs`) | `g013` (shared) | Parent grid | Sites are fixed across models ([site list](https://zenodo.org/records/17966101)) |
@@ -239,7 +254,7 @@ As QA/QC evolves toward more robust validation, checks comparing the file conten
 
 **Key points:**
 
-1. **Always set the horizontal label correctly.** Whatever approach you choose for `grid_label`, the `horizontal_label` in the branding suffix must reflect the nature of the non-2D output (e.g., `hy` for zonal mean, `hm` for area mean). This is not optional. Note that this is currently **not** verified by QA/QC -- it is the responsibility of data producers.
+1. **Always set the horizontal label correctly.** Whatever approach you choose for `grid_label`, the `horizontal_label` in the branding suffix must reflect the nature of the non-2D output (e.g., `hy` for zonal mean, `hm` for area mean). This is not optional. QA/QC checks horizontal coordinates and dimensions against the branded-variable definition, but setting the label correctly remains the responsibility of data producers.
 
 2. **No cell measures are needed for non-2D grids.** Variables such as `areacella` or `areacello` do not need to be provided for zonal mean, basin, global mean, site, or transect grids. The Data Request does not include cell area variables for these product types.
 
