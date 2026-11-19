@@ -8,6 +8,28 @@ title: CMIP7 Updates for modelling groups
 This page will be updated with information of interest to modelling groups that the CMIP IPO has communicated by email (most recent at top).
 
 ---
+## 18 November 2026
+
+1.	QA/QC issues / Data Request update
+2.	Forcings updates
+
+### 1.	Data Request and QA/QC update due imminently  
+There is a Data Request patch update planned imminently, along with a QA/QC update as well. These two updates will fix the outstanding QA/QC issues which have been reported.
+
+### 2.	Forcings updates
+Please note the following updates regarding CMIP7  forcings:
+
+#### Low-to-negative (LN) land use scenario forcing
+
+- LN land use scenario dataset now available ([data here](https://metagrid.esgf-west.org/search?project=input4MIPs&versionType=all&activeFacets=%7B%22source_id%22%3A%22UofMD-landState-ln-3-1%22%7D))
+- ML land use scenario dataset now available ([data here](https://metagrid.esgf-west.org/search?project=input4MIPs&versionType=all&activeFacets=%7B%22source_id%22%3A%22UofMD-landState-ml-3-1%22%7D))
+
+[Full dataset information here](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/land-use/#scenariomip).
+
+#### Population density
+ As a result of an issue being found, an updated dataset, PIK-CMIP-1-0-2, has been provided. This corrects a bug found in PIK-CMIP-1-0-1 ([see further details here](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/population/#pik-cmip-1-0-1)).  The implication of this error on existing simulations (and their predicted climate forcing) is deemed to be small. Therefore, existing model simulations based on PIK-CMIP-1-0-1 do not need to be rerun if such a rerun is not possible. If any modelling centres run historical simulations with both the PIK-CMIP-1-0-1 and PIK-CMIP-1-0-2 forcing, these simulations would be of interest to the Forcings Task Team.
+
+---
 ## 20 October 2026
 
 1. Forcings ozone and nitrogen
