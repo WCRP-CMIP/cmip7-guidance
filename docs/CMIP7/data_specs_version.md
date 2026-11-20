@@ -15,7 +15,7 @@ CMIP7 files include three versioning-related global attributes:
 
 | Attribute | Purpose | CMIP7 Value |
 |-----------|---------|-------------|
-| **Conventions** | CF conventions version | `CF-1.12` (or later) |
+| **Conventions** | CF conventions version | `CF-1.11`, `CF-1.12` or `CF-1.13` |
 | **drs_specs** | Data Reference Syntax identifier | `MIP-DRS7` |
 | **data_specs_version** | Version of CVs and data specifications | `MIP-DS7.1.0.0` |
 
@@ -27,7 +27,7 @@ CMIP7 files include three versioning-related global attributes:
 
 Identifies the CF (Climate and Forecast) conventions version followed by the file.
 
-- All CMIP7 data must conform to **CF-1.12** or later
+- All CMIP7 data must conform to **CF-1.11**, **CF-1.12** or **CF-1.13**
 - This attribute is defined by CF conventions
 - Software may parse this to check CF compliance
 
