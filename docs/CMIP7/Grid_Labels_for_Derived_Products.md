@@ -5,11 +5,11 @@ title: Grid Labels for Non-2D Grids
 
 # Grid Labels for Non-2D Grids
 
-This page provides guidance on which `grid_label` to use when reporting data on **non-2D grids** such as global means, zonal means, ocean basin data, site data, and transect data.
+This page provides guidance on which `grid_label` to use when reporting data on **non-2D horizontal grids** such as global means, zonal means, ocean basin data, site data, and transect data.
 
-!!! note "What "non-2D grids" means in this document"
+!!! note "What "non-2D grids" means in this document:"
 
-    In this guidance, “non-2D” describes a reduced spatial representation, not the number of dimensions used to store the grid. Examples include global or hemispheric means, zonal or basin-by-latitude means, and sampling at specific sites or along transects.
+    In this guidance, “non-2D” describes a reduced horizontal spatial representation, not the number of dimensions used to store the grid. Examples include global or hemispheric means, zonal or basin-by-latitude means, and sampling at specific sites or along transects.
 
 These outputs are not on standard 2D horizontal grids but are spatially reduced from them, which raises the question of how to assign the `grid_label` used in the [DRS file naming and directory structure](./Global_Attributes.md#2-filenames).
 
@@ -25,7 +25,7 @@ In CMIP7, the `grid_label` is a key component of the Data Reference Syntax (DRS)
 <variable_id>_<branding_suffix>_<frequency>_<region>_<grid_label>_<source_id>_<experiment_id>_<variant_label>[_<timeRangeDD>].nc
 ```
 
-For standard 2D gridded output (horizontal label `hxy` in the [branding suffix](./Branded_Variables.md#horizontal-labels)), the `grid_label` uniquely identifies the grid on which data is reported.
+For standard 2D gridded output (horizontal label `hxy` in the [branding suffix](./Branded_Variables.md#horizontal-labels)), the `grid_label` uniquely identifies the horizontal grid on which data is reported.
 However, for data reported on non-2D grids such as zonal means, global means, or site data, the output is not on a 2D grid.
 These cases require specific guidance.
 
@@ -42,9 +42,9 @@ The [horizontal label](./Branded_Variables.md#horizontal-labels) component of th
 
 This guidance applies to all non-`hxy` horizontal labels.
 
-!!! note "What the Data Request contains"
+!!! note "What the Data Request contains:"
 
-    As of [Data Request](https://cmip-data-request.github.io/cmip7-dreq-webview/latest/variables.html) v1.2.2.5:
+    As of [Data Request](https://cmip-data-request.github.io/cmip7-dreq-webview/latest/variables.html) v1.2.2.6:
 
     - All `hy` variables are atmospheric (atmosphere, aerosol and atmospheric chemistry), on pressure levels, with area label `air`. There are no ocean `hy` variables: ocean zonal quantities are requested by basin (`hyb`).
     - All `hyb` variables are ocean transports or overturning streamfunctions. They are **sums** along each basin, not means: their `cell_methods` contain `longitude: sum where sea (along a zig-zag grid path spanning a basin)`.
@@ -60,7 +60,7 @@ However, this guidance was not available at the start of CMIP7 production, and s
 
 !!! warning "Impact on archive consistency and data discoverability"
 
-    If some models use dedicated grid labels (e.g., `g239` for a zonal mean) while others use their parent grid label (e.g., `g100`, `g110`), users searching the ESGF archive by `grid_label` will not find all zonal mean data in a single query. A multi-model analysis of zonal mean air temperature, for example, would require users to know which approach each model used -- or to filter by `horizontal_label` instead of `grid_label`. Registering dedicated grids avoids this fragmentation.
+    If some models use dedicated grid labels (e.g., `g239` for a zonal mean) while others use their parent grid label (e.g., `g100`, `g110`), users searching the ESGF archive for zonal mean data by querying `horizontal_label = "hy"` will find a collection of datasets that have a mix of true 2D grid labels for some models and zonal mean grid labels for other models. This situation is potentially confusing if data analysis makes use of the registered information about the grid denoted by each `grid_label`. Registering dedicated grids avoids this fragmentation.
 
 Modelling centres may use different approaches for different product types (e.g., a shared registered grid for global means, and the parent grid for zonal means). Whichever approach is chosen for a given product, the horizontal label in the branding suffix **must** be set correctly (i.e., not `hxy`) to reflect the nature of the non-2D output.
 
@@ -72,7 +72,7 @@ Modelling centres may use different approaches for different product types (e.g.
 
 The recommended approach is to register a specific grid for each type of non-2D output via the [Essential Model Documentation (EMD)](https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/).
 
-For the most common non-2D outputs, **shared grid labels** are registered centrally so that all modelling centres can use the same `grid_label`, without needing to register their own. Shared grids are not tied to any model: any `source_id` can use them, since non-2D output can be computed from the output of any model. The table below lists the current status. Always check the [EMD grid viewer](https://emd.mipcvs.dev/docs/grid_viewer/horizontal/) for the latest registered grids.
+For the most common non-2D outputs, **shared grid labels** are registered centrally so that all modelling centres can use the same `grid_label`, without needing to register their own. Shared grids are not tied to any model: any `source_id` can use them, since non-2D output can be computed from the output of any model. The table below lists the current status. Always check the [EMD grid viewer](https://emd.wcrp-cmip.org/docs/Data_Users/Grid_viewer/horizontal/) for the latest registered grids.
 
 | Product type | Description | Shared grid | Status |
 |---|---|---|---|
@@ -85,8 +85,8 @@ For the most common non-2D outputs, **shared grid labels** are registered centra
 | Site data (`hs`) | Fixed set of measurement sites ([site list on Zenodo](https://zenodo.org/records/17966101)) | [`g013`](https://github.com/WCRP-CMIP/Essential-Model-Documentation/blob/src-data/horizontal_grid_cell/g013.json) | Registered (discrete-points) |
 | Ocean line transects (`ht`, oline) | Transports across fixed ocean straits | [`g014`](https://github.com/WCRP-CMIP/Essential-Model-Documentation/blob/src-data/horizontal_grid_cell/g014.json) | Registered (discrete-lines) |
 | Sea-ice line transects (`ht`, siline) | Transports across fixed sea-ice lines | [`g014`](https://github.com/WCRP-CMIP/Essential-Model-Documentation/blob/src-data/horizontal_grid_cell/g014.json) | Registered (discrete-lines) |
-| Overturning on the native grid (`ht`, `msfty`, `msftypa`) | Streamfunctions along native grid rows, by basin | Centre-specific | No shared grid: `g014` does not apply because these are not line transects. Register your own output grid via the [EMD Submission Guide](https://emd.mipcvs.dev/docs/Information_for_Submitters/Submission-Guide/#stage-1-grid-cells). The parent grid is a last resort (see [Section 2.2](#22-alternative-use-the-parent-grid-label)) |
-| Zonal mean (`hy`) | Mean over all longitudes, reported as a function of latitude (atmosphere only in the current Data Request) | Centre-specific | Each centre must register its own (latitude resolution depends on source grid). Example: [`g239`](https://github.com/WCRP-CMIP/Essential-Model-Documentation/blob/src-data/horizontal_grid_cell/g239.json) is a 1-degree zonal mean grid (180 cells). To find existing zonal mean grids, filter the [EMD grid viewer](https://emd.mipcvs.dev/docs/grid_viewer/horizontal/) with grid_type "regular-latitude-longitude", x_resolution = 360 and y_resolution matching your latitude spacing |
+| Overturning on the native grid (`ht`, `msfty`, `msftypa`) | Streamfunctions along native grid rows, by basin | Centre-specific | No shared grid: `g014` does not apply because these are not line transects. Register your own output grid via the [EMD Submission Guide](https://emd.wcrp-cmip.org/docs/Modelling_centres/Submission_guide/#stage-1-grid-cells). The parent grid is a last resort (see [Section 2.2](#22-alternative-use-the-parent-grid-label)) |
+| Zonal mean (`hy`) | Mean over all longitudes, reported as a function of latitude (atmosphere only in the current Data Request) | Centre-specific | Each centre must register its own (latitude resolution depends on source grid). Example: [`g239`](https://github.com/WCRP-CMIP/Essential-Model-Documentation/blob/src-data/horizontal_grid_cell/g239.json) is a 1-degree zonal mean grid (180 cells). To find existing zonal mean grids, filter the [EMD grid viewer](https://emd.wcrp-cmip.org/docs/Data_Users/Grid_viewer/horizontal/) with grid_type "regular-latitude-longitude", x_resolution = 360 and y_resolution matching your latitude spacing |
 | Basin (`hyb`) | Sum over each ocean basin, reported as a function of latitude | [`g262`](https://github.com/WCRP-CMIP/Essential-Model-Documentation/blob/src-data/horizontal_grid_cell/g262.json) (1-degree latitude bands) | Registered (basin-by-latitude). For other latitude spacings, register your own basin grid. See [Ocean basin grids](#ocean-basin-grids) |
 
 !!! tip "Already registered grids you can reuse"
@@ -102,9 +102,9 @@ For the most common non-2D outputs, **shared grid labels** are registered centra
     - **`g262`** -- An ocean basin grid with zonal bands at 1-degree latitude resolution (latitudes from -89.5 to 89.5). Use for basin (`hyb`) output on 1-degree latitude bands.
     - **`g239`** -- A zonal mean grid at 1-degree latitude resolution (180 cells, latitudes from -89.5 to 89.5). If your model's zonal mean (`hy`) output has the same latitude resolution, you can reuse this grid label instead of registering a new one. It cannot be used for basin (`hyb`) data (see [Ocean basin grids](#ocean-basin-grids)).
 
-    Check the [EMD grid viewer](https://emd.mipcvs.dev/docs/grid_viewer/horizontal/) or the [EMD repository](https://github.com/WCRP-CMIP/Essential-Model-Documentation/tree/src-data/horizontal_grid_cell) for the full list of registered grids.
+    Check the [EMD grid viewer](https://emd.wcrp-cmip.org/docs/Data_Users/Grid_viewer/horizontal/) or the [EMD repository](https://github.com/WCRP-CMIP/Essential-Model-Documentation/tree/src-data/horizontal_grid_cell) for the full list of registered grids.
 
-For **zonal means** (`hy`), modelling centres must register their own grid if no existing grid matches their latitude resolution. See the [EMD Submission Guide](https://emd.mipcvs.dev/docs/Information_for_Submitters/Submission-Guide/#stage-1-grid-cells) for how to do this. For **basin data** (`hyb`), use `g262` if your output is on 1-degree latitude bands, otherwise register your own basin grid (see [Ocean basin grids](#ocean-basin-grids)). For **overturning streamfunctions on the native grid** (`msfty`, `msftypa`), no shared grid exists: register your own output grid.
+For **zonal means** (`hy`), modelling centres must register their own grid if no existing grid matches their latitude resolution. See the [EMD Submission Guide](https://emd.wcrp-cmip.org/docs/Modelling_centres/Submission_guide/#stage-1-grid-cells) for how to do this. For **basin data** (`hyb`), use `g262` if your output is on 1-degree latitude bands, otherwise register your own basin grid (see [Ocean basin grids](#ocean-basin-grids)). For **overturning streamfunctions on the native grid** (`msfty`, `msftypa`), no shared grid exists: register your own output grid.
 
 **Advantages of registering a dedicated grid:**
 
@@ -115,9 +115,9 @@ For **zonal means** (`hy`), modelling centres must register their own grid if no
 
 **What you need to do:**
 
-1. Before publishing, check if a shared grid label already exists for your product type using the [EMD grid viewer](https://emd.mipcvs.dev/docs/grid_viewer/horizontal/)
+1. Before publishing, check if a shared grid label already exists for your product type using the [EMD grid viewer](https://emd.wcrp-cmip.org/docs/Data_Users/Grid_viewer/horizontal/)
 2. If a shared grid exists (e.g., for global means or site data), use it
-3. If no suitable grid exists (e.g., for zonal means on your specific latitude grid), register a new output grid via the [EMD Submission Guide](https://emd.mipcvs.dev/docs/Information_for_Submitters/Submission-Guide/#stage-1-grid-cells)
+3. If no suitable grid exists (e.g., for zonal means on your specific latitude grid), register a new output grid via the [EMD Submission Guide](https://emd.wcrp-cmip.org/docs/Modelling_centres/Submission_guide/#stage-1-grid-cells)
 4. Use the registered `grid_label` in your file names and directory paths
 
 #### Ocean basin grids
@@ -128,7 +128,7 @@ An atmospheric zonal mean grid cannot be used for ocean basins, and vice versa. 
 
 !!! tip "Shared basin grid"
 
-    `g262` is a shared basin grid with zonal bands at 1-degree latitude resolution (latitudes from -89.5 to 89.5). If your basin output is on 1-degree latitude bands, use `g262`. Otherwise, register your own basin grid with grid type "basin-by-latitude" and the `y_resolution` matching your latitude spacing, following the [EMD Submission Guide](https://emd.mipcvs.dev/docs/Information_for_Submitters/Submission-Guide/#stage-1-grid-cells). You can use [`g262`](https://github.com/WCRP-CMIP/Essential-Model-Documentation/blob/src-data/horizontal_grid_cell/g262.json) as a template for your registration: keep the same grid type, `region` and `units`, and change only `y_resolution` and `southernmost_latitude` to match your output (see [Section 5](#5-registering-a-new-output-grid)).
+    `g262` is a shared basin grid with zonal bands at 1-degree latitude resolution (latitudes from -89.5 to 89.5). If your basin output is on 1-degree latitude bands, use `g262`. Otherwise, register your own basin grid with grid type "basin-by-latitude" and the `y_resolution` matching your latitude spacing, following the [EMD Submission Guide](https://emd.wcrp-cmip.org/docs/Modelling_centres/Submission_guide/#stage-1-grid-cells). You can use [`g262`](https://github.com/WCRP-CMIP/Essential-Model-Documentation/blob/src-data/horizontal_grid_cell/g262.json) as a template for your registration: keep the same grid type, `region` and `units`, and change only `y_resolution` and `southernmost_latitude` to match your output (see [Section 5](#5-registering-a-new-output-grid)).
 
 ### 2.2 Alternative: Use the Parent Grid Label
 
@@ -187,7 +187,7 @@ The `horizontal_label` is both a global attribute in the netCDF file and the thi
 
 ### 3.2 How to determine which grid labelling approach a file uses
 
-There is no metadata flag that explicitly records whether a modelling centre used a dedicated grid or the parent grid. However, you can determine this by looking up the `grid_label` in the [EMD grid viewer](https://emd.mipcvs.dev/docs/grid_viewer/horizontal/):
+There is no metadata flag that explicitly records whether a modelling centre used a dedicated grid or the parent grid. However, you can determine this by looking up the `grid_label` in the [EMD grid viewer](https://emd.wcrp-cmip.org/docs/Data_Users/Grid_viewer/horizontal/):
 
 - If the registered grid has properties consistent with the non-2D output (e.g., `g010` with 1 cell for a global mean, or `g239` with 180 latitude cells for a zonal mean), it is a **dedicated grid**.
 - If the registered grid is a standard 2D grid with thousands of cells (e.g., `g110` with 27648 cells), but the file contains a zonal mean, then the **parent grid** approach was used.
@@ -254,11 +254,11 @@ Data producers remain responsible for selecting an appropriate grid label. Passi
 
 **Key points:**
 
-1. **Always set the horizontal label correctly.** Whatever approach you choose for `grid_label`, the `horizontal_label` in the branding suffix must reflect the nature of the non-2D output (e.g., `hy` for zonal mean, `hm` for area mean). This is not optional. QA/QC checks horizontal coordinates and dimensions against the branded-variable definition, but setting the label correctly remains the responsibility of data producers.
+1. **Always set the horizontal label correctly.** Whatever approach you choose for `grid_label`, the `horizontal_label` in the branding suffix must reflect the nature of the non-2D output (e.g., `hy` for zonal mean, `hm` for area mean). This is not optional. QA/QC checks horizontal coordinates and dimensions against the branded-variable definition, and setting the label correctly remains the responsibility of data producers.
 
 2. **No cell measures are needed for non-2D grids.** Variables such as `areacella` or `areacello` do not need to be provided for zonal mean, basin, global mean, site, or transect grids. The Data Request does not include cell area variables for these product types.
 
-3. **Check for existing grids.** Before registering a new grid, use the [EMD grid viewer](https://emd.mipcvs.dev/docs/grid_viewer/horizontal/) to see if a suitable grid already exists.
+3. **Check for existing grids.** Before registering a new grid, use the [EMD grid viewer](https://emd.wcrp-cmip.org/docs/Data_Users/Grid_viewer/horizontal/) to see if a suitable grid already exists.
 
 4. **Register output grids before publishing.** If you choose the dedicated grid approach, the grid must be registered via the EMD before data can be published to ESGF.
 
@@ -270,7 +270,7 @@ Data producers remain responsible for selecting an appropriate grid label. Passi
 
 ## 5. Registering a New Output Grid
 
-If you need to register a grid for non-2D output (e.g., for zonal means, basin data, or native-grid overturning streamfunctions), follow the [EMD Submission Guide -- Stage 1: Grid Cells](https://emd.mipcvs.dev/docs/Information_for_Submitters/Submission-Guide/#stage-1-grid-cells). Before registering, check the [EMD grid viewer](https://emd.mipcvs.dev/docs/grid_viewer/horizontal/) to verify no suitable grid already exists.
+If you need to register a grid for non-2D output (e.g., for zonal means, basin data, or native-grid overturning streamfunctions), follow the [EMD Submission Guide -- Stage 1: Grid Cells](https://emd.wcrp-cmip.org/docs/Modelling_centres/Submission_guide/#stage-1-grid-cells). Before registering, check the [EMD grid viewer](https://emd.wcrp-cmip.org/docs/Data_Users/Grid_viewer/horizontal/) to verify no suitable grid already exists.
 
 !!! example "Example: registering an ocean basin grid"
 

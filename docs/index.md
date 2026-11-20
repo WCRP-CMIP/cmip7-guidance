@@ -30,6 +30,7 @@ The vision and design of CMIP7 is outlined in ['An evolving Coupled Model Interc
 - Standards and References
     - [Global Attributes](CMIP7/Global_Attributes.md)
     - [Branded Variables](CMIP7/Branded_Variables.md)
+    - [Grid Labels for Non-2D Grids](CMIP7/Grid_Labels_for_Derived_Products.md)
     - [Data Specs Version](CMIP7/data_specs_version.md)
 - [Frequently Asked Questions (FAQ)](CMIP7/FAQ.md)
 
