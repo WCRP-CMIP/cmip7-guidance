@@ -91,6 +91,7 @@
       - [esm-vl-cf-ext](CMIP7/Experiment_set_up_and_Forcings/esm-vl-cf-ext.md)
     - [Citation Guidance](CMIP7/Citation_Guidance.md)
     - [Annex 1: Checks performed prior to publication](CMIP7/QC_checks.md)
+    - [Annex 2: QC known issues and reporting](CMIP7/QC_known_issues.md)
   - [Guidance for users](CMIP7/Guidance_for_users.md)
   - [Guidance for ESGF](CMIP7/Guidance_for_ESGF.md)
   - [Guidance for MIPs](CMIP7/Guidance_for_MIPs.md)

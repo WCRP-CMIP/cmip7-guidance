@@ -18,6 +18,8 @@ Each table relates to one of the files within the plugin and has three columns:
     - `pattern` : regular expressions defining allowed values
   - Value: the value assigned to the property
 
+This page documents the checks implemented by the CMIP7-specific `wcrp_cmip7` plugin. For known limitations and expected findings from the wider QC workflow—including the CF plugin and `esgf-qa`—and for information on reporting unexpected findings, see [QC known issues and reporting](QC_known_issues.md).
+
 See [this gist](https://gist.github.com/matthew-mizielinski/c88618e26f40126118ae2be242600643) for the code used to generate the following information.
 
 ## File ([file.toml](https://raw.githubusercontent.com/ESGF/cc-plugin-wcrp/refs/tags/v2.0.0/plugins/cmip7/config/wcrp/file.toml))
