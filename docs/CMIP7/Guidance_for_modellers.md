@@ -374,17 +374,20 @@ The **configuration** enables simple versioning and sharing of rule sets, while 
   ```
 The **reporting system** inherits the IOOS logic, combining output filtering, severity-based scoring, and granular reports suitable for both operational monitoring and expert review. Results can be easily mapped to standard logging levels (info, warning, critical), facilitating integration with existing QA dashboards.
 
-As well as the project-specific checks (`wcrp_cmip7:1.0` in the above example), modellers are strongly advised to check CF compliance:
-```bash
-compliance-checker -t cf:1.11 /path/to/data/file.nc
-```
-noting that CF-1.11 is the [minimum CF version required for CMIP7 data](./Global_Attributes.md#table-2-required-global-attributes).
-
 In addition, an [`esgf-qa` module](https://github.com/ESGF/esgf-qa) provides a higher-level orchestration layer on top of the IOOS Compliance Checker. It applies the `cc-plugin-wcrp` consistently at the dataset level, automatically parallelizes checker execution across multiple files, and produces user-friendly aggregated reports. This greatly simplifies large-scale QC operations and makes results easier to browse, interpret, and integrate into your workflows. See [`esgf-qa` documentation for the installation procedure](https://esgf.github.io/esgf-qa/).
 
 ```bash 
 $ esgqa -t wcrp_cmip6:latest -t cf:1.11 -o /path/to/results/output /path/to/dataset
 ```
+
+As well as the project-specific checks, modellers are strongly advised to explicitly check the CF compliance of their data:
+```bash
+compliance-checker -t cf:1.11 /path/to/data/file.nc
+```
+Note that CF-1.11 is the [minimum CF version required for CMIP7 data](./Global_Attributes.md#table-2-required-global-attributes).
+At present a checker for CF-1.12 and CF-1.13 is not available.
+If applying the above CF 1.11 checks raises an exception in the checker, please [open an issue](https://github.com/ESGF/cc-plugin-wcrp/issues).
+
 
 ### 🗣️ How to Contribute and Get Support
 
