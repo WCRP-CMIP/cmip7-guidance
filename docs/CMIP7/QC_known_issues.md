@@ -11,11 +11,11 @@ CMIP7 data providers are encouraged to run the QC tools before submitting data f
 - a limitation in a cross-file or cross-dataset comparison; or
 - an actual issue in the data or its metadata that the provider needs to correct.
 
-If the cause is unclear, data providers should report the finding rather than trying to determine independently whether the checker or the data are at fault. The QC development team can assess the report and advise on the appropriate action.
+If the cause is unclear, data providers should report the finding rather than trying to determine independently whether the checker or the data are at fault.
 
 This page distinguishes three parts of the QC workflow:
 
-1. **The CMIP7-specific `wcrp_cmip7` plugin**, maintained by the QC development team of the CMIP Quality Assurance and Quality Control Working Group.
+1. **The CMIP7-specific `wcrp_cmip7` plugin**, maintained by the QC development team of the CMIP Quality Assurance and Quality Control Working Group (referred to below as the QC team).
 2. **The CF plugin**, which is provided by the IOOS Compliance Checker framework and is not maintained by the QC team. The QC team may report issues and contribute fixes upstream, but cannot control when upstream changes are merged or released.
 3. **`esgf-qa`**, maintained by the QC team, which runs file-based Compliance Checker checks and assesses consistency across files and datasets.
 
@@ -37,7 +37,7 @@ The publication-impact column in the tables is therefore indicative and should b
 
 ## 3. Known issues with the CF plugin
 
-The **CF plugin** is part of the **IOOS Compliance Checker framework**. The `cc-plugin-wcrp` team does not maintain this plugin. Some findings arise because generic CF checks do not fully account for CMIP data representations or CMIP-specific conventions; others are implementation bugs. Upstream fixes may take time to be merged and released.
+The **CF plugin** is part of the **IOOS Compliance Checker framework**. The QC team does not maintain this plugin. Some findings arise because generic CF checks do not fully account for CMIP data representations or CMIP-specific conventions; others are implementation bugs. Upstream fixes may take time to be merged and released.
 
 The following table records the reported findings, their interpretation and the current understanding of their status.
 
@@ -68,7 +68,7 @@ The following table records the reported findings, their interpretation and the 
 
 Modelling groups are encouraged to report unexpected findings encountered when running the CMIP7 QC tools.
 
-You do not need to determine whether a finding is caused by a problem in the checker or in your data. The QC development team will assess the report and advise whether a change to the checking software is required or whether the data need to be corrected.
+You do not need to determine whether a finding is caused by a problem in the checker or in your data. The QC team will assess the report and advise whether a change to the checking software is required or whether the data need to be corrected.
 
 Please report issues through the [`cc-plugin-wcrp` GitHub issue tracker](https://github.com/ESGF/cc-plugin-wcrp/issues).
 
@@ -94,7 +94,7 @@ After a report is received, the QC team will assess whether it represents:
 - a limitation or configuration issue in `esgf-qa`; or
 - an interpretation question that needs clarification.
 
-Where the issue is in `wcrp_cmip7` or `esgf-qa`, the relevant development team can assess and address it directly. Where the issue is in the CF plugin, the team may raise or contribute to an upstream issue or pull request. The timing of an upstream fix and release is outside the control of the QC team.
+Where the issue is in `wcrp_cmip7` or `esgf-qa`, the QC team can assess and address it directly. Where the issue is in the CF plugin, the team may raise or contribute to an upstream issue or pull request. The timing of an upstream fix and release is outside the control of the QC team.
 
 The known-issues tables above will be updated as issues are confirmed, workarounds are identified, and fixes become available in released versions.
 
