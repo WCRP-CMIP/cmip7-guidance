@@ -319,6 +319,7 @@ Documentation for the WCRP plugin is [found here](https://esgf.github.io/cc-plug
 The goal of this plugin is to provide a cohesive, extensible, and transparent system that consolidates key checks for WCRP projects, covers at least the minimum requirements for ESGF publication, and produces standardized reporting.
 
 A list of the checks included in the plugin for CMIP7 can be found [here](QC_checks.md).
+In addition to the CMIP7 plugin checks, modellers are strongly advised to run the CF-1.11 compliance checks (see example below).
 
 ### 🚧 Important Caveats
 
@@ -369,7 +370,7 @@ The **configuration** enables simple versioning and sharing of rule sets, while 
 
 **Usage** is built on the IOOS Compliance Checker, maintaining workflow flexibility for modeling groups that already operate their own QA/QC pipelines. It generates atomic log files per run (at both file and dataset levels) and supports seamless parallel execution, enabling straightforward integration with batch schedulers and large-scale production workflows. 
   ```bash
-  compliance-checker -t wcrp_cmip6:1.0 /path/to/data/file.nc
+  compliance-checker -t wcrp_cmip7:1.0 /path/to/data/file.nc
   ```
 The **reporting system** inherits the IOOS logic, combining output filtering, severity-based scoring, and granular reports suitable for both operational monitoring and expert review. Results can be easily mapped to standard logging levels (info, warning, critical), facilitating integration with existing QA dashboards.
 
@@ -379,6 +380,14 @@ In addition, an [`esgf-qa` module](https://github.com/ESGF/esgf-qa) provides a h
 $ esgqa -t wcrp_cmip6:latest -t cf:1.11 -o /path/to/results/output /path/to/dataset
 ```
 
+As well as the project-specific checks, modellers are strongly advised to explicitly check the CF compliance of their data:
+```bash
+compliance-checker -t cf:1.11 /path/to/data/file.nc
+```
+CF-1.11 is the [minimum CF version required for CMIP7 data](./Global_Attributes.md#table-2-required-global-attributes).
+At present a checker for CF-1.12 and CF-1.13 is not available.
+
+
 ### 🗣️ How to Contribute and Get Support
 
 If you encounter issues or have suggestions, please **open a GitHub issue** on the project repository:  
@@ -386,6 +395,8 @@ If you encounter issues or have suggestions, please **open a GitHub issue** on t
 
 All questions related to these quality control checks should be asked via this route and the developers will 
 redirect issues related to other sources of information, e.g. CVs, as appropriate.
+Further guidance on reporting QC issues is [available here](./QC_known_issues.md).
+
 
 ## 8.  Archiving/publishing output
 
