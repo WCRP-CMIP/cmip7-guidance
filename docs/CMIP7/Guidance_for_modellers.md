@@ -384,9 +384,8 @@ As well as the project-specific checks, modellers are strongly advised to explic
 ```bash
 compliance-checker -t cf:1.11 /path/to/data/file.nc
 ```
-Note that CF-1.11 is the [minimum CF version required for CMIP7 data](./Global_Attributes.md#table-2-required-global-attributes).
+CF-1.11 is the [minimum CF version required for CMIP7 data](./Global_Attributes.md#table-2-required-global-attributes).
 At present a checker for CF-1.12 and CF-1.13 is not available.
-If applying the above CF 1.11 checks raises an exception in the checker, please [open an issue](https://github.com/ESGF/cc-plugin-wcrp/issues).
 
 
 ### 🗣️ How to Contribute and Get Support
@@ -396,6 +395,8 @@ If you encounter issues or have suggestions, please **open a GitHub issue** on t
 
 All questions related to these quality control checks should be asked via this route and the developers will 
 redirect issues related to other sources of information, e.g. CVs, as appropriate.
+Further guidance on reporting QC issues is [available here](./QC_known_issues.md).
+
 
 ## 8.  Archiving/publishing output
 
