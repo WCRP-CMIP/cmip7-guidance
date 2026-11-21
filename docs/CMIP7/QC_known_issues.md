@@ -100,6 +100,7 @@ The known-issues tables above will be updated as issues are confirmed, workaroun
 
 ## 7. Related resources
 
+- [Running the CMIP7 QC tools](Guidance_for_modellers.md#7-software-for-checking-output) — documentation providing instructions and caveats for running the automated quality control checks on CMIP7 output files.
 - [CMIP7 QC checks by `cc-plugin-wcrp` (Annex 1)](QC_checks.md) — documentation of the CMIP7-specific checks used for publication verification.
 - [`cc-plugin-wcrp` documentation](https://esgf.github.io/cc-plugin-wcrp/) — documentation for the WCRP compliance-checker plugins.
 - [`cc-plugin-wcrp` issue tracker](https://github.com/ESGF/cc-plugin-wcrp/issues) — report unexpected findings and request assessment.
