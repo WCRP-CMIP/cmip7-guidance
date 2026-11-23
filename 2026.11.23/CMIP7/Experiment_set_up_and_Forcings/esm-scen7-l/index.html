@@ -1,0 +1,5812 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+  <meta author="Daniel Ellis" github="wolfiex" contact="product@bytevorous.com">
+  
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for CMIP7.">
+      
+      
+        <meta name="author" content="CMIP-IPO">
+      
+      
+        <link rel="canonical" href="/CMIP7/Experiment_set_up_and_Forcings/esm-scen7-l/">
+      
+      
+        <link rel="prev" href="../scen7-l/">
+      
+      
+        <link rel="next" href="../scen7-l-ext/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/cmip-icon.svg">
+      <meta name="generator" content="zensical-0.0.67">
+    
+
+    
+      
+        <title>Experiment Setup and Forcings Guidance: esm-scen7-l - Guidance and Documentation</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../../assets/stylesheets/classic/main.cfc7948b.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/classic/palette.bf1c5cd6.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Plus+Jakarta+Sans:300,300i,400,400i,500,500i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Plus Jakarta Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/cmip.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-label="Navigation"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#experiment-setup-and-forcings-guidance-esm-scen7-l" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+          <aside class="md-banner md-banner--warning">
+            <div class="md-banner__inner md-grid md-typeset">
+              
+  There is a newer version of this page:
+  <a href="../../../..">See latest</a>
+  <span class="cmip-latest-date"></span><script>
+    (function () {
+      var span = document.currentScript.previousElementSibling;
+      var base = new URL("../../../", location.href);
+      fetch(new URL("../versions.json", base))
+        .then(function (r) { return r.ok ? r.json() : []; })
+        .then(function (versions) {
+          for (var i = 0; i < versions.length; i++) {
+            if ((versions[i].aliases || []).indexOf("latest") !== -1) {
+              span.textContent = "(" + (versions[i].title || versions[i].version) + ")";
+              return;
+            }
+          }
+        })
+        .catch(function () {});
+    })();
+  </script>
+
+            </div>
+            <script>var el=document.querySelector("[data-md-component=outdated]"),base=new URL("../../.."),outdated=__md_get("__outdated",sessionStorage,base);!0===outdated&&el&&(el.hidden=!1)</script>
+          </aside>
+        
+      </div>
+    
+    
+      
+
+
+<header class="md-header md-header--cmip" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Guidance and Documentation" class="md-header__button md-logo" aria-label="Guidance and Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/cmip-logo-white.svg" alt="Guidance and Documentation">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+
+    <ul class="cmip-nav">
+        
+      
+        
+          
+  
+  
+  
+    <li class="cmip-nav__item">
+      <a href="../../General_Guidance/" class="cmip-nav__link">General Guidance</a>
+    </li>
+  
+
+        
+      
+        
+          
+  
+  
+  
+    <li class="cmip-nav__item">
+      <a href="../../../Updates_for_Modellers/" class="cmip-nav__link">Updates for modellers</a>
+    </li>
+  
+
+        
+      
+        
+          
+  
+  
+  
+    <li class="cmip-nav__item">
+      <a href="../../../Updates_for_Users/" class="cmip-nav__link">Updates for users</a>
+    </li>
+  
+
+        
+      
+        
+          
+  
+  
+  
+    
+  
+    <li class="cmip-nav__item cmip-nav__item--active cmip-nav__item--dropdown">
+      <span class="cmip-nav__link cmip-nav__link--dropdown" tabindex="0"
+            role="button" aria-haspopup="true" aria-expanded="false">
+        CMIP7
+      </span>
+      <ul class="cmip-nav__dropdown" role="menu">
+        
+  
+    
+      <li class="cmip-nav__dropdown-item cmip-nav__dropdown-item--group" role="none">
+        <span class="cmip-nav__dropdown-link cmip-nav__dropdown-toggle"
+              tabindex="0" role="button" aria-haspopup="true" aria-expanded="false">
+          Guidance for modellers
+        </span>
+        <ul class="cmip-nav__dropdown-sub" role="menu">
+          
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../../Guidance_for_modellers/" class="cmip-nav__dropdown-link" role="menuitem">
+          CMIP7 Participation Guidance for Modellers
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item cmip-nav__dropdown-item--group" role="none">
+        <span class="cmip-nav__dropdown-link cmip-nav__dropdown-toggle"
+              tabindex="0" role="button" aria-haspopup="true" aria-expanded="false">
+          CV Registration
+        </span>
+        <ul class="cmip-nav__dropdown-sub" role="menu">
+          
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../../cv_registration/" class="cmip-nav__dropdown-link" role="menuitem">
+          CMIP7 CV Registration Guide
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../../Source_ID_guidance/" class="cmip-nav__dropdown-link" role="menuitem">
+          Source ID Guidance
+        </a>
+      </li>
+    
+  
+
+        </ul>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item cmip-nav__dropdown-item--group" role="none">
+        <span class="cmip-nav__dropdown-link cmip-nav__dropdown-toggle"
+              tabindex="0" role="button" aria-haspopup="true" aria-expanded="false">
+          Experiment setup and forcings
+        </span>
+        <ul class="cmip-nav__dropdown-sub" role="menu">
+          
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../" class="cmip-nav__dropdown-link" role="menuitem">
+          Overview
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../1pctco2/" class="cmip-nav__dropdown-link" role="menuitem">
+          1pctCO2
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../1pctco2-bgc/" class="cmip-nav__dropdown-link" role="menuitem">
+          1pctCO2-bgc
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../1pctco2-rad/" class="cmip-nav__dropdown-link" role="menuitem">
+          1pctCO2-rad
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../abrupt-0p5xco2/" class="cmip-nav__dropdown-link" role="menuitem">
+          abrupt-0p5xCO2
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../abrupt-127k/" class="cmip-nav__dropdown-link" role="menuitem">
+          abrupt-127k
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../abrupt-2xco2/" class="cmip-nav__dropdown-link" role="menuitem">
+          abrupt-2xCO2
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../abrupt-4xco2/" class="cmip-nav__dropdown-link" role="menuitem">
+          abrupt-4xCO2
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../amip/" class="cmip-nav__dropdown-link" role="menuitem">
+          amip
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../amip-p4k/" class="cmip-nav__dropdown-link" role="menuitem">
+          amip-p4K
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../amip-piforcing/" class="cmip-nav__dropdown-link" role="menuitem">
+          amip-piForcing
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../dcppb-forecast-cmip6/" class="cmip-nav__dropdown-link" role="menuitem">
+          dcppB-forecast-cmip6
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../esm-flat10/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-flat10
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../esm-flat10-cdr/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-flat10-cdr
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../esm-flat10-zec/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-flat10-zec
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../g7-1p5k-sai/" class="cmip-nav__dropdown-link" role="menuitem">
+          G7-1p5K-SAI
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../hist-aer/" class="cmip-nav__dropdown-link" role="menuitem">
+          hist-aer
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../hist-ghg/" class="cmip-nav__dropdown-link" role="menuitem">
+          hist-GHG
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../hist-nat/" class="cmip-nav__dropdown-link" role="menuitem">
+          hist-nat
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../hist-piaer/" class="cmip-nav__dropdown-link" role="menuitem">
+          hist-piAer
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../hist-piaq/" class="cmip-nav__dropdown-link" role="menuitem">
+          hist-piAQ
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../historical/" class="cmip-nav__dropdown-link" role="menuitem">
+          historical
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../esm-hist/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-hist
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../land-hist/" class="cmip-nav__dropdown-link" role="menuitem">
+          land-hist
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../piclim-4xco2/" class="cmip-nav__dropdown-link" role="menuitem">
+          piClim-4xCO2
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../piclim-aer/" class="cmip-nav__dropdown-link" role="menuitem">
+          piClim-aer
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../piclim-anthro/" class="cmip-nav__dropdown-link" role="menuitem">
+          piClim-anthro
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../piclim-ch4/" class="cmip-nav__dropdown-link" role="menuitem">
+          piClim-CH4
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../piclim-control/" class="cmip-nav__dropdown-link" role="menuitem">
+          piClim-control
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../piclim-histaer/" class="cmip-nav__dropdown-link" role="menuitem">
+          piClim-histaer
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../piclim-histall/" class="cmip-nav__dropdown-link" role="menuitem">
+          piClim-histall
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../piclim-n2o/" class="cmip-nav__dropdown-link" role="menuitem">
+          piClim-N2O
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../piclim-nox/" class="cmip-nav__dropdown-link" role="menuitem">
+          piClim-NOx
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../piclim-ods/" class="cmip-nav__dropdown-link" role="menuitem">
+          piClim-ODS
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../piclim-so2/" class="cmip-nav__dropdown-link" role="menuitem">
+          piClim-SO2
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../picontrol/" class="cmip-nav__dropdown-link" role="menuitem">
+          piControl
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../esm-picontrol/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-piControl
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../picontrol-spinup/" class="cmip-nav__dropdown-link" role="menuitem">
+          piControl-spinup
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../esm-picontrol-spinup/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-piControl-spinup
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../scen7-h/" class="cmip-nav__dropdown-link" role="menuitem">
+          scen7-h
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../esm-scen7-h/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-scen7-h
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../scen7-h-aer/" class="cmip-nav__dropdown-link" role="menuitem">
+          scen7-h-Aer
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../esm-scen7-h-aer/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-scen7-h-Aer
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../scen7-h-aq/" class="cmip-nav__dropdown-link" role="menuitem">
+          scen7-h-AQ
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../esm-scen7-h-aq/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-scen7-h-AQ
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../scen7-h-ext/" class="cmip-nav__dropdown-link" role="menuitem">
+          scen7-h-ext
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../esm-scen7-h-ext/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-scen7-h-ext
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../scen7-hl/" class="cmip-nav__dropdown-link" role="menuitem">
+          scen7-hl
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../esm-scen7-hl/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-scen7-hl
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../scen7-hl-ext/" class="cmip-nav__dropdown-link" role="menuitem">
+          scen7-hl-ext
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../esm-scen7-hl-ext/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-scen7-hl-ext
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../scen7-l/" class="cmip-nav__dropdown-link" role="menuitem">
+          scen7-l
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="././" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-scen7-l
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../scen7-l-ext/" class="cmip-nav__dropdown-link" role="menuitem">
+          scen7-l-ext
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../esm-scen7-l-ext/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-scen7-l-ext
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../scen7-ln/" class="cmip-nav__dropdown-link" role="menuitem">
+          scen7-ln
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../esm-scen7-ln/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-scen7-ln
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../scen7-ln-ext/" class="cmip-nav__dropdown-link" role="menuitem">
+          scen7-ln-ext
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../esm-scen7-ln-ext/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-scen7-ln-ext
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../scen7-m/" class="cmip-nav__dropdown-link" role="menuitem">
+          scen7-m
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../esm-scen7-m/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-scen7-m
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../scen7-m-ext/" class="cmip-nav__dropdown-link" role="menuitem">
+          scen7-m-ext
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../esm-scen7-m-ext/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-scen7-m-ext
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../scen7-ml/" class="cmip-nav__dropdown-link" role="menuitem">
+          scen7-ml
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../esm-scen7-ml/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-scen7-ml
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../scen7-ml-ext/" class="cmip-nav__dropdown-link" role="menuitem">
+          scen7-ml-ext
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../esm-scen7-ml-ext/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-scen7-ml-ext
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../scen7-vl/" class="cmip-nav__dropdown-link" role="menuitem">
+          scen7-vl
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../esm-scen7-vl/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-scen7-vl
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../scen7-vl-aer/" class="cmip-nav__dropdown-link" role="menuitem">
+          scen7-vl-Aer
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../esm-scen7-vl-aer/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-scen7-vl-Aer
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../scen7-vl-aq/" class="cmip-nav__dropdown-link" role="menuitem">
+          scen7-vl-AQ
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../esm-scen7-vl-aq/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-scen7-vl-AQ
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../scen7-vl-ext/" class="cmip-nav__dropdown-link" role="menuitem">
+          scen7-vl-ext
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../esm-scen7-vl-ext/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-scen7-vl-ext
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../ssp2-com-cmip7/" class="cmip-nav__dropdown-link" role="menuitem">
+          SSP2-com-CMIP7
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../esm-ssp2-com-cmip7/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-SSP2-com-CMIP7
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../ssp2-com-cmip7-ext/" class="cmip-nav__dropdown-link" role="menuitem">
+          SSP2-com-CMIP7-ext
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../esm-ssp2-com-cmip7-ext/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-SSP2-com-CMIP7-ext
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../vl-cf/" class="cmip-nav__dropdown-link" role="menuitem">
+          vl-cf
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../esm-vl-cf/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-vl-cf
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../vl-cf-ext/" class="cmip-nav__dropdown-link" role="menuitem">
+          vl-cf-ext
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../esm-vl-cf-ext/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-vl-cf-ext
+        </a>
+      </li>
+    
+  
+
+        </ul>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../../Citation_Guidance/" class="cmip-nav__dropdown-link" role="menuitem">
+          Citation Guidance
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../../QC_checks/" class="cmip-nav__dropdown-link" role="menuitem">
+          Annex 1: Checks performed prior to publication
+        </a>
+      </li>
+    
+  
+
+        </ul>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../../Guidance_for_users/" class="cmip-nav__dropdown-link" role="menuitem">
+          Guidance for users
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../../Guidance_for_ESGF/" class="cmip-nav__dropdown-link" role="menuitem">
+          Guidance for ESGF
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../../Guidance_for_MIPs/" class="cmip-nav__dropdown-link" role="menuitem">
+          Guidance for MIPs
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item cmip-nav__dropdown-item--group" role="none">
+        <span class="cmip-nav__dropdown-link cmip-nav__dropdown-toggle"
+              tabindex="0" role="button" aria-haspopup="true" aria-expanded="false">
+          Standards and References
+        </span>
+        <ul class="cmip-nav__dropdown-sub" role="menu">
+          
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../../Global_Attributes/" class="cmip-nav__dropdown-link" role="menuitem">
+          Global Attributes
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../../Branded_Variables/" class="cmip-nav__dropdown-link" role="menuitem">
+          Branded Variables
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../../Grid_Labels_for_Derived_Products/" class="cmip-nav__dropdown-link" role="menuitem">
+          Grid Labels for Non-2D Grids
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../../data_specs_version/" class="cmip-nav__dropdown-link" role="menuitem">
+          Data Specs Version
+        </a>
+      </li>
+    
+  
+
+        </ul>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../../Domain_names/" class="cmip-nav__dropdown-link" role="menuitem">
+          Domain names
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../../FAQ/" class="cmip-nav__dropdown-link" role="menuitem">
+          FAQ
+        </a>
+      </li>
+    
+  
+
+      </ul>
+    </li>
+  
+
+        
+      
+        
+          
+  
+  
+  
+    <li class="cmip-nav__item cmip-nav__item--dropdown">
+      <span class="cmip-nav__link cmip-nav__link--dropdown" tabindex="0"
+            role="button" aria-haspopup="true" aria-expanded="false">
+        How-to Guides
+      </span>
+      <ul class="cmip-nav__dropdown" role="menu">
+        
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../../../How_to_Guides/Energy_Consumption_and_Carbon_Footprint_Spreadsheet/" class="cmip-nav__dropdown-link" role="menuitem">
+          Energy Consumption and Carbon Footprint Spreadsheet
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../../../How_to_Guides/CVs_discussion/" class="cmip-nav__dropdown-link" role="menuitem">
+          CVs discussion
+        </a>
+      </li>
+    
+  
+
+      </ul>
+    </li>
+  
+
+        
+      
+        
+          
+  
+  
+  
+    <li class="cmip-nav__item cmip-nav__item--dropdown">
+      <span class="cmip-nav__link cmip-nav__link--dropdown" tabindex="0"
+            role="button" aria-haspopup="true" aria-expanded="false">
+        CMIP6 (legacy)
+      </span>
+      <ul class="cmip-nav__dropdown" role="menu">
+        
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../../../CMIP6/" class="cmip-nav__dropdown-link" role="menuitem">
+          CMIP6 Guidance
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../../../CMIP6/global_attributes/" class="cmip-nav__dropdown-link" role="menuitem">
+          Global Attributes
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../../../CMIP6/guidance_for_esgf/" class="cmip-nav__dropdown-link" role="menuitem">
+          Guidance for ESGF
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../../../CMIP6/guidance_for_modellers/" class="cmip-nav__dropdown-link" role="menuitem">
+          Guidance for modellers
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../../../CMIP6/guidance_for_users/" class="cmip-nav__dropdown-link" role="menuitem">
+          Guidance for users
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../../../CMIP6/terms_of_use/" class="cmip-nav__dropdown-link" role="menuitem">
+          Terms of use
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../../../CMIP6/time_and_area_averaging/" class="cmip-nav__dropdown-link" role="menuitem">
+          Time and area averaging
+        </a>
+      </li>
+    
+  
+
+      </ul>
+    </li>
+  
+
+        
+      
+        
+          
+  
+  
+  
+    <li class="cmip-nav__item cmip-nav__item--dropdown">
+      <span class="cmip-nav__link cmip-nav__link--dropdown" tabindex="0"
+            role="button" aria-haspopup="true" aria-expanded="false">
+        Resources
+      </span>
+      <ul class="cmip-nav__dropdown" role="menu">
+        
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../../../resources/GitHub_issue_helper.html" class="cmip-nav__dropdown-link" role="menuitem">
+          GitHub issue helper
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../../../resources/essential-model-documentation/" class="cmip-nav__dropdown-link" role="menuitem">
+          Essential Model Documentation
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../../../resources/cmip-website/" class="cmip-nav__dropdown-link" role="menuitem">
+          CMIP Website
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../../../resources/wcrp/" class="cmip-nav__dropdown-link" role="menuitem">
+          WCRP
+        </a>
+      </li>
+    
+  
+
+      </ul>
+    </li>
+  
+
+        
+      
+    </ul>
+      <div class="cmip-version">
+        <div class="md-header__topic"></div>
+      </div>
+    <label class="md-header__button md-icon cmip-search-toggle" for="__search"
+             title="Search" aria-label="Search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+
+    
+      <div class="md-header__source">
+        <a href="https://github.com/WCRP-CMIP/cmip7-guidance" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    WCRP-CMIP/cmip7-guidance
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Guidance and Documentation" class="md-nav__button md-logo" aria-label="Guidance and Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/cmip-logo-white.svg" alt="Guidance and Documentation">
+
+    </a>
+    Guidance and Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/WCRP-CMIP/cmip7-guidance" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    WCRP-CMIP/cmip7-guidance
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Home
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../General_Guidance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  General Guidance
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Updates_for_Modellers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Updates for modellers
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Updates_for_Users/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Updates for users
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  CMIP7
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_5">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  CMIP7
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Guidance for modellers
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_5_1">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Guidance for modellers
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Guidance_for_modellers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  CMIP7 Participation Guidance for Modellers
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_2" id="__nav_5_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  CV Registration
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_2_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_5_1_2">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  CV Registration
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cv_registration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  CMIP7 CV Registration Guide
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Source_ID_guidance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Source ID Guidance
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Experiment setup and forcings
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_1_3" id="__nav_5_1_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_3_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_5_1_3">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Experiment setup and forcings
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1pctco2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  1pctCO2
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1pctco2-bgc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  1pctCO2-bgc
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1pctco2-rad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  1pctCO2-rad
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../abrupt-0p5xco2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  abrupt-0p5xCO2
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../abrupt-127k/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  abrupt-127k
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../abrupt-2xco2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  abrupt-2xCO2
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../abrupt-4xco2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  abrupt-4xCO2
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../amip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  amip
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../amip-p4k/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  amip-p4K
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../amip-piforcing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  amip-piForcing
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dcppb-forecast-cmip6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  dcppB-forecast-cmip6
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esm-flat10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-flat10
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esm-flat10-cdr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-flat10-cdr
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esm-flat10-zec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-flat10-zec
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../g7-1p5k-sai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  G7-1p5K-SAI
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hist-aer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  hist-aer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hist-ghg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  hist-GHG
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hist-nat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  hist-nat
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hist-piaer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  hist-piAer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hist-piaq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  hist-piAQ
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../historical/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  historical
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esm-hist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-hist
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../land-hist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  land-hist
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../piclim-4xco2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  piClim-4xCO2
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../piclim-aer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  piClim-aer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../piclim-anthro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  piClim-anthro
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../piclim-ch4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  piClim-CH4
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../piclim-control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  piClim-control
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../piclim-histaer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  piClim-histaer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../piclim-histall/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  piClim-histall
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../piclim-n2o/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  piClim-N2O
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../piclim-nox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  piClim-NOx
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../piclim-ods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  piClim-ODS
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../piclim-so2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  piClim-SO2
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../picontrol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  piControl
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esm-picontrol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-piControl
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../picontrol-spinup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  piControl-spinup
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esm-picontrol-spinup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-piControl-spinup
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scen7-h/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  scen7-h
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esm-scen7-h/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-scen7-h
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scen7-h-aer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  scen7-h-Aer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esm-scen7-h-aer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-scen7-h-Aer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scen7-h-aq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  scen7-h-AQ
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esm-scen7-h-aq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-scen7-h-AQ
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scen7-h-ext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  scen7-h-ext
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esm-scen7-h-ext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-scen7-h-ext
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scen7-hl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  scen7-hl
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esm-scen7-hl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-scen7-hl
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scen7-hl-ext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  scen7-hl-ext
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esm-scen7-hl-ext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-scen7-hl-ext
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scen7-l/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  scen7-l
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+        <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-scen7-l
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-scen7-l
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#paired-experiments" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Paired experiments
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#experiment-set-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Experiment set up
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Experiment set up">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parent-experiment-and-branching" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Parent experiment and branching
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-time-axis" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Output time axis
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minimum-ensemble-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Minimum ensemble size
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forcings" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Forcings
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Forcings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general-headlines" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        General headlines
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Data
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scen7-l-ext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  scen7-l-ext
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esm-scen7-l-ext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-scen7-l-ext
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scen7-ln/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  scen7-ln
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esm-scen7-ln/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-scen7-ln
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scen7-ln-ext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  scen7-ln-ext
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esm-scen7-ln-ext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-scen7-ln-ext
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scen7-m/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  scen7-m
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esm-scen7-m/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-scen7-m
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scen7-m-ext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  scen7-m-ext
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esm-scen7-m-ext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-scen7-m-ext
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scen7-ml/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  scen7-ml
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esm-scen7-ml/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-scen7-ml
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scen7-ml-ext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  scen7-ml-ext
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esm-scen7-ml-ext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-scen7-ml-ext
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scen7-vl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  scen7-vl
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esm-scen7-vl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-scen7-vl
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scen7-vl-aer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  scen7-vl-Aer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esm-scen7-vl-aer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-scen7-vl-Aer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scen7-vl-aq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  scen7-vl-AQ
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esm-scen7-vl-aq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-scen7-vl-AQ
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scen7-vl-ext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  scen7-vl-ext
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esm-scen7-vl-ext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-scen7-vl-ext
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ssp2-com-cmip7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  SSP2-com-CMIP7
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esm-ssp2-com-cmip7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-SSP2-com-CMIP7
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ssp2-com-cmip7-ext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  SSP2-com-CMIP7-ext
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esm-ssp2-com-cmip7-ext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-SSP2-com-CMIP7-ext
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vl-cf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  vl-cf
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esm-vl-cf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-vl-cf
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vl-cf-ext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  vl-cf-ext
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esm-vl-cf-ext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-vl-cf-ext
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Citation_Guidance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Citation Guidance
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../QC_checks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Annex 1: Checks performed prior to publication
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Guidance_for_users/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Guidance for users
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Guidance_for_ESGF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Guidance for ESGF
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Guidance_for_MIPs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Guidance for MIPs
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Standards and References
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_5_5">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Standards and References
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Global_Attributes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Global Attributes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Branded_Variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Branded Variables
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Grid_Labels_for_Derived_Products/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Grid Labels for Non-2D Grids
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_specs_version/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Data Specs Version
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Domain_names/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Domain names
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FAQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  FAQ
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  How-to Guides
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_6">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  How-to Guides
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../How_to_Guides/Energy_Consumption_and_Carbon_Footprint_Spreadsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Energy Consumption and Carbon Footprint Spreadsheet
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../How_to_Guides/CVs_discussion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  CVs discussion
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../CMIP6/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  CMIP6 (legacy)
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_7">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  CMIP6 (legacy)
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CMIP6/global_attributes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Global Attributes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CMIP6/guidance_for_esgf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Guidance for ESGF
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CMIP6/guidance_for_modellers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Guidance for modellers
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CMIP6/guidance_for_users/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Guidance for users
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CMIP6/terms_of_use/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Terms of use
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CMIP6/time_and_area_averaging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Time and area averaging
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Resources
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_8">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Resources
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/GitHub_issue_helper.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  GitHub issue helper
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/essential-model-documentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Essential Model Documentation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/cmip-website/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  CMIP Website
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/wcrp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  WCRP
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#paired-experiments" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Paired experiments
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#experiment-set-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Experiment set up
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Experiment set up">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parent-experiment-and-branching" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Parent experiment and branching
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-time-axis" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Output time axis
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minimum-ensemble-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Minimum ensemble size
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forcings" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Forcings
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Forcings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general-headlines" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        General headlines
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Data
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../.." class="md-path__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-path__item">
+        <a href="../../Guidance_for_modellers/" class="md-path__link">
+          
+  
+  <span class="md-ellipsis">
+    CMIP7
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-path__item">
+        <a href="../../Guidance_for_modellers/" class="md-path__link">
+          
+  
+  <span class="md-ellipsis">
+    Guidance for modellers
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  
+  <span class="md-ellipsis">
+    Experiment setup and forcings
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+  
+    <a href="https://github.com/WCRP-CMIP/cmip7-guidance/blob/docs/docs/CMIP7/Experiment_set_up_and_Forcings/esm-scen7-l.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
+  
+
+
+<h1 id="experiment-setup-and-forcings-guidance-esm-scen7-l">Experiment Setup and Forcings Guidance: esm-scen7-l<a class="headerlink" href="#experiment-setup-and-forcings-guidance-esm-scen7-l" title="Permanent link">&para;</a></h1>
+<p>CMIP7 ScenarioMIP Low emission scenario - The Low emission scenario is designed to be consistent with the pursuit of
+holding warming to a level likely below 2C, without returning to 1.5C before the end of the century.
+Run with prescribed carbon dioxide emissions (for prescribed carbon dioxide concentrations, see <code>scen7-l</code>).</p>
+<ul>
+<li>Responsible activity: <a href=".././#scenariomip">ScenarioMIP</a></li>
+<li>Tier: See <a href=".././#scenariomip">ScenarioMIP</a> information</li>
+<li>MIP co-chair review: <strong>In progress</strong> see
+  <a href="https://github.com/WCRP-CMIP/cmip7-guidance/issues/187">https://github.com/WCRP-CMIP/cmip7-guidance/issues/187</a></li>
+<li>Tags: AFT (Assessment Fast Track)</li>
+</ul>
+<p>This page is intended to help with implementation.
+If you notice something that is unclear, please
+<a href="https://github.com/WCRP-CMIP/cmip7-guidance/issues/new">raise an issue</a>.</p>
+<p>For the full background of the experiment, please see the following references:</p>
+<ul>
+<li>van Vuuren, D., O'Neill, B., Tebaldi, C., Chini, L., Friedlingstein, P., Hasegawa, T., Riahi, K., Sanderson, B.,
+  Govindasamy, B., Bauer, N., Eyring, V., Fall, C., Frieler, K., Gidden, M., Gohar, L., Jones, A., King, A., Knutti, R.,
+  Kriegler, E., et al. (2025).
+  The Scenario Model Intercomparison Project for CMIP7 (ScenarioMIP-CMIP7). https://doi.org/10.5194/egusphere-2024-3765</li>
+</ul>
+<h2 id="paired-experiments">Paired experiments<a class="headerlink" href="#paired-experiments" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href=".././scen7-l/">scen7-l</a> is the concentration-driven counterpart to this emissions-driven experiment.</li>
+</ul>
+<h2 id="experiment-set-up">Experiment set up<a class="headerlink" href="#experiment-set-up" title="Permanent link">&para;</a></h2>
+<h3 id="parent-experiment-and-branching">Parent experiment and branching<a class="headerlink" href="#parent-experiment-and-branching" title="Permanent link">&para;</a></h3>
+<p>The esm-scen7-l experiment branches from the <a href=".././esm-hist/">esm-hist</a> experiment (part of <a href=".././#cmip">CMIP</a>).
+The parent experiment's MIP era is <a href="https://wcrp-cmip.org/CMIP7">CMIP7</a>.</p>
+<p>Branch from <a href=".././esm-hist/">esm-hist</a> at 2021-12-31.</p>
+<h3 id="output-time-axis">Output time axis<a class="headerlink" href="#output-time-axis" title="Permanent link">&para;</a></h3>
+<p>Your output time axis must start on 2022-01-01 and must end on 2100-12-31.
+You must perform the full simulation i.e. 79 simulation years.</p>
+<h3 id="minimum-ensemble-size">Minimum ensemble size<a class="headerlink" href="#minimum-ensemble-size" title="Permanent link">&para;</a></h3>
+<p>Only one ensemble member is required.</p>
+<h2 id="forcings">Forcings<a class="headerlink" href="#forcings" title="Permanent link">&para;</a></h2>
+<p>The following information will help you identify the forcings to use.
+However, we can't define every single detail because there can be lots of subjective steps between the raw forcings data
+and model inputs (e.g. interpolation, re-aggregation, supplementation with other information).
+If further guidance would be helpful, please <a href="https://github.com/WCRP-CMIP/cmip7-guidance/issues/new">raise an issue</a>.</p>
+<h3 id="general-headlines">General headlines<a class="headerlink" href="#general-headlines" title="Permanent link">&para;</a></h3>
+<p>The esm-scen7-l experiment is a transient forcings experiment.</p>
+<h3 id="data">Data<a class="headerlink" href="#data" title="Permanent link">&para;</a></h3>
+<p>Here we make a distinction between data that is described on other experiment pages, data that is described on other
+experiment pages with modifications you have to make yourself, data available via ESGF's input4MIPs project and data
+distributed via other channels.</p>
+<h4 id="data-described-on-other-experiment-pages">Data described on other experiment pages<a class="headerlink" href="#data-described-on-other-experiment-pages" title="Permanent link">&para;</a></h4>
+<p>All data is described on the <a href=".././scen7-l/">scen7-l</a> experiment page.</p>
+<h4 id="data-described-on-other-experiment-pages-with-modifications-you-have-to-make">Data described on other experiment pages with modifications you have to make<a class="headerlink" href="#data-described-on-other-experiment-pages-with-modifications-you-have-to-make" title="Permanent link">&para;</a></h4>
+<p>No data described on other experiment pages requires modifications by you.
+Please see the other <a href="#data">data</a> sub-sections for details of the forcings data to use for this experiment.</p>
+<h4 id="data-available-via-input4mips">Data available via input4MIPs<a class="headerlink" href="#data-available-via-input4mips" title="Permanent link">&para;</a></h4>
+<p>No input4MIPs-based data is described specifically on this page.
+Please see the other <a href="#data">data</a> sub-sections for details of the forcings data to use for this experiment.</p>
+<h4 id="data-not-available-via-input4mips">Data not available via input4MIPs<a class="headerlink" href="#data-not-available-via-input4mips" title="Permanent link">&para;</a></h4>
+<p>No data that is not input4MIPs-based is described specifically on this page.
+Please see the other <a href="#data">data</a> sub-sections for details of the forcings data to use for this experiment.</p>
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../scen7-l/" class="md-footer__link md-footer__link--prev" aria-label="Previous: scen7-l">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                scen7-l
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../scen7-l-ext/" class="md-footer__link md-footer__link--next" aria-label="Next: scen7-l-ext">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                scen7-l-ext
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      
+<div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      CMIP International Project Office
+    </div>
+  
+  
+    Made with
+    <a href="https://github.com/cmip-ipo-internal/cmipipo-mkdocs-course" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+    (<a href="https://github.com/cmip-ipo-internal/cmipipo-mkdocs-course" target="_blank" rel="noopener">custom</a>)
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+          
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":["navigation.top","navigation.path","navigation.indexes","navigation.footer","search.suggest","search.highlight","toc.follow","content.code.copy","content.action.view"],"redirect":"../../../redirect.json","search":"../../../assets/javascripts/workers/search.7d14d953.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":{"default":"latest","provider":"mike"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.67a597eb.min.js"></script>
+      
+        <script src="../../../stylesheets/matomo.js"></script>
+      
+        <script src="../../../stylesheets/fallback-banner.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,6591 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+  <meta author="Daniel Ellis" github="wolfiex" contact="product@bytevorous.com">
+  
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for CMIP7.">
+      
+      
+        <meta name="author" content="CMIP-IPO">
+      
+      
+        <link rel="canonical" href="/CMIP7/Branded_Variables/">
+      
+      
+        <link rel="prev" href="../Global_Attributes/">
+      
+      
+        <link rel="next" href="../Grid_Labels_for_Derived_Products/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/cmip-icon.svg">
+      <meta name="generator" content="zensical-0.0.67">
+    
+
+    
+      
+        <title>Branded Variables for CMIP7 - Guidance and Documentation</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../assets/stylesheets/classic/main.cfc7948b.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/classic/palette.bf1c5cd6.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Plus+Jakarta+Sans:300,300i,400,400i,500,500i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Plus Jakarta Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/cmip.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-label="Navigation"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#branded-variables-for-cmip7" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+          <aside class="md-banner md-banner--warning">
+            <div class="md-banner__inner md-grid md-typeset">
+              
+  There is a newer version of this page:
+  <a href="../../..">See latest</a>
+  <span class="cmip-latest-date"></span><script>
+    (function () {
+      var span = document.currentScript.previousElementSibling;
+      var base = new URL("../../", location.href);
+      fetch(new URL("../versions.json", base))
+        .then(function (r) { return r.ok ? r.json() : []; })
+        .then(function (versions) {
+          for (var i = 0; i < versions.length; i++) {
+            if ((versions[i].aliases || []).indexOf("latest") !== -1) {
+              span.textContent = "(" + (versions[i].title || versions[i].version) + ")";
+              return;
+            }
+          }
+        })
+        .catch(function () {});
+    })();
+  </script>
+
+            </div>
+            <script>var el=document.querySelector("[data-md-component=outdated]"),base=new URL("../.."),outdated=__md_get("__outdated",sessionStorage,base);!0===outdated&&el&&(el.hidden=!1)</script>
+          </aside>
+        
+      </div>
+    
+    
+      
+
+
+<header class="md-header md-header--cmip" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Guidance and Documentation" class="md-header__button md-logo" aria-label="Guidance and Documentation" data-md-component="logo">
+      
+  <img src="../../assets/cmip-logo-white.svg" alt="Guidance and Documentation">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+
+    <ul class="cmip-nav">
+        
+      
+        
+          
+  
+  
+  
+    <li class="cmip-nav__item">
+      <a href="../General_Guidance/" class="cmip-nav__link">General Guidance</a>
+    </li>
+  
+
+        
+      
+        
+          
+  
+  
+  
+    <li class="cmip-nav__item">
+      <a href="../../Updates_for_Modellers/" class="cmip-nav__link">Updates for modellers</a>
+    </li>
+  
+
+        
+      
+        
+          
+  
+  
+  
+    <li class="cmip-nav__item">
+      <a href="../../Updates_for_Users/" class="cmip-nav__link">Updates for users</a>
+    </li>
+  
+
+        
+      
+        
+          
+  
+  
+  
+    
+  
+    <li class="cmip-nav__item cmip-nav__item--active cmip-nav__item--dropdown">
+      <span class="cmip-nav__link cmip-nav__link--dropdown" tabindex="0"
+            role="button" aria-haspopup="true" aria-expanded="false">
+        CMIP7
+      </span>
+      <ul class="cmip-nav__dropdown" role="menu">
+        
+  
+    
+      <li class="cmip-nav__dropdown-item cmip-nav__dropdown-item--group" role="none">
+        <span class="cmip-nav__dropdown-link cmip-nav__dropdown-toggle"
+              tabindex="0" role="button" aria-haspopup="true" aria-expanded="false">
+          Guidance for modellers
+        </span>
+        <ul class="cmip-nav__dropdown-sub" role="menu">
+          
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Guidance_for_modellers/" class="cmip-nav__dropdown-link" role="menuitem">
+          CMIP7 Participation Guidance for Modellers
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item cmip-nav__dropdown-item--group" role="none">
+        <span class="cmip-nav__dropdown-link cmip-nav__dropdown-toggle"
+              tabindex="0" role="button" aria-haspopup="true" aria-expanded="false">
+          CV Registration
+        </span>
+        <ul class="cmip-nav__dropdown-sub" role="menu">
+          
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../cv_registration/" class="cmip-nav__dropdown-link" role="menuitem">
+          CMIP7 CV Registration Guide
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Source_ID_guidance/" class="cmip-nav__dropdown-link" role="menuitem">
+          Source ID Guidance
+        </a>
+      </li>
+    
+  
+
+        </ul>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item cmip-nav__dropdown-item--group" role="none">
+        <span class="cmip-nav__dropdown-link cmip-nav__dropdown-toggle"
+              tabindex="0" role="button" aria-haspopup="true" aria-expanded="false">
+          Experiment setup and forcings
+        </span>
+        <ul class="cmip-nav__dropdown-sub" role="menu">
+          
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/" class="cmip-nav__dropdown-link" role="menuitem">
+          Overview
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/1pctco2/" class="cmip-nav__dropdown-link" role="menuitem">
+          1pctCO2
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/1pctco2-bgc/" class="cmip-nav__dropdown-link" role="menuitem">
+          1pctCO2-bgc
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/1pctco2-rad/" class="cmip-nav__dropdown-link" role="menuitem">
+          1pctCO2-rad
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/abrupt-0p5xco2/" class="cmip-nav__dropdown-link" role="menuitem">
+          abrupt-0p5xCO2
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/abrupt-127k/" class="cmip-nav__dropdown-link" role="menuitem">
+          abrupt-127k
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/abrupt-2xco2/" class="cmip-nav__dropdown-link" role="menuitem">
+          abrupt-2xCO2
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/abrupt-4xco2/" class="cmip-nav__dropdown-link" role="menuitem">
+          abrupt-4xCO2
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/amip/" class="cmip-nav__dropdown-link" role="menuitem">
+          amip
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/amip-p4k/" class="cmip-nav__dropdown-link" role="menuitem">
+          amip-p4K
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/amip-piforcing/" class="cmip-nav__dropdown-link" role="menuitem">
+          amip-piForcing
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/dcppb-forecast-cmip6/" class="cmip-nav__dropdown-link" role="menuitem">
+          dcppB-forecast-cmip6
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/esm-flat10/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-flat10
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/esm-flat10-cdr/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-flat10-cdr
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/esm-flat10-zec/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-flat10-zec
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/g7-1p5k-sai/" class="cmip-nav__dropdown-link" role="menuitem">
+          G7-1p5K-SAI
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/hist-aer/" class="cmip-nav__dropdown-link" role="menuitem">
+          hist-aer
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/hist-ghg/" class="cmip-nav__dropdown-link" role="menuitem">
+          hist-GHG
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/hist-nat/" class="cmip-nav__dropdown-link" role="menuitem">
+          hist-nat
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/hist-piaer/" class="cmip-nav__dropdown-link" role="menuitem">
+          hist-piAer
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/hist-piaq/" class="cmip-nav__dropdown-link" role="menuitem">
+          hist-piAQ
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/historical/" class="cmip-nav__dropdown-link" role="menuitem">
+          historical
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/esm-hist/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-hist
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/land-hist/" class="cmip-nav__dropdown-link" role="menuitem">
+          land-hist
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/piclim-4xco2/" class="cmip-nav__dropdown-link" role="menuitem">
+          piClim-4xCO2
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/piclim-aer/" class="cmip-nav__dropdown-link" role="menuitem">
+          piClim-aer
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/piclim-anthro/" class="cmip-nav__dropdown-link" role="menuitem">
+          piClim-anthro
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/piclim-ch4/" class="cmip-nav__dropdown-link" role="menuitem">
+          piClim-CH4
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/piclim-control/" class="cmip-nav__dropdown-link" role="menuitem">
+          piClim-control
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/piclim-histaer/" class="cmip-nav__dropdown-link" role="menuitem">
+          piClim-histaer
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/piclim-histall/" class="cmip-nav__dropdown-link" role="menuitem">
+          piClim-histall
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/piclim-n2o/" class="cmip-nav__dropdown-link" role="menuitem">
+          piClim-N2O
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/piclim-nox/" class="cmip-nav__dropdown-link" role="menuitem">
+          piClim-NOx
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/piclim-ods/" class="cmip-nav__dropdown-link" role="menuitem">
+          piClim-ODS
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/piclim-so2/" class="cmip-nav__dropdown-link" role="menuitem">
+          piClim-SO2
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/picontrol/" class="cmip-nav__dropdown-link" role="menuitem">
+          piControl
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/esm-picontrol/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-piControl
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/picontrol-spinup/" class="cmip-nav__dropdown-link" role="menuitem">
+          piControl-spinup
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/esm-picontrol-spinup/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-piControl-spinup
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/scen7-h/" class="cmip-nav__dropdown-link" role="menuitem">
+          scen7-h
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/esm-scen7-h/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-scen7-h
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/scen7-h-aer/" class="cmip-nav__dropdown-link" role="menuitem">
+          scen7-h-Aer
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/esm-scen7-h-aer/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-scen7-h-Aer
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/scen7-h-aq/" class="cmip-nav__dropdown-link" role="menuitem">
+          scen7-h-AQ
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/esm-scen7-h-aq/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-scen7-h-AQ
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/scen7-h-ext/" class="cmip-nav__dropdown-link" role="menuitem">
+          scen7-h-ext
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/esm-scen7-h-ext/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-scen7-h-ext
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/scen7-hl/" class="cmip-nav__dropdown-link" role="menuitem">
+          scen7-hl
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/esm-scen7-hl/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-scen7-hl
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/scen7-hl-ext/" class="cmip-nav__dropdown-link" role="menuitem">
+          scen7-hl-ext
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/esm-scen7-hl-ext/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-scen7-hl-ext
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/scen7-l/" class="cmip-nav__dropdown-link" role="menuitem">
+          scen7-l
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/esm-scen7-l/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-scen7-l
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/scen7-l-ext/" class="cmip-nav__dropdown-link" role="menuitem">
+          scen7-l-ext
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/esm-scen7-l-ext/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-scen7-l-ext
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/scen7-ln/" class="cmip-nav__dropdown-link" role="menuitem">
+          scen7-ln
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/esm-scen7-ln/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-scen7-ln
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/scen7-ln-ext/" class="cmip-nav__dropdown-link" role="menuitem">
+          scen7-ln-ext
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/esm-scen7-ln-ext/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-scen7-ln-ext
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/scen7-m/" class="cmip-nav__dropdown-link" role="menuitem">
+          scen7-m
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/esm-scen7-m/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-scen7-m
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/scen7-m-ext/" class="cmip-nav__dropdown-link" role="menuitem">
+          scen7-m-ext
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/esm-scen7-m-ext/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-scen7-m-ext
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/scen7-ml/" class="cmip-nav__dropdown-link" role="menuitem">
+          scen7-ml
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/esm-scen7-ml/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-scen7-ml
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/scen7-ml-ext/" class="cmip-nav__dropdown-link" role="menuitem">
+          scen7-ml-ext
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/esm-scen7-ml-ext/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-scen7-ml-ext
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/scen7-vl/" class="cmip-nav__dropdown-link" role="menuitem">
+          scen7-vl
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/esm-scen7-vl/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-scen7-vl
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/scen7-vl-aer/" class="cmip-nav__dropdown-link" role="menuitem">
+          scen7-vl-Aer
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/esm-scen7-vl-aer/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-scen7-vl-Aer
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/scen7-vl-aq/" class="cmip-nav__dropdown-link" role="menuitem">
+          scen7-vl-AQ
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/esm-scen7-vl-aq/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-scen7-vl-AQ
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/scen7-vl-ext/" class="cmip-nav__dropdown-link" role="menuitem">
+          scen7-vl-ext
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/esm-scen7-vl-ext/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-scen7-vl-ext
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/ssp2-com-cmip7/" class="cmip-nav__dropdown-link" role="menuitem">
+          SSP2-com-CMIP7
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/esm-ssp2-com-cmip7/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-SSP2-com-CMIP7
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/ssp2-com-cmip7-ext/" class="cmip-nav__dropdown-link" role="menuitem">
+          SSP2-com-CMIP7-ext
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/esm-ssp2-com-cmip7-ext/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-SSP2-com-CMIP7-ext
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/vl-cf/" class="cmip-nav__dropdown-link" role="menuitem">
+          vl-cf
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/esm-vl-cf/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-vl-cf
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/vl-cf-ext/" class="cmip-nav__dropdown-link" role="menuitem">
+          vl-cf-ext
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Experiment_set_up_and_Forcings/esm-vl-cf-ext/" class="cmip-nav__dropdown-link" role="menuitem">
+          esm-vl-cf-ext
+        </a>
+      </li>
+    
+  
+
+        </ul>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Citation_Guidance/" class="cmip-nav__dropdown-link" role="menuitem">
+          Citation Guidance
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../QC_checks/" class="cmip-nav__dropdown-link" role="menuitem">
+          Annex 1: Checks performed prior to publication
+        </a>
+      </li>
+    
+  
+
+        </ul>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Guidance_for_users/" class="cmip-nav__dropdown-link" role="menuitem">
+          Guidance for users
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Guidance_for_ESGF/" class="cmip-nav__dropdown-link" role="menuitem">
+          Guidance for ESGF
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Guidance_for_MIPs/" class="cmip-nav__dropdown-link" role="menuitem">
+          Guidance for MIPs
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item cmip-nav__dropdown-item--group" role="none">
+        <span class="cmip-nav__dropdown-link cmip-nav__dropdown-toggle"
+              tabindex="0" role="button" aria-haspopup="true" aria-expanded="false">
+          Standards and References
+        </span>
+        <ul class="cmip-nav__dropdown-sub" role="menu">
+          
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Global_Attributes/" class="cmip-nav__dropdown-link" role="menuitem">
+          Global Attributes
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="././" class="cmip-nav__dropdown-link" role="menuitem">
+          Branded Variables
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Grid_Labels_for_Derived_Products/" class="cmip-nav__dropdown-link" role="menuitem">
+          Grid Labels for Non-2D Grids
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../data_specs_version/" class="cmip-nav__dropdown-link" role="menuitem">
+          Data Specs Version
+        </a>
+      </li>
+    
+  
+
+        </ul>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../Domain_names/" class="cmip-nav__dropdown-link" role="menuitem">
+          Domain names
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../FAQ/" class="cmip-nav__dropdown-link" role="menuitem">
+          FAQ
+        </a>
+      </li>
+    
+  
+
+      </ul>
+    </li>
+  
+
+        
+      
+        
+          
+  
+  
+  
+    <li class="cmip-nav__item cmip-nav__item--dropdown">
+      <span class="cmip-nav__link cmip-nav__link--dropdown" tabindex="0"
+            role="button" aria-haspopup="true" aria-expanded="false">
+        How-to Guides
+      </span>
+      <ul class="cmip-nav__dropdown" role="menu">
+        
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../../How_to_Guides/Energy_Consumption_and_Carbon_Footprint_Spreadsheet/" class="cmip-nav__dropdown-link" role="menuitem">
+          Energy Consumption and Carbon Footprint Spreadsheet
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../../How_to_Guides/CVs_discussion/" class="cmip-nav__dropdown-link" role="menuitem">
+          CVs discussion
+        </a>
+      </li>
+    
+  
+
+      </ul>
+    </li>
+  
+
+        
+      
+        
+          
+  
+  
+  
+    <li class="cmip-nav__item cmip-nav__item--dropdown">
+      <span class="cmip-nav__link cmip-nav__link--dropdown" tabindex="0"
+            role="button" aria-haspopup="true" aria-expanded="false">
+        CMIP6 (legacy)
+      </span>
+      <ul class="cmip-nav__dropdown" role="menu">
+        
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../../CMIP6/" class="cmip-nav__dropdown-link" role="menuitem">
+          CMIP6 Guidance
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../../CMIP6/global_attributes/" class="cmip-nav__dropdown-link" role="menuitem">
+          Global Attributes
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../../CMIP6/guidance_for_esgf/" class="cmip-nav__dropdown-link" role="menuitem">
+          Guidance for ESGF
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../../CMIP6/guidance_for_modellers/" class="cmip-nav__dropdown-link" role="menuitem">
+          Guidance for modellers
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../../CMIP6/guidance_for_users/" class="cmip-nav__dropdown-link" role="menuitem">
+          Guidance for users
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../../CMIP6/terms_of_use/" class="cmip-nav__dropdown-link" role="menuitem">
+          Terms of use
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../../CMIP6/time_and_area_averaging/" class="cmip-nav__dropdown-link" role="menuitem">
+          Time and area averaging
+        </a>
+      </li>
+    
+  
+
+      </ul>
+    </li>
+  
+
+        
+      
+        
+          
+  
+  
+  
+    <li class="cmip-nav__item cmip-nav__item--dropdown">
+      <span class="cmip-nav__link cmip-nav__link--dropdown" tabindex="0"
+            role="button" aria-haspopup="true" aria-expanded="false">
+        Resources
+      </span>
+      <ul class="cmip-nav__dropdown" role="menu">
+        
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../../resources/GitHub_issue_helper.html" class="cmip-nav__dropdown-link" role="menuitem">
+          GitHub issue helper
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../../resources/essential-model-documentation/" class="cmip-nav__dropdown-link" role="menuitem">
+          Essential Model Documentation
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../../resources/cmip-website/" class="cmip-nav__dropdown-link" role="menuitem">
+          CMIP Website
+        </a>
+      </li>
+    
+  
+    
+      <li class="cmip-nav__dropdown-item" role="none">
+        <a href="../../resources/wcrp/" class="cmip-nav__dropdown-link" role="menuitem">
+          WCRP
+        </a>
+      </li>
+    
+  
+
+      </ul>
+    </li>
+  
+
+        
+      
+    </ul>
+      <div class="cmip-version">
+        <div class="md-header__topic"></div>
+      </div>
+    <label class="md-header__button md-icon cmip-search-toggle" for="__search"
+             title="Search" aria-label="Search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+
+    
+      <div class="md-header__source">
+        <a href="https://github.com/WCRP-CMIP/cmip7-guidance" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    WCRP-CMIP/cmip7-guidance
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Guidance and Documentation" class="md-nav__button md-logo" aria-label="Guidance and Documentation" data-md-component="logo">
+      
+  <img src="../../assets/cmip-logo-white.svg" alt="Guidance and Documentation">
+
+    </a>
+    Guidance and Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/WCRP-CMIP/cmip7-guidance" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    WCRP-CMIP/cmip7-guidance
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Home
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../General_Guidance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  General Guidance
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Updates_for_Modellers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Updates for modellers
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Updates_for_Users/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Updates for users
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  CMIP7
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_5">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  CMIP7
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Guidance for modellers
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_5_1">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Guidance for modellers
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Guidance_for_modellers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  CMIP7 Participation Guidance for Modellers
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_2" id="__nav_5_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  CV Registration
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_2_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_5_1_2">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  CV Registration
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cv_registration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  CMIP7 CV Registration Guide
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Source_ID_guidance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Source ID Guidance
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../Experiment_set_up_and_Forcings/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Experiment setup and forcings
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_1_3" id="__nav_5_1_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_3_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_5_1_3">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Experiment setup and forcings
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/1pctco2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  1pctCO2
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/1pctco2-bgc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  1pctCO2-bgc
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/1pctco2-rad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  1pctCO2-rad
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/abrupt-0p5xco2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  abrupt-0p5xCO2
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/abrupt-127k/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  abrupt-127k
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/abrupt-2xco2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  abrupt-2xCO2
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/abrupt-4xco2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  abrupt-4xCO2
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/amip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  amip
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/amip-p4k/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  amip-p4K
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/amip-piforcing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  amip-piForcing
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/dcppb-forecast-cmip6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  dcppB-forecast-cmip6
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/esm-flat10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-flat10
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/esm-flat10-cdr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-flat10-cdr
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/esm-flat10-zec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-flat10-zec
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/g7-1p5k-sai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  G7-1p5K-SAI
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/hist-aer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  hist-aer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/hist-ghg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  hist-GHG
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/hist-nat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  hist-nat
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/hist-piaer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  hist-piAer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/hist-piaq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  hist-piAQ
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/historical/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  historical
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/esm-hist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-hist
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/land-hist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  land-hist
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/piclim-4xco2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  piClim-4xCO2
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/piclim-aer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  piClim-aer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/piclim-anthro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  piClim-anthro
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/piclim-ch4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  piClim-CH4
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/piclim-control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  piClim-control
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/piclim-histaer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  piClim-histaer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/piclim-histall/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  piClim-histall
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/piclim-n2o/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  piClim-N2O
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/piclim-nox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  piClim-NOx
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/piclim-ods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  piClim-ODS
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/piclim-so2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  piClim-SO2
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/picontrol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  piControl
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/esm-picontrol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-piControl
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/picontrol-spinup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  piControl-spinup
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/esm-picontrol-spinup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-piControl-spinup
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/scen7-h/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  scen7-h
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/esm-scen7-h/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-scen7-h
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/scen7-h-aer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  scen7-h-Aer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/esm-scen7-h-aer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-scen7-h-Aer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/scen7-h-aq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  scen7-h-AQ
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/esm-scen7-h-aq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-scen7-h-AQ
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/scen7-h-ext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  scen7-h-ext
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/esm-scen7-h-ext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-scen7-h-ext
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/scen7-hl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  scen7-hl
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/esm-scen7-hl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-scen7-hl
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/scen7-hl-ext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  scen7-hl-ext
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/esm-scen7-hl-ext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-scen7-hl-ext
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/scen7-l/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  scen7-l
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/esm-scen7-l/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-scen7-l
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/scen7-l-ext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  scen7-l-ext
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/esm-scen7-l-ext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-scen7-l-ext
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/scen7-ln/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  scen7-ln
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/esm-scen7-ln/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-scen7-ln
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/scen7-ln-ext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  scen7-ln-ext
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/esm-scen7-ln-ext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-scen7-ln-ext
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/scen7-m/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  scen7-m
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/esm-scen7-m/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-scen7-m
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/scen7-m-ext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  scen7-m-ext
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/esm-scen7-m-ext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-scen7-m-ext
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/scen7-ml/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  scen7-ml
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/esm-scen7-ml/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-scen7-ml
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/scen7-ml-ext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  scen7-ml-ext
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/esm-scen7-ml-ext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-scen7-ml-ext
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/scen7-vl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  scen7-vl
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/esm-scen7-vl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-scen7-vl
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/scen7-vl-aer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  scen7-vl-Aer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/esm-scen7-vl-aer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-scen7-vl-Aer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/scen7-vl-aq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  scen7-vl-AQ
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/esm-scen7-vl-aq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-scen7-vl-AQ
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/scen7-vl-ext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  scen7-vl-ext
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/esm-scen7-vl-ext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-scen7-vl-ext
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/ssp2-com-cmip7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  SSP2-com-CMIP7
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/esm-ssp2-com-cmip7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-SSP2-com-CMIP7
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/ssp2-com-cmip7-ext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  SSP2-com-CMIP7-ext
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/esm-ssp2-com-cmip7-ext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-SSP2-com-CMIP7-ext
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/vl-cf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  vl-cf
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/esm-vl-cf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-vl-cf
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/vl-cf-ext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  vl-cf-ext
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment_set_up_and_Forcings/esm-vl-cf-ext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  esm-vl-cf-ext
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Citation_Guidance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Citation Guidance
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../QC_checks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Annex 1: Checks performed prior to publication
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Guidance_for_users/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Guidance for users
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Guidance_for_ESGF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Guidance for ESGF
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Guidance_for_MIPs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Guidance for MIPs
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Standards and References
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_5_5">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Standards and References
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Global_Attributes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Global Attributes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+        <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Branded Variables
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Branded Variables
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#variable-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Variable names
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#branding-suffixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Branding suffixes
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Branding suffixes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#temporal-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Temporal labels
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vertical-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Vertical labels
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#horizontal-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Horizontal labels
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#area-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Area labels
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#physical-parameter-name-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Physical parameter name changes
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Grid_Labels_for_Derived_Products/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Grid Labels for Non-2D Grids
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data_specs_version/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Data Specs Version
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Domain_names/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Domain names
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  FAQ
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  How-to Guides
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_6">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  How-to Guides
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../How_to_Guides/Energy_Consumption_and_Carbon_Footprint_Spreadsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Energy Consumption and Carbon Footprint Spreadsheet
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../How_to_Guides/CVs_discussion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  CVs discussion
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../CMIP6/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  CMIP6 (legacy)
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_7">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  CMIP6 (legacy)
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CMIP6/global_attributes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Global Attributes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CMIP6/guidance_for_esgf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Guidance for ESGF
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CMIP6/guidance_for_modellers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Guidance for modellers
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CMIP6/guidance_for_users/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Guidance for users
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CMIP6/terms_of_use/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Terms of use
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CMIP6/time_and_area_averaging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Time and area averaging
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Resources
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_8">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Resources
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/GitHub_issue_helper.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  GitHub issue helper
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/essential-model-documentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Essential Model Documentation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/cmip-website/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  CMIP Website
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/wcrp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  WCRP
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#variable-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Variable names
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#branding-suffixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Branding suffixes
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Branding suffixes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#temporal-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Temporal labels
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vertical-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Vertical labels
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#horizontal-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Horizontal labels
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#area-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Area labels
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#physical-parameter-name-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Physical parameter name changes
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-path__item">
+        <a href="../Guidance_for_modellers/" class="md-path__link">
+          
+  
+  <span class="md-ellipsis">
+    CMIP7
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-path__item">
+        <a href="../Global_Attributes/" class="md-path__link">
+          
+  
+  <span class="md-ellipsis">
+    Standards and References
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+  
+    <a href="https://github.com/WCRP-CMIP/cmip7-guidance/blob/docs/docs/CMIP7/Branded_Variables.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
+  
+
+
+<h1 id="branded-variables-for-cmip7">Branded Variables for CMIP7<a class="headerlink" href="#branded-variables-for-cmip7" title="Permanent link">&para;</a></h1>
+<p>A new naming system for variables is being introduced in CMIP7, referred to as <strong>branded variables</strong>.
+The new system retains the familiar short variable names used in earlier CMIP phases to denote a physical quantity (<code>pr</code> for precipitation, for example). 
+It introduces a new metadata attribute, termed the <strong>branding suffix</strong>, that describes how a variable is sampled temporally and spatially.
+The new naming system is intended to make it <em>easier to find the variables you want</em>.
+The branding suffix is a <a href="https://doi.org/10.5281/zenodo.17250296">global metadata attribute</a>, and is used in the output filenames and directory path structures of CMIP7 datasets.</p>
+<p>For comparison with the previous CMIP naming scheme for variables, consider the global monthly-mean near-surface air temperature, which in CMIP6 was denoted as <code>tas</code> in the <code>Amon</code> MIP table (a MIP table is also sometimes referred to as a CMOR table).
+A compound name constructed from these terms, <code>Amon.tas</code>, uniquely identifies the variable in the collection of all CMIP6 variables.
+The <code>Amon</code> table is a collection of atmospheric variables at monthly frequency, and other MIP tables (<code>Omon</code>, <code>SImon</code>, ...) collect together other variables that usually are similar in realm, frequency, and region.
+While familiar to experienced users of CMIP data, this system led to a proliferation of table names in CMIP6 due to the large number of requested variables (~2000), and the rationale for their names was not always clear (for example, table name <code>Amon</code> included the realm while <code>3hr</code> and <code>day</code> used only the frequency).</p>
+<p>The <strong>branded variable</strong> corresponding to <code>Amon.tas</code> is <code>tas_tavg-h2m-hxy-u</code>.
+The short name, <code>tas</code>, identifies the physical quantity and is in this example unchanged. 
+The short name is also referred to as the "root name" of the branded variable.
+The <strong>branding suffix</strong>, <code>tavg-h2m-hxy-u</code>, describes how the variable is temporally and spatially sampled and is composed of four parts:</p>
+<ul>
+<li><strong>temporal label</strong>: <code>tavg</code> indicates a time average.</li>
+<li><strong>vertical label</strong>: <code>h2m</code> indicates near-surface at 2m above ground.</li>
+<li><strong>horizontal label</strong>: <code>hxy</code> indicates a horizontal field spanning latitude and longitude.</li>
+<li><strong>area label</strong>: <code>u</code> indicates "unmasked".</li>
+</ul>
+<p>Branding suffixes are always composed of these four labels. The possible values for each type of label are <a href="#branding-suffixes">tabulated below</a>.</p>
+<p>Importantly, <code>tas_tavg-h2m-hxy-u</code> is not <em>fully</em> equivalent to <code>Amon.tas</code>. 
+This is because a branded variable name does not identify a requested variable's frequency or its region.
+By <em>additionally</em> specifying the frequency as monthly, and the region as global, <code>tas_tavg-h2m-hxy-u</code> then becomes equivalent to <code>Amon.tas</code>.
+The same branded variable could alternately be reported at other frequencies or for other regions.
+For example, <code>tas_tavg-h2m-hxy-u</code> reported on a global grid and at daily frequency is denoted <code>day.tas</code> in CMIP6.</p>
+<div class="admonition note">
+<p class="admonition-title">Viewing branded variables in the Data Request</p>
+<p>The branded variable name, frequency, and region of every requested variable are specified in the CMIP7 Data Request.
+The Data Request can be viewed using <a href="https://bit.ly/CMIP7-DReq-latest">Airtable</a>, the <a href="https://cmip-data-request.github.io/cmip7-dreq-webview/latest/index.html">github-based web viewer</a>, or the <a href="https://github.com/CMIP-Data-Request/CMIP7_DReq_software">python API</a>.</p>
+<p>For every variable, the Data Request specifies <em>both</em> its CMIP7-era branded name and CMIP6-era name.
+This provides a mapping from old to new names in order to simplify the transition to branded names.
+The <a href="https://cmip-data-request.github.io/cmip7-dreq-webview/latest/variables.html">"Variables" table of the Data Request</a> provides a unique identifier using both flavours of name, termed "CMIP7 Compound Name" and "CMIP6 Compound Name".
+For the above example (monthly near-surface air temperature) these are <code>atmos.tas.tavg-h2m-hxy-u.mon.glb</code> and <code>Amon.tas</code>, respectively.
+<a href="#variable-names">See below</a> for further clarification of the meaning of different types of variable names.</p>
+</div>
+<p>The branded variable approach (Taylor et al., in preparation) aims to be more systematic and scalable to future CMIP phases and wider use across community MIPs and other WCRP projects.
+<a href="https://github.com/WCRP-CMIP/cmip7-cmor-tables">CMOR tables</a> keyed by branded variable name define the metadata characteristics of variables apart from the frequency, region, or specific grids on which these variables should be reported.
+Guidance on reporting grids for CMIP output is <a href="https://doi.org/10.5281/zenodo.15697024">given here</a>.
+The metadata conventions for describing grids in the CMIP7 CVs are explained in the <a href="https://wcrp-cmip.github.io/Essential-Model-Documentation/docs/">Essential Model Documentation guidance pages</a>.</p>
+<!-- The exact reporting convention for grids and associated CV is being finalised; if you wish to see the full discussion, please see https://github.com/WCRP-CMIP/CMIP7-CVs/issues/202. -->
+
+<h2 id="variable-names">Variable names<a class="headerlink" href="#variable-names" title="Permanent link">&para;</a></h2>
+<p>There are several CMIP7 metadata attributes that may be referred to as a "variable name", depending on the context.
+For example, the name of a branded variable does not specify its <strong>frequency</strong> or <strong>region</strong>. 
+Similarly, the short name of a physical quantity such as <code>pr</code> does not specify how it is spatiotemporally sampled (i.e., it lacks the information conveyed by a <strong>branding suffix</strong>).
+To disambiguate the different flavours of variable name used in the CMIP7 Data Request and CVs, a brief glossary is provided here:</p>
+<ul>
+<li><strong>variable_id</strong> is the short name of a physical quantity that is familiar to many users from previous CMIP phases (e.g., <code>tas</code>, <code>pr</code>, <code>sos</code>). It is a mandatory <a href="https://doi.org/10.5281/zenodo.17250296">global attribute</a>.</li>
+<li><strong>root name</strong> refers to the first component of a branded variable name (e.g., <code>tas_tavg-h2m-hxy-u</code>), and is always identical to <strong>variable_id</strong>.</li>
+<li><strong>out_name</strong> is found in <a href="https://github.com/WCRP-CMIP/cmip7-cmor-tables">CMOR tables</a> where it specifies the name of the data variable in a CMORized netcdf file, and is always identical to <strong>variable_id</strong>.</li>
+<li><strong>physical parameter name</strong> is the short name used in the CMIP7 Data Request to identify a physical quantity, with an associated CF standard name. It is the "Name" column in the "Physical Parameters" table of the <a href="https://bit.ly/CMIP7-DReq-latest">Airtable view</a> of the Data Request. It is <em>usually</em> equivalent to the <strong>root name</strong> (i.e., the <strong>variable_id</strong>), which is given by the "variableRootDD" column in the "Physical Parameters" table. However there are a number of exceptions, which are <a href="#physical-parameter-name-changes">tabulated below</a>.</li>
+<li><strong>branded_variable</strong> is composed of the <strong>root name</strong> followed by a <strong>branding suffix</strong> (e.g., <code>tas_tavg-h2m-hxy-u</code>), as <a href="../Branded_Variables/">described above</a>. It is a mandatory <a href="https://doi.org/10.5281/zenodo.17250296">global attribute</a>.</li>
+<li><strong>Data Request variable</strong> refers to a requested variable specified by a row in the "Variables" table of the <a href="https://bit.ly/CMIP7-DReq-latest">Airtable view</a> of the Data Request. A requested variable corresponds to a single <strong>branded_variable</strong>, but additionally specifies the <strong>frequency</strong>, <strong>region</strong>, and reporting grid (atmosphere, ocean, ...) on which the variable should be provided.</li>
+<li><strong>CMIP7 compound name</strong> uniquely identifies a Data Request variable in the CMIP7 Data Request. It is composed of four parts: <strong>realm</strong>, <strong>root name</strong>, <strong>branding suffix</strong>, <strong>frequency</strong>, and <strong>region</strong> (e.g. <code>atmos.tas.tavg-h2m-hxy-u.mon.glb</code>). The four latter parts of the <strong>CMIP7 compound name</strong> - essentially the <strong>branded variable</strong> plus <strong>frequency</strong> and <strong>region</strong> - are required to uniquely identify a <strong>Data Request variable</strong> in the collection of CMIP7 requested variables. The <strong>realm</strong> is not strictly required for uniqueness, but is included in the compound name so that users can easily identify requested variables associated with a given realm. The realm used in the <strong>CMIP7 compound name</strong> is the <strong>primary realm</strong> identifed by the "Modelling Realm - Primary" column in the "Variables" table of the <a href="https://bit.ly/CMIP7-DReq-latest">Airtable view</a> of the Data Request. The <strong>primary realm</strong> is also used to group variables in the <a href="https://github.com/WCRP-CMIP/cmip7-cmor-tables">CMIP7 CMOR tables</a>.</li>
+<li><strong>CMIP6 compound name</strong> is another unique identifier of Data Request variables in the CMIP7 Data Request, and is included because these names are familiar to many users (e.g., <code>Amon.tas</code>, <code>day.pr</code>, <code>Omon.tos</code>) and may help them navigate the transition to the new CMIP7 variable naming scheme based on <strong>branded variables</strong>. If a variable was included in CMIP6 then this name uniquely identifies it in the CMIP6 Data Request, but note that newly introduced variables in CMIP7 are also assigned a <strong>CMIP6 compound name</strong> (hence there is a one-to-one mapping between <strong>CMIP6 compound name</strong> and <strong>CMIP7 compound name</strong>). This flavour of compound name is composed of the name of a CMIP6-era MIP table (also referred to as a CMOR table) followed by short name that is <em>usually</em> identical to the <strong>physical parameter name</strong> (e.g., <code>Amon.tas</code>). There are some exceptions, <a href="#physical-parameter-name-changes">tabulated below</a>, in which extra information is appended to the end of the short name (e.g., <code>Amon.tasSouth30</code>). However, the short variable name used in the <strong>CMIP6 compound name</strong> always <em>begins</em> with the <strong>physical parameter name</strong>.</li>
+</ul>
+<h2 id="branding-suffixes">Branding suffixes<a class="headerlink" href="#branding-suffixes" title="Permanent link">&para;</a></h2>
+<p>The four components of the branding suffix are derived from variable metadata using the 
+<a href="https://cmip-branded-variable-mapper.readthedocs.io/en/latest/">cmip-branded-variable-mapper python package</a>.
+The following tables show the meaning of each element of a branding suffix.
+Each of these labels is a mandatory <a href="https://doi.org/10.5281/zenodo.17250296">global attribute</a> written to output netCDF files (<strong>temporal_label</strong>, <strong>vertical_label</strong>, <strong>horizontal_label</strong>, <strong>area_label</strong>).</p>
+<h3 id="temporal-labels">Temporal labels<a class="headerlink" href="#temporal-labels" title="Permanent link">&para;</a></h3>
+<p>The <strong>temporal_label</strong> identifies how the variable is sampled in the time domain: time average, instantaneous, etc.</p>
+<table>
+<thead>
+<tr>
+<th>Label</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tavg</code></td>
+<td>Time average (cell_methods include <code>time: mean</code>)</td>
+</tr>
+<tr>
+<td><code>tclm</code></td>
+<td>Climatology (dimensions use <code>time2</code>)</td>
+</tr>
+<tr>
+<td><code>tclmdc</code></td>
+<td>Diurnal mean climatology (dimensions use <code>time3</code>)</td>
+</tr>
+<tr>
+<td><code>ti</code></td>
+<td>Time independent</td>
+</tr>
+<tr>
+<td><code>tmax</code></td>
+<td>Time maximum (cell_methods include <code>time: max</code>)</td>
+</tr>
+<tr>
+<td><code>tmin</code></td>
+<td>Time minimum (cell_methods include <code>time: min</code>)</td>
+</tr>
+<tr>
+<td><code>tmaxavg</code></td>
+<td>Time mean of daily maxima (cell_methods include <code>time: maximum within days time: mean over days</code>)</td>
+</tr>
+<tr>
+<td><code>tminavg</code></td>
+<td>Time mean of daily minima (cell_methods include <code>time: minimum within days time: mean over days</code>)</td>
+</tr>
+<tr>
+<td><code>tpt</code></td>
+<td>Synoptic samples (cell_methods include <code>time: point</code>, dimensions use <code>time1</code>)</td>
+</tr>
+<tr>
+<td><code>tsum</code></td>
+<td>Time sum (cell_methods include <code>time: sum</code>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="vertical-labels">Vertical labels<a class="headerlink" href="#vertical-labels" title="Permanent link">&para;</a></h3>
+<p>The <strong>vertical_label</strong> identifies how the variable is sampled in the vertical domain: on pressure levels, model levels, at a single level, etc.
+It is set to <code>u</code> (unspecified) if none of the following apply (e.g. a field reported at the surface or at the top of the atmopsphere).</p>
+<table>
+<thead>
+<tr>
+<th>Label</th>
+<th>Data Request Dimension or Coordinate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>10hPa</code></td>
+<td><code>p10</code></td>
+</tr>
+<tr>
+<td><code>100hPa</code></td>
+<td><code>p100</code></td>
+</tr>
+<tr>
+<td><code>200hPa</code></td>
+<td><code>p200</code></td>
+</tr>
+<tr>
+<td><code>220hPa</code></td>
+<td><code>p220</code></td>
+</tr>
+<tr>
+<td><code>500hPa</code></td>
+<td><code>p500</code></td>
+</tr>
+<tr>
+<td><code>560hPa</code></td>
+<td><code>p560</code></td>
+</tr>
+<tr>
+<td><code>700hPa</code></td>
+<td><code>p700</code></td>
+</tr>
+<tr>
+<td><code>840hPa</code></td>
+<td><code>p840</code></td>
+</tr>
+<tr>
+<td><code>850hPa</code></td>
+<td><code>p850</code></td>
+</tr>
+<tr>
+<td><code>925hPa</code></td>
+<td><code>p925</code></td>
+</tr>
+<tr>
+<td><code>1000hPa</code></td>
+<td><code>p1000</code></td>
+</tr>
+<tr>
+<td><code>al</code></td>
+<td><code>alevel</code></td>
+</tr>
+<tr>
+<td><code>alh</code></td>
+<td><code>alevhalf</code></td>
+</tr>
+<tr>
+<td><code>d10cm</code></td>
+<td><code>sdepth10cm</code></td>
+</tr>
+<tr>
+<td><code>d100cm</code></td>
+<td><code>sdepth100cm</code></td>
+</tr>
+<tr>
+<td><code>d0m</code></td>
+<td><code>depth0m</code></td>
+</tr>
+<tr>
+<td><code>d100m</code></td>
+<td><code>depth100m</code></td>
+</tr>
+<tr>
+<td><code>d300m</code></td>
+<td><code>olayer300m</code></td>
+</tr>
+<tr>
+<td><code>d700m</code></td>
+<td><code>olayer700m</code></td>
+</tr>
+<tr>
+<td><code>d1000m</code></td>
+<td><code>depth1000m</code></td>
+</tr>
+<tr>
+<td><code>d2000m</code></td>
+<td><code>olayer2000m</code></td>
+</tr>
+<tr>
+<td><code>h16</code></td>
+<td><code>alt16</code></td>
+</tr>
+<tr>
+<td><code>h40</code></td>
+<td><code>alt40</code></td>
+</tr>
+<tr>
+<td><code>h2m</code></td>
+<td><code>height2m</code></td>
+</tr>
+<tr>
+<td><code>h10m</code></td>
+<td><code>height10m</code></td>
+</tr>
+<tr>
+<td><code>h100m</code></td>
+<td><code>height100m</code></td>
+</tr>
+<tr>
+<td><code>ol</code></td>
+<td><code>olevel</code></td>
+</tr>
+<tr>
+<td><code>olh</code></td>
+<td><code>olevhalf</code></td>
+</tr>
+<tr>
+<td><code>ols</code></td>
+<td><code>osurf</code></td>
+</tr>
+<tr>
+<td><code>op20bar</code></td>
+<td><code>op20bar</code></td>
+</tr>
+<tr>
+<td><code>op4</code></td>
+<td><code>oplayer4</code></td>
+</tr>
+<tr>
+<td><code>p3</code></td>
+<td><code>plev3</code></td>
+</tr>
+<tr>
+<td><code>p5u</code></td>
+<td><code>plev5u</code></td>
+</tr>
+<tr>
+<td><code>p6</code></td>
+<td><code>plev6</code></td>
+</tr>
+<tr>
+<td><code>p7c</code></td>
+<td><code>plev7c</code></td>
+</tr>
+<tr>
+<td><code>p7h</code></td>
+<td><code>plev7h</code></td>
+</tr>
+<tr>
+<td><code>p19</code></td>
+<td><code>plev19</code></td>
+</tr>
+<tr>
+<td><code>p39</code></td>
+<td><code>plev39</code></td>
+</tr>
+<tr>
+<td><code>rho</code></td>
+<td><code>rho</code></td>
+</tr>
+<tr>
+<td><code>sl</code></td>
+<td><code>sdepth</code></td>
+</tr>
+<tr>
+<td><code>u</code></td>
+<td>unspecified</td>
+</tr>
+</tbody>
+</table>
+<!-- | `700hPa` | `pl700` | -->
+<!-- | `d100m` | `olayer100m` | -->
+<!-- | `d300m` | `depth300m` | -->
+<!-- | `d700m` | `depth700m` | -->
+<!-- | `d2000m` | `depth2000m` | -->
+<!-- | `p4` | `plev4` | -->
+<!-- | `p8` | `plev8` | -->
+<!-- | `p27` | `plev27` | -->
+
+<h3 id="horizontal-labels">Horizontal labels<a class="headerlink" href="#horizontal-labels" title="Permanent link">&para;</a></h3>
+<p>The <strong>horizontal_label</strong> identifies how the variable is sampled horizontally: function of latitude and longitude, only latitude, site data, etc.
+Note that this label does <em>not</em> denote a particular choice of reporting grid (e.g., a 1° × 1° latitude-longitude grid).
+Guidance on reporting grids can be <a href="https://doi.org/10.5281/zenodo.15697024">found here</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Label</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>hxy</code></td>
+<td>longitude-latitude field</td>
+</tr>
+<tr>
+<td><code>hy</code></td>
+<td>zonal mean</td>
+</tr>
+<tr>
+<td><code>hyb</code></td>
+<td>zonal mean by ocean basin</td>
+</tr>
+<tr>
+<td><code>hs</code></td>
+<td>site specific</td>
+</tr>
+<tr>
+<td><code>ht</code></td>
+<td>transect</td>
+</tr>
+<tr>
+<td><code>hm</code></td>
+<td>horizontal mean</td>
+</tr>
+</tbody>
+</table>
+<h3 id="area-labels">Area labels<a class="headerlink" href="#area-labels" title="Permanent link">&para;</a></h3>
+<p>The <strong>area_label</strong> identifies the unmasked area type for which data are reported: sea ice, land, ice sheet, etc.
+It is set to <code>u</code> (unmasked) if no masking is applied.</p>
+<table>
+<thead>
+<tr>
+<th>Label</th>
+<th>Corresponding masking in cell_methods</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>air</code></td>
+<td><code>where air</code></td>
+</tr>
+<tr>
+<td><code>cl</code></td>
+<td><code>where cloud</code></td>
+</tr>
+<tr>
+<td><code>ccl</code></td>
+<td><code>where convective_cloud</code></td>
+</tr>
+<tr>
+<td><code>crp</code></td>
+<td><code>where crops</code></td>
+</tr>
+<tr>
+<td><code>fis</code></td>
+<td><code>where floating_ice_shelf</code></td>
+</tr>
+<tr>
+<td><code>gis</code></td>
+<td><code>where grounded_ice_sheet</code></td>
+</tr>
+<tr>
+<td><code>ifs</code></td>
+<td><code>where ice_free_sea</code></td>
+</tr>
+<tr>
+<td><code>is</code></td>
+<td><code>where ice_sheet</code></td>
+</tr>
+<tr>
+<td><code>li</code></td>
+<td><code>where land_ice</code></td>
+</tr>
+<tr>
+<td><code>lnd</code></td>
+<td><code>where land</code></td>
+</tr>
+<tr>
+<td><code>lsi</code></td>
+<td><code>area: mean (over land and sea ice)</code></td>
+</tr>
+<tr>
+<td><code>multi</code></td>
+<td><code>where sector</code></td>
+</tr>
+<tr>
+<td><code>ng</code></td>
+<td><code>where natural_grasses</code></td>
+</tr>
+<tr>
+<td><code>pst</code></td>
+<td><code>where pastures</code></td>
+</tr>
+<tr>
+<td><code>scl</code></td>
+<td><code>where stratiform_cloud</code></td>
+</tr>
+<tr>
+<td><code>sea</code></td>
+<td><code>where sea</code></td>
+</tr>
+<tr>
+<td><code>si</code></td>
+<td><code>where sea_ice</code></td>
+</tr>
+<tr>
+<td><code>simp</code></td>
+<td><code>where sea_ice_melt_pond</code></td>
+</tr>
+<tr>
+<td><code>sir</code></td>
+<td><code>where sea_ice_ridges</code></td>
+</tr>
+<tr>
+<td><code>shb</code></td>
+<td><code>where shrubs</code></td>
+</tr>
+<tr>
+<td><code>sn</code></td>
+<td><code>where snow</code></td>
+</tr>
+<tr>
+<td><code>tree</code></td>
+<td><code>where trees</code></td>
+</tr>
+<tr>
+<td><code>ufs</code></td>
+<td><code>where unfrozen_soil</code></td>
+</tr>
+<tr>
+<td><code>veg</code></td>
+<td><code>where vegetation</code></td>
+</tr>
+<tr>
+<td><code>wl</code></td>
+<td><code>where wetland</code></td>
+</tr>
+<tr>
+<td><code>u</code></td>
+<td>unmasked (no "where" directive included in <code>cell_methods</code>)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="physical-parameter-name-changes">Physical parameter name changes<a class="headerlink" href="#physical-parameter-name-changes" title="Permanent link">&para;</a></h2>
+<p>The following table lists <strong>root names</strong> in the CMIP7 Data Request (v1.2.2.3) that do not match one and only one <strong>physical parameter name</strong> (recall that <strong>root name</strong> is the same as <strong>variable_id</strong> and <strong>out_name</strong>).
+Out of the 987 <strong>root names</strong> in Data Request v1.2.2.3 there are 119 such cases (12%).
+For each such <strong>root name</strong>, the table lists the <strong>physical parameter name(s)</strong> and the <strong>CMIP6 compound name(s)</strong> of the Data Request variable(s) using this <strong>root name</strong>.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Root name</strong></th>
+<th><strong>Physical parameter name(s)</strong></th>
+<th><strong>CMIP6 compound name(s)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>acabf</code></td>
+<td><code>acabf</code>, <code>acabfIs</code></td>
+<td><code>ImonAnt.acabf</code>, <code>ImonGre.acabf</code>, <code>IyrAnt.acabf</code>, <code>IyrGre.acabf</code>, <code>LImon.acabfIs</code></td>
+</tr>
+<tr>
+<td><code>arag</code></td>
+<td><code>arag</code>, <code>aragos</code></td>
+<td><code>Omon.arag</code>, <code>Omon.aragos</code></td>
+</tr>
+<tr>
+<td><code>bacc</code></td>
+<td><code>baccos</code></td>
+<td><code>Omon.baccos</code></td>
+</tr>
+<tr>
+<td><code>bigthetao</code></td>
+<td><code>bigthetao</code>, <code>bigthetaoga</code></td>
+<td><code>Oday.bigthetao200</code>, <code>Odec.bigthetao</code>, <code>Omon.bigthetao</code>, <code>Omon.bigthetaoga</code></td>
+</tr>
+<tr>
+<td><code>bldep</code></td>
+<td><code>bldep</code>, <code>maxpblz</code>, <code>minpblz</code></td>
+<td><code>3hrPt.bldep</code>, <code>AERday.maxpblz</code>, <code>AERday.minpblz</code>, <code>AERmon.bldep</code>, <code>E1hr.bldep</code></td>
+</tr>
+<tr>
+<td><code>cSoil</code></td>
+<td><code>cSoil</code>, <code>cSoilAbove1m</code>, <code>cSoilLevels</code></td>
+<td><code>Emon.cSoil</code>, <code>Emon.cSoilAbove1m</code>, <code>Emon.cSoilLevels</code></td>
+</tr>
+<tr>
+<td><code>cVeg</code></td>
+<td><code>cVeg</code>, <code>cVegGrass</code>, <code>cVegShrub</code>, <code>cVegTree</code></td>
+<td><code>Emon.cVegGrass</code>, <code>Emon.cVegShrub</code>, <code>Emon.cVegTree</code>, <code>Lmon.cVeg</code></td>
+</tr>
+<tr>
+<td><code>calc</code></td>
+<td><code>calc</code>, <code>calcos</code></td>
+<td><code>Omon.calc</code>, <code>Omon.calcos</code>, <code>Omon.calcosSouth30</code></td>
+</tr>
+<tr>
+<td><code>ccnp02</code></td>
+<td><code>ccn02</code></td>
+<td><code>AERmon.ccn02</code>, <code>AERmon.ccn02South30</code></td>
+</tr>
+<tr>
+<td><code>cfc11</code></td>
+<td><code>cfc11global</code></td>
+<td><code>Amon.cfc11global</code></td>
+</tr>
+<tr>
+<td><code>cfc113</code></td>
+<td><code>cfc113global</code></td>
+<td><code>Amon.cfc113global</code></td>
+</tr>
+<tr>
+<td><code>cfc12</code></td>
+<td><code>cfc12global</code></td>
+<td><code>Amon.cfc12global</code></td>
+</tr>
+<tr>
+<td><code>ch4</code></td>
+<td><code>ch4</code>, <code>ch4global</code></td>
+<td><code>AERmon.ch4</code>, <code>AERmonZ.ch4</code>, <code>Amon.ch4</code>, <code>Amon.ch4Clim</code>, <code>Amon.ch4global</code>, <code>Amon.ch4globalClim</code></td>
+</tr>
+<tr>
+<td><code>chl</code></td>
+<td><code>chl</code>, <code>chlos</code></td>
+<td><code>Oday.chl200</code>, <code>Oday.chlos</code>, <code>Omon.chl</code>, <code>Omon.chlos</code>, <code>Omon.chlosSouth30</code></td>
+</tr>
+<tr>
+<td><code>chlcalc</code></td>
+<td><code>chlcalc</code>, <code>chlcalcos</code></td>
+<td><code>Omon.chlcalc</code>, <code>Omon.chlcalcos</code></td>
+</tr>
+<tr>
+<td><code>chldiat</code></td>
+<td><code>chldiat</code>, <code>chldiatos</code></td>
+<td><code>Omon.chldiat</code>, <code>Omon.chldiatos</code></td>
+</tr>
+<tr>
+<td><code>chldiaz</code></td>
+<td><code>chldiaz</code>, <code>chldiazos</code></td>
+<td><code>Omon.chldiaz</code>, <code>Omon.chldiazos</code></td>
+</tr>
+<tr>
+<td><code>chlmisc</code></td>
+<td><code>chlmisc</code>, <code>chlmiscos</code></td>
+<td><code>Omon.chlmisc</code>, <code>Omon.chlmiscos</code></td>
+</tr>
+<tr>
+<td><code>chlpico</code></td>
+<td><code>chlpico</code>, <code>chlpicoos</code></td>
+<td><code>Omon.chlpico</code>, <code>Omon.chlpicoos</code></td>
+</tr>
+<tr>
+<td><code>clcalipso</code></td>
+<td><code>clcalipso</code>, <code>clhcalipso</code>, <code>cllcalipso</code>, <code>clmcalipso</code></td>
+<td><code>CFday.clcalipso</code>, <code>CFday.clhcalipso</code>, <code>CFday.cllcalipso</code>, <code>CFday.clmcalipso</code>, <code>CFmon.clcalipso</code>, <code>CFmon.clcalipsoSouth30</code>, <code>CFmon.clhcalipso</code>, <code>CFmon.clhcalipsoSouth30</code>, <code>CFmon.cllcalipso</code>, <code>CFmon.cllcalipsoSouth30</code>, <code>CFmon.clmcalipso</code>, <code>CFmon.clmcalipsoSouth30</code></td>
+</tr>
+<tr>
+<td><code>co2</code></td>
+<td><code>co2</code>, <code>co2s</code></td>
+<td><code>AERmon.co2</code>, <code>Amon.co2</code>, <code>Amon.co2Clim</code>, <code>Amon.co2massClim</code>, <code>Emon.co2s</code></td>
+</tr>
+<tr>
+<td><code>co3</code></td>
+<td><code>co3</code>, <code>co3os</code></td>
+<td><code>Oday.co3200</code>, <code>Oday.co3os</code></td>
+</tr>
+<tr>
+<td><code>co3satarag</code></td>
+<td><code>co3satarag</code>, <code>co3sataragos</code></td>
+<td><code>Oday.co3satarag200</code>, <code>Oday.co3sataragos</code></td>
+</tr>
+<tr>
+<td><code>dfe</code></td>
+<td><code>dfe</code>, <code>dfeos</code></td>
+<td><code>Omon.dfe</code>, <code>Omon.dfeos</code>, <code>Omon.dfeosSouth30</code></td>
+</tr>
+<tr>
+<td><code>dissi13c</code></td>
+<td><code>dissi13c</code>, <code>dissi13cos</code></td>
+<td><code>Omon.dissi13c</code>, <code>Omon.dissi13cos</code></td>
+</tr>
+<tr>
+<td><code>dissi14cabio</code></td>
+<td><code>dissi14cabio</code>, <code>dissi14cabioos</code></td>
+<td><code>Omon.dissi14cabio</code>, <code>Omon.dissi14cabioos</code></td>
+</tr>
+<tr>
+<td><code>dissic</code></td>
+<td><code>dissic</code>, <code>dissicos</code></td>
+<td><code>Omon.dissic</code>, <code>Omon.dissicos</code></td>
+</tr>
+<tr>
+<td><code>dmso</code></td>
+<td><code>dmso</code>, <code>dmsos</code></td>
+<td><code>Omon.dmso</code>, <code>Omon.dmsos</code>, <code>Omon.dmsosSouth30</code></td>
+</tr>
+<tr>
+<td><code>epn</code></td>
+<td><code>epn100</code></td>
+<td><code>Omon.epn100</code></td>
+</tr>
+<tr>
+<td><code>epp</code></td>
+<td><code>epp100</code></td>
+<td><code>Omon.epp100</code></td>
+</tr>
+<tr>
+<td><code>epsi</code></td>
+<td><code>epsi100</code></td>
+<td><code>Omon.epsi100</code></td>
+</tr>
+<tr>
+<td><code>evspsbl</code></td>
+<td><code>evs</code>, <code>evspsbl</code>, <code>sidmassevapsubl</code></td>
+<td><code>Amon.evspsbl</code>, <code>CFsubhr.evspsbl</code>, <code>Eday.evspsbl</code>, <code>Omon.evs</code>, <code>SImon.sidmassevapsubl</code></td>
+</tr>
+<tr>
+<td><code>expc</code></td>
+<td><code>epc100</code>, <code>epc1000</code>, <code>expc</code></td>
+<td><code>Omon.epc100</code>, <code>Omon.epc1000</code>, <code>Omon.expc</code></td>
+</tr>
+<tr>
+<td><code>expcalc</code></td>
+<td><code>epcalc100</code>, <code>epcalc1000</code>, <code>expcalc</code></td>
+<td><code>Emon.expcalc</code>, <code>Omon.epcalc100</code>, <code>Omon.epcalc1000</code></td>
+</tr>
+<tr>
+<td><code>gpp</code></td>
+<td><code>gpp</code>, <code>gppGrass</code>, <code>gppShrub</code>, <code>gppTree</code></td>
+<td><code>Emon.gppGrass</code>, <code>Emon.gppShrub</code>, <code>Emon.gppTree</code>, <code>Lmon.gpp</code></td>
+</tr>
+<tr>
+<td><code>hcfc22</code></td>
+<td><code>hcfc22</code>, <code>hcfc22global</code></td>
+<td><code>AERmon.hcfc22</code>, <code>Amon.hcfc22global</code></td>
+</tr>
+<tr>
+<td><code>hfls</code></td>
+<td><code>hfls</code>, <code>hflsIs</code></td>
+<td><code>3hr.hfls</code>, <code>Amon.hfls</code>, <code>Amon.hflsSouth30</code>, <code>CFsubhr.hfls</code>, <code>E1hr.hfls</code>, <code>ImonAnt.hfls</code>, <code>ImonGre.hfls</code>, <code>LImon.hflsIs</code>, <code>day.hfls</code></td>
+</tr>
+<tr>
+<td><code>hfss</code></td>
+<td><code>hfss</code>, <code>hfssIs</code></td>
+<td><code>3hr.hfss</code>, <code>Amon.hfss</code>, <code>Amon.hfssSouth30</code>, <code>CFsubhr.hfss</code>, <code>E1hr.hfss</code>, <code>ImonAnt.hfss</code>, <code>ImonGre.hfss</code>, <code>LImon.hfssIs</code>, <code>day.hfss</code></td>
+</tr>
+<tr>
+<td><code>hur</code></td>
+<td><code>hur</code>, <code>hur100</code>, <code>hur500</code>, <code>hur700</code>, <code>hur850</code></td>
+<td><code>6hrPlevPt.hur100</code>, <code>6hrPlevPt.hur500</code>, <code>6hrPlevPt.hur850</code>, <code>Amon.hur</code>, <code>Amon.hurSouth30</code>, <code>CFday.hur</code>, <code>CFday.hur700</code>, <code>CFmon.hur</code>, <code>CFmon.hurSouth30</code>, <code>CFsubhr.hur</code>, <code>day.hur</code></td>
+</tr>
+<tr>
+<td><code>hurs</code></td>
+<td><code>hurs</code>, <code>hursmax</code>, <code>hursmin</code>, <code>hursminCrop</code></td>
+<td><code>6hrPlev.hurs</code>, <code>Amon.hurs</code>, <code>Amon.hursSouth30</code>, <code>CF3hr.hurs</code>, <code>CFsubhr.hurs</code>, <code>E1hr.hurs</code>, <code>E1hr.hursSouth30</code>, <code>Eday.hursminCrop</code>, <code>day.hurs</code>, <code>day.hursmax</code>, <code>day.hursmin</code></td>
+</tr>
+<tr>
+<td><code>hus</code></td>
+<td><code>hus</code>, <code>hus6</code></td>
+<td><code>6hrLev.hus</code>, <code>6hrPlevPt.hus7h</code>, <code>Amon.hus</code>, <code>Amon.husSouth30</code>, <code>CFday.hus</code>, <code>CFmon.hus</code>, <code>CFmon.husSouth30</code>, <code>CFsubhr.hus</code>, <code>E3hrPt.hus</code>, <code>E3hrPt.hus6</code>, <code>day.hus</code></td>
+</tr>
+<tr>
+<td><code>icem</code></td>
+<td><code>icem</code>, <code>icemIs</code></td>
+<td><code>ImonAnt.icem</code>, <code>ImonGre.icem</code>, <code>LImon.icemIs</code></td>
+</tr>
+<tr>
+<td><code>libmassbf</code></td>
+<td><code>libmassbffl</code>, <code>libmassbfgr</code></td>
+<td><code>ImonAnt.libmassbffl</code>, <code>ImonAnt.libmassbfgr</code>, <code>ImonGre.libmassbffl</code>, <code>ImonGre.libmassbfgr</code>, <code>IyrAnt.libmassbffl</code>, <code>IyrAnt.libmassbfgr</code>, <code>IyrGre.libmassbffl</code>, <code>IyrGre.libmassbfgr</code></td>
+</tr>
+<tr>
+<td><code>litempbot</code></td>
+<td><code>litempbotfl</code>, <code>litempbotgr</code></td>
+<td><code>ImonAnt.litempbotfl</code>, <code>ImonAnt.litempbotgr</code>, <code>ImonGre.litempbotfl</code>, <code>ImonGre.litempbotgr</code>, <code>IyrAnt.litempbotfl</code>, <code>IyrAnt.litempbotgr</code>, <code>IyrGre.litempbotfl</code>, <code>IyrGre.litempbotgr</code></td>
+</tr>
+<tr>
+<td><code>litemptop</code></td>
+<td><code>litemptop</code>, <code>litemptopIs</code></td>
+<td><code>ImonAnt.litemptop</code>, <code>ImonGre.litemptop</code>, <code>IyrAnt.litemptop</code>, <code>IyrGre.litemptop</code>, <code>LImon.litemptopIs</code></td>
+</tr>
+<tr>
+<td><code>mlotst</code></td>
+<td><code>mlotst</code>, <code>mlotstmax</code>, <code>mlotstmin</code></td>
+<td><code>Eday.mlotst</code>, <code>Omon.mlotst</code>, <code>Omon.mlotstSouth30</code>, <code>Omon.mlotstmax</code>, <code>Omon.mlotstmin</code></td>
+</tr>
+<tr>
+<td><code>modelcellareai</code></td>
+<td><code>modelCellAreai</code></td>
+<td><code>IyrAnt.modelCellAreai</code>, <code>IyrGre.modelCellAreai</code></td>
+</tr>
+<tr>
+<td><code>mrro</code></td>
+<td><code>mrro</code>, <code>mrroIs</code></td>
+<td><code>3hr.mrro</code>, <code>LImon.mrroIs</code>, <code>Lmon.mrro</code>, <code>day.mrro</code></td>
+</tr>
+<tr>
+<td><code>mrsol</code></td>
+<td><code>mrso100</code>, <code>mrsol</code>, <code>mrsos</code></td>
+<td><code>3hr.mrso100</code>, <code>3hr.mrsos</code>, <code>Eday.mrsol</code>, <code>Emon.mrsol</code>, <code>Lmon.mrsos</code>, <code>day.mrsos</code></td>
+</tr>
+<tr>
+<td><code>mrsolLut</code></td>
+<td><code>mrsosLut</code></td>
+<td><code>Emon.mrsosLut</code></td>
+</tr>
+<tr>
+<td><code>msftm</code></td>
+<td><code>msftmrho</code>, <code>msftmz</code></td>
+<td><code>Omon.msftmrho</code>, <code>Omon.msftmz</code></td>
+</tr>
+<tr>
+<td><code>msftmmpa</code></td>
+<td><code>msftmrhompa</code>, <code>msftmzmpa</code></td>
+<td><code>Omon.msftmrhompa</code>, <code>Omon.msftmzmpa</code></td>
+</tr>
+<tr>
+<td><code>msftmsmpa</code></td>
+<td><code>msftmzsmpa</code></td>
+<td><code>Omon.msftmzsmpa</code></td>
+</tr>
+<tr>
+<td><code>msfty</code></td>
+<td><code>msftyrho</code>, <code>msftyz</code></td>
+<td><code>Omon.msftyrho</code>, <code>Omon.msftyz</code></td>
+</tr>
+<tr>
+<td><code>msftypa</code></td>
+<td><code>msftyrhompa</code>, <code>msftyzmpa</code></td>
+<td><code>Omon.msftyrhompa</code>, <code>Omon.msftyzmpa</code></td>
+</tr>
+<tr>
+<td><code>n2o</code></td>
+<td><code>n2o</code>, <code>n2oglobal</code></td>
+<td><code>AERmon.n2o</code>, <code>AERmonZ.n2o</code>, <code>Amon.n2o</code>, <code>Amon.n2oClim</code>, <code>Amon.n2oglobal</code>, <code>Amon.n2oglobalClim</code></td>
+</tr>
+<tr>
+<td><code>nh4</code></td>
+<td><code>nh4</code>, <code>nh4os</code></td>
+<td><code>Omon.nh4</code>, <code>Omon.nh4os</code></td>
+</tr>
+<tr>
+<td><code>no2</code></td>
+<td><code>no2</code>, <code>sfno2</code></td>
+<td><code>AERhr.sfno2</code>, <code>AERmon.no2</code></td>
+</tr>
+<tr>
+<td><code>no3</code></td>
+<td><code>no3</code>, <code>no3os</code></td>
+<td><code>Omon.no3</code>, <code>Omon.no3os</code>, <code>Omon.no3osSouth30</code></td>
+</tr>
+<tr>
+<td><code>noaahi2m</code></td>
+<td><code>noaahi2m</code>, <code>noaahi2mmax</code></td>
+<td><code>day.noaahi2m</code>, <code>day.noaahi2mmax</code></td>
+</tr>
+<tr>
+<td><code>npp</code></td>
+<td><code>npp</code>, <code>nppGrass</code>, <code>nppShrub</code>, <code>nppTree</code></td>
+<td><code>Emon.nppGrass</code>, <code>Emon.nppShrub</code>, <code>Emon.nppTree</code>, <code>Lmon.npp</code></td>
+</tr>
+<tr>
+<td><code>o2</code></td>
+<td><code>o2</code>, <code>o2os</code></td>
+<td><code>Oday.o2200</code>, <code>Oday.o2os</code>, <code>Omon.o2</code>, <code>Omon.o2os</code></td>
+</tr>
+<tr>
+<td><code>o3</code></td>
+<td><code>o3</code>, <code>o3inst</code>, <code>sfo3</code>, <code>sfo3max</code></td>
+<td><code>AERday.sfo3max</code>, <code>AERhr.sfo3</code>, <code>AERmon.o3</code>, <code>AERmon.o3inst</code>, <code>AERmonZ.o3</code>, <code>Amon.o3</code>, <code>Amon.o3Clim</code></td>
+</tr>
+<tr>
+<td><code>orog</code></td>
+<td><code>orog</code>, <code>orogIs</code></td>
+<td><code>ImonAnt.orog</code>, <code>ImonGre.orog</code>, <code>IyrAnt.orog</code>, <code>IyrGre.orog</code>, <code>LImon.orogIs</code>, <code>fx.orog</code>, <code>fx.orogSouth30</code></td>
+</tr>
+<tr>
+<td><code>ph</code></td>
+<td><code>ph</code>, <code>phos</code></td>
+<td><code>Oday.ph200</code>, <code>Oday.phos</code>, <code>Omon.ph</code>, <code>Omon.phosSouth30</code></td>
+</tr>
+<tr>
+<td><code>phyc</code></td>
+<td><code>phyc</code>, <code>phycos</code></td>
+<td><code>Oday.phyc200</code>, <code>Oday.phycos</code>, <code>Omon.phyc</code>, <code>Omon.phycos</code>, <code>Omon.phycosSouth30</code></td>
+</tr>
+<tr>
+<td><code>phycalc</code></td>
+<td><code>phycalc</code>, <code>phycalcos</code></td>
+<td><code>Oday.phycalc</code>, <code>Omon.phycalc</code>, <code>Omon.phycalcos</code></td>
+</tr>
+<tr>
+<td><code>phydiat</code></td>
+<td><code>phydiat</code>, <code>phydiatos</code></td>
+<td><code>Oday.phydiatos</code>, <code>Omon.phydiat</code>, <code>Omon.phydiatos</code></td>
+</tr>
+<tr>
+<td><code>phydiaz</code></td>
+<td><code>phydiaz</code>, <code>phydiazos</code></td>
+<td><code>Oday.phydiazos</code>, <code>Omon.phydiaz</code>, <code>Omon.phydiazos</code></td>
+</tr>
+<tr>
+<td><code>phymisc</code></td>
+<td><code>phymisc</code>, <code>phymiscos</code></td>
+<td><code>Oday.phymiscos</code>, <code>Omon.phymisc</code>, <code>Omon.phymiscos</code></td>
+</tr>
+<tr>
+<td><code>phypico</code></td>
+<td><code>phypico</code>, <code>phypicoos</code></td>
+<td><code>Oday.phypico</code>, <code>Omon.phypico</code>, <code>Omon.phypicoos</code></td>
+</tr>
+<tr>
+<td><code>pp</code></td>
+<td><code>pp</code>, <code>ppos</code></td>
+<td><code>Omon.pp</code>, <code>Omon.ppos</code>, <code>Omon.pposSouth30</code></td>
+</tr>
+<tr>
+<td><code>pr</code></td>
+<td><code>pr</code>, <code>prCrop</code>, <code>prhmax</code></td>
+<td><code>3hr.pr</code>, <code>6hrPlev.pr</code>, <code>6hrPlev.prhmax</code>, <code>6hrPlevPt.pr</code>, <code>Amon.pr</code>, <code>Amon.prSouth30</code>, <code>CF3hr.pr</code>, <code>CFsubhr.pr</code>, <code>E1hr.pr</code>, <code>E1hr.prSouth30</code>, <code>Eday.prCrop</code>, <code>Eday.prhmax</code>, <code>Emon.prhmax</code>, <code>day.pr</code></td>
+</tr>
+<tr>
+<td><code>prra</code></td>
+<td><code>prra</code>, <code>prraIs</code>, <code>sipr</code></td>
+<td><code>6hrPlev.prra</code>, <code>Amon.prra</code>, <code>Amon.prraSouth30</code>, <code>Eday.prra</code>, <code>ImonAnt.prra</code>, <code>ImonGre.prra</code>, <code>LImon.prraIs</code>, <code>SImon.sipr</code></td>
+</tr>
+<tr>
+<td><code>prsn</code></td>
+<td><code>prsn</code>, <code>prsnIs</code>, <code>sisndmasssnf</code></td>
+<td><code>3hr.prsn</code>, <code>6hrPlev.prsn</code>, <code>Amon.prsn</code>, <code>Amon.prsnSouth30</code>, <code>CFsubhr.prsn</code>, <code>ImonAnt.prsn</code>, <code>ImonGre.prsn</code>, <code>LImon.prsnIs</code>, <code>SImon.sisndmasssnf</code>, <code>day.prsn</code></td>
+</tr>
+<tr>
+<td><code>ra</code></td>
+<td><code>ra</code>, <code>raGrass</code>, <code>raShrub</code>, <code>raTree</code></td>
+<td><code>Emon.raGrass</code>, <code>Emon.raShrub</code>, <code>Emon.raTree</code>, <code>Lmon.ra</code></td>
+</tr>
+<tr>
+<td><code>rh</code></td>
+<td><code>rh</code>, <code>rhGrass</code>, <code>rhShrub</code>, <code>rhTree</code></td>
+<td><code>Emon.rhGrass</code>, <code>Emon.rhShrub</code>, <code>Emon.rhTree</code>, <code>Lmon.rh</code></td>
+</tr>
+<tr>
+<td><code>rlds</code></td>
+<td><code>rlds</code>, <code>rldsIs</code>, <code>sifllwdtop</code></td>
+<td><code>3hr.rlds</code>, <code>6hrPlev.rlds</code>, <code>Amon.rlds</code>, <code>Amon.rldsSouth30</code>, <code>CF3hr.rlds</code>, <code>CFsubhr.rlds</code>, <code>E1hr.rlds</code>, <code>E1hr.rldsSouth30</code>, <code>ImonAnt.rlds</code>, <code>ImonGre.rlds</code>, <code>LImon.rldsIs</code>, <code>SIday.sifllwdtop</code>, <code>SImon.sifllwdtop</code>, <code>day.rlds</code></td>
+</tr>
+<tr>
+<td><code>rlus</code></td>
+<td><code>rlus</code>, <code>rlusIs</code>, <code>sifllwutop</code></td>
+<td><code>3hr.rlus</code>, <code>Amon.rlus</code>, <code>Amon.rlusSouth30</code>, <code>CFsubhr.rlus</code>, <code>E1hr.rlus</code>, <code>ImonAnt.rlus</code>, <code>ImonGre.rlus</code>, <code>LImon.rlusIs</code>, <code>SIday.sifllwutop</code>, <code>SImon.sifllwutop</code>, <code>day.rlus</code></td>
+</tr>
+<tr>
+<td><code>rsds</code></td>
+<td><code>rsds</code>, <code>rsdsIs</code>, <code>rsdsoni</code>, <code>rsdss</code>, <code>siflswdtop</code></td>
+<td><code>3hr.rsds</code>, <code>6hrPlev.rsds</code>, <code>Amon.rsds</code>, <code>Amon.rsdsSouth30</code>, <code>CF3hr.rsds</code>, <code>CFsubhr.rsds</code>, <code>E1hr.rsds</code>, <code>E1hr.rsdsSouth30</code>, <code>Emon.rsds</code>, <code>Emon.rsdsoni</code>, <code>Emon.rsdss</code>, <code>ImonAnt.rsds</code>, <code>ImonGre.rsds</code>, <code>LImon.rsdsIs</code>, <code>SIday.siflswdtop</code>, <code>SImon.siflswdtop</code>, <code>day.rsds</code></td>
+</tr>
+<tr>
+<td><code>rsus</code></td>
+<td><code>rsus</code>, <code>rsusIs</code>, <code>rsusoni</code>, <code>rsuss</code>, <code>siflswutop</code></td>
+<td><code>3hr.rsus</code>, <code>Amon.rsus</code>, <code>Amon.rsusSouth30</code>, <code>CFsubhr.rsus</code>, <code>E1hr.rsus</code>, <code>Emon.rsus</code>, <code>Emon.rsusoni</code>, <code>Emon.rsuss</code>, <code>ImonAnt.rsus</code>, <code>ImonGre.rsus</code>, <code>LImon.rsusIs</code>, <code>SIday.siflswutop</code>, <code>SImon.siflswutop</code>, <code>day.rsus</code></td>
+</tr>
+<tr>
+<td><code>sbl</code></td>
+<td><code>sbl</code>, <code>sblIs</code>, <code>sisndmasssubl</code></td>
+<td><code>Amon.sbl</code>, <code>CFsubhr.sbl</code>, <code>Eday.sbl</code>, <code>ImonAnt.sbl</code>, <code>ImonGre.sbl</code>, <code>LImon.sbl</code>, <code>LImon.sblIs</code>, <code>SImon.sisndmasssubl</code></td>
+</tr>
+<tr>
+<td><code>sfcWind</code></td>
+<td><code>sfcWind</code>, <code>sfcWindmax</code></td>
+<td><code>6hrPlev.sfcWind</code>, <code>Amon.sfcWind</code>, <code>Amon.sfcWindSouth30</code>, <code>CFsubhr.sfcWind</code>, <code>E1hr.sfcWind</code>, <code>E1hr.sfcWindSouth30</code>, <code>E3hr.sfcWind</code>, <code>Emon.sfcWindmax</code>, <code>day.sfcWind</code>, <code>day.sfcWindmax</code></td>
+</tr>
+<tr>
+<td><code>sfdsi</code></td>
+<td><code>sfdsi</code>, <code>siflsaltbot</code></td>
+<td><code>3hr.sfdsi</code>, <code>Omon.sfdsi</code>, <code>SImon.siflsaltbot</code></td>
+</tr>
+<tr>
+<td><code>sfpm10</code></td>
+<td><code>mmrpm10</code>, <code>sfpm10</code></td>
+<td><code>AERday.sfpm10</code>, <code>AERhr.sfpm10</code>, <code>AERmon.mmrpm10</code>, <code>AERmon.mmrpm10South30</code></td>
+</tr>
+<tr>
+<td><code>si</code></td>
+<td><code>si</code>, <code>sios</code></td>
+<td><code>Omon.si</code>, <code>Omon.sios</code></td>
+</tr>
+<tr>
+<td><code>siarea</code></td>
+<td><code>siarean</code>, <code>siareas</code></td>
+<td><code>SIday.siarean</code>, <code>SIday.siareas</code>, <code>SImon.siarean</code>, <code>SImon.siareas</code></td>
+</tr>
+<tr>
+<td><code>sieqthick</code></td>
+<td><code>sivol</code></td>
+<td><code>SImon.sivol</code></td>
+</tr>
+<tr>
+<td><code>siextent</code></td>
+<td><code>siextentn</code>, <code>siextents</code></td>
+<td><code>SIday.siextentn</code>, <code>SIday.siextents</code>, <code>SImon.siextentn</code>, <code>SImon.siextents</code></td>
+</tr>
+<tr>
+<td><code>siflfwbot</code></td>
+<td><code>fsitherm</code>, <code>siflfwbot</code></td>
+<td><code>Omon.fsitherm</code>, <code>SImon.siflfwbot</code></td>
+</tr>
+<tr>
+<td><code>sisnmass</code></td>
+<td><code>sisnmassn</code>, <code>sisnmasss</code></td>
+<td><code>SIday.sisnmassn</code>, <code>SIday.sisnmasss</code>, <code>SImon.sisnmassn</code>, <code>SImon.sisnmasss</code></td>
+</tr>
+<tr>
+<td><code>sithick</code></td>
+<td><code>sirdgthick</code>, <code>sithick</code></td>
+<td><code>SIday.sirdgthick</code>, <code>SIday.sithick</code>, <code>SImon.sirdgthick</code>, <code>SImon.sithick</code>, <code>SImon.sithickSouth30</code></td>
+</tr>
+<tr>
+<td><code>sivol</code></td>
+<td><code>sivoln</code>, <code>sivols</code></td>
+<td><code>SIday.sivoln</code>, <code>SIday.sivols</code>, <code>SImon.sivoln</code>, <code>SImon.sivols</code></td>
+</tr>
+<tr>
+<td><code>snc</code></td>
+<td><code>sisnconc</code>, <code>snc</code>, <code>sncIs</code></td>
+<td><code>ImonAnt.snc</code>, <code>ImonGre.snc</code>, <code>IyrAnt.snc</code>, <code>IyrGre.snc</code>, <code>LImon.snc</code>, <code>LImon.sncIs</code>, <code>SImon.sisnconc</code>, <code>day.snc</code></td>
+</tr>
+<tr>
+<td><code>snd</code></td>
+<td><code>sisnthick</code>, <code>snd</code></td>
+<td><code>Eday.snd</code>, <code>LImon.snd</code>, <code>SIday.sisnthick</code>, <code>SImon.sisnthick</code>, <code>SImon.sisnthickSouth30</code></td>
+</tr>
+<tr>
+<td><code>snicem</code></td>
+<td><code>snicem</code>, <code>snicemIs</code></td>
+<td><code>ImonAnt.snicem</code>, <code>ImonGre.snicem</code>, <code>LImon.snicemIs</code></td>
+</tr>
+<tr>
+<td><code>snm</code></td>
+<td><code>sisndmassmelt</code>, <code>snm</code>, <code>snmIs</code></td>
+<td><code>Eday.snm</code>, <code>ImonAnt.snm</code>, <code>ImonGre.snm</code>, <code>LImon.snm</code>, <code>LImon.snmIs</code>, <code>SImon.sisndmassmelt</code></td>
+</tr>
+<tr>
+<td><code>snrefr</code></td>
+<td><code>snicefreez</code>, <code>snicefreezIs</code>, <code>snrefr</code></td>
+<td><code>Eday.snrefr</code>, <code>ImonAnt.snicefreez</code>, <code>ImonGre.snicefreez</code>, <code>LImon.snicefreezIs</code></td>
+</tr>
+<tr>
+<td><code>snw</code></td>
+<td><code>sisnmass</code>, <code>snw</code></td>
+<td><code>LImon.snw</code>, <code>SImon.sisnmass</code>, <code>day.snw</code></td>
+</tr>
+<tr>
+<td><code>so</code></td>
+<td><code>so</code>, <code>soga</code></td>
+<td><code>Oday.so</code>, <code>Odec.so</code>, <code>Omon.so</code>, <code>Omon.soSouth30</code>, <code>Omon.soga</code></td>
+</tr>
+<tr>
+<td><code>sos</code></td>
+<td><code>sos</code>, <code>sosga</code></td>
+<td><code>Oday.sos</code>, <code>Omon.sos</code>, <code>Omon.sosga</code>, <code>Omon.sosgaSouth30</code></td>
+</tr>
+<tr>
+<td><code>ta</code></td>
+<td><code>ta</code>, <code>ta6</code>, <code>ta700</code>, <code>ta850</code>, <code>taUTLS</code></td>
+<td><code>6hrLev.ta</code>, <code>6hrPlevPt.ta</code>, <code>6hrPlevPt.ta7h</code>, <code>6hrPlevPt.taUTLS</code>, <code>AERmonZ.ta</code>, <code>Amon.ta</code>, <code>Amon.taSouth30</code>, <code>CF3hr.ta</code>, <code>CFday.ta</code>, <code>CFday.ta700</code>, <code>CFmon.ta</code>, <code>CFmon.taSouth30</code>, <code>CFsubhr.ta</code>, <code>E3hrPt.ta6</code>, <code>Eday.ta850</code>, <code>EdayZ.ta</code>, <code>day.ta</code></td>
+</tr>
+<tr>
+<td><code>tas</code></td>
+<td><code>tas</code>, <code>tasIs</code>, <code>tasmax</code>, <code>tasmaxCrop</code>, <code>tasmin</code>, <code>tasminCrop</code></td>
+<td><code>3hr.tas</code>, <code>6hrPlev.tas</code>, <code>AERhr.tas</code>, <code>Amon.tas</code>, <code>Amon.tasSouth30</code>, <code>Amon.tasmax</code>, <code>Amon.tasmaxSouth30</code>, <code>Amon.tasmin</code>, <code>Amon.tasminSouth30</code>, <code>CFsubhr.tas</code>, <code>E1hr.tas</code>, <code>E1hr.tasSouth30</code>, <code>Eday.tasmaxCrop</code>, <code>Eday.tasminCrop</code>, <code>ImonAnt.tas</code>, <code>ImonGre.tas</code>, <code>LImon.tasIs</code>, <code>day.tas</code>, <code>day.tasmax</code>, <code>day.tasmin</code></td>
+</tr>
+<tr>
+<td><code>thetao</code></td>
+<td><code>thetao</code>, <code>thetaoga</code>, <code>thetaot2000</code>, <code>thetaot300</code>, <code>thetaot700</code></td>
+<td><code>Emon.thetaot2000</code>, <code>Emon.thetaot300</code>, <code>Emon.thetaot700</code>, <code>Oday.thetao200</code>, <code>Odec.thetao</code>, <code>Omon.thetao</code>, <code>Omon.thetaoSouth30</code>, <code>Omon.thetaoga</code></td>
+</tr>
+<tr>
+<td><code>tos</code></td>
+<td><code>tos</code>, <code>tosga</code></td>
+<td><code>3hr.tos</code>, <code>Oday.tos</code>, <code>Omon.tos</code>, <code>Omon.tosSouth30</code>, <code>Omon.tosga</code></td>
+</tr>
+<tr>
+<td><code>ts</code></td>
+<td><code>sitemptop</code>, <code>ts</code>, <code>tsIs</code>, <code>tsns</code></td>
+<td><code>6hrPlev.ts</code>, <code>6hrPlevPt.ts</code>, <code>Amon.ts</code>, <code>Amon.tsSouth30</code>, <code>CF3hr.ts</code>, <code>CFsubhr.ts</code>, <code>E1hr.ts</code>, <code>Eday.ts</code>, <code>Eday.tsns</code>, <code>ImonAnt.ts</code>, <code>ImonGre.ts</code>, <code>LImon.tsIs</code>, <code>SIday.sitemptop</code>, <code>SImon.sitemptop</code>, <code>SImon.sitemptopSouth30</code></td>
+</tr>
+<tr>
+<td><code>tsLut</code></td>
+<td><code>tslsiLut</code></td>
+<td><code>Emon.tslsiLut</code></td>
+</tr>
+<tr>
+<td><code>tsn</code></td>
+<td><code>tsn</code>, <code>tsnIs</code></td>
+<td><code>Eday.tsn</code>, <code>ImonAnt.tsn</code>, <code>ImonGre.tsn</code>, <code>LImon.tsn</code>, <code>LImon.tsnIs</code></td>
+</tr>
+<tr>
+<td><code>ua</code></td>
+<td><code>ua</code>, <code>ua10</code>, <code>ua100m</code>, <code>ua200</code>, <code>ua6</code>, <code>uaUTLS</code></td>
+<td><code>3hr.ua100m</code>, <code>6hrLev.ua</code>, <code>6hrPlevPt.ua</code>, <code>6hrPlevPt.ua200</code>, <code>6hrPlevPt.ua7h</code>, <code>6hrPlevPt.uaUTLS</code>, <code>AERday.ua10</code>, <code>AERmon.ua</code>, <code>AERmonZ.ua</code>, <code>Amon.ua</code>, <code>Amon.uaSouth30</code>, <code>CFday.ua</code>, <code>CFsubhr.ua</code>, <code>E1hr.ua100m</code>, <code>E3hrPt.ua6</code>, <code>EdayZ.ua</code>, <code>day.ua</code></td>
+</tr>
+<tr>
+<td><code>va</code></td>
+<td><code>va</code>, <code>va100m</code>, <code>va200</code>, <code>va6</code>, <code>vaUTLS</code></td>
+<td><code>3hr.va100m</code>, <code>6hrLev.va</code>, <code>6hrPlevPt.va</code>, <code>6hrPlevPt.va200</code>, <code>6hrPlevPt.va7h</code>, <code>6hrPlevPt.vaUTLS</code>, <code>AERmon.va</code>, <code>AERmonZ.va</code>, <code>Amon.va</code>, <code>Amon.vaSouth30</code>, <code>CFday.va</code>, <code>CFsubhr.va</code>, <code>E1hr.va100m</code>, <code>E3hrPt.va6</code>, <code>day.va</code></td>
+</tr>
+<tr>
+<td><code>vegHeight</code></td>
+<td><code>vegHeight</code>, <code>vegHeightGrass</code>, <code>vegHeightShrub</code>, <code>vegHeightTree</code></td>
+<td><code>Emon.vegHeight</code>, <code>Emon.vegHeightGrass</code>, <code>Emon.vegHeightShrub</code>, <code>Emon.vegHeightTree</code></td>
+</tr>
+<tr>
+<td><code>wap</code></td>
+<td><code>wap</code>, <code>wap500</code>, <code>wap6</code></td>
+<td><code>Amon.wap</code>, <code>Amon.wapSouth30</code>, <code>CFday.wap</code>, <code>CFday.wap500</code>, <code>CFsubhr.wap</code>, <code>E3hrPt.wap6</code>, <code>day.wap</code></td>
+</tr>
+<tr>
+<td><code>wbgt</code></td>
+<td><code>wbgt2m</code>, <code>wbgt2mmax</code></td>
+<td><code>day.wbgt2m</code>, <code>day.wbgt2mmax</code></td>
+</tr>
+<tr>
+<td><code>wsg</code></td>
+<td><code>wsgmax100m</code>, <code>wsgmax10m</code></td>
+<td><code>E1hr.wsgmax100m</code>, <code>E1hr.wsgmax10m</code>, <code>Emon.wsgmax100m</code>, <code>Emon.wsgmax10m</code></td>
+</tr>
+<tr>
+<td><code>zg</code></td>
+<td><code>zg</code>, <code>zg10</code>, <code>zg1000</code>, <code>zg500</code>, <code>zg700</code>, <code>zg925</code></td>
+<td><code>6hrLev.zg</code>, <code>6hrPlev.zg1000</code>, <code>6hrPlevPt.zg</code>, <code>6hrPlevPt.zg500</code>, <code>6hrPlevPt.zg700</code>, <code>6hrPlevPt.zg7h</code>, <code>6hrPlevPt.zg925</code>, <code>AERday.zg10</code>, <code>AERday.zg1000</code>, <code>AERday.zg500</code>, <code>AERmon.zg</code>, <code>AERmonZ.zg</code>, <code>Amon.zg</code>, <code>Amon.zgSouth30</code>, <code>CFday.zg</code>, <code>CFsubhr.zg</code>, <code>EdayZ.zg</code>, <code>day.zg</code></td>
+</tr>
+<tr>
+<td><code>zmeso</code></td>
+<td><code>zmeso</code>, <code>zmesoos</code></td>
+<td><code>Oday.zmeso</code>, <code>Omon.zmeso</code>, <code>Omon.zmesoos</code></td>
+</tr>
+<tr>
+<td><code>zmicro</code></td>
+<td><code>zmicro</code>, <code>zmicroos</code></td>
+<td><code>Oday.zmicro</code>, <code>Omon.zmicro</code>, <code>Omon.zmicroos</code></td>
+</tr>
+<tr>
+<td><code>zmisc</code></td>
+<td><code>zmisc</code>, <code>zmiscos</code></td>
+<td><code>Omon.zmisc</code>, <code>Omon.zmiscos</code></td>
+</tr>
+<tr>
+<td><code>zooc</code></td>
+<td><code>zooc</code>, <code>zoocos</code></td>
+<td><code>Oday.zooc</code>, <code>Omon.zooc</code>, <code>Omon.zoocos</code></td>
+</tr>
+</tbody>
+</table>
+<!-- links for referencing -->
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../Global_Attributes/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Global Attributes">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Global Attributes
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../Grid_Labels_for_Derived_Products/" class="md-footer__link md-footer__link--next" aria-label="Next: Grid Labels for Non-2D Grids">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Grid Labels for Non-2D Grids
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      
+<div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      CMIP International Project Office
+    </div>
+  
+  
+    Made with
+    <a href="https://github.com/cmip-ipo-internal/cmipipo-mkdocs-course" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+    (<a href="https://github.com/cmip-ipo-internal/cmipipo-mkdocs-course" target="_blank" rel="noopener">custom</a>)
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+          
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["navigation.top","navigation.path","navigation.indexes","navigation.footer","search.suggest","search.highlight","toc.follow","content.code.copy","content.action.view"],"redirect":"../../redirect.json","search":"../../assets/javascripts/workers/search.7d14d953.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":{"default":"latest","provider":"mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.67a597eb.min.js"></script>
+      
+        <script src="../../stylesheets/matomo.js"></script>
+      
+        <script src="../../stylesheets/fallback-banner.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>
