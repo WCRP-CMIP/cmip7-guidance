@@ -374,10 +374,12 @@ The **configuration** enables simple versioning and sharing of rule sets, while 
   ```
 The **reporting system** inherits the IOOS logic, combining output filtering, severity-based scoring, and granular reports suitable for both operational monitoring and expert review. Results can be easily mapped to standard logging levels (info, warning, critical), facilitating integration with existing QA dashboards.
 
-In addition, an [`esgf-qa` module](https://github.com/ESGF/esgf-qa) provides a higher-level orchestration layer on top of the IOOS Compliance Checker. It applies the `cc-plugin-wcrp` consistently at the dataset level, automatically parallelizes checker execution across multiple files, and produces user-friendly aggregated reports. This greatly simplifies large-scale QC operations and makes results easier to browse, interpret, and integrate into your workflows. See [`esgf-qa` documentation for the installation procedure](https://esgf.github.io/esgf-qa/).
+For checking a collection of files, such as the output from an entire simulation, use [`esgf-qa`](https://github.com/ESGF/esgf-qa) to run both the CMIP7-specific `wcrp_cmip7` checks and the CF checks across the collection. It coordinates file-based checking, supports parallel execution, and produces user-friendly aggregated reports. It also performs consistency checks across files and datasets that are not covered by checking each file individually. This greatly simplifies large-scale QC operations and makes results easier to browse, interpret, and integrate into your workflows.
+
+Use Compliance Checker directly for targeted checks on individual files, and `esgf-qa` when preparing larger collections for publication. See the [`esgf-qa` documentation](https://esgf.github.io/esgf-qa/) for installation and usage, and [QC known issues and reporting](QC_known_issues.md) for known limitations and the publication implications of findings.
 
 ```bash 
-$ esgqa -t wcrp_cmip6:latest -t cf:1.11 -o /path/to/results/output /path/to/dataset
+$ esgqa -t wcrp_cmip7 -t cf:1.11 -o /path/to/results/output /path/to/simulation
 ```
 
 As well as the project-specific checks, modellers are strongly advised to explicitly check the CF compliance of their data:
