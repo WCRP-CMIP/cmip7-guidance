@@ -99,6 +99,7 @@
     - [Branded Variables](CMIP7/Branded_Variables.md)
     - [Grid Labels for Non-2D Grids](CMIP7/Grid_Labels_for_Derived_Products.md)
     - [Data Specs Version](CMIP7/data_specs_version.md)
+  - [Domain names](CMIP7/Domain_names.md)
   - [FAQ](CMIP7/FAQ.md)
 - How-to Guides
   - [Energy Consumption and Carbon Footprint Spreadsheet](How_to_Guides/Energy_Consumption_and_Carbon_Footprint_Spreadsheet.md)
@@ -112,5 +113,7 @@
   - [Time and area averaging](CMIP6/time_and_area_averaging.md)
 - Resources
   - [GitHub issue helper](resources/GitHub_issue_helper.html)
-  - [Domain names](CMIP7/Domain_names.md)
+  - [Essential Model Documentation](resources/essential-model-documentation.md)
+  - [CMIP Website](resources/cmip-website.md)
+  - [WCRP](resources/wcrp.md)
 
