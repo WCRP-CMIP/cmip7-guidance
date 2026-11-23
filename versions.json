@@ -1,9 +1,14 @@
 [
   {
-    "version": "2026.11.23",
-    "title": "26.Nov.23",
+    "version": "2026.11.23.2",
+    "title": "26.Nov.23.2",
     "aliases": [
       "latest"
     ]
+  },
+  {
+    "version": "2026.11.23",
+    "title": "26.Nov.23",
+    "aliases": []
   }
 ]
