@@ -1,6 +1,9 @@
-# cmip7-guidance
+# cmip7-guidance 
 
-Guidance and documentation for CMIP7, built with [Zensical](https://zensical.org/) on the CMIP IPO site template.
+[![Check navigation](https://github.com/WCRP-CMIP/cmip7-guidance/actions/workflows/check-nav.yml/badge.svg)](https://github.com/WCRP-CMIP/cmip7-guidance/actions/workflows/check-nav.yml)
+---
+Guidance and documentation for CMIP7, built with [Zensical](https://zensical.org/) on the CMIP IPO site template. 
+
 
 The live site is at [guidance.wcrp-cmip.org](https://guidance.wcrp-cmip.org/), and is also
 mirrored on GitHub Pages at [wcrp-cmip.github.io/cmip7-guidance](https://wcrp-cmip.github.io/cmip7-guidance/).
