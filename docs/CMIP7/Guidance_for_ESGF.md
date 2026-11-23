@@ -80,6 +80,8 @@ Please refer to the [user documentation](https://esg-publisher.readthedocs.io/en
 
 The publisher installation includes the IOOS checker and WCRP plugins. 
 
+**Kerchunk and VirtualZarr support**. From version 5.4.1 onwards, automatic aggregation reference file generation has been supported. Please refer to the [Kerchunk and VirtualiZarr Aggregation Generation](https://esg-publisher.readthedocs.io/en/stable/esgpublish.html#kerchunk-generation) for configuration and usage details. 
+
 ### 2.5 ESG-Publisher software installation 
 **Requirements** 
 
