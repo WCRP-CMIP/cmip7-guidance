@@ -369,25 +369,23 @@ The **configuration** enables simple versioning and sharing of rule sets, while 
 
 
 **Usage** is built on the IOOS Compliance Checker, maintaining workflow flexibility for modeling groups that already operate their own QA/QC pipelines. It generates atomic log files per run (at both file and dataset levels) and supports seamless parallel execution, enabling straightforward integration with batch schedulers and large-scale production workflows. 
+Example usage:
   ```bash
-  compliance-checker -t wcrp_cmip7:1.0 /path/to/data/file.nc
+  compliance-checker -c strict -t wcrp_cmip7:1.0 -t cf:1.11 /path/to/data/file.nc
   ```
+In addition the required CMIP7 checks, running the CF checks is strongly recommended.
+CF-1.11 is the [minimum CF version required for CMIP7 data](./Global_Attributes.md#table-2-required-global-attributes) (a checker for CF-1.12 and CF-1.13 is not yet available).
+Including the option `-c strict` reports checker findings across all severity levels (High, Medium, and Low), including informational checks issued at low severity. 
+While only high-severity findings block ESGF publication, addressing medium-severity findings is strongly recommended.
+
 The **reporting system** inherits the IOOS logic, combining output filtering, severity-based scoring, and granular reports suitable for both operational monitoring and expert review. Results can be easily mapped to standard logging levels (info, warning, critical), facilitating integration with existing QA dashboards.
 
 For checking a collection of files, such as the output from an entire simulation, use [`esgf-qa`](https://github.com/ESGF/esgf-qa) to run both the CMIP7-specific `wcrp_cmip7` checks and the CF checks across the collection. It coordinates file-based checking, supports parallel execution, and produces user-friendly aggregated reports. It also performs consistency checks across files and datasets that are not covered by checking each file individually. This greatly simplifies large-scale QC operations and makes results easier to browse, interpret, and integrate into your workflows.
-
-Use Compliance Checker directly for targeted checks on individual files, and `esgf-qa` when preparing larger collections for publication. See the [`esgf-qa` documentation](https://esgf.github.io/esgf-qa/) for installation and usage, and [QC known issues and reporting](QC_known_issues.md) for known limitations and the publication implications of findings.
-
+Example usage:
 ```bash 
 $ esgqa -t wcrp_cmip7 -t cf:1.11 -o /path/to/results/output /path/to/simulation
 ```
-
-As well as the project-specific checks, modellers are strongly advised to explicitly check the CF compliance of their data:
-```bash
-compliance-checker -t cf:1.11 /path/to/data/file.nc
-```
-CF-1.11 is the [minimum CF version required for CMIP7 data](./Global_Attributes.md#table-2-required-global-attributes).
-At present a checker for CF-1.12 and CF-1.13 is not available.
+Use `compliance-checker` directly for targeted checks on individual files, and `esgf-qa` when preparing larger collections for publication. See the [`esgf-qa` documentation](https://esgf.github.io/esgf-qa/) for installation and usage, and [QC known issues and reporting](QC_known_issues.md) for known limitations and the publication implications of findings.
 
 
 ### 🗣️ How to Contribute and Get Support
