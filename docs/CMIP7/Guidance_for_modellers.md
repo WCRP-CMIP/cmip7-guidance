@@ -320,6 +320,8 @@ The goal of this plugin is to provide a cohesive, extensible, and transparent sy
 
 A list of the checks included in the plugin for CMIP7 can be found [here](QC_checks.md).
 
+For known limitations of the wider QC workflow, their publication implications, and how to report unexpected findings, see [QC known issues and reporting](QC_known_issues.md).
+
 ### 🚧 Important Caveats
 
 - **Scope is limited**

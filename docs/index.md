@@ -24,6 +24,7 @@ The vision and design of CMIP7 is outlined in ['An evolving Coupled Model Interc
     - [Experiment setup and forcings](CMIP7/Experiment_set_up_and_Forcings/index.md)
     - [Citation Guidance](CMIP7/Citation_Guidance.md)
     - [Annex 1: QC checks performed prior to publication](CMIP7/QC_checks.md)
+    - [Annex 2: QC known issues and reporting](CMIP7/QC_known_issues.md)
 - [Guidance for users, including Terms of Use](CMIP7/Guidance_for_users.md)
 - [Guidance for ESGF node operators and publishers](CMIP7/Guidance_for_ESGF.md)
 - [Guidance for MIPs](CMIP7/Guidance_for_MIPs.md)
